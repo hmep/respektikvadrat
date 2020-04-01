@@ -1,0 +1,33 @@
+---
+title: "Respekt i kvadrat"
+subtitle: "En randomiserad kontrollerad studie om effekterna av kognitiv beteendeeterapi över internet på graden av konstruktiv självhävdelse"
+author: "Patrik Trång & Tobias Hagberg"
+date: '2020-04-01'
+output: 
+  html_document: 
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Utkast till Sammanfattning
+
+Brister i det transdiagnostiska begreppet "konstruktiv självhävdelse" (*assertiveness* på engelska) är ett förknippat med klinisk och subklinisk psykisk ohälsa, exempelvis stressrelaterad ohälsa, svårigheter i relationer, social ångest, nedstämdhet och depression och schizofreni. Begreppet kan definieras som handlande som är förenligt med respekt för både egna och andras rättigheter, exempelvis att uttrycka behov och önskemål, sätta gränser och att dela tankar och känslor. Brister i konstruktiv självhävdelse kan kategoriseras som antingen passiv eller aggressiv självhävdelse. Syftet med den här studien är att undersöka effekten av ett träningsprogram med kognitiv beteendeterapeutisk inriktning i konstruktiv självhävdelse över internet. 210 personer med subkliniska besvär rekryterade via sociala medier och randomiserades till tre grupper: en grupp som fick tillgång till träningsprogrammet (n = 70), en grupp som fick tillgång till träningsprogrammet med terapeutstöd (n = 70) och en grupp som sattes på väntelista (n = 70). Graden av konstruktiv respektive aggressiv självhävdelse mättes med *Adaptive and Aggressive Assertiveness Scales* (AAA-S) (i vilken samtidiga låga värden på de båda underskalorna tolksas som passiv självhävdelse). [Resultaten] [Den viktigaste slutsatsen]
+
+## Bakgrund (rubriken tas bort innan publicering)
+
+[]
+
+## 
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Referenser
