@@ -43,9 +43,12 @@ set.seed(42) # Seed for random number generation
 
 options(contrasts=c("contr.sum","contr.poly")) # Sum-to-zero contrasts for factors
 
+options(knitr.table.format = "latex")
+
 #devtools::install_github("crsh/papaja@devel",force=TRUE) # APA-6 compliance
 library("papaja")
 library("readxl")
+library("knitr")
 library("kableExtra")
 
 ```
@@ -364,9 +367,26 @@ Forskning på *assertiveness* övergavs i stort sett på 70- och 80-talet. Under
 
 ## Evidensen för KBT vid ångest och depression
 
-Evidensen för beteendeterapi och KBT för syndromala och icke-syndromala psykologiska problem har konstaterats vara god sedan många år tillbaka, både inom ramen för väl avgränsade och kontrollerade *efficacy*-studier och i ekologiskt valida *effectiveness*-studier. Det gäller även i hög grad de områden för vilka bristande konstruktiv självhävdelse är en del av problembeskrivningarna, till exempel ångestsyndrom, social fobi och generaliserat ångestsyndrom (GAD) liksom nedstämdhetssyndrom. @Chambless2001 ger en tidig översikt av det samlade forskningsläget **[utöka med specifika slutsatser]**. @Hofmann2012 är en översikt av meta-analyser som visar att KBT alltjämt är en av de mest effektiva terapiformerna. I deras översikt visade sig KBT effektivt för att motverka bland annat trauma- och stressrelaterade symptom, liksom depressiva och ångestrelaterade syndrom. Litteraturen bekräftar att KBT är har god effekt för de syndrom som @Speed2018a associerar med brister i konstruktiv självhävdelse.
+Evidensen för beteendeterapi och KBT för syndromala och icke-syndromala psykologiska problem har konstaterats vara god sedan många år tillbaka, både inom ramen för väl avgränsade och kontrollerade *efficacy*-studier och i ekologiskt valida *effectiveness*-studier. Det gäller även i hög grad de områden för vilka bristande konstruktiv självhävdelse är en del av problembeskrivningarna, till exempel ångestsyndrom, social fobi och generaliserat ångestsyndrom (GAD) liksom nedstämdhetssyndrom. 
 
-Systematiska sammanställningar med uppdaterat forskningsläge kring behandling av exempelvis ångestsyndrom har regelbundet publicerats i England av @NationalInstituteforHealthandCareExcellence2018 och i USA av @AmericanPsychologicalAssociation2016. @Socialstyrelsen2017 ger de senaste nationella riktlinjerna för vård vid depression och ångestsyndrom i Sverige. I dessa riktlinjer är KBT-behandling näst intill uteslutande förstahandsvalet vid psykologisk behandling.
+@Chambless2001 ger en tidig översikt av det samlade forskningsläget **[utöka med specifika slutsatser]**. @Hofmann2012 är en översikt av meta-analyser som visar att KBT alltjämt är en av de mest effektiva terapiformerna. I deras översikt visade sig KBT effektivt för att motverka bland annat trauma- och stressrelaterade symptom, liksom depressiva och ångestrelaterade syndrom. Litteraturen bek räftar att KBT är har god effekt för de syndrom som @Speed2018a associerar med brister i konstruktiv självhävdelse.
+
+Systematiska sammanställningar med uppdaterat forskningsläge kring behandling av exempelvis ångestsyndrom publiceras regelbundet England av @NationalInstituteforHealthandCareExcellence2018 och i USA av @AmericanPsychologicalAssociation2016. @Socialstyrelsen2017 ger de senaste nationella riktlinjerna för vård vid depression och ångestsyndrom i Sverige. I dessa riktlinjer är KBT-behandling näst intill uteslutande förstahandsvalet vid psykologisk behandling.
+
+Trots att evidensen för kognitiv och beteendeterapeutisk behandling vid ångestsyndrom och depressiva syndrom är god förblir majoriteten av fallen även i länder med väl utvecklad sjukvård obehandlade @Craske2017.
+
+## Evidensen för I-KBT jämfört med terapeutledd KBT
+
+I-KBT har visat sig vara en effektiv behandlingsmetod för ett brett spektrum av olika besvär. I en meta-analys från 2018 – som inkluderade 64 RCT-studier – konstaterades I-KBT vara effektivt för behandling av både depression, paniksyndrom, agorafobi, social fobi samt generaliserat ångestsyndrom [@Andrews; @Andrews2018]. I-KBT har även visat sig vara effektivt vid behandling av PTSD [@Sijbrandij2016], insomni [@Zachariae2016] och för att minska lidandet vid olika kroniska hälsobesvär [@Mehta2019]. Det har även visat sig att I-KBT är en verksam behandlingsmetod vid en rad olika transdiagnostiska besvär såsom stress [@Day2013], prokrastinering [@Rozental2015] och perfektionism [@Rozental2017; @Wade2019].
+
+
+
+@Kaltenthaler2006 utvärderar effekten i 20 tidiga studier av datoriserad KBT för behandling av ångest, depression, fobier, panik och tvångssyndrom. Datoriserad KBT är för depression, ångest, fobier och panik lika effektiv som terapeutledd KBT. Författarna identifierar behov av utvärderingar av hur datoriserad administration av KBT kan användas i ett stepped-care-sammanhang, samt ytterligare forskning kring KBT via internet. 
+
+@Andrews och senare @Andrews2018 bekräftar dessa fynd i metastudier av 22 respektive 64 randomiserade och kontrollerade effektstudier. Författarna finner att medeleffektstorleken för internet-KBT (I-KBT) är 0.8 eller mer i jämförelse med kontrollbetingelse. Enligt resultaten tenderar också effekten att hålla i sig över tid. I-KBT är jämförbart effektmässigt med terapeutledd terapi.
+
+Trots att evidensen för kognitiv och beteendeterapeutisk behandling vid ångestsyndrom och depressiva syndrom är god förblir majoriteten av fallen även i länder med väl utvecklad sjukvård obehandlade [@Craske2017]. Många kan bära på ett psykiskt lidande utan att för den skull nå upp till kriterierna för någon av diagnoserna i DSM. Och för dem som ändå skulle göra det är tillgången till vård en begränsande faktor som I-KBT kan avhjälpa [@Andrews2018].
+
 
 # Methods
 
