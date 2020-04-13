@@ -1,33 +1,434 @@
 ---
-title: "Respekt i kvadrat"
-subtitle: "En randomiserad kontrollerad studie om effekterna av kognitiv beteendeeterapi över internet på graden av konstruktiv självhävdelse"
-author: "Patrik Trång & Tobias Hagberg"
-date: '2020-04-01'
+title             : "Respekt i kvadrat: en randomiserad kontrollerad effektstudie av kognitiv beteendeeterapi via internet på graden av konstruktiv självhävdelse"
+shorttitle        : "Respekt i kvadrat"
+author: 
+  - name          : "Tobias Hagberg"
+    affiliation   : "a"
+    email         : "tobias@hagberg.com"
+    address       : "Psykologprogrammet, Psykologiska institutionen, Stockholms universitet"
+  - name          : "Patrik Trång"
+    affiliation   : "a"
+    email         : "patrik.trang@gmail.com"
+affiliation:
+  - id            : "a"
+    institution   : "Psykologiska institutionen, Stockholms universitet"
+abstract: |
+  Det transdiagnostiska begreppet ’konstruktiv självhävdelse’ (*assertiveness* på engelska) kan definieras som handlande som är förenligt med respekt för både egna och andras rättigheter, exempelvis att uttrycka behov och önskemål, att sätta gränser och att dela tankar och känslor. Brister i konstruktiv självhävdelse är förknippat med klinisk och subklinisk psykisk ohälsa, till exempel stressrelaterad ohälsa, svårigheter i relationer, emotionell instabilitet, generaliserat ångestsyndrom, social ångest och depression. Syftet med den här studien är att undersöka effekten på konstruktiv självhävdelse av ett internet-administrerat träningsprogram med kognitiv-beteendeterapeutisk inriktning. 210 personer med självupplevda besvär rekryterades via annonsering i sociala medier. Deltagarna randomiserades till tre grupper: en som fick tillgång till träningsprogrammet (n = 70), en som fick tillgång till träningsprogrammet med terapeutstöd (n = 70) och en väntelista (n = 70). Graden av konstruktiv respektive aggressiv självhävdelse mättes med Adaptive and Aggressive Assertiveness Scales (AAA-S). [Här visar vi att (huvudresultatet). (huvudresultatet i relation till tidigare kunskap, ex “Vi fann att bristande konstruktiv självhävdelse var ett relevant mål för en transdiagnostisk intervention som gav samtidigt lindring över ett brett spann symtom. Vi fann också att terapeutstöd gav …”) (resultaten i en vidare kontext) (ännu bredare perspektiv och eventuella rekommendationer, exempelvis “Vi förespråkar ...”)]
+    <!-- https://tinyurl.com/ybremelq -->
+keywords          : "självhävdelse, ångestsyndrom, ångest, stress, undvikande, assertiveness, anxiety disorder, anxiety, stress, avoidance"
+wordcount         : "X"
+bibliography      : ["r-references.bib", "library.bib"]
+floatsintext      : no
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+linenumbers       : no
+mask              : no
+draft             : no
+documentclass     : "apa6"
+classoption       : "man,a4paper"
 output: 
-  html_document: 
-    toc: yes
+  papaja::apa6_pdf:
+    keep_tex      : TRUE
+    latex_engine  : lualatex
+keeptex           : true
+lang              : sv-SE
+#header-includes:
+#  - \setmainfont{Times New Roman}
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r preferences and dependencies, include = FALSE}
+
+set.seed(42) # Seed for random number generation
+
+options(contrasts=c("contr.sum","contr.poly")) # Sum-to-zero contrasts for factors
+
+#devtools::install_github("crsh/papaja@devel",force=TRUE) # APA-6 compliance
+library("papaja")
+library("readxl")
+library("kableExtra")
+
 ```
 
-## Utkast till Sammanfattning
+```{r data setup, eval = FALSE}
 
-Brister i det transdiagnostiska begreppet "konstruktiv självhävdelse" (*assertiveness* på engelska) är ett förknippat med klinisk och subklinisk psykisk ohälsa, exempelvis stressrelaterad ohälsa, svårigheter i relationer, social ångest, nedstämdhet och depression och schizofreni. Begreppet kan definieras som handlande som är förenligt med respekt för både egna och andras rättigheter, exempelvis att uttrycka behov och önskemål, sätta gränser och att dela tankar och känslor. Brister i konstruktiv självhävdelse kan kategoriseras som antingen passiv eller aggressiv självhävdelse. Syftet med den här studien är att undersöka effekten av ett träningsprogram med kognitiv beteendeterapeutisk inriktning i konstruktiv självhävdelse över internet. 210 personer med subkliniska besvär rekryterade via sociala medier och randomiserades till tre grupper: en grupp som fick tillgång till träningsprogrammet (n = 70), en grupp som fick tillgång till träningsprogrammet med terapeutstöd (n = 70) och en grupp som sattes på väntelista (n = 70). Graden av konstruktiv respektive aggressiv självhävdelse mättes med *Adaptive and Aggressive Assertiveness Scales* (AAA-S) (i vilken samtidiga låga värden på de båda underskalorna tolksas som passiv självhävdelse). [Resultaten] [Den viktigaste slutsatsen]
+# This chunch is to be run only once in order to set up anonymous data that can be published on figshare
+# To run this chunk, change "eval = FALSE" to "eval = TRUE"
 
-## Bakgrund (rubriken tas bort innan publicering)
+# Export data from iTerapi
+# - Go to "Administrera" > "Exportera"
+# - Select "Frågeformulär"
+# - Select each questionnaire and all scales
+# - Select "Exportera endast de totala poängen"
+# - Select "Inkludera svar från" > "Endast användare i valda grupper"
+# - Select "Grupp 1: Behandling exkl stöd", "Grupp 2: Behandling inkl stöd" and "Grupp 3: Väntelista"
+# - Press the "Exportera" button
+# See image file "exporting-respekt-data.png"
 
-[]
+#knitr::include_graphics("exporting-respekt-data.png")
 
-## 
+##################################################################################
+# Put the exported file in the parent folder of this file and edit the line below
 
-You can also embed plots, for example:
+raw_excel = "Respekt_surveys_200412_150604.xlsx"
+##################################################################################
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+# Import data from Excel file (requires "readxl")
+r2.raw.data <- read_excel(raw_excel)
+
+# Fix missing data labels
+r2.raw.data[r2.raw.data == "[missing data]"] <- NA
+r2.raw.data[r2.raw.data == "NA"] <- NA
+r2.raw.data[r2.raw.data == "NaN"] <- NA
+#r2.raw.data[r2.raw.data == ""] <- NA
+
+# Define columns to keep
+keepers <- c(2,3,
+             8:21,    # Pre
+             29:42,   # During
+             50:63,   # Post group 1 + 2
+             71:84)   # Post group 3
+
+# Copy to new dataframe
+r2.wide.data <- as.data.frame(r2.raw.data[keepers])
+
+# Make sure numericals are numeric
+r2.wide.data[,c(3:58)] <- sapply(r2.wide.data[,c(3:58)], as.numeric)
+
+# Define column names for keepers
+colnames <-
+  c(
+    "pre_subject",
+    "pre_group",
+    "pre_reminders",
+    "pre_rathus",
+    "pre_aaas_ag",
+    "pre_aaas_ad",
+    "pre_lsas_anx",
+    "pre_lsas_avo",
+    "pre_lsas_int",
+    "pre_lsas_per",
+    "pre_lsas_sum",
+    "pre_gad_sum",
+    "pre_phq_sum",
+    "pre_phq_sui",
+    "pre_phq_q10",
+    "pre_well",
+    "dur_reminders",
+    "dur_rathus",
+    "dur_aaas_ag",
+    "dur_aaas_ad",
+    "dur_lsas_anx",
+    "dur_lsas_avo",
+    "dur_lsas_int",
+    "dur_lsas_per",
+    "dur_lsas_sum",
+    "dur_gad_sum",
+    "dur_phq_sum",
+    "dur_phq_sui",
+    "dur_phq_q10",
+    "dur_well",
+    "post_reminders",
+    "post_rathus",
+    "post_aaas_ag",
+    "post_aaas_ad",
+    "post_lsas_anx",
+    "post_lsas_avo",
+    "post_lsas_int",
+    "post_lsas_per",
+    "post_lsas_sum",
+    "post_gad_sum",
+    "post_phq_sum",
+    "post_phq_sui",
+    "post_phq_q10",
+    "post_well",
+    "postg3_reminders",
+    "postg3_rathus",
+    "postg3_aaas_ag",
+    "postg3_aaas_ad",
+    "postg3_lsas_anx",
+    "postg3_lsas_avo",
+    "postg3_lsas_int",
+    "postg3_lsas_per",
+    "postg3_lsas_sum",
+    "postg3_gad_sum",
+    "postg3_phq_sum",
+    "postg3_phq_sui",
+    "postg3_phq_q10",
+    "postg3_well"
+)
+
+# Set column names
+colnames(r2.wide.data) <- colnames
+
+# Merge post data for group 3 with post data for group 1 + 2
+g3key <- which(!is.na(r2.wide.data$postg3_subject))
+r2.wide.data[g3key,c(31:44)] <- r2.wide.data[g3key,c(45:58)]
+r2.wide.data <- r2.wide.data[,c(1:44)] # Keep columns that we want
+
+# 3
+# 16
+# 
+# 17
+# 30
+# 
+# 31
+# 44
+# 
+# 45
+# 58
+
+# Anonymise, simplify and clean up data
+r2.wide.data$subject <- factor(c(1:length(r2.wide.data[,1]))) # Add subject IDs
+r2.wide.data$group <-
+  factor(ifelse(
+    grepl("Grupp 1", r2.wide.data$pre_group),
+    "Selfhelp",
+    ifelse(
+      grepl("Grupp 2", r2.wide.data$pre_group),
+      "Guided",
+      ifelse(grepl("Grupp 3", r2.wide.data$pre_group), "Waitlist", NA)
+    )
+  ),
+  levels = c("Waitlist", "Selfhelp", "Guided")) # Add group designations
+r2.wide.data$therapist <-
+  factor(ifelse(
+    grepl("Grupp 2: P", r2.wide.data$pre_group),
+    "A",
+    ifelse(grepl("Grupp 2: T", r2.wide.data$pre_group),
+           "B", NA) # "None" instead of NA?
+  ), levels = c("A", "B")) # Add therapist code
+r2.wide.data <- r2.wide.data[,c(45,46,47,1:44)] # Move to the front
+r2.wide.data <- r2.wide.data[,-c(4:5)] # Drop columns
+
+# Save safe data frame as a single object to the file system
+saveRDS(r2.wide.data,file="r2.wide.data.RDS")
+
+# Delete Excel file and clean up environment
+prompt.keep <-
+  readline(prompt = "Type an uppercase 'K' key to keep the Excel file (or press any other key to delete it): ")
+if (prompt.keep == "K") {
+} else {
+  file.remove(raw_excel)
+}
+rm(list = ls())
+
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r import and reshape data}
 
-## Referenser
+# Get wide data
+r2.wide.data <- readRDS("r2.wide.data.RDS")
+
+# Reshape (manually) to long data
+n = length(r2.wide.data[,1])
+t = 3 # 2do: change to 4 with final data
+r2.long.data <- data.frame(
+  subject = as.factor(rep(r2.wide.data$subject, times = t)),
+  group = as.factor(rep(r2.wide.data$group, times = t)),
+  time = as.factor(rep(c("Pre", "During", "Post"), each = n)), # 2do: add "fu" with final data
+  therapist = as.factor(rep(r2.wide.data$therapist, times = t)),
+  rathus = c(
+    r2.wide.data$pre_rathus,
+    r2.wide.data$dur_rathus,
+    r2.wide.data$post_rathus#,
+    #r2.wide.data$fu_rathus # 2do: enable with final data
+  ),
+  aaas_ag = c(
+    r2.wide.data$pre_aaas_ag,
+    r2.wide.data$dur_aaas_ag,
+    r2.wide.data$post_aaas_ag#,
+    #r2.wide.data$fu_aaas_ag # 2do: enable with final data
+  ),
+  aaas_ad = c(
+    r2.wide.data$pre_aaas_ad,
+    r2.wide.data$dur_aaas_ad,
+    r2.wide.data$post_aaas_ad#,
+    #r2.wide.data$fu_aaas_ad # 2do: enable with final data
+  ),
+  lsas_anx = c(
+    r2.wide.data$pre_lsas_sum,
+    r2.wide.data$dur_lsas_sum,
+    r2.wide.data$post_lsas_sum#,
+    #r2.wide.data$fu_lsas_sum # 2do: enable with final data
+  ),
+  lsas_avo = c(
+    r2.wide.data$pre_lsas_avo,
+    r2.wide.data$dur_lsas_avo,
+    r2.wide.data$post_lsas_avo#,
+    #r2.wide.data$fu_lsas_avo # 2do: enable with final data
+  ),
+  lsas_int = c(
+    r2.wide.data$pre_lsas_int,
+    r2.wide.data$dur_lsas_int,
+    r2.wide.data$post_lsas_int#,
+    #r2.wide.data$fu_lsas_int # 2do: enable with final data
+  ),
+  lsas_per = c(
+    r2.wide.data$pre_lsas_per,
+    r2.wide.data$dur_lsas_per,
+    r2.wide.data$post_lsas_per#,
+    #r2.wide.data$fu_lsas_per # 2do: enable with final data
+  ),
+  lsas_sum = c(
+    r2.wide.data$pre_lsas_sum,
+    r2.wide.data$dur_lsas_sum,
+    r2.wide.data$post_lsas_sum#,
+    #r2.wide.data$fu_lsas_sum # 2do: enable with final data
+  ),
+  gad_sum = c(
+    r2.wide.data$pre_gad_sum,
+    r2.wide.data$dur_gad_sum,
+    r2.wide.data$post_gad_sum#,
+    #r2.wide.data$fu_gad_sum # 2do: enable with final data
+  ),
+  phq_sum = c(
+    r2.wide.data$pre_phq_sum,
+    r2.wide.data$dur_phq_sum,
+    r2.wide.data$post_phq_sum#,
+    #r2.wide.data$fu_phq_sum # 2do: enable with final data
+  ),
+  phq_sui = c(
+    r2.wide.data$pre_phq_sui,
+    r2.wide.data$dur_phq_sui,
+    r2.wide.data$post_phq_sui#,
+    #r2.wide.data$fu_phq_sui # 2do: enable with final data
+  ),
+  phq_q10 = c(
+    r2.wide.data$pre_phq_q10,
+    r2.wide.data$dur_phq_q10,
+    r2.wide.data$post_phq_q10#,
+    #r2.wide.data$fu_phq_q10 # 2do: enable with final data
+  ),
+ well = c(
+    r2.wide.data$pre_well,
+    r2.wide.data$dur_well,
+    r2.wide.data$post_well#,
+    #r2.wide.data$fu_well # 2do: enable with final data
+  )
+)
+
+# Subsetting keys
+
+lg1 <- grepl("Selfhelp", r2.long.data$group)
+lg2 <- grepl("Guided", r2.long.data$group)
+lg3 <- grepl("Waitlist", r2.long.data$group)
+
+lt1 <- grepl("Pre", r2.long.data$time)
+lt2 <- grepl("During", r2.long.data$time)
+lt3 <- grepl("Post", r2.long.data$time)
+
+#tapply(r2.long.data$group, r2.long.data$time, summary)
+
+library("psych")
+#describeBy(r2.long.data, "group", mat = T,digits=2)
+#descriptives <- statsBy(r2.long.data, c("group","time"),cors=F)
+#print(descriptives,short=T)
+#(descriptives <- printnum(descriptives))
+
+#summary(r2.long.data[lg1,c(4-45)])
+
+library(pastecs)
+
+```
+
+Underskott av beteenden som går att samla under begreppet *assertiveness* (från engelska översatt till ”konstruktiv självhävdelse”) förknippas med en lång räcka psykologiska problem, exempelvis olika ångestsyndrom som generaliserat ångestsyndrom, social ångest och paniksyndrom, liksom depression, schizofreni med mera [@Speed2018a].
+
+Träning i *assertiveness* har en lång historia med behavioristiska rötter från 1950-talet och framåt, bland annat genom @andrew2001conditioned och @Wolpe1966. Dessa första terapier byggde på principer om klassisk betingning: Målet för träningen var att para aversiva stimuli som tidigare gav upphov till exempelvis passivitet eller aggressivitet med adaptiva beteenden som tidigare uttryckts i underskott – ofta med avslappning som en integrerad del, utifrån rationalen att avslappning och ångest inte är förenliga. Som en del i den självhävdelsefokuserade psykoterapin föreskrevs ett antal olika  beteenden för klienter och patienter att träna på, till exempel att säga nej till andra.
+
+Under 1970-talet kom träning i konstruktiv självhävdelse att både formaliseras till kompletta behandlingsprogram, som i @LINEHAN1979, och populariseras, som i självhjälpstitlar som *Don’t say yes when you want to say no* [@fensterheim1975don] och *When I say no, I feel guilty: how to cope–using the skills of systematic assertive therapy* [@smith1975say]. Självhjälpsboomen i slutet av 1970-talet sammanföll med sociala och politiska omvälvningar i samhället, där marginaliserade grupper gjorde sig allt mer hörda och maktstrukturer i samhället sattes under förändringstryck. Dessa emanciperande och normbrytande rörelser väckte motstånd – precis som behavioristiskt influerade terapier gjorde. Ett roligt exempel på kritik av träning i konstruktiv självhävdelse är @607233319760514, som frankt rekommenderade deltagare i *assertiveness*-kurser att hävda sig själva genom att vägra betala kursavgiften.
+
+I och med psykatrins allt tydligare inriktning mot syndromala kategoriseringar av psykisk ohälsa, kanske tydligast i form av *Diagnostic and Statistical Manual of Mental Disorders* [@american1968diagnostic] med efterföljare, kom träning i *assertiveness* så småningom att falla i glömska. Mycket sporadiskt återaktualiserades begreppet som mål för behandling under 1990-talet, då kompletterad med metoder för kognitiv omstrukturering i enlighet med principerna i @beck1979cognitive, för att på så sätt hjälpa personer med (mer eller mindre generaliserade) hindrande förutsägelser i svåra situationer att finna stöd för mer hjälpsamma förutsägelser.
+
+Bristande konstruktiv självhävdelse är ett exempel på ett behandlingsmål som är av allt större värde, för både kliniska och sub-kliniska populationer, inte minst som pendeln svingar tillbaka från syndromal diagnostik till transdiagnostik [@Speed2018a]. Det gäller särskilt, menar vi, om den solida beteendendevetenskapliga grunden byggs på med metoder och förhållningssätt som har utvecklats inom den kontextuella beteendevetenskapen sedan slutet av 1900-talet. Dessa inkluderar motiverande tekniker som går att tillämpa i större skala än ansikte mot ansikte-behandling och som tillsammans med landvinningar inom internetförmedlad terapi kan göra det möjligt att nå och hjälpa även individer som saknar tillgång till eller motivation att söka traditionell psykologisk behandling.
+
+## Vad är konstruktiv självhävdelse?
+
+Begreppet assertiveness kom under 1970-talet att omfamna en allt längre lista med beteendemässiga operationaliseringar – så att det till slut blev svårt att skilja från begreppet ’social färdighet’ @LINEHAN1979. Det är därför viktigt att avgränsa begreppet.
+
+@alberti1974your definierar konstruktiv självhävdelse som handlande som återspeglar individens egna långsiktiga intressen. Det inbegriper förmågan att ”stå upp för sig själv” utan överdriven ångest och färdigheten att uttrycka sina känslor samt att utöva sina egna rättigheter utan att kränka andras rättigheter. Med ’utöva sina rättigheter’ menas att både i icke-verbal och verbal handling uttrycka sina tankar, känslor och önskningar.
+
+Graden av konstruktiv självhävdelse för en person i en given situation kan inordnas som en punkt i en graf (se figur \@ref(fig:assertiveness)) med två kontinuerliga dimensioner: handlande med respekt för andras rättigheter på x-axeln och handlande med respekt för egna rättigheter på y-axeln. Konstruktiv självhävdelse skiljer sig från aggressiv självhävdelse (det vill säga hävdande av egna rättigheter på bekostnad av andras). Det skiljer sig även från passiv självhävdelse (det vill säga förnekande av egna rättigheter till förmån för andras) och från passiv-aggressiv självhävdelse (det vill säga bristande respekt för både egna och andras rättigheter). Gränsdragningarna mellan kategorierna är förstås flytande, eftersom dimensionerna är kontinuerliga.
+
+```{r assertiveness, out.width="75%", fig.align="center", fig.cap='Konstruktiv självhävdelse definieras i träningsprogrammet Respekt i kvadrat som handlande som är förenligt med samtidig respekt för egna och andras rättigheter. Passiv självhävdelse kan på samma sätt definieras som låg grad av respekt för egna rättigheter men hög grad av respekt för andras rättigheter; aggressiv självhävdelse kan definieras som hög grad av respekt för egna rättigheter men låg grad av respekt för andras rättigheter.'}
+
+knitr::include_graphics("canvas-konstruktiv-slinga-X.pdf")
+
+```
+
+## Konstruktiv självhävdelse och aktuellt forskningsläge
+
+Forskning på *assertiveness* övergavs i stort sett på 70- och 80-talet. Under de senaste åren har intresset för självhävdelse ökat igen. @Vagos2019 konstaterar att självupplevd grad av psykiskt lidande korrelerar negativt med grad av konstruktiv självhävdelse, i linje med rationalen för träning i *assertiveness* som den presenterades av @Wolpe1966. @Amy2015 visar en negativ korrelation mellan att uppleva social ångest och konstruktiv självhävdelse. Deras slutsats är att man kan öka oddsen för konstruktivt självhävdande beteenden för en person antingen genom att i behandling **[minska/exponera för]** social ångest och/eller att arbeta med hur personen förhåller sig till sin ångest. 
+
+@Speed2018a sammanställer forskningsläget kring *assertiveness*. Författarna konstaterar att träning i konstruktiv självhävdelse kan förbättra måendet vid både ångestsyndrom och depression och öka självförtroende samt förbättra upplevd tillfredsställelse i parrelationer. Författarna konstaterar att träning i konstruktiv självhävdelse redan ingår i de bredare begreppen som beteendeaktivering och färdighetsträning i flertalet allt mer beforskade behandlingsmetoder -- som dialektisk beteendeterapi (DBT), *Acceptance and Commitment Therapy* (ACT) och beteendeaktivering vid depression. @Speed2018a konstaterar att en stor andel av den forskning om *assertiveness* som transdiagnostiskt begrepp som har gjorts är till åren kommen och att det finns ett stort behov att på nytt utvärdera den specifika effekten av självhävdelseträning. 
+
+## Evidensen för KBT vid ångest och depression
+
+Evidensen för beteendeterapi och KBT för syndromala och icke-syndromala psykologiska problem har konstaterats vara god sedan många år tillbaka, både inom ramen för väl avgränsade och kontrollerade *efficacy*-studier och i ekologiskt valida *effectiveness*-studier. Det gäller även i hög grad de områden för vilka bristande konstruktiv självhävdelse är en del av problembeskrivningarna, till exempel ångestsyndrom, social fobi och generaliserat ångestsyndrom (GAD) liksom nedstämdhetssyndrom. @Chambless2001 ger en tidig översikt av det samlade forskningsläget **[utöka med specifika slutsatser]**. @Hofmann2012 är en översikt av meta-analyser som visar att KBT alltjämt är en av de mest effektiva terapiformerna. I deras översikt visade sig KBT effektivt för att motverka bland annat trauma- och stressrelaterade symptom, liksom depressiva och ångestrelaterade syndrom. Litteraturen bekräftar att KBT är har god effekt för de syndrom som @Speed2018a associerar med brister i konstruktiv självhävdelse.
+
+
+# Methods
+
+Sample-"storleken 'hej'" \'för\' varje grupp bestämdes med en powerberäkning. Alla i studien planerade manipulationer, mätttillfällen och all tillgänglig data har använts i de efterföljande analyserna.
+
+We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. <!-- 21-word solution (Simmons, Nelson & Simonsohn, 2012; retrieved from http://ssrn.com/abstract=2160588) -->
+
+## Deltagare
+
+```{r demographics}
+
+# age min max mean sd
+# gender (man, kvinna)
+# civilstånd (singel, sambo, gift, annat)
+# sysselsättning (studerande, arbetslös, pensionär, föräldrarledig, sjukskriven, annat)
+# psykofarmaka-behandling vid start (ja, nej)
+# tidigare psykofarmaka-behandling (ja, nej)
+# tidigare psykologisk behandling (ja, nej)
+# högsta utbildningsnivå (högskoleutbildning, yrkesutbildning, gymnasieutbildning)
+
+#s 12 exempel II
+
+#1054
+#1167
+#1175
+
+```
+## Material (interventionen)
+
+## Metod
+
+## Analys
+
+```{r data,results = "asis"}
+my_lm <- lm(Sepal.Width ~ Sepal.Length + Petal.Width + Petal.Length, data = iris)
+
+apa_lm <- apa_print(my_lm)
+
+apa_table(apa_lm$table, caption = "Iris regression table.")
+
+
+```
+
+
+Vi använde `r cite_r("r-references.bib")` för alla analyser.
+
+
+# Resultat
+
+# Diskussion
+
+
+\newpage
+
+# Referenser
+
+```{r create_r-references}
+r_refs(file = "r-references.bib")
+```
+
+\begingroup
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+
+<div id="refs" custom-style="Bibliography"></div>
+\endgroup
