@@ -1,5 +1,5 @@
 ---
-title             : "Respekt i kvadrat: en randomiserad kontrollerad effektstudie av kognitiv beteendeeterapi via internet på graden av konstruktiv självhävdelse"
+title             : "Respekt i kvadrat: en randomiserad kontrollerad effektstudie av internetförmedlad kognitiv beteendeterapi på graden av konstruktiv självhävdelse"
 shorttitle        : "Respekt i kvadrat"
 author: 
   - name          : "Tobias Hagberg"
@@ -40,7 +40,7 @@ keeptex           : true
 lang              : sv-SE
 header-includes:
    - \raggedbottom
-#  - \setmainfont{Times New Roman}
+   - \setmainfont{Times New Roman}
 ---
 
 ```{r preferences and dependencies, include = FALSE}
@@ -51,8 +51,8 @@ options(contrasts=c("contr.sum","contr.poly")) # Sum-to-zero contrasts for facto
 
 options(knitr.table.format = "latex")
 
-#devtools::install_github("crsh/papaja@devel",force=TRUE) # APA-6 compliance
-library("papaja")
+#devtools::install_github("crsh/papaja@devel",force=TRUE)
+library("papaja") # APA-6 style guide compliance
 library("readxl")
 library("knitr")
 library("kableExtra")
@@ -363,29 +363,44 @@ knitr::include_graphics("canvas-konstruktiv-slinga-X.pdf")
 
 Forskning på *assertiveness* övergavs i stort sett efter 1970-talet. Under de senaste åren har dock intresset för självhävdelse ökat något igen. @Vagos2019 konstaterar att självupplevd grad av psykiskt lidande korrelerar negativt med grad av konstruktiv självhävdelse, i linje med rationalen för träning i *assertiveness* som den presenterades av @Wolpe1966. @Amy2015 visar en negativ korrelation mellan att uppleva social ångest och konstruktiv självhävdelse. Deras slutsats är att man kan öka oddsen för konstruktivt självhävdande beteenden för en person antingen genom att i behandling **[minska/exponera för]** social ångest och/eller att arbeta med hur personen förhåller sig till sin ångest. 
 
-@Speed2018a sammanställer forskningsläget kring *assertiveness*. Författarna konstaterar att träning i konstruktiv självhävdelse kan förbättra måendet vid både ångestsyndrom och depression och öka självförtroende samt förbättra upplevd tillfredsställelse i parrelationer. Författarna konstaterar att träning i konstruktiv självhävdelse redan ingår i de bredare begreppen som beteendeaktivering och färdighetsträning i flertalet allt mer beforskade behandlingsmetoder -- som dialektisk beteendeterapi (DBT), *Acceptance and Commitment Therapy* (ACT) och beteendeaktivering vid depression. @Speed2018a konstaterar att en stor andel av den forskning om *assertiveness* som transdiagnostiskt begrepp som har gjorts är till åren kommen och att det finns ett stort behov att på nytt utvärdera den specifika effekten av självhävdelseträning. 
+@Speed2018a sammanställer forskningsläget kring *assertiveness*. Träning i konstruktiv självhävdelse kan förbättra måendet vid både ångestsyndrom och depression och öka självförtroende samt förbättra upplevd tillfredsställelse i parrelationer. Författarna konstaterar att träning i konstruktiv självhävdelse redan ingår i de bredare begreppen som beteendeaktivering och färdighetsträning i flertalet allt mer beforskade behandlingsmetoder -- som dialektisk beteendeterapi (DBT), *Acceptance and Commitment Therapy* (ACT) och beteendeaktivering vid depression. En stor andel av den forskning om *assertiveness* som transdiagnostiskt begrepp som har gjorts är till åren kommen och att det finns ett stort behov att på nytt utvärdera den specifika effekten av självhävdelseträning [@Speed2018a]. 
 
 ## Evidensen för KBT vid ångest och depression
 
-Evidensen för beteendeterapi och KBT för syndromala och icke-syndromala psykologiska problem har konstaterats vara god sedan många år tillbaka, både inom ramen för väl avgränsade och kontrollerade *efficacy*-studier och i ekologiskt valida *effectiveness*-studier. Det gäller även i hög grad de områden för vilka bristande konstruktiv självhävdelse är en del av problembeskrivningarna, till exempel ångestsyndrom, social fobi och generaliserat ångestsyndrom (GAD) liksom nedstämdhetssyndrom. 
+Evidensen för beteendeterapi och KBT för syndromala och icke-syndromala psykologiska problem har konstaterats vara god sedan många år tillbaka, både inom ramen för väl avgränsade och kontrollerade *efficacy*-studier och i ekologiskt valida *effectiveness*-studier. Det gäller även i hög grad de områden för vilka bristande konstruktiv självhävdelse är en del av problembeskrivningarna, till exempel ångestsyndrom, social fobi, generaliserat ångestsyndrom (GAD) och depression. 
 
-@Chambless2001 ger en tidig översikt av det samlade forskningsläget för KBT utifrån angivna utgångspunkter för vad som kan betraktas som av empiri bekräftat framgångsrika terapiformer -- det vill säga terapi som undersökts med randomiserade kontrollerade studier, specificerade testpopulationer och väl beskrivna behandlingar.
+@Chambless2001 ger en tidig översikt av det samlade forskningsläget för KBT utifrån angivna utgångspunkter för vad som kan betraktas som av empiri bekräftat framgångsrika terapiformer -- det vill säga terapi som undersökts med randomiserade kontrollerade studier, specificerade testpopulationer och väl beskrivna behandlingar. Sammanställningen visar att KBT överlag har bättre evidens än andra terapiformer. Systematiska sammanställningar med uppdaterat forskningsläge utifrån dessa principer publiceras sedan dess regelbundet i England av @NationalInstituteforHealthandCareExcellence2018 och i USA av @AmericanPsychologicalAssociation2016. @Socialstyrelsen2017 ger de senaste nationella riktlinjerna för vård vid depression och ångestsyndrom i Sverige. I dessa riktlinjer är KBT-behandling näst intill uteslutande förstahandsvalet vid psykologisk behandling.
 
-Systematiska sammanställningar med uppdaterat forskningsläge utifrån dessa principer publiceras sedan dess regelbundet i England av @NationalInstituteforHealthandCareExcellence2018 och i USA av @AmericanPsychologicalAssociation2016. @Socialstyrelsen2017 ger de senaste nationella riktlinjerna för vård vid depression och ångestsyndrom i Sverige. I dessa riktlinjer är KBT-behandling näst intill uteslutande förstahandsvalet vid psykologisk behandling.
-
-@Hofmann2012 är en översikt av meta-analyser som visar att KBT alltjämt är en av de mest effektiva terapiformerna. I deras översikt visade sig KBT effektivt för att motverka bland annat trauma- och stressrelaterade symptom, liksom depressiva och ångestrelaterade syndrom. Litteraturen bek räftar att KBT är har god effekt för de syndrom som @Speed2018a associerar med brister i konstruktiv självhävdelse.
-
+@Hofmann2012 är en översikt av meta-analyser som visar att KBT alltjämt är en av de mest effektiva terapiformerna. I deras översikt visade sig KBT effektivt för att motverka bland annat trauma- och stressrelaterade symptom, liksom depressiva och ångestrelaterade syndrom. Litteraturen bekräftar att KBT är har god effekt för de syndrom som @Speed2018a associerar med brister i konstruktiv självhävdelse.
 
 Trots att evidensen för kognitiv och beteendeterapeutisk behandling vid ångestsyndrom och depressiva syndrom är god förblir majoriteten av fallen även i länder med väl utvecklad sjukvård obehandlade @Craske2017.
 
-## Evidensen för I-KBT jämfört med terapeutledd KBT
+## Evidensen för I-KBT
 
-I-KBT är en effektiv behandlingsmetod för ett brett spektrum av olika besvär. I en meta-analys från 2018 – som inkluderade 64 RCT-studier – konstateras I-KBT vara effektivt för behandling av både depression, paniksyndrom, agorafobi, social fobi samt generaliserat ångestsyndrom [@Andrews2018]. Författarna finner att medeleffektstorleken för internet-KBT (I-KBT) är 0.8 eller mer i jämförelse med kontrollbetingelse. Enligt resultaten tenderar också effekten att hålla i sig över tid. I-KBT är dessutom jämförbart effektmässigt med terapeutledd terapi. Dessa resultat bekräftar tidigare fynd i samma riktning med 22 RCT-studier [@Andrews]. 
+I-KBT är en effektiv behandlingsmetod för ett brett spektrum av olika besvär. I en meta-analys från 2018 – som inkluderade 64 RCT-studier – konstateras I-KBT vara effektivt för behandling av både depression, paniksyndrom, agorafobi, social fobi samt generaliserat ångestsyndrom [@Andrews2018]. Författarna finner att medeleffektstorleken för internet-KBT (I-KBT) är 0,8 eller mer i jämförelse med kontrollbetingelse. Enligt resultaten tenderar också effekten att hålla i sig över tid. I-KBT är dessutom jämförbart effektmässigt med terapeutledd terapi. Dessa resultat bekräftar tidigare fynd i samma riktning med 22 RCT-studier [@Andrews]. 
 
-I-KBT har även visat sig vara effektivt vid behandling av PTSD [@Sijbrandij2016], insomni [@Zachariae2016] och för att minska lidandet vid olika kroniska hälsobesvär [@Mehta2019]. Det har även visat sig att I-KBT är en verksam behandlingsmetod vid en rad olika transdiagnostiska besvär såsom stress [@Day2013], prokrastinering [@Rozental2015] och perfektionism [@Rozental2017; @Wade2019].
+I-KBT har även visat sig vara effektivt vid behandling av PTSD [@Sijbrandij2016], insomni [@Zachariae2016] och för att minska lidandet vid olika kroniska hälsobesvär [@Mehta2019]. I-KBT är också en verksamt vid en rad olika transdiagnostiska symtom såsom stress [@Day2013], prokrastinering [@Rozental2015] och perfektionism [@Rozental2017; @Wade2019].
+
+**Flytta hit och redigera: [Icke desto mindre har I-KBT-behandling visat sig vara en effektiv behandlingsform. Både i en metaanalys från 2008 samt i en metaanalys från 2018 konstaterades I-KBT-behandlingar likvärdiga ansikte mot ansikte-behandlingar (Barak2008; Carlbring2018).]**
 
 Trots att evidensen för kognitiv och beteendeterapeutisk behandling vid ångestsyndrom och depressiva syndrom är god förblir majoriteten av fallen även i länder med väl utvecklad sjukvård obehandlade [@Craske2017]. Många kan bära på ett psykiskt lidande utan att för den skull nå upp till kriterierna för någon av diagnoserna i DSM. Och för dem som ändå skulle göra det är tillgången till vård en begränsande faktor som I-KBT kan avhjälpa [@Andrews2018].
 
+### Användarupplevelsen och framgångsfaktorer vid I-KBT
+
+I-KBT kan erbjuda patienter fördelar i förhållande till terapeutledd behandling. I-KBT kan erbjuda en anonymitet som gör det lättare för vissa grupper att söka sig till vård [@Lundgren2018; @Rozental2020] och ger dessutom möjlighet till tidsmässig flexibilitet. Ytterligare en fördel som @Lundgren2018 uppmärksammar är det många upplever att det är enklare att uttrycka sig i skrift än i tal.
+
+En nackdel med I-KBT är att vissa deltagare hindras av besvär med tekniken, som hindrar dem från att ta del av vården som erbjuds. En annan är att de lösare tidsramarna erbjuder möjlighet att skjuta upp eller prioritera ned internetbaserad behandling, jämfört med fysiska besök hos en kliniker [@Burke2019]. **[till diskussion]**
+
+För att maximera oddsen för ett positivt utfall bör I-KBT-behandlingar ha tydliga inklusionskriterier **[det har vi inte haft -- till diskussion]** samt screena och välja deltagare utifrån dessa. Framgångsrika I-KBT-behandlingar inkluderar interaktiva behandlingskomponenter, innehåller relevanta pedagogiska inslag om psykiska och kroppsliga besvär och om vad som vidmakthåller psykiska problem, liksom komponenter för att bryta vidmakthållandet av besvären [@Barak2008].
+
+## Verksamma komponenter
+
+### Emotionellt/upplevelsmässigt undvikande
+@Pittig2014 -- skriv om detta!
+
+<!--
+Individuals avoid stimuli which are associated with aversive experience to preserve safety. However, behavioral avoidance also causes impairments and prevents the individual from attaining positive rewards. Little is known about the link between fear acquisition and the development of behavioral avoidance in the presence of potential rewards. Therefore, two experiments investigated the impact of fear conditioning on a subsequent gambling task. In an experimental group (n = 30) advantageous choices (higher reward probability) were linked to a fear-relevant stimulus that was associated with an aversive unconditioned stimulus (US) during fear conditioning (conditioned stimulus, CS+). A disadvantageous choice (lower reward probability) was, however, linked to a safe stimulus that was never associated with the US (CS-). In a control group (n = 25), fear conditioning was followed by a similar gambling task with novel stimuli. A second experiment focused on individual predictors of avoidant decisions (n = 81). Compared with the control group, individuals in the experimental groups avoided the advantageous CS + choice despite fewer gains. The predictor analysis further clarified that avoidant decisions were pronounced in highly trait anxious participants who exhibited higher fear responses. On the other hand, findings also indicated a reduction in absolute avoidance across the task. Combined, these findings demonstrate that fear conditioning can lead to avoidant decision making, especially in vulnerable individuals. The resulting costs parallel impairments caused by behavioral avoidance. Such an emotional decision-making style may be a link between aversive experience and the development of habitual pathological avoidance. Introducing rewards for approach, however, may counteract avoidant decisions.
+-->
 
 # Methods
 
