@@ -61,10 +61,10 @@ library("kableExtra")
 
 ```{r data setup, eval = FALSE}
 
-# This chunch is to be run only once in order to set up anonymous data that can be published on figshare
+# This chunk is to be run only once in order to set up anonymous data that can be published on figshare
 # To run this chunk, change "eval = FALSE" to "eval = TRUE"
 
-# Export data from iTerapi
+# First, export data from iTerapi
 # - Go to "Administrera" > "Exportera"
 # - Select "Frågeformulär"
 # - Select each questionnaire and all scales
@@ -72,9 +72,7 @@ library("kableExtra")
 # - Select "Inkludera svar från" > "Endast användare i valda grupper"
 # - Select "Grupp 1: Behandling exkl stöd", "Grupp 2: Behandling inkl stöd" and "Grupp 3: Väntelista"
 # - Press the "Exportera" button
-# See image file "exporting-respekt-data.png"
-
-#knitr::include_graphics("exporting-respekt-data.png")
+# See image file "exporting-respekt-data.png" for guidance
 
 ##################################################################################
 # Put the exported file in the parent folder of this file and edit the line below
@@ -89,7 +87,6 @@ r2.raw.data <- read_excel(raw_excel)
 r2.raw.data[r2.raw.data == "[missing data]"] <- NA
 r2.raw.data[r2.raw.data == "NA"] <- NA
 r2.raw.data[r2.raw.data == "NaN"] <- NA
-#r2.raw.data[r2.raw.data == ""] <- NA
 
 # Define columns to keep
 keepers <- c(2,3,
@@ -104,7 +101,7 @@ r2.wide.data <- as.data.frame(r2.raw.data[keepers])
 # Make sure numericals are numeric
 r2.wide.data[,c(3:58)] <- sapply(r2.wide.data[,c(3:58)], as.numeric)
 
-# Define column names for keepers
+# Define column names for preliminary keepers
 colnames <-
   c(
     "pre_subject",
@@ -171,21 +168,17 @@ colnames <-
 colnames(r2.wide.data) <- colnames
 
 # Merge post data for group 3 with post data for group 1 + 2
+# Pre: 
+# - 3--16
+# During:
+# - 17--30
+# Post group 1 + 2:
+# - 31--44
+# Post group 3:
+# - 45--58
 g3key <- which(!is.na(r2.wide.data$postg3_subject))
 r2.wide.data[g3key,c(31:44)] <- r2.wide.data[g3key,c(45:58)]
 r2.wide.data <- r2.wide.data[,c(1:44)] # Keep columns that we want
-
-# 3
-# 16
-# 
-# 17
-# 30
-# 
-# 31
-# 44
-# 
-# 45
-# 58
 
 # Anonymise, simplify and clean up data
 r2.wide.data$subject <- factor(c(1:length(r2.wide.data[,1]))) # Add subject IDs
@@ -199,7 +192,8 @@ r2.wide.data$group <-
       ifelse(grepl("Grupp 3", r2.wide.data$pre_group), "Waitlist", NA)
     )
   ),
-  levels = c("Waitlist", "Selfhelp", "Guided")) # Add group designations
+  levels = c("Waitlist", "Selfhelp", "Guided"),
+  labels = c("Wait","Self","Guide")) # Add group designations
 r2.wide.data$therapist <-
   factor(ifelse(
     grepl("Grupp 2: P", r2.wide.data$pre_group),
@@ -345,7 +339,7 @@ Underskott av beteenden som går att samla under begreppet *assertiveness* (frå
 
 Träning i *assertiveness* har en lång historia med behavioristiska rötter från 1950-talet och framåt, bland annat genom @andrew2001conditioned och @Wolpe1966. Dessa första terapier byggde på principer om klassisk betingning: Målet för träningen var att para aversiva stimuli som tidigare gav upphov till exempelvis passivitet eller aggressivitet med adaptiva beteenden som tidigare uttryckts i underskott – ofta med avslappning som en integrerad del, utifrån rationalen att avslappning och ångest inte är förenliga. Som en del i den självhävdelsefokuserade psykoterapin föreskrevs ett antal olika  beteenden för klienter och patienter att träna på, till exempel att säga nej till andra.
 
-Under 1970-talet kom träning i konstruktiv självhävdelse att både formaliseras till kompletta behandlingsprogram, som i @LINEHAN1979, och populariseras, som i självhjälpstitlar som *Don’t say yes when you want to say no* [@fensterheim1975don] och *When I say no, I feel guilty: how to cope–using the skills of systematic assertive therapy* [@smith1975say]. Självhjälpsboomen i slutet av 1970-talet sammanföll med sociala och politiska omvälvningar i samhället, där marginaliserade grupper gjorde sig allt mer hörda och maktstrukturer i samhället sattes under förändringstryck. Dessa emanciperande och normbrytande rörelser väckte motstånd – precis som behavioristiskt influerade terapier gjorde. Ett roligt exempel på kritik av träning i konstruktiv självhävdelse är @607233319760514, som frankt rekommenderade deltagare i *assertiveness*-kurser att hävda sig själva genom att vägra betala kursavgiften.
+Under 1970-talet kom träning i konstruktiv självhävdelse att både formaliseras till kompletta behandlingsprogram, som i @LINEHAN1979, och populariseras, som i självhjälpstitlar som *Don’t say yes when you want to say no* [@fensterheim1975don] och *When I say no, I feel guilty: how to cope–using the skills of systematic assertive therapy* [@smith1975say]. Självhjälpsboomen under 1970-talet sammanföll med sociala och politiska omvälvningar i samhället, där marginaliserade grupper gjorde sig allt mer hörda och maktstrukturer i samhället sattes under förändringstryck. Dessa emanciperande och normbrytande rörelser väckte motstånd – precis som behavioristiskt influerade terapier gjorde. Ett roligt exempel på kritik av träning i konstruktiv självhävdelse är @607233319760514, som frankt rekommenderade deltagare i *assertiveness*-kurser att hävda sig själva genom att vägra betala kursavgiften.
 
 I och med psykatrins allt tydligare inriktning mot syndromala kategoriseringar av psykisk ohälsa, kanske tydligast i form av *Diagnostic and Statistical Manual of Mental Disorders* [@american1968diagnostic] med efterföljare, kom träning i *assertiveness* så småningom att falla i glömska. Mycket sporadiskt återaktualiserades begreppet som mål för behandling under 1990-talet, då kompletterad med metoder för kognitiv omstrukturering i enlighet med principerna i @beck1979cognitive, för att på så sätt hjälpa personer med (mer eller mindre generaliserade) hindrande förutsägelser i svåra situationer att finna stöd för mer hjälpsamma förutsägelser.
 
