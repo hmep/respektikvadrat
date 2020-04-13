@@ -12,9 +12,14 @@ author:
 affiliation:
   - id            : "a"
     institution   : "Psykologiska institutionen, Stockholms universitet"
+
+authornote: |
+  Tack till alla deltagare som har följt med på en för oss sannerligen utvecklande resa genom träningsprogrammet!
+
 abstract: |
   Det transdiagnostiska begreppet ’konstruktiv självhävdelse’ (*assertiveness* på engelska) kan definieras som handlande som är förenligt med respekt för både egna och andras rättigheter, exempelvis att uttrycka behov och önskemål, att sätta gränser och att dela tankar och känslor. Brister i konstruktiv självhävdelse är förknippat med klinisk och subklinisk psykisk ohälsa, till exempel stressrelaterad ohälsa, svårigheter i relationer, emotionell instabilitet, generaliserat ångestsyndrom, social ångest och depression. Syftet med den här studien är att undersöka effekten på konstruktiv självhävdelse av ett internet-administrerat träningsprogram med kognitiv-beteendeterapeutisk inriktning. 210 personer med självupplevda besvär rekryterades via annonsering i sociala medier. Deltagarna randomiserades till tre grupper: en som fick tillgång till träningsprogrammet (n = 70), en som fick tillgång till träningsprogrammet med terapeutstöd (n = 70) och en väntelista (n = 70). Graden av konstruktiv respektive aggressiv självhävdelse mättes med Adaptive and Aggressive Assertiveness Scales (AAA-S). [Här visar vi att (huvudresultatet). (huvudresultatet i relation till tidigare kunskap, ex “Vi fann att bristande konstruktiv självhävdelse var ett relevant mål för en transdiagnostisk intervention som gav samtidigt lindring över ett brett spann symtom. Vi fann också att terapeutstöd gav …”) (resultaten i en vidare kontext) (ännu bredare perspektiv och eventuella rekommendationer, exempelvis “Vi förespråkar ...”)]
     <!-- https://tinyurl.com/ybremelq -->
+
 keywords          : "självhävdelse, ångestsyndrom, ångest, stress, undvikande, assertiveness, anxiety disorder, anxiety, stress, avoidance"
 wordcount         : "X"
 bibliography      : ["r-references.bib", "library.bib"]
@@ -33,7 +38,8 @@ output:
     latex_engine  : lualatex
 keeptex           : true
 lang              : sv-SE
-#header-includes:
+header-includes:
+   - \raggedbottom
 #  - \setmainfont{Times New Roman}
 ---
 
@@ -361,7 +367,7 @@ knitr::include_graphics("canvas-konstruktiv-slinga-X.pdf")
 
 ## Konstruktiv självhävdelse och aktuellt forskningsläge
 
-Forskning på *assertiveness* övergavs i stort sett på 70- och 80-talet. Under de senaste åren har intresset för självhävdelse ökat igen. @Vagos2019 konstaterar att självupplevd grad av psykiskt lidande korrelerar negativt med grad av konstruktiv självhävdelse, i linje med rationalen för träning i *assertiveness* som den presenterades av @Wolpe1966. @Amy2015 visar en negativ korrelation mellan att uppleva social ångest och konstruktiv självhävdelse. Deras slutsats är att man kan öka oddsen för konstruktivt självhävdande beteenden för en person antingen genom att i behandling **[minska/exponera för]** social ångest och/eller att arbeta med hur personen förhåller sig till sin ångest. 
+Forskning på *assertiveness* övergavs i stort sett efter 1970-talet. Under de senaste åren har dock intresset för självhävdelse ökat något igen. @Vagos2019 konstaterar att självupplevd grad av psykiskt lidande korrelerar negativt med grad av konstruktiv självhävdelse, i linje med rationalen för träning i *assertiveness* som den presenterades av @Wolpe1966. @Amy2015 visar en negativ korrelation mellan att uppleva social ångest och konstruktiv självhävdelse. Deras slutsats är att man kan öka oddsen för konstruktivt självhävdande beteenden för en person antingen genom att i behandling **[minska/exponera för]** social ångest och/eller att arbeta med hur personen förhåller sig till sin ångest. 
 
 @Speed2018a sammanställer forskningsläget kring *assertiveness*. Författarna konstaterar att träning i konstruktiv självhävdelse kan förbättra måendet vid både ångestsyndrom och depression och öka självförtroende samt förbättra upplevd tillfredsställelse i parrelationer. Författarna konstaterar att träning i konstruktiv självhävdelse redan ingår i de bredare begreppen som beteendeaktivering och färdighetsträning i flertalet allt mer beforskade behandlingsmetoder -- som dialektisk beteendeterapi (DBT), *Acceptance and Commitment Therapy* (ACT) och beteendeaktivering vid depression. @Speed2018a konstaterar att en stor andel av den forskning om *assertiveness* som transdiagnostiskt begrepp som har gjorts är till åren kommen och att det finns ett stort behov att på nytt utvärdera den specifika effekten av självhävdelseträning. 
 
@@ -369,21 +375,20 @@ Forskning på *assertiveness* övergavs i stort sett på 70- och 80-talet. Under
 
 Evidensen för beteendeterapi och KBT för syndromala och icke-syndromala psykologiska problem har konstaterats vara god sedan många år tillbaka, både inom ramen för väl avgränsade och kontrollerade *efficacy*-studier och i ekologiskt valida *effectiveness*-studier. Det gäller även i hög grad de områden för vilka bristande konstruktiv självhävdelse är en del av problembeskrivningarna, till exempel ångestsyndrom, social fobi och generaliserat ångestsyndrom (GAD) liksom nedstämdhetssyndrom. 
 
-@Chambless2001 ger en tidig översikt av det samlade forskningsläget **[utöka med specifika slutsatser]**. @Hofmann2012 är en översikt av meta-analyser som visar att KBT alltjämt är en av de mest effektiva terapiformerna. I deras översikt visade sig KBT effektivt för att motverka bland annat trauma- och stressrelaterade symptom, liksom depressiva och ångestrelaterade syndrom. Litteraturen bek räftar att KBT är har god effekt för de syndrom som @Speed2018a associerar med brister i konstruktiv självhävdelse.
+@Chambless2001 ger en tidig översikt av det samlade forskningsläget för KBT utifrån angivna utgångspunkter för vad som kan betraktas som av empiri bekräftat framgångsrika terapiformer -- det vill säga terapi som undersökts med randomiserade kontrollerade studier, specificerade testpopulationer och väl beskrivna behandlingar.
 
-Systematiska sammanställningar med uppdaterat forskningsläge kring behandling av exempelvis ångestsyndrom publiceras regelbundet England av @NationalInstituteforHealthandCareExcellence2018 och i USA av @AmericanPsychologicalAssociation2016. @Socialstyrelsen2017 ger de senaste nationella riktlinjerna för vård vid depression och ångestsyndrom i Sverige. I dessa riktlinjer är KBT-behandling näst intill uteslutande förstahandsvalet vid psykologisk behandling.
+Systematiska sammanställningar med uppdaterat forskningsläge utifrån dessa principer publiceras sedan dess regelbundet i England av @NationalInstituteforHealthandCareExcellence2018 och i USA av @AmericanPsychologicalAssociation2016. @Socialstyrelsen2017 ger de senaste nationella riktlinjerna för vård vid depression och ångestsyndrom i Sverige. I dessa riktlinjer är KBT-behandling näst intill uteslutande förstahandsvalet vid psykologisk behandling.
+
+@Hofmann2012 är en översikt av meta-analyser som visar att KBT alltjämt är en av de mest effektiva terapiformerna. I deras översikt visade sig KBT effektivt för att motverka bland annat trauma- och stressrelaterade symptom, liksom depressiva och ångestrelaterade syndrom. Litteraturen bek räftar att KBT är har god effekt för de syndrom som @Speed2018a associerar med brister i konstruktiv självhävdelse.
+
 
 Trots att evidensen för kognitiv och beteendeterapeutisk behandling vid ångestsyndrom och depressiva syndrom är god förblir majoriteten av fallen även i länder med väl utvecklad sjukvård obehandlade @Craske2017.
 
 ## Evidensen för I-KBT jämfört med terapeutledd KBT
 
-I-KBT har visat sig vara en effektiv behandlingsmetod för ett brett spektrum av olika besvär. I en meta-analys från 2018 – som inkluderade 64 RCT-studier – konstaterades I-KBT vara effektivt för behandling av både depression, paniksyndrom, agorafobi, social fobi samt generaliserat ångestsyndrom [@Andrews; @Andrews2018]. I-KBT har även visat sig vara effektivt vid behandling av PTSD [@Sijbrandij2016], insomni [@Zachariae2016] och för att minska lidandet vid olika kroniska hälsobesvär [@Mehta2019]. Det har även visat sig att I-KBT är en verksam behandlingsmetod vid en rad olika transdiagnostiska besvär såsom stress [@Day2013], prokrastinering [@Rozental2015] och perfektionism [@Rozental2017; @Wade2019].
+I-KBT är en effektiv behandlingsmetod för ett brett spektrum av olika besvär. I en meta-analys från 2018 – som inkluderade 64 RCT-studier – konstateras I-KBT vara effektivt för behandling av både depression, paniksyndrom, agorafobi, social fobi samt generaliserat ångestsyndrom [@Andrews2018]. Författarna finner att medeleffektstorleken för internet-KBT (I-KBT) är 0.8 eller mer i jämförelse med kontrollbetingelse. Enligt resultaten tenderar också effekten att hålla i sig över tid. I-KBT är dessutom jämförbart effektmässigt med terapeutledd terapi. Dessa resultat bekräftar tidigare fynd i samma riktning med 22 RCT-studier [@Andrews]. 
 
-
-
-@Kaltenthaler2006 utvärderar effekten i 20 tidiga studier av datoriserad KBT för behandling av ångest, depression, fobier, panik och tvångssyndrom. Datoriserad KBT är för depression, ångest, fobier och panik lika effektiv som terapeutledd KBT. Författarna identifierar behov av utvärderingar av hur datoriserad administration av KBT kan användas i ett stepped-care-sammanhang, samt ytterligare forskning kring KBT via internet. 
-
-@Andrews och senare @Andrews2018 bekräftar dessa fynd i metastudier av 22 respektive 64 randomiserade och kontrollerade effektstudier. Författarna finner att medeleffektstorleken för internet-KBT (I-KBT) är 0.8 eller mer i jämförelse med kontrollbetingelse. Enligt resultaten tenderar också effekten att hålla i sig över tid. I-KBT är jämförbart effektmässigt med terapeutledd terapi.
+I-KBT har även visat sig vara effektivt vid behandling av PTSD [@Sijbrandij2016], insomni [@Zachariae2016] och för att minska lidandet vid olika kroniska hälsobesvär [@Mehta2019]. Det har även visat sig att I-KBT är en verksam behandlingsmetod vid en rad olika transdiagnostiska besvär såsom stress [@Day2013], prokrastinering [@Rozental2015] och perfektionism [@Rozental2017; @Wade2019].
 
 Trots att evidensen för kognitiv och beteendeterapeutisk behandling vid ångestsyndrom och depressiva syndrom är god förblir majoriteten av fallen även i länder med väl utvecklad sjukvård obehandlade [@Craske2017]. Många kan bära på ett psykiskt lidande utan att för den skull nå upp till kriterierna för någon av diagnoserna i DSM. Och för dem som ändå skulle göra det är tillgången till vård en begränsande faktor som I-KBT kan avhjälpa [@Andrews2018].
 
