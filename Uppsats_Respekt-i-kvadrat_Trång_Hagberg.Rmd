@@ -366,6 +366,7 @@ Forskning på *assertiveness* övergavs i stort sett på 70- och 80-talet. Under
 
 Evidensen för beteendeterapi och KBT för syndromala och icke-syndromala psykologiska problem har konstaterats vara god sedan många år tillbaka, både inom ramen för väl avgränsade och kontrollerade *efficacy*-studier och i ekologiskt valida *effectiveness*-studier. Det gäller även i hög grad de områden för vilka bristande konstruktiv självhävdelse är en del av problembeskrivningarna, till exempel ångestsyndrom, social fobi och generaliserat ångestsyndrom (GAD) liksom nedstämdhetssyndrom. @Chambless2001 ger en tidig översikt av det samlade forskningsläget **[utöka med specifika slutsatser]**. @Hofmann2012 är en översikt av meta-analyser som visar att KBT alltjämt är en av de mest effektiva terapiformerna. I deras översikt visade sig KBT effektivt för att motverka bland annat trauma- och stressrelaterade symptom, liksom depressiva och ångestrelaterade syndrom. Litteraturen bekräftar att KBT är har god effekt för de syndrom som @Speed2018a associerar med brister i konstruktiv självhävdelse.
 
+Systematiska sammanställningar med uppdaterat forskningsläge kring behandling av exempelvis ångestsyndrom har regelbundet publicerats i England av @NationalInstituteforHealthandCareExcellence2018 och i USA av @AmericanPsychologicalAssociation2016. @Socialstyrelsen2017 ger de senaste nationella riktlinjerna för vård vid depression och ångestsyndrom i Sverige. I dessa riktlinjer är KBT-behandling näst intill uteslutande förstahandsvalet vid psykologisk behandling.
 
 # Methods
 
