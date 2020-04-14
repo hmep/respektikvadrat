@@ -14,7 +14,7 @@ authornote: |
   Tack till alla deltagare som har följt med på en för oss utmanande (och utvecklande) resa genom träningsprogrammet!
 
 abstract: |
-  Det transdiagnostiska begreppet ’konstruktiv självhävdelse’ (*assertiveness* på engelska) kan definieras som handlande som är förenligt med respekt för både egna och andras rättigheter, exempelvis att uttrycka behov och önskemål, att sätta gränser och att dela tankar och känslor. Brister i konstruktiv självhävdelse är förknippat med klinisk och subklinisk psykisk ohälsa, till exempel stressrelaterad ohälsa, svårigheter i relationer, emotionell instabilitet, generaliserat ångestsyndrom, social ångest och depression. Syftet med den här studien är att undersöka effekten på konstruktiv självhävdelse av ett internet-administrerat träningsprogram med kognitiv-beteendeterapeutisk inriktning. 2XX personer med självupplevda besvär (X% kvinnor, medelålder = X år) rekryterades via annonsering i sociala medier. Deltagarna randomiserades till tre grupper: en som fick tillgång till träningsprogrammet (n = XX), en som fick tillgång till träningsprogrammet med terapeutstöd (n = XX) och en väntelista (n = XX). Graden av konstruktiv respektive aggressiv självhävdelse mättes med Adaptive and Aggressive Assertiveness Scales (AAA-S). [Här visar vi att (huvudresultatet). (huvudresultatet i relation till tidigare kunskap, ex “Vi fann att bristande konstruktiv självhävdelse var ett relevant mål för en transdiagnostisk intervention som gav samtidigt lindring över ett brett spann symtom. Vi fann också att terapeutstöd gav …”) (resultaten i en vidare kontext) (ännu bredare perspektiv och eventuella rekommendationer, exempelvis “Vi förespråkar ...”)]
+  Det transdiagnostiska begreppet ’konstruktiv självhävdelse’ (*assertiveness* på engelska) kan definieras som handlande som är förenligt med respekt för både egna och andras rättigheter, exempelvis att uttrycka behov och önskemål, att sätta gränser och att dela tankar och känslor. Brister i konstruktiv självhävdelse är förknippat med klinisk och subklinisk psykisk ohälsa, till exempel stressrelaterad ohälsa, svårigheter i relationer, emotionell instabilitet, generaliserat ångestsyndrom, social ångest och depression. Syftet med den här studien är att undersöka effekten på konstruktiv självhävdelse av ett internet-administrerat träningsprogram med kognitiv-beteendeterapeutisk inriktning. 204 personer med självupplevda besvär (88% kvinnor, medelålder 41 år) rekryterades via annonsering i sociala medier. Deltagarna randomiserades till tre grupper: en som fick tillgång till träningsprogrammet (n = 67), en som fick tillgång till träningsprogrammet med terapeutstöd (n = 69) och en väntelista (n = 68). Graden av konstruktiv respektive aggressiv självhävdelse mättes med Adaptive and Aggressive Assertiveness Scales (AAA-S). [Här visar vi att (huvudresultatet). (huvudresultatet i relation till tidigare kunskap, ex “Vi fann att bristande konstruktiv självhävdelse var ett relevant mål för en transdiagnostisk intervention som gav samtidigt lindring över ett brett spann symtom. Vi fann också att terapeutstöd gav …”) (resultaten i en vidare kontext) (ännu bredare perspektiv och eventuella rekommendationer, exempelvis “Vi förespråkar ...”)]
     <!-- https://tinyurl.com/ybremelq -->
 
 keywords          : "självhävdelse, ångestsyndrom, ångest, stress, undvikande, assertiveness, anxiety disorder, anxiety, stress, avoidance"
@@ -365,7 +365,7 @@ Begreppet assertiveness kom under 1970-talet att omfamna en allt längre lista m
 
 Graden av konstruktiv självhävdelse för en person i en given situation kan inordnas som en punkt i en graf (se figur \@ref(fig:assertiveness)) med två kontinuerliga dimensioner: handlande med respekt för andras rättigheter på x-axeln och handlande med respekt för egna rättigheter på y-axeln. Konstruktiv självhävdelse skiljer sig från aggressiv självhävdelse (det vill säga hävdande av egna rättigheter på bekostnad av andras). Det skiljer sig även från passiv självhävdelse (det vill säga förnekande av egna rättigheter till förmån för andras) och från passiv-aggressiv självhävdelse (det vill säga bristande respekt för både egna och andras rättigheter). Gränsdragningarna mellan kategorierna är förstås flytande, eftersom dimensionerna är kontinuerliga.
 
-@Mitamura2018problematisering aggressivitet / självhävdelse
+@Mitamura2018 problematisering aggressivitet / självhävdelse
 
 'konstruktiv' funktionell definition
 
@@ -414,11 +414,13 @@ För att maximera oddsen för ett positivt utfall bör I-KBT-behandlingar ha tyd
 ### Emotionellt/upplevelsmässigt undvikande
 @Pittig2014 -- skriv om detta!
 
-@Sewart2019 -- varians
-
 <!--
 Individuals avoid stimuli which are associated with aversive experience to preserve safety. However, behavioral avoidance also causes impairments and prevents the individual from attaining positive rewards. Little is known about the link between fear acquisition and the development of behavioral avoidance in the presence of potential rewards. Therefore, two experiments investigated the impact of fear conditioning on a subsequent gambling task. In an experimental group (n = 30) advantageous choices (higher reward probability) were linked to a fear-relevant stimulus that was associated with an aversive unconditioned stimulus (US) during fear conditioning (conditioned stimulus, CS+). A disadvantageous choice (lower reward probability) was, however, linked to a safe stimulus that was never associated with the US (CS-). In a control group (n = 25), fear conditioning was followed by a similar gambling task with novel stimuli. A second experiment focused on individual predictors of avoidant decisions (n = 81). Compared with the control group, individuals in the experimental groups avoided the advantageous CS + choice despite fewer gains. The predictor analysis further clarified that avoidant decisions were pronounced in highly trait anxious participants who exhibited higher fear responses. On the other hand, findings also indicated a reduction in absolute avoidance across the task. Combined, these findings demonstrate that fear conditioning can lead to avoidant decision making, especially in vulnerable individuals. The resulting costs parallel impairments caused by behavioral avoidance. Such an emotional decision-making style may be a link between aversive experience and the development of habitual pathological avoidance. Introducing rewards for approach, however, may counteract avoidant decisions.
 -->
+
+@Sewart2019 -- varians
+
+## Frågeställningar avslutar bakgrunden
 
 # Methods
 
@@ -532,6 +534,20 @@ descriptives.cs.g3t2t1 <- stat.desc(cs.g3t2t1, basic=TRUE, desc=TRUE, norm=TRUE,
 
 # Diskussion
 
+## metodologiska brister / felkällor / validitet / reliabilitet
+
+asdfadf
+
+
+<!-- kommentar -->
+
+## resultatdiskussion
+
+## i relation till annan forskning, självhävdelse
+
+## behov av ny forskning
+
+## sammanfattning?
 
 \newpage
 
