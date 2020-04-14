@@ -3,21 +3,18 @@ title             : "Respekt i kvadrat: en randomiserad kontrollerad effektstudi
 shorttitle        : "Respekt i kvadrat"
 author: 
   - name          : "Tobias Hagberg"
-    affiliation   : "a"
     email         : "tobias@hagberg.com"
     address       : "Psykologprogrammet, Psykologiska institutionen, Stockholms universitet"
   - name          : "Patrik Trång"
-    affiliation   : "a"
     email         : "patrik.trang@gmail.com"
 affiliation:
-  - id            : "a"
-    institution   : "Psykologiska institutionen, Stockholms universitet"
+  - institution   : "Psykologiska institutionen, Stockholms universitet"
 
 authornote: |
-  Tack till alla deltagare som har följt med på en för oss sannerligen utvecklande resa genom träningsprogrammet!
+  Tack till alla deltagare som har följt med på en för oss utmanande (och utvecklande) resa genom träningsprogrammet!
 
 abstract: |
-  Det transdiagnostiska begreppet ’konstruktiv självhävdelse’ (*assertiveness* på engelska) kan definieras som handlande som är förenligt med respekt för både egna och andras rättigheter, exempelvis att uttrycka behov och önskemål, att sätta gränser och att dela tankar och känslor. Brister i konstruktiv självhävdelse är förknippat med klinisk och subklinisk psykisk ohälsa, till exempel stressrelaterad ohälsa, svårigheter i relationer, emotionell instabilitet, generaliserat ångestsyndrom, social ångest och depression. Syftet med den här studien är att undersöka effekten på konstruktiv självhävdelse av ett internet-administrerat träningsprogram med kognitiv-beteendeterapeutisk inriktning. 210 personer med självupplevda besvär rekryterades via annonsering i sociala medier. Deltagarna randomiserades till tre grupper: en som fick tillgång till träningsprogrammet (n = 70), en som fick tillgång till träningsprogrammet med terapeutstöd (n = 70) och en väntelista (n = 70). Graden av konstruktiv respektive aggressiv självhävdelse mättes med Adaptive and Aggressive Assertiveness Scales (AAA-S). [Här visar vi att (huvudresultatet). (huvudresultatet i relation till tidigare kunskap, ex “Vi fann att bristande konstruktiv självhävdelse var ett relevant mål för en transdiagnostisk intervention som gav samtidigt lindring över ett brett spann symtom. Vi fann också att terapeutstöd gav …”) (resultaten i en vidare kontext) (ännu bredare perspektiv och eventuella rekommendationer, exempelvis “Vi förespråkar ...”)]
+  Det transdiagnostiska begreppet ’konstruktiv självhävdelse’ (*assertiveness* på engelska) kan definieras som handlande som är förenligt med respekt för både egna och andras rättigheter, exempelvis att uttrycka behov och önskemål, att sätta gränser och att dela tankar och känslor. Brister i konstruktiv självhävdelse är förknippat med klinisk och subklinisk psykisk ohälsa, till exempel stressrelaterad ohälsa, svårigheter i relationer, emotionell instabilitet, generaliserat ångestsyndrom, social ångest och depression. Syftet med den här studien är att undersöka effekten på konstruktiv självhävdelse av ett internet-administrerat träningsprogram med kognitiv-beteendeterapeutisk inriktning. 2XX personer med självupplevda besvär (X% kvinnor, medelålder = X år) rekryterades via annonsering i sociala medier. Deltagarna randomiserades till tre grupper: en som fick tillgång till träningsprogrammet (n = XX), en som fick tillgång till träningsprogrammet med terapeutstöd (n = XX) och en väntelista (n = XX). Graden av konstruktiv respektive aggressiv självhävdelse mättes med Adaptive and Aggressive Assertiveness Scales (AAA-S). [Här visar vi att (huvudresultatet). (huvudresultatet i relation till tidigare kunskap, ex “Vi fann att bristande konstruktiv självhävdelse var ett relevant mål för en transdiagnostisk intervention som gav samtidigt lindring över ett brett spann symtom. Vi fann också att terapeutstöd gav …”) (resultaten i en vidare kontext) (ännu bredare perspektiv och eventuella rekommendationer, exempelvis “Vi förespråkar ...”)]
     <!-- https://tinyurl.com/ybremelq -->
 
 keywords          : "självhävdelse, ångestsyndrom, ångest, stress, undvikande, assertiveness, anxiety disorder, anxiety, stress, avoidance"
@@ -31,16 +28,19 @@ linenumbers       : no
 mask              : no
 draft             : no
 documentclass     : "apa6"
-classoption       : "man,a4paper"
+classoption       : "doc,a4paper" # man, jou, doc
 output: 
   papaja::apa6_pdf:
     keep_tex      : TRUE
-    latex_engine  : lualatex
+    latex_engine  : xelatex
 keeptex           : true
 lang              : sv-SE
 header-includes:
-   - \raggedbottom
+#   - \raggedbottom
    - \setmainfont{Times New Roman}
+   - \clearcaptionsetup{figure}
+   - \setlength{\abovecaptionskip}{.5\baselineskip}
+   - \setlength{\belowcaptionskip}{.5\baselineskip}
 ---
 
 ```{r preferences and dependencies, include = FALSE}
@@ -176,7 +176,7 @@ colnames(r2.wide.data) <- colnames
 # - 31--44
 # Post group 3:
 # - 45--58
-g3key <- which(!is.na(r2.wide.data$postg3_subject))
+g3key <- which(!is.na(r2.wide.data$postg3_reminders))
 r2.wide.data[g3key,c(31:44)] <- r2.wide.data[g3key,c(45:58)]
 r2.wide.data <- r2.wide.data[,c(1:44)] # Keep columns that we want
 
@@ -185,22 +185,24 @@ r2.wide.data$subject <- factor(c(1:length(r2.wide.data[,1]))) # Add subject IDs
 r2.wide.data$group <-
   factor(ifelse(
     grepl("Grupp 1", r2.wide.data$pre_group),
-    "Selfhelp",
+    1,
     ifelse(
       grepl("Grupp 2", r2.wide.data$pre_group),
-      "Guided",
-      ifelse(grepl("Grupp 3", r2.wide.data$pre_group), "Waitlist", NA)
+      2,
+      ifelse(grepl("Grupp 3", r2.wide.data$pre_group), 3, NA)
     )
   ),
-  levels = c("Waitlist", "Selfhelp", "Guided"),
-  labels = c("Wait","Self","Guide")) # Add group designations
+  levels = c(3,1,2),
+  labels = c("Waitlist","Selfhelp","Guided")) # Add group designations
 r2.wide.data$therapist <-
   factor(ifelse(
     grepl("Grupp 2: P", r2.wide.data$pre_group),
-    "A",
+    1,
     ifelse(grepl("Grupp 2: T", r2.wide.data$pre_group),
-           "B", NA) # "None" instead of NA?
-  ), levels = c("A", "B")) # Add therapist code
+           2, NA) # "None" instead of NA?
+  ),
+  levels = c(1,2),
+  labels = c("A","B")) # Add therapist shorthands
 r2.wide.data <- r2.wide.data[,c(45,46,47,1:44)] # Move to the front
 r2.wide.data <- r2.wide.data[,-c(4:5)] # Drop columns
 
@@ -227,9 +229,9 @@ r2.wide.data <- readRDS("r2.wide.data.RDS")
 n = length(r2.wide.data[,1])
 t = 3 # 2do: change to 4 with final data
 r2.long.data <- data.frame(
-  subject = as.factor(rep(r2.wide.data$subject, times = t)),
-  group = as.factor(rep(r2.wide.data$group, times = t)),
-  time = as.factor(rep(c("Pre", "During", "Post"), each = n)), # 2do: add "fu" with final data
+  subject = factor(rep(r2.wide.data$subject, times = t)),
+  group = factor(rep(r2.wide.data$group, times = t)),
+  time = factor(rep(c(1,2,3), each = n), labels = c("Pre","During","Post")), # 2do: add "fu" with final data
   therapist = as.factor(rep(r2.wide.data$therapist, times = t)),
   rathus = c(
     r2.wide.data$pre_rathus,
@@ -321,6 +323,18 @@ lt1 <- grepl("Pre", r2.long.data$time)
 lt2 <- grepl("During", r2.long.data$time)
 lt3 <- grepl("Post", r2.long.data$time)
 
+lg1t1 <- r2.long.data$group == "Selfhelp" & r2.long.data$time == "Pre"
+lg1t2 <- r2.long.data$group == "Selfhelp" & r2.long.data$time == "During"
+lg1t3 <- r2.long.data$group == "Selfhelp" & r2.long.data$time == "Post"
+
+lg2t1 <- r2.long.data$group == "Guided" & r2.long.data$time == "Pre"
+lg2t2 <- r2.long.data$group == "Guided" & r2.long.data$time == "During"
+lg2t3 <- r2.long.data$group == "Guided" & r2.long.data$time == "Post"
+
+lg3t1 <- r2.long.data$group == "Waitlist" & r2.long.data$time == "Pre"
+lg3t2 <- r2.long.data$group == "Waitlist" & r2.long.data$time == "During"
+lg3t3 <- r2.long.data$group == "Waitlist" & r2.long.data$time == "Post"
+
 #tapply(r2.long.data$group, r2.long.data$time, summary)
 
 library("psych")
@@ -330,8 +344,6 @@ library("psych")
 #(descriptives <- printnum(descriptives))
 
 #summary(r2.long.data[lg1,c(4-45)])
-
-library(pastecs)
 
 ```
 
@@ -353,9 +365,13 @@ Begreppet assertiveness kom under 1970-talet att omfamna en allt längre lista m
 
 Graden av konstruktiv självhävdelse för en person i en given situation kan inordnas som en punkt i en graf (se figur \@ref(fig:assertiveness)) med två kontinuerliga dimensioner: handlande med respekt för andras rättigheter på x-axeln och handlande med respekt för egna rättigheter på y-axeln. Konstruktiv självhävdelse skiljer sig från aggressiv självhävdelse (det vill säga hävdande av egna rättigheter på bekostnad av andras). Det skiljer sig även från passiv självhävdelse (det vill säga förnekande av egna rättigheter till förmån för andras) och från passiv-aggressiv självhävdelse (det vill säga bristande respekt för både egna och andras rättigheter). Gränsdragningarna mellan kategorierna är förstås flytande, eftersom dimensionerna är kontinuerliga.
 
-```{r assertiveness, out.width="75%", fig.align="center", fig.cap='Konstruktiv självhävdelse definieras i träningsprogrammet Respekt i kvadrat som handlande som är förenligt med samtidig respekt för egna och andras rättigheter. Passiv självhävdelse kan på samma sätt definieras som låg grad av respekt för egna rättigheter men hög grad av respekt för andras rättigheter; aggressiv självhävdelse kan definieras som hög grad av respekt för egna rättigheter men låg grad av respekt för andras rättigheter.'}
+@Mitamura2018problematisering aggressivitet / självhävdelse
 
-knitr::include_graphics("canvas-konstruktiv-slinga-X.pdf")
+'konstruktiv' funktionell definition
+
+```{r assertiveness, out.width="75%", fig.align="center", out.extra='', fig.cap='Konstruktiv självhävdelse definieras i träningsprogrammet Respekt i kvadrat som handlande som är förenligt med samtidig respekt för egna och andras rättigheter. Passiv självhävdelse kan på samma sätt definieras som låg grad av respekt för egna rättigheter men hög grad av respekt för andras rättigheter; aggressiv självhävdelse kan definieras som hög grad av respekt för egna rättigheter men låg grad av respekt för andras rättigheter.'}
+
+knitr::include_graphics("canvas-konstruktiv-slinga-X.pdf") 
 
 ```
 
@@ -377,7 +393,7 @@ Trots att evidensen för kognitiv och beteendeterapeutisk behandling vid ångest
 
 ## Evidensen för I-KBT
 
-I-KBT är en effektiv behandlingsmetod för ett brett spektrum av olika besvär. I en meta-analys från 2018 – som inkluderade 64 RCT-studier – konstateras I-KBT vara effektivt för behandling av både depression, paniksyndrom, agorafobi, social fobi samt generaliserat ångestsyndrom [@Andrews2018]. Författarna finner att medeleffektstorleken för internet-KBT (I-KBT) är 0,8 eller mer i jämförelse med kontrollbetingelse. Enligt resultaten tenderar också effekten att hålla i sig över tid. I-KBT är dessutom jämförbart effektmässigt med terapeutledd terapi. Dessa resultat bekräftar tidigare fynd i samma riktning med 22 RCT-studier [@Andrews]. 
+I-KBT är en effektiv behandlingsmetod för ett brett spektrum av olika besvär. I en meta-analys från 2018 – som inkluderade 64 RCT-studier – konstateras I-KBT vara effektivt för behandling av både depression, paniksyndrom, agorafobi, social fobi samt generaliserat ångestsyndrom [@Andrews2018]. Författarna finner att medeleffektstorleken för internet-KBT (I-KBT) är *d* = 0,8 eller mer i jämförelse med kontrollbetingelse. Enligt resultaten tenderar också effekten att hålla i sig över tid. I-KBT är dessutom jämförbart effektmässigt med terapeutledd terapi. Dessa resultat bekräftar tidigare fynd i samma riktning med 22 RCT-studier [@Andrews]. 
 
 I-KBT har även visat sig vara effektivt vid behandling av PTSD [@Sijbrandij2016], insomni [@Zachariae2016] och för att minska lidandet vid olika kroniska hälsobesvär [@Mehta2019]. I-KBT är också en verksamt vid en rad olika transdiagnostiska symtom såsom stress [@Day2013], prokrastinering [@Rozental2015] och perfektionism [@Rozental2017; @Wade2019].
 
@@ -397,6 +413,8 @@ För att maximera oddsen för ett positivt utfall bör I-KBT-behandlingar ha tyd
 
 ### Emotionellt/upplevelsmässigt undvikande
 @Pittig2014 -- skriv om detta!
+
+@Sewart2019 -- varians
 
 <!--
 Individuals avoid stimuli which are associated with aversive experience to preserve safety. However, behavioral avoidance also causes impairments and prevents the individual from attaining positive rewards. Little is known about the link between fear acquisition and the development of behavioral avoidance in the presence of potential rewards. Therefore, two experiments investigated the impact of fear conditioning on a subsequent gambling task. In an experimental group (n = 30) advantageous choices (higher reward probability) were linked to a fear-relevant stimulus that was associated with an aversive unconditioned stimulus (US) during fear conditioning (conditioned stimulus, CS+). A disadvantageous choice (lower reward probability) was, however, linked to a safe stimulus that was never associated with the US (CS-). In a control group (n = 25), fear conditioning was followed by a similar gambling task with novel stimuli. A second experiment focused on individual predictors of avoidant decisions (n = 81). Compared with the control group, individuals in the experimental groups avoided the advantageous CS + choice despite fewer gains. The predictor analysis further clarified that avoidant decisions were pronounced in highly trait anxious participants who exhibited higher fear responses. On the other hand, findings also indicated a reduction in absolute avoidance across the task. Combined, these findings demonstrate that fear conditioning can lead to avoidant decision making, especially in vulnerable individuals. The resulting costs parallel impairments caused by behavioral avoidance. Such an emotional decision-making style may be a link between aversive experience and the development of habitual pathological avoidance. Introducing rewards for approach, however, may counteract avoidant decisions.
@@ -450,6 +468,68 @@ Vi använde `r cite_r("r-references.bib")` för alla analyser.
 
 # Resultat
 
+(ref:my-table-caption) This is a caption for my table.
+
+``` {r descriptives}
+
+library(pastecs)
+
+numvars <- c(5:17) # Numerical variables that we are interested in
+
+### Descriptives
+
+descriptives.lg1t1 <- stat.desc(r2.long.data[lg1t1,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+descriptives.lg1t2 <- stat.desc(r2.long.data[lg1t2,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+descriptives.lg1t3 <- stat.desc(r2.long.data[lg1t3,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+
+descriptives.lg2t1 <- stat.desc(r2.long.data[lg2t1,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+descriptives.lg2t2 <- stat.desc(r2.long.data[lg2t2,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+descriptives.lg2t3 <- stat.desc(r2.long.data[lg2t3,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+
+descriptives.lg3t1 <- stat.desc(r2.long.data[lg3t1,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+descriptives.lg3t2 <- stat.desc(r2.long.data[lg3t2,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+descriptives.lg3t3 <- stat.desc(r2.long.data[lg3t3,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+
+## Change scores
+
+# Group 1, post--pre
+cs.g1t3t1 <- r2.long.data[lg1t3,numvars] - r2.long.data[lg1t1,numvars]
+descriptives.cs.g1t3t1 <- stat.desc(cs.g1t3t1, basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+
+# Group 1, during-pre
+cs.g1t2t1 <- r2.long.data[lg1t2,numvars] - r2.long.data[lg1t1,numvars]
+descriptives.cs.g1t2t1 <- stat.desc(cs.g1t2t1, basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+
+# Group 2, post--pre
+cs.g2t3t1 <- r2.long.data[lg2t3,numvars] - r2.long.data[lg2t1,numvars]
+descriptives.cs.g2t3t1 <- stat.desc(cs.g2t3t1, basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+
+# Group 2, during-pre
+cs.g2t2t1 <- r2.long.data[lg2t2,numvars] - r2.long.data[lg2t1,numvars]
+descriptives.cs.g2t2t1 <- stat.desc(cs.g2t2t1, basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+
+# Group 3, post--pre
+cs.g3t3t1 <- r2.long.data[lg3t3,numvars] - r2.long.data[lg3t1,numvars]
+descriptives.cs.g3t3t1 <- stat.desc(cs.g3t3t1, basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+
+# Group 3, during-pre
+cs.g3t2t1 <- r2.long.data[lg3t2,numvars] - r2.long.data[lg3t1,numvars]
+descriptives.cs.g3t2t1 <- stat.desc(cs.g3t2t1, basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+
+
+# kable(text_tbl) %>%
+#   kable_styling(full_width = F) %>%
+#   column_spec(1, bold = T, border_right = T) %>%
+#   column_spec(2, width = "30em", background = "yellow")
+
+#knitr::kable(t(x[c(9,8,13),c(1:4)]),"latex", booktabs = T,caption = "(ref:my-table-caption)")
+  
+#knitr::kable(x,"latex", booktabs = T,caption = "(ref:my-table-caption)")
+
+
+```
+
+
 # Diskussion
 
 
@@ -462,6 +542,8 @@ r_refs(file = "r-references.bib")
 ```
 
 \begingroup
+\raggedright
+
 \setlength{\parindent}{-0.5in}
 \setlength{\leftskip}{0.5in}
 
