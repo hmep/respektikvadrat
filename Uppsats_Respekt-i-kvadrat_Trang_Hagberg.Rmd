@@ -5,15 +5,11 @@ author:
   - name          : "Tobias Hagberg"
     email         : "tobias@hagberg.com"
     address       : "Psykologprogrammet, Psykologiska institutionen, Stockholms universitet"
-  - name          : "Patrik Trång"
+  - name          : "Patrik Trang"
     email         : "patrik.trang@gmail.com"
 affiliation:
   - institution   : "Psykologiska institutionen, Stockholms universitet"
-authornote: |
-  `r readLines('authornote.txt', encoding = 'UTF-8')`
-abstract: |
-  `r readLines('abstract.txt', encoding = 'UTF-8')`
-keywords          : "konstruktiv självhävdelse, stress, undvikande, assertiveness, anxiety disorder, anxiety, stress, avoidance"
+
 wordcount         : "X"
 bibliography      : ["r-references.bib", "library.bib"]
 floatsintext      : no
