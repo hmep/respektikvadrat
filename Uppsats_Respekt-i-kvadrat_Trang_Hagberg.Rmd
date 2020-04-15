@@ -473,15 +473,28 @@ För att maximera oddsen för ett positivt utfall bör I-KBT-behandlingar ha tyd
 
 ### Emotionellt/upplevelsmässigt undvikande
 
-@Pittig2014 -- skriv om detta!
+*@Pittig2014 -- skriv om detta!*
 
 <!--
 Individuals avoid stimuli which are associated with aversive experience to preserve safety. However, behavioral avoidance also causes impairments and prevents the individual from attaining positive rewards. Little is known about the link between fear acquisition and the development of behavioral avoidance in the presence of potential rewards. Therefore, two experiments investigated the impact of fear conditioning on a subsequent gambling task. In an experimental group (n = 30) advantageous choices (higher reward probability) were linked to a fear-relevant stimulus that was associated with an aversive unconditioned stimulus (US) during fear conditioning (conditioned stimulus, CS+). A disadvantageous choice (lower reward probability) was, however, linked to a safe stimulus that was never associated with the US (CS-). In a control group (n = 25), fear conditioning was followed by a similar gambling task with novel stimuli. A second experiment focused on individual predictors of avoidant decisions (n = 81). Compared with the control group, individuals in the experimental groups avoided the advantageous CS + choice despite fewer gains. The predictor analysis further clarified that avoidant decisions were pronounced in highly trait anxious participants who exhibited higher fear responses. On the other hand, findings also indicated a reduction in absolute avoidance across the task. Combined, these findings demonstrate that fear conditioning can lead to avoidant decision making, especially in vulnerable individuals. The resulting costs parallel impairments caused by behavioral avoidance. Such an emotional decision-making style may be a link between aversive experience and the development of habitual pathological avoidance. Introducing rewards for approach, however, may counteract avoidant decisions.
 -->
 
-@Sewart2019 -- varians
+*@Sewart2019 -- varians*
 
-*Frågeställningar avslutar bakgrunden*
+*Ett stycke om vikten av variation i exponering kommer antagligen att dyka upp här. Referenser bl a (Craske2008) (Knowles2019) (Blakey2016) (Sewart2019)*
+
+*Tydligt formulerade frågeställningar avslutar bakgrunden. De nedan är direkt kopierade från vår etikansökan och skall potentiellt arbetas om till mer lättsmält text. Åtminstone bakas in i ett för bakgrunden avslutande stycke*
+
+*Primär frågeställning:*
+*Är I-KBT utan terapeutstöd non-inferior I-KBT med terapeutstöd vad det gäller ökning av konstruktiv självhävdelse och minskning av passiv och aggresiv självhävdelse?*
+
+
+*Sekundära frågeställnigar:*
+*Är kontrollgrupp inferior I-KBT med terapeutstöd och/eller I-KBT utan terapeutstöd vad det gäller ökning av konstruktiv självhävdelse och minskning av passiv och aggressiv självhävdelse?*
+
+*Vilka patientfaktorer påverkar effektiviteten av endera eller båda behandlingsalternativen (prediktorer/moderatorer)?*
+
+*Vilka faktorer inom behandlingsalternativen påverkar deras effekt (mediatorer)?*
 
 # Metod
 
@@ -555,6 +568,11 @@ Utöver AAA-S användes även The Rathus Assertiveness Schedule (RAS, **CITKEYMI
 ## Interventionen
 Interventionen är utformad med självhjälpsmaterialet Assert Yourself [@michel2008] som grund. Materialet är framtaget av Center for Clinical Interventions (CCI) i delstaten Western Australia, Australien. I arbetsboken får läsaren lära sig skillnaden mellan olika typer av självhävdelse (konstruktiv, aggressiv, passiv, passiv-aggressiv) och rationalen för kognitiv omstrukturering med KBT. Genom att planera och utföra beteendeexperiment får deltagaren hjälp av materialet att pröva giltigheten av egna negativa förutsägelser och därmed öka responsmöjligheterna i olika mer eller mindre pressande situationer. Utöver detta innehåller arbetsmaterialet ett avsnitt om progressiv muskelavslappning, med syftet att hjälpa läsaren att känna igen spänning i kroppen, att sänka den allmänna spänningsnivån och träna på en aktiv coping-teknik för stressande lägen. Materialet avslutas med ett antal kapitel för olika problemområden (säga nej, hantera kritik, hantera besvikelser, ta emot och ge komplimanger).
 
+<!-- Tabellen ovan behöver formatteras -->
+
+### Anpassningar och tillägg
+Materialet är översatt och anpassat till svenska förhållanden av TH med tillstånd av författaren och CCI. I samband med anpassningen av översättningen till I-KBT-moduler i plattformen iTerapi modifierade och utökade TH och PT materialet, bland annat genom att ersätta avsnitt som handlar om kognitiv omstrukturering med motiverande avsnitt för beteendeexperiment/beteendeaktivering. Utöver materialet i boken innehåller interventionen dessutom motiverande inslag i form av text och illustrationer (inspirerade av bland annat @Hayes2006a; @Dahlin2016) samt länkar till fördjupningsmaterial, videofilmer med konversationer och rollspel mellan PT och TH, videofilmer och ljudfiler med avslappningsövningar samt ett stort antal nya övningar, bland annat för veckovis uppföljning av konstruktiv självhävdelse, övningar för för återfallsprevention och vidmakthållande av behandlingseffekter samt utvärderingsformulär av veckans innehåll.
+
   **Vecka**   **Tema**                                                                                                                                                  **Innehåll**
   ----------- --------------------------------------------------------------------------------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------
   1           Socialisering till programmet, psykoedukation om självhävdelse, kartläggning av besvär, formulering av målsättning för programmet                         Kapitel 1 med utökningar (förmätning med självskattningsskalor administrerades strax innan)
@@ -567,10 +585,6 @@ Interventionen är utformad med självhjälpsmaterialet Assert Yourself [@michel
   
 <!-- Tabellen ovan behöver formatteras -->
 
-### Anpassningar och tillägg
-Materialet är översatt och anpassat till svenska förhållanden av TH med tillstånd av författaren och CCI. I samband med anpassningen av översättningen till I-KBT-moduler i plattformen iTerapi modifierade och utökade TH och PT materialet, bland annat genom att ersätta avsnitt som handlar om kognitiv omstrukturering med motiverande avsnitt för beteendeexperiment/beteendeaktivering. Utöver materialet i boken innehåller interventionen dessutom motiverande inslag i form av text och illustrationer (inspirerade av bland annat @Hayes2006a; @Dahlin2016) samt länkar till fördjupningsmaterial, videofilmer med konversationer och rollspel mellan PT och TH, videofilmer och ljudfiler med avslappningsövningar samt ett stort antal nya övningar, bland annat för veckovis uppföljning av konstruktiv självhävdelse, övningar för för återfallsprevention och vidmakthållande av behandlingseffekter samt utvärderingsformulär av veckans innehåll.
-
-**Här kommer det att vara en tabell med innehållet för varje modul**
 
 ## Behandlingsplattformen
 I studien användes behandlingsplattformen iTerapi. Det är en plattform som använts upprepade gånger vid forskning på internetbaserade psykologiska interventioner och behandlingar [@Vlaescu2016]. Plattformen använder sig av tvåfaktorsautentisering och är krypterad. I rådande fall innebar det att deltagarna blev tilldelade en anonym studiekod till vilken de valde ett eget lösenord. Vid varje inloggningstillfälle skickades sedan engångskoder till deras mobiltelefoner per SMS.
