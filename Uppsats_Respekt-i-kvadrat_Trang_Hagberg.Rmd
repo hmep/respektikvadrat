@@ -75,6 +75,9 @@ raw_excel = "Respekt_surveys_200412_150604.xlsx"
 # Import data from Excel file (requires "readxl")
 r2.raw.data <- read_excel(raw_excel)
 
+# Remove cases that should be excluded (they don't meet the inclusion criteria but was erroneously included)
+r2.raw.data <- r2.raw.data[-c(13,48,52,97,158),]
+
 # Fix missing data labels
 r2.raw.data[r2.raw.data == "[missing data]"] <- NA
 r2.raw.data[r2.raw.data == "NA"] <- NA
@@ -417,11 +420,11 @@ Begreppet assertiveness kom under 1970-talet att omfamna en allt längre lista m
 
 @alberti1974your definierar konstruktiv självhävdelse som handlande som återspeglar individens egna långsiktiga intressen. Det inbegriper förmågan att ”stå upp för sig själv” utan överdriven ångest och färdigheten att uttrycka sina känslor samt att utöva sina egna rättigheter utan att kränka andras rättigheter. Med ’utöva sina rättigheter’ menas att både i icke-verbal och verbal handling uttrycka sina tankar, känslor och önskningar.
 
-Graden av konstruktiv självhävdelse för en person i en given situation kan inordnas som en punkt i en graf (se figur \@ref(fig:assertiveness)) med två kontinuerliga dimensioner: handlande med respekt för andras rättigheter på x-axeln och handlande med respekt för egna rättigheter på y-axeln. Konstruktiv självhävdelse skiljer sig från aggressiv självhävdelse (det vill säga hävdande av egna rättigheter på bekostnad av andras). Det skiljer sig även från passiv självhävdelse (det vill säga förnekande av egna rättigheter till förmån för andras) och från passiv-aggressiv självhävdelse (det vill säga bristande respekt för både egna och andras rättigheter). Gränsdragningarna mellan kategorierna är förstås flytande, eftersom dimensionerna är kontinuerliga.
+Graden av konstruktiv självhävdelse för en person i en given situation kan inordnas som en punkt i en graf (se figur \@ref(fig:assertiveness)) med två kontinuerliga dimensioner: handlande med respekt för andras rättigheter på x-axeln och handlande med respekt för egna rättigheter på y-axeln. Konstruktiv självhävdelse är en kommunikationsstil som skiljer sig från aggressiv självhävdelse (det vill säga hävdande av egna rättigheter på bekostnad av andras). Det skiljer sig även från kommunikationsstilen passiv självhävdelse (det vill säga förnekande av egna rättigheter till förmån för andras) och från passiv-aggressiv självhävdelse (det vill säga bristande respekt för både egna och andras rättigheter). Gränsdragningarna mellan kommunikationsstilarna är förstås flytande, eftersom dimensionerna är kontinuerliga.
 
-@Mitamura2018 problematisering aggressivitet / självhävdelse
+### Vikten av ett funktionellt perspektiv
 
-'konstruktiv' funktionell definition
+@Mitamura2018 problematiserar skillnaden mellan aggressiv och konstruktiv självhävdelse. De olika kommunikationsstilarna behöver förstås i de sammanhang de utförs. Beteenden som i en japansk (eller för all del svensk) kontext kan framstå som aggressiva kan i en amerikansk kontext framstå som konstruktiv självhävdande; beteenden som i en viss familj eller vänskapskrets ses som konstruktiva kan i andra ses som passiva, och så vidare. Vad som i kontexten menas med handlande som är förenligt med egna och andras rättigheter är föremål för förhandling mellan parterna. Genom att anlägga ett funktionellt och kontextuellt synsätt på självhävdandebeteenden är det möjligt att använda begreppen utan att moralisera eller att vara normativt förskrivande. Begreppen 'konstruktiv självhävdelse', 'passiv självhävdelse' och 'aggressiv självhävdelse' bör användas pragmatiskt för att till exempel i en terapi särskilja och tala om beteenden i en specificerad kontext -- på samhällsnivå, gruppnivå och individnivå.
 
 ```{r assertiveness, out.width="75%", fig.align="center", out.extra='', fig.cap='Konstruktiv självhävdelse definieras i träningsprogrammet Respekt i kvadrat som handlande som är förenligt med samtidig respekt för egna och andras rättigheter. Passiv självhävdelse kan på samma sätt definieras som låg grad av respekt för egna rättigheter men hög grad av respekt för andras rättigheter; aggressiv självhävdelse kan definieras som hög grad av respekt för egna rättigheter men låg grad av respekt för andras rättigheter.'}
 
@@ -468,6 +471,7 @@ För att maximera oddsen för ett positivt utfall bör I-KBT-behandlingar ha tyd
 ## Verksamma komponenter
 
 ### Emotionellt/upplevelsmässigt undvikande
+
 @Pittig2014 -- skriv om detta!
 
 <!--
