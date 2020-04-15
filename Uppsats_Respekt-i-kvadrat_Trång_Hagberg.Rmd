@@ -518,7 +518,7 @@ De 204 deltagare vars data redovisas var mellan 20 och 65 år gamla med en medel
 
 ```{r demdata, out.width="100%", fig.align="center", out.extra='', fig.cap='Demografisk data hos deltagarna, uppdelad per grupp samt total'}
 
-#knitr::include_graphics("demdata.pdf")
+knitr::include_graphics("demdata-crop.pdf")
 
 ```
 
