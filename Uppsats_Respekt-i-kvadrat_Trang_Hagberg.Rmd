@@ -425,6 +425,7 @@ Graden av konstruktiv självhävdelse för en person i en given situation kan in
 ### Vikten av ett funktionellt perspektiv
 
 @Mitamura2018 problematiserar skillnaden mellan aggressiv och konstruktiv självhävdelse. De olika kommunikationsstilarna behöver förstås i de sammanhang de utförs. Beteenden som i en japansk (eller för all del svensk) kontext kan framstå som aggressiva kan i en amerikansk kontext framstå som konstruktiv självhävdande; beteenden som i en viss familj eller vänskapskrets ses som konstruktiva kan i andra ses som passiva, och så vidare. Vad som i kontexten menas med handlande som är förenligt med egna och andras rättigheter är föremål för förhandling mellan parterna. Genom att anlägga ett funktionellt och kontextuellt synsätt på självhävdandebeteenden är det möjligt att använda begreppen utan att moralisera eller att vara normativt förskrivande. Begreppen 'konstruktiv självhävdelse', 'passiv självhävdelse' och 'aggressiv självhävdelse' bör användas pragmatiskt för att till exempel i en terapi särskilja och tala om beteenden i en specificerad kontext -- på samhällsnivå, gruppnivå och individnivå.
+>>>>>>> 2f295d57d5e70b9c9df3ea21927ae446d0af83ef
 
 ```{r assertiveness, out.width="75%", fig.align="center", out.extra='', fig.cap='Konstruktiv självhävdelse definieras i träningsprogrammet Respekt i kvadrat som handlande som är förenligt med samtidig respekt för egna och andras rättigheter. Passiv självhävdelse kan på samma sätt definieras som låg grad av respekt för egna rättigheter men hög grad av respekt för andras rättigheter; aggressiv självhävdelse kan definieras som hög grad av respekt för egna rättigheter men låg grad av respekt för andras rättigheter.'}
 
@@ -454,9 +455,9 @@ I-KBT är en effektiv behandlingsmetod för ett brett spektrum av olika besvär.
 
 I-KBT har även visat sig vara effektivt vid behandling av PTSD [@Sijbrandij2016], insomni [@Zachariae2016] och för att minska lidandet vid olika kroniska hälsobesvär [@Mehta2019]. I-KBT är också en verksamt vid en rad olika transdiagnostiska symtom såsom stress [@Day2013], prokrastinering [@Rozental2015] och perfektionism [@Rozental2017; @Wade2019].
 
-Ta också med referens till @Andersson2016b
+*Ta också med referens till @Andersson2016b ?*
 
-**Flytta hit och redigera: [Icke desto mindre har I-KBT-behandling visat sig vara en effektiv behandlingsform. Både i en metaanalys från 2008 samt i en metaanalys från 2018 konstaterades I-KBT-behandlingar likvärdiga ansikte mot ansikte-behandlingar (Barak2008; Carlbring2018).]**
+*Flytta hit och redigera: [Icke desto mindre har I-KBT-behandling visat sig vara en effektiv behandlingsform. Både i en metaanalys från 2008 samt i en metaanalys från 2018 konstaterades I-KBT-behandlingar likvärdiga ansikte mot ansikte-behandlingar (Barak2008; Carlbring2018).]*
 
 Trots att evidensen för kognitiv och beteendeterapeutisk behandling vid ångestsyndrom och depressiva syndrom är god förblir majoriteten av fallen även i länder med väl utvecklad sjukvård obehandlade [@Craske2017]. Många kan bära på ett psykiskt lidande utan att för den skull nå upp till kriterierna för någon av diagnoserna i DSM. Och för dem som ändå skulle göra det är tillgången till vård en begränsande faktor som I-KBT kan avhjälpa [@Andrews2018].
 
@@ -480,7 +481,7 @@ Individuals avoid stimuli which are associated with aversive experience to prese
 
 @Sewart2019 -- varians
 
-## Frågeställningar avslutar bakgrunden
+*Frågeställningar avslutar bakgrunden*
 
 # Metod
 
@@ -664,6 +665,8 @@ knitr::kable(round(descriptives.out.rot,1), "latex", booktabs = T, caption = "(r
 
 
 # Diskussion
+
+*kort sammanfattning av alla tidigare delar*
 
 ## Metodologiska brister / felkällor / validitet / reliabilitet
 
