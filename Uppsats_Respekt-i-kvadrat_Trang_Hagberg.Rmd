@@ -419,9 +419,9 @@ Begreppet assertiveness kom under 1970-talet att omfamna en allt längre lista m
 
 Graden av konstruktiv självhävdelse för en person i en given situation kan inordnas som en punkt i en graf (se figur \@ref(fig:assertiveness)) med två kontinuerliga dimensioner: handlande med respekt för andras rättigheter på x-axeln och handlande med respekt för egna rättigheter på y-axeln. Konstruktiv självhävdelse skiljer sig från aggressiv självhävdelse (det vill säga hävdande av egna rättigheter på bekostnad av andras). Det skiljer sig även från passiv självhävdelse (det vill säga förnekande av egna rättigheter till förmån för andras) och från passiv-aggressiv självhävdelse (det vill säga bristande respekt för både egna och andras rättigheter). Gränsdragningarna mellan kategorierna är förstås flytande, eftersom dimensionerna är kontinuerliga.
 
-@Mitamura2018 problematisering aggressivitet / självhävdelse
+*@Mitamura2018 problematisering aggressivitet / självhävdelse*
 
-'konstruktiv' funktionell definition
+*'konstruktiv' funktionell definition*
 
 ```{r assertiveness, out.width="75%", fig.align="center", out.extra='', fig.cap='Konstruktiv självhävdelse definieras i träningsprogrammet Respekt i kvadrat som handlande som är förenligt med samtidig respekt för egna och andras rättigheter. Passiv självhävdelse kan på samma sätt definieras som låg grad av respekt för egna rättigheter men hög grad av respekt för andras rättigheter; aggressiv självhävdelse kan definieras som hög grad av respekt för egna rättigheter men låg grad av respekt för andras rättigheter.'}
 
@@ -451,9 +451,9 @@ I-KBT är en effektiv behandlingsmetod för ett brett spektrum av olika besvär.
 
 I-KBT har även visat sig vara effektivt vid behandling av PTSD [@Sijbrandij2016], insomni [@Zachariae2016] och för att minska lidandet vid olika kroniska hälsobesvär [@Mehta2019]. I-KBT är också en verksamt vid en rad olika transdiagnostiska symtom såsom stress [@Day2013], prokrastinering [@Rozental2015] och perfektionism [@Rozental2017; @Wade2019].
 
-Ta också med referens till @Andersson2016b
+*Ta också med referens till @Andersson2016b ?*
 
-**Flytta hit och redigera: [Icke desto mindre har I-KBT-behandling visat sig vara en effektiv behandlingsform. Både i en metaanalys från 2008 samt i en metaanalys från 2018 konstaterades I-KBT-behandlingar likvärdiga ansikte mot ansikte-behandlingar (Barak2008; Carlbring2018).]**
+*Flytta hit och redigera: [Icke desto mindre har I-KBT-behandling visat sig vara en effektiv behandlingsform. Både i en metaanalys från 2008 samt i en metaanalys från 2018 konstaterades I-KBT-behandlingar likvärdiga ansikte mot ansikte-behandlingar (Barak2008; Carlbring2018).]*
 
 Trots att evidensen för kognitiv och beteendeterapeutisk behandling vid ångestsyndrom och depressiva syndrom är god förblir majoriteten av fallen även i länder med väl utvecklad sjukvård obehandlade [@Craske2017]. Många kan bära på ett psykiskt lidande utan att för den skull nå upp till kriterierna för någon av diagnoserna i DSM. Och för dem som ändå skulle göra det är tillgången till vård en begränsande faktor som I-KBT kan avhjälpa [@Andrews2018].
 
@@ -476,7 +476,7 @@ Individuals avoid stimuli which are associated with aversive experience to prese
 
 @Sewart2019 -- varians
 
-## Frågeställningar avslutar bakgrunden
+*Frågeställningar avslutar bakgrunden*
 
 # Metod
 
@@ -649,6 +649,8 @@ knitr::kable(round(descriptives.out.rot,1), "latex", booktabs = T, caption = "(r
 
 
 # Diskussion
+
+*kort sammanfattning av alla tidigare delar*
 
 ## Metodologiska brister / felkällor / validitet / reliabilitet
 
