@@ -438,7 +438,7 @@ knitr::include_graphics("canvas-konstruktiv-slinga-X.pdf")
 
 @Speed2018a sammanställer forskningsläget kring *assertiveness*. Träning i konstruktiv självhävdelse kan förbättra måendet vid både ångestsyndrom och depression och öka självförtroende samt förbättra upplevd tillfredsställelse i parrelationer. Författarna konstaterar att träning i konstruktiv självhävdelse redan ingår i de bredare begreppen som beteendeaktivering och färdighetsträning i flertalet allt mer beforskade behandlingsmetoder -- som dialektisk beteendeterapi (DBT), *Acceptance and Commitment Therapy* (ACT) och beteendeaktivering vid depression. En stor andel av den forskning om *assertiveness* som transdiagnostiskt begrepp som har gjorts är till åren kommen och att det finns ett stort behov att på nytt utvärdera den specifika effekten av självhävdelseträning [@Speed2018a]. 
 
-## Evidensen för KBT vid ångest och depression
+### Evidensen för KBT vid ångest och depression
 
 Evidensen för beteendeterapi och KBT för syndromala och icke-syndromala psykologiska problem har konstaterats vara god sedan många år tillbaka, både inom ramen för väl avgränsade och kontrollerade *efficacy*-studier och i ekologiskt valida *effectiveness*-studier. Det gäller även i hög grad de områden för vilka bristande konstruktiv självhävdelse är en del av problembeskrivningarna, till exempel ångestsyndrom, social fobi, generaliserat ångestsyndrom (GAD) och depression. 
 
@@ -447,6 +447,10 @@ Evidensen för beteendeterapi och KBT för syndromala och icke-syndromala psykol
 @Hofmann2012 är en översikt av meta-analyser som visar att KBT alltjämt är en av de mest effektiva terapiformerna. I deras översikt visade sig KBT effektivt för att motverka bland annat trauma- och stressrelaterade symptom, liksom depressiva och ångestrelaterade syndrom. Litteraturen stödjer att KBT har god effekt för de syndrom som @Speed2018a associerar med brister i konstruktiv självhävdelse.
 
 Trots att evidensen för kognitiv och beteendeterapeutisk behandling vid ångestsyndrom och depressiva syndrom är god förblir majoriteten av fallen även i länder med väl utvecklad sjukvård obehandlade @Craske2017.
+
+## Internetbasread kognitiv beteendeterapi
+
+Internetbaserad kognitiv beteendeterapi, I-KBT, började undersökas och utvärderas kring millenniumskiftet. Under de 20 åren som passerat sedan dess har hundratals med studier hunnit göras kring I-KBT. Idag används I-KBT som ett behandlingsalternativ inom flera olika länder som ett komplement till mer traditionella vårdalternativ [@Andersson2016]. En andel av den forskning som bedrivits i Sverige på I-KBT har tagit avstamp ifrån beforskade självhjälpsböcker och använt dem som grund för internetbaserade behandlingsprogram. Behandlingsprogrammen består allt som oftast av moduler (som oftast motsvarar kapitel i självhjälpsböckerna) innehållande psykoedukativ text, övningar och hemuppgifter kopplade till patientens besvär. Vanligtvis tilldelas deltagarna en modul per vecka. I många av dessa behandlingsprogram har även en stödbehandlare tilldelats deltagarna. Stödbehandlaren kan ge återkoppling, besvara frågor, och ge stöd allt eftersom behandlingen fortskrider [@Vlaescu2016].
 
 ## Evidensen för I-KBT
 
@@ -468,7 +472,30 @@ En nackdel med I-KBT är att vissa deltagare hindras av besvär med tekniken, so
 
 För att maximera oddsen för ett positivt utfall bör I-KBT-behandlingar ha tydliga inklusionskriterier **[det har vi inte haft -- till diskussion]** samt screena och välja deltagare utifrån dessa. Framgångsrika I-KBT-behandlingar inkluderar interaktiva behandlingskomponenter, innehåller relevanta pedagogiska inslag om psykiska och kroppsliga besvär och om vad som vidmakthåller psykiska problem, liksom komponenter för att bryta vidmakthållandet av besvären [@Barak2008].
 
+### Internet och internetanvändning
+
+*detta avsnitt bör möjligen flyttas någon annanstans eller bakas in i andra avsnitt. Möjligen före avsnittet "Internetbaserad kognitiv beteendeterapi"*
+
+Internet har ändrat gemene mans tillgång till information och tjänster på ett paradigmskiftsliknande sätt. För cirka 15 år sedan använde mindre än 20% av världens befolkning internet. 2019 uppskattas det att nästan 54% av världens befolkning använder sig av internet. I Europa är motsvarande siffra 83% [@ITU2019] och enligt Internetstiftelsens rapport Svenskarna och internet [@Findahl2019] har internetanvändandet i Sverige ökat från 85% år 2010 till 95% år 2019. Nästintill hela Sveriges befolkning är aktiva internetanvändare. Fler än 8 av 10 av de som använder internet i Sverige söker även efter hälso- och medicinsk information på nätet och cirka hälften utnyttjar diverse e-tjänster relaterade till sjukvården [@Findahl2019]. 
+
+Regeringens har även som vision att Sverige år 2025 ska vara bäst i världen på e-hälsa. En del i denna vision är att kunna erbjuda internetbaserade behandlingsalternativ  [@Socialdep2016]. I dagsläget erbjuds redan internetbaserad behandling i viss utsträckning inom den svenska sjukvården (se bland annat div.socialstyrelsen.se för mer information)  Internetbaserad vård har flertalet fördelar. Flexibiliteten i var och när vårdkontakten genomförs innebär att potentiellt fler personer kan nyttja den. Vården kan potentiellt – beroende på upplägg – även finnas tillgänglig dygnet runt. Utöver detta ger digitaliserad vård tillgång till kommunikationsvägar som kan passa bättre för vissa vårdsökande jämfört med traditionell vård. 
+
 ## Verksamma komponenter
+
+Innan vi fördjupar oss i behandlingsprogrammets upplägg och övriga metodfrågor vill vi stanna upp en kort stund och lyfta fram några av de mindre vedertagna teorier och modeller som inspirerade oss i vår utformning samt anpassning av behandlingsprogrammet. Dessa teorier och modeller influerade oss även i vårt förhållningssätt till deltagarna. Det är inom KBT väl etablerat att psykoedukativa inslag, formulerande av målsättning, exponering, hemuppgifter, kognitiv omstrukturering med mera är effektiva processer för att maximera behandlingsutfall [@Kazantzis2018].
+
+### Growth mindset + undertryckande 
+
+*ska få ny rubrik och bör troligen kortas ner markant*
+
+Vi tog utöver dessa väletablerade inslag även med oss inspiration från forskning om utvecklande och fixerade tankesätt. Ett fixerat tankesätt är antagandet att förmågor, färdigheter samt egenskaper är fasta och oföränderliga medans ett utvecklande tankesätt är antagandet att dessa förmågor, färdigheter och egenskaper kan utvecklas och förändras. Tankesätten är ett sorts ramverk genom vilket man tolkar och förstår sig på sina erfarenheter, vilket i sin tur påverkar vilka beteenden och emotioner man uppvisar. [@Dweck1995] Ett utvecklande tankesätt kan bland annat leda till att man tar på sig fler utmaningar, fortsätter kämpa vid bakslag och att man överlag presterar bättre [@Dweck2019]. I verkligheten är ens tankesätt sällan antingen eller, utan återfinns på ett kontinuum [@Dweck1995]. Tankesätten kan beröra mer övergripande domäner, såsom personlighet och intelligens, eller mer specifika domäner, såsom ångest och emotioner. Man kan ha ett fixerat tankesätt inom en viss domän, och ett utvecklande tankesätt inom en annan [@Schroder2016]. Har man ett utvecklande tankesätt kring ångest leder det både till större motivation under en behandlings gång och till större odds för positivt behandlingsutfall [@Schroder2015; @DeCastella2015]. Utöver detta har det även visat sig att personer med ett fixerat tankesätt i större utsträckning försöker undertrycka negativa emotioner samt i mindre utsträckning omvärderar sina övertygelser i ljuset av nya erfarenheter [@Schroder2015]. Undertryckande och oacceptabelhet är särskilt vanligt hos personer som lider av ångestsyndrom och depressiva syndrom [@Campbell-Sills2006]
+
+Regelbundet användande av undertryckande är kopplat med flertalet negativa följder, bland annat: mer upplevande av negativa emotioner (och mindre upplevande av positiva emotioner), större undvikande av nära relationer, mindre socialt stöd, lägre självförtroende och sämre upplevt generellt välmående överlag [@Gross2003]. 
+
+Den aktuella studien hade varken tankesätt eller undertryckande som huvudfokus, men vi var icke desto mindre influerade av dessa teorier i vårt utformande och anpassade av behandlingsprogrammet. Kan behandlingsprogrammet utformas på så sätt att deltagarna hjälps från ett fixerat tankesätt mot ett mer utvecklande tankesätt bör detta både leda till en reduktion i negativa symptom [@Schroder2015] och i undertryckande. Hur träna tankesätt? Allteftersom ett mer utvecklande tankesätt formas bör alltså acceptans för ens emotioner och ångest öka tillsammans med en insikt i att dessa emotioner och denna ångest går att bemöta och bemästra. Dessa teorier var även influenser i hur behandlarna bemötte deltagarna.
+
+<!-- Potentiellt använda DeCastella2015 som brygga in i hur variation i exponering (där man inte undantrycker sina känslor) och att närma sig obehaget (och i samma veva motbevisar sitt fixed mindset om ens ångest och ens relation till den) leder till symtomlindring och ökat välmående (Craske2008, Knowles2019, Blakey2016, Sewart2019). 
+-->
 
 ### Emotionellt/upplevelsmässigt undvikande
 
@@ -482,7 +509,7 @@ Individuals avoid stimuli which are associated with aversive experience to prese
 
 *Ett stycke om vikten av variation i exponering kommer antagligen att dyka upp här. Referenser bl a (Craske2008) (Knowles2019) (Blakey2016) (Sewart2019)*
 
-*Tydligt formulerade frågeställningar avslutar bakgrunden. De nedan är direkt kopierade från vår etikansökan och skall potentiellt arbetas om till mer lättsmält text. Åtminstone bakas in i ett för bakgrunden avslutande stycke*
+*Tydligt formulerade frågeställningar avslutar bakgrunden. De nedan är direkt kopierade från vår etikansökan och skall arbetas om till mer lättsmält text. Åtminstone bakas in i ett för bakgrunden avslutande stycke*
 
 *Primär frågeställning:*
 *Är I-KBT utan terapeutstöd non-inferior I-KBT med terapeutstöd vad det gäller ökning av konstruktiv självhävdelse och minskning av passiv och aggresiv självhävdelse?*
