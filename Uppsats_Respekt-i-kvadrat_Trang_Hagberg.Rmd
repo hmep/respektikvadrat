@@ -547,7 +547,21 @@ Utöver AAA-S användes även The Rathus Assertiveness Schedule (RAS, **CITKEYMI
 
 <!--We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. 21-word solution (Simmons, Nelson & Simonsohn, 2012; retrieved from http://ssrn.com/abstract=2160588) -->
 
-## Material (interventionen)
+## Interventionen
+Interventionen är utformad med självhjälpsmaterialet Assert Yourself [@michel2008] som grund. Materialet är framtaget av Center for Clinical Interventions (CCI) i delstaten Western Australia, Australien. I arbetsboken får läsaren lära sig skillnaden mellan olika typer av självhävdelse (konstruktiv, aggressiv, passiv, passiv-aggressiv) och rationalen för kognitiv omstrukturering med KBT. Genom att planera och utföra beteendeexperiment får deltagaren hjälp av materialet att pröva giltigheten av egna negativa förutsägelser och därmed öka responsmöjligheterna i olika mer eller mindre pressande situationer. Utöver detta innehåller arbetsmaterialet ett avsnitt om progressiv muskelavslappning, med syftet att hjälpa läsaren att känna igen spänning i kroppen, att sänka den allmänna spänningsnivån och träna på en aktiv coping-teknik för stressande lägen. Materialet avslutas med ett antal kapitel för olika problemområden (säga nej, hantera kritik, hantera besvikelser, ta emot och ge komplimanger).
+
+### Anpassningar och tillägg
+Materialet är översatt och anpassat till svenska förhållanden av TH med tillstånd av författaren och CCI. I samband med anpassningen av översättningen till I-KBT-moduler i plattformen iTerapi modifierade och utökade TH och PT materialet, bland annat genom att ersätta avsnitt som handlar om kognitiv omstrukturering med motiverande avsnitt för beteendeexperiment/beteendeaktivering. Utöver materialet i boken innehåller interventionen dessutom motiverande inslag i form av text och illustrationer (inspirerade av bland annat @Hayes2006a; @Dahlin2016) samt länkar till fördjupningsmaterial, videofilmer med konversationer och rollspel mellan PT och TH, videofilmer och ljudfiler med avslappningsövningar samt ett stort antal nya övningar, bland annat för veckovis uppföljning av konstruktiv självhävdelse, övningar för för återfallsprevention och vidmakthållande av behandlingseffekter samt utvärderingsformulär av veckans innehåll.
+
+**Här kommer det att vara en tabell med innehållet för varje modul**
+
+## Behandlingsplattformen
+I studien användes behandlingsplattformen iTerapi. Det är en plattform som använts upprepade gånger vid forskning på internetbaserade psykologiska interventioner och behandlingar [@Vlaescu2016]. Plattformen använder sig av tvåfaktorsautentisering och är krypterad. I rådande fall innebar det att deltagarna blev tilldelade en anonym studiekod till vilken de valde ett eget lösenord. Vid varje inloggningstillfälle skickades sedan engångskoder till deras mobiltelefoner per SMS.
+
+Alla deltagare fyllde i för-, halvtids- och eftermätning via plattformen. Alla moduler och övningar gick att nå via plattformen. De deltagare som tillhörde gruppen med behandlarstöd konverserade uteslutande med sina behandlare via plattformens meddelandefunktion.
+
+##Etiska aspekter
+Den föreliggande studien godkändes av etikprövningsnämnden. Diarienummer för etikansökan är 2019-05165. Studien förregistrerades även på www.clinicaltrials.gov. Deltagarna blev via hemsidan informerat om att allt deltagande var frivilligt och att de kunde avbryta sitt deltagande när som helst. All information samlades in under sekretess och i enlighet med personuppgiftslagen samt GDPR. Deltagandet var helt anonymt och all insamlad data var kopplad till den anonyma studiekod som genererades för varje deltagare. Vid exkludering från studien informerades deltagaren om anledningen samt fick rekommendationer (t ex om vart hen kunde vända sig för att söka vård). Vid tecken på svår depression rekommenderades det att deltagarna uppsökte psykiatrisk vård. Under hela studiens gång hade deltagarna möjlighet att kontakta studieansvarig per telefon samt post.
 
 
 ## Analys
@@ -636,20 +650,17 @@ knitr::kable(round(descriptives.out.rot,1), "latex", booktabs = T, caption = "(r
 
 # Diskussion
 
-## metodologiska brister / felkällor / validitet / reliabilitet
-
-asdfadf
-
+## Metodologiska brister / felkällor / validitet / reliabilitet
 
 <!-- kommentar -->
 
-## resultatdiskussion
+## Resultatdiskussion
 
-## i relation till annan forskning, självhävdelse
+## I relation till annan forskning, självhävdelse
 
-## behov av ny forskning
+## Behov av ny forskning
 
-## sammanfattning?
+## Sammanfattning (?)
 
 \newpage
 
