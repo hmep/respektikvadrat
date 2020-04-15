@@ -9,7 +9,6 @@ author:
     email         : "patrik.trang@gmail.com"
 affiliation:
   - institution   : "Psykologiska institutionen, Stockholms universitet"
-
 wordcount         : "X"
 bibliography      : ["r-references.bib", "library.bib"]
 floatsintext      : no
