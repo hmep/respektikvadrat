@@ -427,15 +427,15 @@ Graden av konstruktiv självhävdelse för en person i en given situation kan in
 @Mitamura2018 problematiserar skillnaden mellan aggressiv och konstruktiv självhävdelse. De olika kommunikationsstilarna behöver förstås i de sammanhang de utförs. Beteenden som i en japansk (eller för all del svensk) kontext kan framstå som aggressiva kan i en amerikansk kontext framstå som konstruktiv självhävdande; beteenden som i en viss familj eller vänskapskrets ses som konstruktiva kan i andra ses som passiva, och så vidare. Vad som i kontexten menas med handlande som är förenligt med egna och andras rättigheter är föremål för förhandling mellan parterna. Genom att anlägga ett funktionellt och kontextuellt synsätt på självhävdandebeteenden är det möjligt att använda begreppen utan att moralisera eller att vara normativt förskrivande. Begreppen 'konstruktiv självhävdelse', 'passiv självhävdelse' och 'aggressiv självhävdelse' bör användas pragmatiskt för att till exempel i en terapi särskilja och tala om beteenden i en specificerad kontext -- på samhällsnivå, gruppnivå och individnivå.
 >>>>>>> 2f295d57d5e70b9c9df3ea21927ae446d0af83ef
 
+## Konstruktiv självhävdelse och aktuellt forskningsläge
+
+Forskning på *assertiveness* övergavs i stort sett efter 1970-talet. Under de senaste åren har dock intresset för självhävdelse ökat något igen. @Vagos2019 konstaterar att självupplevd grad av psykiskt lidande korrelerar negativt med grad av konstruktiv självhävdelse, i linje med rationalen för träning i *assertiveness* som den presenterades av @Wolpe1966. @Amy2015 visar en negativ korrelation mellan att uppleva social ångest och konstruktiv självhävdelse. Deras slutsats är att man kan öka oddsen för konstruktivt självhävdande beteenden för en person antingen genom att i behandling **[minska/exponera för]** social ångest och/eller att arbeta med hur personen förhåller sig till sin ångest. 
+
 ```{r assertiveness, out.width="75%", fig.align="center", out.extra='', fig.cap='Konstruktiv självhävdelse definieras i träningsprogrammet Respekt i kvadrat som handlande som är förenligt med samtidig respekt för egna och andras rättigheter. Passiv självhävdelse kan på samma sätt definieras som låg grad av respekt för egna rättigheter men hög grad av respekt för andras rättigheter; aggressiv självhävdelse kan definieras som hög grad av respekt för egna rättigheter men låg grad av respekt för andras rättigheter.'}
 
 knitr::include_graphics("canvas-konstruktiv-slinga-X.pdf") 
 
 ```
-
-## Konstruktiv självhävdelse och aktuellt forskningsläge
-
-Forskning på *assertiveness* övergavs i stort sett efter 1970-talet. Under de senaste åren har dock intresset för självhävdelse ökat något igen. @Vagos2019 konstaterar att självupplevd grad av psykiskt lidande korrelerar negativt med grad av konstruktiv självhävdelse, i linje med rationalen för träning i *assertiveness* som den presenterades av @Wolpe1966. @Amy2015 visar en negativ korrelation mellan att uppleva social ångest och konstruktiv självhävdelse. Deras slutsats är att man kan öka oddsen för konstruktivt självhävdande beteenden för en person antingen genom att i behandling **[minska/exponera för]** social ångest och/eller att arbeta med hur personen förhåller sig till sin ångest. 
 
 @Speed2018a sammanställer forskningsläget kring *assertiveness*. Träning i konstruktiv självhävdelse kan förbättra måendet vid både ångestsyndrom och depression och öka självförtroende samt förbättra upplevd tillfredsställelse i parrelationer. Författarna konstaterar att träning i konstruktiv självhävdelse redan ingår i de bredare begreppen som beteendeaktivering och färdighetsträning i flertalet allt mer beforskade behandlingsmetoder -- som dialektisk beteendeterapi (DBT), *Acceptance and Commitment Therapy* (ACT) och beteendeaktivering vid depression. En stor andel av den forskning om *assertiveness* som transdiagnostiskt begrepp som har gjorts är till åren kommen och att det finns ett stort behov att på nytt utvärdera den specifika effekten av självhävdelseträning [@Speed2018a]. 
 
@@ -445,7 +445,7 @@ Evidensen för beteendeterapi och KBT för syndromala och icke-syndromala psykol
 
 @Chambless2001 ger en tidig översikt av det samlade forskningsläget för KBT utifrån angivna utgångspunkter för vad som kan betraktas som av empiri bekräftat framgångsrika terapiformer -- det vill säga terapi som undersökts med randomiserade kontrollerade studier, specificerade testpopulationer och väl beskrivna behandlingar. Sammanställningen visar att KBT överlag har bättre evidens än andra terapiformer. Systematiska sammanställningar med uppdaterat forskningsläge utifrån dessa principer publiceras sedan dess regelbundet i England av @NationalInstituteforHealthandCareExcellence2018 och i USA av @AmericanPsychologicalAssociation2016. @Socialstyrelsen2017 ger de senaste nationella riktlinjerna för vård vid depression och ångestsyndrom i Sverige. I dessa riktlinjer är KBT-behandling näst intill uteslutande förstahandsvalet vid psykologisk behandling.
 
-@Hofmann2012 är en översikt av meta-analyser som visar att KBT alltjämt är en av de mest effektiva terapiformerna. I deras översikt visade sig KBT effektivt för att motverka bland annat trauma- och stressrelaterade symptom, liksom depressiva och ångestrelaterade syndrom. Litteraturen bekräftar att KBT är har god effekt för de syndrom som @Speed2018a associerar med brister i konstruktiv självhävdelse.
+@Hofmann2012 är en översikt av meta-analyser som visar att KBT alltjämt är en av de mest effektiva terapiformerna. I deras översikt visade sig KBT effektivt för att motverka bland annat trauma- och stressrelaterade symptom, liksom depressiva och ångestrelaterade syndrom. Litteraturen stödjer att KBT har god effekt för de syndrom som @Speed2018a associerar med brister i konstruktiv självhävdelse.
 
 Trots att evidensen för kognitiv och beteendeterapeutisk behandling vid ångestsyndrom och depressiva syndrom är god förblir majoriteten av fallen även i länder med väl utvecklad sjukvård obehandlade @Craske2017.
 
@@ -512,7 +512,7 @@ De personer som skattade 15 eller mer på självskattningsformuläret PHQ-9 exkl
 #### Demografisk data
 De 204 deltagare vars data redovisas var mellan 20 och 65 år gamla med en medelålder på 41,8 år (s=8,8). En betydande majoritet (87,8%; 179/204) definierade sig som kvinnor, övriga definierade sig som män. Knappt tre fjärdedelar av deltagarna har avslutade universitets- eller högskoleutbildningar (71,6%; 146/204) och tre fjärdedelar av deltagarna var vid behandlingens start arbetande (75,5%; 154/204). Mer än hälften av deltagarna (61,3%; 125/204) hade tidigare erfarenheter av psykologisk behandling. Av dessa hade majoriteten (64,8%; 81/125) tidigare erfarenheter av KBT.  Knappt en tredjedel av alla deltagare (29,0%; 59/204) hade erfarenhet av psykofarmaka. Vid behandlingens start stod 17,6% (36/204) på någon sorts psykofarmaka. Totalt 3,4% (7/204) av deltagarna var vid behandlingsstart sjukskrivna. För att se de demografiska faktorernas fördelningar i respektive grupp, se tabell~\@ref(fig:demdata).
 
-```{r demdata, out.width="100%", fig.align="center", out.extra='', fig.cap='Demografisk data hos deltagarna, uppdelad per grupp samt total'}
+```{r demdata, out.width="100%", fig.align="center", out.extra='', fig.cap='Demografisk data hos deltagarna, redovisad per grupp samt för alla studiens deltagare.'}
 
 knitr::include_graphics("demdata-crop.pdf")
 
@@ -565,6 +565,7 @@ Interventionen är utformad med självhjälpsmaterialet Assert Yourself [@michel
   6–7         Fördjupningsområden med beteendeexperiment: säga nej, hantera kritik, hantera besvikelser, hantera komplimanger                                           Kapitel 6, 7, 8, 9 med smärre justeringar
   8           Kartläggning framgångsfaktorer, planering för vidmakthållande och återfallsprevention                                                                     Kapitel 10 med modifieringar och utökningar (eftermätning med självskattningsskalor administrerades efter detta kapitel)
   
+<!-- Tabellen ovan behöver formatteras -->
 
 ### Anpassningar och tillägg
 Materialet är översatt och anpassat till svenska förhållanden av TH med tillstånd av författaren och CCI. I samband med anpassningen av översättningen till I-KBT-moduler i plattformen iTerapi modifierade och utökade TH och PT materialet, bland annat genom att ersätta avsnitt som handlar om kognitiv omstrukturering med motiverande avsnitt för beteendeexperiment/beteendeaktivering. Utöver materialet i boken innehåller interventionen dessutom motiverande inslag i form av text och illustrationer (inspirerade av bland annat @Hayes2006a; @Dahlin2016) samt länkar till fördjupningsmaterial, videofilmer med konversationer och rollspel mellan PT och TH, videofilmer och ljudfiler med avslappningsövningar samt ett stort antal nya övningar, bland annat för veckovis uppföljning av konstruktiv självhävdelse, övningar för för återfallsprevention och vidmakthållande av behandlingseffekter samt utvärderingsformulär av veckans innehåll.
@@ -576,7 +577,7 @@ I studien användes behandlingsplattformen iTerapi. Det är en plattform som anv
 
 Alla deltagare fyllde i för-, halvtids- och eftermätning via plattformen. Alla moduler och övningar gick att nå via plattformen. De deltagare som tillhörde gruppen med behandlarstöd konverserade uteslutande med sina behandlare via plattformens meddelandefunktion.
 
-##Etiska aspekter
+## Etiska aspekter
 Den föreliggande studien godkändes av etikprövningsnämnden. Diarienummer för etikansökan är 2019-05165. Studien förregistrerades även på www.clinicaltrials.gov. Deltagarna blev via hemsidan informerat om att allt deltagande var frivilligt och att de kunde avbryta sitt deltagande när som helst. All information samlades in under sekretess och i enlighet med personuppgiftslagen samt GDPR. Deltagandet var helt anonymt och all insamlad data var kopplad till den anonyma studiekod som genererades för varje deltagare. Vid exkludering från studien informerades deltagaren om anledningen samt fick rekommendationer (t ex om vart hen kunde vända sig för att söka vård). Vid tecken på svår depression rekommenderades det att deltagarna uppsökte psykiatrisk vård. Under hela studiens gång hade deltagarna möjlighet att kontakta studieansvarig per telefon samt post.
 
 
