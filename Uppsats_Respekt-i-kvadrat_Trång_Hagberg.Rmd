@@ -39,6 +39,7 @@ header-includes:
 #   - \raggedbottom
    - \setmainfont{Times New Roman}
    - \clearcaptionsetup{figure}
+   - \clearcaptionsetup{table}
    - \setlength{\abovecaptionskip}{.5\baselineskip}
    - \setlength{\belowcaptionskip}{.5\baselineskip}
 ---
@@ -347,6 +348,76 @@ library("psych")
 
 ```
 
+```{r norms}
+
+### AAA-S Adaptive assertiveness
+# Norms: Thompson (2011) 
+
+# Adaptive assertiveness
+# Student sample 1: 57.6 (7.5), alpha .82 <- Let's use these
+# Student sample 2: 56.8 (7.4), alpha .82
+# Clinical sample: 50.0 (8.4), alpha .69
+
+r.AAAS.ad = 0.82
+sd.AAAS.ad.norm = 7.5
+mean.AAAS.ad.norm = 57.6
+
+### AAA-S Aggressive assertiveness
+# Norms: Thompson (2011) 
+
+# Aggressive assertiveness
+# Student sample 1: 33.2 (9.7), alpha .88 <- Let's use these
+# Student sample 2: 31.6 (8.7), alpha .87
+# Clinical sample: 27.5 (7.6), alpha .82
+
+r.AAAS.ag = 0.88
+sd.AAAS.ag.norm = 9.7
+mean.AAAS.ag.norm = 33.2
+
+### PHQ9
+# Normdata: Kroenke, K., Spitzer, R. L., & Williams, J. B. (2001). The PHQ-9: validity of a brief depression severity measure. Journal of General Internal Medicine, 16(9), 606–613. Retrieved from http://www.ncbi.nlm.nih.gov/pubmed/11556941
+
+r.PHQ9 = 0.89
+sd.PHQ9.norm = 3.8
+mean.PHQ9.norm = 5.08
+
+### GAD7
+# Normdata: Spitzer, R. L., Kroenke, K., Williams, J. B. W., & Löwe, B. (2006). A Brief Measure for Assessing Generalized Anxiety Disorder. Archives of Internal Medicine, 166(10), 1092. https://doi.org/10.1001/archinte.166.10.1092
+# Löwe, B., Decker, O., Müller, S., Brähler, E., Schellberg, D., Herzog, W., & Herzberg, P. Y. (2008). Validation and Standardization of the Generalized Anxiety Disorder Screener (GAD-7) in the General Population. Medical Care, 46(3), 266–274. https://doi.org/10.1097/MLR.0b013e318160d093
+
+r.GAD7 = 0.92
+sd.GAD7.norm = 4.8
+mean.GAD7.norm = 4.9
+
+### LSAS-24
+# Normdata: Fresco, D. M., Coles, M. E., Heimberg, R. G., Liebowitz, M. R., Hami, S., Stein, M. B., & Goetz, D. (2001). The Liebowitz Social Anxiety Scale: a comparison of the psychometric properties of self-report and clinician-administered formats. Psychol Med 31, 1025-1035.
+# Svenska normer: https://www.fbanken.se/form/34/liebowitz-social-anxiety-scale-self-report
+# Test-retestreliabiliteten efter 12 veckor för totalpoängen var r = 0.83. <-- Let's use these
+# SOFIE-1 (n=64)
+# Totalpoäng:
+# Före behandling M=68.5 (sd=22.5)
+# Efter behandling M=45.6 (sd=25.1) <-- Let's use these
+# Subscale Fear
+# Före behandling M=36.9 (sd=12.1)
+# Efter behandling M=25.4 (sd=12.8)
+# Subscale Avoidance
+# Före behandling M=31.6 (sd=11.3)
+# Efter behandling M=20.2 (sd=12.9)
+
+r.LSAS24 = 0.83
+sd.LSAS24.norm = 25.1
+mean.LSAS24.norm = 45.6
+
+### Rathus
+# Modern norms are missing, see questions above
+
+r.Rathus = 0.76 # Split half reliability according to Quillin (1977)
+sd.Rathus.norm = sd(r2.long.data[grepl("Pre", r2.long.data$time),5],na.rm=T)
+mean.Rathus.norm = mean(r2.long.data[grepl("Pre", r2.long.data$time),5],na.rm=T)
+
+```
+
+
 Underskott av beteenden som går att samla under begreppet *assertiveness* (från engelska översatt till ”konstruktiv självhävdelse”) förknippas med en lång räcka psykologiska problem, exempelvis olika ångestsyndrom som generaliserat ångestsyndrom, social ångest och paniksyndrom, liksom depression, schizofreni med mera [@Speed2018a].
 
 Träning i *assertiveness* har en lång historia med behavioristiska rötter från 1950-talet och framåt, bland annat genom @andrew2001conditioned och @Wolpe1966. Dessa första terapier byggde på principer om klassisk betingning: Målet för träningen var att para aversiva stimuli som tidigare gav upphov till exempelvis passivitet eller aggressivitet med adaptiva beteenden som tidigare uttryckts i underskott – ofta med avslappning som en integrerad del, utifrån rationalen att avslappning och ångest inte är förenliga. Som en del i den självhävdelsefokuserade psykoterapin föreskrevs ett antal olika  beteenden för klienter och patienter att träna på, till exempel att säga nej till andra.
@@ -396,6 +467,8 @@ Trots att evidensen för kognitiv och beteendeterapeutisk behandling vid ångest
 I-KBT är en effektiv behandlingsmetod för ett brett spektrum av olika besvär. I en meta-analys från 2018 – som inkluderade 64 RCT-studier – konstateras I-KBT vara effektivt för behandling av både depression, paniksyndrom, agorafobi, social fobi samt generaliserat ångestsyndrom [@Andrews2018]. Författarna finner att medeleffektstorleken för internet-KBT (I-KBT) är *d* = 0,8 eller mer i jämförelse med kontrollbetingelse. Enligt resultaten tenderar också effekten att hålla i sig över tid. I-KBT är dessutom jämförbart effektmässigt med terapeutledd terapi. Dessa resultat bekräftar tidigare fynd i samma riktning med 22 RCT-studier [@Andrews]. 
 
 I-KBT har även visat sig vara effektivt vid behandling av PTSD [@Sijbrandij2016], insomni [@Zachariae2016] och för att minska lidandet vid olika kroniska hälsobesvär [@Mehta2019]. I-KBT är också en verksamt vid en rad olika transdiagnostiska symtom såsom stress [@Day2013], prokrastinering [@Rozental2015] och perfektionism [@Rozental2017; @Wade2019].
+
+Ta också med referens till @Andersson2016b
 
 **Flytta hit och redigera: [Icke desto mindre har I-KBT-behandling visat sig vara en effektiv behandlingsform. Både i en metaanalys från 2008 samt i en metaanalys från 2018 konstaterades I-KBT-behandlingar likvärdiga ansikte mot ansikte-behandlingar (Barak2008; Carlbring2018).]**
 
@@ -459,7 +532,7 @@ my_lm <- lm(Sepal.Width ~ Sepal.Length + Petal.Width + Petal.Length, data = iris
 
 apa_lm <- apa_print(my_lm)
 
-apa_table(apa_lm$table, caption = "Iris regression table.")
+#apa_table(apa_lm$table, caption = "Iris regression table.")
 
 
 ```
@@ -467,18 +540,23 @@ apa_table(apa_lm$table, caption = "Iris regression table.")
 
 Vi använde `r cite_r("r-references.bib")` för alla analyser.
 
-
 # Resultat
 
-(ref:my-table-caption) This is a caption for my table.
+se tabell \@ref(fig:descriptives))
 
-``` {r descriptives}
+(ref:my-table-caption) Deskriptiva mått för primära och sekundärt utfallsmått för de tre betingelserna vid för- och eftermätningstidpunkterna.
+
+``` {r descriptives, fig.cap='(ref:my-table-caption)', fig.align="center"}
+
+### Descriptives
 
 library(pastecs)
 
-numvars <- c(5:17) # Numerical variables that we are interested in
+numvars <- c(5:17) # Variables in r2.long.data that we are interested in
 
-### Descriptives
+descriptives.lg123t1 <- stat.desc(r2.long.data[lt1,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+descriptives.lg123t2 <- stat.desc(r2.long.data[lt2,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+descriptives.lg123t3 <- stat.desc(r2.long.data[lt3,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
 
 descriptives.lg1t1 <- stat.desc(r2.long.data[lg1t1,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
 descriptives.lg1t2 <- stat.desc(r2.long.data[lg1t2,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
@@ -492,42 +570,41 @@ descriptives.lg3t1 <- stat.desc(r2.long.data[lg3t1,numvars], basic=TRUE, desc=TR
 descriptives.lg3t2 <- stat.desc(r2.long.data[lg3t2,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
 descriptives.lg3t3 <- stat.desc(r2.long.data[lg3t3,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
 
-## Change scores
+descriptives.out <- rbind(
+  "Selfhelp" = cbind(
+    descriptives.lg1t1[c(9, 13), c(3,2,1)],
+#    descriptives.lg1t2[c(9, 13), c(3,2,1)],
+    descriptives.lg1t3[c(9, 13), c(3,2,1)]
+  ),
+  "Guided" = cbind(
+    descriptives.lg2t1[c(9, 13), c(3,2,1)],
+#    descriptives.lg2t2[c(9, 13), c(3,2,1)],
+    descriptives.lg2t3[c(9, 13), c(3,2,1)]
+  ),
+  "Waitlist" = cbind(
+    descriptives.lg3t1[c(9, 13), c(3,2,1)],
+#    descriptives.lg3t2[c(9, 13), c(3,2,1)],
+    descriptives.lg3t3[c(9, 13), c(3,2,1)]
+  )#,
+#   "All" = cbind(
+#     descriptives.lg123t1[c(9, 13), c(3,2,1)],
+# #    descriptives.lg3t2[c(9, 13), c(3,2,1)],
+#     descriptives.lg123t3[c(9, 13), c(3,2,1)]
+#   )
+)
 
-# Group 1, post--pre
-cs.g1t3t1 <- r2.long.data[lg1t3,numvars] - r2.long.data[lg1t1,numvars]
-descriptives.cs.g1t3t1 <- stat.desc(cs.g1t3t1, basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+colnames(descriptives.out) <- rep(c("AAA-S Adaptive","AAA-S Aggressive","Rathus"),times = 2)
+descriptives.out.rot <- t(descriptives.out)
+colnames(descriptives.out.rot) <- rep(c("M","SD"),times = 3)
 
-# Group 1, during-pre
-cs.g1t2t1 <- r2.long.data[lg1t2,numvars] - r2.long.data[lg1t1,numvars]
-descriptives.cs.g1t2t1 <- stat.desc(cs.g1t2t1, basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+# xs = paste('All (N = ' , length(r2.long.data[lg1t1,1]) , ')', sep="")
+# xg = paste('All (N = ' , length(r2.long.data[lg2t1,1]) , ')', sep="")
+# xw = paste('All (N = ' , length(r2.long.data[lg3t1,1]) , ')', sep="")
 
-# Group 2, post--pre
-cs.g2t3t1 <- r2.long.data[lg2t3,numvars] - r2.long.data[lg2t1,numvars]
-descriptives.cs.g2t3t1 <- stat.desc(cs.g2t3t1, basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
-
-# Group 2, during-pre
-cs.g2t2t1 <- r2.long.data[lg2t2,numvars] - r2.long.data[lg2t1,numvars]
-descriptives.cs.g2t2t1 <- stat.desc(cs.g2t2t1, basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
-
-# Group 3, post--pre
-cs.g3t3t1 <- r2.long.data[lg3t3,numvars] - r2.long.data[lg3t1,numvars]
-descriptives.cs.g3t3t1 <- stat.desc(cs.g3t3t1, basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
-
-# Group 3, during-pre
-cs.g3t2t1 <- r2.long.data[lg3t2,numvars] - r2.long.data[lg3t1,numvars]
-descriptives.cs.g3t2t1 <- stat.desc(cs.g3t2t1, basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
-
-
-# kable(text_tbl) %>%
-#   kable_styling(full_width = F) %>%
-#   column_spec(1, bold = T, border_right = T) %>%
-#   column_spec(2, width = "30em", background = "yellow")
-
-#knitr::kable(t(x[c(9,8,13),c(1:4)]),"latex", booktabs = T,caption = "(ref:my-table-caption)")
-  
-#knitr::kable(x,"latex", booktabs = T,caption = "(ref:my-table-caption)")
-
+knitr::kable(round(descriptives.out.rot,1), "latex", booktabs = T, caption = "(ref:my-table-caption)") %>%
+  add_header_above(c("", "Selfhelp (N = 67)" = 2, "Guided (N = 69)" = 2, "Waitlist (N = 68)" = 2)) %>% #, "All (N = 204)" = 2)) %>%
+  pack_rows("Pre", 1, 3, bold = F) %>%
+  pack_rows("Post", 4, 6, bold = F)
 
 ```
 
