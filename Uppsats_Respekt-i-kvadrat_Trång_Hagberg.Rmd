@@ -497,6 +497,49 @@ Individuals avoid stimuli which are associated with aversive experience to prese
 
 # Metod
 
+## Design
+
+Sample-storleken för varje grupp bestämdes till n=70 med en powerberäkning innan rekrytering påbörjades. I studien planerade manipulationer, variabler, mättillfällen och insamlad data har använts i de efterföljande analyserna utan selektion i efterhand. Både randomiseringen som exkluderade deltagare från studien, randomiseringen av de 210 deltagarna till sina respektive grupper samt randomiseringen av deltagarna med behandlingsstöd till respektive behandlare gjordes av oberoende tredje part vid Stockholms Universitet med hjälp av internetbaserade randomiseringstjänster (www.random.org för exkluderingen och randomiseringen till respektive behandlare samt www.sealedenvelope.com för randomiseringen till de tre grupperna). Deltagarna informerades via den webbaserade plattformen om exkludering eller vilken grupp de tillhörde. 
+
+#Rekrytering
+
+Rekrytering skedde mellan 28 januari och 5 februari 2020. Studien annonserades på flertalet sociala medier (www.facebook.com, www.twitter.com, www.linkedin.com samt www.instagram.com). Den annonserades även på diverse andra webbplatser (t ex www.studie.nu). De som ville veta mer om studien hänvisades till studiens hemsida (www.respektikvadrat.se). Där fanns information om hur studien skulle gå till, vilka inklusions- samt exklusionskriterierna var och när studien startade. Det fanns även information om vilka som var involverade i studien samt kontaktuppgifter till studieansvarig. Deltagarna anmälde sitt intresse genom att uppge sin e-postadress. I samband med att deltagarna hade möjlighet att anmäla sitt intresse presenterades de även med information kring potentiella risker med att delta, sekretess, datasäkerhet, datahantering, att deltagandet är frivilligt och kan avbrytas när som helst. När deltagarna väl anmält sitt intresse skickades en länk till deras e-postadresser med självskattningsformulär att besvara elektroniskt. Formulären frågade efter generellt välmående, nedstämdhet, ångest, socialfobiska tendenser samt egenupplevd självhävdelse. Deltagarna fick även fylla i demografiska frågor samt frågor om erfarenhet av tidigare psykologisk behandling, motivation till att delta i den aktuella studien samt om pågående medicinering. Deltagarna hade även möjligheten att i fritext informera om de ansåg att det fanns något annat som var nödvändigt att beakta vid bedömningen.
+
+#Deltagare
+Som framgår av figur~\@ref(fig:flow) så anmälde totalt 657 personer intresse till studien varav 464 personer slutförde hela screeningsprocessen. Av dessa exkluderades 126 personer då de uppfyllde något av de uppsatta exklusionskriterierna. De kvarvarande 338 personerna erbjöds plats i studien. Av dessa bejakade 253 sin plats. 43 personer exkluderades från behandlingen genom randomisering så att exakt 210 inkluderades. De deltager som exkluderades via randomisering erbjöds tillgång till materialet på samma sätt som kontrollgruppen fick det – men med skillnaden att deras resultat ej inkluderats i beräkningarna. Vid behandlingsstart hade alltså studien 210 deltagare.
+
+```{r flow, out.width="100%", fig.align="center", out.extra='', fig.cap='Här skriver du din figurtext.'}
+
+#knitr::include_graphics("flow.pdf")
+
+```
+
+
+##Inkluderingskriterier
+För att delta krävdes det att man var svensk medborgare, minst 18 år gammal, hade tillgång till en internetuppkoppling samt att man behärskade svenska i tal och skrift. Alla deltagare som erbjöds plats i studien blev informerade om detta via den webbaserade plattformen de använt sig av för att anmäla sitt intresse och fylla i screeningen. Denna information levererades till dem  en vecka före studiestart.
+
+##Ekluderingskriterier
+De personer som skattade 15 eller mer på självskattningsformuläret PHQ-9 exkluderades. Utöver detta exkluderades de deltagare som tre månader inom behandlingsstart gjort förändringar i sin psykofarmakabehandling. De personer som uppgav att de hade pågående psykologisk behandling exkluderades även. Slutligen exkluderades de personer som i frisvar under screeningsprocessen uppgav att de hade tidsbrist eller låg motivation till behandlingen. Alla personer som exkluderades blev informerade om detta via den webbaserade plattformen de använt sig för att anmäla sig till studien. När det var tillämpbart gavs även rekommendationer om vart personerna istället kunde vända sig.
+
+##Demografisk data
+
+#Behandlarstöd
+
+#Primära utfallsmått
+##Självhävdelsestil
+
+#Sekundära utfallsmått
+##Depression
+
+##Ångest
+
+##Social Ångest
+
+##Allmänt psykiskt välmående
+
+##Självhävdelsestil
+
+
 Sample-"storleken 'hej'" \'för\' varje grupp bestämdes med en powerberäkning. Alla i studien planerade manipulationer, mätttillfällen och all tillgänglig data har använts i de efterföljande analyserna.
 
 We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. <!-- 21-word solution (Simmons, Nelson & Simonsohn, 2012; retrieved from http://ssrn.com/abstract=2160588) -->
