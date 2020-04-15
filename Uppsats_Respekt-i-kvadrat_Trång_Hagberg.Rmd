@@ -404,8 +404,7 @@ mean.LSAS24.norm = 45.6
 ### Rathus
 # Modern norms are missing, see questions above
 #r.Rathus = 0.76 # Split half reliability according to Quillin (1977)
-# Suzuki2007
-r.Rathus =
+r.Rathus =0.84 # Suzuki2007
 sd.Rathus.norm = sd(r2.long.data[grepl("Pre", r2.long.data$time),5],na.rm=T)
 mean.Rathus.norm = mean(r2.long.data[grepl("Pre", r2.long.data$time),5],na.rm=T)
 
