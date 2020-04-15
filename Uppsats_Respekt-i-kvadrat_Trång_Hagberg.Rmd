@@ -514,8 +514,19 @@ För att delta krävdes det att man var svensk medborgare, minst 18 år gammal, 
 De personer som skattade 15 eller mer på självskattningsformuläret PHQ-9 exkluderades. Utöver detta exkluderades de deltagare som tre månader inom behandlingsstart gjort förändringar i sin psykofarmakabehandling. De personer som uppgav att de hade pågående psykologisk behandling exkluderades även. Slutligen exkluderades de personer som i frisvar under screeningsprocessen uppgav att de hade tidsbrist eller låg motivation till behandlingen. Alla personer som exkluderades blev informerade om detta via den webbaserade plattformen de använt sig för att anmäla sig till studien. När det var tillämpbart gavs även rekommendationer om vart personerna istället kunde vända sig.
 
 ##Demografisk data
+De 204 deltagare vars data redovisas var mellan 20 och 65 år gamla med en medelålder på 41,8 år (s=8,8). En betydande majoritet (87,8%; 179/204) definierade sig som kvinnor, övriga definierade sig som män. Knappt tre fjärdedelar av deltagarna har avslutade universitets- eller högskoleutbildningar (71,6%; 146/204) och tre fjärdedelar av deltagarna var vid behandlingens start arbetande (75,5%; 154/204). Mer än hälften av deltagarna (61,3%; 125/204) hade tidigare erfarenheter av psykologisk behandling. Av dessa hade majoriteten (64,8%; 81/125) tidigare erfarenheter av KBT.  Knappt en tredjedel av alla deltagare (29,0%; 59/204) hade erfarenhet av psykofarmaka. Vid behandlingens start stod 17,6% (36/204) på någon sorts psykofarmaka. Totalt 3,4% (7/204) av deltagarna var vid behandlingsstart sjukskrivna. För att se de demografiska faktorernas fördelningar i respektive grupp, se tabell~\@ref(fig:demdata).
+
+```{r demdata, out.width="100%", fig.align="center", out.extra='', fig.cap='Demografisk data hos deltagarna, uppdelad per grupp samt total'}
+
+#knitr::include_graphics("demdata.pdf")
+
+```
 
 #Behandlarstöd
+En av de tre grupperna fick tillgång till behandlarstöd. Deltagarna i denna grupp blev randomiserade till en av de två behandlarna. Varje behandlare hade i och med detta behandlingskontakt med 35 deltagare var. Behandlarna var studenter vid Stockholms Universitet. Båda behandlarna gick sista terminen på psykologprogrammet och hade en grundläggande psykoterapiutbildning i KBT. Under hela studiens gång hade behandlarna tillgång till handledning av en legitimerad psykolog med drygt 20 års erfarenhet av internetbaserad psykologisk behandling.
+
+Behandlarstöd bestod av veckovis skriftlig kontakt med deltagarna via den krypterade webbaserade plattformen iTerapi. Stödet bestod av feedback på genomförda övningar, uppmuntran, validering, psykoedukation samt svar på de frågor deltagarna ställde. Tidsåtgången var cirka 15 minuter per deltagare och vecka. De två andra grupperna hade inte tillgång till behandlarstöd men fick kontaktuppgifter till studieansvarig för eventuella administrativa frågor.
+
 
 #Primära utfallsmått
 ##Självhävdelsestil
