@@ -1,23 +1,23 @@
 ---
-title             : "Respekt i kvadrat: en randomiserad kontrollerad effektstudie av internetförmedlad kognitiv beteendeterapi på graden av konstruktiv självhävdelse"
+title             : "Respekt i kvadrat: en randomiserad kontrollerad effektstudie av internetf&ouml;rmedlad kognitiv beteendeterapi p&aring; graden av konstruktiv sj&auml;lvh&auml;vdelse"
 shorttitle        : "Respekt i kvadrat"
 author: 
   - name          : "Tobias Hagberg"
     email         : "tobias@hagberg.com"
     address       : "Psykologprogrammet, Psykologiska institutionen, Stockholms universitet"
-  - name          : "Patrik Trång"
+  - name          : "Patrik Trp&aring;ng"
     email         : "patrik.trang@gmail.com"
 affiliation:
   - institution   : "Psykologiska institutionen, Stockholms universitet"
 
 authornote: |
-  Tack till alla deltagare som har följt med på en för oss utmanande (och utvecklande) resa genom träningsprogrammet!
+  Tack till alla deltagare som har f&ouml;ljt med p&aring; en f&ouml;r oss utmanande (och utvecklande) resa genom tr&auml;ningsprogrammet!
 
 abstract: |
-  Det transdiagnostiska begreppet ’konstruktiv självhävdelse’ (*assertiveness* på engelska) kan definieras som handlande som är förenligt med respekt för både egna och andras rättigheter, exempelvis att uttrycka behov och önskemål, att sätta gränser och att dela tankar och känslor. Brister i konstruktiv självhävdelse är förknippat med klinisk och subklinisk psykisk ohälsa, till exempel stressrelaterad ohälsa, svårigheter i relationer, emotionell instabilitet, generaliserat ångestsyndrom, social ångest och depression. Syftet med den här studien är att undersöka effekten på konstruktiv självhävdelse av ett internet-administrerat träningsprogram med kognitiv-beteendeterapeutisk inriktning. 204 personer med självupplevda besvär (88% kvinnor, medelålder 41 år) rekryterades via annonsering i sociala medier. Deltagarna randomiserades till tre grupper: en som fick tillgång till träningsprogrammet (n = 67), en som fick tillgång till träningsprogrammet med terapeutstöd (n = 69) och en väntelista (n = 68). Graden av konstruktiv respektive aggressiv självhävdelse mättes med Adaptive and Aggressive Assertiveness Scales (AAA-S). [Här visar vi att (huvudresultatet). (huvudresultatet i relation till tidigare kunskap, ex “Vi fann att bristande konstruktiv självhävdelse var ett relevant mål för en transdiagnostisk intervention som gav samtidigt lindring över ett brett spann symtom. Vi fann också att terapeutstöd gav …”) (resultaten i en vidare kontext) (ännu bredare perspektiv och eventuella rekommendationer, exempelvis “Vi förespråkar ...”)]
+  Det transdiagnostiska begreppet ’konstruktiv sj&auml;lvh&auml;vdelse’ (*assertiveness* p&aring; engelska) kan definieras som handlande som &auml;r f&ouml;renligt med respekt f&ouml;r b&aring;de egna och andras r&auml;ttigheter, exempelvis att uttrycka behov och &ouml;nskem&aring;l, att s&auml;tta gr&auml;nser och att dela tankar och k&auml;nslor. Brister i konstruktiv sj&auml;lvh&auml;vdelse &auml;r f&ouml;rknippat med klinisk och subklinisk psykisk oh&auml;lsa, till exempel stressrelaterad oh&auml;lsa, sv&aring;righeter i relationer, emotionell instabilitet, generaliserat &aring;ngestsyndrom, social &aring;ngest och depression. Syftet med den h&auml;r studien &auml;r att unders&ouml;ka effekten p&aring; konstruktiv sj&auml;lvh&auml;vdelse av ett internet-administrerat tr&auml;ningsprogram med kognitiv-beteendeterapeutisk inriktning. 204 personer med sj&auml;lvupplevda besv&auml;r (88% kvinnor, medel&aring;lder 41 &aring;r) rekryterades via annonsering i sociala medier. Deltagarna randomiserades till tre grupper: en som fick tillg&aring;ng till tr&auml;ningsprogrammet (n = 67), en som fick tillg&aring;ng till tr&auml;ningsprogrammet med terapeutst&ouml;d (n = 69) och en v&auml;ntelista (n = 68). Graden av konstruktiv respektive aggressiv sj&auml;lvh&auml;vdelse m&auml;ttes med Adaptive and Aggressive Assertiveness Scales (AAA-S). [H&auml;r visar vi att (huvudresultatet). (huvudresultatet i relation till tidigare kunskap, ex “Vi fann att bristande konstruktiv sj&auml;lvh&auml;vdelse var ett relevant m&aring;l f&ouml;r en transdiagnostisk intervention som gav samtidigt lindring &ouml;ver ett brett spann symtom. Vi fann ocks&aring; att terapeutst&ouml;d gav …”) (resultaten i en vidare kontext) (&auml;nnu bredare perspektiv och eventuella rekommendationer, exempelvis “Vi f&ouml;respr&aring;kar ...”)]
     <!-- https://tinyurl.com/ybremelq -->
 
-keywords          : "självhävdelse, ångestsyndrom, ångest, stress, undvikande, assertiveness, anxiety disorder, anxiety, stress, avoidance"
+keywords          : "sj&auml;lvh&auml;vdelse, &aring;ngestsyndrom, &aring;ngest, stress, undvikande, assertiveness, anxiety disorder, anxiety, stress, avoidance"
 wordcount         : "X"
 bibliography      : ["r-references.bib", "library.bib"]
 floatsintext      : no
