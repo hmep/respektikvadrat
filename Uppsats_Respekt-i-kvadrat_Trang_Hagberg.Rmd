@@ -13,7 +13,8 @@ authornote: |
   `r readLines('authornote.txt', encoding = 'UTF-8')`
 abstract: |
   `r readLines('abstract.txt', encoding = 'UTF-8')`
-keywords          : "konstruktiv självhävdelse, stress, undvikande, assertiveness, anxiety disorder, anxiety, stress, avoidance"
+keywords: |
+  `r readLines('keywords.txt', encoding = 'UTF-8')`
 wordcount         : "X"
 bibliography      : ["r-references.bib", "library.bib"]
 floatsintext      : no
