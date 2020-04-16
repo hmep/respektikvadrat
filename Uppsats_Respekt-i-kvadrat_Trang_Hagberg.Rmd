@@ -567,6 +567,7 @@ knitr::include_graphics("flow.pdf")
 
 ```
 
+* Vår flowchart innehåller i dagsläget två sätt att presentera exklusionerna som skedde under behandlingens gång. Diskussion ska föras kring vilken vi anser bäst*
 
 #### Inkluderingskriterier
 För att delta krävdes det att man var svensk medborgare, minst 18 år gammal, hade tillgång till en internetuppkoppling samt att man behärskade svenska i tal och skrift. Alla deltagare som erbjöds plats i studien blev informerade om detta via den webbaserade plattformen de använt sig av för att anmäla sitt intresse och fylla i screeningen. Denna information levererades till dem  en vecka före studiestart.
@@ -612,11 +613,6 @@ Självskattningsskalan Välmåendeskalan [VS; @Braconier2015], användes för at
 
 #### Självhävdelsestil
 Utöver AAA-S användes även The Rathus Assertiveness Schedule [RAS, **CITKEYMISSING** Rathus, 1973] för att samla in information om deltagarnas självhävdelsestil. Självskattningsskalan består av 30 frågor som besvaras på en 6-gradig likertskala där -3 motsvarar “stämmer inte alls” och 3 motsvarar “stämmer helt”. Svaren på alla frågor summeras. Maximal totalpoäng på skalan är 90. En hög poäng indikerar på hög grad av självhävdelse och vice versa. 
-
-
-<!--Sample-"storleken 'hej'" \'för\' varje grupp bestämdes med en powerberäkning. Alla i studien planerade manipulationer, mätttillfällen och all tillgänglig data har använts i de efterföljande analyserna.-->
-
-<!--We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. 21-word solution (Simmons, Nelson & Simonsohn, 2012; retrieved from http://ssrn.com/abstract=2160588) -->
 
 ## Interventionen
 
@@ -675,6 +671,10 @@ Den föreliggande studien godkändes av etikprövningsnämnden. Diarienummer fö
 
 
 ## Analys
+
+<!--Sample-"storleken 'hej'" \'för\' varje grupp bestämdes med en powerberäkning. Alla i studien planerade manipulationer, mätttillfällen och all tillgänglig data har använts i de efterföljande analyserna.-->
+
+<!--We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. 21-word solution (Simmons, Nelson & Simonsohn, 2012; retrieved from http://ssrn.com/abstract=2160588) -->
 
 ```{r data,results = "asis"}
 my_lm <- lm(Sepal.Width ~ Sepal.Length + Petal.Width + Petal.Length, data = iris)
