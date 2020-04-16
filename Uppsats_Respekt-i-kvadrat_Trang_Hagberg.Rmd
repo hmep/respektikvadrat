@@ -33,6 +33,9 @@ header-includes:
    - \clearcaptionsetup{table}
    - \setlength{\abovecaptionskip}{.5\baselineskip}
    - \setlength{\belowcaptionskip}{.5\baselineskip}
+   - \usepackage{hyphenat}
+   - \hyphenation{nor-mal-spann nor-mal-span-net}
+   - \usepackage{tabu}
 ---
 
 ```{r preferences and dependencies, include = FALSE}
@@ -42,6 +45,8 @@ set.seed(42) # Seed for random number generation
 options(contrasts=c("contr.sum","contr.poly")) # Sum-to-zero contrasts for factors
 
 options(knitr.table.format = "latex")
+
+options(format.args = list(decimal.mark = ',', big.mark = ' '))
 
 #devtools::install_github("crsh/papaja@devel",force=TRUE)
 library("papaja") # APA-6 style guide compliance
@@ -441,6 +446,8 @@ Graden av konstruktiv självhävdelse för en person i en given situation kan in
 
 ```{r assertiveness, out.width="75%", fig.align="center", out.extra='', fig.cap='Konstruktiv självhävdelse definieras i träningsprogrammet Respekt i kvadrat som handlande som är förenligt med samtidig respekt för egna och andras rättigheter. Passiv självhävdelse kan på samma sätt definieras som låg grad av respekt för egna rättigheter men hög grad av respekt för andras rättigheter; aggressiv självhävdelse kan definieras som hög grad av respekt för egna rättigheter men låg grad av respekt för andras rättigheter.'}
 
+options(format.args = list(decimal.mark = '.', big.mark = ','))
+
 knitr::include_graphics("canvas-konstruktiv-slinga-X.pdf") 
 
 ```
@@ -576,6 +583,8 @@ Som framgår av figur \@ref(fig:flow) så anmälde totalt 657 personer intresse 
 
 ```{r flow, out.width="100%", fig.align="center", out.extra='', fig.cap='Flödesschema över inklusion, exklusion (samt dess orsaker) och bortfall.'}
 
+options(format.args = list(decimal.mark = '.', big.mark = ','))
+
 knitr::include_graphics("flow.pdf")
 
 ```
@@ -595,9 +604,173 @@ De 204 deltagare vars data redovisas var mellan 20 och 65 år gamla med en medel
 
 ```{r demdata, out.width="100%", tab.align="center"}
 
-knitr::include_graphics("demdata-crop.pdf")
+#knitr::include_graphics("demdata-crop.pdf")
+
+x1 <-
+  c(
+    "Kvinna",
+    "M",
+    "SD",
+    "Singel",
+    "Sambo",
+    "Gift",
+    "Annat",
+    "Folkskola/grundskola",
+    "Gymnasium",
+    "Yrkesutbildning",
+    "Universitet/högskola (pågående)",
+    "Universitet/högskola (avslutad)",
+    "Annat",
+    "Studerande",
+    "Arbetande",
+    "Arbetslös",
+    "Föräldraledig",
+    "Pensionär",
+    "Sjukskriven",
+    "Annat",
+    "Ja, tidigare",
+    "Ja, pågående",
+    "Nej",
+    "Ja",
+    "Nej"
+  )
+
+x2 <-
+  c(
+    79.1,
+    41.2,
+    8.8,
+    35.8,
+    25.4,
+    28.4,
+    10.4,
+    0,
+    9.0,
+    4.5,
+    15.0,
+    70.0,
+    1.5,
+    11.9,
+    76.1,
+    4.5,
+    0,
+    0,
+    1.5,
+    6.0,
+    9.0,
+    21.0,
+    70.0,
+    59.7,
+    40.3
+  )
+
+x3 <-
+  c(
+    92.8,
+    43.2,
+    9.3,
+    27.6,
+    17.4,
+    49.3,
+    5.7,
+    0,
+    7.2,
+    7.2,
+    10.1,
+    73.9,
+    1.5,
+    5.6,
+    76.9,
+    0,
+    3.0,
+    4.3,
+    3.0,
+    7.2,
+    17.4,
+    16.0,
+    66.6,
+    62.3,
+    37.7
+  )
+
+x4 <-
+  c(
+    91.2,
+    41.1,
+    8.8,
+    36.8,
+    36.8,
+    19.1,
+    7.3,
+    1.5,
+    10.3,
+    7.5,
+    7.5,
+    70.2,
+    3,
+    7.4,
+    73.5,
+    4.4,
+    0,
+    0,
+    5.9,
+    8.8,
+    7.4,
+    16.2,
+    76.4,
+    61.8,
+    38.2
+  )
+
+x5 <-
+  c(
+    87.8,
+    41.2,
+    8.8,
+    33.3,
+    20.6,
+    38.2,
+    7.9,
+    0.5,
+    8.8,
+    6.4,
+    10.7,
+    71.6,
+    2.0,
+    8.3,
+    75.5,
+    2.9,
+    1.0,
+    1.5,
+    3.4,
+    7.4,
+    11.4,
+    17.6,
+    71.0,
+    61.3,
+    38.7
+  )
+
+demdata.tabell <- cbind.data.frame(x1,x2,x3,x4,x5)
+
+colnames(demdata.tabell) <-c("","Självhjälp (n=67)","Med stöd (n=69)","Väntelista (n=68)","Totalt (n=204)")
+
+knitr::kable(demdata.tabell, format.args = list(decimal.mark = ',', big.mark = ' '), booktabs = T, caption = "(ref:demdata)", linesep = "", align="lrrrr") %>%
+  kable_styling(full_width = T) %>%
+  column_spec(2, width = "5em") %>%
+  column_spec(3, width = "5em") %>%
+  column_spec(4, width = "5em") %>%
+  column_spec(5, width = "5em") %>%
+  pack_rows("Kön (%)", 1, 1, bold = F) %>%
+  pack_rows("Ålder (år)", 2, 3, bold = F) %>%
+  pack_rows("Civilstånd (%)", 4, 7, bold = F) %>%
+  pack_rows("Utbildning (%)", 8, 13, bold = F) %>%
+  pack_rows("Sysselsättning (%)", 14, 20, bold = F) %>%
+  pack_rows("Användning psykofarmaka (%)", 21, 23, bold = F) %>%
+  pack_rows("Tidigare psykologisk behandling (%)", 24, 25, bold = F)
 
 ```
+
 ### Behandlarstöd
 En av de tre grupperna fick tillgång till behandlarstöd. Deltagarna i denna grupp blev randomiserade till en av de två behandlarna. Varje behandlare hade i och med detta behandlingskontakt med 35 deltagare var. Behandlarna var studenter vid Stockholms Universitet. Båda behandlarna gick sista terminen på psykologprogrammet och hade en grundläggande psykoterapiutbildning i KBT. Under hela studiens gång hade behandlarna tillgång till handledning av en legitimerad psykolog med drygt 20 års erfarenhet av internetbaserad psykologisk behandling.
 
@@ -639,6 +812,8 @@ Materialet är översatt och anpassat till svenska förhållanden av TH med till
 
 ```{r intervention, fig.align="center"}
 
+options(format.args = list(decimal.mark = ','))
+
 Vecka <- c("1","2","3","4","5","6--7","8")
 
 Tema <- c(
@@ -646,31 +821,31 @@ Tema <- c(
   "Psykoedukation kommunikationsstilar motiverande inslag om nyinlärning, träning i progressiv avslappning del 1",
   "Motiverande avsnitt om att bryta undvikande, introduktion till beteendeexperiment, planering beteendeexperiment, träning i progressiv avslappning del 2",
   "Uppföljning beteendeexperiment, rational för mängdträning, nya beteendeexperiment, övning i kort version av progressiv avslappning",
-  "Avslappningsövningar, uppsamlingsvecka för pågående beteendeexpriment, val av fördjupningsområde",
-  "Fördjupningsområden med beteendeexperiment: säga nej, hantera kritik, hantera besvikelser, hantera komplimanger",
-  "Kartläggning framgångsfaktorer, planering för vidmakthållande och återfallsprevention")
+  "Avslappningsövningar, uppsamlingsvecka för pågående beteendeexpriment/mängdträning, val av fördjupningsområde",
+  "Fördjupningsområden med beteendeexperiment/mängdträning: säga nej, hantera kritik, hantera besvikelser, hantera komplimanger",
+  "Kartläggning framgångsfaktorer, planering för vidmakthållande inklusive fortsatt mängdträning och återfallsprevention")
 
 Innehall <- c(
   "Kapitel 1 med utökningar",
   "Kapitel 2 med utökningar om inlärning, motivation och om ångest/obehag",
-  "Kapitel 3 med modifieringar och utökningar om ångest samt fördelarna med att bryta undvikande",
+  "Kapitel 3 med modifieringar och utökningar om fördelar med att bryta undvikande av ångest",
   "Kapitel 4 med utökningar",
   "Kapitel 5 med utökningar",
   "Kapitel 6, 7, 8, 9 med smärre justeringar",
   "Kapitel 10 med modifieringar och utökningar"
 )
 
-intervention.tabell <- cbind(
+intervention.tabell <- cbind.data.frame(
   "Vecka"=Vecka,
-  "Tema"=Tema,
-  "Innehåll"=Innehall
+  "Rational och innehåll"=Tema,
+  "Material"=Innehall
   )
 
-knitr::kable(intervention.tabell, "latex", booktabs = T, caption = "(ref:intervention)", linesep = "", align="cll" ) %>%
-  kable_styling(full_width = F) %>%
+knitr::kable(intervention.tabell, format.args = list(decimal.mark = ',', big.mark = ' '), booktabs = T, caption = "(ref:intervention)", linesep = "", align="rll") %>%
+  kable_styling(full_width = T) %>%
   column_spec(1, width = "2em") %>%
-  column_spec(2, width = "18em") %>%
-  column_spec(3, width = "18em")
+  column_spec(3, width = "12.5em") %>%
+  row_spec(c(1:6), extra_latex_after = "\\midrule")
 
 ```
 
@@ -711,6 +886,8 @@ se tabell \@ref(tab:descriptives)
 ``` {r descriptives, fig.cap='(ref:descriptives)', fig.align="center"}
 
 ### Descriptives
+
+options(OutDec= ",") 
 
 library(pastecs)
 
@@ -763,7 +940,7 @@ colnames(descriptives.out.rot) <- rep(c("M","SD"),times = 3)
 # xg = paste('All (N = ' , length(r2.long.data[lg2t1,1]) , ')', sep="")
 # xw = paste('All (N = ' , length(r2.long.data[lg3t1,1]) , ')', sep="")
 
-knitr::kable(round(descriptives.out.rot,1), "latex", booktabs = T, caption = "(ref:descriptives)") %>%
+knitr::kable(round(descriptives.out.rot,1), booktabs = T, caption = "(ref:descriptives)") %>%
   add_header_above(c("", "Selfhelp (N = 67)" = 2, "Guided (N = 69)" = 2, "Waitlist (N = 68)" = 2)) %>% #, "All (N = 204)" = 2)) %>%
   pack_rows("Pre", 1, 3, bold = F) %>%
   pack_rows("Post", 4, 6, bold = F)
@@ -774,13 +951,35 @@ knitr::kable(round(descriptives.out.rot,1), "latex", booktabs = T, caption = "(r
 
 Skriv en introduktion till klinisk signifikans och reliabel förändring @Jacobson1991
 
-various criteria have been suggested: a high percentage of clients improving; a level of change that is recognizable by peers and significant others (Kazdin, 1977; Wolf, 1978); an elimina- tion of the presenting problem (Kazdin & Wilson, 1978); nor- mative levels of functioning by the end of therapy (Kendall & Norton-Ford, 1982; Nietzel & Trull, 1988); high end-state func- tioning by the end of therapy (Mavissakalian, 1986); or changes that significantly reduce one's risk for various health problems.
+<!-- Vad är den minsta tillräckliga förändring i ett experiment som måste ha skett för att man ska kunna dra slutatsen att en förändring faktiskt också har skett i verkligheten? Det går att besvara den frågan på flera olika sätt.  -->
+
+På *gruppnivå* -- även i det här examensarbetet -- används ofta signifikanstestning för att avgöra om en skillnad i exempelvis medelvärden mellan två grupper är tillräckligt stor för att det ska gå att säga om en förändring har skett. Kompletterat med ett mått på effektstyrka går det att kvantifiera förändringen, exempelvis för att kunna bedöma om skillnaden också är relevant i praktiken, eller för att jämföra eller slå samman (exempelvis i en metastudie) result från en studie med en annan.
+
+<!-- Det finns flera alternativ, både på grupp- och invididnivå. @Jacobson1991 ger exempel från litteraturen: man kan beräkna den andel av alla i gruppen som har förbättrats utifrån något slags kriterium -- exempelvis vid subjektiv bedömning av närstående eller vänner, av andra eller självupplevd eliminering av problematiska symtom eller kanske på samma grunder konstaterade tillägg av "normalfunktion" vid slutet av terapin. -->
+
+För att avgöra om en viss *individ* i har förbättrats i en viss behandling kan kriterierna *reliabel förändring* och *klinisk signifikans* kombineras. @Jacobson1991 definierar det förra som 
+
+-- eller frekvensen av individer i en viss grupp -- som har förbättrats, kan 
+
+ 
+
+<!--
+
+(a) The level of functioning subsequent to therapy should fall outside the range of the dysfunctional population, where range is defined as extending to two standard deviations beyond (in the direction of functionality) the mean for that population. 
+
+(b) The level of functioning subsequent to therapy should fall within the range of the functional or normal population, where range is defined as within two standard deviations of the mean of that population. 
+
+(c) The level of functioning subsequent to therapy places that client closer to the mean of the functional population than it does to the mean of the dysfunctional population.
+
+The dotted lines to the left and right of the diagonal line represent the reliable change index band, set at an RCI score of 1.96 standard errors of measurement around the line of no change.  Individual scores within the RCI band have not shown reliable change while scores outside of the RCI band have shown reliable change.
+
+The "b" cutoff means that post-intervention scores are significant if they are within a specified distance of the normal MCT (i.e. they are "close enough" to the normal MCT). This criterion is typically used with overlapping distributions.
+ 
+-->
 
 \newpage
 
-<!-- se figur \@ref(fig:aaasad) -->
-
-(ref:ad) För huvudutfallsmåttet AAA-S och underskalan *Adaptive Assertiveness* fann vi 
+se figur \@ref(fig:aaasad)
 
 ``` {r aaasad, fig.cap='(ref:ad)', fig.align="center", fig.width=8, fig.height=4}
 
@@ -798,112 +997,141 @@ r2.wide.g3 <- r2.wide.data[g3,]
 
 library("clinsig")
 
-clinsig.AAAS.ad.g1 <- clinsig(
+x <- clinsig(
   r2.wide.g1$pre_aaas_ad[!is.na(r2.wide.g1$post_aaas_ad)],
   r2.wide.g1$post_aaas_ad[!is.na(r2.wide.g1$post_aaas_ad)],
   coef.alpha = r.AAAS.ad,
   func.disp = sd.AAAS.ad.norm,
   func.mct = mean.AAAS.ad.norm,
   main = "Adaptive Assertiveness, Selfhelp",
-  xlab = "Pre measure",
-  ylab = "Post measure",
-  do.plot = T
+  xlab = "Pretest score",
+  ylab = "Posttest score"
 )
+clinsig.AAAS.ad.g1.csrci <- length(intersect(
+  which((x$post.x - x$pre.x) > x$relchng
+  ),
+  which(x$post.x > x$crit[2])
+))
+clinsig.AAAS.ad.g1 <- x
 
-clinsig.AAAS.ad.g2 <- clinsig(
+x <- clinsig(
   r2.wide.g2$pre_aaas_ad[!is.na(r2.wide.g2$post_aaas_ad)],
   r2.wide.g2$post_aaas_ad[!is.na(r2.wide.g2$post_aaas_ad)],
   coef.alpha = r.AAAS.ad,
   func.disp = sd.AAAS.ad.norm,
   func.mct = mean.AAAS.ad.norm,
   main = "Adaptive Assertiveness, Guided",
-  xlab = "Pre measure",
-  ylab = "Post measure",
-  do.plot = T
+  xlab = "Pretest score",
+  ylab = "Posttest score"
 )
+clinsig.AAAS.ad.g2.csrci <- length(intersect(
+  which((x$post.x - x$pre.x) > x$relchng
+  ),
+  which(x$post.x > x$crit[2])
+))
+clinsig.AAAS.ad.g2 <- x
 
-clinsig.AAAS.ad.g1
-clinsig.AAAS.ad.g2
 
 ```
 
+(ref:ad) För huvudutfallsmåttet AAA-S och underskalan *Adaptive Assertiveness* fann vi att av de `r clinsig.AAAS.ad.g1$post.n` personerna i självhjälpsgruppen som genomfört både för- och eftermätning så återfanns `r clinsig.AAAS.ad.g1$sigsum[2]` vid eftermätningen inom eller ovanför normalspannet för en icke-klinisk population (ovanför kriterium *b*); av dem hade `r paste(clinsig.AAAS.ad.g1.csrci," (",round(clinsig.AAAS.ad.g1.csrci/clinsig.AAAS.ad.g1$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.AAAS.ad.g1$relchng,1)` poäng mellan mättillfällena. För de `r clinsig.AAAS.ad.g2$post.n` personer i gruppen som fick stöd och som genomfört båda mätningarna så återfanns `r clinsig.AAAS.ad.g2$sigsum[2]` vid eftermätningen inom normalspannet för en icke-klinisk population; av dem hade `r paste(clinsig.AAAS.ad.g2.csrci," (",round(clinsig.AAAS.ad.g2.csrci/clinsig.AAAS.ad.g2$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.AAAS.ad.g2$relchng,1)` poäng mellan mättillfällena.
+
 \newpage
 
-<!-- se figur \@ref(fig:aaasag) -->
-
-(ref:ag) För huvudutfallsmåttet AAA-S och underskalan *Aggressive Assertiveness* fann vi
+se figur \@ref(fig:aaasag)
 
 ``` {r aaasag, fig.cap='(ref:ag)', fig.align="center", fig.width=8, fig.height=4}
 
 par(mfrow=c(1,2))
 
-clinsig.AAAS.ag.g1 <- clinsig(
+x <- clinsig(
   r2.wide.g1$pre_aaas_ag[!is.na(r2.wide.g1$post_aaas_ag)],
   r2.wide.g1$post_aaas_ag[!is.na(r2.wide.g1$post_aaas_ag)],
   coef.alpha = r.AAAS.ag,
   func.disp = sd.AAAS.ag.norm,
   func.mct = mean.AAAS.ag.norm,
   main = "Aggressive Assertiveness, Selfhelp",
-  xlab = "Pre measure",
-  ylab = "Post measure",
-  do.plot = T
+  xlab = "Pretest score",
+  ylab = "Posttest score",
+  which.crit="a"
 )
+clinsig.AAAS.ag.g1.csrci <- length(intersect(
+  which((x$post.x - x$pre.x) > x$relchng
+  ),
+  which(x$post.x > x$crit[2])
+))
+clinsig.AAAS.ag.g1 <- x
 
-clinsig.AAAS.ag.g2 <- clinsig(
+x <- clinsig(
   r2.wide.g2$pre_aaas_ag[!is.na(r2.wide.g2$post_aaas_ag)],
   r2.wide.g2$post_aaas_ag[!is.na(r2.wide.g2$post_aaas_ag)],
   coef.alpha = r.AAAS.ag,
   func.disp = sd.AAAS.ag.norm,
   func.mct = mean.AAAS.ag.norm,
   main = "Aggressive Assertiveness, Guided",
-  xlab = "Pre measure",
-  ylab = "Post measure",
-  do.plot = T
+  xlab = "Pretest score",
+  ylab = "Posttest score"
 )
-
-clinsig.AAAS.ag.g1
-clinsig.AAAS.ag.g2
+clinsig.AAAS.ag.g2.csrci <- length(intersect(
+  which((x$post.x - x$pre.x) > x$relchng
+  ),
+  which(x$post.x > x$crit[2])
+))
+clinsig.AAAS.ag.g2 <- x
 
 ```
 
+(ref:ag) För huvudutfallsmåttet AAA-S och underskalan *Aggressive Assertiveness* fann vi att av de `r clinsig.AAAS.ag.g1$post.n` personerna i självhjälpsgruppen som genomfört både för- och eftermätning så återfanns `r clinsig.AAAS.ag.g1$sigsum[2]` vid eftermätningen inom eller ovanför normalspannet för en icke-klinisk population (ovanför kriterium *b*); av dem hade `r paste(clinsig.AAAS.ag.g1.csrci," (",round(clinsig.AAAS.ag.g1.csrci/clinsig.AAAS.ag.g1$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.AAAS.ag.g1$relchng,1)` poäng mellan mättillfällena. För de `r clinsig.AAAS.ag.g2$post.n` personer i gruppen som fick stöd och som genomfört båda mätningarna så återfanns `r clinsig.AAAS.ag.g2$sigsum[2]` vid eftermätningen inom normalspannet för en icke-klinisk population; av dem hade `r paste(clinsig.AAAS.ag.g2.csrci," (",round(clinsig.AAAS.ag.g2.csrci/clinsig.AAAS.ag.g2$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.AAAS.ag.g2$relchng,1)` poäng mellan mättillfällena.
+
 \newpage
 
-<!-- se figur \@ref(fig:rathus) -->
+se figur \@ref(fig:rathus)
 
 ``` {r rathus, fig.cap='(ref:rat)', fig.align="center", fig.width=8, fig.height=4}
 
 par(mfrow=c(1,2))
 
-clinsig.Rathus.g1 <- clinsig(
+x <- clinsig(
   r2.wide.g1$pre_rathus[!is.na(r2.wide.g1$post_rathus)],
   r2.wide.g1$post_rathus[!is.na(r2.wide.g1$post_rathus)],
   coef.alpha = r.Rathus,
   func.disp = sd.Rathus.norm,
   func.mct = mean.Rathus.norm,
   main = "Rathus, Selfhelp",
-  xlab = "Pre measure",
-  ylab = "Post measure",
+  xlab = "Pretest score",
+  ylab = "Posttest score",
   do.plot = T
 )
+clinsig.Rathus.g1.csrci <- length(intersect(
+  which((x$post.x - x$pre.x) > x$relchng
+  ),
+  which(x$post.x > x$crit[2])
+))
+clinsig.Rathus.g1 <- x
 
-clinsig.Rathus.g2 <- clinsig(
+x <- clinsig(
   r2.wide.g2$pre_rathus[!is.na(r2.wide.g2$post_rathus)],
   r2.wide.g2$post_rathus[!is.na(r2.wide.g2$post_rathus)],
   coef.alpha = r.Rathus,
   func.disp = sd.Rathus.norm,
   func.mct = mean.Rathus.norm,
   main = "Rathus, Guided",
-  xlab = "Pre measure",
-  ylab = "Post measure",
-  do.plot = T
+  xlab = "Pretest score",
+  ylab = "Posttest score"
 )
+clinsig.Rathus.g2.csrci <- length(intersect(
+  which((x$post.x - x$pre.x) > x$relchng
+  ),
+  which(x$post.x > x$crit[2])
+))
+clinsig.Rathus.g2 <- x
 
-clinsig.Rathus.g1
-clinsig.Rathus.g2
+# These should be colored:
+# intersect(which((x$post.x - x$pre.x) > x$relchng),which(x$post.x > x$crit[2]))
 
 ```
 
-<!-- (ref:rat) För det sekundära utfallsmåttet Rathus fann vi att av de `r clinsig.AAAS.ad.g1$post.n` personerna i självhjälpsgruppen så  clinsig.Rathus.g1$sigsums... Beräkningen är gjord med normdata från `r ref.Rathus`. -->
+(ref:rat) För det sekundära utfallsmåttet Rathus fann vi att av de `r clinsig.Rathus.g1$post.n` personerna i självhjälpsgruppen som genomfört både för- och eftermätning så återfanns `r clinsig.Rathus.g1$sigsum[2]` vid eftermätningen inom eller ovanför normalspannet för en icke-klinisk population (ovanför kriterium *b*); av dem hade `r paste(clinsig.Rathus.g1.csrci," (",round(clinsig.Rathus.g1.csrci/clinsig.Rathus.g1$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.Rathus.g1$relchng,1)` poäng mellan mättillfällena. För de `r clinsig.Rathus.g2$post.n` personer i gruppen som fick stöd och som genomfört båda mätningarna så återfanns `r clinsig.Rathus.g2$sigsum[2]` vid eftermätningen inom normalspannet för en icke-klinisk population; av dem hade `r paste(clinsig.Rathus.g2.csrci," (",round(clinsig.Rathus.g2.csrci/clinsig.Rathus.g2$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.Rathus.g2$relchng,1)` poäng mellan mättillfällena.
 
 \newpage
 
@@ -922,6 +1150,9 @@ interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$rathus,fun=
 
 ```
 
+<!-- https://www.researchgate.net/post/Who_knows_how_to_estimate_effect_size_in_generalized_linear_mixed_models_in_R -->
+<!-- https://easystats.github.io/effectsize/articles/from_test_statistics.html -->
+<!-- https://jonlefcheck.net/2013/03/13/r2-for-linear-mixed-effects-models/ -->
 
 # Diskussion
 
