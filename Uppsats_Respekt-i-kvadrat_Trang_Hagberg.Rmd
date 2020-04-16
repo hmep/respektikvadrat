@@ -844,7 +844,7 @@ clinsig.AAAS.ag.g2 <- clinsig(
   coef.alpha = r.AAAS.ag,
   func.disp = sd.AAAS.ag.norm,
   func.mct = mean.AAAS.ag.norm,
-  main = "Adaptive Assertiveness, Guided",
+  main = "Aggressive Assertiveness, Guided",
   xlab = "Pre measure",
   ylab = "Post measure"
 )
