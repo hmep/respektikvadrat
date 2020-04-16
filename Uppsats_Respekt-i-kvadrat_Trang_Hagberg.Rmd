@@ -776,6 +776,14 @@ library("clinsig")
   func.mct = mean.Rathus.norm
 ))
 
+(clinsig.Rathus.g2 <- clinsig(
+  r2.wide.g2$post_rathus[!is.na(r2.wide.g2$post_rathus)],
+  r2.wide.g2$pre_rathus[!is.na(r2.wide.g2$post_rathus)],
+  coef.alpha = r.Rathus,
+  func.disp = sd.Rathus.norm,
+  func.mct = mean.Rathus.norm
+))
+
 # (clinsig.Rathus.g1 <- clinsig(
 #   r2.wide.g1$post_rathus[!is.na(r2.wide.g1$post_rathus)],
 #   r2.wide.g1$pre_rathus[!is.na(r2.wide.g1$post_rathus)],
