@@ -696,7 +696,7 @@ Vi använde `r cite_r("r-references.bib")` för alla analyser.
 
 # Resultat
 
-se tabell \@ref(tab:descriptives))
+se tabell \@ref(tab:descriptives)
 
 (ref:descriptives) Deskriptiva mått för primära och sekundärt utfallsmått för de tre betingelserna vid för- och eftermätningstidpunkterna.
 
@@ -762,7 +762,13 @@ knitr::kable(round(descriptives.out.rot,1), "latex", booktabs = T, caption = "(r
 
 ```
 
-```{r clinsig}
+se figur \@ref(fig:aaasad)
+
+(ref:ad) För huvudutfallsmåttet AAA-S och underskalan *Adaptive Assertiveness* fann vi att X personer ...
+
+``` {r aaasad, fig.cap='(ref:ad)', fig.align="center", fig.width=8, fig.height=4}
+
+par(mfrow=c(1,2))
 
 # Subsetting keys
 
@@ -776,29 +782,109 @@ r2.wide.g3 <- r2.wide.data[g3,]
 
 library("clinsig")
 
-(clinsig.Rathus.g1 <- clinsig(
+clinsig.AAAS.ad.g1 <- clinsig(
+  r2.wide.g1$pre_aaas_ad[!is.na(r2.wide.g1$post_aaas_ad)],
+  r2.wide.g1$post_aaas_ad[!is.na(r2.wide.g1$post_aaas_ad)],
+  coef.alpha = r.AAAS.ad,
+  func.disp = sd.AAAS.ad.norm,
+  func.mct = mean.AAAS.ad.norm,
+  main = "Adaptive Assertiveness, Selfhelp",
+  xlab = "Pre measure",
+  ylab = "Post measure"
+)
+
+clinsig.AAAS.ad.g2 <- clinsig(
+  r2.wide.g2$pre_aaas_ad[!is.na(r2.wide.g2$post_aaas_ad)],
+  r2.wide.g2$post_aaas_ad[!is.na(r2.wide.g2$post_aaas_ad)],
+  coef.alpha = r.AAAS.ad,
+  func.disp = sd.AAAS.ad.norm,
+  func.mct = mean.AAAS.ad.norm,
+  main = "Adaptive Assertiveness, Guided",
+  xlab = "Pre measure",
+  ylab = "Post measure"
+)
+
+```
+
+se figur \@ref(fig:aaasag)
+
+(ref:ag) För huvudutfallsmåttet AAA-S och underskalan *Aggressive Assertiveness* fann vi att X personer ...
+
+``` {r aaasag, fig.cap='(ref:ag)', fig.align="center", fig.width=8, fig.height=4}
+
+par(mfrow=c(1,2))
+
+clinsig.AAAS.ag.g1 <- clinsig(
+  r2.wide.g1$pre_aaas_ag[!is.na(r2.wide.g1$post_aaas_ag)],
+  r2.wide.g1$post_aaas_ag[!is.na(r2.wide.g1$post_aaas_ag)],
+  coef.alpha = r.AAAS.ag,
+  func.disp = sd.AAAS.ag.norm,
+  func.mct = mean.AAAS.ag.norm,
+  main = "Aggressive Assertiveness, Selfhelp",
+  xlab = "Pre measure",
+  ylab = "Post measure"
+)
+
+clinsig.AAAS.ag.g2 <- clinsig(
+  r2.wide.g2$pre_aaas_ag[!is.na(r2.wide.g2$post_aaas_ag)],
+  r2.wide.g2$post_aaas_ag[!is.na(r2.wide.g2$post_aaas_ag)],
+  coef.alpha = r.AAAS.ag,
+  func.disp = sd.AAAS.ag.norm,
+  func.mct = mean.AAAS.ag.norm,
+  main = "Adaptive Assertiveness, Guided",
+  xlab = "Pre measure",
+  ylab = "Post measure"
+)
+
+```
+
+se figur \@ref(fig:rathus)
+
+(ref:rat) För det sekundära utfallsmåttet Rathus fann vi att X personer ...
+
+``` {r rathus, fig.cap='(ref:rat)', fig.align="center", fig.width=8, fig.height=4}
+
+par(mfrow=c(1,2))
+
+clinsig.Rathus.g1 <- clinsig(
   r2.wide.g1$post_rathus[!is.na(r2.wide.g1$post_rathus)],
   r2.wide.g1$pre_rathus[!is.na(r2.wide.g1$post_rathus)],
   coef.alpha = r.Rathus,
   func.disp = sd.Rathus.norm,
-  func.mct = mean.Rathus.norm
-))
+  func.mct = mean.Rathus.norm,
+  main = "Rathus, Selfhelp",
+  xlab = "Pre measure",
+  ylab = "Post measure"
+)
 
-# (clinsig.Rathus.g1 <- clinsig(
-#   r2.wide.g1$post_rathus[!is.na(r2.wide.g1$post_rathus)],
-#   r2.wide.g1$pre_rathus[!is.na(r2.wide.g1$post_rathus)],
-#   coef.alpha = r.Rathus,
-#   func.disp = sd.Rathus.norm,
-#   func.mct = mean.Rathus.norm
-# ))
+clinsig.Rathus.g2 <- clinsig(
+  r2.wide.g2$post_rathus[!is.na(r2.wide.g2$post_rathus)],
+  r2.wide.g2$pre_rathus[!is.na(r2.wide.g2$post_rathus)],
+  coef.alpha = r.Rathus,
+  func.disp = sd.Rathus.norm,
+  func.mct = mean.Rathus.norm,
+  main = "Rathus, Guided",
+  xlab = "Pre measure",
+  ylab = "Post measure"
+)
 
-#par(mfrow=c(1,2))
+```
+
+se figur \@ref(fig:interactions)
+
+(ref:int) Interaktioner ...
+
+``` {r interactions, fig.cap='(ref:int)', fig.align="center", fig.width=5, fig.height=4}
+
+par(mfrow=c(1,1))
+
 mean.rm.na <- function(x) mean(x,na.rm=T)
 interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$aaas_ad,fun=mean.rm.na)
 interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$aaas_ag,fun=mean.rm.na)
 interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$rathus,fun=mean.rm.na)
 
 ```
+
 
 # Diskussion
 
