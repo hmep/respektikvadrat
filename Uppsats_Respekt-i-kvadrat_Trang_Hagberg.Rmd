@@ -627,7 +627,8 @@ Materialet är översatt och anpassat till svenska förhållanden av TH med till
 
 ```{r intervention, fig.align="center"}
 
-Vecka <- c(1,2,3,4,5,6,7,8)
+Vecka <- c("1","2","3","4","5","6--7","8")
+
 Tema <- c(
   "Socialisering till programmet, psykoedukation om självhävdelse, kartläggning av besvär, formulering av målsättning för programmet",
   "Psykoedukation kommunikationsstilar motiverande inslag om nyinlärning, träning i progressiv avslappning del 1",
@@ -636,7 +637,8 @@ Tema <- c(
   "Avslappningsövningar, uppsamlingsvecka för pågående beteendeexpriment, val av fördjupningsområde",
   "Fördjupningsområden med beteendeexperiment: säga nej, hantera kritik, hantera besvikelser, hantera komplimanger",
   "Kartläggning framgångsfaktorer, planering för vidmakthållande och återfallsprevention")
-Innehåll <- c(
+
+Innehall <- c(
   "Kapitel 1 med utökningar",
   "Kapitel 2 med utökningar om inlärning, motivation och om ångest/obehag",
   "Kapitel 3 med modifieringar och utökningar om ångest samt fördelarna med att bryta undvikande",
@@ -646,13 +648,17 @@ Innehåll <- c(
   "Kapitel 10 med modifieringar och utökningar"
 )
 
-intervention.tabell <- cbind(Vecka,Tema,Innehåll)
+intervention.tabell <- cbind(
+  "Vecka"=Vecka,
+  "Tema"=Tema,
+  "Innehåll"=Innehall
+  )
 
 knitr::kable(intervention.tabell, "latex", booktabs = T, caption = "(ref:intervention)", linesep = "", align="cll" ) %>%
   kable_styling(full_width = F) %>%
   column_spec(1, width = "2em") %>%
-  column_spec(2, width = "18em") %>%
-  column_spec(3, width = "18em")
+  column_spec(2, width = "20em") %>%
+  column_spec(3, width = "16em")
 
 ```
 
@@ -769,6 +775,18 @@ library("clinsig")
   func.disp = sd.Rathus.norm,
   func.mct = mean.Rathus.norm
 ))
+
+# (clinsig.Rathus.g1 <- clinsig(
+#   r2.wide.g1$post_rathus[!is.na(r2.wide.g1$post_rathus)],
+#   r2.wide.g1$pre_rathus[!is.na(r2.wide.g1$post_rathus)],
+#   coef.alpha = r.Rathus,
+#   func.disp = sd.Rathus.norm,
+#   func.mct = mean.Rathus.norm
+# ))
+# 
+# par(mfrow=c(1,2))
+# interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$aaas_ag)
+# interaction.plot(r2.long.data$xtime, r2.long.data$xgroup, r2.long.data$aaas_ad)
 
 ```
 
