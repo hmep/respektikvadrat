@@ -557,7 +557,9 @@ Sample-storleken för varje grupp bestämdes till n=70 med en powerberäkning in
 Rekrytering skedde mellan 28 januari och 5 februari 2020. Studien annonserades på flertalet sociala medier (www.facebook.com, www.twitter.com, www.linkedin.com samt www.instagram.com). Den annonserades även på diverse andra webbplatser (t ex www.studie.nu). De som ville veta mer om studien hänvisades till studiens hemsida (www.respektikvadrat.se). Där fanns information om hur studien skulle gå till, vilka inklusions- samt exklusionskriterierna var och när studien startade. Det fanns även information om vilka som var involverade i studien samt kontaktuppgifter till studieansvarig. Deltagarna anmälde sitt intresse genom att uppge sin e-postadress. I samband med att deltagarna hade möjlighet att anmäla sitt intresse presenterades de även med information kring potentiella risker med att delta, sekretess, datasäkerhet, datahantering, att deltagandet är frivilligt och kan avbrytas när som helst. När deltagarna väl anmält sitt intresse skickades en länk till deras e-postadresser med självskattningsformulär att besvara elektroniskt. Formulären frågade efter generellt välmående, nedstämdhet, ångest, socialfobiska tendenser samt egenupplevd självhävdelse. Deltagarna fick även fylla i demografiska frågor samt frågor om erfarenhet av tidigare psykologisk behandling, motivation till att delta i den aktuella studien samt om pågående medicinering. Deltagarna hade även möjligheten att i fritext informera om de ansåg att det fanns något annat som var nödvändigt att beakta vid bedömningen.
 
 ### Deltagare
+
 Som framgår av figur \@ref(fig:flow) så anmälde totalt 657 personer intresse till studien varav 464 personer slutförde hela screeningsprocessen. Av dessa exkluderades 126 personer då de uppfyllde något av de uppsatta exklusionskriterierna. De kvarvarande 338 personerna erbjöds plats i studien. Av dessa bejakade 253 sin plats. 43 personer exkluderades från behandlingen genom randomisering så att exakt 210 inkluderades. De deltager som exkluderades via randomisering erbjöds tillgång till materialet på samma sätt som kontrollgruppen fick det – men med skillnaden att deras resultat ej inkluderats i beräkningarna. Vid behandlingsstart hade alltså studien 210 deltagare. Under behandlingens gång framkom det att fem deltagare (tre från gruppen *Behandling utan stöd* och två från gruppen *Väntlista*) hade pågående psykologisk behandling. Utöver detta bad en deltagare från gruppen *Behandling med stöd* om att få bli exkluderad ifrån studien. Denna deltagare bad även om att hens data ej skulle användas. Dessa sex deltagare har exkluderats från alla statistiska beräkningar i den aktuella studien.
+
 
 ```{r flow, out.width="100%", fig.align="center", out.extra='', fig.cap='Flödesschema över inklusion, exklusion (samt dess orsaker) och bortfall.'}
 
@@ -658,8 +660,8 @@ intervention.tabell <- cbind(
 knitr::kable(intervention.tabell, "latex", booktabs = T, caption = "(ref:intervention)", linesep = "", align="cll" ) %>%
   kable_styling(full_width = F) %>%
   column_spec(1, width = "2em") %>%
-  column_spec(2, width = "20em") %>%
-  column_spec(3, width = "16em")
+  column_spec(2, width = "18em") %>%
+  column_spec(3, width = "18em")
 
 ```
 
@@ -689,7 +691,7 @@ Vi använde `r cite_r("r-references.bib")` för alla analyser.
 
 # Resultat
 
-se tabell\~\@ref(fig:descriptives))
+se tabell \@ref(tab:descriptives))
 
 (ref:descriptives) Deskriptiva mått för primära och sekundärt utfallsmått för de tre betingelserna vid för- och eftermätningstidpunkterna.
 
@@ -784,10 +786,12 @@ library("clinsig")
 #   func.disp = sd.Rathus.norm,
 #   func.mct = mean.Rathus.norm
 # ))
-# 
-# par(mfrow=c(1,2))
-# interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$aaas_ag)
-# interaction.plot(r2.long.data$xtime, r2.long.data$xgroup, r2.long.data$aaas_ad)
+
+#par(mfrow=c(1,2))
+mean.rm.na <- function(x) mean(x,na.rm=T)
+interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$aaas_ad,fun=mean.rm.na)
+interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$aaas_ag,fun=mean.rm.na)
+interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$rathus,fun=mean.rm.na)
 
 ```
 
