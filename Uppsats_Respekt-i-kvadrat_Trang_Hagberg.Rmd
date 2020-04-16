@@ -372,9 +372,10 @@ r2.long.data[lg3,c(18:20)] <- NA
 # Student sample 1: 57.6 (7.5), alpha .82 <- Let's use these
 # Student sample 2: 56.8 (7.4), alpha .82
 # Clinical sample: 50.0 (8.4), alpha .69
-r.AAAS.ad = 0.82
-sd.AAAS.ad.norm = 7.5
-mean.AAAS.ad.norm = 57.6
+r.AAAS.ad = 0.82 # s 329 @Thompson2011
+sd.AAAS.ad.norm = 7.5 # s 329 @Thompson2011
+mean.AAAS.ad.norm = 57.6 # s 329 @Thompson2011
+ref.AAAS.ad = "student-sample 1 från @Thompson2011"
 
 ### AAA-S Aggressive assertiveness
 # Norms: Thompson (2011) 
@@ -382,47 +383,41 @@ mean.AAAS.ad.norm = 57.6
 # Student sample 1: 33.2 (9.7), alpha .88 <- Let's use these
 # Student sample 2: 31.6 (8.7), alpha .87
 # Clinical sample: 27.5 (7.6), alpha .82
-r.AAAS.ag = 0.88
-sd.AAAS.ag.norm = 9.7
-mean.AAAS.ag.norm = 33.2
+r.AAAS.ag = 0.88 # s 329 @Thompson2011
+sd.AAAS.ag.norm = 9.7 # s 329 @Thompson2011
+mean.AAAS.ag.norm = 33.2 # s 329 @Thompson2011
+ref.AAAS.ag = "icke-kliniskt sample (student-sample 1) från @Thompson2011"
 
 ### PHQ9
 # Normdata: Kroenke, K., Spitzer, R. L., & Williams, J. B. (2001). The PHQ-9: validity of a brief depression severity measure. Journal of General Internal Medicine, 16(9), 606–613. Retrieved from http://www.ncbi.nlm.nih.gov/pubmed/11556941
-r.PHQ9 = 0.89
-sd.PHQ9.norm = 3.8
-mean.PHQ9.norm = 5.08
+r.PHQ9 = 0.89 # @Kroenke2001 s 3
+sd.PHQ9.norm = 3.8 # @Kroenke2001 s 3
+mean.PHQ9.norm = 3.3 # @Kroenke2001 s 3
+ref.PHQ9 = "icke-kliniskt sample från @Kroenke2001"
 
 ### GAD7
 # Normdata: Spitzer, R. L., Kroenke, K., Williams, J. B. W., & Löwe, B. (2006). A Brief Measure for Assessing Generalized Anxiety Disorder. Archives of Internal Medicine, 166(10), 1092. https://doi.org/10.1001/archinte.166.10.1092
 # Löwe, B., Decker, O., Müller, S., Brähler, E., Schellberg, D., Herzog, W., & Herzberg, P. Y. (2008). Validation and Standardization of the Generalized Anxiety Disorder Screener (GAD-7) in the General Population. Medical Care, 46(3), 266–274. https://doi.org/10.1097/MLR.0b013e318160d093
-r.GAD7 = 0.92
-sd.GAD7.norm = 4.8
-mean.GAD7.norm = 4.9
+r.GAD7 = 0.92 # @Kroenke2006 s 3
+sd.GAD7.norm = 4.8 # @Kroenke2006 s 3
+mean.GAD7.norm = 4.9 # @Kroenke2006 s 3
+ref.PHQ9 = "icke-kliniskt sample från @Kroenke2006"
 
 ### LSAS-24
 # Normdata: Fresco, D. M., Coles, M. E., Heimberg, R. G., Liebowitz, M. R., Hami, S., Stein, M. B., & Goetz, D. (2001). The Liebowitz Social Anxiety Scale: a comparison of the psychometric properties of self-report and clinician-administered formats. Psychol Med 31, 1025-1035.
 # Svenska normer: https://www.fbanken.se/form/34/liebowitz-social-anxiety-scale-self-report
-# Test-retestreliabiliteten efter 12 veckor för totalpoängen var r = 0.83. <-- Let's use these
-# SOFIE-1 (n=64)
-# Totalpoäng:
-# Före behandling M=68.5 (sd=22.5)
-# Efter behandling M=45.6 (sd=25.1) <-- Let's use these
-# Subscale Fear
-# Före behandling M=36.9 (sd=12.1)
-# Efter behandling M=25.4 (sd=12.8)
-# Subscale Avoidance
-# Före behandling M=31.6 (sd=11.3)
-# Efter behandling M=20.2 (sd=12.9)
-r.LSAS24 = 0.83
-sd.LSAS24.norm = 25.1
-mean.LSAS24.norm = 45.6
+r.LSAS24 = 0.96 # @Fresco2001 s 1026
+sd.LSAS24.norm = 12.70 # @Fresco2001 s 1031
+mean.LSAS24.norm = 13.49 # @Fresco2001 s 1031
+ref.LSAS24 = "icke-kliniskt sample från @Fresco2001"
 
 ### Rathus
-# Modern norms are missing, see questions above
-#r.Rathus = 0.76 # Split half reliability according to Quillin (1977)
-r.Rathus = 0.84 # Suzuki2007
-sd.Rathus.norm = sd(r2.long.data[grepl("Pre", r2.long.data$time),5],na.rm=T)
-mean.Rathus.norm = mean(r2.long.data[grepl("Pre", r2.long.data$time),5],na.rm=T)
+# Normdata: @Suzuki2007
+# Norms: Thompson (2011) 
+r.Rathus = 0.87 # s 326 @Thompson2011
+sd.Rathus.norm = 23.9 # s 326 @Thompson2011
+mean.Rathus.norm = 6.2 # s 326 @Thompson2011
+ref.Rathus = "student-sample 1 från @Thompson2011"
 
 ```
 
@@ -762,9 +757,17 @@ knitr::kable(round(descriptives.out.rot,1), "latex", booktabs = T, caption = "(r
 
 ```
 
-se figur \@ref(fig:aaasad)
+\newpage
 
-(ref:ad) För huvudutfallsmåttet AAA-S och underskalan *Adaptive Assertiveness* fann vi att X personer ...
+Skriv en introduktion till klinisk signifikans och reliabel förändring @Jacobson1991
+
+various criteria have been suggested: a high percentage of clients improving; a level of change that is recognizable by peers and significant others (Kazdin, 1977; Wolf, 1978); an elimina- tion of the presenting problem (Kazdin & Wilson, 1978); nor- mative levels of functioning by the end of therapy (Kendall & Norton-Ford, 1982; Nietzel & Trull, 1988); high end-state func- tioning by the end of therapy (Mavissakalian, 1986); or changes that significantly reduce one's risk for various health problems.
+
+\newpage
+
+<!-- se figur \@ref(fig:aaasad) -->
+
+(ref:ad) För huvudutfallsmåttet AAA-S och underskalan *Adaptive Assertiveness* fann vi 
 
 ``` {r aaasad, fig.cap='(ref:ad)', fig.align="center", fig.width=8, fig.height=4}
 
@@ -790,7 +793,8 @@ clinsig.AAAS.ad.g1 <- clinsig(
   func.mct = mean.AAAS.ad.norm,
   main = "Adaptive Assertiveness, Selfhelp",
   xlab = "Pre measure",
-  ylab = "Post measure"
+  ylab = "Post measure",
+  do.plot = T
 )
 
 clinsig.AAAS.ad.g2 <- clinsig(
@@ -801,14 +805,20 @@ clinsig.AAAS.ad.g2 <- clinsig(
   func.mct = mean.AAAS.ad.norm,
   main = "Adaptive Assertiveness, Guided",
   xlab = "Pre measure",
-  ylab = "Post measure"
+  ylab = "Post measure",
+  do.plot = T
 )
+
+clinsig.AAAS.ad.g1
+clinsig.AAAS.ad.g2
 
 ```
 
-se figur \@ref(fig:aaasag)
+\newpage
 
-(ref:ag) För huvudutfallsmåttet AAA-S och underskalan *Aggressive Assertiveness* fann vi att X personer ...
+<!-- se figur \@ref(fig:aaasag) -->
+
+(ref:ag) För huvudutfallsmåttet AAA-S och underskalan *Aggressive Assertiveness* fann vi
 
 ``` {r aaasag, fig.cap='(ref:ag)', fig.align="center", fig.width=8, fig.height=4}
 
@@ -822,7 +832,8 @@ clinsig.AAAS.ag.g1 <- clinsig(
   func.mct = mean.AAAS.ag.norm,
   main = "Aggressive Assertiveness, Selfhelp",
   xlab = "Pre measure",
-  ylab = "Post measure"
+  ylab = "Post measure",
+  do.plot = T
 )
 
 clinsig.AAAS.ag.g2 <- clinsig(
@@ -833,42 +844,55 @@ clinsig.AAAS.ag.g2 <- clinsig(
   func.mct = mean.AAAS.ag.norm,
   main = "Aggressive Assertiveness, Guided",
   xlab = "Pre measure",
-  ylab = "Post measure"
+  ylab = "Post measure",
+  do.plot = T
 )
+
+clinsig.AAAS.ag.g1
+clinsig.AAAS.ag.g2
 
 ```
 
-se figur \@ref(fig:rathus)
+\newpage
 
-(ref:rat) För det sekundära utfallsmåttet Rathus fann vi att X personer ...
+<!-- se figur \@ref(fig:rathus) -->
 
 ``` {r rathus, fig.cap='(ref:rat)', fig.align="center", fig.width=8, fig.height=4}
 
 par(mfrow=c(1,2))
 
 clinsig.Rathus.g1 <- clinsig(
-  r2.wide.g1$post_rathus[!is.na(r2.wide.g1$post_rathus)],
   r2.wide.g1$pre_rathus[!is.na(r2.wide.g1$post_rathus)],
+  r2.wide.g1$post_rathus[!is.na(r2.wide.g1$post_rathus)],
   coef.alpha = r.Rathus,
   func.disp = sd.Rathus.norm,
   func.mct = mean.Rathus.norm,
   main = "Rathus, Selfhelp",
   xlab = "Pre measure",
-  ylab = "Post measure"
+  ylab = "Post measure",
+  do.plot = T
 )
 
 clinsig.Rathus.g2 <- clinsig(
-  r2.wide.g2$post_rathus[!is.na(r2.wide.g2$post_rathus)],
   r2.wide.g2$pre_rathus[!is.na(r2.wide.g2$post_rathus)],
+  r2.wide.g2$post_rathus[!is.na(r2.wide.g2$post_rathus)],
   coef.alpha = r.Rathus,
   func.disp = sd.Rathus.norm,
   func.mct = mean.Rathus.norm,
   main = "Rathus, Guided",
   xlab = "Pre measure",
-  ylab = "Post measure"
+  ylab = "Post measure",
+  do.plot = T
 )
 
+clinsig.Rathus.g1
+clinsig.Rathus.g2
+
 ```
+
+<!-- (ref:rat) För det sekundära utfallsmåttet Rathus fann vi att av de `r clinsig.AAAS.ad.g1$post.n` personerna i självhjälpsgruppen så  clinsig.Rathus.g1$sigsums... Beräkningen är gjord med normdata från `r ref.Rathus`. -->
+
+\newpage
 
 se figur \@ref(fig:interactions)
 
