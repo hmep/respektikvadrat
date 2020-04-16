@@ -528,7 +528,7 @@ Den aktuella studien hade varken tankesätt eller undertryckande som huvudfokus,
 *kommande stycken behöver vävas ihop till ett mer kongruent stycke med en tydligare röd tråd som resulterar i ett tydligare budskap om vad vi vill ha sagt här*
 
 De Castella m. fl. [-@DeCastella2015] konstaterade även att undertryckandet av känslor är tydligt kopplad till sämre effekt av exponering. Detta är i linje med mycket annan forskning. Att undertrycka känslor är ett säkerhetsbeteenden och säkerhetsbeteenden – det vill säga beteenden som förhindrar, undviker eller minimerar obehag i en given situation – är ett väletablerat fenomen som har konstaterats vara både en del i utvecklandet och bibehållandet av ångestdriven psykopatologi [@Blakey2016]. 
-
+ 
 Utöver säkerhetsbeteenden och dess påverkan på exponeringsresultatet finns det ytterligare några fenomen som är värda att beakta. Förväntingar och förutsägelser som individer tenderar att ha inför exponering är allt som oftast inkorrekta och desto större diskrepansen är mellan en indivds förväntningar och individens faktiska upplevelse, desto större är oddsen för nyinlärning [@Craske2008; @Sewart2019]. 
 
 Att exponera sig för det som väcker obehag leder även hos många till mycket osäkerhet. Denna osäkerhet leder inte ovanligen till överdrivet förberedande, **reassurance-seeking (översätt hur? Tröstsökande, försäkrande, sökande av uppmuntran? Något annat?)** eller andra beteenden som ökar upplevelsen av kontroll i situationen. Det är dock en viktig nyinlärningsprocess att få uppleva denna osäkerhet – och samtidigt få lärdomen att denna osäkerhet både är ofarlig och hanterbar. Att bibehålla osäkerhet under exponeringstränandet går att göra genom att variera vilka aversiva stimuli som presenteras och i vilka situationer som dessa stimuli presenteras [@Sewart2019, @Knowles2019, @Craske2008].
@@ -907,7 +907,7 @@ Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt s
 
 ## Metodologiska brister / felkällor / validitet / reliabilitet
 
-<!-- kommentar -->
+<!-- Här skriva om snäva urvalsgruppen (dvs att en stor del av reklamen riktade sig till medelålders kvinnor) och hur det påverkar generaliserbarheten i våra resultat. -->
 
 ## Resultatdiskussion
 
