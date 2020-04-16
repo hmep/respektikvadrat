@@ -511,15 +511,28 @@ Vi tog utöver dessa väletablerade inslag även med oss inspiration från forsk
 
 Regelbundet användande av undertryckande är kopplat med flertalet negativa följder, bland annat: mer upplevande av negativa emotioner (och mindre upplevande av positiva emotioner), större undvikande av nära relationer, mindre socialt stöd, lägre självförtroende och sämre upplevt generellt välmående överlag [@Gross2003]. 
 
-Den aktuella studien hade varken tankesätt eller undertryckande som huvudfokus, men vi var icke desto mindre influerade av dessa teorier i vårt utformande och anpassade av behandlingsprogrammet. Kan behandlingsprogrammet utformas på så sätt att deltagarna hjälps från ett fixerat tankesätt mot ett mer utvecklande tankesätt bör detta både leda till en reduktion i negativa symptom [@Schroder2015] och i undertryckande. Hur träna tankesätt? Allteftersom ett mer utvecklande tankesätt formas bör alltså acceptans för ens emotioner och ångest öka tillsammans med en insikt i att dessa emotioner och denna ångest går att bemöta och bemästra. Dessa teorier var även influenser i hur behandlarna bemötte deltagarna.
+Den aktuella studien hade varken tankesätt eller undertryckande som huvudfokus, men vi var icke desto mindre influerade av dessa teorier i vårt utformande och anpassade av behandlingsprogrammet. Vi antog att ifall behandlingsprogrammet kan utformas på så sätt att deltagarna hjälps från ett fixerat tankesätt mot ett mer utvecklande tankesätt borde det både leda till en reduktion i negativa symptom och i frekvens av emotionsundertryckande. Allteftersom ett mer utvecklande tankesätt formas bör alltså acceptans för deltagarnas emotioner och ångest öka tillsammans med en insikt i att emotionerna och ångesten går att bemöta och bemästra.
 
 <!-- Potentiellt använda DeCastella2015 som brygga in i hur variation i exponering (där man inte undantrycker sina känslor) och att närma sig obehaget (och i samma veva motbevisar sitt fixed mindset om ens ångest och ens relation till den) leder till symtomlindring och ökat välmående (Craske2008, Knowles2019, Blakey2016, Sewart2019). 
 -->
 
 ### Acceptans av osäkerhet & Variation i exponering
 
-De Castella m. fl. [-@DeCastella2015] konstaterade även att undertryckandet av känslor är tydligt kopplad till sämre effekt av exponering.
+*Hur saklig bör en bakgrund vara och hur mycket av "oss själva" och vad "vi ville uppnå" och hur vi tänkte kan man släppa in? Blir det egentligen mer "metoddel" av det hela när vi börjar prata om vårt förhållningssätt till deltagarna och vad vi ville "uppnå"?*
 
+*kommande stycken behöver vävas ihop till ett mer kongruent stycke med en tydligare röd tråd som resulterar i ett tydligare budskap om vad vi vill ha sagt här*
+
+De Castella m. fl. [-@DeCastella2015] konstaterade även att undertryckandet av känslor är tydligt kopplad till sämre effekt av exponering. Detta är i linje med mycket annan forskning. Att undertrycka känslor är ett säkerhetsbeteenden och säkerhetsbeteenden – det vill säga beteenden som förhindrar, undviker eller minimerar obehag i en given situation – är ett väletablerat fenomen som har konstaterats vara både en del i utvecklandet och bibehållandet av ångestdriven psykopatologi [@Blakey2016]. 
+ 
+Utöver säkerhetsbeteenden och dess påverkan på exponeringsresultatet finns det ytterligare några fenomen som är värda att beakta. Förväntingar och förutsägelser som individer tenderar att ha inför exponering är allt som oftast inkorrekta och desto större diskrepansen är mellan en indivds förväntningar och individens faktiska upplevelse, desto större är oddsen för nyinlärning [@Craske2008; @Sewart2019]. 
+
+Att exponera sig för det som väcker obehag leder även hos många till mycket osäkerhet. Denna osäkerhet leder inte ovanligen till överdrivet förberedande, **reassurance-seeking (översätt hur? Tröstsökande, försäkrande, sökande av uppmuntran? Något annat?)** eller andra beteenden som ökar upplevelsen av kontroll i situationen. Det är dock en viktig nyinlärningsprocess att få uppleva denna osäkerhet – och samtidigt få lärdomen att denna osäkerhet både är ofarlig och hanterbar. Att bibehålla osäkerhet under exponeringstränandet går att göra genom att variera vilka aversiva stimuli som presenteras och i vilka situationer som dessa stimuli presenteras [@Sewart2019, @Knowles2019, @Craske2008].
+
+Lyckad exponering tenderar att vara en ombytlig exponering där obehag väcks, säkerhetsbeteenden avstås och förväntningar bryts [@Craske2008; @Blakey2016; @Knowles2019 @Sewart2019].
+
+Genom att förespråka exponering där deltagarna (1) sätter tydliga förväntningar på vad de tror ska hända, (2) avstår ifrån säkerhetsbeteenden kombinerat med (3) **variabilitet (pot. istället föränderlighet eller ombytlighet)** i exponeringen ville vi uppnå maximal potential för nyinlärning.
+
+<!-- Variability throughout exposure (which enhanches practice of tolerating uncertainty), Wean safety signals and safety behaviors, Mismatch with expectancies -->
 
 ### Emotionellt/upplevelsmässigt undvikande
 
@@ -918,7 +931,7 @@ Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt s
 
 ## Metodologiska brister / felkällor / validitet / reliabilitet
 
-<!-- kommentar -->
+<!-- Här skriva om snäva urvalsgruppen (dvs att en stor del av reklamen riktade sig till medelålders kvinnor) och hur det påverkar generaliserbarheten i våra resultat. -->
 
 ## Resultatdiskussion
 
