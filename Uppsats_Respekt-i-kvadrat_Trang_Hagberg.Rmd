@@ -67,13 +67,19 @@ library("kableExtra")
 # See image file "exporting-respekt-data.png" for guidance
 
 ##################################################################################
-# Put the exported file in the parent folder of this file and edit the line below
+# Put the exported Excel files in the folder where this Rmd script resides
+# and edit the lines below
 
-raw_excel = "Respekt_surveys_200412_150604.xlsx"
+# From the tab "Frågeformulär"
+raw_excel = "Respekt_surveys_200416_085700.xlsx"
+
+# From the tab "Konversationer & Moduler"
+raw_excel_conversations = "Respekt_conversations_200416_092107.xlsx"
 ##################################################################################
 
 # Import data from Excel file (requires "readxl")
 r2.raw.data <- read_excel(raw_excel)
+r2.raw_conversations.data <- read_excel(raw_excel_conversations)
 
 # Remove cases that should be excluded (they don't meet the inclusion criteria but was erroneously included)
 r2.raw.data <- r2.raw.data[-c(13,48,52,97,158),]
@@ -173,10 +179,19 @@ colnames(r2.wide.data) <- colnames
 # - 45--58
 g3key <- which(!is.na(r2.wide.data$postg3_reminders))
 r2.wide.data[g3key,c(31:44)] <- r2.wide.data[g3key,c(45:58)]
-r2.wide.data <- r2.wide.data[,c(1:44)] # Keep columns that we want
+
+# Merge files from iTerapi
+# by "pre_subject" and "Användare" respectively
+r2.raw.data.merged <- merge(r2.wide.data,r2.raw_conversations.data,by.x="pre_subject",by.y="Användare")
+names(r2.raw.data.merged)[names(r2.raw.data.merged) == 'Antal skickade meddelanden'] <- 'messages_sent'
+names(r2.raw.data.merged)[names(r2.raw.data.merged) == 'Antal tilldelade moduler'] <- 'modules_assigned'
+names(r2.raw.data.merged)[names(r2.raw.data.merged) == 'Antal öppnade moduler'] <- 'modules_opened'
+
+# Strip out unwanted columns
+r2.wide.data <- r2.raw.data.merged[,c(1:44,60:62)] # Keep columns that we want
 
 # Anonymise, simplify and clean up data
-r2.wide.data$subject <- factor(c(1:length(r2.wide.data[,1]))) # Add subject IDs
+r2.wide.data$subject <- factor(c(1:length(r2.wide.data[,1]))) # Add anonymous subject IDs
 r2.wide.data$group <-
   factor(ifelse(
     grepl("Grupp 1", r2.wide.data$pre_group),
@@ -198,8 +213,8 @@ r2.wide.data$therapist <-
   ),
   levels = c(1,2),
   labels = c("A","B")) # Add therapist shorthands
-r2.wide.data <- r2.wide.data[,c(45,46,47,1:44)] # Move to the front
-r2.wide.data <- r2.wide.data[,-c(4:5)] # Drop columns
+r2.wide.data <- r2.wide.data[,c(48:50,1:47)] # Move categorical variables to the beginning
+r2.wide.data <- r2.wide.data[,-c(4:5)] # Drop 
 
 # Save safe data frame as a single object to the file system
 saveRDS(r2.wide.data,file="r2.wide.data.RDS")
@@ -220,9 +235,10 @@ rm(list = ls())
 # Get wide data
 r2.wide.data <- readRDS("r2.wide.data.RDS")
 
-# Reshape (manually) to long data
 n = length(r2.wide.data[,1])
 t = 3 # 2do: change to 4 with final data
+
+# Reshape (manually) to long data
 r2.long.data <- data.frame(
   subject = factor(rep(r2.wide.data$subject, times = t)),
   group = factor(rep(r2.wide.data$group, times = t)),
@@ -305,7 +321,10 @@ r2.long.data <- data.frame(
     r2.wide.data$dur_well,
     r2.wide.data$post_well#,
     #r2.wide.data$fu_well # 2do: enable with final data
-  )
+  ),
+  messages_sent = as.factor(rep(r2.wide.data$messages_sent, times = t)),
+  modules_assigned = as.factor(rep(r2.wide.data$modules_assigned, times = t)),
+  modules_opened = as.factor(rep(r2.wide.data$modules_opened, times = t))
 )
 
 # Subsetting keys
@@ -330,15 +349,10 @@ lg3t1 <- r2.long.data$group == "Waitlist" & r2.long.data$time == "Pre"
 lg3t2 <- r2.long.data$group == "Waitlist" & r2.long.data$time == "During"
 lg3t3 <- r2.long.data$group == "Waitlist" & r2.long.data$time == "Post"
 
-#tapply(r2.long.data$group, r2.long.data$time, summary)
-
-library("psych")
-#describeBy(r2.long.data, "group", mat = T,digits=2)
-#descriptives <- statsBy(r2.long.data, c("group","time"),cors=F)
-#print(descriptives,short=T)
-#(descriptives <- printnum(descriptives))
-
-#summary(r2.long.data[lg1,c(4-45)])
+# Finally, make sure the waitlist condition has zero modules assigned & opened
+# Rationale: At the time of writing, participants have started with module 1 just 
+# after having completed their post measurement survey
+r2.long.data[lg3,c(18:20)] <- NA 
 
 ```
 
@@ -599,8 +613,10 @@ Interventionen är utformad med självhjälpsmaterialet Assert Yourself [@michel
 ### Anpassningar och tillägg
 Materialet är översatt och anpassat till svenska förhållanden av TH med tillstånd av författaren och CCI. I samband med anpassningen av översättningen till I-KBT-moduler i plattformen iTerapi modifierade och utökade TH och PT materialet, bland annat genom att ersätta avsnitt som handlar om kognitiv omstrukturering med motiverande avsnitt för beteendeexperiment/beteendeaktivering. Utöver materialet i boken innehåller interventionen dessutom motiverande inslag i form av text och illustrationer (inspirerade av bland annat @Hayes2006a; @Dahlin2016) samt länkar till fördjupningsmaterial, videofilmer med konversationer och rollspel mellan PT och TH, videofilmer och ljudfiler med avslappningsövningar samt ett stort antal nya övningar, bland annat för veckovis uppföljning av konstruktiv självhävdelse, övningar för för återfallsprevention och vidmakthållande av behandlingseffekter samt utvärderingsformulär av veckans innehåll.
 
+
+
   **Vecka**   **Tema**                                                                                                                                                  **Innehåll**
-  ----------- --------------------------------------------------------------------------------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------
+  --------- --------------------- -----------------------------------------------
   1           Socialisering till programmet, psykoedukation om självhävdelse, kartläggning av besvär, formulering av målsättning för programmet                         Kapitel 1 med utökningar (förmätning med självskattningsskalor administrerades strax innan)
   2           Psykoedukation kommunikationsstilar motiverande inslag om nyinlärning, träning i progressiv avslappning del 1                                             Kapitel 2 med utökningar om inlärning, motivation och om ångest/obehag
   3           Motiverande avsnitt om att bryta undvikande, introduktion till beteendeexperiment, planering beteendeexperiment, träning i progressiv avslappning del 2   Kapitel 3 med modifieringar och utökningar om ångest samt fördelarna med att bryta undvikande
