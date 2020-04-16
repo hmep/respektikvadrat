@@ -354,6 +354,7 @@ lg3t3 <- r2.long.data$group == "Waitlist" & r2.long.data$time == "Post"
 # after having completed their post measurement survey
 r2.long.data[lg3,c(18:20)] <- NA 
 
+
 ```
 
 ```{r norms}
