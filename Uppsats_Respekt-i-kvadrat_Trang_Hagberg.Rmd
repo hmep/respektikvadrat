@@ -49,6 +49,13 @@ library("readxl")
 library("knitr")
 library("kableExtra")
 
+# authornote: |
+#   `r readLines('authornote.txt', encoding = 'UTF-8')`
+# abstract: |
+#   `r readLines('abstract.txt', encoding = 'UTF-8')`
+# keywords: |
+#   `r readLines('keywords.txt', encoding = 'UTF-8')`
+
 ```
 
 ```{r data setup, eval = FALSE}
@@ -741,6 +748,29 @@ knitr::kable(round(descriptives.out.rot,1), "latex", booktabs = T, caption = "(r
 
 ```
 
+```{r clinsig}
+
+# Subsetting keys
+
+g1 <- grepl("Selfhelp", r2.wide.data$group)
+g2 <- grepl("Guided", r2.wide.data$group)
+g3 <- grepl("Waitlist", r2.wide.data$group)
+
+r2.wide.g1 <- r2.wide.data[g1,]
+r2.wide.g2 <- r2.wide.data[g2,]
+r2.wide.g3 <- r2.wide.data[g3,]
+
+library("clinsig")
+
+(clinsig.Rathus.g1 <- clinsig(
+  r2.wide.g1$post_rathus[!is.na(r2.wide.g1$post_rathus)],
+  r2.wide.g1$pre_rathus[!is.na(r2.wide.g1$post_rathus)],
+  coef.alpha = r.Rathus,
+  func.disp = sd.Rathus.norm,
+  func.mct = mean.Rathus.norm
+))
+
+```
 
 # Diskussion
 
