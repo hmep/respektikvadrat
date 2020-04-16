@@ -435,7 +435,7 @@ Begreppet assertiveness kom under 1970-talet att omfamna en allt längre lista m
 
 @alberti1974your definierar konstruktiv självhävdelse som handlande som återspeglar individens egna långsiktiga intressen. Det inbegriper förmågan att ”stå upp för sig själv” utan överdriven ångest och färdigheten att uttrycka sina känslor samt att utöva sina egna rättigheter utan att kränka andras rättigheter. Med ’utöva sina rättigheter’ menas att både i icke-verbal och verbal handling uttrycka sina tankar, känslor och önskningar.
 
-Graden av konstruktiv självhävdelse för en person i en given situation kan inordnas som en punkt i en graf (se figur \@ref(fig:assertiveness)) med två kontinuerliga dimensioner: handlande med respekt för andras rättigheter på x-axeln och handlande med respekt för egna rättigheter på y-axeln. Konstruktiv självhävdelse är en kommunikationsstil som skiljer sig från aggressiv självhävdelse (det vill säga hävdande av egna rättigheter på bekostnad av andras). Det skiljer sig även från kommunikationsstilen passiv självhävdelse (det vill säga förnekande av egna rättigheter till förmån för andras) och från passiv-aggressiv självhävdelse (det vill säga bristande respekt för både egna och andras rättigheter). Gränsdragningarna mellan kommunikationsstilarna är förstås flytande, eftersom dimensionerna är kontinuerliga.
+Graden av konstruktiv självhävdelse för en person i en given situation kan inordnas som en punkt i en graf (se figur\~\@ref(fig:assertiveness)) med två kontinuerliga dimensioner: handlande med respekt för andras rättigheter på x-axeln och handlande med respekt för egna rättigheter på y-axeln. Konstruktiv självhävdelse är en kommunikationsstil som skiljer sig från aggressiv självhävdelse (det vill säga hävdande av egna rättigheter på bekostnad av andras). Det skiljer sig även från kommunikationsstilen passiv självhävdelse (det vill säga förnekande av egna rättigheter till förmån för andras) och från passiv-aggressiv självhävdelse (det vill säga bristande respekt för både egna och andras rättigheter). Gränsdragningarna mellan kommunikationsstilarna är förstås flytande, eftersom dimensionerna är kontinuerliga.
 
 ```{r assertiveness, out.width="75%", fig.align="center", out.extra='', fig.cap='Konstruktiv självhävdelse definieras i träningsprogrammet Respekt i kvadrat som handlande som är förenligt med samtidig respekt för egna och andras rättigheter. Passiv självhävdelse kan på samma sätt definieras som låg grad av respekt för egna rättigheter men hög grad av respekt för andras rättigheter; aggressiv självhävdelse kan definieras som hög grad av respekt för egna rättigheter men låg grad av respekt för andras rättigheter.'}
 
@@ -550,7 +550,7 @@ Sample-storleken för varje grupp bestämdes till n=70 med en powerberäkning in
 Rekrytering skedde mellan 28 januari och 5 februari 2020. Studien annonserades på flertalet sociala medier (www.facebook.com, www.twitter.com, www.linkedin.com samt www.instagram.com). Den annonserades även på diverse andra webbplatser (t ex www.studie.nu). De som ville veta mer om studien hänvisades till studiens hemsida (www.respektikvadrat.se). Där fanns information om hur studien skulle gå till, vilka inklusions- samt exklusionskriterierna var och när studien startade. Det fanns även information om vilka som var involverade i studien samt kontaktuppgifter till studieansvarig. Deltagarna anmälde sitt intresse genom att uppge sin e-postadress. I samband med att deltagarna hade möjlighet att anmäla sitt intresse presenterades de även med information kring potentiella risker med att delta, sekretess, datasäkerhet, datahantering, att deltagandet är frivilligt och kan avbrytas när som helst. När deltagarna väl anmält sitt intresse skickades en länk till deras e-postadresser med självskattningsformulär att besvara elektroniskt. Formulären frågade efter generellt välmående, nedstämdhet, ångest, socialfobiska tendenser samt egenupplevd självhävdelse. Deltagarna fick även fylla i demografiska frågor samt frågor om erfarenhet av tidigare psykologisk behandling, motivation till att delta i den aktuella studien samt om pågående medicinering. Deltagarna hade även möjligheten att i fritext informera om de ansåg att det fanns något annat som var nödvändigt att beakta vid bedömningen.
 
 ### Deltagare
-Som framgår av figur~\@ref(fig:flow) så anmälde totalt 657 personer intresse till studien varav 464 personer slutförde hela screeningsprocessen. Av dessa exkluderades 126 personer då de uppfyllde något av de uppsatta exklusionskriterierna. De kvarvarande 338 personerna erbjöds plats i studien. Av dessa bejakade 253 sin plats. 43 personer exkluderades från behandlingen genom randomisering så att exakt 210 inkluderades. De deltager som exkluderades via randomisering erbjöds tillgång till materialet på samma sätt som kontrollgruppen fick det – men med skillnaden att deras resultat ej inkluderats i beräkningarna. Vid behandlingsstart hade alltså studien 210 deltagare.
+Som framgår av figur\~\@ref(fig:flow) så anmälde totalt 657 personer intresse till studien varav 464 personer slutförde hela screeningsprocessen. Av dessa exkluderades 126 personer då de uppfyllde något av de uppsatta exklusionskriterierna. De kvarvarande 338 personerna erbjöds plats i studien. Av dessa bejakade 253 sin plats. 43 personer exkluderades från behandlingen genom randomisering så att exakt 210 inkluderades. De deltager som exkluderades via randomisering erbjöds tillgång till materialet på samma sätt som kontrollgruppen fick det – men med skillnaden att deras resultat ej inkluderats i beräkningarna. Vid behandlingsstart hade alltså studien 210 deltagare.
 
 ```{r flow, out.width="100%", fig.align="center", out.extra='', fig.cap='Här skriver du din figurtext.'}
 
@@ -566,7 +566,7 @@ För att delta krävdes det att man var svensk medborgare, minst 18 år gammal, 
 De personer som skattade 15 eller mer på självskattningsformuläret PHQ-9 exkluderades. Utöver detta exkluderades de deltagare som tre månader inom behandlingsstart gjort förändringar i sin psykofarmakabehandling. De personer som uppgav att de hade pågående psykologisk behandling exkluderades även. Slutligen exkluderades de personer som i frisvar under screeningsprocessen uppgav att de hade tidsbrist eller låg motivation till behandlingen. Alla personer som exkluderades blev informerade om detta via den webbaserade plattformen de använt sig för att anmäla sig till studien. När det var tillämpbart gavs även rekommendationer om vart personerna istället kunde vända sig.
 
 #### Demografisk data
-De 204 deltagare vars data redovisas var mellan 20 och 65 år gamla med en medelålder på 41,8 år (s=8,8). En betydande majoritet (87,8%; 179/204) definierade sig som kvinnor, övriga definierade sig som män. Knappt tre fjärdedelar av deltagarna har avslutade universitets- eller högskoleutbildningar (71,6%; 146/204) och tre fjärdedelar av deltagarna var vid behandlingens start arbetande (75,5%; 154/204). Mer än hälften av deltagarna (61,3%; 125/204) hade tidigare erfarenheter av psykologisk behandling. Av dessa hade majoriteten (64,8%; 81/125) tidigare erfarenheter av KBT.  Knappt en tredjedel av alla deltagare (29,0%; 59/204) hade erfarenhet av psykofarmaka. Vid behandlingens start stod 17,6% (36/204) på någon sorts psykofarmaka. Totalt 3,4% (7/204) av deltagarna var vid behandlingsstart sjukskrivna. För att se de demografiska faktorernas fördelningar i respektive grupp, se tabell~\@ref(fig:demdata).
+De 204 deltagare vars data redovisas var mellan 20 och 65 år gamla med en medelålder på 41,8 år (s=8,8). En betydande majoritet (87,8%; 179/204) definierade sig som kvinnor, övriga definierade sig som män. Knappt tre fjärdedelar av deltagarna har avslutade universitets- eller högskoleutbildningar (71,6%; 146/204) och tre fjärdedelar av deltagarna var vid behandlingens start arbetande (75,5%; 154/204). Mer än hälften av deltagarna (61,3%; 125/204) hade tidigare erfarenheter av psykologisk behandling. Av dessa hade majoriteten (64,8%; 81/125) tidigare erfarenheter av KBT.  Knappt en tredjedel av alla deltagare (29,0%; 59/204) hade erfarenhet av psykofarmaka. Vid behandlingens start stod 17,6% (36/204) på någon sorts psykofarmaka. Totalt 3,4% (7/204) av deltagarna var vid behandlingsstart sjukskrivna. För att se de demografiska faktorernas fördelningar i respektive grupp, se tabell\~\@ref(fig:demdata).
 
 ```{r demdata, out.width="100%", fig.align="center", out.extra='', fig.cap='Demografisk data hos deltagarna, redovisad per grupp samt för alla studiens deltagare.'}
 
@@ -609,24 +609,45 @@ Utöver AAA-S användes även The Rathus Assertiveness Schedule (RAS, **CITKEYMI
 <!--We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. 21-word solution (Simmons, Nelson & Simonsohn, 2012; retrieved from http://ssrn.com/abstract=2160588) -->
 
 ## Interventionen
+
 Interventionen är utformad med självhjälpsmaterialet Assert Yourself [@michel2008] som grund. Materialet är framtaget av Center for Clinical Interventions (CCI) i delstaten Western Australia, Australien. I arbetsboken får läsaren lära sig skillnaden mellan olika typer av självhävdelse (konstruktiv, aggressiv, passiv, passiv-aggressiv) och rationalen för kognitiv omstrukturering med KBT. Genom att planera och utföra beteendeexperiment får deltagaren hjälp av materialet att pröva giltigheten av egna negativa förutsägelser och därmed öka responsmöjligheterna i olika mer eller mindre pressande situationer. Utöver detta innehåller arbetsmaterialet ett avsnitt om progressiv muskelavslappning, med syftet att hjälpa läsaren att känna igen spänning i kroppen, att sänka den allmänna spänningsnivån och träna på en aktiv coping-teknik för stressande lägen. Materialet avslutas med ett antal kapitel för olika problemområden (säga nej, hantera kritik, hantera besvikelser, ta emot och ge komplimanger).
 
 ### Anpassningar och tillägg
-Materialet är översatt och anpassat till svenska förhållanden av TH med tillstånd av författaren och CCI. I samband med anpassningen av översättningen till I-KBT-moduler i plattformen iTerapi modifierade och utökade TH och PT materialet, bland annat genom att ersätta avsnitt som handlar om kognitiv omstrukturering med motiverande avsnitt för beteendeexperiment/beteendeaktivering. Utöver materialet i boken innehåller interventionen dessutom motiverande inslag i form av text och illustrationer (inspirerade av bland annat @Hayes2006a; @Dahlin2016) samt länkar till fördjupningsmaterial, videofilmer med konversationer och rollspel mellan PT och TH, videofilmer och ljudfiler med avslappningsövningar samt ett stort antal nya övningar, bland annat för veckovis uppföljning av konstruktiv självhävdelse, övningar för för återfallsprevention och vidmakthållande av behandlingseffekter samt utvärderingsformulär av veckans innehåll.
 
+Materialet är översatt och anpassat till svenska förhållanden av TH med tillstånd av författaren och CCI. I samband med anpassningen av översättningen till I-KBT-moduler i plattformen iTerapi modifierade och utökade TH och PT materialet, bland annat genom att ersätta avsnitt som handlar om kognitiv omstrukturering med motiverande avsnitt för beteendeexperiment/beteendeaktivering. Utöver materialet i boken innehåller interventionen dessutom motiverande inslag i form av text och illustrationer (inspirerade av bland annat @Hayes2006a; @Dahlin2016) samt länkar till fördjupningsmaterial, videofilmer med konversationer och rollspel mellan PT och TH, videofilmer och ljudfiler med avslappningsövningar samt ett stort antal nya övningar, bland annat för veckovis uppföljning av konstruktiv självhävdelse, övningar för för återfallsprevention och vidmakthållande av behandlingseffekter samt utvärderingsformulär av veckans innehåll (se tabell \@ref(tab:intervention).)
 
+(ref:intervention) Översiktlig beskrivning av interventionen Respekt i kvadrat.
 
-  **Vecka**   **Tema**                                                                                                                                                  **Innehåll**
-  --------- --------------------- -----------------------------------------------
-  1           Socialisering till programmet, psykoedukation om självhävdelse, kartläggning av besvär, formulering av målsättning för programmet                         Kapitel 1 med utökningar (förmätning med självskattningsskalor administrerades strax innan)
-  2           Psykoedukation kommunikationsstilar motiverande inslag om nyinlärning, träning i progressiv avslappning del 1                                             Kapitel 2 med utökningar om inlärning, motivation och om ångest/obehag
-  3           Motiverande avsnitt om att bryta undvikande, introduktion till beteendeexperiment, planering beteendeexperiment, träning i progressiv avslappning del 2   Kapitel 3 med modifieringar och utökningar om ångest samt fördelarna med att bryta undvikande
-  4           Uppföljning beteendeexperiment, rational för mängdträning, nya beteendeexperiment, övning i kort version av progressiv avslappning                        Kapitel 4 med utökningar
-  5           Avslappningsövningar, uppsamlingsvecka för pågående beteendeexpriment, val av fördjupningsområde                                                          Kapitel 5 med utökningar (mittenmätning med självskattningsskalor administrerades efter detta kapitel)
-  6–7         Fördjupningsområden med beteendeexperiment: säga nej, hantera kritik, hantera besvikelser, hantera komplimanger                                           Kapitel 6, 7, 8, 9 med smärre justeringar
-  8           Kartläggning framgångsfaktorer, planering för vidmakthållande och återfallsprevention                                                                     Kapitel 10 med modifieringar och utökningar (eftermätning med självskattningsskalor administrerades efter detta kapitel)
-  
-<!-- Tabellen ovan behöver formatteras -->
+```{r intervention, fig.align="center"}
+
+Vecka <- c(1,2,3,4,5,6,7,8)
+Tema <- c(
+  "Socialisering till programmet, psykoedukation om självhävdelse, kartläggning av besvär, formulering av målsättning för programmet",
+  "Psykoedukation kommunikationsstilar motiverande inslag om nyinlärning, träning i progressiv avslappning del 1",
+  "Motiverande avsnitt om att bryta undvikande, introduktion till beteendeexperiment, planering beteendeexperiment, träning i progressiv avslappning del 2",
+  "Uppföljning beteendeexperiment, rational för mängdträning, nya beteendeexperiment, övning i kort version av progressiv avslappning",
+  "Avslappningsövningar, uppsamlingsvecka för pågående beteendeexpriment, val av fördjupningsområde",
+  "Fördjupningsområden med beteendeexperiment: säga nej, hantera kritik, hantera besvikelser, hantera komplimanger",
+  "Kartläggning framgångsfaktorer, planering för vidmakthållande och återfallsprevention")
+Innehåll <- c(
+  "Kapitel 1 med utökningar",
+  "Kapitel 2 med utökningar om inlärning, motivation och om ångest/obehag",
+  "Kapitel 3 med modifieringar och utökningar om ångest samt fördelarna med att bryta undvikande",
+  "Kapitel 4 med utökningar",
+  "Kapitel 5 med utökningar",
+  "Kapitel 6, 7, 8, 9 med smärre justeringar",
+  "Kapitel 10 med modifieringar och utökningar"
+)
+
+intervention.tabell <- cbind(Vecka,Tema,Innehåll)
+
+knitr::kable(intervention.tabell, "latex", booktabs = T, caption = "(ref:intervention)", linesep = "", align="cll" ) %>%
+  kable_styling(full_width = F) %>%
+  column_spec(1, width = "2em") %>%
+  column_spec(2, width = "18em") %>%
+  column_spec(3, width = "18em")
+
+```
 
 ## Behandlingsplattformen
 I studien användes behandlingsplattformen iTerapi. Det är en plattform som använts upprepade gånger vid forskning på internetbaserade psykologiska interventioner och behandlingar [@Vlaescu2016]. Plattformen använder sig av tvåfaktorsautentisering och är krypterad. I rådande fall innebar det att deltagarna blev tilldelade en anonym studiekod till vilken de valde ett eget lösenord. Vid varje inloggningstillfälle skickades sedan engångskoder till deras mobiltelefoner per SMS.
@@ -654,11 +675,11 @@ Vi använde `r cite_r("r-references.bib")` för alla analyser.
 
 # Resultat
 
-se tabell \@ref(fig:descriptives))
+se tabell\~\@ref(fig:descriptives))
 
-(ref:my-table-caption) Deskriptiva mått för primära och sekundärt utfallsmått för de tre betingelserna vid för- och eftermätningstidpunkterna.
+(ref:descriptives) Deskriptiva mått för primära och sekundärt utfallsmått för de tre betingelserna vid för- och eftermätningstidpunkterna.
 
-``` {r descriptives, fig.cap='(ref:my-table-caption)', fig.align="center"}
+``` {r descriptives, fig.cap='(ref:descriptives)', fig.align="center"}
 
 ### Descriptives
 
@@ -713,7 +734,7 @@ colnames(descriptives.out.rot) <- rep(c("M","SD"),times = 3)
 # xg = paste('All (N = ' , length(r2.long.data[lg2t1,1]) , ')', sep="")
 # xw = paste('All (N = ' , length(r2.long.data[lg3t1,1]) , ')', sep="")
 
-knitr::kable(round(descriptives.out.rot,1), "latex", booktabs = T, caption = "(ref:my-table-caption)") %>%
+knitr::kable(round(descriptives.out.rot,1), "latex", booktabs = T, caption = "(ref:descriptives)") %>%
   add_header_above(c("", "Selfhelp (N = 67)" = 2, "Guided (N = 69)" = 2, "Waitlist (N = 68)" = 2)) %>% #, "All (N = 204)" = 2)) %>%
   pack_rows("Pre", 1, 3, bold = F) %>%
   pack_rows("Post", 4, 6, bold = F)
