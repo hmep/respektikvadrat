@@ -864,17 +864,13 @@ Vi använde `r cite_r("r-references.bib")` för samtliga analyser.
 
 ### Reliabel förändring och klinisk signifikans
 
-Skriv en introduktion till klinisk signifikans och reliabel förändring @Jacobson1991
-
-<!-- Vad är den minsta tillräckliga förändring i ett experiment som måste ha skett för att man ska kunna dra slutatsen att en förändring faktiskt också har skett i verkligheten? Det går att besvara den frågan på flera olika sätt.  -->
-
 På *gruppnivå* -- även i det här examensarbetet -- används ofta signifikanstestning för att avgöra om en skillnad i exempelvis medelvärden mellan två grupper är tillräckligt stor för att det ska gå att säga om en förändring har skett i statistisk mening. Kompletterat med ett mått på effektstyrka går det att kvantifiera förändringen, exempelvis för att kunna bedöma om skillnaden också är relevant i praktiken, eller för att jämföra eller slå samman (exempelvis i en metastudie) result från en studie med en annan.
 
 <!-- Det finns flera alternativ, både på grupp- och invididnivå. @Jacobson1991 ger exempel från litteraturen: man kan beräkna den andel av alla i gruppen som har förbättrats utifrån något slags kriterium -- exempelvis vid subjektiv bedömning av närstående eller vänner, av andra eller självupplevd eliminering av problematiska symtom eller kanske på samma grunder konstaterade tillägg av "normalfunktion" vid slutet av terapin. -->
 
 För att avgöra om en viss *individ* i har förbättrats i en viss behandling i klinisk mening kan kriterierna *reliabel förändring* och *klinisk signifikans* med fördel kombineras. Det förra ger en bild av om en förändring mellan två mätpunkter är tillräckligt stor i relation till populationsvariansen (som kan hämtas från normdata) för att kunna betraktas som en verklig förändring och inte bara ett slump- eller mätfel. Den senare ger en bild av om hur de absoluta eftermätningsvärdena förhåller sig till medelvärdet för antingen en subklinisk population eller en klinisk population (som också kan hämtas från normdata) [@Jacobson1991].
 
-Genom att rapportera frekvensen individer som har förändrats både reliabelt och kliniskt signifikant kan man således komplettera den statistiska beräkningen av gruppens relativa förändring med ett kliniskt relevant mått som också säger något om hur förändringen förhåller sig till befolkningen i stort.
+Genom att rapportera frekvensen individer som har förändrats både reliabelt och kliniskt signifikant kan man komplettera den statistiska beräkningen av gruppens relativa förändring med ett kliniskt relevant mått som också säger något om hur förändringen förhåller sig till befolkningen i stort. Standardiserad beräkning av dessa mått gör det möjligt att utifrån insamlad data göra en bedömning av en individs förbättring som bättre än subjektiva bedömningar (av kliniker, närstående eller klienten själv) kan användas för att jämföra effekten av olika behandlingar.
 
 #### Beräkning av reliabel förändring och klinisk signifikans
 
