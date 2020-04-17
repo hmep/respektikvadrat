@@ -583,7 +583,6 @@ Rekrytering skedde mellan 28 januari och 5 februari 2020. Studien annonserades p
 
 Som framgår av figur \@ref(fig:flow) så anmälde totalt 657 personer intresse till studien varav 464 personer slutförde hela screeningsprocessen. Av dessa exkluderades 126 personer då de uppfyllde något av de uppsatta exklusionskriterierna. De kvarvarande 338 personerna erbjöds plats i studien. Av dessa bejakade 253 sin plats. 43 personer exkluderades från behandlingen genom randomisering så att exakt 210 inkluderades. De deltager som exkluderades via randomisering erbjöds tillgång till materialet på samma sätt som kontrollgruppen fick det – men med skillnaden att deras resultat ej inkluderats i beräkningarna. Vid behandlingsstart hade alltså studien 210 deltagare. Under behandlingens gång framkom det att fem deltagare (tre från gruppen *Behandling utan stöd* och två från gruppen *Väntlista*) hade pågående psykologisk behandling. Utöver detta bad en deltagare från gruppen *Behandling med stöd* om att få bli exkluderad ifrån studien. Denna deltagare bad även om att hens data ej skulle användas. Dessa sex deltagare har exkluderats från alla statistiska beräkningar i den aktuella studien.
 
-
 ```{r flow, out.width="100%", fig.align="center", out.extra='', fig.cap='Flödesschema över inklusion, exklusion (samt dess orsaker) och bortfall.'}
 
 options(format.args = list(decimal.mark = '.', big.mark = ','))
