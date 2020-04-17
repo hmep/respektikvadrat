@@ -756,7 +756,7 @@ demdata.tabell <- cbind.data.frame(x1,x2,x3,x4,x5)
 colnames(demdata.tabell) <-c("","Självhjälp (n=67)","Med stöd (n=69)","Väntelista (n=68)","Totalt (n=204)")
 
 knitr::kable(demdata.tabell, format.args = list(decimal.mark = ',', big.mark = ' '), booktabs = T, caption = "(ref:demdata)", linesep = "", align="lrrrr") %>%
-  kable_styling(full_width = T) %>%
+  kable_styling(full_width = F) %>%
   column_spec(2, width = "5em") %>%
   column_spec(3, width = "5em") %>%
   column_spec(4, width = "5em") %>%
@@ -842,8 +842,9 @@ intervention.tabell <- cbind.data.frame(
   )
 
 knitr::kable(intervention.tabell, format.args = list(decimal.mark = ',', big.mark = ' '), booktabs = T, caption = "(ref:intervention)", linesep = "", align="rll") %>%
-  kable_styling(full_width = T) %>%
+  kable_styling(full_width = F) %>%
   column_spec(1, width = "2em") %>%
+  column_spec(2, width = "22em") %>%
   column_spec(3, width = "12em") %>%
   row_spec(c(1:7), extra_latex_after = "\\addlinespace")
 
@@ -866,9 +867,9 @@ Vi använde `r cite_r("r-references.bib")` för samtliga analyser.
 
 På *gruppnivå* -- även i det här examensarbetet -- används ofta signifikanstestning för att avgöra om en skillnad i exempelvis medelvärden mellan två grupper är tillräckligt stor för att det ska gå att säga om en förändring har skett i statistisk mening. Kompletterat med ett mått på effektstyrka går det att kvantifiera förändringen, exempelvis för att kunna bedöma om skillnaden också är relevant i praktiken, eller för att jämföra eller slå samman (exempelvis i en metastudie) result från en studie med en annan.
 
-<!-- Det finns flera alternativ, både på grupp- och invididnivå. @Jacobson1991 ger exempel från litteraturen: man kan beräkna den andel av alla i gruppen som har förbättrats utifrån något slags kriterium -- exempelvis vid subjektiv bedömning av närstående eller vänner, av andra eller självupplevd eliminering av problematiska symtom eller kanske på samma grunder konstaterade tillägg av "normalfunktion" vid slutet av terapin. -->
+<!-- Det finns flera alternativ, både på grupp- och invididnivå. @Jacobson2001 ger exempel från litteraturen: man kan beräkna den andel av alla i gruppen som har förbättrats utifrån något slags kriterium -- exempelvis vid subjektiv bedömning av närstående eller vänner, av andra eller självupplevd eliminering av problematiska symtom eller kanske på samma grunder konstaterade tillägg av "normalfunktion" vid slutet av terapin. -->
 
-För att avgöra om en viss *individ* i har förbättrats i en viss behandling i klinisk mening kan kriterierna *reliabel förändring* och *klinisk signifikans* med fördel kombineras. Det förra ger en bild av om en förändring mellan två mätpunkter är tillräckligt stor i relation till populationsvariansen (som kan hämtas från normdata) för att kunna betraktas som en verklig förändring och inte bara ett slump- eller mätfel. Den senare ger en bild av om hur de absoluta eftermätningsvärdena förhåller sig till medelvärdet för antingen en subklinisk population eller en klinisk population (som också kan hämtas från normdata) [@Jacobson1991].
+För att avgöra om en viss *individ* i har förbättrats i en viss behandling i klinisk mening kan kriterierna *reliabel förändring* och *klinisk signifikans* med fördel kombineras. Det förra ger en bild av om en förändring mellan två mätpunkter är tillräckligt stor i relation till populationsvariansen (som kan hämtas från normdata) för att kunna betraktas som en verklig förändring och inte bara ett slump- eller mätfel. Den senare ger en bild av om hur de absoluta eftermätningsvärdena förhåller sig till medelvärdet för antingen en subklinisk population eller en klinisk population (som också kan hämtas från normdata) [@Jacobson2001].
 
 Genom att rapportera frekvensen individer som har förändrats både reliabelt och kliniskt signifikant kan man komplettera den statistiska beräkningen av gruppens relativa förändring med ett kliniskt relevant mått som också säger något om hur förändringen förhåller sig till befolkningen i stort. Standardiserad beräkning av dessa mått gör det möjligt att utifrån insamlad data göra en bedömning av en individs förbättring som bättre än subjektiva bedömningar (av kliniker, närstående eller klienten själv) kan användas för att jämföra effekten av olika behandlingar.
 
@@ -876,9 +877,9 @@ Genom att rapportera frekvensen individer som har förändrats både reliabelt o
 
 För att bedöma om en individuell förändring mellan två mätpunkter är reliabel används standardavvikelsen i normalpopulationen. För beräkningen av reliabel förändring, *reliable change index* (RCI), delas skillnaden mellan de två medelvärdena med standardfelet (det vill säga standardavvikelsen delat med roten ur sample-storleken). 
 
-För att bedöma absolut status för en individ vid behandlingens slut (exempelvis för att kunna avgöra om personen ska betraktas som tillfrisknad eller i behov av fortsatta interventioner) kan man relatera eftermätningsvärdet till medelvärdet för både den kliniska och den subkliniska normalpopulationen. @Jacobson1991 definierar det förra som kriterium *a* och det senare som kriterium *b*. Man kan också relatera eftermätningsvärdet för en individ till ett normvärde i mitten av *a* och *b*, vilket författarna kallar kriterium *c*. I enlighet med rekommendationerna i @Jacobson1991 använder vi kriterium *b* för beräkningen: de individer vars eftermätningsvärde befinner sig inom två standardavvikelser från den subkliniska normalpopulationen anses vara kliniskt signifikant förändrade. 
+För att bedöma absolut status för en individ vid behandlingens slut (exempelvis för att kunna avgöra om personen ska betraktas som tillfrisknad eller i behov av fortsatta interventioner) kan man relatera eftermätningsvärdet till medelvärdet för både den kliniska och den subkliniska normalpopulationen. @Jacobson2001 definierar det förra som kriterium *a* och det senare som kriterium *b*. Man kan också relatera eftermätningsvärdet för en individ till ett normvärde i mitten av *a* och *b*, vilket författarna kallar kriterium *c*. I enlighet med rekommendationerna i @Jacobson2001 använder vi kriterium *b* för beräkningen: de invidier vars eftermätningsvärde befinner sig inom två standardavvikelser från den subkliniska normalpopulationen anses vara kliniskt signifikant förändrade. 
 
-Frekvensen individer i de olika undersökta grupperna som har förändrats både reliabelt och signifikant kan sedan summeras [@Jacobson1991].
+Frekvensen individer i de olika undersökta grupperna som har förändrats både reliabelt och signifikant kan sedan summeras [@Jacobson2001].
 
 ## 
 
