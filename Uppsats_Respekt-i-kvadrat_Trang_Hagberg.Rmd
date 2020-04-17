@@ -815,7 +815,7 @@ Materialet är översatt och anpassat till svenska förhållanden av TH med till
 
 ```{r intervention, fig.align="center"}
 
-options(format.args = list(decimal.mark = ','))
+options(format.args = list(decimal.mark = ',', big.mark = ' '))
 
 Vecka <- c("1","2","3","4","5","6--7","8")
 
