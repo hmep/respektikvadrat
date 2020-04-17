@@ -827,8 +827,8 @@ Tema <- c(
 
 Innehall <- c(
   "Kapitel 1 med utökningar",
-  "Kapitel 2 med utökningar om inlärning, motivation och om ångest/obehag",
-  "Kapitel 3 med modifieringar och utökningar om fördelar med att bryta undvikande av ångest",
+  "Kapitel 2 med utökningar om inlärning och motivation",
+  "Kapitel 3 med modifieringar och utökningar om fördelar med att bryta undvikande",
   "Kapitel 4 med utökningar",
   "Kapitel 5 med utökningar",
   "Kapitel 6, 7, 8, 9 med smärre justeringar",
@@ -844,8 +844,8 @@ intervention.tabell <- cbind.data.frame(
 knitr::kable(intervention.tabell, format.args = list(decimal.mark = ',', big.mark = ' '), booktabs = T, caption = "(ref:intervention)", linesep = "", align="rll") %>%
   kable_styling(full_width = T) %>%
   column_spec(1, width = "2em") %>%
-  column_spec(3, width = "12.5em") %>%
-  row_spec(c(1:6), extra_latex_after = "\\midrule")
+  column_spec(3, width = "12em") %>%
+  row_spec(c(1:7), extra_latex_after = "\\addlinespace")
 
 ```
 
@@ -860,22 +860,29 @@ Den föreliggande studien godkändes av etikprövningsnämnden. Diarienummer fö
 
 ## Analys
 
-<!--Sample-"storleken 'hej'" \'för\' varje grupp bestämdes med en powerberäkning. Alla i studien planerade manipulationer, mätttillfällen och all tillgänglig data har använts i de efterföljande analyserna.-->
+Vi använde `r cite_r("r-references.bib")` för samtliga analyser.
 
-<!--We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. 21-word solution (Simmons, Nelson & Simonsohn, 2012; retrieved from http://ssrn.com/abstract=2160588) -->
+### Reliabel förändring och klinisk signifikans
 
-```{r data,results = "asis"}
-my_lm <- lm(Sepal.Width ~ Sepal.Length + Petal.Width + Petal.Length, data = iris)
+Skriv en introduktion till klinisk signifikans och reliabel förändring @Jacobson1991
 
-apa_lm <- apa_print(my_lm)
+<!-- Vad är den minsta tillräckliga förändring i ett experiment som måste ha skett för att man ska kunna dra slutatsen att en förändring faktiskt också har skett i verkligheten? Det går att besvara den frågan på flera olika sätt.  -->
 
-#apa_table(apa_lm$table, caption = "Iris regression table.")
+På *gruppnivå* -- även i det här examensarbetet -- används ofta signifikanstestning för att avgöra om en skillnad i exempelvis medelvärden mellan två grupper är tillräckligt stor för att det ska gå att säga om en förändring har skett i statistisk mening. Kompletterat med ett mått på effektstyrka går det att kvantifiera förändringen, exempelvis för att kunna bedöma om skillnaden också är relevant i praktiken, eller för att jämföra eller slå samman (exempelvis i en metastudie) result från en studie med en annan.
 
+<!-- Det finns flera alternativ, både på grupp- och invididnivå. @Jacobson1991 ger exempel från litteraturen: man kan beräkna den andel av alla i gruppen som har förbättrats utifrån något slags kriterium -- exempelvis vid subjektiv bedömning av närstående eller vänner, av andra eller självupplevd eliminering av problematiska symtom eller kanske på samma grunder konstaterade tillägg av "normalfunktion" vid slutet av terapin. -->
 
-```
-  
+För att avgöra om en viss *individ* i har förbättrats i en viss behandling i klinisk mening kan kriterierna *reliabel förändring* och *klinisk signifikans* med fördel kombineras. Det förra ger en bild av om en förändring mellan två mätpunkter är tillräckligt stor i relation till populationsvariansen (som kan hämtas från normdata) för att kunna betraktas som en verklig förändring och inte bara ett slump- eller mätfel. Den senare ger en bild av om hur de absoluta eftermätningsvärdena förhåller sig till medelvärdet för antingen en subklinisk population eller en klinisk population (som också kan hämtas från normdata) [@Jacobson1991].
 
-Vi använde `r cite_r("r-references.bib")` för alla analyser.
+Genom att rapportera frekvensen individer som har förändrats både reliabelt och kliniskt signifikant kan man således komplettera den statistiska beräkningen av gruppens relativa förändring med ett kliniskt relevant mått som också säger något om hur förändringen förhåller sig till befolkningen i stort.
+
+#### Beräkning av reliabel förändring och klinisk signifikans
+
+För att bedöma om en individuell förändring mellan två mätpunkter är reliabel används standardavvikelsen i normalpopulationen. För beräkningen av reliabel förändring, *reliable change index* (RCI), delas skillnaden mellan de två medelvärdena med standardfelet (det vill säga standardavvikelsen delat med roten ur sample-storleken). 
+
+För att bedöma absolut status för en individ vid behandlingens slut (exempelvis för att kunna avgöra om personen ska betraktas som tillfrisknad eller i behov av fortsatta interventioner) kan man relatera eftermätningsvärdet till medelvärdet för både den kliniska och den subkliniska normalpopulationen. @Jacobson1991 definierar det förra som kriterium *a* och det senare som kriterium *b*. Man kan också relatera eftermätningsvärdet för en individ till ett normvärde i mitten av *a* och *b*, vilket författarna kallar kriterium *c*. I enlighet med rekommendationerna i @Jacobson1991 använder vi kriterium *b* för beräkningen: de invidier vars eftermätningsvärde befinner sig inom två standardavvikelser från den subkliniska normalpopulationen anses vara kliniskt signifikant förändrade. 
+
+Frekvensen individer i de olika undersökta grupperna som har förändrats både reliabelt och signifikant kan sedan summeras [@Jacobson1991].
 
 # Resultat
 
@@ -947,21 +954,7 @@ knitr::kable(round(descriptives.out.rot,1), booktabs = T, caption = "(ref:descri
 
 ```
 
-\newpage
-
-Skriv en introduktion till klinisk signifikans och reliabel förändring @Jacobson1991
-
-<!-- Vad är den minsta tillräckliga förändring i ett experiment som måste ha skett för att man ska kunna dra slutatsen att en förändring faktiskt också har skett i verkligheten? Det går att besvara den frågan på flera olika sätt.  -->
-
-På *gruppnivå* -- även i det här examensarbetet -- används ofta signifikanstestning för att avgöra om en skillnad i exempelvis medelvärden mellan två grupper är tillräckligt stor för att det ska gå att säga om en förändring har skett. Kompletterat med ett mått på effektstyrka går det att kvantifiera förändringen, exempelvis för att kunna bedöma om skillnaden också är relevant i praktiken, eller för att jämföra eller slå samman (exempelvis i en metastudie) result från en studie med en annan.
-
-<!-- Det finns flera alternativ, både på grupp- och invididnivå. @Jacobson1991 ger exempel från litteraturen: man kan beräkna den andel av alla i gruppen som har förbättrats utifrån något slags kriterium -- exempelvis vid subjektiv bedömning av närstående eller vänner, av andra eller självupplevd eliminering av problematiska symtom eller kanske på samma grunder konstaterade tillägg av "normalfunktion" vid slutet av terapin. -->
-
-För att avgöra om en viss *individ* i har förbättrats i en viss behandling kan kriterierna *reliabel förändring* och *klinisk signifikans* kombineras. @Jacobson1991 definierar det förra som 
-
--- eller frekvensen av individer i en viss grupp -- som har förbättrats, kan 
-
- 
+<!-- \newpage -->
 
 <!--
 
@@ -977,7 +970,7 @@ The "b" cutoff means that post-intervention scores are significant if they are w
  
 -->
 
-\newpage
+<!-- \newpage -->
 
 se figur \@ref(fig:aaasad)
 
@@ -1036,7 +1029,7 @@ clinsig.AAAS.ad.g2 <- x
 
 (ref:ad) För huvudutfallsmåttet AAA-S och underskalan *Adaptive Assertiveness* fann vi att av de `r clinsig.AAAS.ad.g1$post.n` personerna i självhjälpsgruppen som genomfört både för- och eftermätning så återfanns `r clinsig.AAAS.ad.g1$sigsum[2]` vid eftermätningen inom eller ovanför normalspannet för en icke-klinisk population (ovanför kriterium *b*); av dem hade `r paste(clinsig.AAAS.ad.g1.csrci," (",round(clinsig.AAAS.ad.g1.csrci/clinsig.AAAS.ad.g1$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.AAAS.ad.g1$relchng,1)` poäng mellan mättillfällena. För de `r clinsig.AAAS.ad.g2$post.n` personer i gruppen som fick stöd och som genomfört båda mätningarna så återfanns `r clinsig.AAAS.ad.g2$sigsum[2]` vid eftermätningen inom normalspannet för en icke-klinisk population; av dem hade `r paste(clinsig.AAAS.ad.g2.csrci," (",round(clinsig.AAAS.ad.g2.csrci/clinsig.AAAS.ad.g2$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.AAAS.ad.g2$relchng,1)` poäng mellan mättillfällena.
 
-\newpage
+<!-- \newpage -->
 
 se figur \@ref(fig:aaasag)
 
@@ -1083,7 +1076,7 @@ clinsig.AAAS.ag.g2 <- x
 
 (ref:ag) För huvudutfallsmåttet AAA-S och underskalan *Aggressive Assertiveness* fann vi att av de `r clinsig.AAAS.ag.g1$post.n` personerna i självhjälpsgruppen som genomfört både för- och eftermätning så återfanns `r clinsig.AAAS.ag.g1$sigsum[2]` vid eftermätningen inom eller ovanför normalspannet för en icke-klinisk population (ovanför kriterium *b*); av dem hade `r paste(clinsig.AAAS.ag.g1.csrci," (",round(clinsig.AAAS.ag.g1.csrci/clinsig.AAAS.ag.g1$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.AAAS.ag.g1$relchng,1)` poäng mellan mättillfällena. För de `r clinsig.AAAS.ag.g2$post.n` personer i gruppen som fick stöd och som genomfört båda mätningarna så återfanns `r clinsig.AAAS.ag.g2$sigsum[2]` vid eftermätningen inom normalspannet för en icke-klinisk population; av dem hade `r paste(clinsig.AAAS.ag.g2.csrci," (",round(clinsig.AAAS.ag.g2.csrci/clinsig.AAAS.ag.g2$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.AAAS.ag.g2$relchng,1)` poäng mellan mättillfällena.
 
-\newpage
+<!-- \newpage -->
 
 se figur \@ref(fig:rathus)
 
@@ -1133,7 +1126,7 @@ clinsig.Rathus.g2 <- x
 
 (ref:rat) För det sekundära utfallsmåttet Rathus fann vi att av de `r clinsig.Rathus.g1$post.n` personerna i självhjälpsgruppen som genomfört både för- och eftermätning så återfanns `r clinsig.Rathus.g1$sigsum[2]` vid eftermätningen inom eller ovanför normalspannet för en icke-klinisk population (ovanför kriterium *b*); av dem hade `r paste(clinsig.Rathus.g1.csrci," (",round(clinsig.Rathus.g1.csrci/clinsig.Rathus.g1$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.Rathus.g1$relchng,1)` poäng mellan mättillfällena. För de `r clinsig.Rathus.g2$post.n` personer i gruppen som fick stöd och som genomfört båda mätningarna så återfanns `r clinsig.Rathus.g2$sigsum[2]` vid eftermätningen inom normalspannet för en icke-klinisk population; av dem hade `r paste(clinsig.Rathus.g2.csrci," (",round(clinsig.Rathus.g2.csrci/clinsig.Rathus.g2$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.Rathus.g2$relchng,1)` poäng mellan mättillfällena.
 
-\newpage
+<!-- \newpage -->
 
 se figur \@ref(fig:interactions)
 
