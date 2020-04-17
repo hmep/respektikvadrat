@@ -1170,7 +1170,7 @@ interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$rathus,fun=
 
 # Diskussion
 
-Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt självhjälpsprogram för att förbättra individers konstruktiva självhävdelse. Programmet administrerades via en internetbaserad plattform. Studien genomfördes med en randomiserad och kontrollerad design. Interventionen byggde på självhjälpsmaterialet *Assert Yourself* [@michel2008] och inkluderade bland annat inslag av psykoedukation, beteendeexperiment, avslappningsövningar, vidmakthållandeplanering och återfallsprevention. En tredjedel av deltagarna fick tillgång till programmet utan terapeutstöd, en tredjedel fick tillgång till programmet med terapeutstöd och en tredjedel var kontrollgrupp.
+Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt självhjälpsprogram för att förbättra individers konstruktiva självhävdelse. Programmet administrerades via en internetbaserad plattform. Studien genomfördes med en randomiserad och kontrollerad design. Interventionen byggde på självhjälpsmaterialet *Assert Yourself* [@michel2008] och inkluderade bland annat inslag av psykoedukation, beteendeexperiment, avslappningsövningar, vidmakthållandeplanering och återfallsprevention. En tredjedel av deltagarna fick tillgång till programmet utan behandlarstöd, en tredjedel fick tillgång till programmet med behandlarstöd och en tredjedel var kontrollgrupp.
 
 *Vi bör avsluta detta stycke med några få rader om den analys vi gjorde och resultatet vi fick.*
 
@@ -1185,41 +1185,42 @@ x å andra sidan vad våra resultat visar på (?)
 -->
 
 
-### Vårt sample
+### Samplets representativitet för populationen
+<!-- Avsnittet bör få en ny underrubrik, om en underrubrik nu ens är nödvändigt -->
 
-- Könsfördelningen
+All data som låg till grund för inkludering eller ekludering i den aktuella studien var insamlad från självskattningsformulär. I och med att forskningspersonsinformationen som potentiella deltagare kunde läsa innan de påbörjade screeningsprocessen presenterade såväl inkluderings- som exkluderingskriterier (även om exkluderingskriterierna till viss del var allmänt formulerade) medför det risken att de som sökte till studien anpassade sina svar för att bli inkluderade. Då ingen klinisk intervju användes i screeningprocessen fanns det ingen möjlighet att på så sätt upptäcka individer som borde exkluderas. Ingen klinisk intervju inkluderades då det låg utanför studiens möjliga resurser att administrera dessa till alla potentiella deltagare. En potentiell fördel med exkluderandet av de kliniska intervjuerna är att tiden mellan påbörjad rekrytering och behandlingsstart blev kort, endast två veckor.
 
-Med  nästintill 90% kvinnor i samplet var könsfördelningen ytterst ojämn. Denna ojämna fördelning går troligen att tillskriva flertalet olika faktorer. För det första rapporterar kvinnor mer oro, änglsan och ångest än män [@Socialstyrelsen2004] vilket skulle kunna göra kvinnor mer benägna att söka hjälp. För det andra tenderar män överlag att i lägre utsträckning söka vård än kvinnor även när män och kvinnor upplever liknande symtom [@Galdas2005]. Slutligen – vilket troligen är den mest påverkande faktorn i den aktuella studien – så marknadsfördes studien huvudsakligen på internet, bland annat med hjälp av annonser på sociala medier. Dessa annonser använder sig av en automatiserad algoritm som presenterar anonnserna för de individer algoritmen tror har störts odds till att trycka på dem. Data som sammanställdes efter avslutad annonsering visade på att någonstans mellan 85-90% av alla annonser visades för kvinnor.
+Med nästintill 90% kvinnor i samplet var könsfördelningen ytterst ojämn. Denna ojämna fördelning går troligen att tillskriva flertalet olika faktorer. För det första rapporterar kvinnor mer oro, änglsan och ångest än män [@Socialstyrelsen2004] vilket skulle kunna göra kvinnor mer benägna att söka hjälp. För det andra tenderar män överlag att i lägre utsträckning söka vård än kvinnor även när män och kvinnor upplever liknande symtom [@Galdas2005]. Slutligen – vilket troligen är den mest påverkande faktorn i den aktuella studien – så marknadsfördes studien huvudsakligen på internet, bland annat med hjälp av annonser på sociala medier. Dessa annonser använder sig av en automatiserad algoritm som presenterar anonnserna för de individer algoritmen tror har störts odds till att trycka på dem. Data som sammanställdes efter avslutad annonsering visade på att någonstans mellan 85-90% av alla annonser visades för kvinnor.
+
+Till fördel för samplets representation av populationen är att det i och med en internetbaserad behandling fanns möjlighet till ett nationellt intag av deltagare. Då det varken finns någon data om prevalens av bristande självhävdelse eller vilka samband det finns mellan den och andra faktorer hos personer i Sverige är det dock svårt att säga hur representativ för populationen samplet i den aktuella studien är.
 
 <!--
-Bör den data vi refererar till i stycket ovan bifogas/redovisas på något sätt? Vi kan även argumentera för att algoritmen till stor del förklarar spridningen i ålder hos vårt sample då majoriteten av de som fick se reklamen var mellan 35-54 år gamla
+Bör den data vi refererar till i avsnittet ovan bifogas/redovisas på något sätt? Vi kan även argumentera för att algoritmen till stor del förklarar spridningen i ålder hos vårt sample då majoriteten av de som fick se reklamen var mellan 35-54 år gamla
 
-+ Nationellt intag i och med internet
 - Icke tydliga inklusionskriterier
-- Ingen strukturerad klinisk intervju utan endast självskattningsformulär
-
-Följande mening (eller motsvarande) bör vara avslutande mening i det sista stycket om vårt sample: Då det inte finns någon data om prevalensen av bristande självhävdelse hos personer i Sverige är det dock svårt att säga hur representativ för populationen samplet i den aktuella studien är.
 
 -/+ Väntlista brukar leda till försämring, på gruppnivå hos våra deltagare ej så.
 + a priori powerberäkning
 
-- Ingen uppföljningsmätning av deltagarnas mående, dvs svårt att veta hur ser ut över tid
+- Ingen uppföljningsmätning av deltagarnas mående, dvs svårt att veta hur ser ut över tid - tenderar att öka över tid, särskilt vid KBT [@Bandelow2018] som källa!
 
 - Vårt primära utfallsmått är inte validerat på svenska
 
-- Ingen behandlarstödsmanual (eller kan vi kalla det där dokumentet som Per skickade till oss om förhållningssätt i iTerapi för en stödmanual?)
+-->
 
-Gör vi kontroll av bortfall för att se att det inte är ett systematiskt bortfall?
+Då detta material översatts till svenska inför den aktuella studien – och originalmaterialet användes utan behandlarstöd – fanns det ingen behandlarstödsmanual eller dylikt för studiens behandlare att använda sig av. Behandlarna hade utöver detta ingen tidigare erfarenhet av internetbaserad psykologisk behandling. Dock hade båda behandlarna tidigare erfarenhet av ansikte mot ansikte-behandling med individer med självrapporterad bristande självhävdelse. Å andra sidan har det visat sig att tidigare erfarenheter och kunskaper om I-KBT hos behandlare inte gör nämnvärd skillnad så länge de åtminstone har grundläggande kunskaper inom psykologisk behandling [@Baumeister2014a]. Båda behandlarna hade även tillgång både till ett dokument med generella förhållningssätt vid internetbehandling samt till vid-behov-handledning och stöd av en legitimerad psykolog med omfattande erfarenhet av I-KBT. Denna psykolog var även studieansvarig. Den generella målsättningen var att behandlarna skulle spendera cirka 15 minuter per vecka och deltagare. Detta varierade dock nämnvärt beroende på hur frekvent behandlarens deltagare hörde av sig till behandlaren med behandlingsrelaterade frågor samt hur utförligt deltagaren besvarade behandlingsprogrammets övningar. 
+
+<!--
+Möjligen även diskutera i det här avsnittet det resultat vi fått - och ifall det beror på behandlarnas kompetens?
+
+Sidenote: Gör vi kontroller av bortfallet för att se att det inte är ett systematiskt bortfall?
 
 -->
 
-<!-- Här skriva om snäva urvalsgruppen (dvs att en stor del av reklamen riktade sig till medelålders kvinnor) och hur det påverkar generaliserbarheten i våra resultat. -->
-
-<!-- Ett vanligt problem med väntlista är att de försämras under tiden. Men vår väntlista har förbättrats under tiden vilket bör minska risken för typ-I fel. -->
-
 ## Resultatdiskussion
-
 tolkning av resultatet. Jämförelsen mellan grupperna "Självhjälp" och "Med stöd" utfaller till den senare gruppens fördel. Det skulle mycket väl kunna bero på att endast den andel av den förra gruppen som har upplevt en förbättring har valt att svara på frågorna, medan en större andel av de som *inte* har upplevt en förbättring har valt att svara på dem i gruppen som har fått stöd. Deltagarna i den senare gruppen har interagerat med terapeuterna och vill eventuellt återkoppla hur de mår i större utsträckning i dem i självhjälpsgruppen.
+
+## Behov av ny forskning / Framtida forskning
 
 ## I relation till annan forskning, självhävdelse
 
