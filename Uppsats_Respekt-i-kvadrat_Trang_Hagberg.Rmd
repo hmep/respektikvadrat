@@ -1158,30 +1158,42 @@ Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt s
 
 ## Metodologiska brister / felkällor / validitet / reliabilitet
 
+<!-- 
 +/- användande av de skalor vi har gjort och hur tillförlitliga de är.
+
+-/+ (?) Terapeuters erfarenhet av tidigare behandling (ingen erfarenhet av internetbehandling)
+x @Baumeister2014a om att guided treatment tenderar att vara superior och att hur kunniga terapeuterna är tenderar att vara av liten betydelse
+x å andra sidan vad våra resultat visar på (?)
+-->
+
+
+### Vårt sample
 
 - Könsfördelningen
 
-Med  nästintill 90% kvinnor i samplet var könsfördelningen ytterst ojämn. Denna ojämna fördelning går troligen att tillskriva flertalet olika faktorer. För det första rapporterar kvinnor mer oro, änglsan och ångest än män [@Socialstyrelsen2004] vilket skulle kunna göra kvinnor mer benägna att söka hjälp. För det andra tenderar män överlag att i lägre utsträckning söka vård än kvinnor även när män och kvinnor upplever liknande symtom [@Galdas2005]. Slutligen – vilket troligen är den mest påverkande faktorn i den aktuella studien – så marknadsfördes studien huvudsakligen på internet, bland annat med hjälp av annonser på sociala medier. Dessa annonser använder sig av en automatiserad algoritm som presenterar anonnserna för de individer algoritmen tror har störts odds till att trycka på dem. Data som sammanställdes efter avslutad annonsering visade på att någonstans mellan 85-90% av alla annonser visades för kvinnor. Då det inte finns någon data om prevalensen av bristande självhävdelse hos personer i Sverige är det dock svårt att säga hur representativ för populationen samplet i den aktuella studien är.
+Med  nästintill 90% kvinnor i samplet var könsfördelningen ytterst ojämn. Denna ojämna fördelning går troligen att tillskriva flertalet olika faktorer. För det första rapporterar kvinnor mer oro, änglsan och ångest än män [@Socialstyrelsen2004] vilket skulle kunna göra kvinnor mer benägna att söka hjälp. För det andra tenderar män överlag att i lägre utsträckning söka vård än kvinnor även när män och kvinnor upplever liknande symtom [@Galdas2005]. Slutligen – vilket troligen är den mest påverkande faktorn i den aktuella studien – så marknadsfördes studien huvudsakligen på internet, bland annat med hjälp av annonser på sociala medier. Dessa annonser använder sig av en automatiserad algoritm som presenterar anonnserna för de individer algoritmen tror har störts odds till att trycka på dem. Data som sammanställdes efter avslutad annonsering visade på att någonstans mellan 85-90% av alla annonser visades för kvinnor.
 
-*Bör den data vi refererar till i stycket ovan bifogas/redovisas på något sätt? Vi kan även argumentera för att algoritmen till stor del förklarar spridningen i ålder hos vårt sample då majoriteten av de som fick se reklamen var mellan 35-54 år gamla* 
+<!--
+Bör den data vi refererar till i stycket ovan bifogas/redovisas på något sätt? Vi kan även argumentera för att algoritmen till stor del förklarar spridningen i ålder hos vårt sample då majoriteten av de som fick se reklamen var mellan 35-54 år gamla
 
 + Nationellt intag i och med internet
 - Icke tydliga inklusionskriterier
 - Ingen strukturerad klinisk intervju utan endast självskattningsformulär
+
+Följande mening (eller motsvarande) bör vara avslutande mening i det sista stycket om vårt sample: Då det inte finns någon data om prevalensen av bristande självhävdelse hos personer i Sverige är det dock svårt att säga hur representativ för populationen samplet i den aktuella studien är.
 
 -/+ Väntlista brukar leda till försämring, på gruppnivå hos våra deltagare ej så.
 + a priori powerberäkning
 
 - Ingen uppföljningsmätning av deltagarnas mående, dvs svårt att veta hur ser ut över tid
 
--/+ (?) Stödbehandlarnas erfarenhet av tidigare behandling (ingen erfarenhet av internetbehandling)
-
 - Vårt primära utfallsmått är inte validerat på svenska
 
-- Ingen behandlarstödsmanual
+- Ingen behandlarstödsmanual (eller kan vi kalla det där dokumentet som Per skickade till oss om förhållningssätt i iTerapi för en stödmanual?)
 
-*Gör vi kontroll av bortfall för att se att det inte är ett systematiskt bortfall?* 
+Gör vi kontroll av bortfall för att se att det inte är ett systematiskt bortfall?
+
+-->
 
 <!-- Här skriva om snäva urvalsgruppen (dvs att en stor del av reklamen riktade sig till medelålders kvinnor) och hur det påverkar generaliserbarheten i våra resultat. -->
 
