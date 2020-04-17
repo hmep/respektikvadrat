@@ -445,7 +445,7 @@ Begreppet assertiveness kom under 1970-talet att omfamna en allt längre lista m
 
 @alberti1974your definierar konstruktiv självhävdelse som handlande som återspeglar individens egna långsiktiga intressen. Det inbegriper förmågan att ”stå upp för sig själv” utan överdriven ångest och färdigheten att uttrycka sina känslor samt att utöva sina egna rättigheter utan att kränka andras rättigheter. Med ’utöva sina rättigheter’ menas att både i icke-verbal och verbal handling uttrycka sina tankar, känslor och önskningar.
 
-Graden av konstruktiv självhävdelse för en person i en given situation kan inordnas som en punkt i en graf (se figur\~\@ref(fig:assertiveness)) med två kontinuerliga dimensioner: handlande med respekt för andras rättigheter på x-axeln och handlande med respekt för egna rättigheter på y-axeln. Konstruktiv självhävdelse är en kommunikationsstil som skiljer sig från aggressiv självhävdelse (det vill säga hävdande av egna rättigheter på bekostnad av andras). Det skiljer sig även från kommunikationsstilen passiv självhävdelse (det vill säga förnekande av egna rättigheter till förmån för andras) och från passiv-aggressiv självhävdelse (det vill säga bristande respekt för både egna och andras rättigheter). Gränsdragningarna mellan kommunikationsstilarna är förstås flytande, eftersom dimensionerna är kontinuerliga.
+Graden av konstruktiv självhävdelse för en person i en given situation kan inordnas som en punkt i en graf (se figur \@ref(fig:assertiveness)) med två kontinuerliga dimensioner: handlande med respekt för andras rättigheter på x-axeln och handlande med respekt för egna rättigheter på y-axeln. Konstruktiv självhävdelse är en kommunikationsstil som skiljer sig från aggressiv självhävdelse (det vill säga hävdande av egna rättigheter på bekostnad av andras). Det skiljer sig även från kommunikationsstilen passiv självhävdelse (det vill säga förnekande av egna rättigheter till förmån för andras) och från passiv-aggressiv självhävdelse (det vill säga bristande respekt för både egna och andras rättigheter). Gränsdragningarna mellan kommunikationsstilarna är förstås flytande, eftersom dimensionerna är kontinuerliga.
 
 ```{r assertiveness, out.width="75%", fig.align="center", out.extra='', fig.cap='Konstruktiv självhävdelse definieras i träningsprogrammet Respekt i kvadrat som handlande som är förenligt med samtidig respekt för egna och andras rättigheter. Passiv självhävdelse kan på samma sätt definieras som låg grad av respekt för egna rättigheter men hög grad av respekt för andras rättigheter; aggressiv självhävdelse kan definieras som hög grad av respekt för egna rättigheter men låg grad av respekt för andras rättigheter.'}
 
@@ -601,9 +601,9 @@ För att delta krävdes det att man var svensk medborgare, minst 18 år gammal, 
 De personer som skattade 15 eller mer på självskattningsformuläret PHQ-9 exkluderades. Utöver detta exkluderades de deltagare som tre månader inom behandlingsstart gjort förändringar i sin psykofarmakabehandling. De personer som uppgav att de hade pågående psykologisk behandling exkluderades även. Slutligen exkluderades de personer som i frisvar under screeningsprocessen uppgav att de hade tidsbrist eller låg motivation till behandlingen. Alla personer som exkluderades blev informerade om detta via den webbaserade plattformen de använt sig för att anmäla sig till studien. När det var tillämpbart gavs även rekommendationer om vart personerna istället kunde vända sig.
 
 #### Demografisk data
-De 204 deltagare vars data redovisas var mellan 20 och 65 år gamla med en medelålder på 41,8 år (s=8,8). En betydande majoritet (87,8%; 179/204) definierade sig som kvinnor, övriga definierade sig som män. Knappt tre fjärdedelar av deltagarna har avslutade universitets- eller högskoleutbildningar (71,6%; 146/204) och tre fjärdedelar av deltagarna var vid behandlingens start arbetande (75,5%; 154/204). Mer än hälften av deltagarna (61,3%; 125/204) hade tidigare erfarenheter av psykologisk behandling. Av dessa hade majoriteten (64,8%; 81/125) tidigare erfarenheter av KBT.  Knappt en tredjedel av alla deltagare (29,0%; 59/204) hade erfarenhet av psykofarmaka. Vid behandlingens start stod 17,6% (36/204) på någon sorts psykofarmaka. Totalt 3,4% (7/204) av deltagarna var vid behandlingsstart sjukskrivna. För att se de demografiska faktorernas fördelningar i respektive grupp, se tabell \@ref(fig:demdata).
+De 204 deltagare vars data redovisas var mellan 20 och 65 år gamla med en medelålder på 41,8 år (s=8,8). En betydande majoritet (87,8%; 179/204) definierade sig som kvinnor, övriga definierade sig som män. Knappt tre fjärdedelar av deltagarna har avslutade universitets- eller högskoleutbildningar (71,6%; 146/204) och tre fjärdedelar av deltagarna var vid behandlingens start arbetande (75,5%; 154/204). Mer än hälften av deltagarna (61,3%; 125/204) hade tidigare erfarenheter av psykologisk behandling. Av dessa hade majoriteten (64,8%; 81/125) tidigare erfarenheter av KBT.  Knappt en tredjedel av alla deltagare (29,0%; 59/204) hade erfarenhet av psykofarmaka. Vid behandlingens start stod 17,6% (36/204) på någon sorts psykofarmaka. Totalt 3,4% (7/204) av deltagarna var vid behandlingsstart sjukskrivna. För att se de demografiska faktorernas fördelningar i respektive grupp, se tabell \@ref(tab:demdata).
 
-(ref:demdata) Demografisk data hos deltagarna, redovisad per grupp samt för alla studiens deltagare.
+(ref:dem) Demografisk data hos deltagarna, redovisad per grupp samt för alla studiens deltagare.
 
 ```{r demdata, out.width="100%", tab.align="center"}
 
@@ -758,7 +758,7 @@ demdata.tabell <- cbind.data.frame(x1,x2,x3,x4,x5)
 
 colnames(demdata.tabell) <-c("","Självhjälp (n=67)","Med stöd (n=69)","Väntelista (n=68)","Totalt (n=204)")
 
-knitr::kable(demdata.tabell, format.args = list(decimal.mark = ',', big.mark = ' '), booktabs = T, caption = "(ref:demdata)", linesep = "", align="lrrrr") %>%
+knitr::kable(demdata.tabell, format.args = list(decimal.mark = ',', big.mark = ' '), booktabs = T, caption = "(ref:dem)", linesep = "", align="lrrrr") %>%
   kable_styling(full_width = F) %>%
   column_spec(2, width = "5em") %>%
   column_spec(3, width = "5em") %>%
@@ -811,7 +811,7 @@ Interventionen är utformad med självhjälpsmaterialet Assert Yourself [@michel
 
 Materialet är översatt och anpassat till svenska förhållanden av TH med tillstånd av författaren och CCI. I samband med anpassningen av översättningen till I-KBT-moduler i plattformen iTerapi modifierade och utökade TH och PT materialet, bland annat genom att ersätta avsnitt som handlar om kognitiv omstrukturering med motiverande avsnitt för beteendeexperiment/beteendeaktivering. Utöver materialet i boken innehåller interventionen dessutom motiverande inslag i form av text och illustrationer [inspirerade av bland annat @Hayes2006a; @Dahlin2016] samt länkar till fördjupningsmaterial, videofilmer med konversationer och rollspel mellan PT och TH, videofilmer och ljudfiler med avslappningsövningar samt ett stort antal nya övningar, bland annat för veckovis uppföljning av konstruktiv självhävdelse, övningar för för återfallsprevention och vidmakthållande av behandlingseffekter samt utvärderingsformulär av veckans innehåll (se tabell \@ref(tab:intervention).)
 
-(ref:intervention) Översiktlig beskrivning av interventionen Respekt i kvadrat.
+(ref:interv) Översiktlig beskrivning av interventionen Respekt i kvadrat.
 
 ```{r intervention, fig.align="center"}
 
@@ -844,7 +844,7 @@ intervention.tabell <- cbind.data.frame(
   "Material"=Innehall
   )
 
-knitr::kable(intervention.tabell, format.args = list(decimal.mark = ',', big.mark = ' '), booktabs = T, caption = "(ref:intervention)", linesep = "", align="rll") %>%
+knitr::kable(intervention.tabell, format.args = list(decimal.mark = ',', big.mark = ' '), booktabs = T, caption = "(ref:interv)", linesep = "", align="rll") %>%
   kable_styling(full_width = F) %>%
   column_spec(1, width = "2em") %>%
   column_spec(2, width = "22em") %>%
@@ -874,7 +874,8 @@ På *gruppnivå* -- även i det här examensarbetet -- används ofta signifikans
 
 För att avgöra om en viss *individ* i har förbättrats i en viss behandling i klinisk mening kan kriterierna *reliabel förändring* och *klinisk signifikans* med fördel kombineras. Det förra ger en bild av om en förändring mellan två mätpunkter är tillräckligt stor i relation till populationsvariansen (som kan hämtas från normdata) för att kunna betraktas som en verklig förändring och inte bara ett slump- eller mätfel. Den senare ger en bild av om hur de absoluta eftermätningsvärdena förhåller sig till medelvärdet för antingen en subklinisk population eller en klinisk population (som också kan hämtas från normdata) [@Jacobson1991].
 
-Genom att rapportera frekvensen individer som har förändrats både reliabelt och kliniskt signifikant kan man komplettera den statistiska beräkningen av gruppens relativa förändring med ett kliniskt relevant mått som också säger något om hur förändringen förhåller sig till befolkningen i stort. Standardiserad beräkning av dessa mått gör det möjligt att utifrån insamlad data göra en bedömning av en individs förbättring som bättre än subjektiva bedömningar (av kliniker, närstående eller klienten själv) kan användas för att jämföra effekten av olika behandlingar.
+
+Genom att rapportera frekvensen individer som har förändrats både reliabelt och kliniskt signifikant kan man komplettera den statistiska beräkningen av gruppens relativa förändring med ett kliniskt relevant mått som också säger något om hur förändringen förhåller sig till befolkningen i stort. Standardiserad beräkning av dessa mått gör det möjligt att utifrån insamlad data göra en bedömning av en individs förbättring som är mer pålitligt och lättare att reproducera än subjektiva bedömningar (av kliniker, närstående eller klienten själv). Dessa standardiserade mått kan också kan användas för att jämföra effekten av olika behandlingar.
 
 #### Beräkning av reliabel förändring och klinisk signifikans
 
@@ -883,6 +884,8 @@ För att bedöma om en individuell förändring mellan två mätpunkter är reli
 För att bedöma absolut status för en individ vid behandlingens slut (exempelvis för att kunna avgöra om personen ska betraktas som tillfrisknad eller i behov av fortsatta interventioner) kan man relatera eftermätningsvärdet till medelvärdet för både den kliniska och den subkliniska normalpopulationen. @Jacobson1991 definierar det förra som kriterium *a* och det senare som kriterium *b*. Man kan också relatera eftermätningsvärdet för en individ till ett normvärde i mitten av *a* och *b*, vilket författarna kallar kriterium *c*. I enlighet med rekommendationerna i @Jacobson1991 använder vi kriterium *b* för beräkningen: de invidier vars eftermätningsvärde befinner sig inom två standardavvikelser från den subkliniska normalpopulationen anses vara kliniskt signifikant förändrade. 
 
 Frekvensen individer i de olika undersökta grupperna som har förändrats både reliabelt och signifikant kan sedan summeras [@Jacobson1991].
+
+## 
 
 # Resultat
 
@@ -1170,6 +1173,19 @@ Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt s
 \newpage
 
 # Referenser
+
+Inkorporera dessa referenser (från arbetsmaterialet):
+
+@beck1979cognitive
+@Clark1986
+@clark1995cognitive
+@alberti2017your
+@gambrill1975assertion
+@ward2018assertiveness
+@mckay2005self
+@powell2017mental
+@smith1975say
+@wolpe1990practice
 
 ```{r create_r-references}
 r_refs(file = "r-references.bib")
