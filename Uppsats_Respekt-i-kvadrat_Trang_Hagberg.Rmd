@@ -876,9 +876,11 @@ Genom att rapportera frekvensen individer som har förändrats både reliabelt o
 
 För att bedöma om en individuell förändring mellan två mätpunkter är reliabel används standardavvikelsen i normalpopulationen. För beräkningen av reliabel förändring, *reliable change index* (RCI), delas skillnaden mellan de två medelvärdena med standardfelet (det vill säga standardavvikelsen delat med roten ur sample-storleken). 
 
-För att bedöma absolut status för en individ vid behandlingens slut (exempelvis för att kunna avgöra om personen ska betraktas som tillfrisknad eller i behov av fortsatta interventioner) kan man relatera eftermätningsvärdet till medelvärdet för både den kliniska och den subkliniska normalpopulationen. @Jacobson1991 definierar det förra som kriterium *a* och det senare som kriterium *b*. Man kan också relatera eftermätningsvärdet för en individ till ett normvärde i mitten av *a* och *b*, vilket författarna kallar kriterium *c*. I enlighet med rekommendationerna i @Jacobson1991 använder vi kriterium *b* för beräkningen: de invidier vars eftermätningsvärde befinner sig inom två standardavvikelser från den subkliniska normalpopulationen anses vara kliniskt signifikant förändrade. 
+För att bedöma absolut status för en individ vid behandlingens slut (exempelvis för att kunna avgöra om personen ska betraktas som tillfrisknad eller i behov av fortsatta interventioner) kan man relatera eftermätningsvärdet till medelvärdet för både den kliniska och den subkliniska normalpopulationen. @Jacobson1991 definierar det förra som kriterium *a* och det senare som kriterium *b*. Man kan också relatera eftermätningsvärdet för en individ till ett normvärde i mitten av *a* och *b*, vilket författarna kallar kriterium *c*. I enlighet med rekommendationerna i @Jacobson1991 använder vi kriterium *b* för beräkningen: de individer vars eftermätningsvärde befinner sig inom två standardavvikelser från den subkliniska normalpopulationen anses vara kliniskt signifikant förändrade. 
 
 Frekvensen individer i de olika undersökta grupperna som har förändrats både reliabelt och signifikant kan sedan summeras [@Jacobson1991].
+
+## 
 
 # Resultat
 
@@ -1164,6 +1166,20 @@ Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt s
 \newpage
 
 # Referenser
+
+Inkorporera dessa referenser (från arbetsmaterialet):
+
+@beck1979cognitive
+@Clark1986
+@clark1995cognitive
+@alberti2017your
+@gambrill1975assertion
+@ward2018assertiveness
+@linehan1979assertion
+@mckay2005self
+@powell2017mental
+@smith1975say
+@wolpe1990practice
 
 ```{r create_r-references}
 r_refs(file = "r-references.bib")
