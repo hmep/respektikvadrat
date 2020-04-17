@@ -756,7 +756,7 @@ demdata.tabell <- cbind.data.frame(x1,x2,x3,x4,x5)
 colnames(demdata.tabell) <-c("","Självhjälp (n=67)","Med stöd (n=69)","Väntelista (n=68)","Totalt (n=204)")
 
 knitr::kable(demdata.tabell, format.args = list(decimal.mark = ',', big.mark = ' '), booktabs = T, caption = "(ref:demdata)", linesep = "", align="lrrrr") %>%
-  kable_styling(full_width = T) %>%
+  kable_styling(full_width = F) %>%
   column_spec(2, width = "5em") %>%
   column_spec(3, width = "5em") %>%
   column_spec(4, width = "5em") %>%
@@ -842,8 +842,9 @@ intervention.tabell <- cbind.data.frame(
   )
 
 knitr::kable(intervention.tabell, format.args = list(decimal.mark = ',', big.mark = ' '), booktabs = T, caption = "(ref:intervention)", linesep = "", align="rll") %>%
-  kable_styling(full_width = T) %>%
+  kable_styling(full_width = F) %>%
   column_spec(1, width = "2em") %>%
+  column_spec(2, width = "22em") %>%
   column_spec(3, width = "12em") %>%
   row_spec(c(1:7), extra_latex_after = "\\addlinespace")
 
