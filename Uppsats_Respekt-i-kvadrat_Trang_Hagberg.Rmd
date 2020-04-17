@@ -581,7 +581,7 @@ Rekrytering skedde mellan 28 januari och 5 februari 2020. Studien annonserades p
 
 ### Deltagare
 
-Som framgår av figur \@ref(fig:flow) så anmälde totalt 657 personer intresse till studien varav 464 personer slutförde hela screeningsprocessen. Av dessa exkluderades 126 personer då de uppfyllde något av de uppsatta exklusionskriterierna. De kvarvarande 338 personerna erbjöds plats i studien. Av dessa bejakade 253 sin plats. 43 personer exkluderades från behandlingen genom randomisering så att exakt 210 inkluderades. De deltager som exkluderades via randomisering erbjöds tillgång till materialet på samma sätt som kontrollgruppen fick det – men med skillnaden att deras resultat ej inkluderats i beräkningarna. Vid behandlingsstart hade alltså studien 210 deltagare. Under behandlingens gång framkom det att fem deltagare (tre från gruppen *Behandling utan stöd* och två från gruppen *Väntlista*) hade pågående psykologisk behandling. Utöver detta bad en deltagare från gruppen *Behandling med stöd* om att få bli exkluderad ifrån studien. Denna deltagare bad även om att hens data ej skulle användas. Dessa sex deltagare har exkluderats från alla statistiska beräkningar i den aktuella studien.
+Som framgår av figur \@ref(fig:flow) så anmälde totalt 657 personer intresse till studien varav 464 personer slutförde hela screeningsprocessen. Av dessa exkluderades 126 personer då de uppfyllde något av de uppsatta exklusionskriterierna. De kvarvarande 338 personerna erbjöds plats i studien. Av dessa bejakade 253 sin plats. 43 personer exkluderades från behandlingen genom randomisering så att exakt 210 inkluderades. De deltagare som exkluderades via randomisering erbjöds tillgång till materialet på samma sätt som kontrollgruppen fick det – men med skillnaden att deras resultat ej inkluderats i beräkningarna. Vid behandlingsstart hade alltså studien 210 deltagare. Under behandlingens gång framkom det att fem deltagare (tre från gruppen *Behandling utan stöd* och två från gruppen *Väntlista*) hade pågående psykologisk behandling. Utöver detta bad en deltagare från gruppen *Behandling med stöd* om att få bli exkluderad ifrån studien. Denna deltagare bad även om att hens data ej skulle användas. Dessa sex deltagare har exkluderats från alla statistiska beräkningar.
 
 ```{r flow, out.width="100%", fig.align="center", out.extra='', fig.cap='Flödesschema över inklusion, exklusion (samt dess orsaker) och bortfall.'}
 
@@ -865,7 +865,7 @@ Vi använde `r cite_r("r-references.bib")` för samtliga analyser.
 
 ### Reliabel förändring och klinisk signifikans
 
-På *gruppnivå* -- även i det här examensarbetet -- används ofta signifikanstestning för att avgöra om en skillnad i exempelvis medelvärden mellan två grupper är tillräckligt stor för att det ska gå att säga om en förändring har skett i statistisk mening. Kompletterat med ett mått på effektstyrka går det att kvantifiera förändringen, exempelvis för att kunna bedöma om skillnaden också är relevant i praktiken, eller för att jämföra eller slå samman (exempelvis i en metastudie) result från en studie med en annan.
+Ofta -- och även i det här examensarbetet -- används ofta signifikanstestning för att avgöra om en skillnad i exempelvis medelvärden mellan två grupper är tillräckligt stor för att det ska gå att säga om en förändring har skett i statistisk mening. Kompletterat med ett mått på effektstyrka går det att kvantifiera förändringen, exempelvis för att kunna bedöma om skillnaden också är relevant i praktiken, eller för att jämföra eller slå samman (exempelvis i en metastudie) result från en studie med en annan.
 
 <!-- Det finns flera alternativ, både på grupp- och invididnivå. @Jacobson1991 ger exempel från litteraturen: man kan beräkna den andel av alla i gruppen som har förbättrats utifrån något slags kriterium -- exempelvis vid subjektiv bedömning av närstående eller vänner, av andra eller självupplevd eliminering av problematiska symtom eller kanske på samma grunder konstaterade tillägg av "normalfunktion" vid slutet av terapin. -->
 
@@ -878,7 +878,9 @@ Genom att rapportera frekvensen individer som har förändrats både reliabelt o
 
 För att bedöma om en individuell förändring mellan två mätpunkter är reliabel används standardavvikelsen i normalpopulationen. För beräkningen av reliabel förändring, *reliable change index* (RCI), delas skillnaden mellan de två medelvärdena med standardfelet (det vill säga standardavvikelsen delat med roten ur sample-storleken). 
 
-För att bedöma absolut status för en individ vid behandlingens slut (exempelvis för att kunna avgöra om personen ska betraktas som tillfrisknad eller i behov av fortsatta interventioner) kan man relatera eftermätningsvärdet till medelvärdet för både den kliniska och den subkliniska normalpopulationen. @Jacobson1991 definierar det förra som kriterium *a* och det senare som kriterium *b*. Man kan också relatera eftermätningsvärdet för en individ till ett normvärde i mitten av *a* och *b*, vilket författarna kallar kriterium *c*. I enlighet med rekommendationerna i @Jacobson1991 använder vi kriterium *b* för beräkningen: de invidier vars eftermätningsvärde befinner sig inom två standardavvikelser från den subkliniska normalpopulationen anses vara kliniskt signifikant förändrade. 
+För att bedöma absolut status för en individ vid behandlingens slut (exempelvis för att kunna avgöra om personen ska betraktas som tillfrisknad eller i behov av fortsatta interventioner) kan man relatera eftermätningsvärdet till medelvärdet för både den kliniska och den subkliniska normalpopulationen. @Jacobson1991 definierar det förra som kriterium *a* och det senare som kriterium *b*. Man kan också relatera eftermätningsvärdet för en individ till ett normvärde i mitten av *a* och *b*, vilket författarna kallar kriterium *c*. I enlighet med rekommendationerna i @Jacobson1991 använder vi kriterium *b* för beräkningen: de invidier vars eftermätningsvärde befinner sig inom två standardavvikelser från den subkliniska normalpopulationen anses vara kliniskt signifikant förändrade.
+
+<!-- De graferna som innehåller a, b, och c i resultatdelen bör i sin figurtext ha en beskrivning av vad dessa bokstäver står för, eller en hänvisning tillbaka till detta avsnitt -->
 
 Frekvensen individer i de olika undersökta grupperna som har förändrats både reliabelt och signifikant kan sedan summeras [@Jacobson1991].
 
@@ -1157,9 +1159,8 @@ Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt s
 
 <!-- 
 +/- användande av de skalor vi har gjort och hur tillförlitliga de är.
+- Vårt primära utfallsmått är inte validerat på svenska 
 
--/+ (?) Terapeuters erfarenhet av tidigare behandling (ingen erfarenhet av internetbehandling)
-x @Baumeister2014a om att guided treatment tenderar att vara superior och att hur kunniga terapeuterna är tenderar att vara av liten betydelse
 x å andra sidan vad våra resultat visar på (?)
 -->
 
@@ -1183,8 +1184,6 @@ Bör den data vi refererar till i avsnittet ovan bifogas/redovisas på något s�
 
 - Ingen uppföljningsmätning av deltagarnas mående, dvs svårt att veta hur ser ut över tid - tenderar att öka över tid, särskilt vid KBT [@Bandelow2018] som källa!
 
-- Vårt primära utfallsmått är inte validerat på svenska
-
 -->
 
 Då detta material översatts till svenska inför den aktuella studien – och originalmaterialet användes utan behandlarstöd – fanns det ingen behandlarstödsmanual eller dylikt för studiens behandlare att använda sig av. Behandlarna hade utöver detta ingen tidigare erfarenhet av internetbaserad psykologisk behandling. Dock hade båda behandlarna tidigare erfarenhet av ansikte mot ansikte-behandling med individer med självrapporterad bristande självhävdelse. Å andra sidan har det visat sig att tidigare erfarenheter och kunskaper om I-KBT hos behandlare inte gör nämnvärd skillnad så länge de åtminstone har grundläggande kunskaper inom psykologisk behandling [@Baumeister2014a]. Båda behandlarna hade även tillgång både till ett dokument med generella förhållningssätt vid internetbehandling samt till vid-behov-handledning och stöd av en legitimerad psykolog med omfattande erfarenhet av I-KBT. Denna psykolog var även studieansvarig. Den generella målsättningen var att behandlarna skulle spendera cirka 15 minuter per vecka och deltagare. Detta varierade dock nämnvärt beroende på hur frekvent behandlarens deltagare hörde av sig till behandlaren med behandlingsrelaterade frågor samt hur utförligt deltagaren besvarade behandlingsprogrammets övningar. 
@@ -1197,7 +1196,7 @@ Sidenote: Gör vi kontroller av bortfallet för att se att det inte är ett syst
 -->
 
 ## Resultatdiskussion
-tolkning av resultatet. Jämförelsen mellan grupperna "Självhjälp" och "Med stöd" utfaller till den senare gruppens fördel. Det skulle mycket väl kunna bero på att endast den andel av den förra gruppen som har upplevt en förbättring har valt att svara på frågorna, medan en större andel av de som *inte* har upplevt en förbättring har valt att svara på dem i gruppen som har fått stöd. Deltagarna i den senare gruppen har interagerat med terapeuterna och vill eventuellt återkoppla hur de mår i större utsträckning i dem i självhjälpsgruppen.
+tolkning av resultatet. Jämförelsen mellan grupperna "Självhjälp" och "Med stöd" utfaller till den senare gruppens fördel. Det skulle mycket väl kunna bero på att endast den andel av den förra gruppen som har upplevt en förbättring har valt att svara på frågorna, medan en större andel av de som *inte* har upplevt en förbättring har valt att svara på dem i gruppen som har fått stöd. Deltagarna i den senare gruppen har interagerat med terapeuterna och vill eventuellt återkoppla hur de mår i större utsträckning än dem i självhjälpsgruppen.
 
 ## Behov av ny forskning / Framtida forskning
 
