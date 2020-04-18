@@ -581,7 +581,7 @@ Rekrytering skedde mellan 28 januari och 5 februari 2020. Studien annonserades p
 
 ### Deltagare
 
-Som framgår av figur \@ref(fig:flow) så anmälde totalt 657 personer intresse till studien varav 464 personer slutförde hela screeningsprocessen. Av dessa exkluderades 126 personer då de uppfyllde något av de uppsatta exklusionskriterierna. De kvarvarande 338 personerna erbjöds plats i studien. Av dessa bejakade 253 sin plats. 43 personer exkluderades från behandlingen genom randomisering så att 210 inkluderades. De deltagere som exkluderades via randomisering erbjöds tillgång till materialet på samma sätt som kontrollgruppen fick det – men med skillnaden att deras resultat ej inkluderats i beräkningarna. Vid behandlingsstart hade alltså studien 210 deltagare. Under behandlingens gång framkom det att fem deltagare (n = 3 från gruppen *Behandling utan stöd* och n = 2 från gruppen *Väntlista*) hade pågående psykologisk behandling. Dessa deltagare har fått fullgå behandlingen på oförändrade villkor, men deras resultat har exkluderats från analysen. Utöver detta bad en deltagare från gruppen *Behandling med stöd* om att få bli exkluderad från studien. Denna deltagare bad även om att hens data ej skulle användas.
+Som framgår av figur \@ref(fig:flow) så anmälde totalt 657 personer intresse till studien varav 464 personer slutförde hela screeningsprocessen. Av dessa exkluderades 126 personer då de uppfyllde något av de uppsatta exklusionskriterierna. De kvarvarande 338 personerna erbjöds plats i studien. Av dessa bejakade 253 sin plats. 43 personer exkluderades från behandlingen genom randomisering så att 210 inkluderades. De deltagere som exkluderades via randomisering erbjöds tillgång till materialet på samma sätt som kontrollgruppen fick det – men med skillnaden att deras resultat ej inkluderats i beräkningarna. Vid behandlingsstart hade alltså studien 210 deltagare. Under behandlingens gång framkom det att fem deltagare (n = 3 från gruppen *Behandling utan stöd* och n = 2 från gruppen *Väntlista*) hade pågående psykologisk behandling. Dessa deltagare har fått fullgå behandlingen på oförändrade villkor, men deras resultat har exkluderats från analysen. Utöver detta bad en deltagare från gruppen *Behandling med stöd* om att få bli exkluderad från studien. Denna deltagare bad även om att hens data ej skulle användas. Dessa sex deltagare har exkluderats från alla statistiska beräkningar.
 
 ```{r flow, out.width="100%", fig.align="center", out.extra='', fig.cap='Flödesschema över inklusion, exklusion (med kriterier) samt bortfall.'}
 
@@ -590,8 +590,6 @@ options(format.args = list(decimal.mark = '.', big.mark = ','))
 knitr::include_graphics("flow.pdf")
 
 ```
-
-* Vår flowchart innehåller i dagsläget två sätt att presentera exklusionerna som skedde under behandlingens gång. Diskussion ska föras kring vilken vi anser bäst*
 
 #### Inklusionskriterier
 
@@ -790,7 +788,7 @@ Behandlarstöd bestod av veckovis skriftlig kontakt med deltagarna via den krypt
 
 #### Självhävdelsestil
 
-En svensk översättning av självskattningsskalan Adaptive and Aggressive Assertiveness Scales [AAA-S; @Thompson2011] användes för att mäta vilka metoder för självhävdelse som deltagarna använde sig av. Skalan består av 30 påstående som besvaras med en 6-gradig likertskala där (0) motsvarar “aldrig” och (5) motsvarar “alltid”. Dessa påståenden kan i sin tur delas in i två delskalor: aggressiv självhävdelse och konstruktiv (adaptiv) självhävdelse. Poäng på respektive delskala summeras, där hög poäng på delskalan för aggressiv självhävdelse indikerar på ett aggressivt självhävdande beteendeemönster och hög poäng på delskalan för konstruktiv självhävdelse indikerar på ett konstruktivt självhävdande beteendemönster. En fördel med AAA-S jämfört med andra skalor som mäter självhävdelse är att den gör explicit skillnad mellan konstruktiv och aggressiv självhävdelse.
+En inför den här studien gjord svensk översättning av självskattningsskalan Adaptive and Aggressive Assertiveness Scales [AAA-S; @Thompson2011] användes för att mäta vilka metoder för självhävdelse som deltagarna använde sig av. Skalan består av 30 påstående som besvaras med en 6-gradig likertskala där (0) motsvarar “aldrig” och (5) motsvarar “alltid”. Dessa påståenden kan i sin tur delas in i två delskalor: aggressiv självhävdelse och konstruktiv (adaptiv) självhävdelse. Poäng på respektive delskala summeras, där hög poäng på delskalan för aggressiv självhävdelse indikerar på ett aggressivt självhävdande beteendeemönster och hög poäng på delskalan för konstruktiv självhävdelse indikerar på ett konstruktivt självhävdande beteendemönster. En fördel med AAA-S jämfört med andra skalor som mäter självhävdelse är att den gör explicit skillnad mellan konstruktiv och aggressiv självhävdelse. Den svenska versionen var inte validerad inför studiestart.
 
 ### Sekundära utfallsmått
 
@@ -812,7 +810,7 @@ Självskattningsskalan Välmåendeskalan [VS; @Braconier2015], användes för at
 
 #### Självhävdelsestil
 
-Utöver AAA-S användes även The Rathus Assertiveness Schedule [RAS; @Rathus1973; @Thompson2011] för att samla in information om deltagarnas självhävdelsestil. Självskattningsskalan består av 30 frågor som besvaras på en 6-gradig likertskala där -3 motsvarar “stämmer inte alls” och 3 motsvarar “stämmer helt”. Svaren på alla frågor summeras. Maximal totalpoäng på skalan är 90. En hög poäng indikerar på hög grad av självhävdelse och vice versa. 
+Utöver AAA-S användes även en svensk översättning av The Rathus Assertiveness Schedule [RAS; @Rathus1973; @Thompson2011] för att samla in information om deltagarnas självhävdelsestil. Självskattningsskalan består av 30 frågor som besvaras på en 6-gradig likertskala där -3 motsvarar “stämmer inte alls” och 3 motsvarar “stämmer helt”. Svaren på alla frågor summeras. Maximal totalpoäng på skalan är 90. En hög poäng indikerar på hög grad av självhävdelse och vice versa. DEn svenska översättningen gjordes inför den aktuella studien. Den svenska versionen var inte validerad inför studiestart.
 
 ## Interventionen
 
@@ -892,7 +890,7 @@ Vi använde `r cite_r("r-references.bib")` för samtliga analyser.
 
 ### Reliabel förändring och klinisk signifikans
 
-På *gruppnivå* -- även i det här examensarbetet -- används ofta signifikanstestning för att avgöra om en skillnad i exempelvis medelvärden mellan två grupper är tillräckligt stor för att det ska gå att säga om en förändring har skett i statistisk mening. Kompletterat med ett mått på effektstyrka går det att kvantifiera förändringen, exempelvis för att kunna bedöma om skillnaden också är relevant i praktiken, eller för att jämföra eller slå samman (exempelvis i en metastudie) result från en studie med en annan.
+Ofta -- och även i det här examensarbetet -- används ofta signifikanstestning för att avgöra om en skillnad i exempelvis medelvärden mellan två grupper är tillräckligt stor för att det ska gå att säga om en förändring har skett i statistisk mening. Kompletterat med ett mått på effektstyrka går det att kvantifiera förändringen, exempelvis för att kunna bedöma om skillnaden också är relevant i praktiken, eller för att jämföra eller slå samman (exempelvis i en metastudie) result från en studie med en annan.
 
 <!-- Det finns flera alternativ, både på grupp- och invididnivå. @Jacobson1991 ger exempel från litteraturen: man kan beräkna den andel av alla i gruppen som har förbättrats utifrån något slags kriterium -- exempelvis vid subjektiv bedömning av närstående eller vänner, av andra eller självupplevd eliminering av problematiska symtom eller kanske på samma grunder konstaterade tillägg av "normalfunktion" vid slutet av terapin. -->
 
@@ -905,7 +903,9 @@ Genom att rapportera frekvensen individer som har förändrats både reliabelt o
 
 För att bedöma om en individuell förändring mellan två mätpunkter är reliabel används standardavvikelsen i normalpopulationen. För beräkningen av reliabel förändring, *reliable change index* (RCI), delas skillnaden mellan de två medelvärdena med standardfelet (det vill säga standardavvikelsen delat med roten ur sample-storleken). 
 
-För att bedöma absolut status för en individ vid behandlingens slut (exempelvis för att kunna avgöra om personen ska betraktas som tillfrisknad eller i behov av fortsatta interventioner) kan man relatera eftermätningsvärdet till medelvärdet för både den kliniska och den subkliniska normalpopulationen. @Jacobson1991 definierar det förra som kriterium *a* och det senare som kriterium *b*. Man kan också relatera eftermätningsvärdet för en individ till ett normvärde i mitten av *a* och *b*, vilket författarna kallar kriterium *c*. I enlighet med rekommendationerna i @Jacobson1991 använder vi kriterium *b* för beräkningen: de invidier vars eftermätningsvärde befinner sig inom två standardavvikelser från den subkliniska normalpopulationen anses vara kliniskt signifikant förändrade. 
+För att bedöma absolut status för en individ vid behandlingens slut (exempelvis för att kunna avgöra om personen ska betraktas som tillfrisknad eller i behov av fortsatta interventioner) kan man relatera eftermätningsvärdet till medelvärdet för både den kliniska och den subkliniska normalpopulationen. @Jacobson1991 definierar det förra som kriterium *a* och det senare som kriterium *b*. Man kan också relatera eftermätningsvärdet för en individ till ett normvärde i mitten av *a* och *b*, vilket författarna kallar kriterium *c*. I enlighet med rekommendationerna i @Jacobson1991 använder vi kriterium *b* för beräkningen: de invidier vars eftermätningsvärde befinner sig inom två standardavvikelser från den subkliniska normalpopulationen anses vara kliniskt signifikant förändrade.
+
+<!-- De graferna som innehåller a, b, och c i resultatdelen bör i sin figurtext ha en beskrivning av vad dessa bokstäver står för, eller en hänvisning tillbaka till detta avsnitt -->
 
 Frekvensen individer i de olika undersökta grupperna som har förändrats både reliabelt och signifikant kan sedan summeras [@Jacobson1991].
 
@@ -1174,6 +1174,7 @@ interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$rathus,fun=
 <!-- https://easystats.github.io/effectsize/articles/from_test_statistics.html -->
 <!-- https://jonlefcheck.net/2013/03/13/r2-for-linear-mixed-effects-models/ -->
 
+<<<<<<< HEAD
 
 ```{r rm mixed models, dpi=196}
 
@@ -1349,14 +1350,81 @@ AIC(x)
 
 ```
 
+=======
+``` {r Control, fig.cap='(ref:Control)', fig.align="center", fig.width=8, fig.height=4}
+
+#Denna r-kodchunk genererar graferna för kontrollgruppen
+
+par(mfrow=c(1,2))
+
+#AAA-S Adaptive
+x <- clinsig(
+  r2.wide.g3$pre_aaas_ad[!is.na(r2.wide.g3$post_aaas_ad)],
+  r2.wide.g3$post_aaas_ad[!is.na(r2.wide.g3$post_aaas_ad)],
+  coef.alpha = r.AAAS.ad,
+  func.disp = sd.AAAS.ad.norm,
+  func.mct = mean.AAAS.ad.norm,
+  main = "Adaptive Assertiveness, Control",
+  xlab = "Pretest score",
+  ylab = "Posttest score"
+)
+clinsig.AAAS.ad.g3.csrci <- length(intersect(
+  which((x$post.x - x$pre.x) > x$relchng
+  ),
+  which(x$post.x > x$crit[2])
+))
+clinsig.AAAS.ad.g3 <- x
+
+#AAA-S Aggresive
+x <- clinsig(
+  r2.wide.g3$pre_aaas_ag[!is.na(r2.wide.g3$post_aaas_ag)],
+  r2.wide.g3$post_aaas_ag[!is.na(r2.wide.g3$post_aaas_ag)],
+  coef.alpha = r.AAAS.ag,
+  func.disp = sd.AAAS.ag.norm,
+  func.mct = mean.AAAS.ag.norm,
+  main = "Aggressive Assertiveness, Control",
+  xlab = "Pretest score",
+  ylab = "Posttest score",
+  which.crit="a"
+)
+clinsig.AAAS.ag.g3.csrci <- length(intersect(
+  which((x$post.x - x$pre.x) > x$relchng
+  ),
+  which(x$post.x > x$crit[2])
+))
+clinsig.AAAS.ag.g3 <- x
+
+#Rathus
+x <- clinsig(
+  r2.wide.g3$pre_rathus[!is.na(r2.wide.g3$post_rathus)],
+  r2.wide.g3$post_rathus[!is.na(r2.wide.g3$post_rathus)],
+  coef.alpha = r.Rathus,
+  func.disp = sd.Rathus.norm,
+  func.mct = mean.Rathus.norm,
+  main = "Rathus, Control",
+  xlab = "Pretest score",
+  ylab = "Posttest score"
+)
+clinsig.Rathus.g3.csrci <- length(intersect(
+  which((x$post.x - x$pre.x) > x$relchng
+  ),
+  which(x$post.x > x$crit[2])
+))
+clinsig.Rathus.g3 <- x
+```
+
+(ref:Control) Här har vi plottarna för AAA-S båda skalor samt RAS för Väntlistan
+
+>>>>>>> 708cff0deba26f4ea3e357b682ed65c1d4632665
 # Diskussion
 
 Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt självhjälpsprogram för att förbättra individers konstruktiva självhävdelse. Programmet administrerades via en internetbaserad plattform. Studien genomfördes med en randomiserad och kontrollerad design. Interventionen byggde på självhjälpsmaterialet *Assert Yourself* [@michel2008] och inkluderade bland annat inslag av psykoedukation, beteendeexperiment, avslappningsövningar, vidmakthållandeplanering och återfallsprevention. En tredjedel av deltagarna fick tillgång till programmet utan behandlarstöd, en tredjedel fick tillgång till programmet med behandlarstöd och en tredjedel var kontrollgrupp.
 
-*Vi bör avsluta detta stycke med några få rader om den analys vi gjorde och resultatet vi fick.*
+*Vi bör avsluta detta stycke med några få rader om den analys vi gjorde och resultatet vi fick!*
 
 ## Metodologiska brister / felkällor / validitet / reliabilitet
 
+<<<<<<< HEAD
 <!-- 
 +/- användande av de skalor vi har gjort och hur tillförlitliga de är.
 
@@ -1364,6 +1432,8 @@ Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt s
 x @Baumeister2014a om att guided treatment tenderar att vara superior och att hur kunniga terapeuterna är tenderar att vara av liten betydelse
 x å andra sidan vad våra resultat visar på (?)
 -->
+=======
+>>>>>>> 708cff0deba26f4ea3e357b682ed65c1d4632665
 
 ### Samplets representativitet för populationen
 
@@ -1377,19 +1447,31 @@ Till fördel för samplets representation av populationen är att det i och med 
 
 <!--
 Bör den data vi refererar till i avsnittet ovan bifogas/redovisas på något sätt? Vi kan även argumentera för att algoritmen till stor del förklarar spridningen i ålder hos vårt sample då majoriteten av de som fick se reklamen var mellan 35-54 år gamla
+-->
 
+<!-- 
++/- användande av de skalor vi har gjort och hur tillförlitliga de är.
+- Vårt primära utfallsmått för assertiveness är inte validerat på svenska
+- Vårt sekundära utfallsmått för assertiveness är inte validerat på svenska
+
+x å andra sidan vad våra resultat visar på (?)
+-->
+
+<!--
 - Icke tydliga inklusionskriterier
 
--/+ Väntlista brukar leda till försämring, på gruppnivå hos våra deltagare ej så.
+-/+ Väntlista brukar leda till försämring, på gruppnivå hos våra deltagare ej så - Tobias ändå räkna ut procentuell försämring hos gruppen? [@Rozental2017a].
 + a priori powerberäkning
 
 - Ingen uppföljningsmätning av deltagarnas mående, dvs svårt att veta hur ser ut över tid - tenderar att öka över tid, särskilt vid KBT [@Bandelow2018] som källa!
 
-- Vårt primära utfallsmått är inte validerat på svenska
-
 -->
 
-Då detta material översatts till svenska inför den aktuella studien – och originalmaterialet användes utan behandlarstöd – fanns det ingen behandlarstödsmanual eller dylikt för studiens behandlare att använda sig av. Behandlarna hade utöver detta ingen tidigare erfarenhet av internetbaserad psykologisk behandling. Dock hade båda behandlarna tidigare erfarenhet av ansikte mot ansikte-behandling med individer med självrapporterad bristande självhävdelse. Å andra sidan har det visat sig att tidigare erfarenheter och kunskaper om I-KBT hos behandlare inte gör nämnvärd skillnad så länge de åtminstone har grundläggande kunskaper inom psykologisk behandling [@Baumeister2014a]. Båda behandlarna hade även tillgång både till ett dokument med generella förhållningssätt vid internetbehandling samt till vid-behov-handledning och stöd av en legitimerad psykolog med omfattande erfarenhet av I-KBT. Denna psykolog var även studieansvarig. Den generella målsättningen var att behandlarna skulle spendera cirka 15 minuter per vecka och deltagare. Detta varierade dock nämnvärt beroende på hur frekvent behandlarens deltagare hörde av sig till behandlaren med behandlingsrelaterade frågor samt hur utförligt deltagaren besvarade behandlingsprogrammets övningar. 
+Då behandlingsmaterialet översatts till svenska inför den aktuella studien – och originalmaterialet användes utan inslag av behandlarstöd – fanns det ingen behandlarstödsmanual eller dylikt för studiens behandlare att använda sig av. Behandlarna hade utöver detta ingen tidigare erfarenhet av internetbaserad psykologisk behandling. Dock hade båda behandlarna tidigare erfarenhet av ansikte mot ansikte-behandling med individer med självrapporterad bristande självhävdelse. Bristen på erfarenhet av internetbaserad behandling kan ha påverkat kvalitén i det behandlarstöd som gavs. Å andra sidan har det visat sig att tidigare erfarenheter och kunskaper om I-KBT hos behandlare inte gör nämnvärd skillnad så länge de har grundläggande kunskaper inom psykologisk behandling [@Baumeister2014a]. Båda behandlarna hade även tillgång till både ett dokument med generella förhållningssätt vid internetbehandling samt till vid-behov-handledning och stöd av en legitimerad psykolog med omfattande erfarenhet av I-KBT. Den generella målsättningen var att behandlarna skulle spendera cirka 15 minuter per vecka och deltagare. Detta varierade dock nämnvärt beroende på hur frekvent behandlarens deltagare hörde av sig till behandlaren med behandlingsrelaterade frågor samt hur utförligt deltagarna besvarade behandlingsprogrammets övningar. 
+
+Ytterligare en potentiell brist i studien är användandet av de nyligen översatta versionerna av självskattningsformulären AAA-S [@Thompson2011] och RAS [@Rathus1973]. Båda skalor är validerade på sitt originalspråk men då dessa skalor ej fanns tillgängliga på svenska översattes de inför att rekrytering skulle påbörjas. Det finns många rekommendation och riktlinjer för hur översättningar bör gå till [se bland annat @Beaton2000; och @Jones2001 för två väl använda metoder]. Ett gemensamt tema i dessa översättningsmetoder är att materialet oberoende översätts från originalspråk till planerat användningsspråk (i det rådande fallet till svenska) av åtminstone två personer och att den översatta versionen sedan översätts tillbaka till sitt originalspråk av ytterligare oberoende översättare. Detta gjordes inte med AAA-S eller RAS. Skalorna översattes på grund av studiens tidsramar endast en gång från engelska till svenska. Utöver en rigid översättningsprocess bör även de nyöversatta formulärens validitet och reliabilitet bedömmas och nya normer bör tas fram innan de används som utfallsmått. Detta gjordes inte heller på grund av studiens tidsramar. Istället användes de normer som presenterades av @Thompson2011 för AAA-S och de normer som presenterades av @Suzuki2007 för RAS. Det innebär att de skattningsskalor som användes för att mäta olika grader av självhävdelse hos studiens deltagare varken hade genomgått en gedigen översättningsprocess eller hade svenska normer att tillgå. Detta har en negativ påverkan både på studiens reliabilitet och validitet.
+
+<!-- Vet inte om man brukar skriva att det påverkar validiteten och reliabiliteten eller om man låter läsaren själv dra de slutsatserna. Sista meningen bör möjligen tas bort. -->
 
 <!--
 Möjligen även diskutera i det här avsnittet det resultat vi fått - och ifall det beror på behandlarnas kompetens?
@@ -1399,7 +1481,7 @@ Sidenote: Gör vi kontroller av bortfallet för att se att det inte är ett syst
 -->
 
 ## Resultatdiskussion
-tolkning av resultatet. Jämförelsen mellan grupperna "Självhjälp" och "Med stöd" utfaller till den senare gruppens fördel. Det skulle mycket väl kunna bero på att endast den andel av den förra gruppen som har upplevt en förbättring har valt att svara på frågorna, medan en större andel av de som *inte* har upplevt en förbättring har valt att svara på dem i gruppen som har fått stöd. Deltagarna i den senare gruppen har interagerat med terapeuterna och vill eventuellt återkoppla hur de mår i större utsträckning i dem i självhjälpsgruppen.
+tolkning av resultatet. Jämförelsen mellan grupperna "Självhjälp" och "Med stöd" utfaller till den senare gruppens fördel. Det skulle mycket väl kunna bero på att endast den andel av den förra gruppen som har upplevt en förbättring har valt att svara på frågorna, medan en större andel av de som *inte* har upplevt en förbättring har valt att svara på dem i gruppen som har fått stöd. Deltagarna i den senare gruppen har interagerat med terapeuterna och vill eventuellt återkoppla hur de mår i större utsträckning än dem i självhjälpsgruppen.
 
 ## Behov av ny forskning / Framtida forskning
 
