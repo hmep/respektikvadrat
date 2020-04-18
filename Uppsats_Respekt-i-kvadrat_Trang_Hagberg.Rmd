@@ -4,7 +4,7 @@ shorttitle        : "Respekt i kvadrat"
 author: 
   - name          : "Tobias Hagberg"
     email         : "tobias@hagberg.com"
-    address       : "Psykologprogrammet, Psykologiska institutionen, Stockholms universitet"
+    address       : "Psyko logprogrammet, Psykologiska institutionen, Stockholms universitet"
   - name          : "Patrik Trang"
     email         : "patrik.trang@gmail.com"
 affiliation:
@@ -30,7 +30,7 @@ output:
 keeptex           : true
 lang              : sv-SE
 header-includes:
-#   - \raggedbottom
+   - \raggedbottom
    - \setmainfont{Times New Roman}
    - \clearcaptionsetup{figure}
    - \clearcaptionsetup{table}
@@ -816,21 +816,25 @@ Utöver AAA-S användes även en svensk översättning av The Rathus Assertivene
 
 Interventionen är utformad med självhjälpsmaterialet *Assert Yourself* [@michel2008] som grund. Materialet är framtaget av Center for Clinical Interventions (CCI) i delstaten Western Australia, Australien. 
 
-I arbetsboken får läsaren lära sig skillnaden mellan olika typer av självhävdelse (konstruktiv, aggressiv, passiv, passiv-aggressiv), och hitta egna skäl att hävda sig själv bättre och mer konstruktivt. Delar av materialet är inspirerat av och citerar självhjälpsböcker som @alberti2017your, @gambrill1975assertion, @ward2018assertiveness, @mckay2005self och @smith1975say.
+I självhjälpsmaterialet får läsaren lära sig skillnaden mellan olika typer av självhävdelse (konstruktiv, aggressiv, passiv, passiv-aggressiv), och hitta egna skäl att hävda sig själv bättre och mer konstruktivt. Delar av materialet är inspirerat av och citerar självhjälpsböcker som @alberti2017your, @gambrill1975assertion, @ward2018assertiveness, @mckay2005self och @smith1975say.
 
-I *Assert Yourself* föreskrivs självhävdande beteenden utifrån de teoretiska antagandena i @wolpe1990practice om reciprok inhibition och klassisk betingning: Genom att träna på att i ord och handling uttrycka det som i relationen till en annan person väcker ångest (exempelvis ledsenhet eller ilska) kan klienten på sikt få minskade besvär med autonoma ångestresponser. @Wolpe1952 förespråkar träning på att uppleva de ångestväckande autonoma responserna (känslorna) *in-vivo* och understryker att föreskrivna beteendena inte handlar om att "låtsas", utan att på sikt inhibera dem genom självhävdelse. För fall då en fysisk motpart saknas, och ångesten väcks av till exempel platser, objekt eller ord, förespråkar @Wolpe1951 avslappning som ett sätt att inhibera ångestresponsen, utifrån rationalen att det är omöjligt att känna ångest och samtidigt vara avslappnad.
+I *Assert Yourself* föreskrivs självhävdande beteenden utifrån de teoretiska antagandena i @wolpe1990practice om reciprok inhibition och klassisk betingning: Genom att träna på att i ord och handling uttrycka det som i relationen till en annan person väcker ångest (exempelvis undertryckt ledsenhet eller ilska) kan klienten på sikt få minskade besvär med autonoma ångestresponser. @Wolpe1952 förespråkar träning på att uppleva de ångestväckande autonoma responserna (känslorna) *in-vivo* och understryker att föreskrivna beteendena inte handlar om att "låtsas", utan att på sikt inhibera dem genom självhävdelse. För fall då en fysisk motpart saknas, och ångesten väcks av till exempel platser, objekt eller ord, förespråkar @Wolpe1951 avslappning som ett sätt att inhibera ångestresponsen, utifrån rationalen att det är omöjligt att känna ångest och samtidigt vara avslappnad.
 
 <!-- (@Wolpe2952 diskriminerar inte mellan aggressiv och adaptiv självhävdelse, och uppseendeväckande nog uttrycker författaren sig så här: "*For this reason it is quite often necessary for the patient to be guided towards achieving factual dominance in his encounters with those who disturb him by employing subtle manoeuvres in which aggression is not outwardly expressed*".) -->
 
-Materialet ger också rationalen för kognitiv omstrukturering med metoder från @beck1979cognitive, @Clark1986, @clark1995cognitive och @powell2017mental. Kognitiv omstrukturering uppnås enligt dessa genom att utmana negativt tänkande och att pröva giltigheten av det negativa tänkandet i verkliga livet. Genom att planera och utföra beteendeexperiment får deltagaren hjälp av materialet att pröva giltigheten av egna negativa tankar och därmed öka responsmöjligheterna i olika mer eller mindre pressande situationer. 
+Självhjälpsmaterialet ger också rationalen för kognitiv omstrukturering med metoder från @beck1979cognitive, @Clark1986, @clark1995cognitive och @powell2017mental. Kognitiv omstrukturering uppnås enligt dessa genom att utmana negativt tänkande och att pröva giltigheten av det negativa tänkandet i verkliga livet. Genom att planera och utföra beteendeexperiment får deltagaren hjälp att pröva giltigheten av egna negativa tankar och därmed öka responsmöjligheterna i olika mer eller mindre pressande situationer. 
 
 Utöver detta innehåller arbetsmaterialet ett avsnitt om progressiv muskelavslappning, med syftet att hjälpa läsaren att känna igen spänning i kroppen, sänka den allmänna spänningsnivån och träna på en aktiv coping-teknik för stressande lägen. Avslappningskapitlet ger en version av tillämpad avslappning, snarlik den som beskrivs i @ost2006tillampad.
 
-Materialet avslutas med ett antal kapitel för olika problemområden (säga nej, hantera kritik, hantera besvikelser, ta emot och ge komplimanger). Dessa kapitel innehåller både psykoedukativa inslag, inslag av kognitiv omstrukturering och planering och uppföljning av beteendeexperiment.
+Materialet avslutas med ett antal kapitel för olika problemområden (säga nej, hantera kritik, hantera besvikelser, ta emot och ge komplimanger). Dessa kapitel innehåller psykoedukativa inslag, inslag av kognitiv omstrukturering och planering och uppföljning av beteendeexperiment enligt ovan.
 
 ### Anpassningar och tillägg
 
-Materialet är översatt och anpassat till svenska förhållanden av TH med tillstånd av författaren och CCI. I samband med anpassningen av översättningen till I-KBT-moduler i plattformen iTerapi modifierade och utökade TH och PT materialet, bland annat genom att ersätta avsnitt som handlar om kognitiv omstrukturering med motiverande avsnitt för beteendeexperiment/beteendeaktivering. Utöver materialet i boken innehåller interventionen dessutom motiverande inslag i form av text och illustrationer [inspirerade av bland annat @Hayes2006a; @Dahlin2016] samt länkar till fördjupningsmaterial, videofilmer med konversationer och rollspel mellan PT och TH, videofilmer och ljudfiler med avslappningsövningar samt ett stort antal nya övningar, bland annat för veckovis uppföljning av konstruktiv självhävdelse, övningar för för återfallsprevention och vidmakthållande av behandlingseffekter samt utvärderingsformulär av veckans innehåll (se tabell \@ref(tab:intervention).)
+Materialet är översatt och anpassat till svenska förhållanden av TH med tillstånd av författaren och CCI. I samband med anpassningen av översättningen till I-KBT-moduler i plattformen iTerapi modifierade och utökade TH och PT materialet, bland annat genom att förändra avsnitten som handlar om kognitiv omstrukturering något och genom tillägg av motiverande avsnitt för beteendeexperiment/beteendeaktivering. Båda dessa justeringar syftade till att förenkla administrationen av materialet över internet, samt att bättre rikta in materialet i enlighet med rationalen för beteendeexperiment -- det är genom att i praktiken testa sina förutsägelser och dra slutsatser om både utfall och egen förmåga som oddsen för ökat engagemang i livet förbättrats. 
+
+Utöver materialet i boken innehåller interventionen dessutom motiverande inslag i form av text och illustrationer samt länkar till fördjupningsmaterial, videofilmer med konversationer och rollspel mellan PT och TH, videofilmer och ljudfiler med avslappningsövningar samt ett stort antal nya övningar, bland annat för veckovis uppföljning av konstruktiv självhävdelse, övningar för för återfallsprevention och vidmakthållande av behandlingseffekter samt utvärderingsformulär av veckans innehåll (se tabell \@ref(tab:intervention).)
+
+ <!-- [inspirerade av bland annat @Hayes2006a; @Dahlin2016] -->
 
 (ref:interv) Översiktlig beskrivning av interventionen Respekt i kvadrat.
 
@@ -1471,6 +1475,8 @@ Sidenote: Gör vi kontroller av bortfallet för att se att det inte är ett syst
 
 ## Resultatdiskussion
 tolkning av resultatet. Jämförelsen mellan grupperna "Självhjälp" och "Med stöd" utfaller till den senare gruppens fördel. Det skulle mycket väl kunna bero på att endast den andel av den förra gruppen som har upplevt en förbättring har valt att svara på frågorna, medan en större andel av de som *inte* har upplevt en förbättring har valt att svara på dem i gruppen som har fått stöd. Deltagarna i den senare gruppen har interagerat med terapeuterna och vill eventuellt återkoppla hur de mår i större utsträckning än dem i självhjälpsgruppen.
+
+varför går både adaptiv och aggressiv självhävdelse upp? det skulle kunna ha att göra med vårt sample. Om vi hade haft flera personer med positiva rathus-skattningarna (kolla rci för dem!) kanske vi skulle kunna ha sett en minskning av aggressiv självhävdelse. Men för vårt nuvarande sample, med många socialfobiker (hur många? kolla upp) så kan vi anta att ökning av aggressiv självhävdelse är något *bra*??
 
 ## Behov av ny forskning / Framtida forskning
 
