@@ -224,10 +224,10 @@ r2.wide.data$therapist <-
     grepl("Grupp 2: P", r2.wide.data$pre_group),
     1,
     ifelse(grepl("Grupp 2: T", r2.wide.data$pre_group),
-           2, NA) # "None" instead of NA?
+           2, 3) # N = none instead of NA?
   ),
-  levels = c(1,2),
-  labels = c("A","B")) # Add therapist shorthands
+  levels = c(1,2,3),
+  labels = c("A","B","N")) # Add therapist shorthands
 r2.wide.data <- r2.wide.data[,c(48:50,1:47)] # Move categorical variables to the beginning
 r2.wide.data <- r2.wide.data[,-c(4:5)] # Drop 
 
@@ -364,11 +364,11 @@ lg3t1 <- r2.long.data$group == "Waitlist" & r2.long.data$time == "Pre"
 lg3t2 <- r2.long.data$group == "Waitlist" & r2.long.data$time == "During"
 lg3t3 <- r2.long.data$group == "Waitlist" & r2.long.data$time == "Post"
 
-# Finally, make sure the waitlist condition has zero modules assigned & opened
+# Finally, make sure the waitlist condition has zero modules assigned & opened.
 # Rationale: At the time of writing, participants have started with module 1 just 
-# after having completed their post measurement survey
+# after having completed their post measurement survey; these opened modules
+# should *not* be counted.
 r2.long.data[lg3,c(18:20)] <- NA 
-
 
 ```
 
@@ -877,13 +877,14 @@ knitr::kable(intervention.tabell, format.args = list(decimal.mark = ',', big.mar
 ```
 
 ## Behandlingsplattformen
+
 I studien användes behandlingsplattformen iTerapi. Det är en plattform som använts upprepade gånger vid forskning på internetbaserade psykologiska interventioner och behandlingar [@Vlaescu2016]. Plattformen använder sig av tvåfaktorsautentisering och är krypterad. I rådande fall innebar det att deltagarna blev tilldelade en anonym studiekod till vilken de valde ett eget lösenord. Vid varje inloggningstillfälle skickades sedan engångskoder till deras mobiltelefoner per SMS.
 
 Alla deltagare fyllde i för-, halvtids- och eftermätning via plattformen. Alla moduler och övningar gick att nå via plattformen. De deltagare som tillhörde gruppen med behandlarstöd konverserade uteslutande med sina behandlare via plattformens meddelandefunktion.
 
 ## Etiska aspekter
-Den föreliggande studien godkändes av etikprövningsnämnden. Diarienummer för etikansökan är 2019-05165. Studien förregistrerades även på www.clinicaltrials.gov. Deltagarna blev via hemsidan informerat om att allt deltagande var frivilligt och att de kunde avbryta sitt deltagande när som helst. All information samlades in under sekretess och i enlighet med personuppgiftslagen samt GDPR. Deltagandet var helt anonymt och all insamlad data var kopplad till den anonyma studiekod som genererades för varje deltagare. Vid exkludering från studien informerades deltagaren om anledningen samt fick rekommendationer (t ex om vart hen kunde vända sig för att söka vård). Vid tecken på svår depression rekommenderades det att deltagarna uppsökte psykiatrisk vård. Under hela studiens gång hade deltagarna möjlighet att kontakta studieansvarig per telefon samt post.
 
+Den föreliggande studien godkändes av etikprövningsnämnden. Diarienummer för etikansökan är 2019-05165. Studien förregistrerades även på www.clinicaltrials.gov. Deltagarna blev via hemsidan informerat om att allt deltagande var frivilligt och att de kunde avbryta sitt deltagande när som helst. All information samlades in under sekretess och i enlighet med personuppgiftslagen samt GDPR. Deltagandet var helt anonymt och all insamlad data var kopplad till den anonyma studiekod som genererades för varje deltagare. Vid exkludering från studien informerades deltagaren om anledningen samt fick rekommendationer (t ex om vart hen kunde vända sig för att söka vård). Vid tecken på svår depression rekommenderades det att deltagarna uppsökte psykiatrisk vård. Under hela studiens gång hade deltagarna möjlighet att kontakta studieansvarig per telefon samt post.
 
 ## Analys
 
@@ -908,7 +909,7 @@ För att bedöma absolut status för en individ vid behandlingens slut (exempelv
 
 Frekvensen individer i de olika undersökta grupperna som har förändrats både reliabelt och signifikant kan sedan summeras [@Jacobson1991].
 
-## 
+## Analys
 
 # Resultat
 
@@ -1173,6 +1174,181 @@ interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$rathus,fun=
 <!-- https://easystats.github.io/effectsize/articles/from_test_statistics.html -->
 <!-- https://jonlefcheck.net/2013/03/13/r2-for-linear-mixed-effects-models/ -->
 
+
+```{r rm mixed models, dpi=196}
+
+require(nlme)
+
+# A null model with intercept only
+gls.null <-
+  gls(aaas_ad ~ 1,
+    data = r2.long.data,
+    na.action = na.omit
+  )
+AIC(gls.null)
+# 3584,465
+
+# A null model with random intercepts for subjects
+lme.null.random.subject.intercept <-
+  lme(
+    fixed = aaas_ad ~ 1,
+    data = r2.long.data,
+    random = ~ 1 | subject,
+    na.action = na.omit
+  )
+AIC(lme.null.random.subject.intercept)
+# 3439,338
+
+# A minimal test with random intercepts for subjects
+lme.minimal.random.subject.intercept <-
+  lme(
+    fixed = aaas_ad ~ time * group,
+    data = r2.long.data,
+    random = ~ 1 | subject,
+    na.action = na.omit
+  )
+AIC(lme.minimal.random.subject.intercept)
+# 3293,069
+
+# A maxed out test with random intercepts for subjects
+lme.full.random.subject.intercept <-
+  lme(
+    fixed = aaas_ad ~ time * group + lsas_sum + gad_sum + phq_sum + well,
+    data = r2.long.data,
+    random = ~ 1 | subject,
+    na.action = na.omit
+  )
+AIC(lme.full.random.subject.intercept)
+# 3191,281
+
+lme.fullsum.random.subject.messages_sent.intercept <-
+  lme(
+    fixed = aaas_ad ~ time * group + lsas_sum + gad_sum + phq_sum + well,
+    data = r2.long.data,
+    random = ~ 1 | subject / messages_sent,
+    na.action = na.omit
+  )
+AIC(lme.fullsum.random.subject.messages_sent.intercept)
+# 2021,668
+
+lme.lsas.random.subject.messages_sent.intercept <-
+  lme(
+    fixed = aaas_ad ~ time * group + lsas_sum,
+    data = r2.long.data,
+    random = ~ 1 | subject / messages_sent,
+    na.action = na.omit
+  )
+AIC(lme.lsas.random.subject.messages_sent.intercept)
+# 2017,042
+
+lme.lsas_nogroup.random.subject.messages_sent.intercept <-
+  lme(
+    fixed = aaas_ad ~ time + lsas_sum,
+    data = r2.long.data,
+    random = ~ 1 | subject / messages_sent,
+    na.action = na.omit
+  )
+AIC(lme.lsas_nogroup.random.subject.messages_sent.intercept)
+# 2011,868
+
+lme.lsas.random.subject.intercept <-
+  lme(
+    fixed = aaas_ad ~ time * group + lsas_sum,
+    data = r2.long.data,
+    random = ~ 1 | subject,
+    na.action = na.omit
+  )
+AIC(lme.lsas.random.subject.intercept)
+# 3184,383
+
+####################
+
+x <-
+  lme(
+    fixed = aaas_ad ~ time * group + lsas_sum,
+    data = r2.long.data,
+    random = ~ time | subject / messages_sent,
+    na.action = na.omit
+  )
+AIC(x)
+# 2028,867
+
+x <-
+  lme(
+    fixed = aaas_ad ~ time + group + lsas_sum,
+    data = r2.long.data,
+    random = ~ time | subject / messages_sent,
+    na.action = na.omit
+  )
+AIC(x)
+# 2024,368
+
+x <-
+  lme(
+    fixed = aaas_ad ~ group + lsas_sum,
+    data = r2.long.data,
+    random = ~ time | subject / messages_sent,
+    na.action = na.omit
+  )
+AIC(x)
+# 2066,425
+
+x <-
+  lme(
+    fixed = aaas_ad ~ group * time + lsas_sum,
+    data = r2.long.data,
+    random = ~ 1 | subject / messages_sent,
+    na.action = na.omit
+  )
+AIC(x)
+# 2017,042
+
+x <-
+  lme(
+    fixed = aaas_ad ~ time * group + lsas_sum,
+    data = r2.long.data,
+    random = ~ 1 | subject,
+    na.action = na.omit
+  )
+AIC(x)
+# 3184,383
+
+x <-
+  lme(
+    fixed = aaas_ad ~ time * group + lsas_sum,
+    data = r2.long.data,
+    random = ~ time | subject,
+    na.action = na.omit
+  )
+AIC(x)
+# 3184,521
+
+######
+
+x <-
+  lme(
+    fixed = aaas_ag ~ group * time + lsas_sum,
+    data = r2.long.data,
+    random = ~ 1 | subject / messages_sent,
+    na.action = na.omit
+  )
+AIC(x)
+# 1912,203
+
+x <-
+  lme(
+    fixed = rathus ~ group * time + lsas_sum,
+    data = r2.long.data,
+    random = ~ 1 | subject / messages_sent,
+    na.action = na.omit
+  )
+AIC(x)
+# 2544,352
+
+
+
+```
+
 # Diskussion
 
 Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt självhjälpsprogram för att förbättra individers konstruktiva självhävdelse. Programmet administrerades via en internetbaserad plattform. Studien genomfördes med en randomiserad och kontrollerad design. Interventionen byggde på självhjälpsmaterialet *Assert Yourself* [@michel2008] och inkluderade bland annat inslag av psykoedukation, beteendeexperiment, avslappningsövningar, vidmakthållandeplanering och återfallsprevention. En tredjedel av deltagarna fick tillgång till programmet utan behandlarstöd, en tredjedel fick tillgång till programmet med behandlarstöd och en tredjedel var kontrollgrupp.
@@ -1189,8 +1365,8 @@ x @Baumeister2014a om att guided treatment tenderar att vara superior och att hu
 x å andra sidan vad våra resultat visar på (?)
 -->
 
-
 ### Samplets representativitet för populationen
+
 <!-- Avsnittet bör få en ny underrubrik, om en underrubrik nu ens är nödvändigt -->
 
 All data som låg till grund för inkludering eller ekludering i den aktuella studien var insamlad från självskattningsformulär. I och med att forskningspersonsinformationen som potentiella deltagare kunde läsa innan de påbörjade screeningsprocessen presenterade såväl inkluderings- som exkluderingskriterier (även om exkluderingskriterierna till viss del var allmänt formulerade) medför det risken att de som sökte till studien anpassade sina svar för att bli inkluderade. Då ingen klinisk intervju användes i screeningprocessen fanns det ingen möjlighet att på så sätt upptäcka individer som borde exkluderas. Ingen klinisk intervju inkluderades då det låg utanför studiens möjliga resurser att administrera dessa till alla potentiella deltagare. En potentiell fördel med exkluderandet av de kliniska intervjuerna är att tiden mellan påbörjad rekrytering och behandlingsstart blev kort, endast två veckor.
