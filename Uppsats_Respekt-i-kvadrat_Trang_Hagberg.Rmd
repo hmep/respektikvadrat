@@ -1174,8 +1174,6 @@ interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$rathus,fun=
 <!-- https://easystats.github.io/effectsize/articles/from_test_statistics.html -->
 <!-- https://jonlefcheck.net/2013/03/13/r2-for-linear-mixed-effects-models/ -->
 
-<<<<<<< HEAD
-
 ```{r rm mixed models, dpi=196}
 
 require(nlme)
@@ -1350,7 +1348,6 @@ AIC(x)
 
 ```
 
-=======
 ``` {r Control, fig.cap='(ref:Control)', fig.align="center", fig.width=8, fig.height=4}
 
 #Denna r-kodchunk genererar graferna för kontrollgruppen
@@ -1415,7 +1412,6 @@ clinsig.Rathus.g3 <- x
 
 (ref:Control) Här har vi plottarna för AAA-S båda skalor samt RAS för Väntlistan
 
->>>>>>> 708cff0deba26f4ea3e357b682ed65c1d4632665
 # Diskussion
 
 Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt självhjälpsprogram för att förbättra individers konstruktiva självhävdelse. Programmet administrerades via en internetbaserad plattform. Studien genomfördes med en randomiserad och kontrollerad design. Interventionen byggde på självhjälpsmaterialet *Assert Yourself* [@michel2008] och inkluderade bland annat inslag av psykoedukation, beteendeexperiment, avslappningsövningar, vidmakthållandeplanering och återfallsprevention. En tredjedel av deltagarna fick tillgång till programmet utan behandlarstöd, en tredjedel fick tillgång till programmet med behandlarstöd och en tredjedel var kontrollgrupp.
