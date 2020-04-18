@@ -1415,6 +1415,9 @@ Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt s
 
 *Vi bör avsluta detta stycke med några få rader om den analys vi gjorde och resultatet vi fick!*
 
+## Resultatdiskussion
+tolkning av resultatet. Jämförelsen mellan grupperna "Självhjälp" och "Med stöd" utfaller till den senare gruppens fördel. Det skulle mycket väl kunna bero på att endast den andel av den förra gruppen som har upplevt en förbättring har valt att svara på frågorna, medan en större andel av de som *inte* har upplevt en förbättring har valt att svara på dem i gruppen som har fått stöd. Deltagarna i den senare gruppen har interagerat med terapeuterna och vill eventuellt återkoppla hur de mår i större utsträckning än dem i självhjälpsgruppen.
+
 ## Metodologiska brister / felkällor / validitet / reliabilitet
 
 <!-- 
@@ -1451,7 +1454,13 @@ x å andra sidan vad våra resultat visar på (?)
 
 -/+ Väntlista brukar leda till försämring, på gruppnivå hos våra deltagare ej så - Tobias ändå räkna ut procentuell försämring hos gruppen? [@Rozental2017a].
 + a priori powerberäkning
+-->
 
+I denna studie placerades en tredjedel av deltagarna på en väntlista. En risk med användandet av väntlista är att de deltagare som tilldelas väntlistan försämras under behandlingens gång. I en meta-analys från 2017 konstaterade @Rozental2017a att över 15% av de som tilldelas betingelsen väntlista i I-KBT-studier försämras, jämfört med cirka 6% av de som genomgick behandlingen. Detta kan även leda till att de effekter som upptäcks snarare gör det på grund av försämrandet hos väntlista-betingelsen snarare än förbättrandet hos de som betingats till behandlingen. I den aktuella studien försämrades ingen deltagare signifikant från för- till eftermätningen. Varken i väntlistan eller i någon av de andra betingelserna. Det går ändå att diskutera om användandet av väntlista som kontroll är ett klokt beslut. Användandet av väntlista höjer allt som oftast oddsen för att hitta en signifikant effekt jämfört med andra mer aktiva betingelser. Troligen hade det varit bättre att tilldela de som fick väntlistebetingelsen en aktiv betingelse så som tillgång till ett diskussionsforum.
+
+*Detta stycke behöver kontrolleras så att det fortfarande stämmer när vi avslutat insamling av eftermätningen*
+
+<!--
 - Ingen uppföljningsmätning av deltagarnas mående, dvs svårt att veta hur ser ut över tid - tenderar att öka över tid, särskilt vid KBT [@Bandelow2018] som källa!
 
 -->
@@ -1468,9 +1477,6 @@ Möjligen även diskutera i det här avsnittet det resultat vi fått - och ifall
 Sidenote: Gör vi kontroller av bortfallet för att se att det inte är ett systematiskt bortfall?
 
 -->
-
-## Resultatdiskussion
-tolkning av resultatet. Jämförelsen mellan grupperna "Självhjälp" och "Med stöd" utfaller till den senare gruppens fördel. Det skulle mycket väl kunna bero på att endast den andel av den förra gruppen som har upplevt en förbättring har valt att svara på frågorna, medan en större andel av de som *inte* har upplevt en förbättring har valt att svara på dem i gruppen som har fått stöd. Deltagarna i den senare gruppen har interagerat med terapeuterna och vill eventuellt återkoppla hur de mår i större utsträckning än dem i självhjälpsgruppen.
 
 ## Behov av ny forskning / Framtida forskning
 
