@@ -1178,149 +1178,149 @@ interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$rathus,fun=
 
 require(nlme)
 
-# A null model with intercept only
-gls.null <-
-  gls(aaas_ad ~ 1,
-    data = r2.long.data,
-    na.action = na.omit
-  )
-AIC(gls.null)
-# 3584,465
-
-# A null model with random intercepts for subjects
-lme.null.random.subject.intercept <-
-  lme(
-    fixed = aaas_ad ~ 1,
-    data = r2.long.data,
-    random = ~ 1 | subject,
-    na.action = na.omit
-  )
-AIC(lme.null.random.subject.intercept)
-# 3439,338
-
-# A minimal test with random intercepts for subjects
-lme.minimal.random.subject.intercept <-
-  lme(
-    fixed = aaas_ad ~ time * group,
-    data = r2.long.data,
-    random = ~ 1 | subject,
-    na.action = na.omit
-  )
-AIC(lme.minimal.random.subject.intercept)
-# 3293,069
-
-# A maxed out test with random intercepts for subjects
-lme.full.random.subject.intercept <-
-  lme(
-    fixed = aaas_ad ~ time * group + lsas_sum + gad_sum + phq_sum + well,
-    data = r2.long.data,
-    random = ~ 1 | subject,
-    na.action = na.omit
-  )
-AIC(lme.full.random.subject.intercept)
-# 3191,281
-
-lme.fullsum.random.subject.messages_sent.intercept <-
-  lme(
-    fixed = aaas_ad ~ time * group + lsas_sum + gad_sum + phq_sum + well,
-    data = r2.long.data,
-    random = ~ 1 | subject / messages_sent,
-    na.action = na.omit
-  )
-AIC(lme.fullsum.random.subject.messages_sent.intercept)
-# 2021,668
-
-lme.lsas.random.subject.messages_sent.intercept <-
-  lme(
-    fixed = aaas_ad ~ time * group + lsas_sum,
-    data = r2.long.data,
-    random = ~ 1 | subject / messages_sent,
-    na.action = na.omit
-  )
-AIC(lme.lsas.random.subject.messages_sent.intercept)
-# 2017,042
-
-lme.lsas_nogroup.random.subject.messages_sent.intercept <-
-  lme(
-    fixed = aaas_ad ~ time + lsas_sum,
-    data = r2.long.data,
-    random = ~ 1 | subject / messages_sent,
-    na.action = na.omit
-  )
-AIC(lme.lsas_nogroup.random.subject.messages_sent.intercept)
-# 2011,868
-
-lme.lsas.random.subject.intercept <-
-  lme(
-    fixed = aaas_ad ~ time * group + lsas_sum,
-    data = r2.long.data,
-    random = ~ 1 | subject,
-    na.action = na.omit
-  )
-AIC(lme.lsas.random.subject.intercept)
-# 3184,383
-
-####################
-
-x <-
-  lme(
-    fixed = aaas_ad ~ time * group + lsas_sum,
-    data = r2.long.data,
-    random = ~ time | subject / messages_sent,
-    na.action = na.omit
-  )
-AIC(x)
-# 2028,867
-
-x <-
-  lme(
-    fixed = aaas_ad ~ time + group + lsas_sum,
-    data = r2.long.data,
-    random = ~ time | subject / messages_sent,
-    na.action = na.omit
-  )
-AIC(x)
-# 2024,368
-
-x <-
-  lme(
-    fixed = aaas_ad ~ group + lsas_sum,
-    data = r2.long.data,
-    random = ~ time | subject / messages_sent,
-    na.action = na.omit
-  )
-AIC(x)
-# 2066,425
-
-x <-
-  lme(
-    fixed = aaas_ad ~ group * time + lsas_sum,
-    data = r2.long.data,
-    random = ~ 1 | subject / messages_sent,
-    na.action = na.omit
-  )
-AIC(x)
-# 2017,042
-
-x <-
-  lme(
-    fixed = aaas_ad ~ time * group + lsas_sum,
-    data = r2.long.data,
-    random = ~ 1 | subject,
-    na.action = na.omit
-  )
-AIC(x)
-# 3184,383
-
-x <-
-  lme(
-    fixed = aaas_ad ~ time * group + lsas_sum,
-    data = r2.long.data,
-    random = ~ time | subject,
-    na.action = na.omit
-  )
-AIC(x)
-# 3184,521
+# # A null model with intercept only
+# gls.null <-
+#   gls(aaas_ad ~ 1,
+#     data = r2.long.data,
+#     na.action = na.omit
+#   )
+# AIC(gls.null)
+# # 3584,465
+# 
+# # A null model with random intercepts for subjects
+# lme.null.random.subject.intercept <-
+#   lme(
+#     fixed = aaas_ad ~ 1,
+#     data = r2.long.data,
+#     random = ~ 1 | subject,
+#     na.action = na.omit
+#   )
+# AIC(lme.null.random.subject.intercept)
+# # 3439,338
+# 
+# # A minimal test with random intercepts for subjects
+# lme.minimal.random.subject.intercept <-
+#   lme(
+#     fixed = aaas_ad ~ time * group,
+#     data = r2.long.data,
+#     random = ~ 1 | subject,
+#     na.action = na.omit
+#   )
+# AIC(lme.minimal.random.subject.intercept)
+# # 3293,069
+# 
+# # A maxed out test with random intercepts for subjects
+# lme.full.random.subject.intercept <-
+#   lme(
+#     fixed = aaas_ad ~ time * group + lsas_sum + gad_sum + phq_sum + well,
+#     data = r2.long.data,
+#     random = ~ 1 | subject,
+#     na.action = na.omit
+#   )
+# AIC(lme.full.random.subject.intercept)
+# # 3191,281
+# 
+# lme.fullsum.random.subject.messages_sent.intercept <-
+#   lme(
+#     fixed = aaas_ad ~ time * group + lsas_sum + gad_sum + phq_sum + well,
+#     data = r2.long.data,
+#     random = ~ 1 | subject / messages_sent,
+#     na.action = na.omit
+#   )
+# AIC(lme.fullsum.random.subject.messages_sent.intercept)
+# # 2021,668
+# 
+# lme.lsas.random.subject.messages_sent.intercept <-
+#   lme(
+#     fixed = aaas_ad ~ time * group + lsas_sum,
+#     data = r2.long.data,
+#     random = ~ 1 | subject / messages_sent,
+#     na.action = na.omit
+#   )
+# AIC(lme.lsas.random.subject.messages_sent.intercept)
+# # 2017,042
+# 
+# lme.lsas_nogroup.random.subject.messages_sent.intercept <-
+#   lme(
+#     fixed = aaas_ad ~ time + lsas_sum,
+#     data = r2.long.data,
+#     random = ~ 1 | subject / messages_sent,
+#     na.action = na.omit
+#   )
+# AIC(lme.lsas_nogroup.random.subject.messages_sent.intercept)
+# # 2011,868
+# 
+# lme.lsas.random.subject.intercept <-
+#   lme(
+#     fixed = aaas_ad ~ time * group + lsas_sum,
+#     data = r2.long.data,
+#     random = ~ 1 | subject,
+#     na.action = na.omit
+#   )
+# AIC(lme.lsas.random.subject.intercept)
+# # 3184,383
+# 
+# ####################
+# 
+# x <-
+#   lme(
+#     fixed = aaas_ad ~ time * group + lsas_sum,
+#     data = r2.long.data,
+#     random = ~ time | subject / messages_sent,
+#     na.action = na.omit
+#   )
+# AIC(x)
+# # 2028,867
+# 
+# x <-
+#   lme(
+#     fixed = aaas_ad ~ time + group + lsas_sum,
+#     data = r2.long.data,
+#     random = ~ time | subject / messages_sent,
+#     na.action = na.omit
+#   )
+# AIC(x)
+# # 2024,368
+# 
+# x <-
+#   lme(
+#     fixed = aaas_ad ~ group + lsas_sum,
+#     data = r2.long.data,
+#     random = ~ time | subject / messages_sent,
+#     na.action = na.omit
+#   )
+# AIC(x)
+# # 2066,425
+# 
+# x <-
+#   lme(
+#     fixed = aaas_ad ~ group * time + lsas_sum,
+#     data = r2.long.data,
+#     random = ~ 1 | subject / messages_sent,
+#     na.action = na.omit
+#   )
+# AIC(x)
+# # 2017,042
+# 
+# x <-
+#   lme(
+#     fixed = aaas_ad ~ time * group + lsas_sum,
+#     data = r2.long.data,
+#     random = ~ 1 | subject,
+#     na.action = na.omit
+#   )
+# AIC(x)
+# # 3184,383
+# 
+# x <-
+#   lme(
+#     fixed = aaas_ad ~ time * group + lsas_sum,
+#     data = r2.long.data,
+#     random = ~ time | subject,
+#     na.action = na.omit
+#   )
+# AIC(x)
+# # 3184,521
 
 ######
 
@@ -1366,7 +1366,7 @@ x <- clinsig(
   ylab = "Posttest score"
 )
 clinsig.AAAS.ad.g3.csrci <- length(intersect(
-  which((x$post.x - x$pre.x) > x$relchng
+  which((x$post.x - x$pre.x) < -x$relchng
   ),
   which(x$post.x > x$crit[2])
 ))
@@ -1385,7 +1385,7 @@ x <- clinsig(
   which.crit="a"
 )
 clinsig.AAAS.ag.g3.csrci <- length(intersect(
-  which((x$post.x - x$pre.x) > x$relchng
+  which((x$post.x - x$pre.x) < -x$relchng
   ),
   which(x$post.x > x$crit[2])
 ))
@@ -1403,14 +1403,14 @@ x <- clinsig(
   ylab = "Posttest score"
 )
 clinsig.Rathus.g3.csrci <- length(intersect(
-  which((x$post.x - x$pre.x) > x$relchng
+  which((x$post.x - x$pre.x) < -x$relchng
   ),
   which(x$post.x > x$crit[2])
 ))
 clinsig.Rathus.g3 <- x
 ```
 
-(ref:Control) Här har vi plottarna för AAA-S båda skalor samt RAS för Väntlistan
+(ref:Control) Här har vi plottarna för AAA-S båda skalor samt RAS för Väntlistan. Rathus: `r clinsig.Rathus.g3.csrci`. AAAS-ag: `r clinsig.AAAS.ag.g3.csrci`. AAAS-ad: `r clinsig.AAAS.ad.g3.csrci`.
 
 # Diskussion
 
@@ -1420,7 +1420,6 @@ Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt s
 
 ## Metodologiska brister / felkällor / validitet / reliabilitet
 
-<<<<<<< HEAD
 <!-- 
 +/- användande av de skalor vi har gjort och hur tillförlitliga de är.
 
@@ -1428,9 +1427,6 @@ Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt s
 x @Baumeister2014a om att guided treatment tenderar att vara superior och att hur kunniga terapeuterna är tenderar att vara av liten betydelse
 x å andra sidan vad våra resultat visar på (?)
 -->
-=======
->>>>>>> 708cff0deba26f4ea3e357b682ed65c1d4632665
-
 ### Samplets representativitet för populationen
 
 <!-- Avsnittet bör få en ny underrubrik, om en underrubrik nu ens är nödvändigt -->
