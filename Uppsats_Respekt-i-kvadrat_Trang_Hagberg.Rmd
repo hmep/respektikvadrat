@@ -1326,6 +1326,16 @@ require(nlme)
 
 x <-
   lme(
+    fixed = aaas_ad ~ group * time + lsas_sum,
+    data = r2.long.data,
+    random = ~ 1 | subject / messages_sent,
+    na.action = na.omit
+  )
+AIC(x)
+# 2017,042
+
+x <-
+  lme(
     fixed = aaas_ag ~ group * time + lsas_sum,
     data = r2.long.data,
     random = ~ 1 | subject / messages_sent,
@@ -1365,12 +1375,11 @@ x <- clinsig(
   xlab = "Pretest score",
   ylab = "Posttest score"
 )
-clinsig.AAAS.ad.g3.csrci <- length(intersect(
-  which((x$post.x - x$pre.x) < -x$relchng
-  ),
-  which(x$post.x > x$crit[2])
-))
-clinsig.AAAS.ad.g3 <- x
+(clinsig.AAAS.ad.g3.csrci <- length(intersect(
+  which((x$post.x - x$pre.x) < -x$relchng),
+  which(x$post.x < x$crit[2])
+)))
+(clinsig.AAAS.ad.g3 <- x)
 
 #AAA-S Aggresive
 x <- clinsig(
@@ -1384,12 +1393,11 @@ x <- clinsig(
   ylab = "Posttest score",
   which.crit="a"
 )
-clinsig.AAAS.ag.g3.csrci <- length(intersect(
-  which((x$post.x - x$pre.x) < -x$relchng
-  ),
-  which(x$post.x > x$crit[2])
-))
-clinsig.AAAS.ag.g3 <- x
+(clinsig.AAAS.ag.g3.csrci <- length(intersect(
+  which((x$post.x - x$pre.x) < -x$relchng),
+  which(x$post.x < x$crit[2])
+)))
+(clinsig.AAAS.ag.g3 <- x)
 
 #Rathus
 x <- clinsig(
@@ -1402,12 +1410,12 @@ x <- clinsig(
   xlab = "Pretest score",
   ylab = "Posttest score"
 )
-clinsig.Rathus.g3.csrci <- length(intersect(
-  which((x$post.x - x$pre.x) < -x$relchng
-  ),
-  which(x$post.x > x$crit[2])
-))
-clinsig.Rathus.g3 <- x
+(clinsig.Rathus.g3.csrci <- length(intersect(
+  which((x$post.x - x$pre.x) < -x$relchng),
+  which(x$post.x < x$crit[2])
+)))
+(clinsig.Rathus.g3 <- x)
+
 ```
 
 (ref:Control) Här har vi plottarna för AAA-S båda skalor samt RAS för Väntlistan. Rathus: `r clinsig.Rathus.g3.csrci`. AAAS-ag: `r clinsig.AAAS.ag.g3.csrci`. AAAS-ad: `r clinsig.AAAS.ad.g3.csrci`.
