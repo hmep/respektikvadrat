@@ -1173,6 +1173,70 @@ interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$rathus,fun=
 <!-- https://easystats.github.io/effectsize/articles/from_test_statistics.html -->
 <!-- https://jonlefcheck.net/2013/03/13/r2-for-linear-mixed-effects-models/ -->
 
+``` {r Control, fig.cap='(ref:Control)', fig.align="center", fig.width=8, fig.height=4}
+
+#Denna r-kodchunk genererar graferna för kontrollgruppen
+
+par(mfrow=c(1,2))
+
+#AAA-S Adaptive
+x <- clinsig(
+  r2.wide.g3$pre_aaas_ad[!is.na(r2.wide.g3$post_aaas_ad)],
+  r2.wide.g3$post_aaas_ad[!is.na(r2.wide.g3$post_aaas_ad)],
+  coef.alpha = r.AAAS.ad,
+  func.disp = sd.AAAS.ad.norm,
+  func.mct = mean.AAAS.ad.norm,
+  main = "Adaptive Assertiveness, Control",
+  xlab = "Pretest score",
+  ylab = "Posttest score"
+)
+clinsig.AAAS.ad.g3.csrci <- length(intersect(
+  which((x$post.x - x$pre.x) > x$relchng
+  ),
+  which(x$post.x > x$crit[2])
+))
+clinsig.AAAS.ad.g3 <- x
+
+#AAA-S Aggresive
+x <- clinsig(
+  r2.wide.g3$pre_aaas_ag[!is.na(r2.wide.g3$post_aaas_ag)],
+  r2.wide.g3$post_aaas_ag[!is.na(r2.wide.g3$post_aaas_ag)],
+  coef.alpha = r.AAAS.ag,
+  func.disp = sd.AAAS.ag.norm,
+  func.mct = mean.AAAS.ag.norm,
+  main = "Aggressive Assertiveness, Control",
+  xlab = "Pretest score",
+  ylab = "Posttest score",
+  which.crit="a"
+)
+clinsig.AAAS.ag.g3.csrci <- length(intersect(
+  which((x$post.x - x$pre.x) > x$relchng
+  ),
+  which(x$post.x > x$crit[2])
+))
+clinsig.AAAS.ag.g3 <- x
+
+#Rathus
+x <- clinsig(
+  r2.wide.g3$pre_rathus[!is.na(r2.wide.g3$post_rathus)],
+  r2.wide.g3$post_rathus[!is.na(r2.wide.g3$post_rathus)],
+  coef.alpha = r.Rathus,
+  func.disp = sd.Rathus.norm,
+  func.mct = mean.Rathus.norm,
+  main = "Rathus, Control",
+  xlab = "Pretest score",
+  ylab = "Posttest score"
+)
+clinsig.Rathus.g3.csrci <- length(intersect(
+  which((x$post.x - x$pre.x) > x$relchng
+  ),
+  which(x$post.x > x$crit[2])
+))
+clinsig.Rathus.g3 <- x
+```
+
+(ref:Control) Här har vi plottarna för AAA-S båda skalor samt RAS för Väntlistan
+
 # Diskussion
 
 Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt självhjälpsprogram för att förbättra individers konstruktiva självhävdelse. Programmet administrerades via en internetbaserad plattform. Studien genomfördes med en randomiserad och kontrollerad design. Interventionen byggde på självhjälpsmaterialet *Assert Yourself* [@michel2008] och inkluderade bland annat inslag av psykoedukation, beteendeexperiment, avslappningsövningar, vidmakthållandeplanering och återfallsprevention. En tredjedel av deltagarna fick tillgång till programmet utan behandlarstöd, en tredjedel fick tillgång till programmet med behandlarstöd och en tredjedel var kontrollgrupp.
