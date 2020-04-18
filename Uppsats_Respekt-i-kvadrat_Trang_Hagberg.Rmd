@@ -1153,7 +1153,7 @@ interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$rathus,fun=
 
 Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt självhjälpsprogram för att förbättra individers konstruktiva självhävdelse. Programmet administrerades via en internetbaserad plattform. Studien genomfördes med en randomiserad och kontrollerad design. Interventionen byggde på självhjälpsmaterialet *Assert Yourself* [@michel2008] och inkluderade bland annat inslag av psykoedukation, beteendeexperiment, avslappningsövningar, vidmakthållandeplanering och återfallsprevention. En tredjedel av deltagarna fick tillgång till programmet utan behandlarstöd, en tredjedel fick tillgång till programmet med behandlarstöd och en tredjedel var kontrollgrupp.
 
-*Vi bör avsluta detta stycke med några få rader om den analys vi gjorde och resultatet vi fick.*
+*Vi bör avsluta detta stycke med några få rader om den analys vi gjorde och resultatet vi fick!*
 
 ## Metodologiska brister / felkällor / validitet / reliabilitet
 
