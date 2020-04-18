@@ -86,7 +86,7 @@ library("kableExtra")
 # and edit the lines below
 
 # From the tab "Frågeformulär"
-raw_excel = "Respekt_surveys_200416_085700.xlsx"
+raw_excel = "Respekt_surveys_200418_164937.xlsx"
 
 # From the tab "Konversationer & Moduler"
 raw_excel_conversations = "Respekt_conversations_200416_092107.xlsx"
@@ -1027,11 +1027,10 @@ x <- clinsig(
   xlab = "Pretest score",
   ylab = "Posttest score"
 )
-clinsig.AAAS.ad.g1.csrci <- length(intersect(
-  which((x$post.x - x$pre.x) > x$relchng
-  ),
-  which(x$post.x > x$crit[2])
-))
+relchng.AAAS.ad.g1.pos <- (x$post.x - x$pre.x) > x$relchng
+relchng.AAAS.ad.g1.neg <- (x$post.x - x$pre.x) < -x$relchng
+clinsig.AAAS.ad.g1.which <- intersect(which(relchng.AAAS.ad.g1.pos),which(x$post.x > x$crit[2]))
+clinsig.AAAS.ad.g1.num <- length(clinsig.AAAS.ad.g1.which)
 clinsig.AAAS.ad.g1 <- x
 
 x <- clinsig(
@@ -1044,17 +1043,15 @@ x <- clinsig(
   xlab = "Pretest score",
   ylab = "Posttest score"
 )
-clinsig.AAAS.ad.g2.csrci <- length(intersect(
-  which((x$post.x - x$pre.x) > x$relchng
-  ),
-  which(x$post.x > x$crit[2])
-))
+relchng.AAAS.ad.g2.pos <- (x$post.x - x$pre.x) > x$relchng
+relchng.AAAS.ad.g2.neg <- (x$post.x - x$pre.x) < -x$relchng
+clinsig.AAAS.ad.g2.which <- intersect(which(relchng.AAAS.ad.g2.pos),which(x$post.x > x$crit[2]))
+clinsig.AAAS.ad.g2.num <- length(clinsig.AAAS.ad.g2.which)
 clinsig.AAAS.ad.g2 <- x
-
 
 ```
 
-(ref:ad) För huvudutfallsmåttet AAA-S och underskalan *Adaptive Assertiveness* fann vi att av de `r clinsig.AAAS.ad.g1$post.n` personerna i självhjälpsgruppen som genomfört både för- och eftermätning så återfanns `r clinsig.AAAS.ad.g1$sigsum[2]` vid eftermätningen inom eller ovanför normalspannet för en icke-klinisk population (ovanför kriterium *b*); av dem hade `r paste(clinsig.AAAS.ad.g1.csrci," (",round(clinsig.AAAS.ad.g1.csrci/clinsig.AAAS.ad.g1$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.AAAS.ad.g1$relchng,1)` poäng mellan mättillfällena. För de `r clinsig.AAAS.ad.g2$post.n` personer i gruppen som fick stöd och som genomfört båda mätningarna så återfanns `r clinsig.AAAS.ad.g2$sigsum[2]` vid eftermätningen inom normalspannet för en icke-klinisk population; av dem hade `r paste(clinsig.AAAS.ad.g2.csrci," (",round(clinsig.AAAS.ad.g2.csrci/clinsig.AAAS.ad.g2$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.AAAS.ad.g2$relchng,1)` poäng mellan mättillfällena.
+(ref:ad) För huvudutfallsmåttet AAA-S och underskalan *Adaptive Assertiveness* fann vi att av de `r clinsig.AAAS.ad.g1$post.n` personerna i självhjälpsgruppen som genomfört både för- och eftermätning så återfanns `r clinsig.AAAS.ad.g1$sigsum[2]` vid eftermätningen inom eller ovanför normalspannet för en icke-klinisk population (ovanför kriterium *b*); av dem hade `r paste(clinsig.AAAS.ad.g1.num," (",round(clinsig.AAAS.ad.g1.num/clinsig.AAAS.ad.g1$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.AAAS.ad.g1$relchng,1)` poäng mellan mättillfällena. För de `r clinsig.AAAS.ad.g2$post.n` personer i gruppen som fick stöd och som genomfört båda mätningarna så återfanns `r clinsig.AAAS.ad.g2$sigsum[2]` vid eftermätningen inom normalspannet för en icke-klinisk population; av dem hade `r paste(clinsig.AAAS.ad.g2.num," (",round(clinsig.AAAS.ad.g2.num/clinsig.AAAS.ad.g2$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.AAAS.ad.g2$relchng,1)` poäng mellan mättillfällena.
 
 <!-- \newpage -->
 
@@ -1072,14 +1069,12 @@ x <- clinsig(
   func.mct = mean.AAAS.ag.norm,
   main = "Aggressive Assertiveness, Selfhelp",
   xlab = "Pretest score",
-  ylab = "Posttest score",
-  which.crit="a"
+  ylab = "Posttest score"
 )
-clinsig.AAAS.ag.g1.csrci <- length(intersect(
-  which((x$post.x - x$pre.x) > x$relchng
-  ),
-  which(x$post.x > x$crit[2])
-))
+relchng.AAAS.ag.g1.pos <- (x$post.x - x$pre.x) > x$relchng
+relchng.AAAS.ag.g1.neg <- (x$post.x - x$pre.x) < -x$relchng
+clinsig.AAAS.ag.g1.which <- intersect(which(relchng.AAAS.ag.g1.pos),which(x$post.x > x$crit[2]))
+clinsig.AAAS.ag.g1.num <- length(clinsig.AAAS.ag.g1.which)
 clinsig.AAAS.ag.g1 <- x
 
 x <- clinsig(
@@ -1092,16 +1087,15 @@ x <- clinsig(
   xlab = "Pretest score",
   ylab = "Posttest score"
 )
-clinsig.AAAS.ag.g2.csrci <- length(intersect(
-  which((x$post.x - x$pre.x) > x$relchng
-  ),
-  which(x$post.x > x$crit[2])
-))
+relchng.AAAS.ag.g2.pos <- (x$post.x - x$pre.x) > x$relchng
+relchng.AAAS.ag.g2.neg <- (x$post.x - x$pre.x) < -x$relchng
+clinsig.AAAS.ag.g2.which <- intersect(which(relchng.AAAS.ag.g2.pos),which(x$post.x > x$crit[2]))
+clinsig.AAAS.ag.g2.num <- length(clinsig.AAAS.ag.g2.which)
 clinsig.AAAS.ag.g2 <- x
 
 ```
 
-(ref:ag) För huvudutfallsmåttet AAA-S och underskalan *Aggressive Assertiveness* fann vi att av de `r clinsig.AAAS.ag.g1$post.n` personerna i självhjälpsgruppen som genomfört både för- och eftermätning så återfanns `r clinsig.AAAS.ag.g1$sigsum[2]` vid eftermätningen inom eller ovanför normalspannet för en icke-klinisk population (ovanför kriterium *b*); av dem hade `r paste(clinsig.AAAS.ag.g1.csrci," (",round(clinsig.AAAS.ag.g1.csrci/clinsig.AAAS.ag.g1$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.AAAS.ag.g1$relchng,1)` poäng mellan mättillfällena. För de `r clinsig.AAAS.ag.g2$post.n` personer i gruppen som fick stöd och som genomfört båda mätningarna så återfanns `r clinsig.AAAS.ag.g2$sigsum[2]` vid eftermätningen inom normalspannet för en icke-klinisk population; av dem hade `r paste(clinsig.AAAS.ag.g2.csrci," (",round(clinsig.AAAS.ag.g2.csrci/clinsig.AAAS.ag.g2$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.AAAS.ag.g2$relchng,1)` poäng mellan mättillfällena.
+(ref:ag) För huvudutfallsmåttet AAA-S och underskalan *Aggressive Assertiveness* fann vi att av de `r clinsig.AAAS.ag.g1$post.n` personerna i självhjälpsgruppen som genomfört både för- och eftermätning så återfanns `r clinsig.AAAS.ag.g1$sigsum[2]` vid eftermätningen inom eller ovanför normalspannet för en icke-klinisk population (ovanför kriterium *b*); av dem hade `r paste(clinsig.AAAS.ag.g1.num," (",round(clinsig.AAAS.ag.g1.num/clinsig.AAAS.ag.g1$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.AAAS.ag.g1$relchng,1)` poäng mellan mättillfällena. För de `r clinsig.AAAS.ag.g2$post.n` personer i gruppen som fick stöd och som genomfört båda mätningarna så återfanns `r clinsig.AAAS.ag.g2$sigsum[2]` vid eftermätningen inom normalspannet för en icke-klinisk population; av dem hade `r paste(clinsig.AAAS.ag.g2.num," (",round(clinsig.AAAS.ag.g2.num/clinsig.AAAS.ag.g2$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.AAAS.ag.g2$relchng,1)` poäng mellan mättillfällena.
 
 <!-- \newpage -->
 
@@ -1122,11 +1116,10 @@ x <- clinsig(
   ylab = "Posttest score",
   do.plot = T
 )
-clinsig.Rathus.g1.csrci <- length(intersect(
-  which((x$post.x - x$pre.x) > x$relchng
-  ),
-  which(x$post.x > x$crit[2])
-))
+relchng.Rathus.g1.pos <- (x$post.x - x$pre.x) > x$relchng
+relchng.Rathus.g1.neg <- (x$post.x - x$pre.x) < -x$relchng
+clinsig.Rathus.g1.which <- intersect(which(relchng.Rathus.g1.pos),which(x$post.x > x$crit[2]))
+clinsig.Rathus.g1.num <- length(clinsig.Rathus.g1.which)
 clinsig.Rathus.g1 <- x
 
 x <- clinsig(
@@ -1139,19 +1132,15 @@ x <- clinsig(
   xlab = "Pretest score",
   ylab = "Posttest score"
 )
-clinsig.Rathus.g2.csrci <- length(intersect(
-  which((x$post.x - x$pre.x) > x$relchng
-  ),
-  which(x$post.x > x$crit[2])
-))
+relchng.Rathus.g2.pos <- (x$post.x - x$pre.x) > x$relchng
+relchng.Rathus.g2.neg <- (x$post.x - x$pre.x) < -x$relchng
+clinsig.Rathus.g2.which <- intersect(which(relchng.Rathus.g2.pos),which(x$post.x > x$crit[2]))
+clinsig.Rathus.g2.num <- length(clinsig.Rathus.g2.which)
 clinsig.Rathus.g2 <- x
-
-# These should be colored:
-# intersect(which((x$post.x - x$pre.x) > x$relchng),which(x$post.x > x$crit[2]))
 
 ```
 
-(ref:rat) För det sekundära utfallsmåttet Rathus fann vi att av de `r clinsig.Rathus.g1$post.n` personerna i självhjälpsgruppen som genomfört både för- och eftermätning så återfanns `r clinsig.Rathus.g1$sigsum[2]` vid eftermätningen inom eller ovanför normalspannet för en icke-klinisk population (ovanför kriterium *b*); av dem hade `r paste(clinsig.Rathus.g1.csrci," (",round(clinsig.Rathus.g1.csrci/clinsig.Rathus.g1$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.Rathus.g1$relchng,1)` poäng mellan mättillfällena. För de `r clinsig.Rathus.g2$post.n` personer i gruppen som fick stöd och som genomfört båda mätningarna så återfanns `r clinsig.Rathus.g2$sigsum[2]` vid eftermätningen inom normalspannet för en icke-klinisk population; av dem hade `r paste(clinsig.Rathus.g2.csrci," (",round(clinsig.Rathus.g2.csrci/clinsig.Rathus.g2$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.Rathus.g2$relchng,1)` poäng mellan mättillfällena.
+(ref:rat) För det sekundära utfallsmåttet Rathus fann vi att av de `r clinsig.Rathus.g1$post.n` personerna i självhjälpsgruppen som genomfört både för- och eftermätning så återfanns `r clinsig.Rathus.g1$sigsum[2]` vid eftermätningen inom eller ovanför normalspannet för en icke-klinisk population (ovanför kriterium *b*); av dem hade `r paste(clinsig.Rathus.g1.num," (",round(clinsig.Rathus.g1.num/clinsig.Rathus.g1$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.Rathus.g1$relchng,1)` poäng mellan mättillfällena. För de `r clinsig.Rathus.g2$post.n` personer i gruppen som fick stöd och som genomfört båda mätningarna så återfanns `r clinsig.Rathus.g2$sigsum[2]` vid eftermätningen inom normalspannet för en icke-klinisk population; av dem hade `r paste(clinsig.Rathus.g2.num," (",round(clinsig.Rathus.g2.num/clinsig.Rathus.g2$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.Rathus.g2$relchng,1)` poäng mellan mättillfällena.
 
 <!-- \newpage -->
 
