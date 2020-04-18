@@ -573,17 +573,17 @@ Individuals avoid stimuli which are associated with aversive experience to prese
 
 ## Design
 
-Sample-storleken för varje grupp bestämdes till n=70 med en powerberäkning innan rekrytering påbörjades. I studien planerade manipulationer, variabler, mättillfällen och insamlad data har använts i de efterföljande analyserna utan selektion i efterhand. Både randomiseringen som exkluderade deltagare från studien, randomiseringen av de 210 deltagarna till sina respektive grupper samt randomiseringen av deltagarna med behandlingsstöd till respektive behandlare gjordes av oberoende tredje part vid Stockholms Universitet med hjälp av internetbaserade randomiseringstjänster (www.random.org för exkluderingen och randomiseringen till respektive behandlare samt www.sealedenvelope.com för randomiseringen till de tre grupperna). Deltagarna informerades via den webbaserade plattformen om exkludering eller vilken grupp de tillhörde. 
+Sample-storleken för varje grupp bestämdes till n = 70 med en powerberäkning innan rekrytering påbörjades. I studien planerade manipulationer, variabler, mättillfällen och insamlad data har använts i de efterföljande analyserna utan selektion i efterhand. Både randomiseringen som exkluderade deltagare från studien, randomiseringen av 210 deltagare till sina respektive grupper samt randomiseringen av deltagarna med behandlingsstöd till respektive behandlare gjordes av oberoende tredje part vid Stockholms Universitet med hjälp av internetbaserade randomiseringstjänster (www.random.org för exkluderingen och randomiseringen till respektive behandlare samt www.sealedenvelope.com för randomiseringen till de tre grupperna). Deltagarna informerades via den webbaserade plattformen om exkludering eller vilken grupp de tillhörde. 
 
 ### Rekrytering
 
-Rekrytering skedde mellan 28 januari och 5 februari 2020. Studien annonserades på flertalet sociala medier (www.facebook.com, www.twitter.com, www.linkedin.com samt www.instagram.com). Den annonserades även på diverse andra webbplatser (t ex www.studie.nu). De som ville veta mer om studien hänvisades till studiens hemsida (www.respektikvadrat.se). Där fanns information om hur studien skulle gå till, vilka inklusions- samt exklusionskriterierna var och när studien startade. Det fanns även information om vilka som var involverade i studien samt kontaktuppgifter till studieansvarig. Deltagarna anmälde sitt intresse genom att uppge sin e-postadress. I samband med att deltagarna hade möjlighet att anmäla sitt intresse presenterades de även med information kring potentiella risker med att delta, sekretess, datasäkerhet, datahantering, att deltagandet är frivilligt och kan avbrytas när som helst. När deltagarna väl anmält sitt intresse skickades en länk till deras e-postadresser med självskattningsformulär att besvara elektroniskt. Formulären frågade efter generellt välmående, nedstämdhet, ångest, socialfobiska tendenser samt egenupplevd självhävdelse. Deltagarna fick även fylla i demografiska frågor samt frågor om erfarenhet av tidigare psykologisk behandling, motivation till att delta i den aktuella studien samt om pågående medicinering. Deltagarna hade även möjligheten att i fritext informera om de ansåg att det fanns något annat som var nödvändigt att beakta vid bedömningen.
+Rekrytering skedde mellan 28 januari och 5 februari 2020. Studien annonserades på sociala medier (www.facebook.com, www.twitter.com, www.linkedin.com samt www.instagram.com). Den annonserades även på diverse andra webbplatser (t ex www.studie.nu). De som ville veta mer om studien hänvisades till studiens hemsida (www.respektikvadrat.se). Där fanns information om hur studien skulle gå till, vilka inklusions- samt exklusionskriterierna var och när studien startade. Det fanns även information om vilka som var involverade i studien samt kontaktuppgifter till studieansvarig. Deltagarna anmälde sitt intresse genom att uppge sin e-postadress. I samband med att deltagarna hade möjlighet att anmäla sitt intresse presenterades de även med information kring potentiella risker med att delta, sekretess, datasäkerhet, datahantering, att deltagandet är frivilligt och kan avbrytas när som helst. När deltagarna väl anmält sitt intresse skickades en länk till deras e-postadresser med självskattningsformulär att besvara elektroniskt. Formulären frågade efter generellt välmående, nedstämdhet, ångest, socialfobiska tendenser samt egenupplevd självhävdelse. Deltagarna fick även fylla i demografiska frågor samt frågor om erfarenhet av tidigare psykologisk behandling, motivation till att delta i den aktuella studien samt om pågående medicinering. Deltagarna hade även möjligheten att i fritext informera om de ansåg att det fanns något annat som var nödvändigt att beakta vid bedömningen.
 
 ### Deltagare
 
-Som framgår av figur \@ref(fig:flow) så anmälde totalt 657 personer intresse till studien varav 464 personer slutförde hela screeningsprocessen. Av dessa exkluderades 126 personer då de uppfyllde något av de uppsatta exklusionskriterierna. De kvarvarande 338 personerna erbjöds plats i studien. Av dessa bejakade 253 sin plats. 43 personer exkluderades från behandlingen genom randomisering så att exakt 210 inkluderades. De deltagare som exkluderades via randomisering erbjöds tillgång till materialet på samma sätt som kontrollgruppen fick det – men med skillnaden att deras resultat ej inkluderats i beräkningarna. Vid behandlingsstart hade alltså studien 210 deltagare. Under behandlingens gång framkom det att fem deltagare (tre från gruppen *Behandling utan stöd* och två från gruppen *Väntlista*) hade pågående psykologisk behandling. Utöver detta bad en deltagare från gruppen *Behandling med stöd* om att få bli exkluderad ifrån studien. Denna deltagare bad även om att hens data ej skulle användas. Dessa sex deltagare har exkluderats från alla statistiska beräkningar.
+Som framgår av figur \@ref(fig:flow) så anmälde totalt 657 personer intresse till studien varav 464 personer slutförde hela screeningsprocessen. Av dessa exkluderades 126 personer då de uppfyllde något av de uppsatta exklusionskriterierna. De kvarvarande 338 personerna erbjöds plats i studien. Av dessa bejakade 253 sin plats. 43 personer exkluderades från behandlingen genom randomisering så att 210 inkluderades. De deltagere som exkluderades via randomisering erbjöds tillgång till materialet på samma sätt som kontrollgruppen fick det – men med skillnaden att deras resultat ej inkluderats i beräkningarna. Vid behandlingsstart hade alltså studien 210 deltagare. Under behandlingens gång framkom det att fem deltagare (n = 3 från gruppen *Behandling utan stöd* och n = 2 från gruppen *Väntlista*) hade pågående psykologisk behandling. Dessa deltagare har fått fullgå behandlingen på oförändrade villkor, men deras resultat har exkluderats från analysen. Utöver detta bad en deltagare från gruppen *Behandling med stöd* om att få bli exkluderad från studien. Denna deltagare bad även om att hens data ej skulle användas. Dessa sex deltagare har exkluderats från alla statistiska beräkningar.
 
-```{r flow, out.width="100%", fig.align="center", out.extra='', fig.cap='Flödesschema över inklusion, exklusion (samt dess orsaker) och bortfall.'}
+```{r flow, out.width="100%", fig.align="center", out.extra='', fig.cap='Flödesschema över inklusion, exklusion (med kriterier) samt bortfall.'}
 
 options(format.args = list(decimal.mark = '.', big.mark = ','))
 
@@ -591,20 +591,17 @@ knitr::include_graphics("flow.pdf")
 
 ```
 
-#### Inkluderingskriterier
-För att delta krävdes det att man var svensk medborgare, minst 18 år gammal, hade tillgång till en internetuppkoppling samt att man behärskade svenska i tal och skrift. Alla deltagare som erbjöds plats i studien blev informerade om detta via den webbaserade plattformen de använt sig av för att anmäla sitt intresse och fylla i screeningen. Denna information levererades till dem  en vecka före studiestart.
+#### Inklusionskriterier
 
-#### Ekluderingskriterier
-De personer som skattade 15 eller mer på självskattningsformuläret PHQ-9 exkluderades. Utöver detta exkluderades de deltagare som tre månader inom behandlingsstart gjort förändringar i sin psykofarmakabehandling. De personer som uppgav att de hade pågående psykologisk behandling exkluderades även. Slutligen exkluderades de personer som i frisvar under screeningsprocessen uppgav att de hade tidsbrist eller låg motivation till behandlingen. Alla personer som exkluderades blev informerade om detta via den webbaserade plattformen de använt sig för att anmäla sig till studien. När det var tillämpbart gavs även rekommendationer om vart personerna istället kunde vända sig.
+För att delta krävdes det att man var svensk medborgare, minst 18 år gammal, hade tillgång till en internetuppkoppling samt att man behärskade svenska i tal och skrift. Alla deltagare som erbjöds plats i studien blev informerade om detta via den webbaserade plattformen de använt sig av för att anmäla sitt intresse och fylla i screeningen. Deltagarna informerades om inklusion en vecka före studiestart.
+
+#### Exklusionskriterier
+
+De personer som skattade 15 eller mer på självskattningsformuläret PHQ-9 exkluderades. Utöver detta exkluderades de deltagare som tre månader inom behandlingsstart gjort förändringar i sin psykofarmakabehandling. Även personer som uppgav att de hade pågående psykologisk behandling exkluderades. Slutligen exkluderades de personer som i frisvar under screeningsprocessen tydligt uppgav att de hade tidsbrist och/eller låg motivation till behandlingen. Alla personer som exkluderades blev informerade om detta via den webbaserade plattformen de använt sig för att anmäla sig till studien. När det var tillämpbart hänvisades exkluderade personer till andra vårdgivare.
 
 #### Demografisk data
-De 204 deltagare vars data redovisas var mellan 20 och 65 år gamla med en medelålder på 41,8 år (s=8,8). En betydande majoritet (87,8%; 179/204) definierade sig som kvinnor, övriga definierade sig som män. Knappt tre fjärdedelar av deltagarna har avslutade universitets- eller högskoleutbildningar (71,6%; 146/204) och tre fjärdedelar av deltagarna var vid behandlingens start arbetande (75,5%; 154/204). Mer än hälften av deltagarna (61,3%; 125/204) hade tidigare erfarenheter av psykologisk behandling. Av dessa hade majoriteten (64,8%; 81/125) tidigare erfarenheter av KBT.  Knappt en tredjedel av alla deltagare (29,0%; 59/204) hade erfarenhet av psykofarmaka. Vid behandlingens start stod 17,6% (36/204) på någon sorts psykofarmaka. Totalt 3,4% (7/204) av deltagarna var vid behandlingsstart sjukskrivna. För att se de demografiska faktorernas fördelningar i respektive grupp, se tabell \@ref(tab:demdata).
 
-(ref:dem) Demografisk data hos deltagarna, redovisad per grupp samt för alla studiens deltagare.
-
-```{r demdata, out.width="100%", tab.align="center"}
-
-#knitr::include_graphics("demdata-crop.pdf")
+```{r def demdata}
 
 x1 <-
   c(
@@ -755,6 +752,16 @@ demdata.tabell <- cbind.data.frame(x1,x2,x3,x4,x5)
 
 colnames(demdata.tabell) <-c("","Självhjälp (n=67)","Med stöd (n=69)","Väntelista (n=68)","Totalt (n=204)")
 
+```
+
+De `r length(r2.wide.data$subject)` deltagare vars data används i den här studien var mellan 20 och 65 år gamla med en medelålder på 41,8 år (standardavvikelse 8,8). En betydande majoritet (87,8&nbsp;%) identifierade sig som kvinnor, övriga som män. Knappt tre fjärdedelar av deltagarna har avslutade universitets- eller högskoleutbildningar (71,6&nbsp;%) och tre fjärdedelar av deltagarna var vid behandlingens start arbetande (75,5&nbsp;%). Mer än hälften av deltagarna (61,3&nbsp;%) hade tidigare erfarenheter av psykologisk behandling. Av dessa hade majoriteten (64,8&nbsp;%) tidigare erfarenheter av KBT. Knappt en tredjedel av alla deltagare (29,0&nbsp;%) hade erfarenhet av psykofarmaka. Vid behandlingens start stod 17,6&nbsp;% på något slags psykofarmaka. Totalt 3,4&nbsp;% av deltagarna var vid behandlingsstart sjukskrivna. För att se de demografiska faktorernas fördelningar i respektive grupp, se tabell \@ref(tab:demdata).
+
+(ref:dem) Demografisk data hos deltagarna, redovisad per grupp samt för alla studiens deltagare.
+
+```{r demdata, out.width="100%", tab.align="center"}
+
+#knitr::include_graphics("demdata-crop.pdf")
+
 knitr::kable(demdata.tabell, format.args = list(decimal.mark = ',', big.mark = ' '), booktabs = T, caption = "(ref:dem)", linesep = "", align="lrrrr") %>%
   kable_styling(full_width = F) %>%
   column_spec(2, width = "5em") %>%
@@ -772,37 +779,54 @@ knitr::kable(demdata.tabell, format.args = list(decimal.mark = ',', big.mark = '
 ```
 
 ### Behandlarstöd
+
 En av de tre grupperna fick tillgång till behandlarstöd. Deltagarna i denna grupp blev randomiserade till en av de två behandlarna. Varje behandlare hade i och med detta behandlingskontakt med 35 deltagare var. Behandlarna var studenter vid Stockholms Universitet. Båda behandlarna gick sista terminen på psykologprogrammet och hade en grundläggande psykoterapiutbildning i KBT. Under hela studiens gång hade behandlarna tillgång till handledning av en legitimerad psykolog med drygt 20 års erfarenhet av internetbaserad psykologisk behandling.
 
 Behandlarstöd bestod av veckovis skriftlig kontakt med deltagarna via den krypterade webbaserade plattformen iTerapi. Stödet bestod av feedback på genomförda övningar, uppmuntran, validering, psykoedukation samt svar på de frågor deltagarna ställde. Tidsåtgången var cirka 15 minuter per deltagare och vecka. De två andra grupperna hade inte tillgång till behandlarstöd men fick kontaktuppgifter till studieansvarig för eventuella administrativa frågor.
 
-
 ### Primära utfallsmått
+
 #### Självhävdelsestil
+
 En svensk översättning av självskattningsskalan Adaptive and Aggressive Assertiveness Scales [AAA-S; @Thompson2011] användes för att mäta vilka metoder för självhävdelse som deltagarna använde sig av. Skalan består av 30 påstående som besvaras med en 6-gradig likertskala där (0) motsvarar “aldrig” och (5) motsvarar “alltid”. Dessa påståenden kan i sin tur delas in i två delskalor: aggressiv självhävdelse och konstruktiv (adaptiv) självhävdelse. Poäng på respektive delskala summeras, där hög poäng på delskalan för aggressiv självhävdelse indikerar på ett aggressivt självhävdande beteendeemönster och hög poäng på delskalan för konstruktiv självhävdelse indikerar på ett konstruktivt självhävdande beteendemönster. En fördel med AAA-S jämfört med andra skalor som mäter självhävdelse är att den gör explicit skillnad mellan konstruktiv och aggressiv självhävdelse.
 
-
 ### Sekundära utfallsmått
+
 #### Depression
+
 Skattningsskalan Patient Health Questionnaire 9-Item Scale [PHQ-9; @Kroenke2010] användes för att mäta symtom på depression. Det är en självskattningsskala bestående av nio frågor som besvaras med en 4-gradig likertskala där 0 motsvara “Inte alls”, 1 “Flera dagar”, 2 “Mer än hälften av dagarna” och 3 “Nästan varje dag”. Utöver dessa nio frågor ställs en fråga om funktionspåverkan av symtomen. Summan på de nio första frågorna summeras. Maximal totalpoäng på PHQ-9 är 27. En summa mellan 0-4 indikerar minimal allvarlighetsgrad/ingen depression, 5–9 mild allvarlighetsgrad, 10–15 måttlig allvarlighetsgrad och 15–27 svår allvarlighetsgrad [@Kroenke2010]. I den föreliggande studien exkluderades de individer med ett resultat ≥15, då poäng mellan 15-27 tyder på att egentlig depression kan föreligga. Skalan bedöms ha en hög intern reliabilitet [α = 0,89; @Kroenke2001a]. Det har även visat sig att de psykometriska egenskaperna föreligger vid administrering online [@Titov2011].
 
-
 #### Ångest
+
 Symtom på ångest mäts genom Generalised Anxiety Disorder 7-item scale [GAD-7; @Kroenke2006]. Skalan består av sju stycken frågor rörande symtom på ångest de senaste som besvaras på en 4-gradig likertskala där 0 står för “Inte alls”, 1 för “Flera dagar”, 2  för “Mer än hälften av dagarna” och 3 för “Varje dag”. Svaren på de sju frågorna summeras. Maximal totalpoäng på GAD-7 är 21. Tröskelvärden för mild, måttlig och allvarlig ångest ligger vid 5, 10 respektive 15 [@Kroenke2010]. Skalan har god intern reliabilitet (α = 0,92) och hög test-retest-reliabilitet (r = 0,83).
 
 #### Social Ångest
+
 Symtom för social ångest mättes med Liebowitz Social Anxiety Scale [LSAS-SR; @Fresco2001]. I självskattningsskalan presenteras 24 situationer som besvaras på två stycken 4-gradiga likertskalor. Den ena skalan frågar om mängd rädsla eller ångest i respektive situation där 0 motsvarar “Ingen”, 1 “Mild”, 2 “Måttlig”, och 3 “Stark”. Den andra skalan frågar om mängd undvikande av respektive situation där 0 motsvarar “Aldrig (0%)”, 1 “Ibland (1-33% av tiden)”, 2 “Ofta (33-67% av tiden), och 3 “Vanligtvis (67-100% av tiden)”. Svaren på alla frågor summeras. Maximal totalpoäng på LSAS-SR är 144. Vid en totalpoäng på över 30 föreligger troligen social fobi. Vid en totalpoäng på över 60 föreligger troligen generaliserad social fobi. Skalan har god intern reliabilitet (α = 0,96).
 
-
 #### Allmänt psykiskt välmående
+
 Självskattningsskalan Välmåendeskalan [VS; @Braconier2015], användes för att mäta deltagarnas allmänna psykiska välmående. Skalan består av 18 frågor om mående den senaste veckan. Frågorna besvaras på en 5-gradig likertskala där 0 motsvarar “Aldrig”, 1 “Sällan”, 2 “Ibland”, 3 “Ofta” och 4 “Mycket ofta”. Svaren på alla frågor summeras. Maximal totalpoäng på VS är 72. En hög poäng anger en högre grad av upplevt välmående. Skalan har god intern reliabilitet (α = 0,93) och hög test-retest-reliabilitet (r = 0,8).
 
 #### Självhävdelsestil
-Utöver AAA-S användes även The Rathus Assertiveness Schedule [RAS, **CITKEYMISSING** Rathus, 1973] för att samla in information om deltagarnas självhävdelsestil. Självskattningsskalan består av 30 frågor som besvaras på en 6-gradig likertskala där -3 motsvarar “stämmer inte alls” och 3 motsvarar “stämmer helt”. Svaren på alla frågor summeras. Maximal totalpoäng på skalan är 90. En hög poäng indikerar på hög grad av självhävdelse och vice versa. 
+
+Utöver AAA-S användes även The Rathus Assertiveness Schedule [RAS; @Rathus1973; @Thompson2011] för att samla in information om deltagarnas självhävdelsestil. Självskattningsskalan består av 30 frågor som besvaras på en 6-gradig likertskala där -3 motsvarar “stämmer inte alls” och 3 motsvarar “stämmer helt”. Svaren på alla frågor summeras. Maximal totalpoäng på skalan är 90. En hög poäng indikerar på hög grad av självhävdelse och vice versa. 
 
 ## Interventionen
 
-Interventionen är utformad med självhjälpsmaterialet Assert Yourself [@michel2008] som grund. Materialet är framtaget av Center for Clinical Interventions (CCI) i delstaten Western Australia, Australien. I arbetsboken får läsaren lära sig skillnaden mellan olika typer av självhävdelse (konstruktiv, aggressiv, passiv, passiv-aggressiv) och rationalen för kognitiv omstrukturering med KBT. Genom att planera och utföra beteendeexperiment får deltagaren hjälp av materialet att pröva giltigheten av egna negativa förutsägelser och därmed öka responsmöjligheterna i olika mer eller mindre pressande situationer. Utöver detta innehåller arbetsmaterialet ett avsnitt om progressiv muskelavslappning, med syftet att hjälpa läsaren att känna igen spänning i kroppen, att sänka den allmänna spänningsnivån och träna på en aktiv coping-teknik för stressande lägen. Materialet avslutas med ett antal kapitel för olika problemområden (säga nej, hantera kritik, hantera besvikelser, ta emot och ge komplimanger).
+Interventionen är utformad med självhjälpsmaterialet *Assert Yourself* [@michel2008] som grund. Materialet är framtaget av Center for Clinical Interventions (CCI) i delstaten Western Australia, Australien. 
+
+I arbetsboken får läsaren lära sig skillnaden mellan olika typer av självhävdelse (konstruktiv, aggressiv, passiv, passiv-aggressiv), och hitta egna skäl att hävda sig själv bättre och mer konstruktivt. Delar av materialet är inspirerat av och citerar självhjälpsböcker som @alberti2017your, @gambrill1975assertion, @ward2018assertiveness, @mckay2005self och @smith1975say.
+
+I *Assert Yourself* föreskrivs självhävdande beteenden utifrån de teoretiska antagandena i @wolpe1990practice om reciprok inhibition och klassisk betingning: Genom att träna på att i ord och handling uttrycka det som i relationen till en annan person väcker ångest (exempelvis ledsenhet eller ilska) kan klienten på sikt få minskade besvär med autonoma ångestresponser. @Wolpe1952 förespråkar träning på att uppleva de ångestväckande autonoma responserna (känslorna) *in-vivo* och understryker att föreskrivna beteendena inte handlar om att "låtsas", utan att på sikt inhibera dem genom självhävdelse. För fall då en fysisk motpart saknas, och ångesten väcks av till exempel platser, objekt eller ord, förespråkar @Wolpe1951 avslappning som ett sätt att inhibera ångestresponsen, utifrån rationalen att det är omöjligt att känna ångest och samtidigt vara avslappnad.
+
+<!-- (@Wolpe2952 diskriminerar inte mellan aggressiv och adaptiv självhävdelse, och uppseendeväckande nog uttrycker författaren sig så här: "*For this reason it is quite often necessary for the patient to be guided towards achieving factual dominance in his encounters with those who disturb him by employing subtle manoeuvres in which aggression is not outwardly expressed*".) -->
+
+Materialet ger också rationalen för kognitiv omstrukturering med metoder från @beck1979cognitive, @Clark1986, @clark1995cognitive och @powell2017mental. Kognitiv omstrukturering uppnås enligt dessa genom att utmana negativt tänkande och att pröva giltigheten av det negativa tänkandet i verkliga livet. Genom att planera och utföra beteendeexperiment får deltagaren hjälp av materialet att pröva giltigheten av egna negativa tankar och därmed öka responsmöjligheterna i olika mer eller mindre pressande situationer. 
+
+Utöver detta innehåller arbetsmaterialet ett avsnitt om progressiv muskelavslappning, med syftet att hjälpa läsaren att känna igen spänning i kroppen, sänka den allmänna spänningsnivån och träna på en aktiv coping-teknik för stressande lägen. Avslappningskapitlet ger en version av tillämpad avslappning, snarlik den som beskrivs i @ost2006tillampad.
+
+Materialet avslutas med ett antal kapitel för olika problemområden (säga nej, hantera kritik, hantera besvikelser, ta emot och ge komplimanger). Dessa kapitel innehåller både psykoedukativa inslag, inslag av kognitiv omstrukturering och planering och uppföljning av beteendeexperiment.
 
 ### Anpassningar och tillägg
 
@@ -1210,18 +1234,6 @@ tolkning av resultatet. Jämförelsen mellan grupperna "Självhjälp" och "Med s
 
 # Referenser
 
-Inkorporera dessa referenser (från arbetsmaterialet):
-
-@beck1979cognitive
-@Clark1986
-@clark1995cognitive
-@alberti2017your
-@gambrill1975assertion
-@ward2018assertiveness
-@mckay2005self
-@powell2017mental
-@smith1975say
-@wolpe1990practice
 
 ```{r create_r-references}
 r_refs(file = "r-references.bib")
