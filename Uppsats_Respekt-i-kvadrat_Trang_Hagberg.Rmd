@@ -1021,6 +1021,8 @@ r2.wide.g3 <- r2.wide.data[g3,]
 
 library("clinsig")
 
+# Hack: running clinsig twice as an ugly workaround to get different colors in the plots
+
 x <- clinsig(
   r2.wide.g1$pre_aaas_ad[!is.na(r2.wide.g1$post_aaas_ad)],
   r2.wide.g1$post_aaas_ad[!is.na(r2.wide.g1$post_aaas_ad)],
@@ -1029,13 +1031,29 @@ x <- clinsig(
   func.mct = mean.AAAS.ad.norm,
   main = "Adaptive Assertiveness, Selfhelp",
   xlab = "Pretest score",
-  ylab = "Posttest score"
+  ylab = "Posttest score",
+  do.plot = F
 )
 relchng.AAAS.ad.g1.pos <- (x$post.x - x$pre.x) > x$relchng
 relchng.AAAS.ad.g1.neg <- (x$post.x - x$pre.x) < -x$relchng
 clinsig.AAAS.ad.g1.which <- intersect(which(relchng.AAAS.ad.g1.pos),which(x$post.x > x$crit[2]))
 clinsig.AAAS.ad.g1.num <- length(clinsig.AAAS.ad.g1.which)
-clinsig.AAAS.ad.g1 <- x
+xcol <- factor(rep("black",times=length(x$post.x)),levels=c("black","red"))
+xcol[clinsig.AAAS.ad.g1.which] <- rep("red",times=length(clinsig.AAAS.ad.g1.which))
+xpch <- rep(1,times=length(x$post.x))
+xpch[clinsig.AAAS.ad.g1.which] <- rep(2,times=length(clinsig.AAAS.ad.g1.which))
+clinsig.AAAS.ad.g1 <- clinsig(
+  r2.wide.g1$pre_aaas_ad[!is.na(r2.wide.g1$post_aaas_ad)],
+  r2.wide.g1$post_aaas_ad[!is.na(r2.wide.g1$post_aaas_ad)],
+  coef.alpha = r.AAAS.ad,
+  func.disp = sd.AAAS.ad.norm,
+  func.mct = mean.AAAS.ad.norm,
+  main = "Adaptive Assertiveness, Selfhelp",
+  xlab = "Pretest score",
+  ylab = "Posttest score",
+  col = xcol,
+  pch = xpch
+)
 
 x <- clinsig(
   r2.wide.g2$pre_aaas_ad[!is.na(r2.wide.g2$post_aaas_ad)],
@@ -1052,12 +1070,11 @@ relchng.AAAS.ad.g2.pos <- (x$post.x - x$pre.x) > x$relchng
 relchng.AAAS.ad.g2.neg <- (x$post.x - x$pre.x) < -x$relchng
 clinsig.AAAS.ad.g2.which <- intersect(which(relchng.AAAS.ad.g2.pos),which(x$post.x > x$crit[2]))
 clinsig.AAAS.ad.g2.num <- length(clinsig.AAAS.ad.g2.which)
-clinsig.AAAS.ad.g2 <- x
 xcol <- factor(rep("black",times=length(x$post.x)),levels=c("black","red"))
 xcol[clinsig.AAAS.ad.g2.which] <- rep("red",times=length(clinsig.AAAS.ad.g2.which))
 xpch <- rep(1,times=length(x$post.x))
 xpch[clinsig.AAAS.ad.g2.which] <- rep(2,times=length(clinsig.AAAS.ad.g2.which))
-clinsig(
+clinsig.AAAS.ad.g2 <- clinsig(
   r2.wide.g2$pre_aaas_ad[!is.na(r2.wide.g2$post_aaas_ad)],
   r2.wide.g2$post_aaas_ad[!is.na(r2.wide.g2$post_aaas_ad)],
   coef.alpha = r.AAAS.ad,
@@ -1090,13 +1107,29 @@ x <- clinsig(
   func.mct = mean.AAAS.ag.norm,
   main = "Aggressive Assertiveness, Selfhelp",
   xlab = "Pretest score",
-  ylab = "Posttest score"
+  ylab = "Posttest score",
+  do.plot = F
 )
 relchng.AAAS.ag.g1.pos <- (x$post.x - x$pre.x) > x$relchng
 relchng.AAAS.ag.g1.neg <- (x$post.x - x$pre.x) < -x$relchng
 clinsig.AAAS.ag.g1.which <- intersect(which(relchng.AAAS.ag.g1.pos),which(x$post.x > x$crit[2]))
 clinsig.AAAS.ag.g1.num <- length(clinsig.AAAS.ag.g1.which)
-clinsig.AAAS.ag.g1 <- x
+xcol <- factor(rep("black",times=length(x$post.x)),levels=c("black","red"))
+xcol[clinsig.AAAS.ag.g1.which] <- rep("red",times=length(clinsig.AAAS.ag.g1.which))
+xpch <- rep(1,times=length(x$post.x))
+xpch[clinsig.AAAS.ag.g1.which] <- rep(2,times=length(clinsig.AAAS.ag.g1.which))
+clinsig.AAAS.ag.g1 <- clinsig(
+  r2.wide.g1$pre_aaas_ag[!is.na(r2.wide.g1$post_aaas_ag)],
+  r2.wide.g1$post_aaas_ag[!is.na(r2.wide.g1$post_aaas_ag)],
+  coef.alpha = r.AAAS.ag,
+  func.disp = sd.AAAS.ag.norm,
+  func.mct = mean.AAAS.ag.norm,
+  main = "Aggressive Assertiveness, Selfhelp",
+  xlab = "Pretest score",
+  ylab = "Posttest score",
+  col = xcol,
+  pch = xpch
+)
 
 x <- clinsig(
   r2.wide.g2$pre_aaas_ag[!is.na(r2.wide.g2$post_aaas_ag)],
@@ -1106,13 +1139,29 @@ x <- clinsig(
   func.mct = mean.AAAS.ag.norm,
   main = "Aggressive Assertiveness, Guided",
   xlab = "Pretest score",
-  ylab = "Posttest score"
+  ylab = "Posttest score",
+  do.plot = F
 )
 relchng.AAAS.ag.g2.pos <- (x$post.x - x$pre.x) > x$relchng
 relchng.AAAS.ag.g2.neg <- (x$post.x - x$pre.x) < -x$relchng
 clinsig.AAAS.ag.g2.which <- intersect(which(relchng.AAAS.ag.g2.pos),which(x$post.x > x$crit[2]))
 clinsig.AAAS.ag.g2.num <- length(clinsig.AAAS.ag.g2.which)
-clinsig.AAAS.ag.g2 <- x
+xcol <- factor(rep("black",times=length(x$post.x)),levels=c("black","red"))
+xcol[clinsig.AAAS.ag.g2.which] <- rep("red",times=length(clinsig.AAAS.ag.g2.which))
+xpch <- rep(1,times=length(x$post.x))
+xpch[clinsig.AAAS.ag.g2.which] <- rep(2,times=length(clinsig.AAAS.ag.g2.which))
+clinsig.AAAS.ag.g2 <- clinsig(
+  r2.wide.g2$pre_aaas_ag[!is.na(r2.wide.g2$post_aaas_ag)],
+  r2.wide.g2$post_aaas_ag[!is.na(r2.wide.g2$post_aaas_ag)],
+  coef.alpha = r.AAAS.ag,
+  func.disp = sd.AAAS.ag.norm,
+  func.mct = mean.AAAS.ag.norm,
+  main = "Aggressive Assertiveness, Guided",
+  xlab = "Pretest score",
+  ylab = "Posttest score",
+  col = xcol,
+  pch = xpch
+)
 
 ```
 
@@ -1135,13 +1184,28 @@ x <- clinsig(
   main = "Rathus, Selfhelp",
   xlab = "Pretest score",
   ylab = "Posttest score",
-  do.plot = T
+  do.plot = F
 )
 relchng.Rathus.g1.pos <- (x$post.x - x$pre.x) > x$relchng
 relchng.Rathus.g1.neg <- (x$post.x - x$pre.x) < -x$relchng
 clinsig.Rathus.g1.which <- intersect(which(relchng.Rathus.g1.pos),which(x$post.x > x$crit[2]))
 clinsig.Rathus.g1.num <- length(clinsig.Rathus.g1.which)
-clinsig.Rathus.g1 <- x
+xcol <- factor(rep("black",times=length(x$post.x)),levels=c("black","red"))
+xcol[clinsig.Rathus.g1.which] <- rep("red",times=length(clinsig.Rathus.g1.which))
+xpch <- rep(1,times=length(x$post.x))
+xpch[clinsig.Rathus.g1.which] <- rep(2,times=length(clinsig.Rathus.g1.which))
+clinsig.Rathus.g1 <- clinsig(
+  r2.wide.g1$pre_rathus[!is.na(r2.wide.g1$post_rathus)],
+  r2.wide.g1$post_rathus[!is.na(r2.wide.g1$post_rathus)],
+  coef.alpha = r.Rathus,
+  func.disp = sd.Rathus.norm,
+  func.mct = mean.Rathus.norm,
+  main = "Rathus, Selfhelp",
+  xlab = "Pretest score",
+  ylab = "Posttest score",
+  col = xcol,
+  pch = xpch
+)
 
 x <- clinsig(
   r2.wide.g2$pre_rathus[!is.na(r2.wide.g2$post_rathus)],
@@ -1151,13 +1215,29 @@ x <- clinsig(
   func.mct = mean.Rathus.norm,
   main = "Rathus, Guided",
   xlab = "Pretest score",
-  ylab = "Posttest score"
+  ylab = "Posttest score",
+  do.plot = F
 )
 relchng.Rathus.g2.pos <- (x$post.x - x$pre.x) > x$relchng
 relchng.Rathus.g2.neg <- (x$post.x - x$pre.x) < -x$relchng
 clinsig.Rathus.g2.which <- intersect(which(relchng.Rathus.g2.pos),which(x$post.x > x$crit[2]))
 clinsig.Rathus.g2.num <- length(clinsig.Rathus.g2.which)
-clinsig.Rathus.g2 <- x
+xcol <- factor(rep("black",times=length(x$post.x)),levels=c("black","red"))
+xcol[clinsig.Rathus.g2.which] <- rep("red",times=length(clinsig.Rathus.g2.which))
+xpch <- rep(1,times=length(x$post.x))
+xpch[clinsig.Rathus.g2.which] <- rep(2,times=length(clinsig.Rathus.g2.which))
+clinsig.Rathus.g2 <- clinsig(
+  r2.wide.g2$pre_rathus[!is.na(r2.wide.g2$post_rathus)],
+  r2.wide.g2$post_rathus[!is.na(r2.wide.g2$post_rathus)],
+  coef.alpha = r.Rathus,
+  func.disp = sd.Rathus.norm,
+  func.mct = mean.Rathus.norm,
+  main = "Rathus, Guided",
+  xlab = "Pretest score",
+  ylab = "Posttest score",
+  col = xcol,
+  pch = xpch
+)
 
 ```
 
