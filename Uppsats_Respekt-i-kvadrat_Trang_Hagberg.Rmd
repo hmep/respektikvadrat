@@ -39,6 +39,9 @@ header-includes:
    - \usepackage{hyphenat}
    - \hyphenation{nor-mal-spann nor-mal-span-net}
    - \usepackage{tabu}
+   - \usepackage{lscape}
+   - \newcommand{\blandscape}{\begin{landscape}}
+   - \newcommand{\elandscape}{\end{landscape}}
 ---
 
 ```{r preferences and dependencies, include = FALSE}
@@ -919,7 +922,7 @@ Frekvensen individer i de olika undersökta grupperna som har förändrats både
 
 se tabell \@ref(tab:descriptives)
 
-(ref:descriptives) Deskriptiva mått för primära och sekundärt utfallsmått för de tre betingelserna vid för- och eftermätningstidpunkterna.
+(ref:descriptives) Deskriptiva mått för primära och sekundärt beroende variabler liksom oberoende variabler vid studiens start.
 
 ``` {r descriptives, fig.cap='(ref:descriptives)', fig.align="center"}
 
@@ -930,6 +933,20 @@ options(OutDec= ",")
 library(pastecs)
 
 numvars <- c(5:17) # Variables in r2.long.data that we are interested in
+
+# rathus
+# aaas_ag
+# aaas_ad
+# lsas_anx
+# lsas_avo
+# lsas_int
+# lsas_per
+# lsas_sum
+# gad_sum 
+# phq_sum
+# phq_sui
+# phq_q10
+# well
 
 descriptives.lg123t1 <- stat.desc(r2.long.data[lt1,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
 descriptives.lg123t2 <- stat.desc(r2.long.data[lt2,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
@@ -949,28 +966,37 @@ descriptives.lg3t3 <- stat.desc(r2.long.data[lg3t3,numvars], basic=TRUE, desc=TR
 
 descriptives.out <- rbind(
   "Selfhelp" = cbind(
-    descriptives.lg1t1[c(9, 13), c(3,2,1)],
-#    descriptives.lg1t2[c(9, 13), c(3,2,1)],
-    descriptives.lg1t3[c(9, 13), c(3,2,1)]
+    descriptives.lg1t1[c(9, 13), c(3,2,1,4:13)]#,
+    #descriptives.lg1t3[c(9, 13), c(3,2,1,4:13)]
   ),
   "Guided" = cbind(
-    descriptives.lg2t1[c(9, 13), c(3,2,1)],
-#    descriptives.lg2t2[c(9, 13), c(3,2,1)],
-    descriptives.lg2t3[c(9, 13), c(3,2,1)]
+    descriptives.lg2t1[c(9, 13), c(3,2,1,4:13)]#,
+    #descriptives.lg2t3[c(9, 13), c(3,2,1,4:13)]
   ),
   "Waitlist" = cbind(
-    descriptives.lg3t1[c(9, 13), c(3,2,1)],
-#    descriptives.lg3t2[c(9, 13), c(3,2,1)],
-    descriptives.lg3t3[c(9, 13), c(3,2,1)]
-  )#,
-#   "All" = cbind(
-#     descriptives.lg123t1[c(9, 13), c(3,2,1)],
-# #    descriptives.lg3t2[c(9, 13), c(3,2,1)],
-#     descriptives.lg123t3[c(9, 13), c(3,2,1)]
-#   )
-)
+    descriptives.lg3t1[c(9, 13), c(3,2,1,4:13)]#,
+    #descriptives.lg3t3[c(9, 13), c(3,2,1,4:13)]
+  ))
 
-colnames(descriptives.out) <- rep(c("AAA-S Adaptive","AAA-S Aggressive","Rathus"),times = 2)
+colnames(descriptives.out) <-
+  rep(
+    c(
+      "AAA-S adaptiv",
+      "AAA-S aggressiv",
+      "Rathus",
+      "LSAS ångest",
+      "LSAS undvikande",
+      "LSAS interaktion",
+      "LSAS prestation",
+      "LSAS summa",
+      "GAD summa",
+      "PHQ summa",
+      "PHQ suidical",
+      "PHQ fråga 10",
+      "Välmåendeformuläret"
+    ),
+    times = 1 #2
+  )
 descriptives.out.rot <- t(descriptives.out)
 colnames(descriptives.out.rot) <- rep(c("M","SD"),times = 3)
 
@@ -979,9 +1005,9 @@ colnames(descriptives.out.rot) <- rep(c("M","SD"),times = 3)
 # xw = paste('All (N = ' , length(r2.long.data[lg3t1,1]) , ')', sep="")
 
 knitr::kable(round(descriptives.out.rot,1), booktabs = T, caption = "(ref:descriptives)") %>%
-  add_header_above(c("", "Selfhelp (N = 67)" = 2, "Guided (N = 69)" = 2, "Waitlist (N = 68)" = 2)) %>% #, "All (N = 204)" = 2)) %>%
-  pack_rows("Pre", 1, 3, bold = F) %>%
-  pack_rows("Post", 4, 6, bold = F)
+  add_header_above(c("", "Självhjälp (N = 67)" = 2, "Med stöd (N = 69)" = 2, "Väntlista (N = 68)" = 2)) %>% #, "All (N = 204)" = 2)) %>%
+  pack_rows("Beroende variabler", 1, 3, bold = F) %>%
+  pack_rows("Oberoende variabler", 4, 13, bold = F)
 
 ```
 
@@ -1264,7 +1290,9 @@ interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$rathus,fun=
 <!-- https://easystats.github.io/effectsize/articles/from_test_statistics.html -->
 <!-- https://jonlefcheck.net/2013/03/13/r2-for-linear-mixed-effects-models/ -->
 
+
 ```{r rm mixed models, dpi=196}
+
 
 require(nlme)
 
@@ -1496,7 +1524,7 @@ AIC(x)
 
 ```
 
-``` {r Control, fig.cap='(ref:Control)', fig.align="center", fig.width=8, fig.height=4}
+``` {r Control, fig.cap='(ref:Control)', fig.align="center", fig.width=8, fig.height=4, eval=F}
 
 #Denna r-kodchunk genererar graferna för kontrollgruppen
 
@@ -1554,9 +1582,10 @@ x <- clinsig(
 )))
 (clinsig.Rathus.g3 <- x)
 
+<!-- (ref:Control) Här har vi plottarna för AAA-S båda skalor samt RAS för Väntlistan. Rathus: `r clinsig.Rathus.g3.csrci`. AAAS-ag: `r clinsig.AAAS.ag.g3.csrci`. AAAS-ad: `r clinsig.AAAS.ad.g3.csrci`. -->
+  
 ```
 
-(ref:Control) Här har vi plottarna för AAA-S båda skalor samt RAS för Väntlistan. Rathus: `r clinsig.Rathus.g3.csrci`. AAAS-ag: `r clinsig.AAAS.ag.g3.csrci`. AAAS-ad: `r clinsig.AAAS.ad.g3.csrci`.
 
 # Diskussion
 
