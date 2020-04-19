@@ -912,8 +912,6 @@ För att bedöma absolut status för en individ vid behandlingens slut (exempelv
 
 Frekvensen individer i de olika undersökta grupperna som har förändrats både reliabelt och signifikant kan sedan summeras [@Jacobson1991].
 
-## Analys
-
 # Resultat
 
 se tabell \@ref(tab:descriptives)
