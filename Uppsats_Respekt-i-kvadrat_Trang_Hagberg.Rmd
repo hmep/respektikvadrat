@@ -835,6 +835,7 @@ Utöver materialet i boken innehåller interventionen dessutom motiverande insla
  <!-- [inspirerade av bland annat @Hayes2006a; @Dahlin2016] -->
 
 (ref:interv) Översiktlig beskrivning av interventionen Respekt i kvadrat.
+(ref:kap1) Kapitel 1 av *Assert Yourself* [@michel2008] med utökningar
 
 ```{r intervention, fig.align="center"}
 
@@ -852,7 +853,7 @@ Tema <- c(
   "Kartläggning framgångsfaktorer, planering för vidmakthållande inklusive fortsatt mängdträning och återfallsprevention")
 
 Innehall <- c(
-  "Kapitel 1 med utökningar",
+  "(ref:kap1)",
   "Kapitel 2 med utökningar om inlärning och motivation",
   "Kapitel 3 med modifieringar och utökningar om fördelar med att bryta undvikande",
   "Kapitel 4 med utökningar",
