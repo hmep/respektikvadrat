@@ -1612,7 +1612,7 @@ x å andra sidan vad våra resultat visar på (?)
 
 All data som låg till grund för inkludering eller ekludering i den aktuella studien var insamlad från självskattningsformulär. I och med att forskningspersonsinformationen som potentiella deltagare kunde läsa innan de påbörjade screeningsprocessen presenterade såväl inkluderings- som exkluderingskriterier (även om exkluderingskriterierna till viss del var allmänt formulerade) medför det risken att de som sökte till studien anpassade sina svar för att bli inkluderade. Då ingen klinisk intervju användes i screeningprocessen fanns det ingen möjlighet att på så sätt upptäcka individer som borde exkluderas. Ingen klinisk intervju inkluderades då det låg utanför studiens möjliga resurser att administrera dessa till alla potentiella deltagare. En potentiell fördel med exkluderandet av de kliniska intervjuerna är att tiden mellan påbörjad rekrytering och behandlingsstart blev kort, endast två veckor.
 
-Med nästintill 90% kvinnor i samplet var könsfördelningen ytterst ojämn. Denna ojämna fördelning går troligen att tillskriva flertalet olika faktorer. För det första rapporterar kvinnor mer oro, änglsan och ångest än män [@Socialstyrelsen2004] vilket skulle kunna göra kvinnor mer benägna att söka hjälp. För det andra tenderar män överlag att i lägre utsträckning söka vård än kvinnor även när män och kvinnor upplever liknande symtom [@Galdas2005]. Slutligen – vilket troligen är den mest påverkande faktorn i den aktuella studien – så marknadsfördes studien huvudsakligen på internet, bland annat med hjälp av annonser på sociala medier. Dessa annonser använder sig av en automatiserad algoritm som presenterar anonnserna för de individer algoritmen tror har störts odds till att trycka på dem. Data som sammanställdes efter avslutad annonsering visade på att någonstans mellan 85-90% av alla annonser visades för kvinnor.
+Med nästintill 90% kvinnor i samplet var könsfördelningen ytterst ojämn. Denna ojämna fördelning går troligen att tillskriva flertalet olika faktorer. För det första rapporterar kvinnor mer oro, änglsan och ångest än män [@Socialstyrelsen2004] vilket skulle kunna göra kvinnor mer benägna att söka hjälp. För det andra tenderar män överlag att i lägre utsträckning söka vård än kvinnor även när män och kvinnor upplever liknande symtom [@Galdas2005]. Slutligen – vilket troligen är den mest påverkande faktorn i den aktuella studien – så marknadsfördes studien huvudsakligen på internet, bland annat med hjälp av annonser på sociala medier. Dessa annonser använder sig av en automatiserad algoritm som presenterar anonnserna för de individer algoritmen tror har störst odds till att trycka på dem. Data som sammanställdes efter avslutad annonsering visade på att någonstans mellan 85-90% av alla annonser visades för kvinnor. Vi är övertygade om att detta  [@Thompson2011]
 
 Till fördel för samplets representation av populationen är att det i och med en internetbaserad behandling fanns möjlighet till ett nationellt intag av deltagare. Då det varken finns någon data om prevalens av bristande självhävdelse eller vilka samband det finns mellan den och andra faktorer hos personer i Sverige är det dock svårt att säga hur representativ för populationen samplet i den aktuella studien är.
 
@@ -1663,8 +1663,6 @@ Sidenote: Gör vi kontroller av bortfallet för att se att det inte är ett syst
 TH: Menar du de som hoppat av eller de som inte svarat på alla självskattningar?
 
 -->
-
-## Behov av ny forskning / Framtida forskning
 
 ## I relation till annan forskning, självhävdelse
 
