@@ -1268,183 +1268,231 @@ interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$rathus,fun=
 
 require(nlme)
 
-# # A null model with intercept only
-# gls.null <-
-#   gls(aaas_ad ~ 1,
-#     data = r2.long.data,
-#     na.action = na.omit
-#   )
-# AIC(gls.null)
-# # 3584,465
-# 
-# # A null model with random intercepts for subjects
-# lme.null.random.subject.intercept <-
-#   lme(
-#     fixed = aaas_ad ~ 1,
-#     data = r2.long.data,
-#     random = ~ 1 | subject,
-#     na.action = na.omit
-#   )
-# AIC(lme.null.random.subject.intercept)
-# # 3439,338
-# 
-# # A minimal test with random intercepts for subjects
-# lme.minimal.random.subject.intercept <-
-#   lme(
-#     fixed = aaas_ad ~ time * group,
-#     data = r2.long.data,
-#     random = ~ 1 | subject,
-#     na.action = na.omit
-#   )
-# AIC(lme.minimal.random.subject.intercept)
-# # 3293,069
-# 
-# # A maxed out test with random intercepts for subjects
-# lme.full.random.subject.intercept <-
-#   lme(
-#     fixed = aaas_ad ~ time * group + lsas_sum + gad_sum + phq_sum + well,
-#     data = r2.long.data,
-#     random = ~ 1 | subject,
-#     na.action = na.omit
-#   )
-# AIC(lme.full.random.subject.intercept)
-# # 3191,281
-# 
-# lme.fullsum.random.subject.messages_sent.intercept <-
-#   lme(
-#     fixed = aaas_ad ~ time * group + lsas_sum + gad_sum + phq_sum + well,
-#     data = r2.long.data,
-#     random = ~ 1 | subject / messages_sent,
-#     na.action = na.omit
-#   )
-# AIC(lme.fullsum.random.subject.messages_sent.intercept)
-# # 2021,668
-# 
-# lme.lsas.random.subject.messages_sent.intercept <-
-#   lme(
-#     fixed = aaas_ad ~ time * group + lsas_sum,
-#     data = r2.long.data,
-#     random = ~ 1 | subject / messages_sent,
-#     na.action = na.omit
-#   )
-# AIC(lme.lsas.random.subject.messages_sent.intercept)
-# # 2017,042
-# 
-# lme.lsas_nogroup.random.subject.messages_sent.intercept <-
-#   lme(
-#     fixed = aaas_ad ~ time + lsas_sum,
-#     data = r2.long.data,
-#     random = ~ 1 | subject / messages_sent,
-#     na.action = na.omit
-#   )
-# AIC(lme.lsas_nogroup.random.subject.messages_sent.intercept)
-# # 2011,868
-# 
-# lme.lsas.random.subject.intercept <-
-#   lme(
-#     fixed = aaas_ad ~ time * group + lsas_sum,
-#     data = r2.long.data,
-#     random = ~ 1 | subject,
-#     na.action = na.omit
-#   )
-# AIC(lme.lsas.random.subject.intercept)
-# # 3184,383
-# 
-# ####################
-# 
-# x <-
-#   lme(
-#     fixed = aaas_ad ~ time * group + lsas_sum,
-#     data = r2.long.data,
-#     random = ~ time | subject / messages_sent,
-#     na.action = na.omit
-#   )
-# AIC(x)
-# # 2028,867
-# 
-# x <-
-#   lme(
-#     fixed = aaas_ad ~ time + group + lsas_sum,
-#     data = r2.long.data,
-#     random = ~ time | subject / messages_sent,
-#     na.action = na.omit
-#   )
-# AIC(x)
-# # 2024,368
-# 
-# x <-
-#   lme(
-#     fixed = aaas_ad ~ group + lsas_sum,
-#     data = r2.long.data,
-#     random = ~ time | subject / messages_sent,
-#     na.action = na.omit
-#   )
-# AIC(x)
-# # 2066,425
-# 
-# x <-
-#   lme(
-#     fixed = aaas_ad ~ group * time + lsas_sum,
-#     data = r2.long.data,
-#     random = ~ 1 | subject / messages_sent,
-#     na.action = na.omit
-#   )
-# AIC(x)
-# # 2017,042
-# 
-# x <-
-#   lme(
-#     fixed = aaas_ad ~ time * group + lsas_sum,
-#     data = r2.long.data,
-#     random = ~ 1 | subject,
-#     na.action = na.omit
-#   )
-# AIC(x)
-# # 3184,383
-# 
-# x <-
-#   lme(
-#     fixed = aaas_ad ~ time * group + lsas_sum,
-#     data = r2.long.data,
-#     random = ~ time | subject,
-#     na.action = na.omit
-#   )
-# AIC(x)
-# # 3184,521
+#########
+#AAA-S Ad
+#########
 
-######
+gls.null <-
+  gls(aaas_ad ~ 1,
+    data = r2.long.data,
+    na.action = na.omit,
+    method = "ML"
+  )
+AIC(gls.null)
+# 3623,244
 
 x <-
   lme(
-    fixed = aaas_ad ~ group * time + lsas_sum,
+    fixed = aaas_ad ~ 1,
     data = r2.long.data,
-    random = ~ 1 | subject / messages_sent,
-    na.action = na.omit
+    random = ~ 1 | subject,
+    na.action = na.omit,
+    method = "ML"
   )
 AIC(x)
-# 2017,042
+# 3476,178
 
 x <-
   lme(
-    fixed = aaas_ag ~ group * time + lsas_sum,
+    fixed = aaas_ad ~ time * group,
     data = r2.long.data,
-    random = ~ 1 | subject / messages_sent,
-    na.action = na.omit
+    random = ~ 1 | subject,
+    na.action = na.omit,
+    method = "ML"
   )
 AIC(x)
-# 1912,203
+# 3333,222
 
 x <-
   lme(
-    fixed = rathus ~ group * time + lsas_sum,
+    fixed = aaas_ad ~ time * group + lsas_sum + gad_sum + phq_sum + well,
     data = r2.long.data,
-    random = ~ 1 | subject / messages_sent,
-    na.action = na.omit
+    random = ~ 1 | subject,
+    na.action = na.omit,
+    method = "ML"
   )
 AIC(x)
-# 2544,352
+# 3203,906 
 
+x <-
+  lme(
+    fixed = aaas_ad ~ time * group + lsas_sum,
+    data = r2.long.data,
+    random = ~ 1 | subject,
+    na.action = na.omit,
+    method = "ML"
+  )
+AIC(x)
+# 3213,845
 
+x <-
+  lme(
+    fixed = aaas_ad ~ time * group + lsas_sum + well,
+    data = r2.long.data,
+    random = ~ 1 | subject,
+    na.action = na.omit,
+    method = "ML"
+  )
+AIC(x)
+# 3200,44 <!------ med random intercept
+
+x <-
+  lme(
+    fixed = aaas_ad ~ time * group + lsas_sum + well,
+    data = r2.long.data,
+    random = ~ time | subject,
+    na.action = na.omit,
+    method = "ML"
+  )
+AIC(x)
+# 3199,89 <!------ med random slope och intercept ***
+
+#########
+#AAA-S Ag
+#########
+
+gls.null <-
+  gls(aaas_ag ~ 1,
+    data = r2.long.data,
+    na.action = na.omit,
+    method = "ML"
+  )
+AIC(gls.null)
+# 3326,228
+
+x <-
+  lme(
+    fixed = aaas_ag ~ 1,
+    data = r2.long.data,
+    random = ~ 1 | subject,
+    na.action = na.omit,
+    method = "ML"
+  )
+AIC(x)
+# 3097,999
+
+x <-
+  lme(
+    fixed = aaas_ag ~ time * group,
+    data = r2.long.data,
+    random = ~ 1 | subject,
+    na.action = na.omit,
+    method = "ML"
+  )
+AIC(x)
+# 3062,21
+
+x <-
+  lme(
+    fixed = aaas_ag ~ time * group + lsas_sum + gad_sum + phq_sum + well,
+    data = r2.long.data,
+    random = ~ 1 | subject,
+    na.action = na.omit,
+    method = "ML"
+  )
+AIC(x)
+# 3029,237
+
+x <-
+  lme(
+    fixed = aaas_ag ~ time * group + lsas_sum + well,
+    data = r2.long.data,
+    random = ~ 1 | subject,
+    na.action = na.omit,
+    method = "ML"
+  )
+AIC(x)
+# 3026,527 <!------ med random intercept ***
+
+x <-
+  lme(
+    fixed = aaas_ag ~ time * group + lsas_sum + well,
+    data = r2.long.data,
+    random = ~ time | subject,
+    na.action = na.omit,
+    method = "ML"
+  )
+AIC(x)
+# 3034,348 <!------ med random slope och intercept
+
+########
+# Rathus
+########
+
+gls.null <-
+  gls(rathus ~ 1,
+    data = r2.long.data,
+    na.action = na.omit,
+    method = "ML"
+  )
+AIC(gls.null)
+# 4760,453
+
+x <-
+  lme(
+    fixed = rathus ~ 1,
+    data = r2.long.data,
+    random = ~ 1 | subject,
+    na.action = na.omit,
+    method = "ML"
+  )
+AIC(x)
+# 4601,001
+
+x <-
+  lme(
+    fixed = rathus ~ time * group,
+    data = r2.long.data,
+    random = ~ 1 | subject,
+    na.action = na.omit,
+    method = "ML"
+  )
+AIC(x)
+# 4377,84
+
+x <-
+  lme(
+    fixed = rathus ~ time * group + lsas_sum + gad_sum + phq_sum + well,
+    data = r2.long.data,
+    random = ~ 1 | subject,
+    na.action = na.omit,
+    method = "ML"
+  )
+AIC(x)
+# 4051,652
+
+x <-
+  lme(
+    fixed = rathus ~ time * group + lsas_sum,
+    data = r2.long.data,
+    random = ~ 1 | subject,
+    na.action = na.omit,
+    method = "ML"
+  )
+AIC(x)
+# 4068,395
+
+x <-
+  lme(
+    fixed = rathus ~ time * group + lsas_sum + well,
+    data = r2.long.data,
+    random = ~ 1 | subject,
+    na.action = na.omit,
+    method = "ML"
+  )
+AIC(x)
+# 4048,568 <!------ med random intercept
+
+x <-
+  lme(
+    fixed = rathus ~ time * group + lsas_sum + well,
+    data = r2.long.data,
+    random = ~ time | subject,
+    na.action = na.omit,
+    method = "ML"
+  )
+AIC(x)
+# 4041,938 <!------ med random slope och intercept ***
 
 ```
 
