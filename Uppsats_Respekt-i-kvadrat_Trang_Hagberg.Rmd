@@ -866,6 +866,7 @@ Se tabell \@ref(tab:intervention) för en översiktlig genomgång av innehållet
  <!-- [inspirerade av bland annat @Hayes2006a; @Dahlin2016] -->
 
 (ref:interv) Översiktlig beskrivning av interventionen Respekt i kvadrat.
+(ref:kap1) Kapitel 1 av *Assert Yourself* [@michel2008] med utökningar
 
 ```{r intervention, fig.align="center"}
 
@@ -883,7 +884,7 @@ Tema <- c(
   "Kartläggning framgångsfaktorer, planering för vidmakthållande inklusive fortsatt mängdträning och återfallsprevention")
 
 Innehall <- c(
-  "Kapitel 1 med utökningar",
+  "(ref:kap1)",
   "Kapitel 2 med utökningar om inlärning och motivation",
   "Kapitel 3 med modifieringar och utökningar om fördelar med att bryta undvikande",
   "Kapitel 4 med utökningar",
@@ -943,8 +944,6 @@ För att bedöma absolut status för en individ vid behandlingens slut (exempelv
 <!-- De graferna som innehåller a, b, och c i resultatdelen bör i sin figurtext ha en beskrivning av vad dessa bokstäver står för, eller en hänvisning tillbaka till detta avsnitt -->
 
 Frekvensen individer i de olika undersökta grupperna som har förändrats både reliabelt och signifikant kan sedan summeras [@Jacobson1991].
-
-## Analys
 
 # Resultat
 
@@ -1636,15 +1635,29 @@ Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt s
 x @Baumeister2014a om att guided treatment tenderar att vara superior och att hur kunniga terapeuterna är tenderar att vara av liten betydelse
 x å andra sidan vad våra resultat visar på (?)
 -->
+
+All data som låg till grund för inkludering eller exkludering i den aktuella studien var insamlad från självskattningsformulär. I och med att forskningspersonsinformationen som potentiella deltagare kunde läsa innan de påbörjade screeningsprocessen presenterade såväl inkluderings- som exkluderingskriterier (även om exkluderingskriterierna till viss del var allmänt formulerade) medför det risken att de som sökte till studien anpassade sina svar för att bli inkluderade. Då ingen klinisk intervju användes i screeningprocessen fanns det ingen möjlighet att på så sätt upptäcka individer som borde exkluderas. Detta kan medföra att individer som egentligen borde ha exkluderats, på grund av icke sanningsenliga svar, istället blev inkluderade. Ingen klinisk intervju inkluderades då det låg utanför studiens möjliga resurser att administrera dessa till alla potentiella deltagare. En fördel med att inte ha använt kliniska intervjuerna är att tiden mellan påbörjad rekrytering och behandlingsstart blev kort, endast två veckor.
+
+
 ### Samplets representativitet för populationen
 
 <!-- Avsnittet bör få en ny underrubrik, om en underrubrik nu ens är nödvändigt -->
 
-All data som låg till grund för inkludering eller ekludering i den aktuella studien var insamlad från självskattningsformulär. I och med att forskningspersonsinformationen som potentiella deltagare kunde läsa innan de påbörjade screeningsprocessen presenterade såväl inkluderings- som exkluderingskriterier (även om exkluderingskriterierna till viss del var allmänt formulerade) medför det risken att de som sökte till studien anpassade sina svar för att bli inkluderade. Då ingen klinisk intervju användes i screeningprocessen fanns det ingen möjlighet att på så sätt upptäcka individer som borde exkluderas. Ingen klinisk intervju inkluderades då det låg utanför studiens möjliga resurser att administrera dessa till alla potentiella deltagare. En potentiell fördel med exkluderandet av de kliniska intervjuerna är att tiden mellan påbörjad rekrytering och behandlingsstart blev kort, endast två veckor.
+Med nästintill 90% kvinnor i samplet var könsfördelningen ytterst ojämn. Denna ojämna fördelning går troligen att tillskriva flertalet olika faktorer. För det första rapporterar kvinnor mer oro, änglsan och ångest än män [@Socialstyrelsen2004] vilket skulle kunna göra kvinnor mer benägna att söka hjälp. För det andra tenderar män överlag att i lägre utsträckning söka vård än kvinnor även när män och kvinnor upplever liknande symtom [@Galdas2005]. Slutligen – vilket troligen är den mest påverkande faktorn i den aktuella studien – så marknadsfördes studien huvudsakligen på internet, bland annat med hjälp av annonser på sociala medier. Dessa annonser använder sig av en automatiserad algoritm som annonserar för de individer algoritmen tror har störst odds till att trycka på dem. Data som sammanställdes efter avslutad annonsering visade på att någonstans mellan 85-90% av alla annonser visades för kvinnor. 
 
-Med nästintill 90% kvinnor i samplet var könsfördelningen ytterst ojämn. Denna ojämna fördelning går troligen att tillskriva flertalet olika faktorer. För det första rapporterar kvinnor mer oro, änglsan och ångest än män [@Socialstyrelsen2004] vilket skulle kunna göra kvinnor mer benägna att söka hjälp. För det andra tenderar män överlag att i lägre utsträckning söka vård än kvinnor även när män och kvinnor upplever liknande symtom [@Galdas2005]. Slutligen – vilket troligen är den mest påverkande faktorn i den aktuella studien – så marknadsfördes studien huvudsakligen på internet, bland annat med hjälp av annonser på sociala medier. Dessa annonser använder sig av en automatiserad algoritm som presenterar anonnserna för de individer algoritmen tror har störst odds till att trycka på dem. Data som sammanställdes efter avslutad annonsering visade på att någonstans mellan 85-90% av alla annonser visades för kvinnor. Vi är övertygade om att detta  [@Thompson2011]
+<!--Vi är övertygade om att detta...  [@Thompson2011] ? -->
 
-Till fördel för samplets representation av populationen är att det i och med en internetbaserad behandling fanns möjlighet till ett nationellt intag av deltagare. Då det varken finns någon data om prevalens av bristande självhävdelse eller vilka samband det finns mellan den och andra faktorer hos personer i Sverige är det dock svårt att säga hur representativ för populationen samplet i den aktuella studien är.
+Över 70% av vårt sample hade avslutade universitets- eller högskoleutbildningar och ytterligare 10% studerade vid behandlingens start. Denna siffra skiljer sig markant från Sveriges befolking, där endast 43% läst vidare efter gymnasiet [@SCB2020]. Delar av förklaringen till att en så stor andel av vårt sampel har studerat på universitet eller högskola skulle kunna vara att majoriteten av studiens deltagare är kvinnor, och att de i större utsträckning än män studerar vidare efter gymnasiet [@SCB2020]. Då väldigt få deltagare i den aktuella studien hade yrkesutbildning, gymnasieutbildning, folkskola eller grundskola som högsta avslutad utbildning bör man vara restriktiv med att applicera studiens resultat inom dessa grupper.
+
+*jag har svårt att veta hur jag ska formulera stycket ovan utan att det implicit (eller explicit!) ska låta nedvärderande mot personer med lägre utbildning. Jag tror att det finns en poäng i det jag vill ha sagt, jag vet bara inte hur jag ska säga det. Den sista meningen är i dagsläget också horribelt klumpig att läsa även om jag tror att den är grammatiskt korrekt*
+
+<!-- Skriva några rader om utbildnignsnivå och att den är långt ifrån representativ för Sveriges befolkning?
+https://www.scb.se/hitta-statistik/sverige-i-siffror/utbildning-jobb-och-pengar/utbildningsnivan-i-sverige/
+-->
+
+Både att väldigt många kvinnor deltog i den aktuella studien, och att en så stor andel av samplet hade påbörjade eller avslutade universitetsstudier gör det svårare att generalisera resultatet till Sveriges befolkning i stort. Till fördel för samplets representation av populationen är däremot att det i och med en internetbaserad behandling fanns möjlighet till ett nationellt intag av deltagare. 
+
+Då det varken finns någon data om prevalens av bristande självhävdelse i Sveriges population, eller vilka demografiska faktorer denna brist korrelerar med, är det dock ytterst svårt att säga hur representativ för populationen samplet i den aktuella studien är.
 
 <!--
 Bör den data vi refererar till i avsnittet ovan bifogas/redovisas på något sätt? Vi kan även argumentera för att algoritmen till stor del förklarar spridningen i ålder hos vårt sample då majoriteten av de som fick se reklamen var mellan 35-54 år gamla
@@ -1676,7 +1689,7 @@ I denna studie placerades en tredjedel av deltagarna på en väntlista. En risk 
 
 Då behandlingsmaterialet översatts till svenska inför den aktuella studien – och originalmaterialet användes utan inslag av behandlarstöd – fanns det ingen behandlarstödsmanual eller dylikt för studiens behandlare att använda sig av. Behandlarna hade utöver detta ingen tidigare erfarenhet av internetbaserad psykologisk behandling. Dock hade båda behandlarna tidigare erfarenhet av ansikte mot ansikte-behandling med individer med självrapporterad bristande självhävdelse. Bristen på erfarenhet av internetbaserad behandling kan ha påverkat kvaliten i det behandlarstöd som gavs. Å andra sidan har det visat sig att tidigare erfarenheter och kunskaper om I-KBT hos behandlare inte gör nämnvärd skillnad så länge de har grundläggande kunskaper inom psykologisk behandling [@Baumeister2014a]. Båda behandlarna hade även tillgång till både ett dokument med generella förhållningssätt vid internetbehandling samt till vid-behov-handledning och stöd av en legitimerad psykolog med omfattande erfarenhet av I-KBT. Den generella målsättningen var att behandlarna skulle spendera cirka 15 minuter per vecka och deltagare. Detta varierade dock nämnvärt beroende på hur frekvent behandlarens deltagare hörde av sig till behandlaren med behandlingsrelaterade frågor samt hur utförligt deltagarna besvarade behandlingsprogrammets övningar. 
 
-Ytterligare en potentiell brist i studien är användandet av de nyligen översatta versionerna av självskattningsformulären AAA-S [@Thompson2011] och RAS [@Rathus1973]. Då dessa skalor ej fanns tillgängliga på svenska översattes de inför rekryteringsstart. Det finns många rekommendation och riktlinjer för hur översättningar bör gå till [se @Beaton2000 och @Jones2001 för två väl använda metoder]. Ett gemensamt tema i dessa översättningsmetoder är att materialet oberoende översätts från originalspråk till planerat användningsspråk (i det rådande fallet till svenska) av åtminstone två personer och att den översatta versionen sedan översätts tillbaka till sitt originalspråk av ytterligare oberoende översättare. AAA-S eller RAS översattes inför föreliggande uppsats endast en gång från engelska till svenska.
+Ytterligare en potentiell brist i studien är användandet av de nyligen översatta versionerna av självskattningsformulären AAA-S [@Thompson2011] och RAS [@Rathus1973]. Då dessa skalor ej fanns tillgängliga på svenska översattes de inför rekryteringsstart. Det finns många rekommendation och riktlinjer för hur översättningar bör gå till [se @Beaton2000; och @Jones2001 för två väl använda metoder]. Ett gemensamt tema i dessa översättningsmetoder är att materialet oberoende översätts från originalspråk till planerat användningsspråk (i det rådande fallet till svenska) av åtminstone två personer och att den översatta versionen sedan översätts tillbaka till sitt originalspråk av ytterligare oberoende översättare. AAA-S eller RAS översattes inför föreliggande uppsats endast en gång från engelska till svenska.
 
 De nyöversatta skalorna är ej validerade och saknar svenska normer. Istället används data för både AAA-S och RAS från student-sample 1 från @Thompson2011 som icke-kliniska normer. Fördelen med dessa data är dels att de är relativt aktuella, dels att de härrör från ett och samma sample och därför ger goda möjligheter till jämförelser sins emellan. Data från föreliggande uppsats skulle potentiellt kunna användas för att validera de svensköversatta skalorna i en uppföljande studie, dock endast med dilemmat att båda översättningar på en och samma gång är icke-validerade och idealiska kriterier för varandras validering; det saknas tyvärr vedertagna skalor i litteraturen för *assertiveness* utöver RAS och AAA-S. Ytterligare en begränsning för ett sådan validering är att det sample som undersöks i den här uppsatsen har en förmodad slagsida åt passiv självhävdelse och sannolikt inte innehåller tillräckligt med data från individer som kan antas ha överskott av aggressiv självhävdelse. Idealiskt sett skulle denna brist avhjälpas i kommande kompletterande undersökningar.
 
