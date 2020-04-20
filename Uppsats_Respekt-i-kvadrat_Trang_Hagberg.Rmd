@@ -46,8 +46,9 @@ header-includes:
 
 set.seed(42) # Seed for random number generation
 
-options(contrasts=c("contr.sum","contr.poly")) # Sum-to-zero contrasts for factors
-
+#options(contrasts=c("contr.sum","contr.poly")) # Sum-to-zero contrasts for factors
+options(contrasts=c('contr.treatment','contr.poly'))
+ 
 options(knitr.table.format = "latex")
 
 options(format.args = list(decimal.mark = ',', big.mark = ' '))
@@ -1414,11 +1415,6 @@ scatterplotMatrix(~ aaas_ad + aaas_ag + rathus|time, data = r2.long.data[lg3,],
 
 ```{r rm mixed models, dpi=196}
 
-anova_pre_rathus = aov(r2.wide.data$pre_rathus ~ r2.wide.data$group)
-anova_pre_aaas_ad = aov(r2.wide.data$pre_aaas_ad ~ r2.wide.data$group)
-anova_pre_aaas_ag = aov(r2.wide.data$pre_aaas_ag ~ r2.wide.data$group)
-anova_pre_lsas_sum = aov(r2.wide.data$pre_lsas_sum ~ r2.wide.data$group)
-
 require(nlme)
 
 #########
@@ -1428,67 +1424,81 @@ require(nlme)
 # A null model
 gls.null <-
   gls(aaas_ad ~ 1,
-    data = r2.long.data,
-    na.action = na.omit,
-    method = "ML"
-  )
-summary(gls.null)
-summary(gls.null)$tTable
-summary(gls.null)$AIC
-#coef(gls.null)
+      data = r2.long.data,
+      na.action = na.omit,
+      method = "ML")
 
 # Adding a random intercept
-x <-
-  lme(aaas_ad ~ 1,
-      random = ~ 1 | subject,
+lme.int <-
+  lme(
+    aaas_ad ~ 1,
+    random = ~ 1 |
+      subject,
     data = r2.long.data,
     na.action = na.omit,
     method = "ML"
   )
-summary(x)
-summary(x)$tTable
-summary(x)$AIC
-#coef(x)
 
 # Adding a random slope
-x <-
-  lme(aaas_ad ~ 1,
-      random = ~ time | subject,
+lme.int.slo <-
+  lme(
+    aaas_ad ~ 1,
+    random = ~ time |
+      subject,
     data = r2.long.data,
     na.action = na.omit,
     method = "ML"
   )
-summary(x)
-summary(x)$tTable
-summary(x)$AIC
-#coef(x)
 
-# Adding a first fixed effect (group)
-x <-
-  lme(aaas_ad ~ group * time,
-      random = ~ 1 | subject,
+# Adding a first fixed effect: group
+lme.int.slo.mini.group <-
+  lme(
+    aaas_ad ~ group,
+    random = ~ 1 |
+      subject,
     data = r2.long.data,
     na.action = na.omit,
     method = "ML"
   )
-#summary(x)
-summary(x)$tTable
-summary(x)$AIC
-#coef(x)
 
-# Adding a first fixed effect (group)
-x <-
-  lme(aaas_ad ~ group,
-      random = ~ time | subject,
+# Adding a first fixed effect: group * time
+lme.int.slo.mini.group.time <-
+  lme(
+    aaas_ad ~ group * time,
+    random = ~ 1 |
+      subject,
     data = r2.long.data,
     na.action = na.omit,
     method = "ML"
   )
-#summary(x)
-summary(x)$tTable
-summary(x)$AIC
+
+# Full model
+lme.int.slo.mini.all <-
+  lme(
+    aaas_ad ~ group * time + lsas_sum + gad_sum + phq_sum + well,
+    random = ~ 1 |
+      subject,
+    data = r2.long.data,
+    na.action = na.omit,
+    method = "ML"
+  )
+
+anova(gls.null,lme.int,lme.int.slo,lme.int.slo.mini.group,lme.int.slo.mini.group.time)
+
+```
+
+```{r rm mixed x, dpi=196, eval=F}
+
+x3.sum <- summary(x3)
+x3.sum$tTable
+x3.sum$AIC
 #coef(x)
-plot(x)
+plot(x3, type = c("p", "smooth"))
+plot(x3, sqrt(abs(resid(.))) ~ fitted(.), type = c("p", "smooth"))
+# library(lattice)
+# qqmath(x, id = 0.05)
+
+anova(x1,x2,x3)
 
 # Adding a first fixed effect (group)
 x <-
