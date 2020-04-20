@@ -100,6 +100,9 @@ r2.raw_conversations.data <- read_excel(raw_excel_conversations)
 # Remove cases that should be excluded (they don't meet the inclusion criteria but was erroneously included)
 r2.raw.data <- r2.raw.data[-c(13,48,52,97,158),]
 
+# Remove outliers
+# r2.raw.data <- r2.raw.data[-c(117),]
+
 # Fix missing data labels
 r2.raw.data[r2.raw.data == "[missing data]"] <- NA
 r2.raw.data[r2.raw.data == "NA"] <- NA
@@ -831,29 +834,30 @@ Materialet är översatt och anpassat till svenska förhållanden av TH med till
 
 #### Ökat fokus på beteendeexperiment in vivo  
 
-Originalmaterialet innehåller avsnitt för både vägledd kognitiv omstrukturering i terapirummet och kognitiv omstrukturering via beteendeexperiment. Kognitiv omstrukturering går vanligtvis till så att klienten i hemläxa fyller i ett formulär där hen identifierar hindrande tankar, känslor och beteenden (inklusive undvikande- och flyktbeeteenden, så kallade säkerhetsbeteenden) i situationen. Klienten ombeds också fylla i identifierande hjälpsamma tankar som kan balansera de så kallade negativa automatiska tankarna som är uttryck för förmodade livsregler och grundantaganden om den egna förmågan och andras avsikter. Klienten får också skatta sin nivå av obehag/ångest både och före efter identifikationen av de balanserande tankarna. För Respekt i kvadrat har avsnitten för vägledd kognitiv omstrukturering förenklats, utifrån bedömningen att dessa inslag hade krävt ett mer omfattande behandlingsupplägg än de 15 minuters stöd per vecka som hade avsatts för varje deltagare i gruppen `r xg2="Med stöd";xg2`: Utifrån behandlarnas (begränsade) erfarenhet av kognitiv omstrukturering har klienter mer eller mindre lätt för att strukturerat identifiera de olika delarna av formulär för kognitiv omstrukturering, och kräver mer eller mindre stöd i processen. Det finns också anledning att tro att det för en person med ångestrelaterat lidande -- som för huvuddelen av deltagarna i programmet -- är betydligt enklare än för en nedstämd eller deprimerad person att finna situationer som är lämpliga att träna i; ångest kan i sig ses som en signal för nyinlärning [@Barrett2016a]. Formulären för kognitiv omstrukturering har i Respekt i kvadrat ersatts av enklare situationsregistreringsformulär med kartläggning av undvikande, som lägger grund för därpå följande planering av beteendeexperiment. 
+Originalmaterialet innehåller avsnitt för både vägledd kognitiv omstrukturering i terapirummet och kognitiv omstrukturering via beteendeexperiment. Kognitiv omstrukturering går vanligtvis till så att klienten i hemläxa fyller i ett formulär där hen identifierar hindrande tankar, känslor och beteenden (inklusive undvikande- och flyktbeeteenden, så kallade säkerhetsbeteenden) i situationen. Klienten ombeds också fylla i identifierande hjälpsamma tankar som kan balansera de så kallade negativa automatiska tankarna som är uttryck för förmodade livsregler och grundantaganden om den egna förmågan och andras avsikter. Klienten får också skatta sin nivå av obehag/ångest både och före efter identifikationen av de balanserande tankarna. För Respekt i kvadrat har avsnitten för vägledd kognitiv omstrukturering förenklats, utifrån bedömningen att dessa inslag hade krävt någon form av stöd för samtliga grupper -- kanske även mer än de 15 minuters stöd per vecka som hade avsatts för varje deltagare i gruppen `r xg2="Med stöd";xg2`: Utifrån behandlarnas (begränsade) erfarenhet av kognitiv omstrukturering har klienter mer eller mindre lätt för att strukturerat identifiera de olika delarna av formulär för kognitiv omstrukturering, och kräver mer eller mindre stöd i processen. Det finns också anledning att tro att det för en person med ångestrelaterat lidande -- som för huvuddelen av deltagarna i programmet -- är betydligt enklare än för en nedstämd eller deprimerad person att finna situationer som är lämpliga att träna i; ångest kan i sig ses som en signal för nyinlärning [@Barrett2016a]. Formulären för kognitiv omstrukturering har i Respekt i kvadrat ersatts av enklare situationsregistreringsformulär med kartläggning av undvikande, som lägger grund för därpå följande planering av beteendeexperiment. 
 
 #### En neurovetenskaplig och kontextuell inramning av 'kognitioner'
 
-Överlag har ordet för den enligt kognitiv omstrukturering verksamma komponenten 'tankar' i texten ersatts av ordet 'förutsägelser'. En negativ förutsägelse i en specifik situation (exempelvis om den egna förmågan att klara av upplevelsen av ångest eller vilken konsekvensen ska bli av konstruktiv självhävdelse) är situerad i kontexten; 'negativa tankar' kan i enlighet med principerna i @Beck1979 förväxlas med 'livsregler' och 'grundantaganden' (som kan betraktas som mer eller mindre generaliserade förutsägelser). 
+Överlag har ordet för den enligt kognitiv omstrukturering verksamma komponenten 'tankar' i texten ersatts av ordet 'förutsägelser'. En negativ förutsägelse i en specifik situation (exempelvis om den egna förmågan att klara av upplevelsen av ångest eller vilken konsekvensen ska bli av konstruktiv självhävdelse) är förankrad i kontexten; 'negativa tankar' kan i enlighet med principerna i @Beck1979 förväxlas med 'livsregler' och 'grundantaganden' (som kan betraktas som mer eller mindre generaliserade förutsägelser). 
 
-Ordvalet är dessutom i linje med aktuell förståelse enligt paradigmet prediktiv kodning om den övergripande funktionen av det centrala nervsystemet (detta hopp mellan analysnivåer får snart sin förklaring): Att med hjälp av ytterst begränsade sensoriska indata guida betydligt mer omfattande neuronal *top-down*-aktivitet för att predicera organismens yttre såväl som inre kontext [@Pezzulo2015; @Clark2016], inklusive egen motoraktivitet. Enligt detta synsätt är exempelvis den samlade upplevelsen av ångest (kroppsreaktioner, tankar, beteenden) detsamma som förutsägelser om bristande resurshushållning [@FeldmanBarrett2009]. En person som på så sätt uppfattar miljön som aversiv kan mobilisera resurser för att sätta sig i säkerhet. Men om förutsägelsen är felaktig, enkelt uttryckt på grund av allt för stort inflytande av kortikal *top-down*-aktivitet på bekostnad av sensorisk känslighet för *bottom-up*-aktivitet, riskerar individen att fastna i förutsägelser om brister i energiregleringen som blir självuppfyllande profetior genom kombinationen av alltför långvarig allostatisk belastning och undvikande som gör att organismen går miste om belöningar och återhämtning. @FeldmanBarrett2009 sammanbryggar elegant den aktuell neurovetenskap med det moderna inlärningsteoretiska perspektivet på ångest och depression, där den gemensamma vidmakthållande faktorn är undvikande -- beteendemässigt och upplevelsemässigt.
+Ordvalet är dessutom i linje med aktuell förståelse enligt paradigmet prediktiv kodning om den övergripande funktionen av det centrala nervsystemet (detta hopp mellan analysnivåer får snart sin förklaring). Funktionen är att med hjälp av ytterst begränsade sensoriska indata guida betydligt mer omfattande neuronal *top-down*-aktivitet för att predicera organismens yttre såväl som inre kontext [@Pezzulo2015; @Clark2016], inklusive egen motoraktivitet. Enligt detta synsätt är exempelvis den samlade upplevelsen av ångest (kroppsreaktioner, tankar, beteenden) detsamma som *förutsägelser* om bristande resurshushållning [@FeldmanBarrett2009]. En person som på så sätt uppfattar miljön som aversiv kan mobilisera resurser för att sätta sig i säkerhet. Men om förutsägelsen är felaktig, enkelt uttryckt på grund av allt för stort inflytande av kortikal *top-down*-aktivitet på bekostnad av sensorisk känslighet för *bottom-up*-aktivitet, riskerar individen att fastna i förutsägelser om brister i energiregleringen. Dessa blir självuppfyllande profetior genom kombinationen av alltför långvarig allostatisk belastning och undvikande som gör att organismen går miste om belöningar och återhämtning. @FeldmanBarrett2009 sammanbryggar elegant den aktuella neurovetenskapen med det moderna inlärningsteoretiska perspektivet på ångest och depression, där den gemensamma vidmakthållande faktorn är undvikande -- beteendemässigt och upplevelsemässigt.
 
-Utifrån *tidigare* erfarenheter kan en individ ha giltiga och begripliga upplevelser av ångest och rädsla som leder till undvikande *här och nu*, som i sin tur gör att individen går miste om sådant som hen värdesätter -- exempelvis att hävda sina åsikter, få mer tid till egna intressen, få närhet och andra naturliga förstärkningar för stanna-kvar-och-märk-att-ångesten-går-över-beteenden. I Respekt i kvadrat ligger fokus på aktivering av beteenden som är förknippade med det som klienten själv uppfattar som konstruktiv självhävdelse -- så länge som det också innebär deltagande i livet. I programmet ligger tonvikten på att hjälpa deltagaren att så snabbt som möjligt och i så många kontexter som möjligt genomföra beteendeexperiment i situationer som är svåra. 
+Utifrån *tidigare* erfarenheter kan en individ ha giltiga och begripliga upplevelser av ångest och rädsla som leder till undvikande *här och nu*. Detta kan i sin tur göra att individen går miste om sådant som hen värdesätter -- exempelvis att hävda sina åsikter, få mer tid till egna intressen, få närhet och andra naturliga förstärkningar för stanna-kvar-och-märk-att-ångesten-går-över-beteenden. I Respekt i kvadrat ligger fokus på aktivering av beteenden i enlighet med klientens värderade riktning. I programmet ligger tonvikten på att hjälpa deltagaren att genomföra beteendeexperiment så snabbt som möjligt och i så många svåra situationer som möjligt. 
 
 #### Metoder för att bryta rädsloinlärt undvikande
 
-Den stora utmaningen i behandling av ångestsyndrom är att överbrygga undvikandet som följer av rädsloinlärning. @Ohman2001 konstaterar att rädsloinlärning inte så lätt att påverka med kognitiv kontroll, inte minst för att de neuronala rädslokretsarna vid amygdala ligger så djupt förankrade i limbiska delar av hjärnan och mer eller mindre lever sitt eget liv. Det finns åtminstone två sätt att gå runt problemet: 
+Den stora utmaningen i behandling av ångestsyndrom är att överbrygga undvikandet som följer av rädsloinlärning. @Ohman2001 konstaterar att rädsloinlärning inte så lätt går att påverka med kognitiv kontroll, inte minst för att de neuronala rädslokretsarna vid amygdala ligger så djupt förankrade i limbiska delar av hjärnan och mer eller mindre lever sitt eget liv. Det finns fler sätt att gå runt problemet: 
 
 - värden, långsiktiga skäl att uppsöka sit
 - direkt kontignent belöning, ex återkoppling och uppmuntran från terapeut
 
 meta-perspektiv på inlärning som är symptomatiskt med ett affektfokus dweck
 
-2) och genom tillägg av motiverande avsnitt bryta undvikande
+<!-- 2) och genom tillägg av motiverande avsnitt bryta undvikande -->
 
 
-3) för beteendeexperiment/beteendeaktivering
+<!-- 3) för beteendeexperiment/beteendeaktivering -->
+emotionellt undvikand
 
 . Båda dessa justeringar syftade till att förenkla administrationen av materialet över internet, samt att bättre rikta in materialet i enlighet med rationalen för beteendeexperiment -- det är genom att i praktiken testa sina förutsägelser och dra slutsatser om både utfall och egen förmåga som oddsen för ökat engagemang i livet förbättrats. 
 
@@ -945,6 +949,37 @@ För att bedöma absolut status för en individ vid behandlingens slut (exempelv
 
 Frekvensen individer i de olika undersökta grupperna som har förändrats både reliabelt och signifikant kan sedan summeras [@Jacobson1991].
 
+
+### Mixed model
+
+(ordinaldata vs kvotdata, vi har det förra men utgår från det senare)
+
+PATRIK VILL OMFORMULERA Vi tror att vi genom behandling kan få större spridning i utfall än för väntlistebetingelsen. Det är ett skäl att välja en mixed model för analysen, eftersom vi inte behöver begränas av antagandet om homogena populationsvarianser som i MANCOVA.
+
+Ett annat viktigt skäl är att vi har repeated measures. MEd rep meas har vi beroende data.
+
+I utvärderingen av den modell som bäst passar med den data man har samlat ihop använder man chi-square-test för att beräkna sannolikheten att 
+
+vi väljer den modell där chi-square-testet säger att risken att slumpen har inverkat är minst. För mixed models rapporterar R blnd annat en justerad variant av chi-square, AIC. Ju lägre värde på AIC, desto bättre beskriver modellen den data man har.
+
+vi bygger upp modellen från "botten", så enkelt so möjligt och lägger till variabler och assesssar sedan aic
+
+någonting om att specificera en kovariansstruktur, ex ar(1)  för repeated measures.
+library(nlme)
+?corClasses <-- man kan välja dessa
+
+Assumptions
+som för vanlig linjär regression, dvs
+- Kolla upp de vanliga
+- två extra relaterade till random coefficents
+-- vi antar att coef (intercept) är normalt distribuerad över hela modellen <- hur testa????
+-- vi antar att coef (slope) är normalt distribuerad över hela modellen <- hur testa????
+
+ska vi centrera data? group mean eller grand mean???? kolla upp om det här är relevant för oss eller inte (läs på/fråga)
+
+vi använder kovariansstrukturen ar(1) eftersom det gav bäst? AIC
+
+
 # Resultat
 
 se tabell \@ref(tab:descriptives)
@@ -993,16 +1028,16 @@ descriptives.lg3t3 <- stat.desc(r2.long.data[lg3t3,numvars], basic=TRUE, desc=TR
 
 descriptives.out <- rbind(
   "Selfhelp" = cbind(
-    descriptives.lg1t1[c(9, 13), c(3,2,1,4:13)]#,
-    #descriptives.lg1t3[c(9, 13), c(3,2,1,4:13)]
+    descriptives.lg1t1[c(9, 13, 20), c(3,2,1,4:13)]#,
+    #descriptives.lg1t3[c(9, 13, 20), c(3,2,1,4:13)]
   ),
   "Guided" = cbind(
-    descriptives.lg2t1[c(9, 13), c(3,2,1,4:13)]#,
-    #descriptives.lg2t3[c(9, 13), c(3,2,1,4:13)]
+    descriptives.lg2t1[c(9, 13, 20), c(3,2,1,4:13)]#,
+    #descriptives.lg2t3[c(9, 13, 20), c(3,2,1,4:13)]
   ),
   "Waitlist" = cbind(
-    descriptives.lg3t1[c(9, 13), c(3,2,1,4:13)]#,
-    #descriptives.lg3t3[c(9, 13), c(3,2,1,4:13)]
+    descriptives.lg3t1[c(9, 13, 20), c(3,2,1,4:13)]#,
+    #descriptives.lg3t3[c(9, 13, 20), c(3,2,1,4:13)]
   ))
 
 colnames(descriptives.out) <-
@@ -1025,16 +1060,59 @@ colnames(descriptives.out) <-
     times = 1 #2
   )
 descriptives.out.rot <- t(descriptives.out)
-colnames(descriptives.out.rot) <- rep(c("M","SD"),times = 3)
+colnames(descriptives.out.rot) <- rep(c("M","SD","p"),times = 3)
 
 # xs = paste('All (N = ' , length(r2.long.data[lg1t1,1]) , ')', sep="")
 # xg = paste('All (N = ' , length(r2.long.data[lg2t1,1]) , ')', sep="")
 # xw = paste('All (N = ' , length(r2.long.data[lg3t1,1]) , ')', sep="")
 
-knitr::kable(round(descriptives.out.rot,1), booktabs = T, caption = "(ref:descriptives)") %>%
-  add_header_above(c("", "Självhjälp (N = 67)" = 2, "Med stöd (N = 69)" = 2, "Väntlista (N = 68)" = 2)) %>% #, "All (N = 204)" = 2)) %>%
+knitr::kable(round(descriptives.out.rot,2), booktabs = T, caption = "(ref:descriptives)") %>%
+  add_header_above(c("", "Självhjälp (N = 67)" = 3, "Med stöd (N = 69)" = 3, "Väntlista (N = 68)" = 3)) %>% #, "All (N = 204)" = 2)) %>%
   pack_rows("Beroende variabler", 1, 3, bold = F) %>%
   pack_rows("Oberoende variabler", 4, 13, bold = F)
+
+
+#####
+
+# 1. Linearity (plotta): plot(resid(model),aaas_ad)
+# 2. Homegenitet av varians (se nedan)
+# 3. Residualer ska vara normalt distribuerade
+# 4. + de två andra som har med random-intercept och random-slope att göra
+
+
+# test for homogeneity of variance using 
+# Levene's test on all continuous variables:
+# t1varsC <- c( "rathus","aaas_ag","aaas_ad","lsas_anx","lsas_avo","lsas_int","lsas_per","lsas_sum","gad_sum","phq_sum","well")
+
+# leveneTest(pre_rathus~group, r2.wide.data)  
+# leveneTest(pre_aaas_ag~group, r2.wide.data)  
+# leveneTest(pre_aaas_ad~group, r2.wide.data)  
+# leveneTest(pre_lsas_anx~group, r2.wide.data)  
+# leveneTest(pre_lsas_avo~group, r2.wide.data)  
+# leveneTest(pre_lsas_int~group, r2.wide.data)  
+# leveneTest(pre_lsas_per~group, r2.wide.data)  
+# leveneTest(pre_lsas_sum~group, r2.wide.data)  
+# leveneTest(pre_gad_sum~group, r2.wide.data)  
+# leveneTest(pre_phq_sum~group, r2.wide.data)  
+# leveneTest(pre_well~group, r2.wide.data)  
+
+# Alla insignifikanta förutom pre_aaas_ad
+
+# > leveneTest(pre_aaas_ad~group, r2.wide.data)  
+# Levene's Test for Homogeneity of Variance (center = median)
+#        Df F value  Pr(>F)  
+# group   2  3,4202 0,03462 *
+
+# > leveneTest(pre_aaas_ad~group, r2.wide.data) 
+# Levene's Test for Homogeneity of Variance (center = median)
+#        Df F value  Pr(>F)  
+# group   2  3,4578 0,03339 *
+
+# densityPlot(pre_aaas_ad~group, r2.wide.data)
+
+# REPORT: Varianserna för aaas_ad från förmätningen var signifikant olika, F(2,3) = 3,4202, p = 0,035
+
+# För att sammanfatta har vi problem med flera icke-normalfördelade distributioner enligt shapiro-Wilks test och dessutom icke-homogena varianser för pre-värdet för aaas_ad i gruppen selfhelp.
 
 ```
 
@@ -1318,10 +1396,109 @@ interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$rathus,fun=
 <!-- https://jonlefcheck.net/2013/03/13/r2-for-linear-mixed-effects-models/ -->
 
 
+```{r outcome plots, dpi=196, fig.width=7}
+
+library(car)
+
+scatterplotMatrix(~ aaas_ad + aaas_ag + rathus|time, data = r2.long.data[lg1,],
+   main="Group 1, conditioned on time",col=c("blue","green","orange"))
+
+scatterplotMatrix(~ aaas_ad + aaas_ag + rathus|time, data = r2.long.data[lg2,],
+   main="Group 2, conditioned on time")
+
+scatterplotMatrix(~ aaas_ad + aaas_ag + rathus|time, data = r2.long.data[lg3,],
+   main="Group 3, conditioned on time")
+
+```
+
+
 ```{r rm mixed models, dpi=196}
 
+anova_pre_rathus = aov(r2.wide.data$pre_rathus ~ r2.wide.data$group)
+anova_pre_aaas_ad = aov(r2.wide.data$pre_aaas_ad ~ r2.wide.data$group)
+anova_pre_aaas_ag = aov(r2.wide.data$pre_aaas_ag ~ r2.wide.data$group)
+anova_pre_lsas_sum = aov(r2.wide.data$pre_lsas_sum ~ r2.wide.data$group)
 
 require(nlme)
+
+#########
+#AAA-S Ad Tillsammans
+#########
+
+# A null model
+gls.null <-
+  gls(aaas_ad ~ 1,
+    data = r2.long.data,
+    na.action = na.omit,
+    method = "ML"
+  )
+summary(gls.null)
+summary(gls.null)$tTable
+summary(gls.null)$AIC
+#coef(gls.null)
+
+# Adding a random intercept
+x <-
+  lme(aaas_ad ~ 1,
+      random = ~ 1 | subject,
+    data = r2.long.data,
+    na.action = na.omit,
+    method = "ML"
+  )
+summary(x)
+summary(x)$tTable
+summary(x)$AIC
+#coef(x)
+
+# Adding a random slope
+x <-
+  lme(aaas_ad ~ 1,
+      random = ~ time | subject,
+    data = r2.long.data,
+    na.action = na.omit,
+    method = "ML"
+  )
+summary(x)
+summary(x)$tTable
+summary(x)$AIC
+#coef(x)
+
+# Adding a first fixed effect (group)
+x <-
+  lme(aaas_ad ~ group * time,
+      random = ~ 1 | subject,
+    data = r2.long.data,
+    na.action = na.omit,
+    method = "ML"
+  )
+#summary(x)
+summary(x)$tTable
+summary(x)$AIC
+#coef(x)
+
+# Adding a first fixed effect (group)
+x <-
+  lme(aaas_ad ~ group,
+      random = ~ time | subject,
+    data = r2.long.data,
+    na.action = na.omit,
+    method = "ML"
+  )
+#summary(x)
+summary(x)$tTable
+summary(x)$AIC
+#coef(x)
+plot(x)
+
+# Adding a first fixed effect (group)
+x <-
+  lm(aaas_ad ~ group,
+    data = r2.long.data,
+    na.action = na.omit
+  )
+#summary(x)
+summary(x)
+#coef(x)
 
 #########
 #AAA-S Ad
@@ -1331,6 +1508,17 @@ gls.null <-
   gls(aaas_ad ~ 1,
     data = r2.long.data,
     na.action = na.omit,
+    correlation = corAR1(form = ~1 | subject), # enligt @field2012discovering och http://staff.pubhealth.ku.dk/~jufo/courses/rm2017/rPackageLME.pdf
+    method = "ML"
+  )
+AIC(gls.null)
+# 3447,866
+
+gls.null <-
+  gls(aaas_ad ~ 1,
+    data = r2.long.data,
+    na.action = na.omit,
+    correlation = corAR1(form = ~1 | subject),
     method = "ML"
   )
 AIC(gls.null)
@@ -1551,7 +1739,7 @@ AIC(x)
 
 ```
 
-``` {r Control, fig.cap='(ref:Control)', fig.align="center", fig.width=8, fig.height=4, eval=F}
+``` {r Control, fig.cap='(ref:Control)', fig.align="center", fig.width=8, fig.height=4, eval=T}
 
 #Denna r-kodchunk genererar graferna för kontrollgruppen
 
@@ -1609,7 +1797,7 @@ x <- clinsig(
 )))
 (clinsig.Rathus.g3 <- x)
 
-<!-- (ref:Control) Här har vi plottarna för AAA-S båda skalor samt RAS för Väntlistan. Rathus: `r clinsig.Rathus.g3.csrci`. AAAS-ag: `r clinsig.AAAS.ag.g3.csrci`. AAAS-ad: `r clinsig.AAAS.ad.g3.csrci`. -->
+# <!-- (ref:Control) Här har vi plottarna för AAA-S båda skalor samt RAS för Väntlistan. Rathus: `r clinsig.Rathus.g3.csrci`. AAAS-ag: `r clinsig.AAAS.ag.g3.csrci`. AAAS-ad: `r clinsig.AAAS.ad.g3.csrci`. -->
   
 ```
 
@@ -1625,6 +1813,8 @@ Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt s
 <!-- tolkning av resultatet. Jämförelsen mellan grupperna "Självhjälp" och "Med stöd" utfaller till den senare gruppens fördel. Det skulle mycket väl kunna bero på att endast den andel av den förra gruppen som har upplevt en förbättring har valt att svara på frågorna, medan en större andel av de som *inte* har upplevt en förbättring har valt att svara på dem i gruppen som har fått stöd. Deltagarna i den senare gruppen har interagerat med terapeuterna och vill eventuellt återkoppla hur de mår i större utsträckning än dem i självhjälpsgruppen. -->
 
 <!-- varför går både adaptiv och aggressiv självhävdelse upp? det skulle kunna ha att göra med vårt sample. Om vi hade haft flera personer med positiva rathus-skattningarna (kolla rci för dem!) kanske vi skulle kunna ha sett en minskning av aggressiv självhävdelse. Men för vårt nuvarande sample, med många socialfobiker (hur många? kolla upp) så kan vi anta att ökning av aggressiv självhävdelse är något *bra*?? -->
+
+skilland i utveckling över tid mellan rathus respektive aaas-ad/ag: patriks ide är att det skulle kunna vara så att rathus snabbare fångar upp förändring i teroetiskt förhållningssätt/avslappning medan aaas-ad/ag kanske fångar mer effekten av lyckade be
 
 ## Metodologiska brister / felkällor / validitet / reliabilitet
 
