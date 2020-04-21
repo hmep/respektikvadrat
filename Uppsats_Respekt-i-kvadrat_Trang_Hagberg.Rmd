@@ -548,6 +548,7 @@ t.test((r2.long.data[lg1t3, 6] - r2.long.data[lg1t1n, 6]), # Change score Själv
 
 ```
 
+
 ### Sekundära frågeställningar
 
 Vad bidrar?
@@ -565,6 +566,17 @@ t.test((r2.long.data[lg1t3, 5] - r2.long.data[lg1t1, 5]), # Change score Självh
 Vilka patientfaktorer påverkar effektiviteten av endera eller båda behandlingsalternativen (prediktorer/moderatorer)? ** mixed model **
 
 Vilka faktorer inom behandlingsalternativen påverkar deras effekt (mediatorer)? ** mixed model **
+
+
+<!-- Frågeställning(ar)
+
+Finns det en skillnad mellan I-KBT utan terapeutsttöd och I-KBT med terapeutstöd när det gäller ökning av konstruktiv självhävdelse (och minskning av passiv samt aggressiv självhävdelse)?
+
+Är kontrollgrupp (väntelista) sämre än I-KBT med/utan terapeutstöd? 
+
+Vilka patientfaktorer påverkar effektiviteten av endera eller båda behandlingsalternativen (prediktorer/moderatorer)? 
+
+Vilka faktorer inom behandlingsalternativen (mediatorer) påverkar behandlingseffekten? -->
 
 # Metod
 
