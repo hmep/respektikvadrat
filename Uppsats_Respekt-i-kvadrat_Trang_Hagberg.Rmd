@@ -436,10 +436,12 @@ sd.Rathus.norm = 23.9 # s 326 @Thompson2011
 mean.Rathus.norm = 6.2 # s 326 @Thompson2011
 ref.Rathus = "student-sample 1 från @Thompson2011"
 
-xg1 = "*Självhjälp*"
-xg2 = "*Med stöd*"
-xg3 = "*Väntlista*"
+xg1 = "Självhjälp"
+xg2 = "Med stöd"
+xg3 = "Väntlista"
 xiterapi = "Iterapi [@Vlaescu2016]"
+xpre = "Förmätning"
+xpost = "Eftermätning"
 
 ```
 
@@ -1231,9 +1233,9 @@ clinsig.AAAS.ad.g1 <- clinsig(
   coef.alpha = r.AAAS.ad,
   func.disp = sd.AAAS.ad.norm,
   func.mct = mean.AAAS.ad.norm,
-  main = "Adaptive Assertiveness, Selfhelp",
-  xlab = "Pretest score",
-  ylab = "Posttest score",
+  main = paste("Adaptive Assertiveness, ",xg1,sep=""),
+  xlab = paste(xpre),
+  ylab = paste(xpost),
   col = xcol,
   pch = xpch
 )
@@ -1263,9 +1265,9 @@ clinsig.AAAS.ad.g2 <- clinsig(
   coef.alpha = r.AAAS.ad,
   func.disp = sd.AAAS.ad.norm,
   func.mct = mean.AAAS.ad.norm,
-  main = "Adaptive Assertiveness, Guided",
-  xlab = "Pretest score",
-  ylab = "Posttest score",
+  main = paste("Adaptive Assertiveness, ",xg2,sep=""),
+  xlab = paste(xpre),
+  ylab = paste(xpost),
   col = xcol,
   pch = xpch
 )
@@ -1309,9 +1311,9 @@ clinsig.AAAS.ag.g1 <- clinsig(
   coef.alpha = r.AAAS.ag,
   func.disp = sd.AAAS.ag.norm,
   func.mct = mean.AAAS.ag.norm,
-  main = "Aggressive Assertiveness, Selfhelp",
-  xlab = "Pretest score",
-  ylab = "Posttest score",
+  main = paste("Aggressive Assertiveness, ",xg1,sep=""),
+  xlab = paste(xpre),
+  ylab = paste(xpost),
   col = xcol,
   pch = xpch
 )
@@ -1341,9 +1343,9 @@ clinsig.AAAS.ag.g2 <- clinsig(
   coef.alpha = r.AAAS.ag,
   func.disp = sd.AAAS.ag.norm,
   func.mct = mean.AAAS.ag.norm,
-  main = "Aggressive Assertiveness, Guided",
-  xlab = "Pretest score",
-  ylab = "Posttest score",
+  main = paste("Aggressive Assertiveness, ",xg2,sep=""),
+  xlab = paste(xpre),
+  ylab = paste(xpost),
   col = xcol,
   pch = xpch
 )
@@ -1387,9 +1389,9 @@ clinsig.Rathus.g1 <- clinsig(
   coef.alpha = r.Rathus,
   func.disp = sd.Rathus.norm,
   func.mct = mean.Rathus.norm,
-  main = "Rathus, Selfhelp",
-  xlab = "Pretest score",
-  ylab = "Posttest score",
+  main = paste("Rathus, ",xg1,sep=""),
+  xlab = paste(xpre),
+  ylab = paste(xpost),
   col = xcol,
   pch = xpch
 )
@@ -1419,9 +1421,9 @@ clinsig.Rathus.g2 <- clinsig(
   coef.alpha = r.Rathus,
   func.disp = sd.Rathus.norm,
   func.mct = mean.Rathus.norm,
-  main = "Rathus, Guided",
-  xlab = "Pretest score",
-  ylab = "Posttest score",
+  main = paste("Rathus, ",xg2,sep=""),
+  xlab = paste(xpre),
+  ylab = paste(xpost),
   col = xcol,
   pch = xpch
 )
