@@ -913,7 +913,7 @@ Tema <- c(
   "Kartläggning framgångsfaktorer, planering för vidmakthållande inklusive fortsatt mängdträning och återfallsprevention")
 
 Innehall <- c(
-  "Kapitel 1 av *Assert Yourself* (Michel & Fursland, 2008) med utökningar",
+  "Kapitel 1 av Michel & Fursland (2008) med utökningar",
   "Kapitel 2 med utökningar om inlärning och motivation",
   "Kapitel 3 med modifieringar och utökningar om fördelar med att bryta undvikande",
   "Kapitel 4 med utökningar",
@@ -955,11 +955,12 @@ Vi använde `r cite_r("r-references.bib")` för samtliga analyser.
 
 ### Primär frågeställning
 
-Vi undersökte den primära frågeställningen om det finns någon skillnad (i endera riktning) i effekt mellan gruppen `r xg1` och gruppen `r xg2` med avseende på utfallsmåttet AAA-S Adaptive med ett oberoende t-test av change score för de båda grupperna. Varianserna kring medelvärdet befanns vara homogena, i en kontroll med Levene's test.
+Vi undersökte den primära frågeställningen om det finns någon skillnad (i endera riktning) i effekt mellan gruppen `r xg1` och gruppen `r xg2` med avseende på utfallsmåttet AAA-S Adaptive med ett oberoende t-test. I testet användes change score mellan tipunkterna `r xpre` och `r xpost` för respektive grupp. Varianserna kring medelvärdet befanns vara homogena i en kontroll med Levene's test, vilket gjorde det möjligt att använda ett oberoende t-test utan korrigering.
 
 ```{r primo }
 
 library(car)
+library(pander)
 
 g1.cs <- (r2.long.data[lg1t3, 7] - r2.long.data[lg1t1, 7]) # Change score Självhjälp
 g2.cs <- (r2.long.data[lg2t3, 7] - r2.long.data[lg2t1, 7]) # Change score Med stöd
@@ -967,13 +968,17 @@ g2.cs <- (r2.long.data[lg2t3, 7] - r2.long.data[lg2t1, 7]) # Change score Med st
 g1g2cs <- c(g1.cs,g2.cs)
 g1g2groups <-as.factor(c(rep(1, length(g1.cs)), rep(2, length(g2.cs))))
 
-leveneTest(g1g2cs,g1g2groups)
-# Inte signifikant = homogena varianser
+primo.vartest <- leveneTest(g1g2cs,g1g2groups)
+# Inte signifikant = ingen signifikant skillnad i varianserna
 
-(primo.t <- t.test(g1.cs, g2.cs, na.action=na.rm, var.equal = T))
+primo.t <- t.test(g1.cs, g2.cs, na.action=na.rm, var.equal = T)
 # Inte signifikant = ingen skillnad
 
 ```
+
+RESULTAT (flyttas): Det var ingen signifikant skillnad i change score för AAA-S Adaptive mellan grupperna `r xg1` och `r xg2`, t(`r round(primo.t$parameter)`) = `r round(primo.t$statistic,2)`, p = `r replace(round(primo.t$p.value,3),primo.t$p.value < 0.001,0.001)`.
+
+TOLKNING (flyttas): Vi drar slutsatsen att självhjälpsmaterialet ensamt (som för deltagarna i gruppen `r xg1`) ger ett lika bra resultat som självhjälpsmaterialet i kombination med stöttning av en terapeut (som för deltagarna i gruppen `r xg2`).
 
 ### Sekundära frågeställningar
 
