@@ -540,8 +540,10 @@ primo <- t.test((r2.long.data[lg1t3, 7] - r2.long.data[lg1t1, 7]), # Change scor
        (r2.long.data[lg2t3, 7] - r2.long.data[lg2t1, 7]), # Change score Med stöd
        na.action=na.rm)
 
-primo$statistic
-primo$p.value
+primo$statistic # t-värde
+primo$p.value # p-värde
+primo$estimate[1] # medelvärde för x (första change score)
+primo$estimate[2] # medelvärde för y (andra change score)
 
 # Nej det finns ingen skillnad!
 
