@@ -534,7 +534,7 @@ Det vi primärt är intresserade av är om det finns någon skillnad (i endera r
 
 ### Sekundära frågeställningar
 
-Vi är också intresserade av att ta reda på om effekten i gruppen `r xg3` är sämre än sämre än behandlingseffekten i gruppen  `r xg1` respektive gruppen `r xg2` med avseende på konstruktiv självhävdelse, det vill säga med utfallsmåttet AAA-S Adaptive.
+Vi är också intresserade av att ta reda på om effekten i gruppen `r xg3` är sämre än behandlingseffekten i gruppen  `r xg1` respektive gruppen `r xg2` med avseende på konstruktiv självhävdelse, det vill säga med utfallsmåttet AAA-S Adaptive.
 
 <!-- Är kontrollgrupp inferior I-KBT med terapeutstöd och/eller I-KBT utan terapeutstöd vad det gäller ökning av konstruktiv självhävdelse och minskning av passiv och aggressiv självhävdelse? Med det menas att vi vill testa om gruppen `r xg3` har en sämre effekt på konstruktiv självhävdelse än de två behandlingsgrupperna `r xg1` och `r xg2`. ** OBS det här innebär ett one-tailed t-test pre--post?? ** -->
 
@@ -982,7 +982,29 @@ TOLKNING (flyttas): Vi drar slutsatsen att självhjälpsmaterialet ensamt (som f
 
 ### Sekundära frågeställningar
 
-Vi är också intresserade av att ta reda på om effekten i gruppen `r xg3` är sämre än sämre än behandlingseffekten i gruppen  `r xg1` respektive gruppen `r xg2` med avseende på konstruktiv självhävdelse, det vill säga med utfallsmåttet AAA-S Adaptive.
+För att ta reda på om effekten i gruppen `r xg3` är sämre än behandlingseffekten i gruppen  `r xg1` respektive gruppen `r xg2` med avseende på utfallsmåttet AAA-S Adaptive, genomförde vi en mixed-model-analys. En anledning till valet av metod var att vi förväntade oss olika spridning av resultatet i de två grupper som fick tillgång till träningsprogrammet, både sins emellan och i relation till gruppen `r xg3`. Det är rimligt att anta att deltagande i en behandlingsbetingelse för vissa kan innebära en stor förbättring och för andra en viss försämring, medan icke-behandlade deltagare förväntas "ligga stilla" kring ungefär samma medelvärden som vid tidpunkten `r xpre`. Ett annat skäl är att vi har 3 upprepade beroende mättillfällen av de primära och sekundära utfallsmåtten och prediktorerna för deltagarna. Ytterligare ett skäl till metodvalet var att kunna hantera icke-balanserade grupper, för att ta höjd för både "hårda avhopp" (deltagare som inte längre vill vara med i varken behandling eller studie) och exkluderingar.
+
+I utvärderingen av den modell som bäst passar med den data man har samlat ihop använder man chi-square-test för att beräkna sannolikheten att 
+
+vi väljer den modell där chi-square-testet säger att risken att slumpen har inverkat är minst. För mixed models rapporterar R blnd annat en justerad variant av chi-square, AIC. Ju lägre värde på AIC, desto bättre beskriver modellen den data man har.
+
+vi bygger upp modellen från "botten", så enkelt so möjligt och lägger till variabler och assesssar sedan aic
+
+någonting om att specificera en kovariansstruktur, ex ar(1)  för repeated measures.
+library(nlme)
+?corClasses <-- man kan välja dessa
+
+Assumptions
+som för vanlig linjär regression, dvs
+- Kolla upp de vanliga
+- två extra relaterade till random coefficents
+-- vi antar att coef (intercept) är normalt distribuerad över hela modellen <- hur testa????
+-- vi antar att coef (slope) är normalt distribuerad över hela modellen <- hur testa????
+
+ska vi centrera data? group mean eller grand mean???? kolla upp om det här är relevant för oss eller inte (läs på/fråga)
+
+vi använder kovariansstrukturen ar(1) eftersom det gav bäst? AIC
+
 
 ### Reliabel förändring och klinisk signifikans
 
@@ -1010,30 +1032,6 @@ Frekvensen individer i de olika undersökta grupperna som har förändrats både
 
 (ordinaldata vs kvotdata, vi har det förra men utgår från det senare)
 
-PATRIK VILL OMFORMULERA Vi tror att vi genom behandling kan få större spridning i utfall än för väntlistebetingelsen. Det är ett skäl att välja en mixed model för analysen, eftersom vi inte behöver begränas av antagandet om homogena populationsvarianser som i MANCOVA.
-
-Ett annat viktigt skäl är att vi har repeated measures. MEd rep meas har vi beroende data.
-
-I utvärderingen av den modell som bäst passar med den data man har samlat ihop använder man chi-square-test för att beräkna sannolikheten att 
-
-vi väljer den modell där chi-square-testet säger att risken att slumpen har inverkat är minst. För mixed models rapporterar R blnd annat en justerad variant av chi-square, AIC. Ju lägre värde på AIC, desto bättre beskriver modellen den data man har.
-
-vi bygger upp modellen från "botten", så enkelt so möjligt och lägger till variabler och assesssar sedan aic
-
-någonting om att specificera en kovariansstruktur, ex ar(1)  för repeated measures.
-library(nlme)
-?corClasses <-- man kan välja dessa
-
-Assumptions
-som för vanlig linjär regression, dvs
-- Kolla upp de vanliga
-- två extra relaterade till random coefficents
--- vi antar att coef (intercept) är normalt distribuerad över hela modellen <- hur testa????
--- vi antar att coef (slope) är normalt distribuerad över hela modellen <- hur testa????
-
-ska vi centrera data? group mean eller grand mean???? kolla upp om det här är relevant för oss eller inte (läs på/fråga)
-
-vi använder kovariansstrukturen ar(1) eftersom det gav bäst? AIC
 
 
 # Resultat
