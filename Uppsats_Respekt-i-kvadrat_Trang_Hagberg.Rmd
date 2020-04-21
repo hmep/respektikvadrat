@@ -976,7 +976,9 @@ primo.t <- t.test(g1.cs, g2.cs, na.action=na.rm, var.equal = T)
 
 ```
 
-RESULTAT (flyttas): Det var ingen signifikant skillnad i change score för AAA-S Adaptive mellan grupperna `r xg1` och `r xg2`, t(`r round(primo.t$parameter)`) = `r round(primo.t$statistic,2)`, p = `r replace(round(primo.t$p.value,3),primo.t$p.value < 0.001,0.001)`.
+RESULTAT (flyttas): Det var ingen signifikant skillnad i de två gruppernas skattningar på  AAA-S Adaptive över tid, t(`r round(primo.t$parameter)`) = `r round(primo.t$statistic,2)`, p = `r replace(round(primo.t$p.value,3),primo.t$p.value < 0.001,0.001)`. 
+
+Självhjälpsmaterialet verkar ge ett lika bra resultat oavsett om deltagarna får behandlarstöd eller inte.
 
 TOLKNING (flyttas): Vi drar slutsatsen att självhjälpsmaterialet ensamt (som för deltagarna i gruppen `r xg1`) ger ett lika bra resultat som självhjälpsmaterialet i kombination med stöttning av en terapeut (som för deltagarna i gruppen `r xg2`).
 
@@ -984,7 +986,7 @@ ALTERNATIV: Kan vi tänka ut ett sätt att besvara den här frågan med vår mix
 
 ### Sekundära frågeställningar
 
-För att ta reda på om effekten i gruppen `r xg3` är sämre än behandlingseffekten i gruppen `r xg1` respektive gruppen `r xg2` med avseende på utfallsmåttet AAA-S Adaptive, genomförde vi en mixed-model-analys. 
+För att ta reda på om behandlingseffekten i gruppen `r xg3` är sämre än behandlingseffekten i gruppen `r xg1` respektive gruppen `r xg2` med avseende på utfallsmåttet AAA-S Adaptive, genomförde vi en mixed-models-analys. 
 
 En anledning till valet av metod var att vi förväntade oss olika spridning av resultatet i de två grupper som fick tillgång till träningsprogrammet, både sinsemellan och i relation till gruppen `r xg3`. Det är rimligt att anta att deltagande i en behandling för vissa kan innebära en stor förbättring och för andra en viss försämring, medan icke-behandlade deltagare förväntas "ligga stilla" kring ungefär samma medelvärden över tid i och med att de inte blir behandlade. Ett annat skäl är att vi har fler än två beroende mättillfällen av de primära och sekundära utfallsmåtten samt för prediktorerna för var och en av deltagarna. En mixed model kan analysera beroende data som är "klustrad" eller "nestlad". I föreliggande studie finns till exempel tre beroende mättillfällen (nivå 1) som är hierarkiskt inordnade i respektive deltagare (nivå 2), som i sin tur är hierkiskt inordnade i träningsprogrammets två behandlare (nivå 3). Ytterligare ett skäl till metodvalet var att mixed models hanterar icke-balanserade grupper (det vill säga avhopp och exkluderingar under behandlingens gång) på ett bättre sätt än många andra vanliga metoder, så som MANCOVA [@Clark; @field2012discovering; @Hesser2015].
 
