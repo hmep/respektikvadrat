@@ -534,10 +534,16 @@ se nedan
 
 "väntlista" sämre än "självhjälp" respektive "med stöd" map aaa-s ad --> one.tailed t-test * 2 eller mixed model
 
-```{r}
+```{r linjär}
 
 mean(r2.long.data[lg3t1,7])
+
+test.lm <- lm(aaas_ad ~ group * time,data=r2.long.data)
+summary(test.lm)
+mean(r2.long.data[lg2t1,7])
+
 contrasts(r2.long.data$group)
+contrasts(r2.long.data$time)
 
 ```
 
