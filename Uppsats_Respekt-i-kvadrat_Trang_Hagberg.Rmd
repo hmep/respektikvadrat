@@ -959,6 +959,8 @@ Vi ville undersöka ifall det fanns någon skillnad i effekt (i endera riktning)
 
 ```{r primo }
 
+## (flyttas)
+
 library(car)
 library(pander)
 
@@ -982,27 +984,43 @@ Självhjälpsmaterialet verkar ge ett lika bra resultat oavsett om deltagarna f�
 
 TOLKNING (flyttas): Vi drar slutsatsen att självhjälpsmaterialet ensamt (som för deltagarna i gruppen `r xg1`) ger ett lika bra resultat som självhjälpsmaterialet i kombination med stöttning av en terapeut (som för deltagarna i gruppen `r xg2`).
 
-ALTERNATIV: Kan vi tänka ut ett sätt att besvara den här frågan med vår mixed model?
+ALTERNATIV: Kan vi tänka ut ett sätt att besvara den här frågan med vår mixed model? Kan vi använda andra kontraster bara?
 
 ### Analyser av våra Sekundära frågeställningar
 
 För att ta reda på om behandlingseffekten i gruppen `r xg3` är sämre än behandlingseffekten i gruppen `r xg1` respektive gruppen `r xg2` med avseende på utfallsmåttet AAA-S Adaptive, genomförde vi en mixed-models-analys. 
 
-En anledning till valet av metod var att vi förväntade oss olika spridning av resultatet i de två grupper som fick tillgång till träningsprogrammet, både sinsemellan och i relation till gruppen `r xg3`. Det är rimligt att anta att deltagande i en behandling för vissa kan innebära en stor förbättring och för andra en viss försämring, medan icke-behandlade deltagare förväntas "ligga stilla" kring ungefär samma medelvärden över tid i och med att de inte blir behandlade. Ett annat skäl är att vi har fler än två beroende mättillfällen av de primära och sekundära utfallsmåtten samt för prediktorerna för var och en av deltagarna. En mixed model kan analysera beroende data som är "klustrad" eller "nestlad". I föreliggande studie finns till exempel tre beroende mättillfällen (nivå 1) som är hierarkiskt inordnade i respektive deltagare (nivå 2), som i sin tur är hierkiskt inordnade i träningsprogrammets två behandlare (nivå 3). Ytterligare ett skäl till metodvalet var att mixed models hanterar icke-balanserade grupper (det vill säga avhopp och exkluderingar under behandlingens gång) på ett bättre sätt än många andra vanliga metoder, så som MANCOVA [@Clark; @field2012discovering; @Hesser2015].
+#### Rational
 
-För att ta reda på om effekten i gruppen `r xg3` är sämre än behandlingseffekten i gruppen  `r xg1` respektive gruppen `r xg2` med avseende på utfallsmåttet AAA-S Adaptive, genomförde vi en mixed model-analys. 
+En anledning till valet av metod var att vi förväntade oss olika spridning av resultatet i de två grupper som fick tillgång till träningsprogrammet, både sinsemellan och i relation till gruppen `r xg3`. Det är rimligt att anta att deltagande i en behandling för vissa kan innebära en stor förbättring och för andra en viss försämring, medan icke-behandlade deltagare förväntas "ligga stilla" kring ungefär samma medelvärden över tid i och med att de inte blir behandlade. Ett annat skäl är att vi har fler än två beroende mättillfällen av de primära och sekundära utfallsmåtten samt för prediktorerna för var och en av deltagarna. En mixed model kan analysera beroende data som är "klustrad" eller "nästlad". I föreliggande studie finns till exempel tre beroende mättillfällen (nivå 1) som är hierarkiskt inordnade under respektive deltagare (nivå 2), som i sin tur är hierkiskt inordnade under träningsprogrammets två behandlare (nivå 3). Ytterligare ett skäl till metodvalet var att mixed models hanterar icke-balanserade grupper (som kan uppstå vid avhopp och exkluderingar under behandlingens gång) på ett bättre sätt än många andra vanliga metoder, så som MANCOVA [@Clark; @field2012discovering; @Hesser2015].
 
-En mixed model är enkelt uttryckt en utökning av linjär regression med vilken det är möjligt att på en och samma gång  modellera oberoende (*fixed*) och beroende (*random*) variabler -- i en och samma analys. Det gör det möjligt att tilldela mer av "rest"-variansen till observerade (men inte kontrollerade) variabler i experimentet, än med variansanalys med ANOVA (och dess varianter). Inklusionen av *random*-effekter innebär dels att behovet av post hoc-test av skillnader i beroende variabler försvinner (och därmed hanteringen av massignifikansproblemet; detta är redan hanterat i modellen), dels att det blir möjligt att bortse från några av de antaganden som gäller för variansanalys med enbart *fixed*-effekter [@field2012discovering].
+För att ta reda på om effekten i gruppen `r xg3` är sämre än behandlingseffekten i gruppen `r xg1` respektive gruppen `r xg2` med avseende på utfallsmåttet AAA-S Adaptive, genomförde vi en mixed model-analys. 
+
+En mixed model är enkelt uttryckt en utökning av linjär regression med vilken det är möjligt att på en och samma gång  modellera oberoende (*fixed*) och beroende (*random*) variabler -- i en och samma analys. Det gör det möjligt att tilldela mer av "rest"-variansen i en linjär regression eller ANOVA till observerade (men inte kontrollerade) variabler i experimentet, än med variansanalys med ANOVA (och dess varianter). Inklusionen av *random*-effekter innebär dels att behovet av post hoc-test av skillnader i beroende variabler försvinner (och därmed hanteringen av massignifikansproblemet; detta är redan hanterat i modellen), dels att det blir möjligt att bortse från några av de antaganden som gäller för variansanalys med enbart *fixed*-effekter [@field2012discovering].
 
 En anledning till valet av mixed model-metoden var att vi förväntade oss olika spridning av resultatet i de två grupper som fick tillgång till träningsprogrammet, både sins emellan och i relation till gruppen `r xg3`. Det är rimligt att anta att deltagande i en behandlingsbetingelse för vissa kan innebära en stor förbättring och för andra en viss försämring, medan icke-behandlade deltagare förväntas "ligga stilla" kring ungefär samma medelvärden som vid tidpunkten `r xpre` för de oberoende mått vi är intresserade av. Med en mixed model kan vi ignorera antagandet om homogena samband i de olika grupperna mellan prediktorer och utfallsmått, eftersom modellen inkluderar dessa skillnader.
 
 Ett annat skäl är att vi har fler än två beroende mättillfällen av de primära och sekundära utfallsmåtten och prediktorerna för var och en av deltagarna. En mixed model kan beroende data som är "klustrad" eller "nestlad". I föreliggande studie finns till exempel tre beroende mättillfällen (nivå 1) som är hierarkiskt inordnade i respektive deltagare (nivå 2), som i sin tur är hierkiskt inordnade i träningsprogrammets två behandlare (nivå 3). 
 
-Ytterligare ett viktigt skäl till metodvalet var att lättare än med en MANCOVA kunna hantera icke-balanserade grupper, för att ta höjd för både "hårda avhopp" (deltagare som inte längre vill vara med i varken behandling eller studie) och exkluderingar. Slumpmässigt eller inte slumpmässigt saknade data är alltid ett potentiellt problem i en forskningsdesign,  men lite mindre så i en mixed model-analys som uppskattar parametrar även med "osthål" i tabellen med data [@Clark; @field2012discovering; @Hesser2015].
+<!-- Ta bort nivå tre i exemplet? -->
 
-2DO: Hämta mer från @Hesser2015 om rationalen för metoden!
+Ytterligare ett viktigt skäl till metodvalet är att det är lättare än med exempelvis en *repeated measures*-ANOVA (MANCOVA) att hantera icke-balanserade grupper. Det gjorde det möjligt att ta höjd för "hårda avhopp" (deltagare som inte längre vill vara med i varken behandling eller studie) och exkluderingar. Slumpmässigt eller inte slumpmässigt saknade data är alltid ett potentiellt problem i en forskningsdesign,  men lite mindre så i en mixed model-analys som uppskattar parametrar även med "osthål" i tabellen med data [@field2012discovering].
+
+2DO: Hämta mer från @Hesser2015 om rationalen för metoden! Bra referenser [@Clark; @field2012discovering; @Hesser2015]
+
+2DO: Skriv något här om vad som menas med random slope och random intercept.
 
 <!-- https://m-clark.github.io/mixed-models-with-R/random_intercepts.html -->
+
+#### Tillvägagångssätt
+
+Målet med en mixed model är ofta att (som med linjär regression) att hitta den modell som bäst beskriver de data man har samlat in i studien. För att hitta den kan man i princip välja ett av två tillvägagångssätt: att börja med en minimal modell och bygga på den med *random*-effekter och allt fler prediktorer eller börja med en maximal modell och eliminiera prediktorer efterhand. För varje ny modell (oavsett riktning i modellmakandet) utförs ett justerat chi-square-test. För mixed models med paketet @R-nlme rapporterar statistikprogrammet ett AIC-värde. Den modell som har lägst AIC-värde har är den modell som bäst passar med data. Genom att systematiskt gå genom de olika modellerna kan man vaska fram den modell som har bäst \'fit\' [@field2012discovering].
+
+Vid flera utfallsmått, som i den här studien, upprepas processen för var och en av de beroende variablerna. Vi började med en minimal modell för utfallsmåtten AAA-S Aggressive, AAA-S Adaptive och Rathus. Genom modellselektionsprocessen framgår också vilka av prediktorerna som är mest relevanta -- det vill säga som har störst inverkan på den effekt som mäts med utfallsvariabeln. 
+
+Vi valde att börja med en minimal modell
+
+
 
 I en mixed model 
 
