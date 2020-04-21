@@ -990,7 +990,7 @@ ALTERNATIV: Kan vi tänka ut ett sätt att besvara den här frågan med vår mix
 
 För att ta reda på om behandlingseffekten i gruppen `r xg3` är sämre än behandlingseffekten i gruppen `r xg1` respektive gruppen `r xg2` med avseende på utfallsmåttet AAA-S Adaptive, genomförde vi en mixed-models-analys. 
 
-#### Mixed model ger möjlighet att modellera individuella skillnader.
+#### Modellering av individuella skillnader
 
 En mixed model är enkelt uttryckt en utökning av linjär regression med vilken det är möjligt att på en och samma gång  modellera oberoende (*fixed*) och beroende (*random*) variabler -- i en och samma analys. Det gör det möjligt att tilldela mer av "rest"-variansen i en linjär regression eller ANOVA till observerade (men inte kontrollerade) variabler i experimentet, än med variansanalys. Inklusionen av *random*-effekter innebär dels att behovet av post hoc-test av skillnader i beroende variabler försvinner (och därmed hanteringen av massignifikansproblemet; detta är redan hanterat i modellen), dels att det blir möjligt att bortse från några av de antaganden som gäller för variansanalys med enbart *fixed*-effekter [@field2012discovering].
 
