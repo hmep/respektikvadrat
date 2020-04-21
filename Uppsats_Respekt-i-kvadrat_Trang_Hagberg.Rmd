@@ -959,6 +959,8 @@ Vi undersökte den primära frågeställningen om det finns någon skillnad (i e
 
 ```{r primo }
 
+## (flyttas)
+
 library(car)
 library(pander)
 
@@ -980,21 +982,23 @@ RESULTAT (flyttas): Det var ingen signifikant skillnad i change score för AAA-S
 
 TOLKNING (flyttas): Vi drar slutsatsen att självhjälpsmaterialet ensamt (som för deltagarna i gruppen `r xg1`) ger ett lika bra resultat som självhjälpsmaterialet i kombination med stöttning av en terapeut (som för deltagarna i gruppen `r xg2`).
 
-ALTERNATIV: Kan vi tänka ut ett sätt att besvara den här frågan med vår mixed model?
+ALTERNATIV: Kan vi tänka ut ett sätt att besvara den här frågan med vår mixed model? Kan vi använda andra kontraster bara?
 
 ### Sekundära frågeställningar
 
 För att ta reda på om effekten i gruppen `r xg3` är sämre än behandlingseffekten i gruppen  `r xg1` respektive gruppen `r xg2` med avseende på utfallsmåttet AAA-S Adaptive, genomförde vi en mixed model-analys. 
 
-En mixed model är enkelt uttryckt en utökning av linjär regression med vilken det är möjligt att på en och samma gång  modellera oberoende (*fixed*) och beroende (*random*) variabler -- i en och samma analys. Det gör det möjligt att tilldela mer av "rest"-variansen till observerade (men inte kontrollerade) variabler i experimentet, än med variansanalys med ANOVA (och dess varianter). Inklusionen av *random*-effekter innebär dels att behovet av post hoc-test av skillnader i beroende variabler försvinner (och därmed hanteringen av massignifikansproblemet; detta är redan hanterat i modellen), dels att det blir möjligt att bortse från några av de antaganden som gäller för variansanalys med enbart *fixed*-effekter [@field2012discovering].
+En mixed model är enkelt uttryckt en utökning av linjär regression med vilken det är möjligt att på en och samma gång  modellera oberoende (*fixed*) och beroende (*random*) variabler -- i en och samma analys. Det gör det möjligt att tilldela mer av "rest"-variansen i en linjär regression eller ANOVA till observerade (men inte kontrollerade) variabler i experimentet, än med variansanalys med ANOVA (och dess varianter). Inklusionen av *random*-effekter innebär dels att behovet av post hoc-test av skillnader i beroende variabler försvinner (och därmed hanteringen av massignifikansproblemet; detta är redan hanterat i modellen), dels att det blir möjligt att bortse från några av de antaganden som gäller för variansanalys med enbart *fixed*-effekter [@field2012discovering].
 
 En anledning till valet av mixed model-metoden var att vi förväntade oss olika spridning av resultatet i de två grupper som fick tillgång till träningsprogrammet, både sins emellan och i relation till gruppen `r xg3`. Det är rimligt att anta att deltagande i en behandlingsbetingelse för vissa kan innebära en stor förbättring och för andra en viss försämring, medan icke-behandlade deltagare förväntas "ligga stilla" kring ungefär samma medelvärden som vid tidpunkten `r xpre` för de oberoende mått vi är intresserade av. Med en mixed model kan vi ignorera antagandet om homogena samband i de olika grupperna mellan prediktorer och utfallsmått, eftersom modellen inkluderar dessa skillnader.
 
 Ett annat skäl är att vi har fler än två beroende mättillfällen av de primära och sekundära utfallsmåtten och prediktorerna för var och en av deltagarna. En mixed model kan beroende data som är "klustrad" eller "nestlad". I föreliggande studie finns till exempel tre beroende mättillfällen (nivå 1) som är hierarkiskt inordnade i respektive deltagare (nivå 2), som i sin tur är hierkiskt inordnade i träningsprogrammets två behandlare (nivå 3). 
 
-Ytterligare ett viktigt skäl till metodvalet var att lättare än med en MANCOVA kunna hantera icke-balanserade grupper, för att ta höjd för både "hårda avhopp" (deltagare som inte längre vill vara med i varken behandling eller studie) och exkluderingar. Slumpmässigt eller inte slumpmässigt saknade data är alltid ett potentiellt problem i en forskningsdesign,  men lite mindre så i en mixed model-analys som uppskattar parametrar även med "osthål" i tabellen med data [@Clark; @field2012discovering; @Hesser2015].
+<!-- Ta bort nivå tre i exemplet? -->
 
-2DO: Hämta mer från @Hesser2015 om rationalen för metoden!
+Ytterligare ett viktigt skäl till metodvalet är att det är lättare än med exempelvis en *repeated measures*-ANOVA (MANCOVA) att hantera icke-balanserade grupper. Det gjorde det möjligt att ta höjd för "hårda avhopp" (deltagare som inte längre vill vara med i varken behandling eller studie) och exkluderingar. Slumpmässigt eller inte slumpmässigt saknade data är alltid ett potentiellt problem i en forskningsdesign,  men lite mindre så i en mixed model-analys som uppskattar parametrar även med "osthål" i tabellen med data [@field2012discovering].
+
+2DO: Hämta mer från @Hesser2015 om rationalen för metoden! Bra referenser [@Clark; @field2012discovering; @Hesser2015]
 
 <!-- https://m-clark.github.io/mixed-models-with-R/random_intercepts.html -->
 
