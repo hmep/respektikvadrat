@@ -990,61 +990,33 @@ ALTERNATIV: Kan vi tänka ut ett sätt att besvara den här frågan med vår mix
 
 För att ta reda på om behandlingseffekten i gruppen `r xg3` är sämre än behandlingseffekten i gruppen `r xg1` respektive gruppen `r xg2` med avseende på utfallsmåttet AAA-S Adaptive, genomförde vi en mixed-models-analys. 
 
-#### Rational
+#### Mixed model ger möjlighet att modellera individuella skillnader.
 
-En anledning till valet av metod var att vi förväntade oss olika spridning av resultatet i de två grupper som fick tillgång till träningsprogrammet, både sinsemellan och i relation till gruppen `r xg3`. Det är rimligt att anta att deltagande i en behandling för vissa kan innebära en stor förbättring och för andra en viss försämring, medan icke-behandlade deltagare förväntas "ligga stilla" kring ungefär samma medelvärden över tid i och med att de inte blir behandlade. Ett annat skäl är att vi har fler än två beroende mättillfällen av de primära och sekundära utfallsmåtten samt för prediktorerna för var och en av deltagarna. En mixed model kan analysera beroende data som är "klustrad" eller "nästlad". I föreliggande studie finns till exempel tre beroende mättillfällen (nivå 1) som är hierarkiskt inordnade under respektive deltagare (nivå 2), som i sin tur är hierkiskt inordnade under träningsprogrammets två behandlare (nivå 3). Ytterligare ett skäl till metodvalet var att mixed models hanterar icke-balanserade grupper (som kan uppstå vid avhopp och exkluderingar under behandlingens gång) på ett bättre sätt än många andra vanliga metoder, så som MANCOVA [@Clark; @field2012discovering; @Hesser2015].
+En mixed model är enkelt uttryckt en utökning av linjär regression med vilken det är möjligt att på en och samma gång  modellera oberoende (*fixed*) och beroende (*random*) variabler -- i en och samma analys. Det gör det möjligt att tilldela mer av "rest"-variansen i en linjär regression eller ANOVA till observerade (men inte kontrollerade) variabler i experimentet, än med variansanalys. Inklusionen av *random*-effekter innebär dels att behovet av post hoc-test av skillnader i beroende variabler försvinner (och därmed hanteringen av massignifikansproblemet; detta är redan hanterat i modellen), dels att det blir möjligt att bortse från några av de antaganden som gäller för variansanalys med enbart *fixed*-effekter [@field2012discovering].
 
-För att ta reda på om effekten i gruppen `r xg3` är sämre än behandlingseffekten i gruppen `r xg1` respektive gruppen `r xg2` med avseende på utfallsmåttet AAA-S Adaptive, genomförde vi en mixed model-analys. 
+En anledning till valet av metod var att vi förväntade oss olika spridning av resultatet i de två grupper som fick tillgång till träningsprogrammet, både sinsemellan och i relation till gruppen `r xg3`. Det är rimligt att anta att deltagande i en behandling för vissa kan innebära en stor förbättring och för andra en viss försämring, medan icke-behandlade deltagare förväntas ligga stilla kring ungefär samma värden över tid i och med att de inte blir behandlade. Med en mixed model kan vi ignorera antagandet om homogena samband i de olika grupperna mellan prediktorer och utfallsmått, eftersom modellen inkluderar dessa skillnader.
 
-En mixed model är enkelt uttryckt en utökning av linjär regression med vilken det är möjligt att på en och samma gång  modellera oberoende (*fixed*) och beroende (*random*) variabler -- i en och samma analys. Det gör det möjligt att tilldela mer av "rest"-variansen i en linjär regression eller ANOVA till observerade (men inte kontrollerade) variabler i experimentet, än med variansanalys med ANOVA (och dess varianter). Inklusionen av *random*-effekter innebär dels att behovet av post hoc-test av skillnader i beroende variabler försvinner (och därmed hanteringen av massignifikansproblemet; detta är redan hanterat i modellen), dels att det blir möjligt att bortse från några av de antaganden som gäller för variansanalys med enbart *fixed*-effekter [@field2012discovering].
+Ett annat skäl är att vi har fler än två beroende mättillfällen av utfallsmåtten och prediktorerna, för var och en av deltagarna. En mixed model möjliggör analys av beroende data som är "klustrad" eller "nästlad". I föreliggande uppsats finns till exempel tre beroende mättillfällen (nivå 1) som är hierarkiskt inordnade under respektive deltagare (nivå 2), som i sin tur är hierkiskt inordnade under träningsprogrammets två behandlare (nivå 3). 
 
-En anledning till valet av mixed model-metoden var att vi förväntade oss olika spridning av resultatet i de två grupper som fick tillgång till träningsprogrammet, både sins emellan och i relation till gruppen `r xg3`. Det är rimligt att anta att deltagande i en behandlingsbetingelse för vissa kan innebära en stor förbättring och för andra en viss försämring, medan icke-behandlade deltagare förväntas "ligga stilla" kring ungefär samma medelvärden som vid tidpunkten `r xpre` för de oberoende mått vi är intresserade av. Med en mixed model kan vi ignorera antagandet om homogena samband i de olika grupperna mellan prediktorer och utfallsmått, eftersom modellen inkluderar dessa skillnader.
-
-Ett annat skäl är att vi har fler än två beroende mättillfällen av de primära och sekundära utfallsmåtten och prediktorerna för var och en av deltagarna. En mixed model kan beroende data som är "klustrad" eller "nestlad". I föreliggande studie finns till exempel tre beroende mättillfällen (nivå 1) som är hierarkiskt inordnade i respektive deltagare (nivå 2), som i sin tur är hierkiskt inordnade i träningsprogrammets två behandlare (nivå 3). 
-
-<!-- Ta bort nivå tre i exemplet? -->
-
-Ytterligare ett viktigt skäl till metodvalet är att det är lättare än med exempelvis en *repeated measures*-ANOVA (MANCOVA) att hantera icke-balanserade grupper. Det gjorde det möjligt att ta höjd för "hårda avhopp" (deltagare som inte längre vill vara med i varken behandling eller studie) och exkluderingar. Slumpmässigt eller inte slumpmässigt saknade data är alltid ett potentiellt problem i en forskningsdesign,  men lite mindre så i en mixed model-analys som uppskattar parametrar även med "osthål" i tabellen med data [@field2012discovering].
+Ytterligare ett skäl till metodvalet var att mixed models hanterar icke-balanserade grupper på ett bättre sätt än många andra vanliga metoder, som *repeated-measures*-ANOVA (MANOVA). Det gjorde det möjligt att ta höjd för "hårda avhopp" (deltagare som inte längre ville vara med i varken behandling eller studie) och exkluderingar. Slumpmässigt eller inte slumpmässigt saknade data är alltid ett potentiellt problem i en forskningsdesign, men lite mindre så i en mixed model-analys som uppskattar parametrar även med "osthål" i tabellen med data [@field2012discovering].
 
 2DO: Hämta mer från @Hesser2015 om rationalen för metoden! Bra referenser [@Clark; @field2012discovering; @Hesser2015]
 
-2DO: Skriv något här om vad som menas med random slope och random intercept.
+2DO: Skriv något här om vad som menas med random slope och random intercept. Inkludera info om de extra antaganden det innebär:
+-- vi antar att coef (intercept) är normalt distribuerad över hela modellen <- hur testa????
+-- vi antar att coef (slope) är normalt distribuerad över hela modellen <- hur testa????
 
 <!-- https://m-clark.github.io/mixed-models-with-R/random_intercepts.html -->
 
 #### Tillvägagångssätt
 
-Målet med en mixed model är ofta att (som med linjär regression) att hitta den modell som bäst beskriver de data man har samlat in i studien. För att hitta den kan man i princip välja ett av två tillvägagångssätt: att börja med en minimal modell och bygga på den med *random*-effekter och allt fler prediktorer eller börja med en maximal modell och eliminiera prediktorer efterhand. För varje ny modell (oavsett riktning i modellmakandet) utförs ett justerat chi-square-test. För mixed models med paketet @R-nlme rapporterar statistikprogrammet ett AIC-värde. Den modell som har lägst AIC-värde har är den modell som bäst passar med data. Genom att systematiskt gå genom de olika modellerna kan man vaska fram den modell som har bäst \'fit\' [@field2012discovering].
+Målet med en mixed model är ofta att (som med linjär regression) att hitta den modell som bäst beskriver de data man har samlat in i studien. För att hitta den kan man i princip välja ett av två tillvägagångssätt: att börja med en minimal modell och bygga på den med *random*-effekter och allt fler prediktorer eller börja med en maximal modell och eliminiera prediktorer efterhand. För varje ny modell (oavsett riktning i modellmakandet) utförs en variant av ett chi-square-test. För mixed models med paketet nlme [@R-nlme] rapporterar statistikprogrammet ett så kallat AIC-värde. Ett lägre värde innebär att det är mindre sannolikt att slumpen kan förklara skillnaderna mellan funna data och de data som modellen predicerar; ett högre innebär att osäkerheten i modellen är större. Genom att systematiskt gå genom de olika modellerna kan man vaska fram den modell med lägst AIC -- som har bäst övergripande \'fit\'. [@field2012discovering].
 
-Vid flera utfallsmått, som i den här studien, upprepas processen för var och en av de beroende variablerna. Vi började med en minimal modell för utfallsmåtten AAA-S Aggressive, AAA-S Adaptive och Rathus. Genom modellselektionsprocessen framgår också vilka av prediktorerna som är mest relevanta -- det vill säga som har störst inverkan på den effekt som mäts med utfallsvariabeln. 
+Vid flera utfallsmått, som i den här studien, upprepas processen för var och en av de beroende variablerna. Vi började med en minimal modell för utfallsmåtten AAA-S Aggressive, AAA-S Adaptive och Rathus. Genom modellselektionsprocessen kunde vi också konstatera vilka av prediktorerna som är mest relevanta, det vill säga vilka prediktorer som har störst inverkan på den effekt som mäts med utfallsvariabeln. Genom att ta med dessa variabler som kovariat i modellen kunde vi också kontrollera för deras inverkan på utfallet.
 
-Vi valde att börja med en minimal modell
+<!-- Fråga någon som vet: ska man specificera en kovariansstruktur, ex ar(1) för repeated measures? -->
 
-
-
-I en mixed model 
-
-I utvärderingen av den modell som bäst passar med den data man har samlat ihop använder man chi-square-test för att beräkna sannolikheten att 
-
-vi väljer den modell där chi-square-testet säger att risken att slumpen har inverkat är minst. För mixed models rapporterar R blnd annat en justerad variant av chi-square, AIC. Ju lägre värde på AIC, desto bättre beskriver modellen den data man har.
-
-vi bygger upp modellen från "botten", så enkelt so möjligt och lägger till variabler och assesssar sedan aic
-
-någonting om att specificera en kovariansstruktur, ex ar(1)  för repeated measures.
-library(nlme)
-?corClasses <-- man kan välja dessa
-
-Assumptions
-som för vanlig linjär regression, dvs
-- Kolla upp de vanliga
-- två extra relaterade till random coefficents
--- vi antar att coef (intercept) är normalt distribuerad över hela modellen <- hur testa????
--- vi antar att coef (slope) är normalt distribuerad över hela modellen <- hur testa????
-
-ska vi centrera data? group mean eller grand mean???? kolla upp om det här är relevant för oss eller inte (läs på/fråga)
-
-vi använder kovariansstrukturen ar(1) eftersom det gav bäst? AIC
-
+<!-- Fråga någon som vet: ska vi centrera data? group mean eller grand mean? -->
 
 ### Reliabel förändring och klinisk signifikans
 
