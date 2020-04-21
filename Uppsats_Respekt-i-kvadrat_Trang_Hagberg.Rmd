@@ -46,14 +46,11 @@ header-includes:
 
 set.seed(42) # Seed for random number generation
 
-#options(contrasts=c("contr.sum","contr.poly")) # Sum-to-zero contrasts for factors
 options(contrasts=c('contr.treatment','contr.poly'))
- 
-options(knitr.table.format = "latex")
-
-options(format.args = list(decimal.mark = ',', big.mark = ' '))
 
 #devtools::install_github("crsh/papaja@devel",force=TRUE)
+#install_github("hofnerb/papeR")
+
 library("papaja") # APA-6 style guide compliance
 library("readxl")
 library("knitr")
@@ -65,6 +62,14 @@ library("kableExtra")
 #   `r readLines('abstract.txt', encoding = 'UTF-8')`
 # keywords: |
 #   `r readLines('keywords.txt', encoding = 'UTF-8')`
+
+svkable = function(...) {
+  knitr::kable(..., format.args = list(decimal.mark = ',', big.mark = ' '))
+}
+
+enkable = function(...) {
+  knitr::kable(..., format.args = list(decimal.mark = '.', big.mark = ','))
+}
 
 ```
 
@@ -453,8 +458,6 @@ Graden av konstruktiv självhävdelse för en person i en given situation kan in
 
 ```{r assertiveness, out.width="65%", fig.align="center", out.extra='', fig.cap='Konstruktiv självhävdelse definieras i träningsprogrammet Respekt i kvadrat som handlande som är förenligt med samtidig respekt för egna och andras rättigheter. Passiv självhävdelse kan på samma sätt definieras som låg grad av respekt för egna rättigheter men hög grad av respekt för andras rättigheter; aggressiv självhävdelse kan definieras som hög grad av respekt för egna rättigheter men låg grad av respekt för andras rättigheter.'}
 
-options(format.args = list(decimal.mark = '.', big.mark = ','))
-
 knitr::include_graphics("canvas-konstruktiv-slinga-X.pdf") 
 
 ```
@@ -585,8 +588,6 @@ Rekrytering skedde mellan 28 januari och 5 februari 2020. Studien annonserades p
 Som framgår av figur \@ref(fig:flow) så anmälde totalt 657 personer intresse till studien varav 464 personer slutförde hela screeningsprocessen. Av dessa exkluderades 126 personer då de uppfyllde något av de uppsatta exklusionskriterierna. De kvarvarande 338 personerna erbjöds plats i studien. Av dessa bejakade 253 sin plats. 43 personer exkluderades från behandlingen genom randomisering så att 210 inkluderades. De deltagere som exkluderades via randomisering erbjöds tillgång till materialet på samma sätt som kontrollgruppen fick det – men med skillnaden att deras resultat ej inkluderats i beräkningarna. Vid behandlingsstart hade alltså studien 210 deltagare. Under behandlingens gång framkom det att fem deltagare (n = 3 från gruppen *Behandling utan stöd* och n = 2 från gruppen *Väntlista*) hade pågående psykologisk behandling. Dessa deltagare har fått fullgå behandlingen på oförändrade villkor, men deras resultat har exkluderats från analysen. Utöver detta bad en deltagare från gruppen *Behandling med stöd* om att få bli exkluderad från studien. Denna deltagare bad även om att hens data ej skulle användas. Dessa sex deltagare har exkluderats från alla statistiska beräkningar.
 
 ```{r flow, out.width="100%", fig.align="center", out.extra='', fig.cap='Flödesschema över inklusion, exklusion (med kriterier) samt bortfall.'}
-
-options(format.args = list(decimal.mark = '.', big.mark = ','))
 
 knitr::include_graphics("flow.pdf")
 
@@ -761,9 +762,7 @@ De `r length(r2.wide.data$subject)` deltagare vars data används i den här stud
 
 ```{r demdata, out.width="100%", tab.align="center"}
 
-#knitr::include_graphics("demdata-crop.pdf")
-
-knitr::kable(demdata.tabell, format.args = list(decimal.mark = ',', big.mark = ' '), booktabs = T, caption = "(ref:dem)", linesep = "", align="lrrrr") %>%
+svkable(demdata.tabell, booktabs = T, caption = "(ref:dem)", linesep = "", align="lrrrr") %>%
   kable_styling(full_width = F) %>%
   column_spec(2, width = "5em") %>%
   column_spec(3, width = "5em") %>%
@@ -843,14 +842,16 @@ Originalmaterialet innehåller avsnitt för både vägledd kognitiv omstrukturer
 
 Ordvalet är dessutom i linje med aktuell förståelse enligt paradigmet prediktiv kodning om den övergripande funktionen av det centrala nervsystemet (detta hopp mellan analysnivåer får snart sin förklaring). Funktionen är att med hjälp av ytterst begränsade sensoriska indata guida betydligt mer omfattande neuronal *top-down*-aktivitet för att predicera organismens yttre såväl som inre kontext [@Pezzulo2015; @Clark2016], inklusive egen motoraktivitet. Enligt detta synsätt är exempelvis den samlade upplevelsen av ångest (kroppsreaktioner, tankar, beteenden) detsamma som *förutsägelser* om bristande resurshushållning [@FeldmanBarrett2009]. En person som på så sätt uppfattar miljön som aversiv kan mobilisera resurser för att sätta sig i säkerhet. Men om förutsägelsen är felaktig, enkelt uttryckt på grund av allt för stort inflytande av kortikal *top-down*-aktivitet på bekostnad av sensorisk känslighet för *bottom-up*-aktivitet, riskerar individen att fastna i förutsägelser om brister i energiregleringen. Dessa blir självuppfyllande profetior genom kombinationen av alltför långvarig allostatisk belastning och undvikande som gör att organismen går miste om belöningar och återhämtning. @FeldmanBarrett2009 sammanbryggar elegant den aktuella neurovetenskapen med det moderna inlärningsteoretiska perspektivet på ångest och depression, där den gemensamma vidmakthållande faktorn är undvikande -- beteendemässigt och upplevelsemässigt.
 
-Utifrån *tidigare* erfarenheter kan en individ ha giltiga och begripliga upplevelser av ångest och rädsla som leder till undvikande *här och nu*. Detta kan i sin tur göra att individen går miste om sådant som hen värdesätter -- exempelvis att hävda sina åsikter, få mer tid till egna intressen, få närhet och andra naturliga förstärkningar för stanna-kvar-och-märk-att-ångesten-går-över-beteenden. I Respekt i kvadrat ligger fokus på aktivering av beteenden i enlighet med klientens värderade riktning. I programmet ligger tonvikten på att hjälpa deltagaren att genomföra beteendeexperiment så snabbt som möjligt och i så många svåra situationer som möjligt. 
+Utifrån *tidigare* erfarenheter kan en individ ha giltiga och begripliga upplevelser av ångest och rädsla som leder till undvikande *här och nu*. Detta kan i sin tur göra att individen går miste om sådant som hen värdesätter -- exempelvis att hävda sina åsikter, få mer tid till egna intressen, få närhet och andra naturliga förstärkningar för stanna-kvar-och-märk-att-ångesten-går-över-beteenden. I Respekt i kvadrat ligger fokus på aktivering av beteenden i enlighet med klientens värderade riktning. Syftet med programmet är att hjälpa deltagaren att genom att genomföra beteendeexperiment så snabbt som möjligt och i så många svåra situationer som möjligt. 
 
 #### Metoder för att bryta rädsloinlärt undvikande
 
-Den stora utmaningen i behandling av ångestsyndrom är att överbrygga undvikandet som följer av rädsloinlärning. @Ohman2001 konstaterar att rädsloinlärning inte så lätt går att påverka med kognitiv kontroll, inte minst för att de neuronala rädslokretsarna vid amygdala ligger så djupt förankrade i limbiska delar av hjärnan och mer eller mindre lever sitt eget liv. Det finns fler sätt att gå runt problemet: 
+Den stora utmaningen i behandling av ångestsyndrom är att överbrygga undvikandet som följer av rädsloinlärning. @Ohman2001 konstaterar att rädsloinlärning inte så lätt går att påverka med kognitiv kontroll i skarpt läge, inte minst för att de neuronala rädslokretsarna vid amygdala ligger så djupt förankrade i limbiska delar av hjärnan och mer eller mindre lever sitt eget liv. Det finns fler sätt att gå runt problemet: 
 
 - värden, långsiktiga skäl att uppsöka sit
 - direkt kontignent belöning, ex återkoppling och uppmuntran från terapeut
+
+@FeldmanBarrett2009 hypotetiserar att KBT hjälper genom att uppdaterara de 'priors' som ...
 
 meta-perspektiv på inlärning som är symptomatiskt med ett affektfokus dweck
 
@@ -874,8 +875,6 @@ Se tabell \@ref(tab:intervention) för en översiktlig genomgång av innehållet
 (ref:kap1) Kapitel 1 av *Assert Yourself* [@michel2008] med utökningar
 
 ```{r intervention, fig.align="center"}
-
-options(format.args = list(decimal.mark = ',', big.mark = ' '))
 
 Vecka <- c("1","2","3","4","5","6--7","8")
 
@@ -904,7 +903,7 @@ intervention.tabell <- cbind.data.frame(
   "Material"=Innehall
   )
 
-knitr::kable(intervention.tabell, format.args = list(decimal.mark = ',', big.mark = ' '), booktabs = T, caption = "(ref:interv)", linesep = "", align="rll") %>%
+svkable(intervention.tabell, booktabs = T, caption = "(ref:interv)", linesep = "", align="rll") %>%
   kable_styling(full_width = F) %>%
   column_spec(1, width = "2em") %>%
   column_spec(2, width = "22em") %>%
@@ -983,6 +982,8 @@ vi använder kovariansstrukturen ar(1) eftersom det gav bäst? AIC
 
 # Resultat
 
+## Deskriptiv statistik
+
 se tabell \@ref(tab:descriptives)
 
 (ref:descriptives) Deskriptiva mått för primära och sekundärt beroende variabler liksom oberoende variabler vid studiens start.
@@ -990,8 +991,6 @@ se tabell \@ref(tab:descriptives)
 ``` {r descriptives, fig.cap='(ref:descriptives)', fig.align="center"}
 
 ### Descriptives
-
-options(OutDec= ",") 
 
 library(pastecs)
 
@@ -1067,7 +1066,7 @@ colnames(descriptives.out.rot) <- rep(c("M","SD","p"),times = 3)
 # xg = paste('All (N = ' , length(r2.long.data[lg2t1,1]) , ')', sep="")
 # xw = paste('All (N = ' , length(r2.long.data[lg3t1,1]) , ')', sep="")
 
-knitr::kable(round(descriptives.out.rot,2), booktabs = T, caption = "(ref:descriptives)") %>%
+svkable(round(descriptives.out.rot,2), booktabs = T, caption = "(ref:descriptives)") %>%
   add_header_above(c("", "Självhjälp (N = 67)" = 3, "Med stöd (N = 69)" = 3, "Väntlista (N = 68)" = 3)) %>% #, "All (N = 204)" = 2)) %>%
   pack_rows("Beroende variabler", 1, 3, bold = F) %>%
   pack_rows("Oberoende variabler", 4, 13, bold = F)
@@ -1134,6 +1133,48 @@ The "b" cutoff means that post-intervention scores are significant if they are w
 -->
 
 <!-- \newpage -->
+
+### Interaktionsplottar
+
+se figur \@ref(fig:interactions)
+
+(ref:int) Interaktioner ...
+
+``` {r interactions, fig.cap='(ref:int)', fig.align="center", fig.width=5, fig.height=4}
+
+par(mfrow=c(1,1))
+
+mean.rm.na <- function(x) mean(x,na.rm=T)
+interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$aaas_ad,fun=mean.rm.na)
+interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$aaas_ag,fun=mean.rm.na)
+interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$rathus,fun=mean.rm.na)
+
+```
+
+<!-- https://www.researchgate.net/post/Who_knows_how_to_estimate_effect_size_in_generalized_linear_mixed_models_in_R -->
+<!-- https://easystats.github.io/effectsize/articles/from_test_statistics.html -->
+<!-- https://jonlefcheck.net/2013/03/13/r2-for-linear-mixed-effects-models/ -->
+
+### Scatterplots
+
+```{r outcome plots, dpi=196, fig.width=7}
+
+library(car)
+
+scatterplotMatrix(~ aaas_ad + aaas_ag + rathus|time, data = r2.long.data[lg1,],
+   main="Group 1, conditioned on time",col=c("blue","green","orange"))
+
+scatterplotMatrix(~ aaas_ad + aaas_ag + rathus|time, data = r2.long.data[lg2,],
+   main="Group 2, conditioned on time")
+
+scatterplotMatrix(~ aaas_ad + aaas_ag + rathus|time, data = r2.long.data[lg3,],
+   main="Group 3, conditioned on time")
+
+```
+
+## Klinisk signifikans
+
+### AAA-S Ad
 
 se figur \@ref(fig:aaasad)
 
@@ -1225,6 +1266,8 @@ clinsig.AAAS.ad.g2 <- clinsig(
 
 <!-- \newpage -->
 
+### AAA-S Ag
+
 se figur \@ref(fig:aaasag)
 
 ``` {r aaasag, fig.cap='(ref:ag)', fig.align="center", fig.width=8, fig.height=4}
@@ -1301,6 +1344,8 @@ clinsig.AAAS.ag.g2 <- clinsig(
 
 <!-- \newpage -->
 
+### Rathus
+
 se figur \@ref(fig:rathus)
 
 ``` {r rathus, fig.cap='(ref:rat)', fig.align="center", fig.width=8, fig.height=4}
@@ -1375,381 +1420,463 @@ clinsig.Rathus.g2 <- clinsig(
 
 (ref:rat) För det sekundära utfallsmåttet Rathus fann vi att av de `r clinsig.Rathus.g1$post.n` personerna i självhjälpsgruppen som genomfört både för- och eftermätning så återfanns `r clinsig.Rathus.g1$sigsum[2]` vid eftermätningen inom eller ovanför normalspannet för en icke-klinisk population (ovanför kriterium *b*); av dem hade `r paste(clinsig.Rathus.g1.num," (",round(clinsig.Rathus.g1.num/clinsig.Rathus.g1$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.Rathus.g1$relchng,1)` poäng mellan mättillfällena. För de `r clinsig.Rathus.g2$post.n` personer i gruppen som fick stöd och som genomfört båda mätningarna så återfanns `r clinsig.Rathus.g2$sigsum[2]` vid eftermätningen inom normalspannet för en icke-klinisk population; av dem hade `r paste(clinsig.Rathus.g2.num," (",round(clinsig.Rathus.g2.num/clinsig.Rathus.g2$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.Rathus.g2$relchng,1)` poäng mellan mättillfällena. Beräkningarna är gjorda med normer från `r ref.Rathus`.
 
-<!-- \newpage -->
+asdfasdfad
 
-se figur \@ref(fig:interactions)
+text
 
-(ref:int) Interaktioner ...
-
-``` {r interactions, fig.cap='(ref:int)', fig.align="center", fig.width=5, fig.height=4}
-
-par(mfrow=c(1,1))
-
-mean.rm.na <- function(x) mean(x,na.rm=T)
-interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$aaas_ad,fun=mean.rm.na)
-interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$aaas_ag,fun=mean.rm.na)
-interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$rathus,fun=mean.rm.na)
-
-```
-
-<!-- https://www.researchgate.net/post/Who_knows_how_to_estimate_effect_size_in_generalized_linear_mixed_models_in_R -->
-<!-- https://easystats.github.io/effectsize/articles/from_test_statistics.html -->
-<!-- https://jonlefcheck.net/2013/03/13/r2-for-linear-mixed-effects-models/ -->
-
-
-```{r outcome plots, dpi=196, fig.width=7}
-
-library(car)
-
-scatterplotMatrix(~ aaas_ad + aaas_ag + rathus|time, data = r2.long.data[lg1,],
-   main="Group 1, conditioned on time",col=c("blue","green","orange"))
-
-scatterplotMatrix(~ aaas_ad + aaas_ag + rathus|time, data = r2.long.data[lg2,],
-   main="Group 2, conditioned on time")
-
-scatterplotMatrix(~ aaas_ad + aaas_ag + rathus|time, data = r2.long.data[lg3,],
-   main="Group 3, conditioned on time")
-
-```
-
-
-```{r rm mixed models, dpi=196}
+```{r mixed_aaas_ad, dpi=196, result='asis'}
 
 require(nlme)
+library(pander)
+panderOptions("decimal.mark", ',')
+panderOptions("big.mark", ' ')
+panderOptions("table.style", "simple")
+panderOptions("digits", 4)
+panderOptions("table.emphasize.rownames",F)
+panderOptions("round", 3)
+
+# https://cran.r-project.org/web/packages/pander/pander.pdf
 
 #########
-#AAA-S Ad Tillsammans
+# AAA-S Ad Tillsammans
 #########
 
-# A null model
-gls.null <-
-  gls(aaas_ad ~ 1,
-      data = r2.long.data,
-      na.action = na.omit,
-      method = "ML")
+# # A null model
+# gls.null <-
+#   gls(aaas_ad ~ 1,
+#       data = r2.long.data,
+#       na.action = na.omit,
+#       method = "ML")
+# #AIC(gls.null)
+# 
+# # Adding a random intercept
+# lme.int <-
+#   lme(
+#     aaas_ad ~ 1,
+#     random = ~ 1 |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int)
+# 
+# # Adding a random slope
+# lme.int.slo <-
+#   lme(
+#     aaas_ad ~ 1,
+#     random = ~ time |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int.slo)
+# 
+# # Fixed effect: group
+# lme.int.slo.mini.group <-
+#   lme(
+#     aaas_ad ~ group,
+#     random = ~ time |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int.slo.mini.group)
+# 
+# # Fixed effect: group * time
+# lme.int.slo.mini.group.time <-
+#   lme(
+#     aaas_ad ~ group * time,
+#     random = ~ time |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int.slo.mini.group.time)
+# 
+# # Fixed effect: group * time + lsas_sum
+# lme.int.slo.mini.group.time.lsas <-
+#   lme(
+#     aaas_ad ~ group * time + lsas_sum,
+#     random = ~ time |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int.slo.mini.group.time.lsas)
+# 
+# lme.int.slo.mini.group.time.lsas.gad <-
+#   lme(
+#     aaas_ad ~ group * time + lsas_sum + gad_sum,
+#     random = ~ time |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int.slo.mini.group.time.lsas.gad)
+# 
+# lme.int.slo.mini.group.time.lsas.gad.phq <-
+#   lme(
+#     aaas_ad ~ group * time + lsas_sum + gad_sum + phq_sum,
+#     random = ~ time |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int.slo.mini.group.time.lsas.gad.phq)
+# 
+# lme.int.slo.mini.group.time.lsas.gad.phq.well <-
+#   lme(
+#     aaas_ad ~ group * time + lsas_sum + gad_sum + phq_sum + well,
+#     random = ~ time |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int.slo.mini.group.time.lsas.gad.phq.well)
+# 
+# lme.int.slo.mini.group.time.lsas.gad.well <-
+#   lme(
+#     aaas_ad ~ group * time + lsas_sum + gad_sum + well,
+#     random = ~ time |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int.slo.mini.group.time.lsas.gad.well)
 
-# Adding a random intercept
-lme.int <-
+lme.int.slo.mini.group.time.lsas.well <-
   lme(
-    aaas_ad ~ 1,
-    random = ~ 1 |
-      subject,
-    data = r2.long.data,
-    na.action = na.omit,
-    method = "ML"
-  )
-
-# Adding a random slope
-lme.int.slo <-
-  lme(
-    aaas_ad ~ 1,
+    aaas_ad ~ group * time + lsas_sum + well,
     random = ~ time |
       subject,
     data = r2.long.data,
     na.action = na.omit,
     method = "ML"
   )
+#AIC(lme.int.slo.mini.group.time.lsas.well) # <---------- 3199,89 = lägst
 
-# Adding a first fixed effect: group
-lme.int.slo.mini.group <-
-  lme(
-    aaas_ad ~ group,
-    random = ~ 1 |
-      subject,
-    data = r2.long.data,
-    na.action = na.omit,
-    method = "ML"
-  )
+# lme.int.slo.mini.group.time.well <-
+#   lme(
+#     aaas_ad ~ group * time + well,
+#     random = ~ time |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int.slo.mini.group.time.well)
 
-# Adding a first fixed effect: group * time
-lme.int.slo.mini.group.time <-
-  lme(
-    aaas_ad ~ group * time,
-    random = ~ 1 |
-      subject,
-    data = r2.long.data,
-    na.action = na.omit,
-    method = "ML"
-  )
+sum.aaas_ad <- summary(lme.int.slo.mini.group.time.lsas.well)
 
-# Full model
-lme.int.slo.mini.all <-
-  lme(
-    aaas_ad ~ group * time + lsas_sum + gad_sum + phq_sum + well,
-    random = ~ 1 |
-      subject,
-    data = r2.long.data,
-    na.action = na.omit,
-    method = "ML"
-  )
-
-anova(gls.null,lme.int,lme.int.slo,lme.int.slo.mini.group,lme.int.slo.mini.group.time)
+pander(sum.aaas_ad,justify='lrrrrr')
 
 ```
 
-```{r rm mixed x, dpi=196, eval=F}
-
-x3.sum <- summary(x3)
-x3.sum$tTable
-x3.sum$AIC
-#coef(x)
-plot(x3, type = c("p", "smooth"))
-plot(x3, sqrt(abs(resid(.))) ~ fitted(.), type = c("p", "smooth"))
-# library(lattice)
-# qqmath(x, id = 0.05)
-
-anova(x1,x2,x3)
-
-# Adding a first fixed effect (group)
-x <-
-  lm(aaas_ad ~ group,
-    data = r2.long.data,
-    na.action = na.omit
-  )
-#summary(x)
-summary(x)
-#coef(x)
+```{r mixed_aaas_ag, dpi=196}
 
 #########
-#AAA-S Ad
+# AAA-S Ag Tillsammans
 #########
 
-gls.null <-
-  gls(aaas_ad ~ 1,
-    data = r2.long.data,
-    na.action = na.omit,
-    correlation = corAR1(form = ~1 | subject), # enligt @field2012discovering och http://staff.pubhealth.ku.dk/~jufo/courses/rm2017/rPackageLME.pdf
-    method = "ML"
-  )
-AIC(gls.null)
-# 3447,866
+# # A null model
+# gls.null <-
+#   gls(aaas_ag ~ 1,
+#       data = r2.long.data,
+#       na.action = na.omit,
+#       method = "ML")
+# #AIC(gls.null)
+# 
+# # Adding a random intercept
+# lme.int <-
+#   lme(
+#     aaas_ag ~ 1,
+#     random = ~ 1 |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int)
+# 
+# # Adding a random slope
+# lme.int.slo <-
+#   lme(
+#     aaas_ag ~ 1,
+#     random = ~ time |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int.slo)
+# 
+# # Fixed effect: group
+# lme.int.slo.mini.group <-
+#   lme(
+#     aaas_ag ~ group,
+#     random = ~ time |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int.slo.mini.group)
+# 
+# # Fixed effect: group * time
+# lme.int.slo.mini.group.time <-
+#   lme(
+#     aaas_ag ~ group * time,
+#     random = ~ time |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int.slo.mini.group.time)
+# 
+# # Fixed effect: group * time + lsas_sum
+# lme.int.slo.mini.group.time.lsas <-
+#   lme(
+#     aaas_ag ~ group * time + lsas_sum,
+#     random = ~ time |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int.slo.mini.group.time.lsas)
+# 
+# lme.int.slo.mini.group.time.lsas.gad <-
+#   lme(
+#     aaas_ag ~ group * time + lsas_sum + gad_sum,
+#     random = ~ time |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int.slo.mini.group.time.lsas.gad)
+# 
+# lme.int.slo.mini.group.time.lsas.gad.phq <-
+#   lme(
+#     aaas_ag ~ group * time + lsas_sum + gad_sum + phq_sum,
+#     random = ~ time |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int.slo.mini.group.time.lsas.gad.phq)
+# 
+# lme.int.slo.mini.group.time.lsas.gad.phq.well <-
+#   lme(
+#     aaas_ag ~ group * time + lsas_sum + gad_sum + phq_sum + well,
+#     random = ~ time |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int.slo.mini.group.time.lsas.gad.phq.well)
+# 
+# lme.int.slo.mini.group.time.lsas.gad.well <-
+#   lme(
+#     aaas_ag ~ group * time + lsas_sum + gad_sum + well,
+#     random = ~ time |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int.slo.mini.group.time.lsas.gad.well)
 
-gls.null <-
-  gls(aaas_ad ~ 1,
-    data = r2.long.data,
-    na.action = na.omit,
-    correlation = corAR1(form = ~1 | subject),
-    method = "ML"
-  )
-AIC(gls.null)
-# 3623,244
-
-x <-
+lme.int.slo.mini.group.time.lsas.well <-
   lme(
-    fixed = aaas_ad ~ 1,
-    data = r2.long.data,
-    random = ~ 1 | subject,
-    na.action = na.omit,
-    method = "ML"
-  )
-AIC(x)
-# 3476,178
-
-x <-
-  lme(
-    fixed = aaas_ad ~ time * group,
-    data = r2.long.data,
-    random = ~ 1 | subject,
-    na.action = na.omit,
-    method = "ML"
-  )
-AIC(x)
-# 3333,222
-
-x <-
-  lme(
-    fixed = aaas_ad ~ time * group + lsas_sum + gad_sum + phq_sum + well,
-    data = r2.long.data,
-    random = ~ 1 | subject,
-    na.action = na.omit,
-    method = "ML"
-  )
-AIC(x)
-# 3203,906 
-
-x <-
-  lme(
-    fixed = aaas_ad ~ time * group + lsas_sum,
-    data = r2.long.data,
-    random = ~ 1 | subject,
-    na.action = na.omit,
-    method = "ML"
-  )
-AIC(x)
-# 3213,845
-
-x <-
-  lme(
-    fixed = aaas_ad ~ time * group + lsas_sum + well,
-    data = r2.long.data,
-    random = ~ 1 | subject,
-    na.action = na.omit,
-    method = "ML"
-  )
-AIC(x)
-# 3200,44 <!------ med random intercept
-
-x <-
-  lme(
-    fixed = aaas_ad ~ time * group + lsas_sum + well,
-    data = r2.long.data,
-    random = ~ time | subject,
-    na.action = na.omit,
-    method = "ML"
-  )
-AIC(x)
-# 3199,89 <!------ med random slope och intercept ***
-
-#########
-#AAA-S Ag
-#########
-
-gls.null <-
-  gls(aaas_ag ~ 1,
+    aaas_ag ~ group * time + lsas_sum + well,
+    random = ~ time |
+      subject,
     data = r2.long.data,
     na.action = na.omit,
     method = "ML"
   )
-AIC(gls.null)
-# 3326,228
+#AIC(lme.int.slo.mini.group.time.lsas.well) # <---------- 3034,348 = lägst
 
-x <-
-  lme(
-    fixed = aaas_ag ~ 1,
-    data = r2.long.data,
-    random = ~ 1 | subject,
-    na.action = na.omit,
-    method = "ML"
-  )
-AIC(x)
-# 3097,999
+# lme.int.slo.mini.group.time.well <-
+#   lme(
+#     aaas_ag ~ group * time + well,
+#     random = ~ time |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int.slo.mini.group.time.well)
 
-x <-
-  lme(
-    fixed = aaas_ag ~ time * group,
-    data = r2.long.data,
-    random = ~ 1 | subject,
-    na.action = na.omit,
-    method = "ML"
-  )
-AIC(x)
-# 3062,21
+sum.aaas_ag <- summary(lme.int.slo.mini.group.time.lsas.well)
 
-x <-
-  lme(
-    fixed = aaas_ag ~ time * group + lsas_sum + gad_sum + phq_sum + well,
-    data = r2.long.data,
-    random = ~ 1 | subject,
-    na.action = na.omit,
-    method = "ML"
-  )
-AIC(x)
-# 3029,237
-
-x <-
-  lme(
-    fixed = aaas_ag ~ time * group + lsas_sum + well,
-    data = r2.long.data,
-    random = ~ 1 | subject,
-    na.action = na.omit,
-    method = "ML"
-  )
-AIC(x)
-# 3026,527 <!------ med random intercept ***
-
-x <-
-  lme(
-    fixed = aaas_ag ~ time * group + lsas_sum + well,
-    data = r2.long.data,
-    random = ~ time | subject,
-    na.action = na.omit,
-    method = "ML"
-  )
-AIC(x)
-# 3034,348 <!------ med random slope och intercept
-
-########
-# Rathus
-########
-
-gls.null <-
-  gls(rathus ~ 1,
-    data = r2.long.data,
-    na.action = na.omit,
-    method = "ML"
-  )
-AIC(gls.null)
-# 4760,453
-
-x <-
-  lme(
-    fixed = rathus ~ 1,
-    data = r2.long.data,
-    random = ~ 1 | subject,
-    na.action = na.omit,
-    method = "ML"
-  )
-AIC(x)
-# 4601,001
-
-x <-
-  lme(
-    fixed = rathus ~ time * group,
-    data = r2.long.data,
-    random = ~ 1 | subject,
-    na.action = na.omit,
-    method = "ML"
-  )
-AIC(x)
-# 4377,84
-
-x <-
-  lme(
-    fixed = rathus ~ time * group + lsas_sum + gad_sum + phq_sum + well,
-    data = r2.long.data,
-    random = ~ 1 | subject,
-    na.action = na.omit,
-    method = "ML"
-  )
-AIC(x)
-# 4051,652
-
-x <-
-  lme(
-    fixed = rathus ~ time * group + lsas_sum,
-    data = r2.long.data,
-    random = ~ 1 | subject,
-    na.action = na.omit,
-    method = "ML"
-  )
-AIC(x)
-# 4068,395
-
-x <-
-  lme(
-    fixed = rathus ~ time * group + lsas_sum + well,
-    data = r2.long.data,
-    random = ~ 1 | subject,
-    na.action = na.omit,
-    method = "ML"
-  )
-AIC(x)
-# 4048,568 <!------ med random intercept
-
-x <-
-  lme(
-    fixed = rathus ~ time * group + lsas_sum + well,
-    data = r2.long.data,
-    random = ~ time | subject,
-    na.action = na.omit,
-    method = "ML"
-  )
-AIC(x)
-# 4041,938 <!------ med random slope och intercept ***
+pander(sum.aaas_ag,justify='lrrrrr')
 
 ```
 
-``` {r Control, fig.cap='(ref:Control)', fig.align="center", fig.width=8, fig.height=4, eval=T}
+### Rathus
+
+```{r mixed_rathus, dpi=196}
+
+#########
+# Rathus Tillsammans
+#########
+
+# # A null model
+# gls.null <-
+#   gls(rathus ~ 1,
+#       data = r2.long.data,
+#       na.action = na.omit,
+#       method = "ML")
+# #AIC(gls.null)
+# 
+# # Adding a random intercept
+# lme.int <-
+#   lme(
+#     rathus ~ 1,
+#     random = ~ 1 |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int)
+# 
+# # Adding a random slope
+# lme.int.slo <-
+#   lme(
+#     rathus ~ 1,
+#     random = ~ time |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int.slo)
+# 
+# # Fixed effect: group
+# lme.int.slo.mini.group <-
+#   lme(
+#     rathus ~ group,
+#     random = ~ time |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int.slo.mini.group)
+# 
+# # Fixed effect: group * time
+# lme.int.slo.mini.group.time <-
+#   lme(
+#     rathus ~ group * time,
+#     random = ~ time |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int.slo.mini.group.time)
+# 
+# # Fixed effect: group * time + lsas_sum
+# lme.int.slo.mini.group.time.lsas <-
+#   lme(
+#     rathus ~ group * time + lsas_sum,
+#     random = ~ time |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int.slo.mini.group.time.lsas)
+# 
+# lme.int.slo.mini.group.time.lsas.gad <-
+#   lme(
+#     rathus ~ group * time + lsas_sum + gad_sum,
+#     random = ~ time |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int.slo.mini.group.time.lsas.gad)
+# 
+# lme.int.slo.mini.group.time.lsas.gad.phq <-
+#   lme(
+#     rathus ~ group * time + lsas_sum + gad_sum + phq_sum,
+#     random = ~ time |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int.slo.mini.group.time.lsas.gad.phq)
+# 
+# lme.int.slo.mini.group.time.lsas.gad.phq.well <-
+#   lme(
+#     rathus ~ group * time + lsas_sum + gad_sum + phq_sum + well,
+#     random = ~ time |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int.slo.mini.group.time.lsas.gad.phq.well)
+# 
+# lme.int.slo.mini.group.time.lsas.gad.well <-
+#   lme(
+#     rathus ~ group * time + lsas_sum + gad_sum + well,
+#     random = ~ time |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int.slo.mini.group.time.lsas.gad.well)
+
+lme.int.slo.mini.group.time.lsas.well <-
+  lme(
+    rathus ~ group * time + lsas_sum + well,
+    random = ~ time |
+      subject,
+    data = r2.long.data,
+    na.action = na.omit,
+    method = "ML"
+  )
+#AIC(lme.int.slo.mini.group.time.lsas.well) # <---------- 4041,938 = lägst
+
+# lme.int.slo.mini.group.time.well <-
+#   lme(
+#     rathus ~ group * time + well,
+#     random = ~ time |
+#       subject,
+#     data = r2.long.data,
+#     na.action = na.omit,
+#     method = "ML"
+#   )
+# #AIC(lme.int.slo.mini.group.time.well)
+
+sum.rathus <- summary(lme.int.slo.mini.group.time.lsas.well)
+
+pander(sum.rathus,justify='lrrrrr')
+
+```
+
+
+``` {r Control, fig.cap='(ref:Control)', fig.align="center", fig.width=8, fig.height=4, eval=F}
 
 #Denna r-kodchunk genererar graferna för kontrollgruppen
 
