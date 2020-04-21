@@ -52,7 +52,6 @@ options(contrasts=c('contr.treatment','contr.poly'))
 #install_github("hofnerb/papeR")
 
 library("papaja") # APA-6 style guide compliance
-library("readxl")
 library("knitr")
 library("kableExtra")
 
@@ -74,6 +73,8 @@ enkable = function(...) {
 ```
 
 ```{r data setup, eval = FALSE}
+
+library("readxl")
 
 # This chunk is to be run only once in order to set up anonymous data that can be published on figshare
 # To run this chunk, change "eval = FALSE" to "eval = TRUE"
@@ -527,11 +528,39 @@ I den här uppsatsen undersöker vi följande frågeställningar:
 
 ### Primär frågeställning
 
+skillnad "självhjälp" vs "med stöd" map aaa-s ad --> two.tailed t-test
+
+"väntlista" sämre än "självhjälp" respektive "med stöd" map aaa-s ad --> one.tailed t-test * 2
+
+
+
 Är I-KBT utan terapeutstöd non-inferior I-KBT med terapeutstöd vad det gäller ökning av konstruktiv självhävdelse och minskning av passiv och aggressiv självhävdelse? Med det menas att vi vill testa om behandlingseffekten på konstruktiv självhävdelse för gruppen `r xg1` inte är sämre än effekten för gruppen `r xg2`. ** OBS det här innebär ett one-tailed t-test pre--post??**
+
+```{r primo}
+
+#https://www.mah.se/PageFiles/770522843/Att%20utv%C3%A4rdera%20studier%20-%20Om%20likhet%20och%20olikhet%20-Non-inferiority,%20Susanna%20Axelsson.pdf
+
+# Rathus: höjning är bättre, sänkning är sämre
+
+t.test((r2.long.data[lg1t3, 6] - r2.long.data[lg1t1n, 6]), # Change score Självhjälp
+       (r2.long.data[lg2t3, 6] - r2.long.data[lg2t1, 6]), # Change score Med stöd
+       alternative = "greater",na.action=na.rm)
+
+```
 
 ### Sekundära frågeställningar
 
+Vad bidrar?
+
 Är kontrollgrupp inferior I-KBT med terapeutstöd och/eller I-KBT utan terapeutstöd vad det gäller ökning av konstruktiv självhävdelse och minskning av passiv och aggressiv självhävdelse? Med det menas att vi vill testa om gruppen `r xg3` har en sämre effekt på konstruktiv självhävdelse än de två behandlingsgrupperna `r xg1` och `r xg2`. ** OBS det här innebär ett one-tailed t-test pre--post?? **
+
+```{r secundo}
+
+t.test((r2.long.data[lg1t3, 5] - r2.long.data[lg1t1, 5]), # Change score Självhjälp
+       (r2.long.data[lg3t3, 5] - r2.long.data[lg3t1, 5]), # Change score Med stöd
+       alternative = "greater")
+
+```
 
 Vilka patientfaktorer påverkar effektiviteten av endera eller båda behandlingsalternativen (prediktorer/moderatorer)? ** mixed model **
 
