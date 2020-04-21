@@ -525,11 +525,11 @@ I den här uppsatsen undersöker vi följande frågeställningar:
 
 ### Primär frågeställning
 
-Är I-KBT utan terapeutstöd non-inferior I-KBT med terapeutstöd vad det gäller ökning av konstruktiv självhävdelse och minskning av passiv och aggressiv självhävdelse? Med det menas att vi vill testa om behandlingseffekten på konstruktiv självhävdelse för gruppen `r xg1` inte är sämre än effekten för gruppen `r xg2`. ** OBS det här innebär ett one-tailed t-test **
+Är I-KBT utan terapeutstöd non-inferior I-KBT med terapeutstöd vad det gäller ökning av konstruktiv självhävdelse och minskning av passiv och aggressiv självhävdelse? Med det menas att vi vill testa om behandlingseffekten på konstruktiv självhävdelse för gruppen `r xg1` inte är sämre än effekten för gruppen `r xg2`. ** OBS det här innebär ett one-tailed t-test pre--post??**
 
 ### Sekundära frågeställningar
 
-Är kontrollgrupp inferior I-KBT med terapeutstöd och/eller I-KBT utan terapeutstöd vad det gäller ökning av konstruktiv självhävdelse och minskning av passiv och aggressiv självhävdelse? Med det menas att vi vill testa om gruppen `r xg3` har en sämre effekt på konstruktiv självhävdelse än de två behandlingsgrupperna `r xg1` och `r xg2`. ** OBS det här innebär ett one-tailed t-test **
+Är kontrollgrupp inferior I-KBT med terapeutstöd och/eller I-KBT utan terapeutstöd vad det gäller ökning av konstruktiv självhävdelse och minskning av passiv och aggressiv självhävdelse? Med det menas att vi vill testa om gruppen `r xg3` har en sämre effekt på konstruktiv självhävdelse än de två behandlingsgrupperna `r xg1` och `r xg2`. ** OBS det här innebär ett one-tailed t-test pre--post?? **
 
 Vilka patientfaktorer påverkar effektiviteten av endera eller båda behandlingsalternativen (prediktorer/moderatorer)? ** mixed model **
 
