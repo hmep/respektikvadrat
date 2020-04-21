@@ -949,11 +949,11 @@ Den föreliggande studien godkändes av etikprövningsnämnden. Diarienummer fö
 
 Deltagarna blev via studiens hemsida informerade om att allt deltagande var frivilligt och att de kunde avbryta sitt deltagande när som helst. All information samlades in under sekretess och i enlighet med personuppgiftslagen samt GDPR. Deltagandet var helt anonymt och all insamlad data var kopplad till den anonyma studiekod som genererades för varje deltagare. Vid exkludering från studien informerades deltagaren om anledningen samt fick rekommendationer (t ex om vart hen kunde vända sig för att söka vård). Vid tecken på svår depression rekommenderades deltagarna att uppsöka psykiatrisk vård. Under hela studiens gång hade deltagarna möjlighet att kontakta studieansvarig per telefon samt post.
 
-## Analys
+## Analyser
 
 Vi använde `r cite_r("r-references.bib")` för samtliga analyser.
 
-### Primär frågeställning
+### Analys av vår primära frågeställning
 
 Vi ville undersöka ifall det fanns någon skillnad i effekt (i endera riktning) av behandlingsprogrammet på utfallsmåttet AAA-S Adaptive mellan gruppen `r xg1` och gruppen `r xg2`. Detta gjordes med ett oberoende t-test. I testet användes change score mellan tidpunkterna `r xpre` och `r xpost` för respektive grupp. Varianserna kring medelvärdet konstaterades homogena i en kontroll med Levene's test. Detta gjorde det möjligt att använda ett oberoende t-test utan korrigering.
 
@@ -986,7 +986,7 @@ TOLKNING (flyttas): Vi drar slutsatsen att självhjälpsmaterialet ensamt (som f
 
 ALTERNATIV: Kan vi tänka ut ett sätt att besvara den här frågan med vår mixed model? Kan vi använda andra kontraster bara?
 
-### Sekundära frågeställningar
+### Analyser av våra Sekundära frågeställningar
 
 För att ta reda på om behandlingseffekten i gruppen `r xg3` är sämre än behandlingseffekten i gruppen `r xg1` respektive gruppen `r xg2` med avseende på utfallsmåttet AAA-S Adaptive, genomförde vi en mixed-models-analys. 
 
@@ -1027,13 +1027,13 @@ Ofta används signifikanstestning för att avgöra om en skillnad i exempelvis m
 För att avgöra om en viss *individ* i har förbättrats i en viss behandling i klinisk mening kan kriterierna *reliabel förändring* och *klinisk signifikans* med fördel kombineras. Det förra ger en bild av om en förändring mellan två mätpunkter är tillräckligt stor i relation till populationsvariansen (som kan hämtas från normdata) för att kunna betraktas som en verklig förändring och inte bara ett slump- eller mätfel. Den senare ger en bild av om hur de absoluta eftermätningsvärdena förhåller sig till medelvärdet för antingen en subklinisk population eller en klinisk population (som också kan hämtas från normdata) [@Jacobson1991].
 
 
-Genom att rapportera frekvensen individer som har förändrats både reliabelt och kliniskt signifikant kan man komplettera den statistiska beräkningen av gruppens relativa förändring med ett kliniskt relevant mått som också säger något om hur förändringen förhåller sig till befolkningen i stort. Standardiserad beräkning av dessa mått gör det möjligt att utifrån insamlad data göra en bedömning av en individs förbättring som är mer pålitligt och lättare att reproducera än subjektiva bedömningar (av kliniker, närstående eller klienten själv). Dessa standardiserade mått kan också kan användas för att jämföra effekten av olika behandlingar.
+Genom att rapportera antalet individer som har förändrats både reliabelt och kliniskt signifikant kan man komplettera den statistiska beräkningen av gruppens relativa förändring med ett kliniskt relevant mått som också säger något om hur förändringen förhåller sig till befolkningen i stort. Standardiserad beräkning av dessa mått gör det möjligt att utifrån insamlad data göra en bedömning av en individs förbättring som är mer pålitligt och lättare att reproducera än subjektiva bedömningar (av kliniker, närstående eller klienten själv). Dessa standardiserade mått kan också kan användas för att jämföra effekten av olika behandlingar.
 
 #### Beräkning av reliabel förändring och klinisk signifikans
 
 För att bedöma om en individuell förändring mellan två mätpunkter är reliabel används standardavvikelsen i normalpopulationen. För beräkningen av reliabel förändring, *reliable change index* (RCI), delas skillnaden mellan de två medelvärdena med standardfelet (det vill säga standardavvikelsen delat med roten ur sample-storleken). 
 
-För att bedöma absolut status för en individ vid behandlingens slut (exempelvis för att kunna avgöra om personen ska betraktas som tillfrisknad eller i behov av fortsatta interventioner) kan man relatera eftermätningsvärdet till medelvärdet för antingen den kliniska och den subkliniska normalpopulationen. @Jacobson1991 definierar det förra som kriterium *a* och det senare som kriterium *b*. Man kan också relatera eftermätningsvärdet för en individ till ett normvärde i mitten av *a* och *b*, vilket författarna kallar kriterium *c*. I enlighet med rekommendationerna i @Jacobson1991 för överlappande distributioner använder vi kriterium *b* för beräkningen: de invidier vars eftermätningsvärde befinner sig inom två standardavvikelser från den subkliniska normalpopulationen anses vara kliniskt signifikant förändrade.
+För att bedöma absolut status för en individ vid behandlingens slut (exempelvis för att kunna avgöra om personen ska betraktas som tillfrisknad eller i behov av fortsatta interventioner) kan man relatera individens eftermätningsvärde till medelvärdet för antingen den kliniska populationen eller den subkliniska normalpopulationen. @Jacobson1991 definierar det förra som kriterium *a* och det senare som kriterium *b*. Man kan också relatera eftermätningsvärdet för en individ till ett normvärde i mitten av *a* och *b*, vilket författarna kallar kriterium *c*. I enlighet med rekommendationerna i @Jacobson1991 för överlappande distributioner använder vi kriterium *b* för beräkningen: de invidier vars eftermätningsvärde befinner sig inom två standardavvikelser från den subkliniska normalpopulationen anses vara kliniskt signifikant förändrade.
 
 <!-- De graferna som innehåller a, b, och c i resultatdelen bör i sin figurtext ha en beskrivning av vad dessa bokstäver står för, eller en hänvisning tillbaka till detta avsnitt -->
 
@@ -2005,7 +2005,7 @@ x <- clinsig(
 
 # Diskussion
 
-Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt självhjälpsprogram för att förbättra individers konstruktiva självhävdelse. Programmet administrerades via en internetbaserad plattform. Studien genomfördes med en randomiserad och kontrollerad design. Interventionen byggde på självhjälpsmaterialet *Assert Yourself* [@michel2008] och inkluderade bland annat inslag av psykoedukation, beteendeexperiment, avslappningsövningar, vidmakthållandeplanering och återfallsprevention. En tredjedel av deltagarna fick tillgång till programmet utan behandlarstöd, en tredjedel fick tillgång till programmet med behandlarstöd och en tredjedel var kontrollgrupp.
+Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt självhjälpsprogram för att förbättra individers konstruktiva självhävdelse. Programmet administrerades via en internetbaserad plattform. Studien genomfördes med en randomiserad och kontrollerad design. Interventionen byggde på självhjälpsmaterialet *Assert Yourself* [@michel2008] och inkluderade bland annat inslag av psykoedukation, beteendeexperiment, avslappningsövningar, vidmakthållandeplanering och återfallsprevention. En tredjedel av deltagarna fick tillgång till programmet utan behandlarstöd, en tredjedel fick tillgång till programmet med behandlarstöd och en tredjedel var kontrollgrupp. Vi konstaterade att tillgång till behandlingsmaterialet (oberoende av om man hade behandlarstöd eller inte) gav bättre resultat än att vara placerad på väntlista. Vi fann däremot ingen skillnad i utfallet mellan gruppen med behandlarstöd och gruppen utan behandlarstöd. De två grupperna var lika effektiva.
 
 *Vi bör avsluta detta stycke med några få rader om den analys vi gjorde och resultatet vi fick!*
 
@@ -2015,7 +2015,7 @@ Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt s
 
 <!-- varför går både adaptiv och aggressiv självhävdelse upp? det skulle kunna ha att göra med vårt sample. Om vi hade haft flera personer med positiva rathus-skattningarna (kolla rci för dem!) kanske vi skulle kunna ha sett en minskning av aggressiv självhävdelse. Men för vårt nuvarande sample, med många socialfobiker (hur många? kolla upp) så kan vi anta att ökning av aggressiv självhävdelse är något *bra*?? -->
 
-skilland i utveckling över tid mellan rathus respektive aaas-ad/ag: patriks ide är att det skulle kunna vara så att rathus snabbare fångar upp förändring i teroetiskt förhållningssätt/avslappning medan aaas-ad/ag kanske fångar mer effekten av lyckade be
+skilland i utveckling över tid mellan rathus respektive aaas-ad/ag: patriks ide är att det skulle kunna vara så att rathus snabbare fångar upp förändring i teroetiskt förhållningssätt/avslappning medan aaas-ad/ag kanske fångar mer effekten av lyckade beteendeexperiment.
 
 ## Metodologiska brister / felkällor / validitet / reliabilitet
 
@@ -2040,22 +2040,19 @@ Med nästintill 90% kvinnor i samplet var könsfördelningen ytterst ojämn. Den
 
 Över 70% av vårt sample hade avslutade universitets- eller högskoleutbildningar och ytterligare 10% studerade vid behandlingens start. Denna siffra skiljer sig markant från Sveriges befolking, där endast 43% läst vidare efter gymnasiet [@SCB2020]. Delar av förklaringen till att en så stor andel av vårt sampel har studerat på universitet eller högskola skulle kunna vara att majoriteten av studiens deltagare är kvinnor, och att de i större utsträckning än män studerar vidare efter gymnasiet [@SCB2020]. Då väldigt få deltagare i den aktuella studien hade yrkesutbildning, gymnasieutbildning, folkskola eller grundskola som högsta avslutad utbildning bör man vara restriktiv med att applicera studiens resultat inom dessa grupper.
 
-*jag har svårt att veta hur jag ska formulera stycket ovan utan att det implicit (eller explicit!) ska låta nedvärderande mot personer med lägre utbildning. Jag tror att det finns en poäng i det jag vill ha sagt, jag vet bara inte hur jag ska säga det. Den sista meningen är i dagsläget också horribelt klumpig att läsa även om jag tror att den är grammatiskt korrekt*
-
 <!-- Skriva några rader om utbildnignsnivå och att den är långt ifrån representativ för Sveriges befolkning?
 https://www.scb.se/hitta-statistik/sverige-i-siffror/utbildning-jobb-och-pengar/utbildningsnivan-i-sverige/
 -->
 
-Både att väldigt många kvinnor deltog i den aktuella studien, och att en så stor andel av samplet hade påbörjade eller avslutade universitetsstudier gör det svårare att generalisera resultatet till Sveriges befolkning i stort. Till fördel för samplets representation av populationen är däremot att det i och med en internetbaserad behandling fanns möjlighet till ett nationellt intag av deltagare. 
+Både att väldigt många kvinnor deltog i den aktuella studien, och att en så stor andel av samplet hade påbörjade eller avslutade universitetsstudier, gör det svårare att generalisera resultatet till Sveriges befolkning i stort. Till fördel för samplets representation av populationen är däremot att det i och med en internetbaserad behandling fanns möjlighet till ett nationellt intag av deltagare. 
 
-Då det varken finns någon data om prevalens av bristande självhävdelse i Sveriges population, eller vilka demografiska faktorer denna brist korrelerar med, är det dock ytterst svårt att säga hur representativ för populationen samplet i den aktuella studien är.
+Då det i skrivande stund varken finns data om prevalens av bristande självhävdelse i Sveriges population, eller data om vilka demografiska faktorer denna brist korrelerar med, är det ytterst svårt att säga hur representativ för Sveriges befolkning samplet i den aktuella studien är.
 
 <!--
-Bör den data vi refererar till i avsnittet ovan bifogas/redovisas på något sätt? Vi kan även argumentera för att algoritmen till stor del förklarar spridningen i ålder hos vårt sample då majoriteten av de som fick se reklamen var mellan 35-54 år gamla
+Bör den data vi refererar till i avsnittet om ojämn könsfördelning bifogas på något sätt? Vi kan även argumentera för att algoritmen till stor del förklarar spridningen i ålder hos vårt sample då majoriteten av de som fick se reklamen var mellan 35-54 år gamla.
 -->
 
 <!-- 
-+/- användande av de skalor vi har gjort och hur tillförlitliga de är.
 - Vårt primära utfallsmått för assertiveness är inte validerat på svenska
 - Vårt sekundära utfallsmått för assertiveness är inte validerat på svenska
 
@@ -2063,9 +2060,7 @@ x å andra sidan vad våra resultat visar på (?)
 -->
 
 <!--
-- Icke tydliga inklusionskriterier
 
--/+ Väntlista brukar leda till försämring, på gruppnivå hos våra deltagare ej så - Tobias ändå räkna ut procentuell försämring hos gruppen? [@Rozental2017a].
 + a priori powerberäkning
 -->
 
@@ -2080,7 +2075,7 @@ I denna studie placerades en tredjedel av deltagarna på en väntlista. En risk 
 
 Då behandlingsmaterialet översatts till svenska inför den aktuella studien – och originalmaterialet användes utan inslag av behandlarstöd – fanns det ingen behandlarstödsmanual eller dylikt för studiens behandlare att använda sig av. Behandlarna hade utöver detta ingen tidigare erfarenhet av internetbaserad psykologisk behandling. Dock hade båda behandlarna tidigare erfarenhet av ansikte mot ansikte-behandling med individer med självrapporterad bristande självhävdelse. Bristen på erfarenhet av internetbaserad behandling kan ha påverkat kvaliten i det behandlarstöd som gavs. Å andra sidan har det visat sig att tidigare erfarenheter och kunskaper om I-KBT hos behandlare inte gör nämnvärd skillnad så länge de har grundläggande kunskaper inom psykologisk behandling [@Baumeister2014a]. Båda behandlarna hade även tillgång till både ett dokument med generella förhållningssätt vid internetbehandling samt till vid-behov-handledning och stöd av en legitimerad psykolog med omfattande erfarenhet av I-KBT. Den generella målsättningen var att behandlarna skulle spendera cirka 15 minuter per vecka och deltagare. Detta varierade dock nämnvärt beroende på hur frekvent behandlarens deltagare hörde av sig till behandlaren med behandlingsrelaterade frågor samt hur utförligt deltagarna besvarade behandlingsprogrammets övningar. 
 
-Ytterligare en potentiell brist i studien är användandet av de nyligen översatta versionerna av självskattningsformulären AAA-S [@Thompson2011] och RAS [@Rathus1973]. Då dessa skalor ej fanns tillgängliga på svenska översattes de inför rekryteringsstart. Det finns många rekommendation och riktlinjer för hur översättningar bör gå till [se @Beaton2000; och @Jones2001 för två väl använda metoder]. Ett gemensamt tema i dessa översättningsmetoder är att materialet oberoende översätts från originalspråk till planerat användningsspråk (i det rådande fallet till svenska) av åtminstone två personer och att den översatta versionen sedan översätts tillbaka till sitt originalspråk av ytterligare oberoende översättare. AAA-S eller RAS översattes inför föreliggande uppsats endast en gång från engelska till svenska.
+Ytterligare en potentiell brist i studien är användandet av de nyligen översatta versionerna av självskattningsformulären AAA-S [@Thompson2011] och RAS [@Rathus1973]. Då dessa skalor ej fanns tillgängliga på svenska översattes de inför rekryteringsstart. Det finns många rekommendation och riktlinjer för hur översättningar bör gå till [se @Beaton2000; och @Jones2001 för två väl använda metoder]. Ett gemensamt tema i dessa översättningsmetoder är att materialet översätts från originalspråk till planerat användningsspråk (i det rådande fallet till svenska) av åtminstone två av varandra oberoende individer och att den översatta versionen sedan översätts tillbaka till sitt originalspråk av ytterligare oberoende översättare. En bedömning görs sedan mellan originalversionen och versionen översatt från det planerade användningsspråket till originalspråket. AAA-S och RAS översattes inför föreliggande uppsats endast en gång från engelska till svenska.
 
 De nyöversatta skalorna är ej validerade och saknar svenska normer. Istället används data för både AAA-S och RAS från student-sample 1 från @Thompson2011 som icke-kliniska normer. Fördelen med dessa data är dels att de är relativt aktuella, dels att de härrör från ett och samma sample och därför ger goda möjligheter till jämförelser sins emellan. Data från föreliggande uppsats skulle potentiellt kunna användas för att validera de svensköversatta skalorna i en uppföljande studie, dock endast med dilemmat att båda översättningar på en och samma gång är icke-validerade och idealiska kriterier för varandras validering; det saknas tyvärr vedertagna skalor i litteraturen för *assertiveness* utöver RAS och AAA-S. Ytterligare en begränsning för ett sådan validering är att det sample som undersöks i den här uppsatsen har en förmodad slagsida åt passiv självhävdelse och sannolikt inte innehåller tillräckligt med data från individer som kan antas ha överskott av aggressiv självhävdelse. Idealiskt sett skulle denna brist avhjälpas i kommande kompletterande undersökningar.
 
