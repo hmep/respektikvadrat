@@ -1063,23 +1063,25 @@ ALTERNATIV: Kan vi tänka ut ett sätt att besvara den här frågan med vår mix
 
 ### Analyser av våra Sekundära frågeställningar
 
-För att ta reda på om behandlingseffekten i gruppen `r xg3` är sämre än behandlingseffekten i gruppen `r xg1` respektive gruppen `r xg2` med avseende på utfallsmåttet AAA-S Adaptive, genomförde vi en mixed-models-analys. 
+För att ta reda på om behandlingseffekten i gruppen `r xg3` är sämre än behandlingseffekten i gruppen `r xg1` respektive gruppen `r xg2` med avseende på utfallsmåttet AAA-S Adaptive, genomförde vi en *mixed-model*-analys. 
 
-#### Modellering av individuella skillnader
+#### Modellering av både prediktorer och individuella skillnader
 
-En mixed model är enkelt uttryckt en utökning av linjär regression med vilken det är möjligt att på en och samma gång modellera oberoende (*fixed*) och beroende (*random*) variabler -- i en och samma analys. Det gör det möjligt att tilldela mer av "rest"-variansen i en linjär regression eller ANOVA till observerade (men inte kontrollerade) variabler i experimentet. Ett exempel på en sådan variabel skulle kunna vara en viss deltagares förutsättningar att ta till sig av behandlingen. Det vore förväntat att de skulle påverka den deltagarens mätpunkter på ett systematiskt sätt. 
+En *mixed model* (också kallad tillväxtmodell, *growth model* eller multinivåmodell, *multi level model*) är enkelt uttryckt en utökning av linjär regression med vilken det är möjligt att på en och samma gång modellera oberoende (*fixed*) och beroende (*random*) variabler -- i en och samma analys. Det gör det möjligt att tilldela mer av "rest"-variansen i en linjär regression eller ANOVA till observerade (men inte kontrollerade) variabler i experimentet. Ett exempel på en sådan underliggande variabel skulle kunna vara en viss deltagares förutsättningar att ta till sig av behandlingen. Det vore förväntat att de skulle påverka den deltagarens mätpunkter på ett systematiskt sätt. 
 
 <!-- HAR JAG MISSFÖRSTÅTT DET HÄR? Inklusionen av sådana *random*-effekter innebär dels att behovet av post hoc-test av skillnader i beroende variabler försvinner  -->
 
-2DO: FIXA (och därmed hanteringen av massignifikansproblemet; detta är redan hanterat i modellen), dels att det blir möjligt att bortse från några av de antaganden som gäller för variansanalys med enbart *fixed*-effekter [@field2012discovering].
+<!-- 2DO: FIXA (och därmed hanteringen av massignifikansproblemet; detta är redan hanterat i modellen), dels att det blir möjligt att bortse från några av de antaganden som gäller för variansanalys med enbart *fixed*-effekter [@field2012discovering]. -->
 
-En anledning till valet av metod var att vi förväntade oss olika spridning av resultatet i de två grupper som fick tillgång till träningsprogrammet, både sinsemellan och i relation till gruppen `r xg3`. Det är rimligt att anta att deltagande i en behandling för vissa kan innebära en stor förbättring och för andra en viss försämring, medan icke-behandlade deltagare förväntas ligga stilla kring ungefär samma värden över tid i och med att de inte blir behandlade. Med en mixed model kan vi ignorera antagandet om homogena samband i de olika grupperna mellan prediktorer och utfallsmått, eftersom modellen inkluderar dessa skillnader.
+<!-- En anledning till valet av metod var att vi förväntade oss olika spridning av resultatet i de två grupper som fick tillgång till träningsprogrammet, både sinsemellan och i relation till gruppen `r xg3`.  -->
 
-Ett annat skäl är att vi har fler än två beroende mättillfällen av utfallsmåtten och prediktorerna, för var och en av deltagarna. En mixed model möjliggör analys av beroende data som är "klustrad" eller "nästlad". I föreliggande uppsats finns till exempel tre beroende mättillfällen (nivå 1) som är hierarkiskt inordnade under respektive deltagare (nivå 2), som i sin tur är hierkiskt inordnade under träningsprogrammets två behandlare (nivå 3). 
+Det är rimligt att anta att deltagande i en behandling för vissa kan innebära en stor förbättring och för andra en viss försämring, medan icke-behandlade deltagare förväntas ligga stilla kring ungefär samma värden över tid i och med att de inte blir behandlade. Med en *mixed model* kan vi ignorera antagandet om homogena spridning i de olika grupperna mellan prediktorer och utfallsmått, eftersom modellen inkluderar dessa skillnader.
 
-Ytterligare ett skäl till metodvalet var att mixed models hanterar icke-balanserade grupper på ett bättre sätt än många andra vanliga metoder, som *repeated-measures*-ANOVA (MANOVA). Det gjorde det möjligt att ta höjd för "hårda avhopp" (deltagare som inte längre ville vara med i varken behandling eller studie) och exkluderingar. Slumpmässigt eller inte slumpmässigt saknade data är alltid ett potentiellt problem i en forskningsdesign, men lite mindre så i en mixed model-analys som uppskattar parametrar även med "osthål" i tabellen med data [@field2012discovering].
+I den här studien används 3 beroende mättillfällen av utfallsmåtten och prediktorerna, för var och en av deltagarna. En *mixed model* möjliggör analys av beroende data som är "klustrad" eller "nästlad" [@Hesser2015]. I föreliggande uppsats finns till exempel tre beroende mättillfällen (nivå 1) som är hierarkiskt inordnade under respektive deltagare (nivå 2), som i sin tur är hierkiskt inordnade under träningsprogrammets två behandlare (nivå 3). 
 
-2DO: Hämta mer från @Hesser2015 om rationalen för metoden! Bra referenser [@Clark; @field2012discovering; @Hesser2015]
+*Mixed model* hanterar icke-balanserade grupper på ett bättre sätt än många andra vanliga metoder, som *repeated-measures*-ANOVA (MANOVA). Det gjorde det möjligt att ta höjd för "hårda avhopp" (deltagare som inte längre ville vara med i varken behandling eller studie). Slumpmässigt eller inte slumpmässigt saknade data är alltid ett potentiellt problem i en forskningsdesign, men lite mindre så i en *mixed model*-analys som uppskattar parametrar även med saknade värden i tabellen med data [@Hesser2015].
+
+<!-- 2DO: Hämta mer från @Hesser2015 om rationalen för metoden! Bra referenser [@Clark; @field2012discovering; @Hesser2015] -->
 
 2DO: Skriv något här om vad som menas med random slope och random intercept. Inkludera info om de extra antaganden det innebär:
 -- vi antar att coef (intercept) är normalt distribuerad över hela modellen <- hur testa????
@@ -1087,11 +1089,15 @@ Ytterligare ett skäl till metodvalet var att mixed models hanterar icke-balanse
 
 <!-- https://m-clark.github.io/mixed-models-with-R/random_intercepts.html -->
 
-#### Tillvägagångssätt
+Ett syfte med *mixed model* är ofta att (som med linjär regression) hitta den uppsättning oberoende variabler som bäst predicerar de data man har samlat in i studien. För att hitta den kan man i princip välja ett av två tillvägagångssätt: att börja med en minimal modell och bygga på den med *random*-effekter och allt fler *fixed*-effekter (prediktorer/kovariat) eller börja med en maximal modell och eliminiera prediktorer efterhand. För varje ny modell utförs en variant av ett $\chi^2$-test. För mixed models med paketet nlme [@R-nlme] rapporterar statistikprogrammet ett så kallat AIC-värde. Ett lägre värde innebär att det är mindre sannolikt att slumpen kan förklara skillnaderna mellan funna data och de data som modellen predicerar; ett högre innebär att osäkerheten i modellen är större. Genom att systematiskt gå genom de olika modellerna kan man vaska fram den modell med lägst AIC -- som har bäst övergripande \'fit\'. [@field2012discovering].
 
-Målet med en mixed model är ofta att (som med linjär regression) att hitta den modell som bäst beskriver de data man har samlat in i studien. För att hitta den kan man i princip välja ett av två tillvägagångssätt: att börja med en minimal modell och bygga på den med *random*-effekter och allt fler prediktorer eller börja med en maximal modell och eliminiera prediktorer efterhand. För varje ny modell (oavsett riktning i modellmakandet) utförs en variant av ett chi-square-test. För mixed models med paketet nlme [@R-nlme] rapporterar statistikprogrammet ett så kallat AIC-värde. Ett lägre värde innebär att det är mindre sannolikt att slumpen kan förklara skillnaderna mellan funna data och de data som modellen predicerar; ett högre innebär att osäkerheten i modellen är större. Genom att systematiskt gå genom de olika modellerna kan man vaska fram den modell med lägst AIC -- som har bäst övergripande \'fit\'. [@field2012discovering].
+<!-- Chi-square: https://rpubs.com/JoPaPi/349815 -->
 
-Vid flera utfallsmått, som i den här studien, upprepas processen för var och en av de beroende variablerna. Vi började med en minimal modell för vart och ett av utfallsmåtten AAA-S Aggressive, AAA-S Adaptive och Rathus, och utökade dem med *fixed* och *random* variabler. Genom modellselektionsprocessen kunde vi också konstatera vilka av dem som är mest relevanta, det vill säga vilka prediktorer som har störst inverkan på den effekt som mäts med respektive utfallsvariabel. Genom att ta med dessa variabler som *random*-variat eller kovariat kunde vi också kontrollera för deras inverkan på utfallet i modellen.
+Vid flera utfallsmått, som i den här studien, upprepas processen för var och en av de beroende variablerna. Vi började med en minimal modell för vart och ett av utfallsmåtten AAA-S Aggressive, AAA-S Adaptive och Rathus, och utökade dem med *fixed* och *random* variabler. Genom modellselektionsprocessen kunde vi också konstatera vilka av dem som är mest relevanta, det vill säga vilka prediktorer och *random*-effekter som har störst inverkan på respektive utfallsvariabel.
+
+De signifikanta huvud- och interaktionseffekterna i en *mixed model* kan undersökas med uppföljande post hoc-test, exempelvis t-test med korrigering av p-värdet för att hantera massignifikansproblemet. Individernas bidrag till *random*-variansen kan också räknas ut och rapporteras.
+
+<!-- Genom att ta med dessa variabler som *random*-variat eller *fixed*-kovariat kunde vi också kontrollera för deras inverkan på utfallet i modellen. -->
 
 <!-- Fråga någon som vet: ska man specificera en kovariansstruktur, ex ar(1) för repeated measures? -->
 
@@ -2039,6 +2045,20 @@ rathus.lmer <- lmer(rathus ~ group * time + lsas_sum + well + (1|subject), data=
 
 print(summary(rathus.lmer), digits=2, corr=FALSE)
 anova(rathus.lmer)
+
+## Anova-like table of random-effect terms using likelihood ratio tests:
+ranova(rathus.lmer)
+## F-tests of 'single term deletions' for all marginal terms:
+drop1(rathus.lmer)
+## Least-Square means and pairwise differences:
+(lsm <- ls_means(rathus.lmer))
+ls_means(rathus.lmer, which="group", pairwise = TRUE)
+## ls_means also have plot and as.data.frame methods:
+## Not run:
+plot(lsm, which=c("group", "time"))
+as.data.frame(lsm)
+## Inspect the LS-means contrasts:
+show_tests(lsm, fractions=TRUE)$Product
 
 #############
 
