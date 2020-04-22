@@ -1943,8 +1943,8 @@ knitr::kable(tidy.rathus)
 pander(sum.rathus,justify='lrrrrr')
 
 ```
-
-```{r nlme}
+ 
+```{r nlme, eval = F}
 
 ### Verification
 
