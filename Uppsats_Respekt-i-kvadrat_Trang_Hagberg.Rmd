@@ -450,7 +450,7 @@ Underskott av beteenden som går att samla under begreppet *assertiveness* (frå
 
 Träning i *assertiveness* har en lång historia med behavioristiska rötter från 1950-talet och framåt, bland annat genom @salter1949conditioned samt @Wolpe1966. Dessa första behaviouristiska terapier byggde på principer om klassisk betingning: Målet för träningen var att para aversiva stimuli som tidigare gav upphov till exempelvis passivitet eller aggressivitet med adaptiva beteenden som tidigare uttryckts i underskott – ofta med avslappning som en integrerad del, utifrån rationalen att avslappning och ångest inte är förenliga. Som en del i den självhävdelsefokuserade psykoterapin föreskrevs ett antal olika  beteenden för klienter och patienter att träna på, till exempel att säga nej till andra.
 
-Under 1970-talet kom träning i konstruktiv självhävdelse både att formaliseras till kompletta behandlingsprogram, som i @LINEHAN1979, samt populariseras, till exempel i självhjälpstitlar som *Don’t say yes when you want to say no* [@fensterheim1975don] och *When I say no, I feel guilty: how to cope–using the skills of systematic assertive therapy* [@smith1975say]. Självhjälpsboomen under 1970-talet sammanföll med sociala och politiska omvälvningar i samhället, där marginaliserade grupper gjorde sig allt mer hörda och maktstrukturer i samhället sattes under förändringstryck. Dessa emanciperande och normbrytande rörelser väckte motstånd – precis som behavioristiskt influerade terapier gjorde. Ett roligt exempel på kritik av träning i konstruktiv självhävdelse är @607233319760514, som frankt rekommenderade deltagare i *assertiveness*-kurser att hävda sig själva genom att vägra betala kursavgiften.
+Under 1970-talet kom träning i konstruktiv självhävdelse både att formaliseras till kompletta behandlingsprogram, som i @LINEHAN1979, samt populariseras, till exempel i självhjälpstitlar som *Don’t say yes when you want to say no* [@fensterheim1975don] och *When I say no, I feel guilty: how to cope–using the skills of systematic assertive therapy* [@smith1975say]. Självhjälpsboomen under 1970-talet sammanföll med sociala och politiska omvälvningar i samhället, där marginaliserade grupper gjorde sig allt mer hörda och maktstrukturer i samhället sattes under förändringstryck. Dessa emanciperande och normbrytande rörelser väckte motstånd – precis som behavioristiskt influerade terapier gjorde. Ett uppseendeväckan exempel på kritik av träning i konstruktiv självhävdelse är @607233319760514, som frankt rekommenderade deltagare i *assertiveness*-kurser att hävda sig själva genom att vägra betala kursavgiften.
 
 I och med psykatrins allt tydligare inriktning mot syndromala kategoriseringar av psykisk ohälsa, kanske tydligast i form av *Diagnostic and Statistical Manual of Mental Disorders* [@american1968diagnostic] med efterföljare, kom träning i *assertiveness* så småningom att falla i glömska. Sporadiskt återaktualiserades begreppet som mål för behandling under 1990-talet, då kompletterad med metoder för kognitiv omstrukturering i enlighet med principerna i @beck1979cognitive, för att på så sätt hjälpa personer med (mer eller mindre generaliserade) hindrande förutsägelser i svåra situationer att finna stöd för mer hjälpsamma förutsägelser och att testa dem i praktiken.
 
@@ -476,7 +476,7 @@ knitr::include_graphics("canvas-konstruktiv-slinga-X.pdf")
 
 ## Konstruktiv självhävdelse och aktuellt forskningsläge
 
-Forskning på *assertiveness* övergavs i stort sett efter 1970-talet. Under de senaste åren har dock intresset för självhävdelse ökat något igen. @Vagos2019 konstaterar att självupplevd grad av psykiskt lidande korrelerar negativt med grad av konstruktiv självhävdelse, i linje med rationalen för träning i *assertiveness* som den presenterades av @Wolpe1966. @Amy2015 visar en negativ korrelation mellan att uppleva social ångest och konstruktiv självhävdelse. Deras slutsats är att man kan öka oddsen för konstruktivt självhävdande beteenden för en person antingen genom att i behandling exponera för antecedenterna för social ångest och/eller att arbeta med hur personen förhåller sig till själva ångesten. Den senare toleranskomponenten kan ses som ett komplement till den habitueringsrational som varit förhärskande inom KBT fram till sekelskiftet.
+Forskning på *assertiveness* övergavs i stort sett efter 1970-talet i och med psykatrins fokus på syndromala kategoriseringar av psykisk ohälsa. *Assertiveness* föll tillsammans med andra transdiagnostiska begrepp i glömska till förmån för diagnosspecifika interventioner och insatser. Under de senaste åren har dock intresset för självhävdelse ökat något igen. @Vagos2019 konstaterar att självupplevd grad av psykiskt lidande korrelerar negativt med grad av konstruktiv självhävdelse, i linje med rationalen för träning i *assertiveness* som den presenterades av @Wolpe1966. @Amy2015 visar en negativ korrelation mellan att uppleva social ångest och konstruktiv självhävdelse. Deras slutsats är att man kan öka oddsen för konstruktivt självhävdande beteenden för en person antingen genom att i behandling exponera för antecedenterna för social ångest och/eller att arbeta med hur personen förhåller sig till själva ångesten. Den senare toleranskomponenten kan ses som ett komplement till den habitueringsrational som varit förhärskande inom KBT fram till sekelskiftet.,
 
 @Speed2018a sammanställer forskningsläget kring *assertiveness*. Träning i konstruktiv självhävdelse kan förbättra måendet vid både ångestsyndrom och depression och öka självförtroende samt förbättra upplevd tillfredsställelse i parrelationer. Författarna konstaterar att träning i konstruktiv självhävdelse redan ingår i de bredare begreppen som beteendeaktivering och färdighetsträning i flertalet allt mer beforskade behandlingsmetoder -- som dialektisk beteendeterapi (DBT), *Acceptance and Commitment Therapy* (ACT) och beteendeaktivering vid depression. En stor andel av den forskning om *assertiveness* som ett transdiagnostiskt begrepp är till åren kommen och det finns ett stort behov att på nytt utvärdera den specifika effekten av självhävdelseträning [@Speed2018a]. Sammanfattningsvis är forskingsläget både skralt för *assertiveness* som konstrukt och omfattande för de syndrom och symtom som associeras med det.
 
@@ -492,7 +492,7 @@ Evidensen för beteendeterapi och KBT för syndromala och icke-syndromala psykol
 
 
 ## Vad är effektivt i KBT?
-*temporär rubrik*
+*ovan rubrik är temporär och bör få ett bättre namn*
 
 ### En kontextuell och neurovetenskaplig inramning av \'kognitioner\'
 
@@ -508,7 +508,7 @@ Undvikande av aversiva stimuli -- det vill säga undvikandet av det som väcker 
 
 Särskilt svårt är det att bryta beteenden som har som funktion att undvika det som väcker rädsla. En stor utmaning i behandling av ångestsyndrom är att överbrygga det undvikandet som följt av just rädsloinlärning. @Ohman2001 konstaterar att rädsloinlärning inte så lätt går att påverka med kognitiv kontroll i skarpt läge, inte minst för att de neuronala rädslokretsarna vid amygdala ligger så djupt förankrade i limbiska delar av hjärnan och mer eller mindre lever sitt eget liv.
 
-Det har även visat sig att det är ytterst menligt att undvika ens aversiva känslor, så kallat emotionellt undvikande. Regelbundet användande av emotionellt undvikande är kopplat till flertalet negativa följder. Det är paradoxalt nog kopplat till mer upplevande av negativa emotioner (och mindre upplevande av positiva emotioner), men även till större undvikande av nära relationer, mindre socialt stöd, lägre självförtroende och sämre generellt välmående. Detta går inte att nog betona: att försöka undvika aversiva emotioner leder till att man upplever dem mer [@Gross2003; @Fernandez-Rodriguez2018, @Hayes1909].
+Det har även visat sig att det är ytterst menligt att undvika ens aversiva känslor, så kallat emotionellt undvikande. Regelbundet användande av emotionellt undvikande är kopplat till flertalet negativa följder. Det är paradoxalt nog kopplat till mer upplevande av negativa emotioner (och mindre upplevande av positiva emotioner), men även till större undvikande av nära relationer, mindre socialt stöd, lägre självförtroende och sämre generellt välmående. Detta går inte att nog betona: att försöka undvika aversiva emotioner leder till att man upplever dem mer [@Gross2003; @Fernandez-Rodriguez2018, @Hayes1996].
 
 <!-- Fernandes-Rodriguez eller vad han nu heter -->
 <!-- @Hayes1996 om experiential avoidance -->
@@ -561,8 +561,6 @@ Lösningen:
 
 
 #### Growth mindset
-
-*ska få ny rubrik och bör troligen kortas ner markant*
 
 Ett fixerat tankesätt är antagandet att förmågor, färdigheter samt egenskaper är fasta och oföränderliga medans ett utvecklande tankesätt är antagandet att dessa förmågor, färdigheter och egenskaper kan utvecklas och förändras. Tankesätten är ett sorts ramverk genom vilket man tolkar och förstår sig på sina erfarenheter, vilket i sin tur påverkar vilka beteenden och emotioner man uppvisar [@Dweck1995]. Ett utvecklande tankesätt kan bland annat leda till att man tar på sig fler utmaningar, fortsätter kämpa vid bakslag och att man i stort och smått i sitt liv presterar bättre [@Dweck2019]. I verkligheten är ens tankesätt sällan antingen eller, utan återfinns på ett kontinuum [@Dweck1995]. Tankesätten kan beröra mer övergripande domäner, såsom personlighet och intelligens, eller mer specifika domäner, såsom ångest och emotioner. Man kan ha ett fixerat tankesätt inom en viss domän, och ett utvecklande tankesätt inom en annan [@Schroder2016]. Har man ett utvecklande tankesätt kring ångest leder det både till större motivation under en behandlings gång och till större odds för positivt behandlingsutfall [@Schroder2015; @DeCastella2015]. Utöver detta har det även visat sig att personer med ett fixerat tankesätt i större utsträckning försöker undvika negativa emotioner samt i mindre utsträckning omvärderar sina övertygelser i ljuset av nya erfarenheter [@Schroder2015]. Emotionellt undvikande är särskilt vanligt hos personer som lider av ångestsyndrom och depressiva syndrom [@Campbell-Sills2006].
 
@@ -838,6 +836,10 @@ Behandlarstöd bestod av veckovis skriftlig kontakt med deltagarna via den krypt
 
 ### Primära utfallsmått
 
+<!-- [Pers kommentar]
+NI kan, om ni vill ha guldstjärna, enkelt räkna ut er egen studies Cronbach alfa för var och en av formulären vid förmätningen (och komplettera med den siffran).
+-->
+
 #### Självhävdelsestil
 
 En inför den här studien gjord svensk översättning av självskattningsskalan Adaptive and Aggressive Assertiveness Scales [AAA-S; @Thompson2011] användes för att mäta vilka metoder för självhävdelse som deltagarna använde sig av. Skalorna utgörs av 30 påståenden som besvaras med en 6-gradig likertskala där 0 motsvarar ”aldrig” och 5 motsvarar ”alltid”. Svaren räknas samman till två skalor, en för aggressiv självhävdelse och en för konstruktiv (adaptiv) självhävdelse. Hög poäng på delskalan för aggressiv självhävdelse indikerar ett aggressivt självhävdande beteendeemönster och hög poäng på delskalan för konstruktiv självhävdelse indikerar ett konstruktivt självhävdande beteendemönster. (Låga poäng på båda går att tolka som passiv självhävdelse.) En fördel med AAA-S jämfört med andra skalor som mäter självhävdelse är att den gör explicit skillnad mellan konstruktiv och aggressiv självhävdelse. Adaptive- och Aggressiveness-skalorna har god intern reliabilitet (α = 0,93 respektive α = 0,88). Den svenska versionen var inte validerad inför studiestart.
@@ -927,7 +929,8 @@ Individuals avoid stimuli which are associated with aversive experience to prese
 
 <!-- . Båda dessa justeringar syftade till att förenkla administrationen av materialet över internet, samt att bättre rikta in materialet i enlighet med rationalen för beteendeexperiment -- det är genom att i praktiken testa sina förutsägelser och dra slutsatser om både utfall och egen förmåga som oddsen för ökat engagemang i livet förbättrats.  -->
 
-####  Variation i exponering
+<!--
+####  Variation i exponering -->
 <!-- *Hur saklig bör en bakgrund vara och hur mycket av "oss själva" och vad "vi ville uppnå" och hur vi tänkte kan man släppa in? Blir det egentligen mer "metoddel" av det hela när vi börjar prata om vårt förhållningssätt till deltagarna och vad vi ville "uppnå"?* -->
 
 <!-- *kommande stycken behöver vävas ihop till ett mer kongruent stycke med en tydligare röd tråd som resulterar i ett tydligare budskap om vad vi vill ha sagt här* -->
@@ -2208,7 +2211,12 @@ x <- clinsig(
 
 # Diskussion
 
-Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt självhjälpsprogram för att förbättra individers konstruktiva självhävdelse. Programmet administrerades via en internetbaserad plattform. Studien genomfördes med en randomiserad och kontrollerad design. Interventionen byggde på självhjälpsmaterialet *Assert Yourself* [@michel2008] och inkluderade bland annat inslag av psykoedukation, beteendeexperiment, avslappningsövningar, vidmakthållandeplanering och återfallsprevention. En tredjedel av deltagarna fick tillgång till programmet utan behandlarstöd, en tredjedel fick tillgång till programmet med behandlarstöd och en tredjedel var kontrollgrupp. Vi konstaterade att tillgång till behandlingsmaterialet (oberoende av om man hade behandlarstöd eller inte) gav bättre resultat än att vara placerad på väntlista. Vi fann däremot ingen skillnad i utfallet mellan gruppen med behandlarstöd och gruppen utan behandlarstöd. De två grupperna var lika effektiva.
+Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt självhjälpsprogram för att förbättra individers konstruktiva självhävdelse. Programmet administrerades via en internetbaserad plattform. Studien genomfördes med en randomiserad och kontrollerad design. Interventionen byggde till stora delar på självhjälpsmaterialet *Assert Yourself* [@michel2008] och inkluderade bland annat inslag av psykoedukation, beteendeexperiment, avslappningsövningar, vidmakthållandeplanering och återfallsprevention. En tredjedel av deltagarna fick tillgång till programmet utan behandlarstöd, en tredjedel fick tillgång till programmet med behandlarstöd och en tredjedel var kontrollgrupp. Vi konstaterade att tillgång till behandlingsmaterialet (oberoende av om man hade behandlarstöd eller inte) gav bättre resultat än att vara placerad på väntlista. Vi fann däremot ingen skillnad i utfallet mellan gruppen med behandlarstöd och gruppen utan behandlarstöd. De två grupperna var lika effektiva.
+
+<!-- [Pers kommentar] Egentligen är avsaknad av skillnad inte samma sak som att de är lika effektiva (de är bara inte olika effektiva).  När ni sedan diskuterar denna avsaknad av skillnad kan ni hänvisa till en annan studie som inte heller fann skillnader mellan stöd vs inget stöd: https://www.carlbring.se/pub/2018_Martin_Samuelsson_Emma_Way.pdf
+
+Viktigt i och med att ni tagit upp detta med behandlingsstödets effekter i introduktionen -->
+
 
 *Vi bör avsluta detta stycke med några få rader om den analys vi gjorde och resultatet vi fick!*
 
@@ -2220,12 +2228,24 @@ Vi drar slutsatsen att självhjälpsmaterialet ensamt (som för deltagarna i gru
 
 Självhjälpsmaterialet verkar ge ett lika bra resultat oavsett om deltagarna får behandlarstöd eller inte.
 
+<!-- [Pers kommentar] 
+Kanske kan ni här dock rapportera om skillnader i klinisk signifikant förbättring? 
+-->
+
 
 <!-- tolkning av resultatet. Jämförelsen mellan grupperna "Självhjälp" och "Med stöd" utfaller till den senare gruppens fördel. Det skulle mycket väl kunna bero på att endast den andel av den förra gruppen som har upplevt en förbättring har valt att svara på frågorna, medan en större andel av de som *inte* har upplevt en förbättring har valt att svara på dem i gruppen som har fått stöd. Deltagarna i den senare gruppen har interagerat med terapeuterna och vill eventuellt återkoppla hur de mår i större utsträckning än dem i självhjälpsgruppen. -->
 
 <!-- varför går både adaptiv och aggressiv självhävdelse upp? det skulle kunna ha att göra med vårt sample. Om vi hade haft flera personer med positiva rathus-skattningarna (kolla rci för dem!) kanske vi skulle kunna ha sett en minskning av aggressiv självhävdelse. Men för vårt nuvarande sample, med många socialfobiker (hur många? kolla upp) så kan vi anta att ökning av aggressiv självhävdelse är något *bra*?? -->
 
 skilland i utveckling över tid mellan rathus respektive aaas-ad/ag: patriks ide är att det skulle kunna vara så att rathus snabbare fångar upp förändring i teroetiskt förhållningssätt/avslappning medan aaas-ad/ag kanske fångar mer effekten av lyckade beteendeexperiment.
+
+<!-- [Pers kommentar] 
+Innan ni går över till brister så vill ni kanske säga något om övriga utfallsmått? Och relatera era fynd med tidigare forskning. Vad brukar man få för resultat i denna typ av studier? Alltså återkoppla till introduktionens studier. Kanske genom att jämföra era effektstorlekar med tidigare studier. 
+-->
+
+## I relation till annan forskning, självhävdelse
+
+## Behov av ny forskning
 
 ## Metodologiska brister / felkällor / validitet / reliabilitet
 
@@ -2239,6 +2259,10 @@ x å andra sidan vad våra resultat visar på (?)
 
 All data som låg till grund för inkludering eller exkludering i den aktuella studien var insamlad från självskattningsformulär. I och med att forskningspersonsinformationen som potentiella deltagare kunde läsa innan de påbörjade screeningsprocessen presenterade såväl inkluderings- som exkluderingskriterier (även om exkluderingskriterierna till viss del var allmänt formulerade) medför det risken att de som sökte till studien anpassade sina svar för att bli inkluderade. Då ingen klinisk intervju användes i screeningprocessen fanns det ingen möjlighet att på så sätt upptäcka individer som borde exkluderas. Detta kan medföra att individer som egentligen borde ha exkluderats, på grund av icke sanningsenliga svar, istället blev inkluderade. Ingen klinisk intervju inkluderades då det låg utanför studiens möjliga resurser att administrera dessa till alla potentiella deltagare. En fördel med att inte ha använt kliniska intervjuerna är att tiden mellan påbörjad rekrytering och behandlingsstart blev kort, endast två veckor.
 
+<!-- [Pers kommentar] 
+När ni tar upp en brist så avsluta gärna med att släta ut bristen. I detta fall något om att motivationen till social önskvärdhet bör vara lägre när opersonliga nätbehandlingar görs (kontra face-to-face behandlingar där man inte vill göra sin terapeut ledsen och därför svarar att man mår bättre än vad man egentligen gör). 
+-->
+
 
 ### Samplets representativitet för populationen
 
@@ -2246,17 +2270,27 @@ All data som låg till grund för inkludering eller exkludering i den aktuella s
 
 Med nästintill 90% kvinnor i samplet var könsfördelningen ytterst ojämn. Denna ojämna fördelning går troligen att tillskriva flertalet olika faktorer. För det första rapporterar kvinnor mer oro, änglsan och ångest än män [@Socialstyrelsen2004] vilket skulle kunna göra kvinnor mer benägna att söka hjälp. För det andra tenderar män överlag att i lägre utsträckning söka vård än kvinnor även när män och kvinnor upplever liknande symtom [@Galdas2005]. Slutligen – vilket troligen är den mest påverkande faktorn i den aktuella studien – så marknadsfördes studien huvudsakligen på internet, bland annat med hjälp av annonser på sociala medier. Dessa annonser använder sig av en automatiserad algoritm som annonserar för de individer algoritmen tror har störst odds till att trycka på dem. Data som sammanställdes efter avslutad annonsering visade på att någonstans mellan 85-90% av alla annonser visades för kvinnor. 
 
+
+<!-- [Pers kommentar] 
+Något om att framtida studier därför bör undersöka denna behandlings effekt i andra populationer. Ni skulle kunna, om ni orkar, analysera förbättringarna hos männen vs. kvinnorna. Skulle ni finna att förbättringen är likartad så faller lite av kritiken.
+-->
+
 <!--Vi är övertygade om att detta...  [@Thompson2011] ? -->
 
 Över 70% av vårt sample hade avslutade universitets- eller högskoleutbildningar och ytterligare 10% studerade vid behandlingens start. Denna siffra skiljer sig markant från Sveriges befolking, där endast 43% läst vidare efter gymnasiet [@SCB2020]. Delar av förklaringen till att en så stor andel av vårt sampel har studerat på universitet eller högskola skulle kunna vara att majoriteten av studiens deltagare är kvinnor, och att de i större utsträckning än män studerar vidare efter gymnasiet [@SCB2020]. Då väldigt få deltagare i den aktuella studien hade yrkesutbildning, gymnasieutbildning, folkskola eller grundskola som högsta avslutad utbildning bör man vara restriktiv med att applicera studiens resultat inom dessa grupper.
 
-<!-- Skriva några rader om utbildnignsnivå och att den är långt ifrån representativ för Sveriges befolkning?
-https://www.scb.se/hitta-statistik/sverige-i-siffror/utbildning-jobb-och-pengar/utbildningsnivan-i-sverige/
+<!-- [Pers kommentar] 
+Här kanske säga (genom referens till metaanalys på internetbehandlingar) att detta är vanligt och faktiskt även i forskningsstudier generellt.
 -->
+
 
 Både att väldigt många kvinnor deltog i den aktuella studien, och att en så stor andel av samplet hade påbörjade eller avslutade universitetsstudier, gör det svårare att generalisera resultatet till Sveriges befolkning i stort. Till fördel för samplets representation av populationen är däremot att det i och med en internetbaserad behandling fanns möjlighet till ett nationellt intag av deltagare. 
 
 Då det i skrivande stund varken finns data om prevalens av bristande självhävdelse i Sveriges population, eller data om vilka demografiska faktorer denna brist korrelerar med, är det ytterst svårt att säga hur representativ för Sveriges befolkning samplet i den aktuella studien är.
+
+<!-- [Pers kommentar] 
+Kanske också ta upp detta med vad ni egentligen hade för population. Var det socialfobiker? I alla fall hade de ju en förhöjd LSAS-SR poäng som indikerar problem.
+-->
 
 <!--
 Bör den data vi refererar till i avsnittet om ojämn könsfördelning bifogas på något sätt? Vi kan även argumentera för att algoritmen till stor del förklarar spridningen i ålder hos vårt sample då majoriteten av de som fick se reklamen var mellan 35-54 år gamla.
@@ -2276,6 +2310,14 @@ x å andra sidan vad våra resultat visar på (?)
 
 I denna studie placerades en tredjedel av deltagarna på en väntlista. En risk med användandet av väntlista är att de deltagare som tilldelas väntlistan försämras under behandlingens gång. I en meta-analys från 2017 konstaterade @Rozental2017a att över 15% av de som tilldelas betingelsen väntlista i I-KBT-studier försämras, jämfört med cirka 6% av de som genomgick behandlingen. Detta kan även leda till att de effekter som upptäcks snarare gör det på grund av försämrandet hos väntlista-betingelsen snarare än förbättrandet hos de som betingats till behandlingen. I den aktuella studien försämrades ingen deltagare signifikant från för- till eftermätningen. Varken i väntlistan eller i någon av de andra betingelserna. Det går ändå att diskutera om användandet av väntlista som kontroll är ett klokt beslut. Användandet av väntlista höjer allt som oftast oddsen för att hitta en signifikant effekt jämfört med andra mer aktiva betingelser. Troligen hade det varit bättre att tilldela de som fick väntlistebetingelsen en aktiv betingelse så som tillgång till ett diskussionsforum.
 
+
+<!-- [Pers kommentar] 
+Kanske även hänvisa till 
+Cuijpers, P., & Cristea, I. A. (2016). How to prove that your therapy is effective, even when it is not: A guideline. Epidemiology and Psychiatric Sciences, 25(5), 428-435. doi:10.1017/S2045796015000864
+MEN!! Sedan försvara er med att en väntelista ändå har en hel del poänger så som att korrigera för extrema händelser i omvärlden - VILKET JU CORONAN VERKLIGEN ÄR!
+-->
+
+
 *Detta stycke behöver kontrolleras så att det fortfarande stämmer när vi avslutat insamling av eftermätningen*
 
 <!--
@@ -2284,6 +2326,12 @@ I denna studie placerades en tredjedel av deltagarna på en väntlista. En risk 
 -->
 
 Då behandlingsmaterialet översatts till svenska inför den aktuella studien – och originalmaterialet användes utan inslag av behandlarstöd – fanns det ingen behandlarstödsmanual eller dylikt för studiens behandlare att använda sig av. Behandlarna hade utöver detta ingen tidigare erfarenhet av internetbaserad psykologisk behandling. Dock hade båda behandlarna tidigare erfarenhet av ansikte mot ansikte-behandling med individer med självrapporterad bristande självhävdelse. Bristen på erfarenhet av internetbaserad behandling kan ha påverkat kvaliten i det behandlarstöd som gavs. Å andra sidan har det visat sig att tidigare erfarenheter och kunskaper om I-KBT hos behandlare inte gör nämnvärd skillnad så länge de har grundläggande kunskaper inom psykologisk behandling [@Baumeister2014a]. Båda behandlarna hade även tillgång till både ett dokument med generella förhållningssätt vid internetbehandling samt till vid-behov-handledning och stöd av en legitimerad psykolog med omfattande erfarenhet av I-KBT. Den generella målsättningen var att behandlarna skulle spendera cirka 15 minuter per vecka och deltagare. Detta varierade dock nämnvärt beroende på hur frekvent behandlarens deltagare hörde av sig till behandlaren med behandlingsrelaterade frågor samt hur utförligt deltagarna besvarade behandlingsprogrammets övningar. 
+
+<!-- [Pers kommentar]
+Jag tycker detta med terapeutstödet ska upp i resultatdiskussionen. Kanske till och med kolla om terapeutstödet utnyttjades och om de som hade fler meddelanden också fick en större förbättring? Alltså korrelation mellan individuell förbättringspoäng och antal tecken totalt i meddelandena.
+
+[Patrik] Finns inte på kartan att vi hinner räkna på detta, right?
+-->
 
 Ytterligare en potentiell brist i studien är användandet av de nyligen översatta versionerna av självskattningsformulären AAA-S [@Thompson2011] och RAS [@Rathus1973]. Då dessa skalor ej fanns tillgängliga på svenska översattes de inför rekryteringsstart. Det finns många rekommendation och riktlinjer för hur översättningar bör gå till [se @Beaton2000; och @Jones2001 för två väl använda metoder]. Ett gemensamt tema i dessa översättningsmetoder är att materialet översätts från originalspråk till planerat användningsspråk (i det rådande fallet till svenska) av åtminstone två av varandra oberoende individer och att den översatta versionen sedan översätts tillbaka till sitt originalspråk av ytterligare oberoende översättare. En bedömning görs sedan mellan originalversionen och versionen översatt från det planerade användningsspråket till originalspråket. AAA-S och RAS översattes inför föreliggande uppsats endast en gång från engelska till svenska.
 
@@ -2303,11 +2351,9 @@ TH: Menar du de som hoppat av eller de som inte svarat på alla självskattninga
 
 -->
 
-## I relation till annan forskning, självhävdelse
-
-## Behov av ny forskning
-
 ## Sammanfattning (?)
+<!-- [Pers kommentar] Ja. Typ 2-3 meningar som sammanfattar hela arbetet. -->
+
 
 \newpage
 
