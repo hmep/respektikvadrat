@@ -789,13 +789,13 @@ Självskattningsskalan Välmåendeskalan [VS; @Braconier2015], användes för at
 
 Utöver AAA-S användes även en svensk översättning av The Rathus Assertiveness Schedule [RAS; @Rathus1973] för att samla in information om deltagarnas självhävdelsestil. Självskattningsskalan består av 30 frågor som besvaras på en 6-gradig likertskala där –3 motsvarar ”stämmer inte alls” och 3 motsvarar ”stämmer helt”. Svaren på alla frågor summeras. Maximal totalpoäng på skalan är 90. En hög poäng indikerar hög grad av självhävdelse. Den svenska översättningen gjordes inför den aktuella studien. Den svenska versionen var inte validerad inför studiestart. Aktuella normer från @Thompson2011 användes i den här studien, som också rapporterar god intern reliabilitet för Rathus (α = 0,87).
 
-## Interventionen
+## Interventionen Respekt i kvadrat
 
-Interventionen är utformad med självhjälpsmaterialet *Assert Yourself* [@michel2008] som grund. Materialet är framtaget av Center for Clinical Interventions (CCI) i delstaten Western Australia, Australien. 
+Interventionen Respekt i kvadrat är utformad med självhjälpsmaterialet *Assert Yourself* [@michel2008] som grund. Materialet är framtaget av Center for Clinical Interventions (CCI) i delstaten Western Australia, Australien. 
 
 I självhjälpsmaterialet får läsaren lära sig skillnaden mellan olika typer av självhävdelse (konstruktiv, aggressiv, passiv, passiv-aggressiv), och hitta egna skäl att hävda sig själv bättre och mer konstruktivt. Delar av materialet är inspirerat av och citerar självhjälpsböcker som @alberti2017your, @gambrill1975assertion, @ward2018assertiveness, @mckay2005self och @smith1975say.
 
-I *Assert Yourself* föreskrivs självhävdande beteenden utifrån de teoretiska antagandena i @wolpe1990practice om reciprok inhibition och klassisk betingning: Genom att träna på att i ord och handling uttrycka det som i relationen till en annan person väcker ångest (exempelvis undertryckt ledsenhet eller ilska) kan klienten på sikt få minskade besvär med autonoma ångestresponser. @Wolpe1952 förespråkar träning på att uppleva de ångestväckande autonoma responserna (känslorna) *in-vivo* och understryker att föreskrivna beteendena inte handlar om att "låtsas", utan att på sikt inhibera dem genom självhävdelse. För fall då en fysisk motpart saknas, och ångesten väcks av till exempel platser, objekt eller ord, föreslår @Wolpe1952 istället avslappning som ett sätt att inhibera ångestresponsen, utifrån rationalen att det är omöjligt att känna ångest och samtidigt vara avslappnad.
+I *Assert Yourself* föreskrivs självhävdande beteenden utifrån de teoretiska antagandena i @wolpe1990practice om reciprok inhibition och klassisk betingning: Genom att träna på att i ord och handling uttrycka det som i relationen till en annan person väcker ångest (exempelvis undertryckt ledsenhet eller ilska) kan klienten på sikt få minskade besvär med autonoma ångestresponser. @Wolpe1952 förespråkar träning på att uppleva de ångestväckande autonoma responserna (känslorna) *in-vivo*. Att utföra de föreskrivna beteendena handlar inte om att enbart "låtsas". Det långsiktiga målet med träningen är att lära sig att inhibera ångesten genom självhävdelse. För fall då en fysisk motpart saknas, och ångesten väcks av till exempel platser, objekt eller ord, föreslår @Wolpe1952 istället avslappning som ett sätt att inhibera ångestresponsen, utifrån rationalen att det är omöjligt att känna ångest och samtidigt vara avslappnad (så kallad reciprok inhbition).
 
 <!-- (@Wolpe2952 diskriminerar inte mellan aggressiv och adaptiv självhävdelse, och uppseendeväckande nog uttrycker författaren sig så här: "*For this reason it is quite often necessary for the patient to be guided towards achieving factual dominance in his encounters with those who disturb him by employing subtle manoeuvres in which aggression is not outwardly expressed*".) -->
 
@@ -811,15 +811,19 @@ Materialet är översatt och anpassat till svenska förhållanden av TH med till
 
 #### Ökat fokus på beteendeexperiment in vivo  
 
-Originalmaterialet innehåller avsnitt för både vägledd kognitiv omstrukturering i terapirummet och kognitiv omstrukturering via beteendeexperiment. Kognitiv omstrukturering går vanligtvis till så att klienten i hemläxa fyller i ett formulär där hen identifierar hindrande tankar, känslor och beteenden (inklusive undvikande- och flyktbeeteenden, så kallade säkerhetsbeteenden) i situationen. Klienten ombeds också fylla i identifierande hjälpsamma tankar som kan balansera de så kallade negativa automatiska tankarna som är uttryck för förmodade livsregler och grundantaganden om den egna förmågan och andras avsikter. Klienten får också skatta sin nivå av obehag/ångest både och före efter identifikationen av de balanserande tankarna. För Respekt i kvadrat har avsnitten för vägledd kognitiv omstrukturering förenklats, utifrån bedömningen att dessa inslag hade krävt någon form av stöd för samtliga grupper, kanske även mer än de 15 minuters stöd per vecka som hade avsatts för varje deltagare i gruppen `r xg2`: Utifrån behandlarnas (begränsade) erfarenhet av kognitiv omstrukturering har klienter mer eller mindre lätt för att strukturerat identifiera de olika delarna av formulär för kognitiv omstrukturering, och kräver mer eller mindre stöd i processen. Det finns också anledning att tro att det för en person med ångestrelaterat lidande -- som för huvuddelen av deltagarna i programmet -- är betydligt enklare än för en nedstämd eller deprimerad person att finna situationer som är lämpliga att träna i; ångest kan i sig ses som en signal för nyinlärning [@Barrett2016a]. Formulären för kognitiv omstrukturering har i Respekt i kvadrat ersatts av enklare situationsregistreringsformulär med kartläggning av undvikande, som lägger grund för därpå följande planering av beteendeexperiment. 
+Originalmaterialet innehåller avsnitt för både kognitiv omstrukturering via formulär och kognitiv omstrukturering via beteendeexperiment. Kognitiv omstrukturering går vanligtvis till så att klienten i hemläxa fyller i ett formulär där hen identifierar hindrande tankar, känslor och beteenden (inklusive undvikande- och flyktbeeteenden, så kallade säkerhetsbeteenden) i situationen. Klienten ombeds också fylla i identifierande hjälpsamma tankar som kan balansera de så kallade negativa automatiska tankarna som är uttryck för förmodade livsregler och grundantaganden om den egna förmågan och andras avsikter. Klienten får också skatta sin nivå av obehag/ångest både och före efter identifikationen av de balanserande tankarna. För Respekt i kvadrat har avsnitten för vägledd kognitiv omstrukturering förenklats, utifrån bedömningen att dessa inslag hade krävt behandlarstöd för samtliga grupper, kanske även mer än de 15 minuters stöd per vecka som avsattes för varje deltagare i gruppen `r xg2`. Utifrån THs och PTs (begränsade) erfarenhet av kognitiv omstrukturering har klienter mer eller mindre lätt för att strukturerat identifiera de olika delarna av formulär för kognitiv omstrukturering, och kräver mer eller mindre stöd i processen. Det finns också anledning att tro att det för en person med ångestrelaterat lidande -- som för huvuddelen av deltagarna i programmet -- är betydligt enklare än för en nedstämd eller deprimerad person att finna situationer som är lämpliga att träna i; ångest kan i sig ses som en signal för nyinlärning [@Barrett2016a]. Formulären för kognitiv omstrukturering har i Respekt i kvadrat ersatts av enklare situationsregistreringsformulär med kartläggning av undvikande, som lägger grund för därpå följande planering av beteendeexperiment. 
 
-#### En neurovetenskaplig och kontextuell inramning av \'kognitioner\'
+(HUR MÄRKS DET I PROGRAMMET? ---> Ut och testa ut och testa inte sitta hemma och fundera från vecka 3)
+
+#### En kontextuell och neurovetenskaplig inramning av \'kognitioner\'
 
 Överlag har ordet för den enligt kognitiv omstrukturering verksamma komponenten \'tankar\' i texten ersatts av ordet \'förutsägelser\'. En negativ förutsägelse i en specifik situation (exempelvis om den egna förmågan att klara av upplevelsen av ångest eller vilken konsekvensen ska bli av konstruktiv självhävdelse) är förankrad i den specifika kontexten: \'Negativa automatiska tankar\' kan lättare förväxlas med \'livsregler\' och \'grundantaganden\' som de definieras i @beck1979cognitive. I träningsprogrammet kan livsregler och grundantaganden ses som mer eller mindre generaliserade förutsägelser; för deltagaren i programmet är det under den begränsade tid som det pågår viktigare att uttala till den aktuella situationen tydligt specificerade förutsägelser.
 
-Ordvalet är dessutom i linje med aktuell förståelse enligt paradigmet prediktiv kodning om den övergripande funktionen av det centrala nervsystemet (detta hopp mellan analysnivåer får snart sin förklaring). Funktionen är att med hjälp av ytterst begränsade sensoriska indata guida betydligt mer omfattande neuronal *top-down*-aktivitet för att predicera organismens yttre såväl som inre kontext [@Pezzulo2015; @Clark2016], inklusive egen motoraktivitet. Enligt detta synsätt är exempelvis den samlade upplevelsen av ångest (kroppsreaktioner, tankar, beteenden) detsamma som prediktioner (förutsägelser) om bristande resurshushållning [@FeldmanBarrett2009]. En person som på så sätt uppfattar miljön som aversiv kan mobilisera resurser för att sätta sig i säkerhet. Men om förutsägelsen är felaktig på grund av allt för stort inflytande av kortikal *top-down*-aktivitet på bekostnad av sensorisk känslighet för *bottom-up*-aktivitet, riskerar individen att fastna i sina förutsägelser om brister i energiregleringen. Dessa blir självuppfyllande profetior genom kombinationen av alltför långvarig allostatisk belastning som tär på kroppens energireserver och undvikande som gör att organismen går miste om återhämtning och naturliga förstärkningar som kan fylla på energireserverna. @FeldmanBarrett2009 sammanbryggar elegant den aktuella neurovetenskapen med det moderna inlärningsteoretiska perspektivet på ångest och depression, där den gemensamma vidmakthållande faktorn är undvikande -- beteendemässigt och upplevelsemässigt.
+Ordvalet är dessutom i linje med det neurovetenskapliga paradigmet prediktiv kodning. Den övergripande funktionen av det centrala nervsystemet är att med hjälp av ytterst begränsade sensoriska indata guida betydligt mer omfattande neuronal *top-down*-aktivitet för att *predicera* organismens yttre såväl som inre kontext [@Pezzulo2015; @Clark2016]. Det inkluderar egen motoraktivitet. Den samlade upplevelsen av ångest (kroppsreaktioner, tankar, beteenden) är detsamma som en förutsägelse om bristande resurs- och energihushållning i situationen (enkelt uttryckt upplevelsen av att man inte kommer räcka till) [@FeldmanBarrett2009]. När en person uppfattar miljön som aversiv kommer hen att vilja mobilisera sina resurser för att sätta sig i säkerhet. Men om förutsägelserna om bristande resurser är felaktig på grund av allt för stort inflytande av hjärnans kortikala *top-down*-aktivitet (på bekostnad av sensorisk känslighet för *bottom-up*-aktivitet) uppstår problem: Förutsägelserna blir självuppfyllande profetior, genom en kombination av alltför långvarig allostatisk belastning och undvikande som gör att organismen går miste om återhämtning och naturliga förstärkningar som kan fylla på energireserverna. @FeldmanBarrett2009 sammanbryggar elegant den aktuella neurovetenskapen med det moderna inlärningsteoretiska perspektivet på ångest och depression, där den gemensamma vidmakthållande faktorn är undvikande -- beteendemässigt och upplevelsemässigt.
 
 <!-- I Respekt i kvadrat ligger fokus på aktivering av beteenden i enlighet med klientens värderade riktning. Syftet med programmet är att hjälpa deltagaren att genom att genomföra beteendeexperiment så snabbt som möjligt och i så många svåra situationer som möjligt.  -->
+
+(HUR MÄRKS DET I PROGRAMMET? ---> Konsekvent uppmana deltagarna att sätta förutsägelserna i en specifik kontext, inte på allmän nivå.)
 
 #### Metoder för att bryta rädsloinlärt undvikande
 
@@ -830,7 +834,11 @@ Den stora utmaningen i behandling av ångestsyndrom är att överbrygga undvikan
 - värden, långsiktiga skäl att uppsöka sit
 - direkt kontignent belöning, ex återkoppling och uppmuntran från terapeut
 
-<!-- ### Emotionellt/upplevelsmässigt undvikande -->
+(HUR MÄRKS DET I PROGRAMMET? ---> Vi pratar mycket om värden -- hitta egna långsiktiga skäl att utmana ångest (exempelvis ångestcirkeln). Behandlarna förstärkte ...)
+
+#### Upplevelsemässigt undvikande
+
+Regelbundet användande av undertryckande är kopplat med flertalet negativa följder, bland annat: mer upplevande av negativa emotioner (och mindre upplevande av positiva emotioner), större undvikande av nära relationer, mindre socialt stöd, lägre självförtroende och sämre upplevt generellt välmående överlag [@Gross2003].
 
 <!-- *@Pittig2014 -- skriv om detta!* -->
 
@@ -838,21 +846,11 @@ Den stora utmaningen i behandling av ångestsyndrom är att överbrygga undvikan
 Individuals avoid stimuli which are associated with aversive experience to preserve safety. However, behavioral avoidance also causes impairments and prevents the individual from attaining positive rewards. Little is known about the link between fear acquisition and the development of behavioral avoidance in the presence of potential rewards. Therefore, two experiments investigated the impact of fear conditioning on a subsequent gambling task. In an experimental group (n = 30) advantageous choices (higher reward probability) were linked to a fear-relevant stimulus that was associated with an aversive unconditioned stimulus (US) during fear conditioning (conditioned stimulus, CS+). A disadvantageous choice (lower reward probability) was, however, linked to a safe stimulus that was never associated with the US (CS-). In a control group (n = 25), fear conditioning was followed by a similar gambling task with novel stimuli. A second experiment focused on individual predictors of avoidant decisions (n = 81). Compared with the control group, individuals in the experimental groups avoided the advantageous CS + choice despite fewer gains. The predictor analysis further clarified that avoidant decisions were pronounced in highly trait anxious participants who exhibited higher fear responses. On the other hand, findings also indicated a reduction in absolute avoidance across the task. Combined, these findings demonstrate that fear conditioning can lead to avoidant decision making, especially in vulnerable individuals. The resulting costs parallel impairments caused by behavioral avoidance. Such an emotional decision-making style may be a link between aversive experience and the development of habitual pathological avoidance. Introducing rewards for approach, however, may counteract avoidant decisions.
 -->
 
-
-@FeldmanBarrett2009 hypotetiserar att KBT hjälper genom att uppdaterara de 'priors' som ...
-
-meta-perspektiv på inlärning som är symptomatiskt med ett affektfokus dweck
-
-Regelbundet användande av undertryckande är kopplat med flertalet negativa följder, bland annat: mer upplevande av negativa emotioner (och mindre upplevande av positiva emotioner), större undvikande av nära relationer, mindre socialt stöd, lägre självförtroende och sämre upplevt generellt välmående överlag [@Gross2003].
-
-Den aktuella studien hade varken tankesätt eller undertryckande som huvudfokus, men vi var icke desto mindre influerade av dessa teorier i vårt utformande och anpassade av behandlingsprogrammet. Vi antog att ifall behandlingsprogrammet kan utformas på så sätt att deltagarna hjälps från ett fixerat tankesätt mot ett mer utvecklande tankesätt borde det både leda till en reduktion i negativa symtom och i frekvens av emotionsundertryckande. Allteftersom ett mer utvecklande tankesätt formas bör alltså acceptans för deltagarnas emotioner och ångest öka tillsammans med en insikt i att emotionerna och ångesten går att bemöta och bemästra.
-
-Potentiellt använda DeCastella2015 som brygga in i hur variation i exponering (där man inte undantrycker sina känslor) och att närma sig obehaget (och i samma veva motbevisar sitt fixed mindset om ens ångest och ens relation till den) leder till symtomlindring och ökat välmående (Craske2008, Knowles2019, Blakey2016, Sewart2019).
+<!-- Den aktuella studien hade varken tankesätt eller undertryckande som huvudfokus, men vi var icke desto mindre influerade av dessa teorier i vårt utformande och anpassade av behandlingsprogrammet. Vi antog att ifall behandlingsprogrammet kan utformas på så sätt att deltagarna hjälps från ett fixerat tankesätt mot ett mer utvecklande tankesätt borde det både leda till en reduktion i negativa symtom och i frekvens av emotionsundertryckande. Allteftersom ett mer utvecklande tankesätt formas bör alltså acceptans för deltagarnas emotioner och ångest öka tillsammans med en insikt i att emotionerna och ångesten går att bemöta och bemästra. -->
 
 <!-- . Båda dessa justeringar syftade till att förenkla administrationen av materialet över internet, samt att bättre rikta in materialet i enlighet med rationalen för beteendeexperiment -- det är genom att i praktiken testa sina förutsägelser och dra slutsatser om både utfall och egen förmåga som oddsen för ökat engagemang i livet förbättrats.  -->
 
-### Acceptans av osäkerhet & Variation i exponering
-
+####  Variation i exponering
 <!-- *Hur saklig bör en bakgrund vara och hur mycket av "oss själva" och vad "vi ville uppnå" och hur vi tänkte kan man släppa in? Blir det egentligen mer "metoddel" av det hela när vi börjar prata om vårt förhållningssätt till deltagarna och vad vi ville "uppnå"?* -->
 
 <!-- *kommande stycken behöver vävas ihop till ett mer kongruent stycke med en tydligare röd tråd som resulterar i ett tydligare budskap om vad vi vill ha sagt här* -->
@@ -861,9 +859,14 @@ De Castella m. fl. [-@DeCastella2015] konstaterade även att undertryckandet av 
 
 Utöver säkerhetsbeteenden och dess påverkan på exponeringsresultatet finns det ytterligare några fenomen som är värda att beakta. Förväntingar och förutsägelser som individer tenderar att ha inför exponering är allt som oftast inkorrekta och desto större diskrepansen är mellan en indivds förväntningar och individens faktiska upplevelse, desto större är oddsen för nyinlärning [@Craske2008; @Sewart2019].
 
-Att exponera sig för det som väcker obehag leder även hos många till mycket osäkerhet. Denna osäkerhet leder inte ovanligen till överdrivet förberedande, **reassurance-seeking (översätt hur? Tröstsökande, försäkrande, sökande av uppmuntran? Något annat?)** eller andra beteenden som ökar upplevelsen av kontroll i situationen. Det är dock en viktig nyinlärningsprocess att få uppleva denna osäkerhet – och samtidigt få lärdomen att denna osäkerhet både är ofarlig och hanterbar. Att bibehålla osäkerhet under exponeringstränandet går att göra genom att variera vilka aversiva stimuli som presenteras och i vilka situationer som dessa stimuli presenteras [@Sewart2019, @Knowles2019, @Craske2008].
+<!-- Violating expectancies -->
+
+Att exponera sig för det som väcker obehag leder även hos många till mycket osäkerhet. Denna osäkerhet leder inte ovanligen till överdrivet förberedande, efterfrågande mot närstående eller auktoriteter om försäkran eller andra beteenden som ökar upplevelsen av kontroll i situationen. Det är dock en viktig nyinlärningsprocess att få uppleva denna osäkerhet – och samtidigt få lärdomen att denna osäkerhet både är ofarlig och hanterbar. Att bibehålla osäkerhet under exponeringstränandet går att göra genom att variera vilka aversiva stimuli som presenteras och i vilka situationer som dessa stimuli presenteras [@Sewart2019, @Knowles2019, @Craske2008].
+
+<!-- Potentiellt använda DeCastella2015 som brygga in i hur variation i exponering (där man inte undantrycker sina känslor) och att närma sig obehaget (och i samma veva motbevisar sitt fixed mindset om ens ångest och ens relation till den) leder till symtomlindring och ökat välmående (Craske2008, Knowles2019, Blakey2016, Sewart2019). -->
 
 Lyckad exponering tenderar att vara en ombytlig exponering där obehag väcks, säkerhetsbeteenden avstås och förväntningar bryts [@Craske2008; @Blakey2016; @Knowles2019 @Sewart2019].
+
 
 Genom att förespråka exponering där deltagarna (1) sätter tydliga förväntningar på vad de tror ska hända, (2) avstår ifrån säkerhetsbeteenden kombinerat med (3) **variabilitet (pot. istället föränderlighet eller ombytlighet)** i exponeringen ville vi uppnå maximal potential för nyinlärning.
 
@@ -873,7 +876,10 @@ Genom att förespråka exponering där deltagarna (1) sätter tydliga förväntn
 
 <!-- *Ett stycke om vikten av variation i exponering kommer antagligen att dyka upp här. Referenser bl a (Craske2008) (Knowles2019) (Blakey2016) (Sewart2019)* -->
 
-### Growth mindset + undertryckande
+
+(HUR MÄRKS DET I PROGRAMMET? ---> Varit vaksamma på att inte ge försäkran när det har efterfrågats inför exponering)
+
+#### Growth mindset + undertryckande
 
 *ska få ny rubrik och bör troligen kortas ner markant*
 
@@ -954,7 +960,7 @@ Vi använde `r cite_r("r-references.bib")` för samtliga analyser.
 
 ### Analys av vår primära frågeställning
 
-Vi ville undersöka ifall det fanns någon skillnad i effekt (i endera riktning) av behandlingsprogrammet på utfallsmåttet AAA-S Adaptive mellan gruppen `r xg1` och gruppen `r xg2`. Detta gjordes med ett oberoende t-test. I testet användes change score mellan tidpunkterna `r xpre` och `r xpost` för respektive grupp. Varianserna kring medelvärdet konstaterades homogena i en kontroll med Levene's test. Detta gjorde det möjligt att använda ett oberoende t-test utan korrigering.
+Vi ville undersöka om det fanns någon skillnad i effekt (i endera riktning) av behandlingsprogrammet på utfallsmåttet AAA-S Adaptive mellan gruppen `r xg1` och gruppen `r xg2`. Detta gjordes med ett oberoende t-test. I testet användes medelvärdesskillnaden mellan tidpunkterna `r xpre` och `r xpost` för respektive grupp. Varianserna kring medelvärdet konstaterades homogena i en kontroll med Levene's test. Detta gjorde det möjligt att använda ett oberoende t-test utan korrigering.
 
 ```{r primo }
 
@@ -1932,7 +1938,6 @@ lme.int.slo.mini.group.time.lsas.well <-
 
 sum.rathus <- summary(lme.int.slo.mini.group.time.lsas.well)
 
-library(broom)
 library("broom.mixed")
 tidy.rathus <- tidy(lme.int.slo.mini.group.time.lsas.well)
 augmented.rathus <- augment(lme.int.slo.mini.group.time.lsas.well,data=r2.long.data)
@@ -1974,19 +1979,16 @@ aaas_ag.lmer <- lmer(aaas_ad ~ group * time + lsas_sum + well + (1|subject), dat
 
 #step(aaas_ag.lmer, keep=c("group","time"))
 
-print(summary(aaas_ag.lmer), digits=2, corr=FALSE)
-anova(aaas_ag.lmer)
-
-glance(aaas_ag.lmer)
-aaas_ag.lmer.tidied <- tidy(aaas_ag.lmer)
-aaas_ag.lmer.augmented <- augment(aaas_ag.lmer)
-
-knitr::kable(aaas_ag.lmer.tidied)
+# print(summary(aaas_ag.lmer), digits=2, corr=FALSE)
+# anova(aaas_ag.lmer)
+# 
+# glance(aaas_ag.lmer)
+# aaas_ag.lmer.tidied <- tidy(aaas_ag.lmer)
+# aaas_ag.lmer.augmented <- augment(aaas_ag.lmer)
+# 
+# knitr::kable(aaas_ag.lmer.tidied)
 
 #https://stats.stackexchange.com/questions/31569/questions-about-how-random-effects-are-specified-in-lmer
-
-library(broom)
-tidy(summary(aaas_ag.lmer))
 
 # #############
 # 
