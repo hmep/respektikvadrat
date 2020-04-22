@@ -1447,7 +1447,7 @@ library(JTRCI)
 
 key = !is.na(r2.wide.g3$post_aaas_ad)
 
-clinsig.AAAS.ad <- JTRCI(
+AAAS.ad.jt <- JTRCI(
   data = r2.wide.data,
   pre = "pre_aaas_ad",
   post = "post_aaas_ad",
@@ -1465,6 +1465,16 @@ clinsig.AAAS.ad <- JTRCI(
   table = T,
   useGroups = T
 )
+
+# plotRCI(data = AAAS.ad.rci, addInfoLegend = "yes",
+#   useGroups = T, facetplot = T, addJitter = F, xlab = "pre",
+#   ylab = "post", plottitle = "reliable change plot")
+
+plotJT(data = AAAS.ad.jt, addInfoLegend = "no",
+  useGroups = T, facetplot = T, addJitter = T, xlab = "pre",
+  ylab = "post", plottitle = "reliable change plot")
+
+tableJT(data = AAAS.ad.jt, useGroups = T)
 
 ```
 
