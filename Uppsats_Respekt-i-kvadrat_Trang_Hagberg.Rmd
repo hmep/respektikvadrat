@@ -490,9 +490,80 @@ Evidensen för beteendeterapi och KBT för syndromala och icke-syndromala psykol
 
 <!-- Trots att evidensen för kognitiv och beteendeterapeutisk behandling vid ångestsyndrom och depressiva syndrom är god förblir majoriteten av fallen även i länder med väl utvecklad sjukvård obehandlade @Craske2017. -->
 
-## Internet och internetbaserad vård
 
-<!-- *detta avsnitt bör möjligen flyttas någon annanstans eller bakas in i andra avsnitt. Möjligen före avsnittet "Internetbaserad kognitiv beteendeterapi"* -->
+## Vad är effektivt i KBT?
+*temporär rubrik*
+
+### En kontextuell och neurovetenskaplig inramning av \'kognitioner\'
+
+Överlag har ordet för den enligt kognitiv omstrukturering verksamma komponenten \'tankar\' i texten ersatts av ordet \'förutsägelser\'. En negativ förutsägelse i en specifik situation (exempelvis om den egna förmågan att klara av upplevelsen av ångest eller vilken konsekvensen ska bli av konstruktiv självhävdelse) är förankrad i den specifika kontexten: \'Negativa automatiska tankar\' kan lättare förväxlas med \'livsregler\' och \'grundantaganden\' som de definieras i @beck1979cognitive. Livsregler och grundantaganden kan ses som mer eller mindre generaliserade förutsägelser.
+
+Ordvalet är dessutom i linje med det neurovetenskapliga paradigmet prediktiv kodning. Den övergripande funktionen av det centrala nervsystemet är att med hjälp av ytterst begränsade sensoriska indata guida betydligt mer omfattande neuronal *top-down*-aktivitet för att *predicera* organismens yttre såväl som inre kontext [@Pezzulo2015; @Clark2016]. Det inkluderar egen motoraktivitet. Den samlade upplevelsen av ångest (kroppsreaktioner, tankar, beteenden) är detsamma som en förutsägelse om bristande resurs- och energihushållning i situationen (enkelt uttryckt upplevelsen av att man inte kommer räcka till) [@FeldmanBarrett2009]. När en person uppfattar miljön som aversiv kommer hen att vilja mobilisera sina resurser för att sätta sig i säkerhet. Men om förutsägelserna om bristande resurser är felaktig på grund av allt för stort inflytande av hjärnans kortikala *top-down*-aktivitet (på bekostnad av sensorisk känslighet för *bottom-up*-aktivitet) uppstår problem: Förutsägelserna blir självuppfyllande profetior, genom en kombination av alltför långvarig allostatisk belastning och undvikande som gör att organismen går miste om återhämtning och naturliga förstärkningar som kan fylla på energireserverna. @FeldmanBarrett2009 sammanbryggar elegant den aktuella neurovetenskapen med den kontextuella beteendevetenskapens perspektiv på ångest och depression, där den gemensamma vidmakthållande faktorn är undvikande -- beteendemässigt och upplevelsemässigt.
+
+### Undvikande
+Utifrån *tidigare* erfarenheter kan en individ ha giltiga och begripliga upplevelser av ångest och rädsla som dessvärre leder till undvikande *här och nu*. Detta kan i sin tur göra att individen går miste om sådant som hen värdesätter -- exempelvis att: få närhet, mer tid till egna intressen, hävda sina åsikter eller andra naturliga förstärkningar för stanna-kvar-och-märk-att-ångesten-går-över-beteenden. <!-- Här bör en källa möjligen läggas till!-->
+
+
+<!-- @Hayes1996 om experiential avoidance -->
+
+En stor utmaning i behandling av ångestsyndrom är att överbrygga undvikandet som följer av rädsloinlärning. @Ohman2001 konstaterar att rädsloinlärning inte så lätt går att påverka med kognitiv kontroll i skarpt läge, inte minst för att de neuronala rädslokretsarna vid amygdala ligger så djupt förankrade i limbiska delar av hjärnan och mer eller mindre lever sitt eget liv. Det finns fler sätt att gå runt problemet: 
+
+
+
+
+Regelbundet användande av emotionellt undvikande är kopplat med flertalet negativa följder, bland annat: mer upplevande av negativa emotioner (och mindre upplevande av positiva emotioner), större undvikande av nära relationer, mindre socialt stöd, lägre självförtroende och sämre upplevt generellt välmående överlag [@Gross2003].
+
+<!-- *@Pittig2014 -- skriv om detta!* -->
+<!-- Fernandes-Rodriguez eller vad han nu heter -->
+
+<!--
+Individuals avoid stimuli which are associated with aversive experience to preserve safety. However, behavioral avoidance also causes impairments and prevents the individual from attaining positive rewards. Little is known about the link between fear acquisition and the development of behavioral avoidance in the presence of potential rewards. Therefore, two experiments investigated the impact of fear conditioning on a subsequent gambling task. In an experimental group (n = 30) advantageous choices (higher reward probability) were linked to a fear-relevant stimulus that was associated with an aversive unconditioned stimulus (US) during fear conditioning (conditioned stimulus, CS+). A disadvantageous choice (lower reward probability) was, however, linked to a safe stimulus that was never associated with the US (CS-). In a control group (n = 25), fear conditioning was followed by a similar gambling task with novel stimuli. A second experiment focused on individual predictors of avoidant decisions (n = 81). Compared with the control group, individuals in the experimental groups avoided the advantageous CS + choice despite fewer gains. The predictor analysis further clarified that avoidant decisions were pronounced in highly trait anxious participants who exhibited higher fear responses. On the other hand, findings also indicated a reduction in absolute avoidance across the task. Combined, these findings demonstrate that fear conditioning can lead to avoidant decision making, especially in vulnerable individuals. The resulting costs parallel impairments caused by behavioral avoidance. Such an emotional decision-making style may be a link between aversive experience and the development of habitual pathological avoidance. Introducing rewards for approach, however, may counteract avoidant decisions.
+-->
+
+### Att bryta undvikande genom exponering
+<!--- vilket vi gör genom beteendeexperiment in vivo... -->
+
+#### Ökat fokus på beteendeexperiment in vivo  
+
+Kognitiv omstrukturering går vanligtvis till så att klienten i hemläxa fyller i ett formulär där hen identifierar hindrande tankar, känslor och beteenden (inklusive undvikande- och flyktbeeteenden, så kallade säkerhetsbeteenden) i situationen. Klienten ombeds också fylla i identifierande hjälpsamma tankar som kan balansera de så kallade negativa automatiska tankarna som är uttryck för förmodade livsregler och grundantaganden om den egna förmågan och andras avsikter. Klienten får också skatta sin nivå av obehag/ångest både och före efter identifikationen av de balanserande tankarna. 
+
+Det finns också anledning att tro att det för en person med ångestrelaterat lidande -- som för huvuddelen av deltagarna i programmet -- är betydligt enklare än för en nedstämd eller deprimerad person att finna situationer som är lämpliga att träna i; ångest kan i sig ses som en signal för nyinlärning [@Barrett2016a].
+
+
+####  Variation i exponering
+
+De Castella m. fl. [-@DeCastella2015] konstaterade även att undertryckandet av känslor (det vill säga emotionellt undvikande) är tydligt kopplad till sämre effekt av exponering. Detta är i linje med mycket annan forskning. Att emotionellt undvika är ett säkerhetsbeteenden och säkerhetsbeteenden – det vill säga beteenden som förhindrar, undviker eller minimerar obehag i en given situation – är ett väletablerat fenomen som har konstaterats ha både en del i utvecklandet och bibehållandet av ångestdriven psykopatologi [@Blakey2016].
+
+Utöver säkerhetsbeteenden och dess påverkan på exponeringsresultatet finns det ytterligare några fenomen som är värda att beakta. Förväntingar och förutsägelser som individer tenderar att ha inför exponering är allt som oftast inkorrekta och desto större diskrepansen är mellan en indivds förväntningar och individens faktiska upplevelse, desto större är oddsen för nyinlärning [@Craske2008; @Sewart2019].
+
+<!-- Violating expectancies -->
+
+Att exponera sig för det som väcker obehag leder även hos många till mycket osäkerhet. Denna osäkerhet leder inte ovanligen till överdrivet förberedande, efterfrågande mot närstående eller auktoriteter om försäkran eller andra beteenden som ökar upplevelsen av kontroll i situationen. Det är dock en viktig nyinlärningsprocess att få uppleva denna osäkerhet – och samtidigt få lärdomen att denna osäkerhet både är ofarlig och hanterbar. Att bibehålla osäkerhet under exponeringstränandet går att göra genom att variera vilka aversiva stimuli som presenteras och i vilka situationer som dessa stimuli presenteras [@Sewart2019, @Knowles2019, @Craske2008].
+
+Lyckad exponering tenderar att vara en ombytlig exponering där obehag väcks, säkerhetsbeteenden avstås och förväntningar bryts [@Craske2008; @Blakey2016; @Knowles2019 @Sewart2019].
+
+Kort och gott: Det är genom att i så många kontext som möjligt testa sina förutsägelser utan att distrahera sig själv och sedan dra slutsatser om både utfall samt egen förmåga som undvikande bryts och oddsen för ökat engagemang i livet förbättrats.
+
+
+
+<!-- Variability throughout exposure (which enhanches practice of tolerating uncertainty), Wean safety signals and safety behaviors, Mismatch with expectancies -->
+
+<!-- *@Sewart2019 -- varians* -->
+
+Lösningen:
+- värden, långsiktiga skäl att uppsöka sit
+- ett sätt att få igång diskussionen kring värden är att se skillnaden i growth mindset och fixed mindset
+- direkt kontignent belöning, ex återkoppling och uppmuntran från terapeut
+
+
+#### Growth mindset + undertryckande
+
+*ska få ny rubrik och bör troligen kortas ner markant*
+
+Ett fixerat tankesätt är antagandet att förmågor, färdigheter samt egenskaper är fasta och oföränderliga medans ett utvecklande tankesätt är antagandet att dessa förmågor, färdigheter och egenskaper kan utvecklas och förändras. Tankesätten är ett sorts ramverk genom vilket man tolkar och förstår sig på sina erfarenheter, vilket i sin tur påverkar vilka beteenden och emotioner man uppvisar [@Dweck1995]. Ett utvecklande tankesätt kan bland annat leda till att man tar på sig fler utmaningar, fortsätter kämpa vid bakslag och att man i stort och smått i sitt liv presterar bättre [@Dweck2019]. I verkligheten är ens tankesätt sällan antingen eller, utan återfinns på ett kontinuum [@Dweck1995]. Tankesätten kan beröra mer övergripande domäner, såsom personlighet och intelligens, eller mer specifika domäner, såsom ångest och emotioner. Man kan ha ett fixerat tankesätt inom en viss domän, och ett utvecklande tankesätt inom en annan [@Schroder2016]. Har man ett utvecklande tankesätt kring ångest leder det både till större motivation under en behandlings gång och till större odds för positivt behandlingsutfall [@Schroder2015; @DeCastella2015]. Utöver detta har det även visat sig att personer med ett fixerat tankesätt i större utsträckning försöker undvika negativa emotioner samt i mindre utsträckning omvärderar sina övertygelser i ljuset av nya erfarenheter [@Schroder2015]. Emotionellt undvikande och oacceptabelhet är särskilt vanligt hos personer som lider av ångestsyndrom och depressiva syndrom [@Campbell-Sills2006].
+
+
+## Internet och internetbaserad vård
 
 Internet har ändrat gemene mans tillgång till information och tjänster på ett radikalt sätt. För cirka 15 år sedan använde mindre än 20% av världens befolkning internet. 2019 uppskattas det att nästan 54% av världens befolkning använder sig av internet. I Europa är motsvarande siffra 83% [@ITU2019] och enligt Internetstiftelsens rapport Svenskarna och internet [@Findahl2019] har internetanvändandet i Sverige ökat från 85% år 2010 till 95% år 2019. Nästintill hela Sveriges befolkning är aktiva internetanvändare. Fler än 8 av 10 av de som använder internet i Sverige söker även efter hälso- och medicinsk information på nätet och cirka hälften utnyttjar diverse e-tjänster relaterade till sjukvården [@Findahl2019]. 
 
@@ -809,11 +880,13 @@ Materialet avslutas med ett antal kapitel för olika problemområden (säga nej,
 
 Materialet är översatt och anpassat till svenska förhållanden av TH med tillstånd av författaren och CCI. I samband med anpassningen av översättningen till I-KBT-moduler i plattformen `r xiterapi` modifierade och utökade TH och PT materialet med det dubbla syftet att förenkla administrationen av materialet via internet kompletterade det med motiverande inslag för byta undvikande av antecedenter för ångest med aktivt deltagande i de aktiviteter som deltagaren värdesätter.
 
+<!--
+
 #### Ökat fokus på beteendeexperiment in vivo  
 
 Originalmaterialet innehåller avsnitt för både kognitiv omstrukturering via formulär och kognitiv omstrukturering via beteendeexperiment. Kognitiv omstrukturering går vanligtvis till så att klienten i hemläxa fyller i ett formulär där hen identifierar hindrande tankar, känslor och beteenden (inklusive undvikande- och flyktbeeteenden, så kallade säkerhetsbeteenden) i situationen. Klienten ombeds också fylla i identifierande hjälpsamma tankar som kan balansera de så kallade negativa automatiska tankarna som är uttryck för förmodade livsregler och grundantaganden om den egna förmågan och andras avsikter. Klienten får också skatta sin nivå av obehag/ångest både och före efter identifikationen av de balanserande tankarna. För Respekt i kvadrat har avsnitten för vägledd kognitiv omstrukturering förenklats, utifrån bedömningen att dessa inslag hade krävt behandlarstöd för samtliga grupper, kanske även mer än de 15 minuters stöd per vecka som avsattes för varje deltagare i gruppen `r xg2`. Utifrån THs och PTs (begränsade) erfarenhet av kognitiv omstrukturering har klienter mer eller mindre lätt för att strukturerat identifiera de olika delarna av formulär för kognitiv omstrukturering, och kräver mer eller mindre stöd i processen. Det finns också anledning att tro att det för en person med ångestrelaterat lidande -- som för huvuddelen av deltagarna i programmet -- är betydligt enklare än för en nedstämd eller deprimerad person att finna situationer som är lämpliga att träna i; ångest kan i sig ses som en signal för nyinlärning [@Barrett2016a]. Formulären för kognitiv omstrukturering har i Respekt i kvadrat ersatts av enklare situationsregistreringsformulär med kartläggning av undvikande, som lägger grund för därpå följande planering av beteendeexperiment. 
 
-(HUR MÄRKS DET I PROGRAMMET? ---> Ut och testa ut och testa inte sitta hemma och fundera från vecka 3)
+(HUR MÄRKS DET I PROGRAMMET?  Ut och testa ut och testa inte sitta hemma och fundera från vecka 3)
 
 #### En kontextuell och neurovetenskaplig inramning av \'kognitioner\'
 
@@ -821,9 +894,9 @@ Originalmaterialet innehåller avsnitt för både kognitiv omstrukturering via f
 
 Ordvalet är dessutom i linje med det neurovetenskapliga paradigmet prediktiv kodning. Den övergripande funktionen av det centrala nervsystemet är att med hjälp av ytterst begränsade sensoriska indata guida betydligt mer omfattande neuronal *top-down*-aktivitet för att *predicera* organismens yttre såväl som inre kontext [@Pezzulo2015; @Clark2016]. Det inkluderar egen motoraktivitet. Den samlade upplevelsen av ångest (kroppsreaktioner, tankar, beteenden) är detsamma som en förutsägelse om bristande resurs- och energihushållning i situationen (enkelt uttryckt upplevelsen av att man inte kommer räcka till) [@FeldmanBarrett2009]. När en person uppfattar miljön som aversiv kommer hen att vilja mobilisera sina resurser för att sätta sig i säkerhet. Men om förutsägelserna om bristande resurser är felaktig på grund av allt för stort inflytande av hjärnans kortikala *top-down*-aktivitet (på bekostnad av sensorisk känslighet för *bottom-up*-aktivitet) uppstår problem: Förutsägelserna blir självuppfyllande profetior, genom en kombination av alltför långvarig allostatisk belastning och undvikande som gör att organismen går miste om återhämtning och naturliga förstärkningar som kan fylla på energireserverna. @FeldmanBarrett2009 sammanbryggar elegant den aktuella neurovetenskapen med det moderna inlärningsteoretiska perspektivet på ångest och depression, där den gemensamma vidmakthållande faktorn är undvikande -- beteendemässigt och upplevelsemässigt.
 
-<!-- I Respekt i kvadrat ligger fokus på aktivering av beteenden i enlighet med klientens värderade riktning. Syftet med programmet är att hjälpa deltagaren att genom att genomföra beteendeexperiment så snabbt som möjligt och i så många svåra situationer som möjligt.  -->
+<!-- I Respekt i kvadrat ligger fokus på aktivering av beteenden i enlighet med klientens värderade riktning. Syftet med programmet är att hjälpa deltagaren att genom att genomföra beteendeexperiment så snabbt som möjligt och i så många svåra situationer som möjligt.
 
-(HUR MÄRKS DET I PROGRAMMET? ---> Konsekvent uppmana deltagarna att sätta förutsägelserna i en specifik kontext, inte på allmän nivå.)
+(HUR MÄRKS DET I PROGRAMMET? Konsekvent uppmana deltagarna att sätta förutsägelserna i en specifik kontext, inte på allmän nivå.)
 
 #### Metoder för att bryta rädsloinlärt undvikande
 
@@ -834,7 +907,7 @@ Den stora utmaningen i behandling av ångestsyndrom är att överbrygga undvikan
 - värden, långsiktiga skäl att uppsöka sit
 - direkt kontignent belöning, ex återkoppling och uppmuntran från terapeut
 
-(HUR MÄRKS DET I PROGRAMMET? ---> Vi pratar mycket om värden -- hitta egna långsiktiga skäl att utmana ångest (exempelvis ångestcirkeln). Behandlarna förstärkte ...)
+(HUR MÄRKS DET I PROGRAMMET? Vi pratar mycket om värden -- hitta egna långsiktiga skäl att utmana ångest (exempelvis ångestcirkeln). Behandlarna förstärkte ...)
 
 #### Upplevelsemässigt undvikande
 
@@ -855,16 +928,20 @@ Individuals avoid stimuli which are associated with aversive experience to prese
 
 <!-- *kommande stycken behöver vävas ihop till ett mer kongruent stycke med en tydligare röd tråd som resulterar i ett tydligare budskap om vad vi vill ha sagt här* -->
 
+<!--
 De Castella m. fl. [-@DeCastella2015] konstaterade även att undertryckandet av känslor är tydligt kopplad till sämre effekt av exponering. Detta är i linje med mycket annan forskning. Att undertrycka känslor är ett säkerhetsbeteenden och säkerhetsbeteenden – det vill säga beteenden som förhindrar, undviker eller minimerar obehag i en given situation – är ett väletablerat fenomen som har konstaterats vara både en del i utvecklandet och bibehållandet av ångestdriven psykopatologi [@Blakey2016].
 
 Utöver säkerhetsbeteenden och dess påverkan på exponeringsresultatet finns det ytterligare några fenomen som är värda att beakta. Förväntingar och förutsägelser som individer tenderar att ha inför exponering är allt som oftast inkorrekta och desto större diskrepansen är mellan en indivds förväntningar och individens faktiska upplevelse, desto större är oddsen för nyinlärning [@Craske2008; @Sewart2019].
+-->
 
 <!-- Violating expectancies -->
 
+<!--
 Att exponera sig för det som väcker obehag leder även hos många till mycket osäkerhet. Denna osäkerhet leder inte ovanligen till överdrivet förberedande, efterfrågande mot närstående eller auktoriteter om försäkran eller andra beteenden som ökar upplevelsen av kontroll i situationen. Det är dock en viktig nyinlärningsprocess att få uppleva denna osäkerhet – och samtidigt få lärdomen att denna osäkerhet både är ofarlig och hanterbar. Att bibehålla osäkerhet under exponeringstränandet går att göra genom att variera vilka aversiva stimuli som presenteras och i vilka situationer som dessa stimuli presenteras [@Sewart2019, @Knowles2019, @Craske2008].
 
 <!-- Potentiellt använda DeCastella2015 som brygga in i hur variation i exponering (där man inte undantrycker sina känslor) och att närma sig obehaget (och i samma veva motbevisar sitt fixed mindset om ens ångest och ens relation till den) leder till symtomlindring och ökat välmående (Craske2008, Knowles2019, Blakey2016, Sewart2019). -->
 
+<!--
 Lyckad exponering tenderar att vara en ombytlig exponering där obehag väcks, säkerhetsbeteenden avstås och förväntningar bryts [@Craske2008; @Blakey2016; @Knowles2019 @Sewart2019].
 
 
@@ -876,8 +953,8 @@ Genom att förespråka exponering där deltagarna (1) sätter tydliga förväntn
 
 <!-- *Ett stycke om vikten av variation i exponering kommer antagligen att dyka upp här. Referenser bl a (Craske2008) (Knowles2019) (Blakey2016) (Sewart2019)* -->
 
-
-(HUR MÄRKS DET I PROGRAMMET? ---> Varit vaksamma på att inte ge försäkran när det har efterfrågats inför exponering)
+<!--
+(HUR MÄRKS DET I PROGRAMMET Varit vaksamma på att inte ge försäkran när det har efterfrågats inför exponering)
 
 #### Growth mindset + undertryckande
 
@@ -894,7 +971,6 @@ Utöver materialet i boken innehåller interventionen även: motiverande inslag 
 <!-- ## Verksamma komponenter i KBT -->
 
 <!-- Innan vi fördjupar oss i behandlingsprogrammets upplägg och övriga metodfrågor vill vi stanna upp en kort stund och lyfta fram några av de mindre vedertagna teorier och modeller som inspirerade oss i vår utformning samt anpassning av behandlingsprogrammet. Dessa teorier och modeller influerade oss även i vårt förhållningssätt till deltagarna. Det är inom KBT väl etablerat att psykoedukativa inslag, formulerande av målsättning, exponering, hemuppgifter, kognitiv omstrukturering med mera är effektiva processer för att maximera behandlingsutfall [@Kazantzis2018]. -->
-
 
 
 
@@ -2012,8 +2088,8 @@ knitr::kable(tidy.rathus)
 pander(sum.rathus,justify='lrrrrr')
 
 ```
-
-```{r nlme}
+ 
+```{r nlme, eval = F}
 
 ### Verification
 
