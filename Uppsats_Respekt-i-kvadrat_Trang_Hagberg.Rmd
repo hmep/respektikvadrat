@@ -1330,9 +1330,9 @@ Det var ingen signifikant skillnad i de två gruppernas skattade förändring p�
 
 se figur \@ref(fig:aaasad)
 
-``` {r aaasad, fig.cap='(ref:ad)', fig.align="center", fig.width=8, fig.height=4}
+``` {r aaasad, fig.cap='(ref:ad)', fig.align="center", fig.width=8, fig.height=8}
 
-par(mfrow=c(1,2))
+par(mfrow=c(2,2))
 
 # Subsetting keys
 
@@ -1411,6 +1411,74 @@ clinsig.AAAS.ad.g2 <- clinsig(
   col = xcol,
   pch = xpch
 )
+
+x <- clinsig(
+  r2.wide.g3$pre_aaas_ad[!is.na(r2.wide.g3$post_aaas_ad)],
+  r2.wide.g3$post_aaas_ad[!is.na(r2.wide.g3$post_aaas_ad)],
+  coef.alpha = r.AAAS.ad,
+  func.disp = sd.AAAS.ad.norm,
+  func.mct = mean.AAAS.ad.norm,
+  main = "Adaptive Assertiveness, Guided",
+  xlab = "Pretest score",
+  ylab = "Posttest score",
+  do.plot = F
+)
+relchng.AAAS.ad.g3.pos <- (x$post.x - x$pre.x) > x$relchng
+relchng.AAAS.ad.g3.neg <- (x$post.x - x$pre.x) < -x$relchng
+clinsig.AAAS.ad.g3.which <- intersect(which(relchng.AAAS.ad.g3.pos),which(x$post.x > x$crit[2]))
+clinsig.AAAS.ad.g3.num <- length(clinsig.AAAS.ad.g3.which)
+xcol <- factor(rep("black",times=length(x$post.x)),levels=c("black","red"))
+xcol[clinsig.AAAS.ad.g3.which] <- rep("red",times=length(clinsig.AAAS.ad.g3.which))
+xpch <- rep(1,times=length(x$post.x))
+xpch[clinsig.AAAS.ad.g3.which] <- rep(2,times=length(clinsig.AAAS.ad.g3.which))
+clinsig.AAAS.ad.g3 <- clinsig(
+  r2.wide.g3$pre_aaas_ad[!is.na(r2.wide.g3$post_aaas_ad)],
+  r2.wide.g3$post_aaas_ad[!is.na(r2.wide.g3$post_aaas_ad)],
+  coef.alpha = r.AAAS.ad,
+  func.disp = sd.AAAS.ad.norm,
+  func.mct = mean.AAAS.ad.norm,
+  main = paste("Adaptive Assertiveness, ",xg3,sep=""),
+  xlab = paste(xpre),
+  ylab = paste(xpost),
+  col = xcol,
+  pch = xpch#,
+  #cex=1, cex.sub=1, cex.main=1, cex.lab=1, cex.axis=1, mex=1,csi=1,mar=c(5, 4, 4, 4) 
+)
+
+devtools::install_github("AWKruijt/JT-RCI")
+
+library(JTRCI)
+
+key = !is.na(r2.wide.g3$post_aaas_ad)
+
+AAAS.ad.jt <- JTRCI(
+  data = r2.wide.data,
+  pre = "pre_aaas_ad",
+  post = "post_aaas_ad",
+  ppid = "subject",
+  group = "group",
+  reliability = r.AAAS.ad,
+  higherIsBetter = T,
+  indextype = "JT",
+  JTcrit = "B",
+  normM = mean.AAAS.ad.norm,
+  normSD = sd.AAAS.ad.norm,
+  dysfM = NA,
+  dysfSD = NA,
+  plot = T,
+  table = T,
+  useGroups = T
+)
+
+# plotRCI(data = AAAS.ad.rci, addInfoLegend = "yes",
+#   useGroups = T, facetplot = T, addJitter = F, xlab = "pre",
+#   ylab = "post", plottitle = "reliable change plot")
+
+plotJT(data = AAAS.ad.jt, addInfoLegend = "no",
+  useGroups = T, facetplot = T, addJitter = T, xlab = "pre",
+  ylab = "post", plottitle = "reliable change plot")
+
+tableJT(data = AAAS.ad.jt, useGroups = T)
 
 ```
 
@@ -1502,7 +1570,7 @@ se figur \@ref(fig:rathus)
 
 ``` {r rathus, fig.cap='(ref:rat)', fig.align="center", fig.width=8, fig.height=4}
 
-par(mfrow=c(1,2))
+par(mfrow=c(3,1))
 
 x <- clinsig(
   r2.wide.g1$pre_rathus[!is.na(r2.wide.g1$post_rathus)],
@@ -2050,12 +2118,12 @@ rathus.lmer <- lmer(rathus ~ group * time + lsas_sum + well + (1|subject), data=
 print(summary(rathus.lmer), digits=2, corr=FALSE)
 anova(rathus.lmer)
 
-## Anova-like table of random-effect terms using likelihood ratio tests:
-ranova(rathus.lmer)
-## F-tests of 'single term deletions' for all marginal terms:
-drop1(rathus.lmer)
-## Least-Square means and pairwise differences:
-(lsm <- ls_means(rathus.lmer))
+
+ranova(rathus.lmer) ## Anova-like table of random-effect terms using likelihood ratio tests:
+
+drop1(rathus.lmer) ## F-tests of 'single term deletions' for all marginal terms:
+
+(lsm <- ls_means(rathus.lmer)) ## Least-Square means and pairwise differences:
 ls_means(rathus.lmer, which="group", pairwise = TRUE)
 ## ls_means also have plot and as.data.frame methods:
 ## Not run:
