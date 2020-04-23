@@ -1641,6 +1641,74 @@ rathus.pre.dur.jt.plot
 
 ```
 
+```{r kontroller}
+
+kontroll_ad <-
+  lm(
+    aaas_ad ~ group,
+    data = r2.long.data[lt1,],
+    na.action = na.omit
+  )
+anova(kontroll_ad)
+# Ej signifikant = inga skillnader mellan grupperna
+
+kontroll_ag <-
+  lm(
+    aaas_ag ~ group,
+    data = r2.long.data[lt1,],
+    na.action = na.omit
+  )
+anova(kontroll_ag)
+# Ej signifikant = inga skillnader mellan grupperna
+
+kontroll_rathus <-
+  lm(
+    rathus ~ group,
+    data = r2.long.data[lt1,],
+    na.action = na.omit
+  )
+anova(kontroll_rathus)
+# Ej signifikant = inga skillnader mellan grupperna
+
+kontroll_phq <-
+  lm(
+    phq_sum ~ group,
+    data = r2.long.data[lt1,],
+    na.action = na.omit
+  )
+anova(kontroll_phq)
+# Ej signifikant = inga skillnader mellan grupperna
+
+kontroll_gad <-
+  lm(
+    gad_sum ~ group,
+    data = r2.long.data[lt1,],
+    na.action = na.omit
+  )
+anova(kontroll_gad)
+# Ej signifikant = inga skillnader mellan grupperna
+
+kontroll_lsas <-
+  lm(
+    lsas_sum ~ group,
+    data = r2.long.data[lt1,],
+    na.action = na.omit
+  )
+anova(kontroll_lsas)
+# Ej signifikant = inga skillnader mellan grupperna
+
+kontroll_well <-
+  lm(
+    well ~ group,
+    data = r2.long.data[lt1,],
+    na.action = na.omit
+  )
+anova(kontroll_well)
+# Ej signifikant = inga skillnader mellan grupperna
+
+```
+
+
 ```{r mixedlme, dpi=196}
 
 ### AAA-S Adaptive
@@ -1811,9 +1879,37 @@ lsas_sum.lme.eff.tidy <- tidy(eff_size(emmV, sigma = totSD, edf = 3))
 # Plot
 lsas_sum.lme.plot <- emmip(x,~ time | group, xlab = "Tid", ylab = "Linjär prediktion")
 
+### Välmåendeformuläret
+
+x <-
+  lme(
+    well ~ group * time,
+    random = ~ time | subject,
+    data = r2.long.data,
+    na.action = na.omit,
+    method = "REML",
+    corr=corAR1()
+  )
+
+# Output 
+lsas_sum.lme.tidy <- tidy(x)
+#svkable()
+#summary()
+
+# Estimated Marginal Means / Least Square Means
+emmV <- emmeans(x, ~ time | group, adjust="bonferroni")
+well.lme.emm.tidy <- tidy(emmV)
+
+# Effect size estimation
+totSD <-sqrt(sum(as.numeric(VarCorr(x)[,2])))
+well.lme.eff.tidy <- tidy(eff_size(emmV, sigma = totSD, edf = 3))
+
+# Plot
+well.lme.plot <- emmip(x,~ time | group, xlab = "Tid", ylab = "Linjär prediktion")
+
 ```
 
-```{r mixedlmeplots, dpi=196}
+```{r mixedlmeplots, dpi=196, fig.align="center"}
 
 aaas_ag.lme.plot + ggtitle("AAA-S Aggressive")
 
@@ -1826,6 +1922,8 @@ lsas_sum.lme.plot + ggtitle("LSAS-24")
 gad_sum.lme.plot + ggtitle("GAD-7")
 
 phq_sum.lme.plot + ggtitle("PHQ-9")
+
+well.lme.plot + ggtitle("Välmåendeformuläret")
 
 ```
 
