@@ -50,7 +50,7 @@ set.seed(42) # Seed for random number generation
 options(contrasts=c('contr.treatment','contr.poly'))
 
 #devtools::install_github("crsh/papaja@devel",force=T)
-#devtools::install_github("AWKruijt/JT-RCI",force=T)
+devtools::install_github("AWKruijt/JT-RCI",force=T)
 
 library("papaja")
 library("broom.mixed")
@@ -1075,7 +1075,7 @@ se tabell \@ref(tab:descriptives)
 
 (ref:descriptives) Deskriptiva mått för primära och sekundärt beroende variabler liksom oberoende variabler vid studiens start.
 
-``` {r descriptives, fig.cap='(ref:descriptives)', fig.align="center", cache = F}
+``` {r descriptives, fig.cap='(ref:descriptives)', fig.align="center", cache = F, eval=F}
 
 ### Descriptives
 
