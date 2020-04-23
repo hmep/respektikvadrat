@@ -512,7 +512,7 @@ Undvikande av aversiva stimuli -- det vill säga undvikandet av det som väcker 
 
 Särskilt svårt är det att bryta beteenden som har som funktion att undvika det som väcker rädsla. En stor utmaning i behandling av ångestsyndrom är att överbrygga det undvikandet som följt av just rädsloinlärning. @Ohman2001 konstaterar att rädsloinlärning inte så lätt går att påverka med kognitiv kontroll i skarpt läge, inte minst för att de neuronala rädslokretsarna vid amygdala ligger så djupt förankrade i limbiska delar av hjärnan och mer eller mindre lever sitt eget liv.
 
-Det har även visat sig att det är ytterst menligt <!-- möjligen skriva "självdestruktivt istället för menligt? --> att försöka undvika ens aversiva känslor. Detta undvikande brukar kallas för emotionellt undvikande. Regelbundet användande av emotionellt undvikande är kopplat till flertalet negativa följder. Det är paradoxalt nog kopplat till mer upplevande av negativa emotioner (och mindre upplevande av positiva emotioner), men även till större undvikande av nära relationer, mindre socialt stöd, lägre självförtroende och sämre generellt välmående [@Gross2003]. Den paradoxala biten går inte nog att betona: att försöka undvika aversiva emotioner leder till att man upplever dem mer [@Gross2003; @Fernandez-Rodriguez2018, @Hayes1996].
+Det har även visat sig att det är ytterst menligt <!-- möjligen skriva "självdestruktivt istället för menligt? --> att försöka undvika ens aversiva känslor. Detta undvikande brukar kallas för emotionellt undvikande. Regelbundet användande av emotionellt undvikande är kopplat till flertalet negativa följder. Det är paradoxalt nog kopplat till mer upplevande av negativa emotioner (och mindre upplevande av positiva emotioner), men även till större undvikande av nära relationer, mindre socialt stöd, lägre självförtroende och sämre generellt välmående [@Gross2003]. Den paradoxala biten går inte nog att betona: att försöka undvika aversiva emotioner leder till att man upplever dem mer [@Gross2003; @Fernandez-Rodriguez2018; @Hayes1996].
 
 <!-- Fernandes-Rodriguez eller vad han nu heter -->
 <!-- @Hayes1996 om experiential avoidance -->
@@ -520,13 +520,13 @@ Det har även visat sig att det är ytterst menligt <!-- möjligen skriva "själ
 
 ### Att bryta undvikande
 
-Att bryta undvikandebeteenden är ofta centralt för att minska psykopatologiska besvär. Det går att göra på flertalet olika sätt. Det går att göra genom att *på ett närvarande sätt* närma sig det aversiva och ångestväckande, så kallad exponering. Att närma sig för det som väcker obehag leder hos många till mycket osäkerhet. Denna osäkerhet leder i sin tur inte ovanligen till överdrivet förberedande, efterfrågande om försäkran eller andra beteenden som ökar upplevelsen av kontroll i stunden. Det är dock en viktig nyinlärningsprocess att få uppleva denna osäkerhet – och samtidigt få lärdomen att denna osäkerhet i sig själv både är ofarlig och hanterbar. Att bibehålla osäkerhet under exponeringstränandet går att göra genom att variera vilka aversiva stimuli som presenteras och i vilka situationer som dessa stimuli presenteras [@Sewart2019, @Knowles2019, @Craske2008].
+Att bryta undvikandebeteenden är ofta centralt för att minska psykopatologiska besvär. Det går att göra på flertalet olika sätt. Det går att göra genom att *på ett närvarande sätt* närma sig det aversiva och ångestväckande, så kallad exponering. Att närma sig för det som väcker obehag leder hos många till mycket osäkerhet. Denna osäkerhet leder i sin tur inte ovanligen till överdrivet förberedande, efterfrågande om försäkran eller andra beteenden som ökar upplevelsen av kontroll i stunden. Det är dock en viktig nyinlärningsprocess att få uppleva denna osäkerhet – och samtidigt få lärdomen att denna osäkerhet i sig själv både är ofarlig och hanterbar. Att bibehålla osäkerhet under exponeringstränandet går att göra genom att variera vilka aversiva stimuli som presenteras och i vilka situationer som dessa stimuli presenteras [@Sewart2019; @Knowles2019; @Craske2008].
 
 De Castella m. fl. [-@DeCastella2015] konstaterade även att emotionellt undvikande är tydligt kopplad till sämre effekt av exponering. Detta är i linje med mycket annan forskning. Att emotionellt undvika är ett säkerhetsbeteenden och säkerhetsbeteenden – det vill säga beteenden som förhindrar, undviker eller minimerar obehag i en given situation – är ett väletablerat fenomen som har konstaterats ha både en del i utvecklandet och bibehållandet av ångestdriven psykopatologi [@Blakey2016].
 
 Det finns också anledning att tro att det för en person med ångestrelaterat lidande -- det vill säga huvuddelen av de individer som har bristande *assertiveness* -- är betydligt enklare än för en nedstämd eller deprimerad person att finna situationer som är lämpliga att träna i; ångest kan i sig ses som en signal för nyinlärning [@Barrett2016a].
 
-Lyckad exponering tenderar att vara en ombytlig exponering där obehag väcks, säkerhetsbeteenden avstås och förväntningar bryts. Förväntingar och förutsägelser som individer tenderar att ha inför exponering är allt som oftast inkorrekta (det vill säga att de förväntar sig värre utfall än vad som sker) och desto större diskrepansen är mellan en indivds förväntningar och individens faktiska upplevelse, desto större är oddsen för nyinlärning [@Craske2008; @Sewart2019]. Lärdomar kan dras båda av att ångest minskar i intensitet, eller av att ens förmåga att hantera ångesten som väcks överträffar ens förväntningar [@Craske2008; @Blakey2016; @Knowles2019 @Sewart2019].
+Lyckad exponering tenderar att vara en ombytlig exponering där obehag väcks, säkerhetsbeteenden avstås och förväntningar bryts. Förväntingar och förutsägelser som individer tenderar att ha inför exponering är allt som oftast inkorrekta (det vill säga att de förväntar sig värre utfall än vad som sker) och desto större diskrepansen är mellan en indivds förväntningar och individens faktiska upplevelse, desto större är oddsen för nyinlärning [@Craske2008; @Sewart2019]. Lärdomar kan dras båda av att ångest minskar i intensitet, eller av att ens förmåga att hantera ångesten som väcks överträffar ens förväntningar [@Craske2008; @Blakey2016; @Knowles2019; @Sewart2019].
 
 
 <!-- avsnitt med accepterande av ångest a la Hayes -->
@@ -621,7 +621,7 @@ Rekrytering skedde mellan 28 januari och 5 februari 2020. Studien annonserades p
 
 ### Deltagare
 
-Som framgår av figur \@ref(fig:flow) så anmälde totalt 657 personer intresse till studien varav 464 personer slutförde hela screeningsprocessen. Av dessa exkluderades 126 personer då de uppfyllde något av exklusionskriterierna. De kvarvarande 338 personerna erbjöds plats i studien. Av dessa bejakade 253 sin plats. 43 personer exkluderades från behandlingen genom randomisering så att 210 inkluderades. De deltagere som exkluderades via randomisering erbjöds tillgång till materialet på samma sätt som kontrollgruppen fick det – men med skillnaden att deras resultat ej inkluderats i beräkningarna. Vid behandlingsstart hade alltså studien 210 deltagare. Under behandlingens gång framkom det att fem deltagare (n = 3 från gruppen `r xg1` och n = 2 från gruppen `r xg3`) hade pågående psykologisk behandling. Dessa deltagare har fått fullgå behandlingen på oförändrade villkor, men deras resultat har exkluderats från analysen. Utöver detta bad en deltagare från gruppen `r xg2` om att få bli exkluderad från studien. Denna deltagare bad även om att hens data ej skulle användas. Dessa sex deltagare har exkluderats från alla statistiska beräkningar.
+Som framgår av figur \@ref(fig:flow) så anmälde totalt 657 personer intresse till studien varav 464 personer slutförde hela screeningsprocessen. Av dessa exkluderades 126 personer då de uppfyllde något av exklusionskriterierna. De kvarvarande 338 personerna erbjöds plats i studien. Av dessa bejakade 253 sin plats. 43 personer exkluderades från behandlingen genom randomisering så att 210 inkluderades. De deltagere som exkluderades via randomisering erbjöds tillgång till materialet på samma sätt som kontrollgruppen fick det – men med skillnaden att deras resultat ej inkluderats i beräkningarna. Vid behandlingsstart hade alltså studien 210 deltagare. Vid en extra kontroll under behandlingens gång upptäcktes det att fem deltagare (n = 3 från gruppen `r xg1` och n = 2 från gruppen `r xg3`) hade inkluderats trots pågående psykologisk behandling. Dessa deltagare har fått fullgå behandlingen på oförändrade villkor, men deras resultat har exkluderats från studiens analyser Utöver detta bad en deltagare från gruppen `r xg2` om att få bli exkluderad från studien. Denna deltagare bad även om att hens data ej skulle användas. Dessa sex deltagare har exkluderats från alla statistiska beräkningar.
 
 ```{r flow, out.width="100%", fig.align="center", out.extra='', fig.cap='Flödesschema över inklusion, exklusion (med kriterier) samt bortfall.'}
 
@@ -670,6 +670,7 @@ x1 <-
     "Nej"
   )
 
+#Data för "Utan stöd"
 x2 <-
   c(
     79.1,
@@ -699,6 +700,7 @@ x2 <-
     40.3
   )
 
+#Data för "Med stöd"
 x3 <-
   c(
     92.8,
@@ -728,6 +730,7 @@ x3 <-
     37.7
   )
 
+#Data för väntlista
 x4 <-
   c(
     91.2,
@@ -757,6 +760,7 @@ x4 <-
     38.2
   )
 
+#Data för totalgruppen
 x5 <-
   c(
     87.8,
@@ -786,9 +790,9 @@ x5 <-
     38.7
   )
 
-demdata.tabell <- cbind.data.frame(x1,x2,x3,x4,x5)
+demdata.tabell <- cbind.data.frame(x1,x4,x2,x3,x5)
 
-colnames(demdata.tabell) <-c("","Självhjälp (n=67)","Med stöd (n=69)","Väntelista (n=68)","Totalt (n=204)")
+colnames(demdata.tabell) <-c("","Väntelista (n=68)","Självhjälp (n=67)","Med stöd (n=69)","Totalt (n=204)")
 
 ```
 
