@@ -50,7 +50,7 @@ set.seed(42) # Seed for random number generation
 options(contrasts=c('contr.treatment','contr.poly'))
 
 #devtools::install_github("crsh/papaja@devel",force=T)
-devtools::install_github("AWKruijt/JT-RCI",force=T)
+#devtools::install_github("AWKruijt/JT-RCI",force=T)
 
 library("papaja")
 library("broom.mixed")
@@ -522,7 +522,7 @@ Det har även visat sig att det är ytterst menligt <!-- möjligen skriva "själ
 
 Att bryta undvikandebeteenden är ofta centralt för att minska psykopatologiska besvär. Det går att göra på flertalet olika sätt. Det går att göra genom att *på ett närvarande sätt* närma sig det aversiva och ångestväckande, så kallad exponering. Att närma sig för det som väcker obehag leder hos många till mycket osäkerhet. Denna osäkerhet leder i sin tur inte ovanligen till överdrivet förberedande, efterfrågande om försäkran eller andra beteenden som ökar upplevelsen av kontroll i stunden. Det är dock en viktig nyinlärningsprocess att få uppleva denna osäkerhet – och samtidigt få lärdomen att denna osäkerhet i sig själv både är ofarlig och hanterbar. Att bibehålla osäkerhet under exponeringstränandet går att göra genom att variera vilka aversiva stimuli som presenteras och i vilka situationer som dessa stimuli presenteras [@Sewart2019; @Knowles2019; @Craske2008].
 
-De Castella m. fl. [-@DeCastella2015] konstaterade även att emotionellt undvikande är tydligt kopplad till sämre effekt av exponering. Detta är i linje med mycket annan forskning. Att emotionellt undvika är ett säkerhetsbeteenden och säkerhetsbeteenden – det vill säga beteenden som förhindrar, undviker eller minimerar obehag i en given situation – är ett väletablerat fenomen som har konstaterats ha både en del i utvecklandet och bibehållandet av ångestdriven psykopatologi [@Blakey2016].
+De Castella m. fl. [-@DeCastella2015] konstaterade även att emotionellt undvikande är tydligt kopplad till sämre effekt av exponering. Detta är i linje med mycket annan forskning. Att emotionellt undvika är ett säkerhetsbeteenden och säkerhetsbeteenden – det vill säga beteenden som förhindrar, undviker eller minimerar obehag i en given situation – är ett väletablerat fenomen som har konstaterats ha både en del i utvecklandet och bibehållandet av ångestdriven psykopatologi [@Blakey2016]. Emotionellt undvikande är särskilt vanligt hos personer som lider av ångestsyndrom och depressiva syndrom [@Campbell-Sills2006] vilket med stor sannolikhet även gör det vanligt hos individer med bristanden *assertiveness*.
 
 Det finns också anledning att tro att det för en person med ångestrelaterat lidande -- det vill säga huvuddelen av de individer som har bristande *assertiveness* -- är betydligt enklare än för en nedstämd eller deprimerad person att finna situationer som är lämpliga att träna i; ångest kan i sig ses som en signal för nyinlärning [@Barrett2016a].
 
@@ -537,7 +537,7 @@ Kort och gott: Det är genom att *på ett närvarande sätt* i så många kontex
 
 <!-- Violating expectancies -->
 
-#### Motivation till att bryta gamla vanor
+#### Att finna motivationen till att bryta gamla vanor
 
 
 Lösningen:
@@ -548,7 +548,7 @@ Lösningen:
 
 #### Growth mindset
 
-Ett fixerat tankesätt är antagandet att förmågor, färdigheter samt egenskaper är fasta och oföränderliga medans ett utvecklande tankesätt är antagandet att dessa förmågor, färdigheter och egenskaper kan utvecklas och förändras. Tankesätten är ett sorts ramverk genom vilket man tolkar och förstår sig på sina erfarenheter, vilket i sin tur påverkar vilka beteenden och emotioner man uppvisar [@Dweck1995]. Ett utvecklande tankesätt kan bland annat leda till att man tar på sig fler utmaningar, fortsätter kämpa vid bakslag och att man i stort och smått i sitt liv presterar bättre [@Dweck2019]. I verkligheten är ens tankesätt sällan antingen eller, utan återfinns på ett kontinuum [@Dweck1995]. Tankesätten kan beröra mer övergripande domäner, såsom personlighet och intelligens, eller mer specifika domäner, såsom ångest och emotioner. Man kan ha ett fixerat tankesätt inom en viss domän, och ett utvecklande tankesätt inom en annan [@Schroder2016]. Har man ett utvecklande tankesätt kring ångest leder det både till större motivation under en behandlings gång och till större odds för positivt behandlingsutfall [@Schroder2015; @DeCastella2015]. Utöver detta har det även visat sig att personer med ett fixerat tankesätt i större utsträckning försöker undvika negativa emotioner samt i mindre utsträckning omvärderar sina övertygelser i ljuset av nya erfarenheter [@Schroder2015]. Emotionellt undvikande är särskilt vanligt hos personer som lider av ångestsyndrom och depressiva syndrom [@Campbell-Sills2006].
+Ett fixerat tankesätt är antagandet att förmågor, färdigheter samt egenskaper är fasta och oföränderliga medans ett utvecklande tankesätt är antagandet att dessa förmågor, färdigheter och egenskaper kan utvecklas och förändras. Tankesätten är ett sorts ramverk genom vilket man tolkar och förstår sig på sina erfarenheter, vilket i sin tur påverkar vilka beteenden och emotioner man uppvisar [@Dweck1995]. Ett utvecklande tankesätt kan bland annat leda till att man tar på sig fler utmaningar, fortsätter kämpa vid bakslag och att man i stort och smått i sitt liv presterar bättre [@Dweck2019]. I verkligheten är ens tankesätt sällan antingen eller, utan återfinns på ett kontinuum [@Dweck1995]. Tankesätten kan beröra mer övergripande domäner, såsom personlighet och intelligens, eller mer specifika domäner, såsom ångest och emotioner. Man kan ha ett fixerat tankesätt inom en viss domän, och ett utvecklande tankesätt inom en annan [@Schroder2016]. Har man ett utvecklande tankesätt kring ångest leder det både till större motivation under en behandlings gång och till större odds för positivt behandlingsutfall [@Schroder2015; @DeCastella2015]. Utöver detta har det även visat sig att personer med ett fixerat tankesätt i större utsträckning försöker undvika negativa emotioner samt i mindre utsträckning omvärderar sina övertygelser i ljuset av nya erfarenheter [@Schroder2015].
 
 
 ## Internet och internetbaserad vård
@@ -858,7 +858,7 @@ Utöver AAA-S användes även en svensk översättning av The Rathus Assertivene
 
 ## Interventionen Respekt i kvadrat
 
-Interventionen Respekt i kvadrat är utformad med självhjälpsmaterialet *Assert Yourself* [@michel2008] som grund. Materialet är framtaget av Center for Clinical Interventions (CCI) i delstaten Western Australia, Australien. 
+Interventionen *Respekt i kvadrat* är utformad med självhjälpsmaterialet *Assert Yourself* [@michel2008] som grund. Materialet är framtaget av Center for Clinical Interventions (CCI) i delstaten Western Australia, Australien. 
 
 I självhjälpsmaterialet får läsaren lära sig skillnaden mellan olika typer av självhävdelse (konstruktiv, aggressiv, passiv, passiv-aggressiv), och hitta egna skäl att hävda sig själv bättre och mer konstruktivt. Delar av materialet är inspirerat av och citerar självhjälpsböcker som @alberti2017your, @gambrill1975assertion, @ward2018assertiveness, @mckay2005self och @smith1975say.
 
@@ -874,9 +874,17 @@ Materialet avslutas med ett antal kapitel för olika problemområden (säga nej,
 
 ### Anpassningar och tillägg
 
-Materialet är översatt och anpassat till svenska förhållanden av TH med tillstånd av författaren och CCI. I samband med anpassningen av översättningen till I-KBT-moduler i plattformen `r xiterapi` modifierade och utökade TH och PT materialet med det dubbla syftet att förenkla administrationen av materialet via internet kompletterade det med motiverande inslag för byta undvikande av antecedenter för ångest med aktivt deltagande i de aktiviteter som deltagaren värdesätter.
+Materialet är översatt och anpassat till svenska förhållanden av TH med tillstånd av författaren och CCI. I samband med anpassningen av översättningen till I-KBT-moduler i plattformen `r xiterapi` modifierade och utökade TH och PT materialet. Detta gjordes med det dubbla syftet att förenkla administrationen av materialet via internet samt att komplettera det med inslag som TH och PT ansåg saknades i originalmaterialet.
 
-Behandlingsprogrammet har ett 
+En mycket inspirerande faktor när det engelska materialet anpassades och utvecklades till programmet *Respekt i kvadrat* var det aktuella forskningsläget kring exponering [se bland annat @Sewart2019; @Knowles2019; @Craske2008; @DeCastella2015; @Gross2003, som alla lyfts i tidigare stycken]. TH och PT bedömde det som en central komponent att deltagarna så tidigt som möjligt, och så regelbundet som möjligt, tog aktiva steg för att bryta sina undvikanden. Från och med modul 3 och framåt ombedes deltagarna till att närma sig aversiva stimuli (och utvärdera sina reaktioner) på olika sätt. 
+
+<!-- här kommmer ytterligare ett kort avsnitt föras in -->
+
+Dessa anpassningar tog sig i form av: text och illustrationer samt länkar till fördjupningsmaterial; videofilmer med konversationer och rollspel mellan PT och TH; för programmet framtagna videofilmer och ljudfiler med avslappningsövningar; inbäddade externa videoklipp och ljudfiler samt; ett stort antal nya interaktiva övningar, bland annat utvärderingsformulär av varje veckas innehåll, veckovis uppföljning av konstruktiv självhävdelse samt övningar för återfallsprevention och vidmakthållande av behandlingseffekter.
+
+
+
+Se tabell \@ref(tab:intervention) för en översiktlig genomgång av innehållet i modulerna i interventionen *Respekt i kvadrat*.
 
 <!--
 
@@ -967,17 +975,7 @@ Vi tog utöver dessa väletablerade inslag även med oss inspiration från forsk
 Utöver materialet i boken innehåller interventionen även: motiverande inslag i form av text och illustrationer samt länkar till fördjupningsmaterial; videofilmer med konversationer och rollspel mellan PT och TH; för programmet framtagna videofilmer och ljudfiler med avslappningsövningar; inbäddade externa videoklipp och ljudfiler samt; ett stort antal nya interaktiva övningar, bland annat utvärderingsformulär av varje veckas innehåll, veckovis uppföljning av konstruktiv självhävdelse samt övningar för för återfallsprevention och vidmakthållande av behandlingseffekter.
 
 
-<!-- ## Verksamma komponenter i KBT -->
-
-<!-- Innan vi fördjupar oss i behandlingsprogrammets upplägg och övriga metodfrågor vill vi stanna upp en kort stund och lyfta fram några av de mindre vedertagna teorier och modeller som inspirerade oss i vår utformning samt anpassning av behandlingsprogrammet. Dessa teorier och modeller influerade oss även i vårt förhållningssätt till deltagarna. Det är inom KBT väl etablerat att psykoedukativa inslag, formulerande av målsättning, exponering, hemuppgifter, kognitiv omstrukturering med mera är effektiva processer för att maximera behandlingsutfall [@Kazantzis2018]. -->
-
-
-
-Se tabell \@ref(tab:intervention) för en översiktlig genomgång av innehållet i modulerna i interventionen Respekt i kvadrat.
-
- <!-- [inspirerade av bland annat @Hayes2006a; @Dahlin2016] -->
-
-(ref:interv) Översiktlig beskrivning av interventionen Respekt i kvadrat. Kapitelhänvisningar avser *Assert Yourself* (Michel & Fursland, 2008).
+(ref:interv) Översiktlig beskrivning av interventionen *Respekt i kvadrat*. Kapitelhänvisningar avser *Assert Yourself* (Michel & Fursland, 2008).
 
 ```{r intervention, fig.align="center", cache = F}
 
