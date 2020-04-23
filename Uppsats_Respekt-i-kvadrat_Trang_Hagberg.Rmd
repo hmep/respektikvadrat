@@ -878,7 +878,12 @@ Materialet är översatt och anpassat till svenska förhållanden av TH med till
 
 En mycket inspirerande faktor när det engelska materialet anpassades och utvecklades till programmet *Respekt i kvadrat* var det aktuella forskningsläget kring exponering [se bland annat @Sewart2019; @Knowles2019; @Craske2008; @DeCastella2015; @Gross2003, som alla lyfts i tidigare stycken]. TH och PT bedömde det som en central komponent att deltagarna så tidigt som möjligt, och så regelbundet som möjligt, tog aktiva steg för att bryta sina undvikanden. Från och med modul 3 och framåt ombedes deltagarna till att närma sig aversiva stimuli (och utvärdera sina reaktioner) på olika sätt. 
 
-<!-- här kommmer ytterligare ett kort avsnitt föras in -->
+<!-- här kommmer ytterligare ett kort avsnitt föras in
+
+Ångest & avslappning kan inte finnas samtidigt. Ökning av fokus på avslappning i behandlingsprogrammet.
+
+
+-->
 
 Dessa anpassningar tog sig i form av: text och illustrationer samt länkar till fördjupningsmaterial; videofilmer med konversationer och rollspel mellan PT och TH; för programmet framtagna videofilmer och ljudfiler med avslappningsövningar; inbäddade externa videoklipp och ljudfiler samt; ett stort antal nya interaktiva övningar, bland annat utvärderingsformulär av varje veckas innehåll, veckovis uppföljning av konstruktiv självhävdelse samt övningar för återfallsprevention och vidmakthållande av behandlingseffekter.
 
@@ -973,7 +978,7 @@ Vi tog utöver dessa väletablerade inslag även med oss inspiration från forsk
 #### Ökad interaktivitet för bättre utnyttjande av webbmediet
 
 Utöver materialet i boken innehåller interventionen även: motiverande inslag i form av text och illustrationer samt länkar till fördjupningsmaterial; videofilmer med konversationer och rollspel mellan PT och TH; för programmet framtagna videofilmer och ljudfiler med avslappningsövningar; inbäddade externa videoklipp och ljudfiler samt; ett stort antal nya interaktiva övningar, bland annat utvärderingsformulär av varje veckas innehåll, veckovis uppföljning av konstruktiv självhävdelse samt övningar för för återfallsprevention och vidmakthållande av behandlingseffekter.
-
+-->
 
 (ref:interv) Översiktlig beskrivning av interventionen *Respekt i kvadrat*. Kapitelhänvisningar avser *Assert Yourself* (Michel & Fursland, 2008).
 
@@ -1025,7 +1030,7 @@ Alla deltagare fyllde i för-, halvtids- och eftermätning via plattformen. Alla
 
 Den föreliggande studien godkändes av etikprövningsnämnden. Diarienummer för etikansökan är 2019-05165. Studien förregistrerades på https://clinicaltrials.gov/ct2/show/NCT04240249. 
 
-Deltagarna blev via studiens hemsida informerade om att allt deltagande var frivilligt och att de kunde avbryta sitt deltagande när som helst. All information samlades in under sekretess och i enlighet med personuppgiftslagen samt GDPR. Deltagandet var helt anonymt och all insamlad data var kopplad till den anonyma studiekod som genererades för varje deltagare. Vid exkludering från studien informerades deltagaren om anledningen samt fick rekommendationer (t ex om vart hen kunde vända sig för att söka vård). Vid tecken på svår depression rekommenderades deltagarna att uppsöka psykiatrisk vård. Under hela studiens gång hade deltagarna möjlighet att kontakta studieansvarig per telefon samt post.
+Deltagarna blev via studiens hemsida informerade om att allt deltagande var frivilligt och att de kunde avbryta sitt deltagande när som helst. De kunde ta del av syftet med studien och studiens övergripande plan. Information fanns om att all information samlades in under sekretess och i enlighet med personuppgiftslagen samt GDPR. Deltagandet var helt anonymt och all insamlad data var kopplad till den anonyma studiekod som genererades för varje deltagare. Vid intresseanmälan till studien lämnade deltagarna informerat samtycke till sitt deltagande. Vid exkludering från studien under rekryteringsfasen informerades deltagaren om anledningen samt fick rekommendationer (t ex om vart hen kunde vända sig för att söka vård). Vid tecken på svår depression rekommenderades deltagarna att uppsöka psykiatrisk vård. Under hela studiens gång hade deltagarna möjlighet att kontakta studieansvarig per telefon samt post.
 
 ## Analyser
 
