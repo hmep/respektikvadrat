@@ -39,21 +39,33 @@ header-includes:
    - \usepackage{hyphenat}
    - \hyphenation{nor-mal-spann nor-mal-span-net}
    - \usepackage{tabu}
-   
+editor_options: 
+  chunk_output_type: inline
 ---
 
-```{r preferences and dependencies, include = FALSE}
+```{r preferences, include = F, cache = F}
 
 set.seed(42) # Seed for random number generation
 
 options(contrasts=c('contr.treatment','contr.poly'))
 
-#devtools::install_github("crsh/papaja@devel",force=TRUE)
-#install_github("hofnerb/papeR")
+#devtools::install_github("crsh/papaja@devel",force=T)
+#devtools::install_github("AWKruijt/JT-RCI",force=T)
 
-library("papaja") # APA-6 style guide compliance
+library("papaja")
+library("broom.mixed")
 library("knitr")
 library("kableExtra")
+library("readxl")
+library("pastecs")
+library("JTRCI")
+library("nlme")
+library("emmeans")
+library("car")
+library("ggplot2")
+
+#library("pander")
+#library("lmerTest")
 
 # authornote: |
 #   `r readLines('authornote.txt', encoding = 'UTF-8')`
@@ -63,31 +75,30 @@ library("kableExtra")
 #   `r readLines('keywords.txt', encoding = 'UTF-8')`
 
 svkable = function(...) {
-  knitr::kable(..., format.args = list(decimal.mark = ',', big.mark = ' '))
+  knitr::kable(..., format.args = list(decimal.mark = ',', big.mark = ' '), format="latex", booktabs=T)
 }
 
 enkable = function(...) {
-  knitr::kable(..., format.args = list(decimal.mark = '.', big.mark = ','))
+  knitr::kable(..., format.args = list(decimal.mark = '.', big.mark = ','), format="latex", booktabs=T)
 }
 
 ```
 
-```{r data setup, eval = FALSE}
+```{r paramterers}
 
-library("readxl")
+xg1 = "Egen"
+xg2 = "Behandlare"
+xg3 = "Kontroll"
+xiterapi = "Iterapi [@Vlaescu2016]"
+xpre = "Förmätning"
+xdur = "Mittenmätning"
+xpost = "Eftermätning"
+
+```
+
+```{r data setup, eval = F, cache = F}
 
 # This chunk is to be run only once in order to set up anonymous data that can be published on figshare
-# To run this chunk, change "eval = FALSE" to "eval = TRUE"
-
-# First, export data from iTerapi
-# - Go to "Administrera" > "Exportera"
-# - Select "Frågeformulär"
-# - Select each questionnaire and all scales
-# - Select "Exportera endast de totala poängen"
-# - Select "Inkludera svar från" > "Endast användare i valda grupper"
-# - Select "Grupp 1: Behandling exkl stöd", "Grupp 2: Behandling inkl stöd" and "Grupp 3: Väntelista"
-# - Press the "Exportera" button
-# See image file "exporting-respekt-data.png" for guidance
 
 ##################################################################################
 # Put the exported Excel files in the folder where this Rmd script resides
@@ -229,7 +240,7 @@ r2.wide.data$group <-
     )
   ),
   levels = c(3,1,2),
-  labels = c("Waitlist","Selfhelp","Guided")) # Add group designations
+  labels = c(xg3,xg1,xg2)) # Add group designations
 r2.wide.data$therapist <-
   factor(ifelse(
     grepl("Grupp 2: P", r2.wide.data$pre_group),
@@ -252,11 +263,11 @@ if (prompt.keep == "K") {
 } else {
   file.remove(raw_excel)
 }
-rm(list = ls())
+#rm(list = ls())
 
 ```
 
-```{r import and reshape data}
+```{r reshape, cache = F, collapse=T}
 
 # Get wide data
 r2.wide.data <- readRDS("r2.wide.data.RDS")
@@ -355,25 +366,25 @@ r2.long.data <- data.frame(
 
 # Subsetting keys
 
-lg1 <- grepl("Selfhelp", r2.long.data$group)
-lg2 <- grepl("Guided", r2.long.data$group)
-lg3 <- grepl("Waitlist", r2.long.data$group)
+lg1 <- grepl(xg1, r2.long.data$group)
+lg2 <- grepl(xg2, r2.long.data$group)
+lg3 <- grepl(xg3, r2.long.data$group)
 
 lt1 <- grepl("Pre", r2.long.data$time)
 lt2 <- grepl("During", r2.long.data$time)
 lt3 <- grepl("Post", r2.long.data$time)
 
-lg1t1 <- r2.long.data$group == "Selfhelp" & r2.long.data$time == "Pre"
-lg1t2 <- r2.long.data$group == "Selfhelp" & r2.long.data$time == "During"
-lg1t3 <- r2.long.data$group == "Selfhelp" & r2.long.data$time == "Post"
+lg1t1 <- r2.long.data$group == xg1 & r2.long.data$time == "Pre"
+lg1t2 <- r2.long.data$group == xg1 & r2.long.data$time == "During"
+lg1t3 <- r2.long.data$group == xg1 & r2.long.data$time == "Post"
 
-lg2t1 <- r2.long.data$group == "Guided" & r2.long.data$time == "Pre"
-lg2t2 <- r2.long.data$group == "Guided" & r2.long.data$time == "During"
-lg2t3 <- r2.long.data$group == "Guided" & r2.long.data$time == "Post"
+lg2t1 <- r2.long.data$group == xg2 & r2.long.data$time == "Pre"
+lg2t2 <- r2.long.data$group == xg2 & r2.long.data$time == "During"
+lg2t3 <- r2.long.data$group == xg2 & r2.long.data$time == "Post"
 
-lg3t1 <- r2.long.data$group == "Waitlist" & r2.long.data$time == "Pre"
-lg3t2 <- r2.long.data$group == "Waitlist" & r2.long.data$time == "During"
-lg3t3 <- r2.long.data$group == "Waitlist" & r2.long.data$time == "Post"
+lg3t1 <- r2.long.data$group == xg3 & r2.long.data$time == "Pre"
+lg3t2 <- r2.long.data$group == xg3 & r2.long.data$time == "During"
+lg3t3 <- r2.long.data$group == xg3 & r2.long.data$time == "Post"
 
 # Finally, make sure the waitlist condition has zero modules assigned & opened.
 # Rationale: At the time of writing, participants have started with module 1 just 
@@ -383,7 +394,7 @@ r2.long.data[lg3,c(18:20)] <- NA
 
 ```
 
-```{r norms}
+```{r norms, cache = F}
 
 ### AAA-S Adaptive assertiveness
 # Norms: Thompson (2011) 
@@ -391,10 +402,10 @@ r2.long.data[lg3,c(18:20)] <- NA
 # Student sample 1: 57.6 (7.5), alpha .82 <- Let's use these
 # Student sample 2: 56.8 (7.4), alpha .82
 # Clinical sample: 50.0 (8.4), alpha .69
-r.AAAS.ad = 0.82 # s 329 @Thompson2011
-sd.AAAS.ad.norm = 7.5 # s 329 @Thompson2011
-mean.AAAS.ad.norm = 57.6 # s 329 @Thompson2011
-ref.AAAS.ad = "student-sample 1 från @Thompson2011"
+r.AAAS_ad = 0.82 # s 329 @Thompson2011
+sd.AAAS_ad.norm = 7.5 # s 329 @Thompson2011
+mean.AAAS_ad.norm = 57.6 # s 329 @Thompson2011
+ref.AAAS_ad = "student-sample 1 från @Thompson2011"
 
 ### AAA-S Aggressive assertiveness
 # Norms: Thompson (2011) 
@@ -402,10 +413,10 @@ ref.AAAS.ad = "student-sample 1 från @Thompson2011"
 # Student sample 1: 33.2 (9.7), alpha .88 <- Let's use these
 # Student sample 2: 31.6 (8.7), alpha .87
 # Clinical sample: 27.5 (7.6), alpha .82
-r.AAAS.ag = 0.88 # s 329 @Thompson2011
-sd.AAAS.ag.norm = 9.7 # s 329 @Thompson2011
-mean.AAAS.ag.norm = 33.2 # s 329 @Thompson2011
-ref.AAAS.ag = "icke-kliniskt sample (student-sample 1) från @Thompson2011"
+r.AAAS_ag = 0.88 # s 329 @Thompson2011
+sd.AAAS_ag.norm = 9.7 # s 329 @Thompson2011
+mean.AAAS_ag.norm = 33.2 # s 329 @Thompson2011
+ref.AAAS_ag = "icke-kliniskt sample (student-sample 1) från @Thompson2011"
 
 ### PHQ9
 # Normdata: Kroenke, K., Spitzer, R. L., & Williams, J. B. (2001). The PHQ-9: validity of a brief depression severity measure. Journal of General Internal Medicine, 16(9), 606–613. Retrieved from http://www.ncbi.nlm.nih.gov/pubmed/11556941
@@ -436,13 +447,6 @@ r.Rathus = 0.87 # s 326 @Thompson2011
 sd.Rathus.norm = 23.9 # s 326 @Thompson2011
 mean.Rathus.norm = 6.2 # s 326 @Thompson2011
 ref.Rathus = "student-sample 1 från @Thompson2011"
-
-xg1 = "Självhjälp"
-xg2 = "Med stöd"
-xg3 = "Väntlista"
-xiterapi = "Iterapi [@Vlaescu2016]"
-xpre = "Förmätning"
-xpost = "Eftermätning"
 
 ```
 
@@ -651,7 +655,7 @@ De personer som skattade 15 eller mer på självskattningsformuläret PHQ-9 exkl
 
 #### Demografisk data
 
-```{r def demdata}
+```{r def demdata, cache = F}
 
 x1 <-
   c(
@@ -808,9 +812,9 @@ De `r length(r2.wide.data$subject)` deltagare vars data används i den här stud
 
 (ref:dem) Demografisk data hos deltagarna, redovisad per grupp samt för alla studiens deltagare.
 
-```{r demdata, out.width="100%", tab.align="center"}
+```{r demdata, out.width="100%", tab.align="center", cache = F}
 
-svkable(demdata.tabell, booktabs = T, caption = "(ref:dem)", linesep = "", align="lrrrr") %>%
+svkable(demdata.tabell, caption = "(ref:dem)", linesep = "", align="lrrrr") %>%
   kable_styling(full_width = F) %>%
   column_spec(2, width = "5em") %>%
   column_spec(3, width = "5em") %>%
@@ -980,7 +984,7 @@ Se tabell \@ref(tab:intervention) för en översiktlig genomgång av innehållet
 
 (ref:interv) Översiktlig beskrivning av interventionen Respekt i kvadrat. Kapitelhänvisningar avser *Assert Yourself* (Michel & Fursland, 2008).
 
-```{r intervention, fig.align="center"}
+```{r intervention, fig.align="center", cache = F}
 
 Vecka <- c("1","2","3","4","5","6--7","8")
 
@@ -1009,7 +1013,7 @@ intervention.tabell <- cbind.data.frame(
   "Material"=Innehall
   )
 
-svkable(intervention.tabell, booktabs = T, caption = "(ref:interv)", linesep = "", align="rll") %>%
+svkable(intervention.tabell, caption = "(ref:interv)", linesep = "", align="rll") %>%
   kable_styling(full_width = F) %>%
   column_spec(1, width = "2em") %>%
   column_spec(2, width = "22em") %>%
@@ -1041,9 +1045,6 @@ Vi ville undersöka om det fanns någon skillnad i effekt (i endera riktning) av
 ```{r primo }
 
 ## (flyttas)
-
-library(car)
-library(pander)
 
 g1.cs <- (r2.long.data[lg1t3, 7] - r2.long.data[lg1t1, 7]) # Change score Självhjälp
 g2.cs <- (r2.long.data[lg2t3, 7] - r2.long.data[lg2t1, 7]) # Change score Med stöd
@@ -1117,7 +1118,9 @@ Genom att rapportera antalet individer som har förändrats både reliabelt och 
 
 För att bedöma om en individuell förändring mellan två mätpunkter är reliabel används standardavvikelsen i normalpopulationen. För beräkningen av reliabel förändring, *reliable change index* (RCI), delas skillnaden mellan de två medelvärdena med standardfelet (det vill säga standardavvikelsen delat med roten ur sample-storleken). 
 
-För att bedöma absolut status för en individ vid behandlingens slut (exempelvis för att kunna avgöra om personen ska betraktas som tillfrisknad eller i behov av fortsatta interventioner) kan man relatera individens eftermätningsvärde till medelvärdet för antingen den kliniska populationen eller den subkliniska normalpopulationen. @Jacobson1991 definierar det förra som kriterium *a* och det senare som kriterium *b*. Man kan också relatera eftermätningsvärdet för en individ till ett normvärde i mitten av *a* och *b*, vilket författarna kallar kriterium *c*. I enlighet med rekommendationerna i @Jacobson1991 för överlappande distributioner använder vi kriterium *b* för beräkningen: de invidier vars eftermätningsvärde befinner sig inom två standardavvikelser från den subkliniska normalpopulationen anses vara kliniskt signifikant förändrade.
+För att bedöma absolut status för en individ vid behandlingens slut (exempelvis för att kunna avgöra om personen ska betraktas som tillfrisknad eller i behov av fortsatta interventioner) kan man relatera individens eftermätningsvärde till medelvärdet för antingen den kliniska populationen eller den subkliniska normalpopulationen. @Jacobson1991 definierar det förra som kriterium *a* och det senare som kriterium *b*. Man kan också relatera eftermätningsvärdet för en individ till ett normvärde i mitten av *a* och *b*, vilket författarna kallar kriterium *c*.
+
+<!-- I enlighet med rekommendationerna i @Jacobson1991 för överlappande distributioner använder vi kriterium *b* för beräkningen: de invidier vars eftermätningsvärde befinner sig inom två standardavvikelser från den subkliniska normalpopulationen anses vara kliniskt signifikant förändrade. -->
 
 <!-- De graferna som innehåller a, b, och c i resultatdelen bör i sin figurtext ha en beskrivning av vad dessa bokstäver står för, eller en hänvisning tillbaka till detta avsnitt -->
 
@@ -1131,11 +1134,9 @@ se tabell \@ref(tab:descriptives)
 
 (ref:descriptives) Deskriptiva mått för primära och sekundärt beroende variabler liksom oberoende variabler vid studiens start.
 
-``` {r descriptives, fig.cap='(ref:descriptives)', fig.align="center"}
+``` {r descriptives, fig.cap='(ref:descriptives)', fig.align="center", cache = F}
 
 ### Descriptives
-
-library(pastecs)
 
 numvars <- c(5:17) # Variables in r2.long.data that we are interested in
 
@@ -1170,15 +1171,15 @@ descriptives.lg3t2 <- stat.desc(r2.long.data[lg3t2,numvars], basic=TRUE, desc=TR
 descriptives.lg3t3 <- stat.desc(r2.long.data[lg3t3,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
 
 descriptives.out <- rbind(
-  "Selfhelp" = cbind(
+  xg1 = cbind(
     descriptives.lg1t1[c(9, 13, 20), c(3,2,1,4:13)]#,
     #descriptives.lg1t3[c(9, 13, 20), c(3,2,1,4:13)]
   ),
-  "Guided" = cbind(
+  xg2 = cbind(
     descriptives.lg2t1[c(9, 13, 20), c(3,2,1,4:13)]#,
     #descriptives.lg2t3[c(9, 13, 20), c(3,2,1,4:13)]
   ),
-  "Waitlist" = cbind(
+  xg3 = cbind(
     descriptives.lg3t1[c(9, 13, 20), c(3,2,1,4:13)]#,
     #descriptives.lg3t3[c(9, 13, 20), c(3,2,1,4:13)]
   ))
@@ -1209,7 +1210,7 @@ colnames(descriptives.out.rot) <- rep(c("M","SD","p"),times = 3)
 # xg = paste('All (N = ' , length(r2.long.data[lg2t1,1]) , ')', sep="")
 # xw = paste('All (N = ' , length(r2.long.data[lg3t1,1]) , ')', sep="")
 
-svkable(round(descriptives.out.rot,2), booktabs = T, caption = "(ref:descriptives)") %>%
+svkable(round(descriptives.out.rot,2), caption = "(ref:descriptives)") %>%
   add_header_above(c("", "Självhjälp (N = 67)" = 3, "Med stöd (N = 69)" = 3, "Väntlista (N = 68)" = 3)) %>% #, "All (N = 204)" = 2)) %>%
   pack_rows("Primära utfallsmått", 1, 2, bold = F) %>%
   pack_rows("Sekundära utfallsmått/kovariat", 3, 13, bold = F)
@@ -1258,24 +1259,6 @@ svkable(round(descriptives.out.rot,2), booktabs = T, caption = "(ref:descriptive
 
 ```
 
-<!-- \newpage -->
-
-<!--
-
-(a) The level of functioning subsequent to therapy should fall outside the range of the dysfunctional population, where range is defined as extending to two standard deviations beyond (in the direction of functionality) the mean for that population. 
-
-(b) The level of functioning subsequent to therapy should fall within the range of the functional or normal population, where range is defined as within two standard deviations of the mean of that population. 
-
-(c) The level of functioning subsequent to therapy places that client closer to the mean of the functional population than it does to the mean of the dysfunctional population.
-
-The dotted lines to the left and right of the diagonal line represent the reliable change index band, set at an RCI score of 1.96 standard errors of measurement around the line of no change.  Individual scores within the RCI band have not shown reliable change while scores outside of the RCI band have shown reliable change.
-
-The "b" cutoff means that post-intervention scores are significant if they are within a specified distance of the normal MCT (i.e. they are "close enough" to the normal MCT). This criterion is typically used with overlapping distributions.
- 
--->
-
-<!-- \newpage -->
-
 ### Interaktionsplottar
 
 se figur \@ref(fig:interactions)
@@ -1293,15 +1276,7 @@ interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$rathus,fun=
 
 ```
 
-<!-- https://www.researchgate.net/post/Who_knows_how_to_estimate_effect_size_in_generalized_linear_mixed_models_in_R -->
-<!-- https://easystats.github.io/effectsize/articles/from_test_statistics.html -->
-<!-- https://jonlefcheck.net/2013/03/13/r2-for-linear-mixed-effects-models/ -->
-
-<!-- ### Scatterplots -->
-
-```{r outcome plots, dpi=196, fig.width=7,eval=F}
-
-library(car)
+```{r scatterplots, dpi=196, fig.width=7,eval=F, cache = F}
 
 scatterplotMatrix(~ aaas_ad + aaas_ag + rathus|time, data = r2.long.data[lg1,],
    main="Group 1, conditioned on time",col=c("blue","green","orange"))
@@ -1322,953 +1297,530 @@ Det var ingen signifikant skillnad i de två gruppernas skattade förändring p�
 
 ## Klinisk signifikans (arbeta in detta i primära och sekundära frågeställningen?)
 
-### AAA-S Ad
+``` {r jtrci, include = FALSE, cache = T}
 
-se figur \@ref(fig:aaasad)
+jt_rownames <-
+  factor(c(
+    "Försämrade",
+    "Oförändrande",
+    "Förbättrade",
+    "Tillfrisknade (ej reliabelt)",
+    "Tillfrisknade (reliabelt)"
+  ))
 
-``` {r aaasad, fig.cap='(ref:ad)', fig.align="center", fig.width=8, fig.height=8}
+jt_colnames <- c("Jacobson & Truax-klassificering", xg3, xg1, xg2)
 
-par(mfrow=c(2,2))
+### AAAS_ad pre--post
 
-# Subsetting keys
-
-g1 <- grepl("Selfhelp", r2.wide.data$group)
-g2 <- grepl("Guided", r2.wide.data$group)
-g3 <- grepl("Waitlist", r2.wide.data$group)
-
-r2.wide.g1 <- r2.wide.data[g1,]
-r2.wide.g2 <- r2.wide.data[g2,]
-r2.wide.g3 <- r2.wide.data[g3,]
-
-library("clinsig")
-
-# Hack: running clinsig twice as an ugly workaround to get different colors in the plots
-
-x <- clinsig(
-  r2.wide.g1$pre_aaas_ad[!is.na(r2.wide.g1$post_aaas_ad)],
-  r2.wide.g1$post_aaas_ad[!is.na(r2.wide.g1$post_aaas_ad)],
-  coef.alpha = r.AAAS.ad,
-  func.disp = sd.AAAS.ad.norm,
-  func.mct = mean.AAAS.ad.norm,
-  main = "Adaptive Assertiveness, Selfhelp",
-  xlab = "Pretest score",
-  ylab = "Posttest score",
-  do.plot = F
-)
-relchng.AAAS.ad.g1.pos <- (x$post.x - x$pre.x) > x$relchng
-relchng.AAAS.ad.g1.neg <- (x$post.x - x$pre.x) < -x$relchng
-clinsig.AAAS.ad.g1.which <- intersect(which(relchng.AAAS.ad.g1.pos),which(x$post.x > x$crit[2]))
-clinsig.AAAS.ad.g1.num <- length(clinsig.AAAS.ad.g1.which)
-xcol <- factor(rep("black",times=length(x$post.x)),levels=c("black","red"))
-xcol[clinsig.AAAS.ad.g1.which] <- rep("red",times=length(clinsig.AAAS.ad.g1.which))
-xpch <- rep(1,times=length(x$post.x))
-xpch[clinsig.AAAS.ad.g1.which] <- rep(2,times=length(clinsig.AAAS.ad.g1.which))
-clinsig.AAAS.ad.g1 <- clinsig(
-  r2.wide.g1$pre_aaas_ad[!is.na(r2.wide.g1$post_aaas_ad)],
-  r2.wide.g1$post_aaas_ad[!is.na(r2.wide.g1$post_aaas_ad)],
-  coef.alpha = r.AAAS.ad,
-  func.disp = sd.AAAS.ad.norm,
-  func.mct = mean.AAAS.ad.norm,
-  main = paste("Adaptive Assertiveness, ",xg1,sep=""),
-  xlab = paste(xpre),
-  ylab = paste(xpost),
-  col = xcol,
-  pch = xpch
-)
-
-x <- clinsig(
-  r2.wide.g2$pre_aaas_ad[!is.na(r2.wide.g2$post_aaas_ad)],
-  r2.wide.g2$post_aaas_ad[!is.na(r2.wide.g2$post_aaas_ad)],
-  coef.alpha = r.AAAS.ad,
-  func.disp = sd.AAAS.ad.norm,
-  func.mct = mean.AAAS.ad.norm,
-  main = "Adaptive Assertiveness, Guided",
-  xlab = "Pretest score",
-  ylab = "Posttest score",
-  do.plot = F
-)
-relchng.AAAS.ad.g2.pos <- (x$post.x - x$pre.x) > x$relchng
-relchng.AAAS.ad.g2.neg <- (x$post.x - x$pre.x) < -x$relchng
-clinsig.AAAS.ad.g2.which <- intersect(which(relchng.AAAS.ad.g2.pos),which(x$post.x > x$crit[2]))
-clinsig.AAAS.ad.g2.num <- length(clinsig.AAAS.ad.g2.which)
-xcol <- factor(rep("black",times=length(x$post.x)),levels=c("black","red"))
-xcol[clinsig.AAAS.ad.g2.which] <- rep("red",times=length(clinsig.AAAS.ad.g2.which))
-xpch <- rep(1,times=length(x$post.x))
-xpch[clinsig.AAAS.ad.g2.which] <- rep(2,times=length(clinsig.AAAS.ad.g2.which))
-clinsig.AAAS.ad.g2 <- clinsig(
-  r2.wide.g2$pre_aaas_ad[!is.na(r2.wide.g2$post_aaas_ad)],
-  r2.wide.g2$post_aaas_ad[!is.na(r2.wide.g2$post_aaas_ad)],
-  coef.alpha = r.AAAS.ad,
-  func.disp = sd.AAAS.ad.norm,
-  func.mct = mean.AAAS.ad.norm,
-  main = paste("Adaptive Assertiveness, ",xg2,sep=""),
-  xlab = paste(xpre),
-  ylab = paste(xpost),
-  col = xcol,
-  pch = xpch
-)
-
-x <- clinsig(
-  r2.wide.g3$pre_aaas_ad[!is.na(r2.wide.g3$post_aaas_ad)],
-  r2.wide.g3$post_aaas_ad[!is.na(r2.wide.g3$post_aaas_ad)],
-  coef.alpha = r.AAAS.ad,
-  func.disp = sd.AAAS.ad.norm,
-  func.mct = mean.AAAS.ad.norm,
-  main = "Adaptive Assertiveness, Guided",
-  xlab = "Pretest score",
-  ylab = "Posttest score",
-  do.plot = F
-)
-relchng.AAAS.ad.g3.pos <- (x$post.x - x$pre.x) > x$relchng
-relchng.AAAS.ad.g3.neg <- (x$post.x - x$pre.x) < -x$relchng
-clinsig.AAAS.ad.g3.which <- intersect(which(relchng.AAAS.ad.g3.pos),which(x$post.x > x$crit[2]))
-clinsig.AAAS.ad.g3.num <- length(clinsig.AAAS.ad.g3.which)
-xcol <- factor(rep("black",times=length(x$post.x)),levels=c("black","red"))
-xcol[clinsig.AAAS.ad.g3.which] <- rep("red",times=length(clinsig.AAAS.ad.g3.which))
-xpch <- rep(1,times=length(x$post.x))
-xpch[clinsig.AAAS.ad.g3.which] <- rep(2,times=length(clinsig.AAAS.ad.g3.which))
-clinsig.AAAS.ad.g3 <- clinsig(
-  r2.wide.g3$pre_aaas_ad[!is.na(r2.wide.g3$post_aaas_ad)],
-  r2.wide.g3$post_aaas_ad[!is.na(r2.wide.g3$post_aaas_ad)],
-  coef.alpha = r.AAAS.ad,
-  func.disp = sd.AAAS.ad.norm,
-  func.mct = mean.AAAS.ad.norm,
-  main = paste("Adaptive Assertiveness, ",xg3,sep=""),
-  xlab = paste(xpre),
-  ylab = paste(xpost),
-  col = xcol,
-  pch = xpch#,
-  #cex=1, cex.sub=1, cex.main=1, cex.lab=1, cex.axis=1, mex=1,csi=1,mar=c(5, 4, 4, 4) 
-)
-
-devtools::install_github("AWKruijt/JT-RCI")
-
-library(JTRCI)
-
-key = !is.na(r2.wide.g3$post_aaas_ad)
-
-AAAS.ad.jt <- JTRCI(
+# Run
+x <- JTRCI(
   data = r2.wide.data,
   pre = "pre_aaas_ad",
   post = "post_aaas_ad",
   ppid = "subject",
   group = "group",
-  reliability = r.AAAS.ad,
+  reliability = r.AAAS_ad,
   higherIsBetter = T,
   indextype = "JT",
-  JTcrit = "B",
-  normM = mean.AAAS.ad.norm,
-  normSD = sd.AAAS.ad.norm,
-  dysfM = NA,
-  dysfSD = NA,
-  plot = T,
-  table = T,
-  useGroups = T
+  JTcrit = "auto",
+  normM = mean.AAAS_ad.norm,
+  normSD = sd.AAAS_ad.norm
 )
 
-# plotRCI(data = AAAS.ad.rci, addInfoLegend = "yes",
-#   useGroups = T, facetplot = T, addJitter = F, xlab = "pre",
-#   ylab = "post", plottitle = "reliable change plot")
+# Plot
+xp <-
+  plotJT(
+    x,
+    facetplot = T,
+    addJitter = T,
+    plottitle = paste("AAA-S Adaptive, ",xpost,sep=""),
+    xlab = xpre,
+    ylab = xpost
+  )
+xp$labels$colour <- paste("Jacobson & Truax-klassificering\n",xg3," / ",xg1," / ",xg2,sep="")
+AAAS_ad.pre.post.jt.plot <- xp
 
-plotJT(data = AAAS.ad.jt, addInfoLegend = "no",
-  useGroups = T, facetplot = T, addJitter = T, xlab = "pre",
-  ylab = "post", plottitle = "reliable change plot")
+# Data frame / table
+xt <- tableJT(data = x, useGroups = T)
+xt[, 1] <- jt_rownames
+colnames(xt) <- jt_colnames
+AAAS_ad.pre.post.jt.table <- xt
 
-tableJT(data = AAAS.ad.jt, useGroups = T)
+### AAAS_ad pre--during
+
+# Run
+x <- JTRCI(
+  data = r2.wide.data,
+  pre = "pre_aaas_ad",
+  post = "dur_aaas_ad",
+  ppid = "subject",
+  group = "group",
+  reliability = r.AAAS_ad,
+  higherIsBetter = T,
+  indextype = "JT",
+  JTcrit = "auto",
+  normM = mean.AAAS_ad.norm,
+  normSD = sd.AAAS_ad.norm
+)
+
+# Plot
+xp <-
+  plotJT(
+    x,
+    facetplot = T,
+    addJitter = T,
+    plottitle = paste("AAA-S Adaptive, ",xdur,sep=""),
+    xlab = xpre,
+    ylab = xdur
+  )
+xp$labels$colour <- paste("Jacobson & Truax-klassificering\n",xg3," / ",xg1," / ",xg2,sep="")
+AAAS_ad.pre.dur.jt.plot <- xp
+
+# Data frame / table
+xt <- tableJT(data = x, useGroups = T)
+xt[, 1] <- jt_rownames
+colnames(xt) <- jt_colnames
+AAAS_ad.pre.dur.jt.table <- xt
+
+### AAAS_ag pre--post UPWARDS
+
+# Run
+x <- JTRCI(
+  data = r2.wide.data,
+  pre = "pre_aaas_ag",
+  post = "post_aaas_ag",
+  ppid = "subject",
+  group = "group",
+  reliability = r.AAAS_ag,
+  higherIsBetter = T,
+  indextype = "JT",
+  JTcrit = "auto",
+  normM = mean.AAAS_ag.norm,
+  normSD = sd.AAAS_ag.norm
+)
+
+# Plot
+xp <-
+  plotJT(
+    x,
+    facetplot = T,
+    addJitter = T,
+    plottitle = paste("AAA-S Aggressive, ",xpost,sep=""),
+    xlab = xpre,
+    ylab = xpost
+  )
+xp$labels$colour <- paste("Jacobson & Truax-klassificering\n",xg3," / ",xg1," / ",xg2,sep="")
+AAAS_ag.pre.post.jt.plot <- xp
+
+# Data frame / table
+xt <- tableJT(data = x, useGroups = T)
+xt[, 1] <- jt_rownames
+colnames(xt) <- jt_colnames
+AAAS_ag.pre.post.jt.table <- xt
+
+### AAAS_ag pre--during
+
+# Run
+x <- JTRCI(
+  data = r2.wide.data,
+  pre = "pre_aaas_ag",
+  post = "dur_aaas_ag",
+  ppid = "subject",
+  group = "group",
+  reliability = r.AAAS_ag,
+  higherIsBetter = T,
+  indextype = "JT",
+  JTcrit = "auto",
+  normM = mean.AAAS_ag.norm,
+  normSD = sd.AAAS_ag.norm
+)
+
+# Plot
+xp <-
+  plotJT(
+    x,
+    facetplot = T,
+    addJitter = T,
+    plottitle = paste("AAA-S Aggressive, ",xdur,sep=""),
+    xlab = xpre,
+    ylab = xdur
+  )
+xp$labels$colour <- paste("Jacobson & Truax-klassificering\n",xg3," / ",xg1," / ",xg2,sep="")
+AAAS_ag.pre.dur.jt.plot <- xp
+
+# Data frame / table
+xt <- tableJT(data = x, useGroups = T)
+xt[, 1] <- jt_rownames
+colnames(xt) <- jt_colnames
+AAAS_ag.pre.dur.jt.table <- xt
+
+### AAAS_ag pre--post DOWNWARDS
+
+# Run
+x <- JTRCI(
+  data = r2.wide.data,
+  pre = "pre_aaas_ag",
+  post = "post_aaas_ag",
+  ppid = "subject",
+  group = "group",
+  reliability = r.AAAS_ag,
+  higherIsBetter = F,
+  indextype = "JT",
+  JTcrit = "auto",
+  normM = mean.AAAS_ag.norm,
+  normSD = sd.AAAS_ag.norm
+)
+
+# Plot
+xp <-
+  plotJT(
+    x,
+    facetplot = T,
+    addJitter = T,
+    plottitle = paste("AAA-S Aggressive, ",xpost,sep=""),
+    xlab = xpre,
+    ylab = xpost
+  )
+xp$labels$colour <- paste("Jacobson & Truax-klassificering\n",xg3," / ",xg1," / ",xg2,sep="")
+AAAS_ag.pre.post.DOWN.jt.plot <- xp
+
+# Data frame / table
+xt <- tableJT(data = x, useGroups = T)
+xt[, 1] <- jt_rownames
+colnames(xt) <- jt_colnames
+AAAS_ag.pre.post.DOWN.jt.table <- xt
+
+### AAAS_ag pre--during
+
+# Run
+x <- JTRCI(
+  data = r2.wide.data,
+  pre = "pre_aaas_ag",
+  post = "dur_aaas_ag",
+  ppid = "subject",
+  group = "group",
+  reliability = r.AAAS_ag,
+  higherIsBetter = F,
+  indextype = "JT",
+  JTcrit = "auto",
+  normM = mean.AAAS_ag.norm,
+  normSD = sd.AAAS_ag.norm
+)
+
+# Plot
+xp <-
+  plotJT(
+    x,
+    facetplot = T,
+    addJitter = T,
+    plottitle = paste("AAA-S Aggressive, ",xdur,sep=""),
+    xlab = xpre,
+    ylab = xdur
+  )
+xp$labels$colour <- paste("Jacobson & Truax-klassificering\n",xg3," / ",xg1," / ",xg2,sep="")
+AAAS_ag.pre.dur.DOWN.jt.plot <- xp
+
+# Data frame / table
+xt <- tableJT(data = x, useGroups = T)
+xt[, 1] <- jt_rownames
+colnames(xt) <- jt_colnames
+AAAS_ag.pre.dur.DOWN.jt.table <- xt
+
+### Rathus pre--post
+
+# Run
+x <- JTRCI(
+  data = r2.wide.data,
+  pre = "pre_rathus",
+  post = "post_rathus",
+  ppid = "subject",
+  group = "group",
+  reliability = r.Rathus,
+  higherIsBetter = T,
+  indextype = "JT",
+  JTcrit = "auto",
+  normM = mean.Rathus.norm,
+  normSD = sd.Rathus.norm
+)
+
+# Plot
+xp <-
+  plotJT(
+    x,
+    facetplot = T,
+    addJitter = T,
+    plottitle = paste("Rathus, ",xpost,sep=""),
+    xlab = xpre,
+    ylab = xpost
+  )
+xp$labels$colour <- paste("Jacobson & Truax-klassificering\n",xg3," / ",xg1," / ",xg2,sep="")
+rathus.pre.post.jt.plot <- xp
+
+# Data frame / table
+xt <- tableJT(data = x, useGroups = T)
+xt[, 1] <- jt_rownames
+colnames(xt) <- jt_colnames
+rathus.pre.post.jt.table <- xt
+
+### rathus pre--during
+
+# Run
+x <- JTRCI(
+  data = r2.wide.data,
+  pre = "pre_rathus",
+  post = "dur_rathus",
+  ppid = "subject",
+  group = "group",
+  reliability = r.Rathus,
+  higherIsBetter = T,
+  indextype = "JT",
+  JTcrit = "auto",
+  normM = mean.Rathus.norm,
+  normSD = sd.Rathus.norm
+)
+
+# Plot
+xp <-
+  plotJT(
+    x,
+    facetplot = T,
+    addJitter = T,
+    plottitle = paste("Rathus, ",xdur,sep=""),
+    xlab = xpre,
+    ylab = xdur
+  )
+xp$labels$colour <- paste("Jacobson & Truax-klassificering\n",xg3," / ",xg1," / ",xg2,sep="")
+rathus.pre.dur.jt.plot <- xp
+
+# Data frame / table
+xt <- tableJT(data = x, useGroups = T)
+xt[, 1] <- jt_rownames
+colnames(xt) <- jt_colnames
+rathus.pre.dur.jt.table <- xt
 
 ```
 
-(ref:ad) För huvudutfallsmåttet AAA-S och underskalan *Adaptive Assertiveness* fann vi att av de `r clinsig.AAAS.ad.g1$post.n` personerna i grupp `r xg1` som genomfört både för- och eftermätning så återfanns `r clinsig.AAAS.ad.g1$sigsum[2]` vid eftermätningen inom eller ovanför normalspannet för en icke-klinisk population (ovanför kriterium *b*); av dem hade `r paste(clinsig.AAAS.ad.g1.num," (",round(clinsig.AAAS.ad.g1.num/clinsig.AAAS.ad.g1$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.AAAS.ad.g1$relchng,1)` poäng mellan mättillfällena. För de `r clinsig.AAAS.ad.g2$post.n` personer i gruppen `r xg2` och som genomfört båda mätningarna så återfanns `r clinsig.AAAS.ad.g2$sigsum[2]` vid eftermätningen inom normalspannet för en icke-klinisk population; av dem hade `r paste(clinsig.AAAS.ad.g2.num," (",round(clinsig.AAAS.ad.g2.num/clinsig.AAAS.ad.g2$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.AAAS.ad.g2$relchng,1)` poäng mellan mättillfällena. Beräkningarna är gjorda med normer från `r ref.AAAS.ad`.
+```{r tjrciout, fig.align="center", dpi=196, cache=T}
 
-<!-- \newpage -->
+## JTRCI output
 
-### AAA-S Ag
+# Plots
 
-se figur \@ref(fig:aaasag)
+AAAS_ad.pre.post.jt.plot
+AAAS_ad.pre.dur.jt.plot
 
-``` {r aaasag, fig.cap='(ref:ag)', fig.align="center", fig.width=8, fig.height=4}
+AAAS_ag.pre.post.jt.plot
+AAAS_ag.pre.dur.jt.plot
 
-par(mfrow=c(1,2))
+AAAS_ag.pre.post.DOWN.jt.plot
+AAAS_ag.pre.dur.DOWN.jt.plot
 
-x <- clinsig(
-  r2.wide.g1$pre_aaas_ag[!is.na(r2.wide.g1$post_aaas_ag)],
-  r2.wide.g1$post_aaas_ag[!is.na(r2.wide.g1$post_aaas_ag)],
-  coef.alpha = r.AAAS.ag,
-  func.disp = sd.AAAS.ag.norm,
-  func.mct = mean.AAAS.ag.norm,
-  main = "Aggressive Assertiveness, Selfhelp",
-  xlab = "Pretest score",
-  ylab = "Posttest score",
-  do.plot = F
-)
-relchng.AAAS.ag.g1.pos <- (x$post.x - x$pre.x) > x$relchng
-relchng.AAAS.ag.g1.neg <- (x$post.x - x$pre.x) < -x$relchng
-clinsig.AAAS.ag.g1.which <- intersect(which(relchng.AAAS.ag.g1.pos),which(x$post.x > x$crit[2]))
-clinsig.AAAS.ag.g1.num <- length(clinsig.AAAS.ag.g1.which)
-xcol <- factor(rep("black",times=length(x$post.x)),levels=c("black","red"))
-xcol[clinsig.AAAS.ag.g1.which] <- rep("red",times=length(clinsig.AAAS.ag.g1.which))
-xpch <- rep(1,times=length(x$post.x))
-xpch[clinsig.AAAS.ag.g1.which] <- rep(2,times=length(clinsig.AAAS.ag.g1.which))
-clinsig.AAAS.ag.g1 <- clinsig(
-  r2.wide.g1$pre_aaas_ag[!is.na(r2.wide.g1$post_aaas_ag)],
-  r2.wide.g1$post_aaas_ag[!is.na(r2.wide.g1$post_aaas_ag)],
-  coef.alpha = r.AAAS.ag,
-  func.disp = sd.AAAS.ag.norm,
-  func.mct = mean.AAAS.ag.norm,
-  main = paste("Aggressive Assertiveness, ",xg1,sep=""),
-  xlab = paste(xpre),
-  ylab = paste(xpost),
-  col = xcol,
-  pch = xpch
-)
+rathus.pre.post.jt.plot
+rathus.pre.dur.jt.plot
 
-x <- clinsig(
-  r2.wide.g2$pre_aaas_ag[!is.na(r2.wide.g2$post_aaas_ag)],
-  r2.wide.g2$post_aaas_ag[!is.na(r2.wide.g2$post_aaas_ag)],
-  coef.alpha = r.AAAS.ag,
-  func.disp = sd.AAAS.ag.norm,
-  func.mct = mean.AAAS.ag.norm,
-  main = "Aggressive Assertiveness, Guided",
-  xlab = "Pretest score",
-  ylab = "Posttest score",
-  do.plot = F
-)
-relchng.AAAS.ag.g2.pos <- (x$post.x - x$pre.x) > x$relchng
-relchng.AAAS.ag.g2.neg <- (x$post.x - x$pre.x) < -x$relchng
-clinsig.AAAS.ag.g2.which <- intersect(which(relchng.AAAS.ag.g2.pos),which(x$post.x > x$crit[2]))
-clinsig.AAAS.ag.g2.num <- length(clinsig.AAAS.ag.g2.which)
-xcol <- factor(rep("black",times=length(x$post.x)),levels=c("black","red"))
-xcol[clinsig.AAAS.ag.g2.which] <- rep("red",times=length(clinsig.AAAS.ag.g2.which))
-xpch <- rep(1,times=length(x$post.x))
-xpch[clinsig.AAAS.ag.g2.which] <- rep(2,times=length(clinsig.AAAS.ag.g2.which))
-clinsig.AAAS.ag.g2 <- clinsig(
-  r2.wide.g2$pre_aaas_ag[!is.na(r2.wide.g2$post_aaas_ag)],
-  r2.wide.g2$post_aaas_ag[!is.na(r2.wide.g2$post_aaas_ag)],
-  coef.alpha = r.AAAS.ag,
-  func.disp = sd.AAAS.ag.norm,
-  func.mct = mean.AAAS.ag.norm,
-  main = paste("Aggressive Assertiveness, ",xg2,sep=""),
-  xlab = paste(xpre),
-  ylab = paste(xpost),
-  col = xcol,
-  pch = xpch
-)
+# Tables
+
+# AAAS_ad.pre.post.jt.table
+# AAAS_ad.pre.dur.jt.table
+# 
+# AAAS_ag.pre.post.jt.table
+# AAAS_ag.pre.dur.jt.table
+# 
+# AAAS_ag.pre.post.DOWN.jt.table
+# AAAS_ag.pre.dur.DOWN.jt.table
+# 
+# rathus.pre.post.jt.table
+# rathus.pre.dur.jt.table
 
 ```
 
-(ref:ag) För huvudutfallsmåttet AAA-S och underskalan *Aggressive Assertiveness* fann vi att av de `r clinsig.AAAS.ag.g1$post.n` personerna i gruppen `r xg1` som genomfört både för- och eftermätning så återfanns `r clinsig.AAAS.ag.g1$sigsum[2]` vid eftermätningen inom eller ovanför normalspannet för en icke-klinisk population (ovanför kriterium *b*); av dem hade `r paste(clinsig.AAAS.ag.g1.num," (",round(clinsig.AAAS.ag.g1.num/clinsig.AAAS.ag.g1$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.AAAS.ag.g1$relchng,1)` poäng mellan mättillfällena. För de `r clinsig.AAAS.ag.g2$post.n` personer i gruppen `r xg2` och som genomfört båda mätningarna så återfanns `r clinsig.AAAS.ag.g2$sigsum[2]` vid eftermätningen inom normalspannet för en icke-klinisk population; av dem hade `r paste(clinsig.AAAS.ag.g2.num," (",round(clinsig.AAAS.ag.g2.num/clinsig.AAAS.ag.g2$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.AAAS.ag.g2$relchng,1)` poäng mellan mättillfällena. Beräkningarna är gjorda med normer från `r ref.AAAS.ag`.
+```{r mixedlme, dpi=196}
 
-<!-- \newpage -->
+### AAA-S Adaptive
+
+x <-
+  lme(
+    aaas_ad ~ group * time,
+    random = ~ time | subject,
+    data = r2.long.data,
+    na.action = na.omit,
+    method = "REML",
+    corr=corAR1()
+  )
+
+# Output 
+aaas_ad.lme.tidy <- tidy(x)
+#svkable()
+#summary()
+
+# Estimated Marginal Means / Least Square Means
+emmV <- emmeans(x, ~ time | group, adjust="bonferroni")
+aaas_ad.lme.emm.tidy <- tidy(emmV)
+
+# Effect size estimation
+totSD <-sqrt(sum(as.numeric(VarCorr(x)[,2])))
+aaas_ad.lme.eff.tidy <- tidy(eff_size(emmV, sigma = totSD, edf = 3))
+
+# Plot
+aaas_ad.lme.plot <- emmip(x,~ time | group, xlab = "Tid", ylab = "Linjär prediktion")
+
+### AAA-S Aggressive
+
+x <-
+  lme(
+    aaas_ag ~ group * time,
+    random = ~ time | subject,
+    data = r2.long.data,
+    na.action = na.omit,
+    method = "REML",
+    corr=corAR1()
+  )
+
+# Output 
+aaas_ag.lme.tidy <- tidy(x)
+#svkable()
+#summary()
+
+# Estimated Marginal Means / Least Square Means
+emmV <- emmeans(x, ~ time | group, adjust="bonferroni")
+aaas_ag.lme.emm.tidy <- tidy(emmV)
+
+# Effect size estimation
+totSD <-sqrt(sum(as.numeric(VarCorr(x)[,2])))
+aaas_ag.lme.eff.tidy <- tidy(eff_size(emmV, sigma = totSD, edf = 3))
+
+# Plot
+aaas_ag.lme.plot <- emmip(x,~ time | group, xlab = "Tid", ylab = "Linjär prediktion")
 
 ### Rathus
 
-se figur \@ref(fig:rathus)
-
-``` {r rathus, fig.cap='(ref:rat)', fig.align="center", fig.width=8, fig.height=4}
-
-par(mfrow=c(3,1))
-
-x <- clinsig(
-  r2.wide.g1$pre_rathus[!is.na(r2.wide.g1$post_rathus)],
-  r2.wide.g1$post_rathus[!is.na(r2.wide.g1$post_rathus)],
-  coef.alpha = r.Rathus,
-  func.disp = sd.Rathus.norm,
-  func.mct = mean.Rathus.norm,
-  main = "Rathus, Selfhelp",
-  xlab = "Pretest score",
-  ylab = "Posttest score",
-  do.plot = F
-)
-relchng.Rathus.g1.pos <- (x$post.x - x$pre.x) > x$relchng
-relchng.Rathus.g1.neg <- (x$post.x - x$pre.x) < -x$relchng
-clinsig.Rathus.g1.which <- intersect(which(relchng.Rathus.g1.pos),which(x$post.x > x$crit[2]))
-clinsig.Rathus.g1.num <- length(clinsig.Rathus.g1.which)
-xcol <- factor(rep("black",times=length(x$post.x)),levels=c("black","red"))
-xcol[clinsig.Rathus.g1.which] <- rep("red",times=length(clinsig.Rathus.g1.which))
-xpch <- rep(1,times=length(x$post.x))
-xpch[clinsig.Rathus.g1.which] <- rep(2,times=length(clinsig.Rathus.g1.which))
-clinsig.Rathus.g1 <- clinsig(
-  r2.wide.g1$pre_rathus[!is.na(r2.wide.g1$post_rathus)],
-  r2.wide.g1$post_rathus[!is.na(r2.wide.g1$post_rathus)],
-  coef.alpha = r.Rathus,
-  func.disp = sd.Rathus.norm,
-  func.mct = mean.Rathus.norm,
-  main = paste("Rathus, ",xg1,sep=""),
-  xlab = paste(xpre),
-  ylab = paste(xpost),
-  col = xcol,
-  pch = xpch
-)
-
-x <- clinsig(
-  r2.wide.g2$pre_rathus[!is.na(r2.wide.g2$post_rathus)],
-  r2.wide.g2$post_rathus[!is.na(r2.wide.g2$post_rathus)],
-  coef.alpha = r.Rathus,
-  func.disp = sd.Rathus.norm,
-  func.mct = mean.Rathus.norm,
-  main = "Rathus, Guided",
-  xlab = "Pretest score",
-  ylab = "Posttest score",
-  do.plot = F
-)
-relchng.Rathus.g2.pos <- (x$post.x - x$pre.x) > x$relchng
-relchng.Rathus.g2.neg <- (x$post.x - x$pre.x) < -x$relchng
-clinsig.Rathus.g2.which <- intersect(which(relchng.Rathus.g2.pos),which(x$post.x > x$crit[2]))
-clinsig.Rathus.g2.num <- length(clinsig.Rathus.g2.which)
-xcol <- factor(rep("black",times=length(x$post.x)),levels=c("black","red"))
-xcol[clinsig.Rathus.g2.which] <- rep("red",times=length(clinsig.Rathus.g2.which))
-xpch <- rep(1,times=length(x$post.x))
-xpch[clinsig.Rathus.g2.which] <- rep(2,times=length(clinsig.Rathus.g2.which))
-clinsig.Rathus.g2 <- clinsig(
-  r2.wide.g2$pre_rathus[!is.na(r2.wide.g2$post_rathus)],
-  r2.wide.g2$post_rathus[!is.na(r2.wide.g2$post_rathus)],
-  coef.alpha = r.Rathus,
-  func.disp = sd.Rathus.norm,
-  func.mct = mean.Rathus.norm,
-  main = paste("Rathus, ",xg2,sep=""),
-  xlab = paste(xpre),
-  ylab = paste(xpost),
-  col = xcol,
-  pch = xpch
-)
-
-```
-
-(ref:rat) För det sekundära utfallsmåttet Rathus fann vi att av de `r clinsig.Rathus.g1$post.n` personerna i gruppen `r xg1` som genomfört både för- och eftermätning så återfanns `r clinsig.Rathus.g1$sigsum[2]` vid eftermätningen inom eller ovanför normalspannet för en icke-klinisk population (ovanför kriterium *b*); av dem hade `r paste(clinsig.Rathus.g1.num," (",round(clinsig.Rathus.g1.num/clinsig.Rathus.g1$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.Rathus.g1$relchng,1)` poäng mellan mättillfällena. För de `r clinsig.Rathus.g2$post.n` personer i gruppen `r xg1` och som genomfört båda mätningarna så återfanns `r clinsig.Rathus.g2$sigsum[2]` vid eftermätningen inom normalspannet för en icke-klinisk population; av dem hade `r paste(clinsig.Rathus.g2.num," (",round(clinsig.Rathus.g2.num/clinsig.Rathus.g2$post.n*100,1),"&nbsp;%)",sep="")` också genomgått en reliabel förändring (*p* < 0,05) om minst `r round(clinsig.Rathus.g2$relchng,1)` poäng mellan mättillfällena. Beräkningarna är gjorda med normer från `r ref.Rathus`.
-
-asdfasdfad
-
-text
-
-```{r mixed_aaas_ad, dpi=196, result='asis'}
-
-require(nlme)
-library(pander)
-panderOptions("decimal.mark", ',')
-panderOptions("big.mark", ' ')
-panderOptions("table.style", "simple")
-panderOptions("digits", 4)
-panderOptions("table.emphasize.rownames",F)
-panderOptions("round", 3)
-
-# https://cran.r-project.org/web/packages/pander/pander.pdf
-
-#########
-# AAA-S Ad Tillsammans
-#########
-
-# # A null model
-# gls.null <-
-#   gls(aaas_ad ~ 1,
-#       data = r2.long.data,
-#       na.action = na.omit,
-#       method = "ML")
-# #AIC(gls.null)
-# 
-# # Adding a random intercept
-# lme.int <-
-#   lme(
-#     aaas_ad ~ 1,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int)
-# 
-# # Adding a random slope
-# lme.int.slo <-
-#   lme(
-#     aaas_ad ~ 1,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int.slo)
-# 
-# # Fixed effect: group
-# lme.int.slo.mini.group <-
-#   lme(
-#     aaas_ad ~ group,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int.slo.mini.group)
-# 
-# # Fixed effect: group * time
-# lme.int.slo.mini.group.time <-
-#   lme(
-#     aaas_ad ~ group * time,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int.slo.mini.group.time)
-# 
-# # Fixed effect: group * time + lsas_sum
-# lme.int.slo.mini.group.time.lsas <-
-#   lme(
-#     aaas_ad ~ group * time + lsas_sum,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int.slo.mini.group.time.lsas)
-# 
-# lme.int.slo.mini.group.time.lsas.gad <-
-#   lme(
-#     aaas_ad ~ group * time + lsas_sum + gad_sum,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int.slo.mini.group.time.lsas.gad)
-# 
-# lme.int.slo.mini.group.time.lsas.gad.phq <-
-#   lme(
-#     aaas_ad ~ group * time + lsas_sum + gad_sum + phq_sum,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int.slo.mini.group.time.lsas.gad.phq)
-# 
-# lme.int.slo.mini.group.time.lsas.gad.phq.well <-
-#   lme(
-#     aaas_ad ~ group * time + lsas_sum + gad_sum + phq_sum + well,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int.slo.mini.group.time.lsas.gad.phq.well)
-# 
-# lme.int.slo.mini.group.time.lsas.gad.well <-
-#   lme(
-#     aaas_ad ~ group * time + lsas_sum + gad_sum + well,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int.slo.mini.group.time.lsas.gad.well)
-
-lme.int.slo.mini.group.time.lsas.well <-
+x <-
   lme(
-    aaas_ad ~ group * time + lsas_sum + well,
-    random = ~ 1 |
-      subject,
+    rathus ~ group * time,
+    random = ~ time | subject,
     data = r2.long.data,
     na.action = na.omit,
-    method = "ML"
+    method = "REML",
+    corr=corAR1()
   )
-#AIC(lme.int.slo.mini.group.time.lsas.well) # <---------- 3199,89 = lägst
 
-# lme.int.slo.mini.group.time.well <-
-#   lme(
-#     aaas_ad ~ group * time + well,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int.slo.mini.group.time.well)
+# Output 
+rathus.lme.tidy <- tidy(x)
+#svkable()
+#summary()
 
-sum.aaas_ad <- summary(lme.int.slo.mini.group.time.lsas.well)
+# Estimated Marginal Means / Least Square Means
+emmV <- emmeans(x, ~ time | group, adjust="bonferroni")
+rathus.lme.emm.tidy <- tidy(emmV)
 
-pander(sum.aaas_ad,justify='lrrrrr')
+# Effect size estimation
+totSD <-sqrt(sum(as.numeric(VarCorr(x)[,2])))
+rathus.lme.eff.tidy <- tidy(eff_size(emmV, sigma = totSD, edf = 3))
 
-```
+# Plot
+rathus.lme.plot <- emmip(x,~ time | group, xlab = "Tid", ylab = "Linjär prediktion")
 
-```{r mixed_aaas_ag, dpi=196}
+### PHQ-9
 
-#########
-# AAA-S Ag Tillsammans
-#########
-
-# # A null model
-# gls.null <-
-#   gls(aaas_ag ~ 1,
-#       data = r2.long.data,
-#       na.action = na.omit,
-#       method = "ML")
-# #AIC(gls.null)
-# 
-# # Adding a random intercept
-# lme.int <-
-#   lme(
-#     aaas_ag ~ 1,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int)
-# 
-# # Adding a random slope
-# lme.int.slo <-
-#   lme(
-#     aaas_ag ~ 1,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int.slo)
-# 
-# # Fixed effect: group
-# lme.int.slo.mini.group <-
-#   lme(
-#     aaas_ag ~ group,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int.slo.mini.group)
-# 
-# # Fixed effect: group * time
-# lme.int.slo.mini.group.time <-
-#   lme(
-#     aaas_ag ~ group * time,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int.slo.mini.group.time)
-# 
-# # Fixed effect: group * time + lsas_sum
-# lme.int.slo.mini.group.time.lsas <-
-#   lme(
-#     aaas_ag ~ group * time + lsas_sum,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int.slo.mini.group.time.lsas)
-# 
-# lme.int.slo.mini.group.time.lsas.gad <-
-#   lme(
-#     aaas_ag ~ group * time + lsas_sum + gad_sum,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int.slo.mini.group.time.lsas.gad)
-# 
-# lme.int.slo.mini.group.time.lsas.gad.phq <-
-#   lme(
-#     aaas_ag ~ group * time + lsas_sum + gad_sum + phq_sum,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int.slo.mini.group.time.lsas.gad.phq)
-# 
-# lme.int.slo.mini.group.time.lsas.gad.phq.well <-
-#   lme(
-#     aaas_ag ~ group * time + lsas_sum + gad_sum + phq_sum + well,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int.slo.mini.group.time.lsas.gad.phq.well)
-# 
-# lme.int.slo.mini.group.time.lsas.gad.well <-
-#   lme(
-#     aaas_ag ~ group * time + lsas_sum + gad_sum + well,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int.slo.mini.group.time.lsas.gad.well)
-
-lme.int.slo.mini.group.time.lsas.well <-
+x <-
   lme(
-    aaas_ag ~ group * time + lsas_sum + well,
-    random = ~ 1 |
-      subject,
+    phq_sum ~ group * time,
+    random = ~ 1 | subject, #### OBS!
     data = r2.long.data,
     na.action = na.omit,
-    method = "ML"
+    method = "REML",
+    corr=corAR1()
   )
-#AIC(lme.int.slo.mini.group.time.lsas.well) # <---------- 3034,348 = lägst
 
-# lme.int.slo.mini.group.time.well <-
-#   lme(
-#     aaas_ag ~ group * time + well,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int.slo.mini.group.time.well)
+# Output 
+phq_sum.lme.tidy <- tidy(x)
+#svkable()
+#summary()
 
-sum.aaas_ag <- summary(lme.int.slo.mini.group.time.lsas.well)
+# Estimated Marginal Means / Least Square Means
+emmV <- emmeans(x, ~ time | group, adjust="bonferroni")
+phq_sum.lme.emm.tidy <- tidy(emmV)
 
-pander(sum.aaas_ag,justify='lrrrrr')
+# Effect size estimation
+totSD <-sqrt(sum(as.numeric(VarCorr(x)[,2])))
+phq_sum.lme.eff.tidy <- tidy(eff_size(emmV, sigma = totSD, edf = 3))
 
-```
+# Plot
+phq_sum.lme.plot <- emmip(x,~ time | group, xlab = "Tid", ylab = "Linjär prediktion")
 
-### Rathus
+### GAD-7
 
-```{r mixed_rathus, dpi=196}
-
-#########
-# Rathus Tillsammans
-#########
-
-# # A null model
-# gls.null <-
-#   gls(rathus ~ 1,
-#       data = r2.long.data,
-#       na.action = na.omit,
-#       method = "ML")
-# #AIC(gls.null)
-# 
-# # Adding a random intercept
-# lme.int <-
-#   lme(
-#     rathus ~ 1,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int)
-# 
-# # Adding a random slope
-# lme.int.slo <-
-#   lme(
-#     rathus ~ 1,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int.slo)
-# 
-# # Fixed effect: group
-# lme.int.slo.mini.group <-
-#   lme(
-#     rathus ~ group,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int.slo.mini.group)
-# 
-# # Fixed effect: group * time
-# lme.int.slo.mini.group.time <-
-#   lme(
-#     rathus ~ group * time,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int.slo.mini.group.time)
-# 
-# # Fixed effect: group * time + lsas_sum
-# lme.int.slo.mini.group.time.lsas <-
-#   lme(
-#     rathus ~ group * time + lsas_sum,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int.slo.mini.group.time.lsas)
-# 
-# lme.int.slo.mini.group.time.lsas.gad <-
-#   lme(
-#     rathus ~ group * time + lsas_sum + gad_sum,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int.slo.mini.group.time.lsas.gad)
-# 
-# lme.int.slo.mini.group.time.lsas.gad.phq <-
-#   lme(
-#     rathus ~ group * time + lsas_sum + gad_sum + phq_sum,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int.slo.mini.group.time.lsas.gad.phq)
-# 
-lme.int.slo.mini.group.time.lsas.gad.phq.well <-
+x <-
   lme(
-    rathus ~ group * time + lsas_sum + gad_sum + phq_sum + well,
-    random = ~ 1 |
-      subject,
+    gad_sum ~ group * time,
+    random = ~ 1 | subject,
     data = r2.long.data,
     na.action = na.omit,
-    method = "ML"
+    method = "REML",
+    corr=corAR1()
   )
-#AIC(lme.int.slo.mini.group.time.lsas.gad.phq.well)
 
-# 
-# lme.int.slo.mini.group.time.lsas.gad.well <-
-#   lme(
-#     rathus ~ group * time + lsas_sum + gad_sum + well,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int.slo.mini.group.time.lsas.gad.well)
+# Output 
+gad_sum.lme.tidy <- tidy(x)
+#svkable()
+#summary()
 
-lme.int.slo.mini.group.time.lsas.well <-
+# Estimated Marginal Means / Least Square Means
+emmV <- emmeans(x, ~ time | group, adjust="bonferroni")
+gad_sum.lme.emm.tidy <- tidy(emmV)
+
+# Effect size estimation
+totSD <-sqrt(sum(as.numeric(VarCorr(x)[,2])))
+gad_sum.lme.eff.tidy <- tidy(eff_size(emmV, sigma = totSD, edf = 3))
+
+# Plot
+gad_sum.lme.plot <- emmip(x,~ time | group, xlab = "Tid", ylab = "Linjär prediktion")
+
+### LSAS
+
+x <-
   lme(
-    rathus ~ group * time + lsas_sum + well,
-    random = ~ 1 |
-      subject,
+    lsas_sum ~ group * time,
+    random = ~ time | subject,
     data = r2.long.data,
     na.action = na.omit,
-    method = "ML"
+    method = "REML",
+    corr=corAR1()
   )
-#AIC(lme.int.slo.mini.group.time.lsas.well) # <---------- 4041,938 = lägst
 
-# lme.int.slo.mini.group.time.well <-
-#   lme(
-#     rathus ~ group * time + well,
-#     random = ~ 1 |
-#       subject,
-#     data = r2.long.data,
-#     na.action = na.omit,
-#     method = "ML"
-#   )
-# #AIC(lme.int.slo.mini.group.time.well)
+# Output 
+lsas_sum.lme.tidy <- tidy(x)
+#svkable()
+#summary()
 
-sum.rathus <- summary(lme.int.slo.mini.group.time.lsas.well)
+# Estimated Marginal Means / Least Square Means
+emmV <- emmeans(x, ~ time | group, adjust="bonferroni")
+lsas_sum.lme.emm.tidy <- tidy(emmV)
 
-library("broom.mixed")
-tidy.rathus <- tidy(lme.int.slo.mini.group.time.lsas.well)
-augmented.rathus <- augment(lme.int.slo.mini.group.time.lsas.well,data=r2.long.data)
-glance(lme.int.slo.mini.group.time.lsas.well)
+# Effect size estimation
+totSD <-sqrt(sum(as.numeric(VarCorr(x)[,2])))
+lsas_sum.lme.eff.tidy <- tidy(eff_size(emmV, sigma = totSD, edf = 3))
 
-knitr::kable(tidy.rathus)
-
-pander(sum.rathus,justify='lrrrrr')
-
-```
- 
-```{r nlme, eval = F}
-
-### Verification
-
-library(lmerTest)
-
-#############
-
-rathus.lmer <- lmer(rathus ~ group * time + lsas_sum + well + (1|subject), data=r2.long.data, REML=T)
-
-#step(rathus.lmer, keep=c("group","time"))
-
-print(summary(rathus.lmer), digits=2, corr=FALSE)
-anova(rathus.lmer)
-
-
-ranova(rathus.lmer) ## Anova-like table of random-effect terms using likelihood ratio tests:
-
-drop1(rathus.lmer) ## F-tests of 'single term deletions' for all marginal terms:
-
-(lsm <- ls_means(rathus.lmer)) ## Least-Square means and pairwise differences:
-ls_means(rathus.lmer, which="group", pairwise = TRUE)
-## ls_means also have plot and as.data.frame methods:
-## Not run:
-plot(lsm, which=c("group", "time"))
-as.data.frame(lsm)
-## Inspect the LS-means contrasts:
-show_tests(lsm, fractions=TRUE)$Product
-
-#############
-
-aaas_ad.lmer <- lmer(aaas_ad ~ group * time + lsas_sum + well + (1|subject), data=r2.long.data, REML=T)
-
-#step(aaas_ad.lmer, keep=c("group","time"))
-
-print(summary(aaas_ad.lmer), digits=2, corr=FALSE)
-anova(aaas_ad.lmer)
-
-#############
-
-aaas_ag.lmer <- lmer(aaas_ad ~ group * time + lsas_sum + well + (1|subject), data=r2.long.data, REML=T)
-
-#step(aaas_ag.lmer, keep=c("group","time"))
-
-# print(summary(aaas_ag.lmer), digits=2, corr=FALSE)
-# anova(aaas_ag.lmer)
-# 
-# glance(aaas_ag.lmer)
-# aaas_ag.lmer.tidied <- tidy(aaas_ag.lmer)
-# aaas_ag.lmer.augmented <- augment(aaas_ag.lmer)
-# 
-# knitr::kable(aaas_ag.lmer.tidied)
-
-#https://stats.stackexchange.com/questions/31569/questions-about-how-random-effects-are-specified-in-lmer
-
-# #############
-# 
-# aaas_ag.lmertest <- lmer(aaas_ad ~ group + (1|subject), data=r2.long.data, REML=T)
-# 
-# summary(aaas_ag.lmertest)
-# anova(aaas_ag.lmertest)
-# 
-# ranef(aaas_ag.lmertest) # Conditional modes of the random effects
-# fixef(aaas_ag.lmertest) #  Estimates of the fixed-effects coefficients, β
-# confint(aaas_ag.lmertest) # Confidence intervals on linear mixed-model parameters
-# coef(aaas_ag.lmertest) # Sum of the random and fixed effects for each level
-# VarCorr(aaas_ag.lmertest) #  Estimated random-effects variances, standard deviations, and correlations
-# 
-# #############
-# 
-# aaas_ag.lmer <- lmer(aaas_ad ~ group * time + lsas_sum + well + (1|subject), data=r2.long.data, REML=F)
-# 
-# #step(aaas_ag.lmer, keep=c("group","time"))
-# 
-# # Se @Bates2015 s 30 för olika funktioner
-# 
-# ranef(aaas_ag.lmer) # Conditional modes of the random effects
-# fixef(aaas_ag.lmer) #  Estimates of the fixed-effects coefficients, β
-# confint(aaas_ag.lmer) # Confidence intervals on linear mixed-model parameters
-# coef(aaas_ag.lmer) # Sum of the random and fixed effects for each level
-# VarCorr(aaas_ag.lmer) #  Estimated random-effects variances, standard deviations, and correlations
-# 
-# plot(aaas_ag.lmer, type = c("p", "smooth")) # Diagnostics: standard fitted vs. residual plot
-# plot(aaas_ag.lmer, sqrt(abs(resid(.))) ~ fitted(.), type = c("p", "smooth")) # Diagnostics: scale-location plot
-# require(lattice); qqmath(aaas_ag.lmer, id = 0.05) # Diagnostics: quantile-quantile plot
-# 
-# print(summary(aaas_ag.lmer), digits=2, corr=FALSE)
-# 
-# anova(aaas_ag.lmer) # Ger p-värden med lmer
-# 
-# # p-värden? Konfidensintervall eller likelihood ratio tests via anova istället, föreslår @Bates2015 s 35
-# # Se help("pvalues")
-# # och http://phdcomics.com/comics/archive.php?comicid=905
-# 
-# # Use the Kenward-Roger method
-# if(requireNamespace("pbkrtest", quietly = TRUE))
-#   anova(aaas_ag.lmer, ddf="Kenward-Roger")
-# 
-# prof.obj <- profile(aaas_ag.lmer)
-# 
-# xyplot(prof.obj)
-# densityplot(prof.obj)
-# splom(prof.obj)
+# Plot
+lsas_sum.lme.plot <- emmip(x,~ time | group, xlab = "Tid", ylab = "Linjär prediktion")
 
 ```
 
+```{r mixedlmeplots, dpi=196}
 
+aaas_ag.lme.plot + ggtitle("AAA-S Aggressive")
 
-``` {r Control, fig.cap='(ref:Control)', fig.align="center", fig.width=8, fig.height=4, eval=F}
+aaas_ad.lme.plot + ggtitle("AAA-S Adaptive")
 
-#Denna r-kodchunk genererar graferna för kontrollgruppen
+rathus.lme.plot + ggtitle("Rathus")
 
-par(mfrow=c(1,2))
+lsas_sum.lme.plot + ggtitle("LSAS-24")
 
-#AAA-S Adaptive
-x <- clinsig(
-  r2.wide.g3$pre_aaas_ad[!is.na(r2.wide.g3$post_aaas_ad)],
-  r2.wide.g3$post_aaas_ad[!is.na(r2.wide.g3$post_aaas_ad)],
-  coef.alpha = r.AAAS.ad,
-  func.disp = sd.AAAS.ad.norm,
-  func.mct = mean.AAAS.ad.norm,
-  main = "Adaptive Assertiveness, Control",
-  xlab = "Pretest score",
-  ylab = "Posttest score"
-)
-(clinsig.AAAS.ad.g3.csrci <- length(intersect(
-  which((x$post.x - x$pre.x) < -x$relchng),
-  which(x$post.x < x$crit[2])
-)))
-(clinsig.AAAS.ad.g3 <- x)
+gad_sum.lme.plot + ggtitle("GAD-7")
 
-#AAA-S Aggresive
-x <- clinsig(
-  r2.wide.g3$pre_aaas_ag[!is.na(r2.wide.g3$post_aaas_ag)],
-  r2.wide.g3$post_aaas_ag[!is.na(r2.wide.g3$post_aaas_ag)],
-  coef.alpha = r.AAAS.ag,
-  func.disp = sd.AAAS.ag.norm,
-  func.mct = mean.AAAS.ag.norm,
-  main = "Aggressive Assertiveness, Control",
-  xlab = "Pretest score",
-  ylab = "Posttest score",
-  which.crit="a"
-)
-(clinsig.AAAS.ag.g3.csrci <- length(intersect(
-  which((x$post.x - x$pre.x) < -x$relchng),
-  which(x$post.x < x$crit[2])
-)))
-(clinsig.AAAS.ag.g3 <- x)
+phq_sum.lme.plot + ggtitle("PHQ-9")
 
-#Rathus
-x <- clinsig(
-  r2.wide.g3$pre_rathus[!is.na(r2.wide.g3$post_rathus)],
-  r2.wide.g3$post_rathus[!is.na(r2.wide.g3$post_rathus)],
-  coef.alpha = r.Rathus,
-  func.disp = sd.Rathus.norm,
-  func.mct = mean.Rathus.norm,
-  main = "Rathus, Control",
-  xlab = "Pretest score",
-  ylab = "Posttest score"
-)
-(clinsig.Rathus.g3.csrci <- length(intersect(
-  which((x$post.x - x$pre.x) < -x$relchng),
-  which(x$post.x < x$crit[2])
-)))
-(clinsig.Rathus.g3 <- x)
-
-# <!-- (ref:Control) Här har vi plottarna för AAA-S båda skalor samt RAS för Väntlistan. Rathus: `r clinsig.Rathus.g3.csrci`. AAAS-ag: `r clinsig.AAAS.ag.g3.csrci`. AAAS-ad: `r clinsig.AAAS.ad.g3.csrci`. -->
-  
 ```
-
 
 # Diskussion
 
