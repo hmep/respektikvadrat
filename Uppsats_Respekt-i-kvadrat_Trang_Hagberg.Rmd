@@ -86,9 +86,9 @@ enkable = function(...) {
 
 ```{r paramterers}
 
-xg1 = "Egen"
-xg2 = "Behandlare"
-xg3 = "Kontroll"
+xg1 = "Självhjälp"
+xg2 = "Terapeutstöd"
+xg3 = "Väntlista"
 xiterapi = "Iterapi [@Vlaescu2016]"
 xpre = "Förmätning"
 xdur = "Mittenmätning"
@@ -1043,95 +1043,29 @@ Deltagarna blev via studiens hemsida informerade om att allt deltagande var friv
 
 ## Analyser
 
-Vi använde `r cite_r("r-references.bib")` för samtliga analyser.
+Vi använde `r version$language`, version `r version$major`.`r version$minor` [@R-base] för samtliga analyser. 
+<!-- Vi använde `r cite_r("r-references.bib")` för samtliga analyser.  -->
+Signifikansnivån $\alpha$ = 0,05 tillämpades vid alla beräkningar.
 
-### Analys av vår primära frågeställning
+### Kontroll av utgångsdata
 
-Vi ville undersöka om det fanns någon skillnad i effekt (i endera riktning) av behandlingsprogrammet på utfallsmåttet AAA-S Adaptive mellan gruppen `r xg1` och gruppen `r xg2`. Detta gjordes med ett oberoende t-test. I testet användes medelvärdesskillnaden mellan tidpunkterna `r xpre` och `r xpost` för respektive grupp. Varianserna kring medelvärdet konstaterades homogena i en kontroll med Levene's test. Detta gjorde det möjligt att använda ett oberoende t-test utan korrigering.
+Vi analyserade insamlade förmätningsvärden för att kontrollera om randomiseringen hade gett grupper utan signifikanta skillnader. Oberoende variansanalys (ANOVA) användes för att utesluta skillnader mellan grupperna i primära utfallsmått, sekundära utfallsmått och kontinuerliga sociodemografiska variabler. Kategoriska sociodemografiska variabler undersöktes med Pearson $\chi^2$-test.
 
-```{r primo }
+<!-- OBS! Vi fann en signifikant skillnad i könsfördelningen mellan grupperna. Vi har betydligt fler män i grupp 1 än övriga. -->
 
-## (flyttas)
+<!-- OBS! Kom ihåg bortfallsanalys (se exempeluppsats 2) -->
 
-g1.cs <- (r2.long.data[lg1t3, 7] - r2.long.data[lg1t1, 7]) # Change score Självhjälp
-g2.cs <- (r2.long.data[lg2t3, 7] - r2.long.data[lg2t1, 7]) # Change score Med stöd
+### Bortfallsanalys
 
-g1g2cs <- c(g1.cs,g2.cs)
-g1g2groups <-as.factor(c(rep(1, length(g1.cs)), rep(2, length(g2.cs))))
+### Analys av huvudeffekter och interaktionseffekter
 
-primo.vartest <- leveneTest(g1g2cs,g1g2groups)
-# Inte signifikant = ingen signifikant skillnad i varianserna
+Huvudeffekter och interaktion mellan grupp och tid för de primära och sekundära utfallsmått undersöktes med *mixed model*-metodik. *Mixed model* tillåter precis som MANOVA inklusion av upprepade beroende mättillfällen i modellen, men med hänsyn taget till principen om *intention to treat*. Utöver det möjliggör det även modellering och kvantifiering på gruppnivå av observerade (men inte kontrollerade) individ-relaterade effekter, exempelvis skillnader i underliggande förändringsbenägenhet över tid. I modellen tilläts skärningspunkterna för respektive deltagare att variera, liksom lutningen på regressionslinjerna mellan mättillfällena för dem. För analysen användes R-paketet *nlme* [@R-nlme]. För *post hoc*-test av skillnader mellan mättillfällena för respektive behandlingsbetingelse användes R-paketet *emmeans* [@R-emmeans].
 
-primo.t <- t.test(g1.cs, g2.cs, na.action=na.rm, var.equal = T)
-# Inte signifikant = ingen skillnad
+### Analys av reliabel förändring och klinisk signifikans
 
-```
+För var och en av betingelserna bestämde vi frekvensen deltagare som i träningsprogrammet genomgått en reliabel förändring och dessutom befann sig på kliniskt signifikant nivå vid eftermätningen. För de deltagare som endast lämnat självskattningar vid förmätningstillfället fördes dessa värden vidare till eftermätningstillfället i enlighet med principen om *intention to treat*. Valet av nivå för kliniskt signifikans gjordes i enlighet med definitionerna och rekommendationerna i @Jacobson1991, för var och en av skattningsskalorna i relation till var och en av grupperna. En förändring mellan två mättillfällen definieras som reliabel om den är tillräckligt stor i relation till populationsvariansen. Då betraktas förändringen som en verklig förändring och inte bara ett slump- eller mätfel. Den senare ger en bild av om hur de absoluta eftermätningsvärdena förhåller sig till medelvärdet för antingen en subklinisk population eller en klinisk population (som också kan hämtas från normdata) [@Jacobson1991]. För samtliga beräkningar av klinisk signifikans och reliabel förändring användes R-paketet *JTRCI* [@R-JTRCI]. Skillnader i frekvensen reliabelt förändrade deltagare på kliniskt signifikant nivå analyserades med $\chi^2$-test.
 
-ALTERNATIV: Kan vi tänka ut ett sätt att besvara den här frågan med vår mixed model? Kan vi använda andra kontraster bara?
-
-### Analyser av våra Sekundära frågeställningar
-
-För att ta reda på om behandlingseffekten i gruppen `r xg3` är sämre än behandlingseffekten i gruppen `r xg1` respektive gruppen `r xg2` med avseende på utfallsmåttet AAA-S Adaptive, genomförde vi en *mixed-model*-analys. 
-
-#### Modellering av både prediktorer och individuella skillnader
-
-En *mixed model* (också kallad tillväxtmodell, *growth model* eller multinivåmodell, *multi level model*) är enkelt uttryckt en utökning av linjär regression med vilken det är möjligt att på en och samma gång modellera oberoende (*fixed*) och beroende (*random*) variabler -- i en och samma analys. Det gör det möjligt att tilldela mer av "rest"-variansen i en linjär regression eller ANOVA till observerade (men inte kontrollerade) variabler i experimentet. Ett exempel på en sådan underliggande variabel skulle kunna vara en viss deltagares förutsättningar att ta till sig av behandlingen. Det vore förväntat att de skulle påverka den deltagarens mätpunkter på ett systematiskt sätt. 
-
-<!-- HAR JAG MISSFÖRSTÅTT DET HÄR? Inklusionen av sådana *random*-effekter innebär dels att behovet av post hoc-test av skillnader i beroende variabler försvinner  -->
-
-<!-- 2DO: FIXA (och därmed hanteringen av massignifikansproblemet; detta är redan hanterat i modellen), dels att det blir möjligt att bortse från några av de antaganden som gäller för variansanalys med enbart *fixed*-effekter [@field2012discovering]. -->
-
-<!-- En anledning till valet av metod var att vi förväntade oss olika spridning av resultatet i de två grupper som fick tillgång till träningsprogrammet, både sinsemellan och i relation till gruppen `r xg3`.  -->
-
-Det är rimligt att anta att deltagande i en behandling för vissa kan innebära en stor förbättring och för andra en viss försämring, medan icke-behandlade deltagare förväntas ligga stilla kring ungefär samma värden över tid i och med att de inte blir behandlade. Med en *mixed model* kan vi ignorera antagandet om homogena spridning i de olika grupperna mellan prediktorer och utfallsmått, eftersom modellen inkluderar dessa skillnader.
-
-I den här studien används 3 beroende mättillfällen av utfallsmåtten och prediktorerna, för var och en av deltagarna. En *mixed model* möjliggör analys av beroende data som är "klustrad" eller "nästlad" [@Hesser2015]. I föreliggande uppsats finns till exempel tre beroende mättillfällen (nivå 1) som är hierarkiskt inordnade under respektive deltagare (nivå 2), som i sin tur är hierkiskt inordnade under träningsprogrammets två behandlare (nivå 3). 
-
-*Mixed model* hanterar icke-balanserade grupper på ett bättre sätt än många andra vanliga metoder, som *repeated-measures*-ANOVA (MANOVA). Det gjorde det möjligt att ta höjd för "hårda avhopp" (deltagare som inte längre ville vara med i varken behandling eller studie). Slumpmässigt eller inte slumpmässigt saknade data är alltid ett potentiellt problem i en forskningsdesign, men lite mindre så i en *mixed model*-analys som uppskattar parametrar även med saknade värden i tabellen med data [@Hesser2015].
-
-<!-- 2DO: Hämta mer från @Hesser2015 om rationalen för metoden! Bra referenser [@Clark; @field2012discovering; @Hesser2015] -->
-
-2DO: Skriv något här om vad som menas med random slope och random intercept. Inkludera info om de extra antaganden det innebär:
--- vi antar att coef (intercept) är normalt distribuerad över hela modellen <- hur testa????
--- vi antar att coef (slope) är normalt distribuerad över hela modellen <- hur testa????
-
-<!-- https://m-clark.github.io/mixed-models-with-R/random_intercepts.html -->
-
-Ett syfte med *mixed model* är ofta att (som med linjär regression) hitta den uppsättning oberoende variabler som bäst predicerar de data man har samlat in i studien. För att hitta den kan man i princip välja ett av två tillvägagångssätt: att börja med en minimal modell och bygga på den med *random*-effekter och allt fler *fixed*-effekter (prediktorer/kovariat) eller börja med en maximal modell och eliminiera prediktorer efterhand. För varje ny modell utförs en variant av ett $\chi^2$-test. För mixed models med paketet nlme [@R-nlme] rapporterar statistikprogrammet ett så kallat AIC-värde. Ett lägre värde innebär att det är mindre sannolikt att slumpen kan förklara skillnaderna mellan funna data och de data som modellen predicerar; ett högre innebär att osäkerheten i modellen är större. Genom att systematiskt gå genom de olika modellerna kan man vaska fram den modell med lägst AIC -- som har bäst övergripande \'fit\'. [@field2012discovering].
-
-<!-- Chi-square: https://rpubs.com/JoPaPi/349815 -->
-
-Vid flera utfallsmått, som i den här studien, upprepas processen för var och en av de beroende variablerna. Vi började med en minimal modell för vart och ett av utfallsmåtten AAA-S Aggressive, AAA-S Adaptive och Rathus, och utökade dem med *fixed* och *random* variabler. Genom modellselektionsprocessen kunde vi också konstatera vilka av dem som är mest relevanta, det vill säga vilka prediktorer och *random*-effekter som har störst inverkan på respektive utfallsvariabel.
-
-De signifikanta huvud- och interaktionseffekterna i en *mixed model* kan undersökas med uppföljande post hoc-test, exempelvis t-test med korrigering av p-värdet för att hantera massignifikansproblemet. Individernas bidrag till *random*-variansen kan också räknas ut och rapporteras.
-
-<!-- Genom att ta med dessa variabler som *random*-variat eller *fixed*-kovariat kunde vi också kontrollera för deras inverkan på utfallet i modellen. -->
-
-<!-- Fråga någon som vet: ska man specificera en kovariansstruktur, ex ar(1) för repeated measures? -->
-
-<!-- Fråga någon som vet: ska vi centrera data? group mean eller grand mean? -->
-
-### Reliabel förändring och klinisk signifikans
-
-Ofta används signifikanstestning för att avgöra om en skillnad i exempelvis medelvärden mellan två grupper är tillräckligt stor för att det ska gå att säga om en förändring har skett i statistisk mening. Kompletterat med ett mått på effektstyrka går det att kvantifiera förändringen, exempelvis för att kunna bedöma om skillnaden också är relevant i praktiken, eller för att jämföra eller slå samman (exempelvis i en metastudie) result från en studie med en annan.
-
-<!-- Det finns flera alternativ, både på grupp- och invididnivå. @Jacobson1991 ger exempel från litteraturen: man kan beräkna den andel av alla i gruppen som har förbättrats utifrån något slags kriterium -- exempelvis vid subjektiv bedömning av närstående eller vänner, av andra eller självupplevd eliminering av problematiska symtom eller kanske på samma grunder konstaterade tillägg av "normalfunktion" vid slutet av terapin. -->
-
-För att avgöra om en viss *individ* i har förbättrats i en viss behandling i klinisk mening kan kriterierna *reliabel förändring* och *klinisk signifikans* med fördel kombineras. Det förra ger en bild av om en förändring mellan två mätpunkter är tillräckligt stor i relation till populationsvariansen (som kan hämtas från normdata) för att kunna betraktas som en verklig förändring och inte bara ett slump- eller mätfel. Den senare ger en bild av om hur de absoluta eftermätningsvärdena förhåller sig till medelvärdet för antingen en subklinisk population eller en klinisk population (som också kan hämtas från normdata) [@Jacobson1991].
-
-Genom att rapportera antalet individer som har förändrats både reliabelt och kliniskt signifikant kan man komplettera den statistiska beräkningen av gruppens relativa förändring med ett kliniskt relevant mått som också säger något om hur förändringen förhåller sig till befolkningen i stort. Standardiserad beräkning av dessa mått gör det möjligt att utifrån insamlad data göra en bedömning av en individs förbättring som är mer pålitligt och lättare att reproducera än subjektiva bedömningar (av kliniker, närstående eller klienten själv). Dessa standardiserade mått kan också kan användas för att jämföra effekten av olika behandlingar.
-
-#### Beräkning av reliabel förändring och klinisk signifikans
-
-För att bedöma om en individuell förändring mellan två mätpunkter är reliabel används standardavvikelsen i normalpopulationen. För beräkningen av reliabel förändring, *reliable change index* (RCI), delas skillnaden mellan de två medelvärdena med standardfelet (det vill säga standardavvikelsen delat med roten ur sample-storleken). 
-
-För att bedöma absolut status för en individ vid behandlingens slut (exempelvis för att kunna avgöra om personen ska betraktas som tillfrisknad eller i behov av fortsatta interventioner) kan man relatera individens eftermätningsvärde till medelvärdet för antingen den kliniska populationen eller den subkliniska normalpopulationen. @Jacobson1991 definierar det förra som kriterium *a* och det senare som kriterium *b*. Man kan också relatera eftermätningsvärdet för en individ till ett normvärde i mitten av *a* och *b*, vilket författarna kallar kriterium *c*.
-
-<!-- I enlighet med rekommendationerna i @Jacobson1991 för överlappande distributioner använder vi kriterium *b* för beräkningen: de invidier vars eftermätningsvärde befinner sig inom två standardavvikelser från den subkliniska normalpopulationen anses vara kliniskt signifikant förändrade. -->
-
-<!-- De graferna som innehåller a, b, och c i resultatdelen bör i sin figurtext ha en beskrivning av vad dessa bokstäver står för, eller en hänvisning tillbaka till detta avsnitt -->
-
-Frekvensen individer i de olika undersökta grupperna som har förändrats både reliabelt och signifikant kan sedan bestämmas [@Jacobson1991].
+<!-- 2DO: analysera frekvenser -->
 
 # Resultat
 
@@ -1266,13 +1200,13 @@ svkable(round(descriptives.out.rot,2), caption = "(ref:descriptives)") %>%
 
 ```
 
-### Interaktionsplottar
+<!-- ### Interaktionsplottar -->
 
-se figur \@ref(fig:interactions)
+<!-- se figur \@ref(fig:interactions) -->
 
-(ref:int) Interaktioner ...
+<!-- (ref:int) Interaktioner ... -->
 
-``` {r interactions, fig.cap='(ref:int)', fig.align="center", fig.width=5, fig.height=4}
+``` {r interactions, fig.cap='(ref:int)', fig.align="center", fig.width=5, fig.height=4,eval=F}
 
 par(mfrow=c(1,1))
 
@@ -1297,8 +1231,6 @@ scatterplotMatrix(~ aaas_ad + aaas_ag + rathus|time, data = r2.long.data[lg3,],
 ```
 
 ## Primär frågeställning
-
-Det var ingen signifikant skillnad i de två gruppernas skattade förändring på AAA-S Adaptive över tid, t(`r round(primo.t$parameter)`) = `r round(primo.t$statistic,2)`, p = `r replace(round(primo.t$p.value,3),primo.t$p.value < 0.001,0.001)`. 
 
 ## Sekundära frågeställningar
 
@@ -1607,7 +1539,7 @@ rathus.pre.dur.jt.table <- xt
 
 ```
 
-```{r tjrciout, fig.align="center", dpi=196, cache=T}
+```{r tjrciout, fig.align="center", dpi=196, cache=T, fig.height=4}
 
 ## JTRCI output
 
@@ -1641,7 +1573,7 @@ rathus.pre.dur.jt.plot
 
 ```
 
-```{r kontroller}
+```{r kontroller, eval=F}
 
 kontroll_ad <-
   lm(
@@ -1705,6 +1637,34 @@ kontroll_well <-
   )
 anova(kontroll_well)
 # Ej signifikant = inga skillnader mellan grupperna
+
+sociodemografisk.data <- read_excel("Respekt_survey453761_200423.xlsx")
+sociodemografisk.data$group <-
+  factor(ifelse(
+    grepl("Grupp 1", sociodemografisk.data$Grupper),
+    1,
+    ifelse(
+      grepl("Grupp 2", sociodemografisk.data$Grupper),
+      2,
+      ifelse(grepl("Grupp 3", sociodemografisk.data$Grupper), 3, NA)
+    )
+  ))
+sociodemografisk.data <- sociodemografisk.data[-c(13,48,52,97,158),]
+  
+chisq.test(sociodemografisk.data$group, sociodemografisk.data$Demografi.Kon, correct=T)
+# Signifikant!
+(Demografi.Kon.table <- table(sociodemografisk.data$group, sociodemografisk.data$Demografi.Kon))
+(Demografi.Kon.table <- prop.table(Demografi.Kon.table, 1))
+
+# chisq.test(sociodemografisk.data$group, sociodemografisk.data$Demografi.Alder, correct=T)
+# chisq.test(sociodemografisk.data$group, sociodemografisk.data$Demografi.Civilstand, correct=T)
+# chisq.test(sociodemografisk.data$group, sociodemografisk.data$Demografi.Utbildning, correct=T)
+# chisq.test(sociodemografisk.data$group, sociodemografisk.data$Demografi.Sysselsattning, correct=T)
+# chisq.test(sociodemografisk.data$group, sociodemografisk.data$Demografi.Psykofarmaka, correct=T)
+# chisq.test(sociodemografisk.data$group, sociodemografisk.data$Demografi.PsykofarmakaVad, correct=T)
+# chisq.test(sociodemografisk.data$group, sociodemografisk.data$Demografi.PsykofarmakaDos, correct=T)
+# chisq.test(sociodemografisk.data$group, sociodemografisk.data$Demografi.PsykoBehandling, correct=T)
+# # Inga signifikanta = inga skillnader mellan grupperna
 
 ```
 
