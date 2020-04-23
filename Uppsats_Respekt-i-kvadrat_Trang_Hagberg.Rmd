@@ -512,51 +512,33 @@ Undvikande av aversiva stimuli -- det vill säga undvikandet av det som väcker 
 
 Särskilt svårt är det att bryta beteenden som har som funktion att undvika det som väcker rädsla. En stor utmaning i behandling av ångestsyndrom är att överbrygga det undvikandet som följt av just rädsloinlärning. @Ohman2001 konstaterar att rädsloinlärning inte så lätt går att påverka med kognitiv kontroll i skarpt läge, inte minst för att de neuronala rädslokretsarna vid amygdala ligger så djupt förankrade i limbiska delar av hjärnan och mer eller mindre lever sitt eget liv.
 
-Det har även visat sig att det är ytterst menligt att undvika ens aversiva känslor, så kallat emotionellt undvikande. Regelbundet användande av emotionellt undvikande är kopplat till flertalet negativa följder. Det är paradoxalt nog kopplat till mer upplevande av negativa emotioner (och mindre upplevande av positiva emotioner), men även till större undvikande av nära relationer, mindre socialt stöd, lägre självförtroende och sämre generellt välmående. Detta går inte att nog betona: att försöka undvika aversiva emotioner leder till att man upplever dem mer [@Gross2003; @Fernandez-Rodriguez2018, @Hayes1996].
+Det har även visat sig att det är ytterst menligt <!-- möjligen skriva "självdestruktivt istället för menligt? --> att försöka undvika ens aversiva känslor. Detta undvikande brukar kallas för emotionellt undvikande. Regelbundet användande av emotionellt undvikande är kopplat till flertalet negativa följder. Det är paradoxalt nog kopplat till mer upplevande av negativa emotioner (och mindre upplevande av positiva emotioner), men även till större undvikande av nära relationer, mindre socialt stöd, lägre självförtroende och sämre generellt välmående [@Gross2003]. Den paradoxala biten går inte nog att betona: att försöka undvika aversiva emotioner leder till att man upplever dem mer [@Gross2003; @Fernandez-Rodriguez2018, @Hayes1996].
 
 <!-- Fernandes-Rodriguez eller vad han nu heter -->
 <!-- @Hayes1996 om experiential avoidance -->
 <!-- *@Pittig2014 -- skriv om detta!* -->
 
-<!-- Abstract för Pittig2014
-Individuals avoid stimuli which are associated with aversive experience to preserve safety. However, behavioral avoidance also causes impairments and prevents the individual from attaining positive rewards. Little is known about the link between fear acquisition and the development of behavioral avoidance in the presence of potential rewards. Therefore, two experiments investigated the impact of fear conditioning on a subsequent gambling task. In an experimental group (n = 30) advantageous choices (higher reward probability) were linked to a fear-relevant stimulus that was associated with an aversive unconditioned stimulus (US) during fear conditioning (conditioned stimulus, CS+). A disadvantageous choice (lower reward probability) was, however, linked to a safe stimulus that was never associated with the US (CS-). In a control group (n = 25), fear conditioning was followed by a similar gambling task with novel stimuli. A second experiment focused on individual predictors of avoidant decisions (n = 81). Compared with the control group, individuals in the experimental groups avoided the advantageous CS + choice despite fewer gains. The predictor analysis further clarified that avoidant decisions were pronounced in highly trait anxious participants who exhibited higher fear responses. On the other hand, findings also indicated a reduction in absolute avoidance across the task. Combined, these findings demonstrate that fear conditioning can lead to avoidant decision making, especially in vulnerable individuals. The resulting costs parallel impairments caused by behavioral avoidance. Such an emotional decision-making style may be a link between aversive experience and the development of habitual pathological avoidance. Introducing rewards for approach, however, may counteract avoidant decisions.
--->
-
 ### Att bryta undvikande
 
-Att bryta mönster av undvikanden är ofta centralt för att minska  
+Att bryta undvikandebeteenden är ofta centralt för att minska psykopatologiska besvär. Det går att göra på flertalet olika sätt. Det går att göra genom att *på ett närvarande sätt* närma sig det aversiva och ångestväckande, så kallad exponering. Att närma sig för det som väcker obehag leder hos många till mycket osäkerhet. Denna osäkerhet leder i sin tur inte ovanligen till överdrivet förberedande, efterfrågande om försäkran eller andra beteenden som ökar upplevelsen av kontroll i stunden. Det är dock en viktig nyinlärningsprocess att få uppleva denna osäkerhet – och samtidigt få lärdomen att denna osäkerhet i sig själv både är ofarlig och hanterbar. Att bibehålla osäkerhet under exponeringstränandet går att göra genom att variera vilka aversiva stimuli som presenteras och i vilka situationer som dessa stimuli presenteras [@Sewart2019, @Knowles2019, @Craske2008].
+
+De Castella m. fl. [-@DeCastella2015] konstaterade även att emotionellt undvikande är tydligt kopplad till sämre effekt av exponering. Detta är i linje med mycket annan forskning. Att emotionellt undvika är ett säkerhetsbeteenden och säkerhetsbeteenden – det vill säga beteenden som förhindrar, undviker eller minimerar obehag i en given situation – är ett väletablerat fenomen som har konstaterats ha både en del i utvecklandet och bibehållandet av ångestdriven psykopatologi [@Blakey2016].
+
+Det finns också anledning att tro att det för en person med ångestrelaterat lidande -- det vill säga huvuddelen av de individer som har bristande *assertiveness* -- är betydligt enklare än för en nedstämd eller deprimerad person att finna situationer som är lämpliga att träna i; ångest kan i sig ses som en signal för nyinlärning [@Barrett2016a].
+
+Lyckad exponering tenderar att vara en ombytlig exponering där obehag väcks, säkerhetsbeteenden avstås och förväntningar bryts. Förväntingar och förutsägelser som individer tenderar att ha inför exponering är allt som oftast inkorrekta (det vill säga att de förväntar sig värre utfall än vad som sker) och desto större diskrepansen är mellan en indivds förväntningar och individens faktiska upplevelse, desto större är oddsen för nyinlärning [@Craske2008; @Sewart2019]. Lärdomar kan dras båda av att ångest minskar i intensitet, eller av att ens förmåga att hantera ångesten som väcks överträffar ens förväntningar [@Craske2008; @Blakey2016; @Knowles2019 @Sewart2019].
 
 
-<!--- vilket vi gör genom beteendeexperiment in vivo... Med fördel med varierad exponering -->
-
-<!-- tackla med minskande av ångest eller med accepterande av ångest -->
-
-#### Ökat fokus på beteendeexperiment in vivo  
-
-Kognitiv omstrukturering går vanligtvis till så att klienten i hemläxa fyller i ett formulär där hen identifierar hindrande tankar, känslor och beteenden (inklusive undvikande- och flyktbeeteenden, så kallade säkerhetsbeteenden) i situationen. Klienten ombeds också fylla i identifierande hjälpsamma tankar som kan balansera de så kallade negativa automatiska tankarna som är uttryck för förmodade livsregler och grundantaganden om den egna förmågan och andras avsikter. Klienten får också skatta sin nivå av obehag/ångest både och före efter identifikationen av de balanserande tankarna. 
-
-Det finns också anledning att tro att det för en person med ångestrelaterat lidande -- som för huvuddelen av de individer som har svårt med konstruktiv självhävdelse -- är betydligt enklare än för en nedstämd eller deprimerad person att finna situationer som är lämpliga att träna i; ångest kan i sig ses som en signal för nyinlärning [@Barrett2016a].
+<!-- avsnitt med accepterande av ångest a la Hayes -->
 
 
-####  Variation i exponering
+Kort och gott: Det är genom att *på ett närvarande sätt* i så många kontext som möjligt testa sina förutsägelser och sedan dra slutsatser om både utfallet och ens egen förmåga att hantera dessa utfall som undvikande bryts och oddsen för ökat engagemang i livet förbättrats.
 
-De Castella m. fl. [-@DeCastella2015] konstaterade även att undertryckandet av känslor (det vill säga emotionellt undvikande) är tydligt kopplad till sämre effekt av exponering. Detta är i linje med mycket annan forskning. Att emotionellt undvika är ett säkerhetsbeteenden och säkerhetsbeteenden – det vill säga beteenden som förhindrar, undviker eller minimerar obehag i en given situation – är ett väletablerat fenomen som har konstaterats ha både en del i utvecklandet och bibehållandet av ångestdriven psykopatologi [@Blakey2016].
-
-Utöver säkerhetsbeteenden och dess påverkan på exponeringsresultatet finns det ytterligare några fenomen som är värda att beakta. Förväntingar och förutsägelser som individer tenderar att ha inför exponering är allt som oftast inkorrekta och desto större diskrepansen är mellan en indivds förväntningar och individens faktiska upplevelse, desto större är oddsen för nyinlärning [@Craske2008; @Sewart2019].
 
 <!-- Violating expectancies -->
 
-Att exponera sig för det som väcker obehag leder även hos många till mycket osäkerhet. Denna osäkerhet leder inte ovanligen till överdrivet förberedande, efterfrågande mot närstående eller auktoriteter om försäkran eller andra beteenden som ökar upplevelsen av kontroll i situationen. Det är dock en viktig nyinlärningsprocess att få uppleva denna osäkerhet – och samtidigt få lärdomen att denna osäkerhet både är ofarlig och hanterbar. Att bibehålla osäkerhet under exponeringstränandet går att göra genom att variera vilka aversiva stimuli som presenteras och i vilka situationer som dessa stimuli presenteras [@Sewart2019, @Knowles2019, @Craske2008].
+#### Motivation till att bryta gamla vanor
 
-Lyckad exponering tenderar att vara en ombytlig exponering där obehag väcks, säkerhetsbeteenden avstås och förväntningar bryts [@Craske2008; @Blakey2016; @Knowles2019 @Sewart2019].
-
-Kort och gott: Det är genom att *på ett närvarande sätt* i så många kontext som möjligt testa sina förutsägelser och sedan dra slutsatser om både utfallet samt egen förmåga att hantera utfallet som undvikande bryts och oddsen för ökat engagemang i livet förbättrats.
-
-
-
-<!-- Variability throughout exposure (which enhanches practice of tolerating uncertainty), Wean safety signals and safety behaviors, Mismatch with expectancies -->
-
-<!-- *@Sewart2019 -- varians* -->
 
 Lösningen:
 - värden, långsiktiga skäl att uppsöka sit
@@ -889,6 +871,8 @@ Materialet avslutas med ett antal kapitel för olika problemområden (säga nej,
 ### Anpassningar och tillägg
 
 Materialet är översatt och anpassat till svenska förhållanden av TH med tillstånd av författaren och CCI. I samband med anpassningen av översättningen till I-KBT-moduler i plattformen `r xiterapi` modifierade och utökade TH och PT materialet med det dubbla syftet att förenkla administrationen av materialet via internet kompletterade det med motiverande inslag för byta undvikande av antecedenter för ångest med aktivt deltagande i de aktiviteter som deltagaren värdesätter.
+
+Behandlingsprogrammet har ett 
 
 <!--
 
