@@ -498,9 +498,6 @@ Evidensen för beteendeterapi och KBT för syndromala och icke-syndromala psykol
 
 @Hofmann2012 är en översikt av meta-analyser som visar att KBT alltjämt är en av de mest effektiva terapiformerna. I deras översikt visade sig KBT effektivt för att motverka bland annat trauma- och stressrelaterade symtom, liksom depressiva och ångestrelaterade syndrom. Litteraturen stödjer att KBT har god effekt för de syndrom som @Speed2018a associerar med brister i konstruktiv självhävdelse.
 
-<!-- Trots att evidensen för kognitiv och beteendeterapeutisk behandling vid ångestsyndrom och depressiva syndrom är god förblir majoriteten av fallen även i länder med väl utvecklad sjukvård obehandlade @Craske2017. -->
-
-
 ## Några saker att förhålla sig till
 *ovan rubrik är temporär och bör få ett bättre namn*
 
@@ -540,9 +537,6 @@ I linje med att undersöka ens egen förmåga att hantera aversiva känslor är 
 While growing up many of us never had the proper tools or guidance to deal with difficult emotions. We never learned to understand our sadness or anger. We weren't taught how to calm our anxiety or sooth our frustration. Instead we learned to distract and avoid. To tune out unpleasant feelings with numbing. Sometimes destructive behaviour.
 -->
 
-<!-- avsnitt med accepterande av ångest a la Hayes -->
-
-
 Kort och gott: Genom att *på ett närvarande sätt* i så många kontext som möjligt testa sina förutsägelser och sedan dra slutsatser om både utfallet och ens egen förmåga att hantera dessa utfall ökar man chansen att undvikande bryts och chansen till ökat engagemang i det man värdesätter i livet förbättrats.
 
 
@@ -550,22 +544,16 @@ Kort och gott: Genom att *på ett närvarande sätt* i så många kontext som m�
 
 #### Att finna motivationen till att bryta gamla vanor
 
-Många som lever med psykopatologiska besvär under en längre tid kan uppleva det som att det inte finns någonting de kan göra åt sina besvär. Som att deras symtom och deras lidande är där för att stannna. Detta brukar kallas för ett *fixed mindset*. Ett *fixed mindset* är antagandet att förmågor, färdigheter samt egenskaper är fasta och oföränderliga. Detta skiljer sig från ett *growth mindset*, antagandet att förmågor, färdigheter och egenskaper kan utvecklas och förändras. Dessa *mindset*, tankesätt, är ett sorts ramverk genom vilket man tolkar och förstår sig på sina erfarenheter, vilket i sin tur påverkar vilka beteenden och emotioner man uppvisar [@Dweck1995]. Tankesätten kan beröra mer övergripande domäner, såsom personlighet och intelligens, eller mer specifika domäner, såsom hur man tänker kring ångest och emotioner. Man kan ha ett fixerat tankesätt inom en viss domän, och ett utvecklande tankesätt inom en annan [@Schroder2016]. Har man ett utvecklande tankesätt kring ångest leder det både till större motivation under en behandlings gång och till större odds för positivt behandlingsutfall [@Schroder2015; @DeCastella2015]. Det har även visat sig att personer med ett fixerat tankesätt i större utsträckning försöker undvika negativa emotioner samt i mindre utsträckning omvärderar sina förutsägelser i ljuset av nya erfarenheter [@Schroder2015].
+Många som lever med psykopatologiska besvär under en längre tid kan uppleva det som att det inte finns någonting de kan göra åt sina besvär. Som att deras symtom och deras lidande är där för att stannna. Detta brukar kallas för ett *fixed mindset*. Ett *fixed mindset* är antagandet att förmågor, färdigheter samt egenskaper är fasta och oföränderliga. Detta skiljer sig från ett *growth mindset*, antagandet att förmågor, färdigheter och egenskaper kan utvecklas och förändras. Dessa *mindset*, tankesätt, är ett sorts ramverk genom vilket man tolkar och förstår sig på sina erfarenheter, vilket i sin tur påverkar vilka beteenden och emotioner man uppvisar [@Dweck1995]. Tankesätten kan beröra mer övergripande domäner, såsom personlighet och intelligens, eller mer specifika domäner, såsom hur man tänker kring ångest och emotioner. Man kan ha ett fixerat tankesätt inom en viss domän, och ett utvecklande tankesätt inom en annan [@Schroder2016]. Har man ett utvecklande tankesätt kring ångest leder det både till större motivation under en behandlings gång och till större odds för positivt behandlingsutfall [@Schroder2015; @DeCastella2015]. Det har även visat sig att personer med ett fixerat tankesätt i större utsträckning försöker undvika negativa emotioner samt i mindre utsträckning omvärderar sina förutsägelser i ljuset av nya erfarenheter [@Schroder2015]. Forskning konstaterar att det finns gott om anledningar att arbeta mot ett *growth mindset*.
 
 
-*work in progress* Lösningen:
+*work in progress* 
+
+Lösningen:
 - värden, långsiktiga skäl att uppsöka sit
-- ett sätt att få igång diskussionen kring värden är att se skillnaden i growth mindset och fixed mindset
 - direkt kontignent belöning, ex återkoppling och uppmuntran från terapeut
 
 
-<!--
-#### Growth mindset
-
-Ett fixerat tankesätt är antagandet att förmågor, färdigheter samt egenskaper är fasta och oföränderliga medans ett utvecklande tankesätt är antagandet att dessa förmågor, färdigheter och egenskaper kan utvecklas och förändras. Tankesätten är ett sorts ramverk genom vilket man tolkar och förstår sig på sina erfarenheter, vilket i sin tur påverkar vilka beteenden och emotioner man uppvisar [@Dweck1995]. Ett utvecklande tankesätt kan bland annat leda till att man tar sig ann fler utmaningar, fortsätter kämpa vid bakslag och att man i stort och smått i sitt liv presterar bättre [@Dweck2019]. I verkligheten är ens tankesätt sällan antingen eller, utan återfinns på ett kontinuum [@Dweck1995]. 
-
-Har man ett utvecklande tankesätt kring ångest leder det både till större motivation under en behandlings gång och till större odds för positivt behandlingsutfall [@Schroder2015; @DeCastella2015]. Utöver detta har det även visat sig att personer med ett fixerat tankesätt i större utsträckning försöker undvika negativa emotioner samt i mindre utsträckning omvärderar sina övertygelser i ljuset av nya erfarenheter [@Schroder2015].
--->
 
 ## Internet och internetbaserad vård
 
@@ -897,7 +885,7 @@ Materialet avslutas med ett antal kapitel för olika problemområden (säga nej,
 
 Materialet är översatt och anpassat till svenska förhållanden av TH med tillstånd av författaren och CCI. I samband med anpassningen av översättningen till I-KBT-moduler i plattformen `r xiterapi` modifierade och utökade TH och PT materialet. Detta gjordes med det dubbla syftet att förenkla administrationen av materialet via internet samt att komplettera det med inslag som TH och PT ansåg saknades i originalmaterialet.
 
-En mycket inspirerande faktor när det engelska materialet anpassades och utvecklades till programmet *Respekt i kvadrat* var det aktuella forskningsläget kring exponering [se bland annat @Sewart2019; @Knowles2019; @Craske2008; @DeCastella2015; @Gross2003]. TH och PT bedömde det som en central komponent att deltagarna så tidigt som möjligt, och så regelbundet som möjligt, tog aktiva steg för att bryta sina undvikanden. Från och med modul 3 och framåt ombads deltagarna att närma sig aversiva stimuli (och utvärdera sina reaktioner) på olika sätt. I linje med forskning om att acceptera och tillåta sina känslor [@Hayes1996; @Hayes2004a; @Luoma2007] lades även tyngd vid att målet med att bryta undvikandet inte nödvändigtvis är att bli av med eller minska de aversiva känslorna, utan snarare att få ett nytt förhållningssätt till dem. Överrensstämmande med forskning kring *fixed-* samt *growth mindset* [@Dweck1995; @Schroder2016; @Schroder2015; @DeCastella2015] och vikten av att tro att en förändring går att få till utformades även interventionens innehåll på ett *growth mindset*-förespråkande sätt. 
+En mycket inspirerande faktor när det engelska materialet anpassades och utvecklades till programmet *Respekt i kvadrat* var det aktuella forskningsläget kring exponering [se bland annat @Sewart2019; @Knowles2019; @Craske2008; @DeCastella2015; @Gross2003]. TH och PT bedömde det som en central komponent att deltagarna så tidigt som möjligt, och så regelbundet som möjligt, tog aktiva steg för att bryta sina undvikanden. Från och med modul 3 och framåt ombads deltagarna att närma sig aversiva stimuli (och utvärdera sina reaktioner) på olika sätt. I linje med forskning om att acceptera och tillåta sina känslor [@Hayes1996; @Hayes2004a; @Luoma2007] lades även tyngd vid att målet med att bryta undvikandet inte nödvändigtvis var att bli av med eller minska de aversiva känslorna, utan snarare att få ett nytt förhållningssätt till dem. Överrensstämmande med forskning kring *fixed-* samt *growth mindset* [@Dweck1995; @Schroder2016; @Schroder2015; @DeCastella2015] och vikten av att tro att en förändring går att få till utformades även interventionens innehåll på ett *growth mindset*-förespråkande sätt. 
 
 
 
@@ -1999,7 +1987,13 @@ x å andra sidan vad våra resultat visar på (?)
 + a priori powerberäkning
 -->
 
-I denna studie placerades en tredjedel av deltagarna på en väntlista. En risk med användandet av väntlista är att de deltagare som tilldelas väntlistan försämras under behandlingens gång. I en meta-analys från 2017 konstaterade @Rozental2017a att över 15% av de som tilldelas betingelsen väntlista i I-KBT-studier försämras, jämfört med cirka 6% av de som genomgick behandlingen. Detta kan även leda till att de effekter som upptäcks snarare gör det på grund av försämrandet hos väntlista-betingelsen snarare än förbättrandet hos de som betingats till behandlingen. I den aktuella studien försämrades ingen deltagare signifikant från för- till eftermätningen. Varken i väntlistan eller i någon av de andra betingelserna. Det går ändå att diskutera om användandet av väntlista som kontroll är ett klokt beslut. Användandet av väntlista höjer allt som oftast oddsen för att hitta en signifikant effekt jämfört med andra mer aktiva betingelser. Troligen hade det varit bättre att tilldela de som fick väntlistebetingelsen en aktiv betingelse så som tillgång till ett diskussionsforum.
+I denna studie placerades en tredjedel av deltagarna på en väntlista. En risk med användandet av väntlista är att de deltagare som tilldelas väntlistan försämras under behandlingens gång. I en meta-analys från 2017 konstaterade @Rozental2017a att över 15% av de som tilldelas betingelsen väntlista i I-KBT-studier försämras, jämfört med cirka 6% av de som genomgick behandlingen. Detta kan även leda till att de effekter som upptäcks snarare gör det på grund av försämrandet hos väntlista-betingelsen snarare än förbättrandet hos de som betingats till behandlingen. I den aktuella studien försämrades ingen deltagare signifikant från för- till eftermätningen. Varken i väntlistan eller i någon av de andra betingelserna. Det går ändå att diskutera om användandet av väntlista som kontroll är ett klokt beslut. Användandet av väntlista höjer allt som oftast oddsen för att hitta en signifikant effekt jämfört med att tilldela kontrollgruppen mer aktiva betingelser [@Mohr2009]. Troligen hade det varit bättre att tilldela de som fick väntlistebetingelsen en aktiv betingelse så som tillgång till ett diskussionsforum. 
+
+<!-- stycket härunder behöver jobbas med men är ett försök till att inkorporera Pers kommentar nedan-->
+
+<!--
+Å andra sidan är väntelista effektivt för att korrigera mot händelser i världen som kan påverka studiens deltagare och därmed studiens resultat. Under studiens gång spred sig viruset covid-19 i Sverige och över världen. Nästintill alla människor påverkades på något sätt av detta. Antingen i dagliga rutiner, i fysiskt och psykiskt mående eller i både och. Hade vår studies kontrollgrupp haft en annan betingelse än väntlista hade det varit svårt att konstatera vad i deras resultat som var påverkat av betingelsen i fråga, och vad i resultatet som berodde på covid-19s ankomst i Sverige. I och med att vår studies kontrollgrupp var betingade till väntlista är det enklare att ta höjd för detta. 
+-->
 
 
 <!-- [Pers kommentar] 
