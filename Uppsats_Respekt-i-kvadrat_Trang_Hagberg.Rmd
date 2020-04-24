@@ -59,13 +59,14 @@ library("broom.mixed")
 library("knitr")
 library("kableExtra")
 library("readxl")
-library("pastecs")
 library("JTRCI")
 library("nlme")
 library("emmeans")
 library("car")
 library("ggplot2")
+library("pastecs")
 
+#library("wesanderson")
 #library("pander")
 #library("lmerTest")
 
@@ -387,6 +388,11 @@ lg2t3 <- r2.long.data$group == xg2 & r2.long.data$time == "Post"
 lg3t1 <- r2.long.data$group == xg3 & r2.long.data$time == "Pre"
 lg3t2 <- r2.long.data$group == xg3 & r2.long.data$time == "During"
 lg3t3 <- r2.long.data$group == xg3 & r2.long.data$time == "Post"
+
+# lg1t13 <- r2.long.data$group == xg1 & r2.long.data$time == "Pre" | r2.long.data$time == "Post"
+# lg2t13 <- r2.long.data$group == xg2 & r2.long.data$time == "Pre" & r2.long.data$time == "Post"
+# lg3t13 <- r2.long.data$group == xg3 & r2.long.data$time == "Pre" & r2.long.data$time == "Post"
+
 
 # Finally, make sure the waitlist condition has zero modules assigned & opened.
 # Rationale: At the time of writing, participants have started with module 1 just 
@@ -809,7 +815,7 @@ x5 <-
     38.7
   )
 
-demdata.tabell <- cbind.data.frame(x1,x3,x4,x2,x5)
+demdata.tabell <- cbind.data.frame(x1,x4,x2,x3,x5)
 
 colnames(demdata.tabell) <-
   c("",
@@ -1059,7 +1065,9 @@ Signifikansnivån $\alpha$ = 0,05 tillämpades vid alla beräkningar.
 
 ### Kontroll av utgångsdata
 
-Vi analyserade insamlade förmätningsvärden för att kontrollera om randomiseringen hade gett grupper utan signifikanta skillnader. Oberoende variansanalys (ANOVA) användes för att utesluta skillnader mellan grupperna i primära utfallsmått, sekundära utfallsmått och kontinuerliga sociodemografiska variabler. Kategoriska sociodemografiska variabler undersöktes med Pearson $\chi^2$-test.
+Vi analyserade insamlade förmätningsvärden för att kontrollera om randomiseringen hade gett grupper utan signifikanta skillnader. Oberoende variansanalys (ANOVA) användes för att utesluta skillnader mellan grupperna i primära utfallsmått, sekundära utfallsmått och kontinuerliga sociodemografiska variabler. Kategoriska sociodemografiska variabler undersöktes med Pearson $\chi^2$-test. Cohen's d-effektstorlekar för beroende mätningar beräknades med R-paketet *effsize* [@R-effsize]. För beräkning och sammanställning av övrig deskriptiv statistik, inklusive resultat normalfördelningstest, användes R-paketet *pastecs* [@R-pastecs].
+
+<!-- normalfördelning shapiro wilks -->
 
 <!-- OBS! Vi fann en signifikant skillnad i könsfördelningen mellan grupperna. Vi har betydligt fler män i grupp 1 än övriga. -->
 
@@ -1079,35 +1087,99 @@ För var och en av betingelserna bestämde vi frekvensen deltagare som i tränin
 
 # Resultat
 
+REPORT: Varianserna för aaas_ad från förmätningen var signifikant olika, F(2,3) = 3,4202, p = 0,035
+
+För att sammanfatta har vi problem med flera icke-normalfördelade distributioner enligt shapiro-Wilks test och dessutom icke-homogena varianser för pre-värdet för aaas_ad i gruppen selfhelp.
+
+oxå sig skillnad i sociodemografisk data/kön
+
 ## Deskriptiv statistik
 
 se tabell \@ref(tab:descriptives)
 
 (ref:descriptives) Deskriptiva mått för primära och sekundärt beroende variabler liksom oberoende variabler vid studiens start.
 
+
 ``` {r descriptives, fig.cap='(ref:descriptives)', fig.align="center", cache = F, eval = F}
 
 ### Descriptives
 
+library(effsize)
+
+xhgn <-  function(num,x,y) {
+  cohen.d(
+    r2.long.data[x, num],
+    r2.long.data[y, num],
+    pooled = T,
+    paired = T,
+    na.rm = T,
+    hedges.correction = F,
+    conf.level = 0.95,
+    within = T
+  )
+}
+
+lg1t2.eff <- c(
+xhgn(7,lg1t2,lg1t1)$estimate,
+xhgn(6,lg1t2,lg1t1)$estimate,
+xhgn(5,lg1t2,lg1t1)$estimate,
+xhgn(12,lg1t2,lg1t1)$estimate,
+xhgn(13,lg1t2,lg1t1)$estimate,
+xhgn(14,lg1t2,lg1t1)$estimate,
+xhgn(17,lg1t2,lg1t1)$estimate
+)
+
+lg1t3.eff <- c(
+xhgn(7,lg1t3,lg1t1)$estimate,
+xhgn(6,lg1t3,lg1t1)$estimate,
+xhgn(5,lg1t3,lg1t1)$estimate,
+xhgn(12,lg1t3,lg1t1)$estimate,
+xhgn(13,lg1t3,lg1t1)$estimate,
+xhgn(14,lg1t3,lg1t1)$estimate,
+xhgn(17,lg1t3,lg1t1)$estimate
+)
+
+lg2t2.eff <- c(
+xhgn(7,lg2t2,lg2t1)$estimate,
+xhgn(6,lg2t2,lg2t1)$estimate,
+xhgn(5,lg2t2,lg2t1)$estimate,
+xhgn(12,lg2t2,lg2t1)$estimate,
+xhgn(13,lg2t2,lg2t1)$estimate,
+xhgn(14,lg2t2,lg2t1)$estimate,
+xhgn(17,lg2t2,lg2t1)$estimate
+)
+
+lg2t3.eff <- c(
+xhgn(7,lg2t3,lg2t1)$estimate,
+xhgn(6,lg2t3,lg2t1)$estimate,
+xhgn(5,lg2t3,lg2t1)$estimate,
+xhgn(12,lg2t3,lg2t1)$estimate,
+xhgn(13,lg2t3,lg2t1)$estimate,
+xhgn(14,lg2t3,lg2t1)$estimate,
+xhgn(17,lg2t3,lg2t1)$estimate
+)
+
+lg3t2.eff <- c(
+xhgn(7,lg3t2,lg3t1)$estimate,
+xhgn(6,lg3t2,lg3t1)$estimate,
+xhgn(5,lg3t2,lg3t1)$estimate,
+xhgn(12,lg3t2,lg3t1)$estimate,
+xhgn(13,lg3t2,lg3t1)$estimate,
+xhgn(14,lg3t2,lg3t1)$estimate,
+xhgn(17,lg3t2,lg3t1)$estimate
+)
+
+lg3t3.eff <- c(
+xhgn(7,lg3t3,lg3t1)$estimate,
+xhgn(6,lg3t3,lg3t1)$estimate,
+xhgn(5,lg3t3,lg3t1)$estimate,
+xhgn(12,lg3t3,lg3t1)$estimate,
+xhgn(13,lg3t3,lg3t1)$estimate,
+xhgn(14,lg3t3,lg3t1)$estimate,
+xhgn(17,lg3t3,lg3t1)$estimate
+)
+
 numvars <- c(5:17) # Variables in r2.long.data that we are interested in
-
-# rathus
-# aaas_ag
-# aaas_ad
-# lsas_anx
-# lsas_avo
-# lsas_int
-# lsas_per
-# lsas_sum
-# gad_sum 
-# phq_sum
-# phq_sui
-# phq_q10
-# well
-
-descriptives.lg123t1 <- stat.desc(r2.long.data[lt1,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
-descriptives.lg123t2 <- stat.desc(r2.long.data[lt2,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
-descriptives.lg123t3 <- stat.desc(r2.long.data[lt3,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
 
 descriptives.lg1t1 <- stat.desc(r2.long.data[lg1t1,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
 descriptives.lg1t2 <- stat.desc(r2.long.data[lg1t2,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
@@ -1122,91 +1194,117 @@ descriptives.lg3t2 <- stat.desc(r2.long.data[lg3t2,numvars], basic=TRUE, desc=TR
 descriptives.lg3t3 <- stat.desc(r2.long.data[lg3t3,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
 
 descriptives.out <- rbind(
-  xg1 = cbind(
-    descriptives.lg1t1[c(9, 13, 20), c(3,2,1,4:13)]#,
-    #descriptives.lg1t3[c(9, 13, 20), c(3,2,1,4:13)]
+  xg1t1 = cbind(
+    descriptives.lg1t1[c(9, 13), c(3,2,1,8:10,13)]
+    ),
+  xg1t2 = cbind(
+    descriptives.lg1t2[c(9, 13), c(3,2,1,8:10,13)]
+    ),
+  xg1t2eff = lg1t2.eff,
+  xg1t3 = cbind(
+    descriptives.lg1t3[c(9, 13), c(3,2,1,8:10,13)]
+    ),
+  xg1t3eff = lg1t3.eff,
+  xg2t1 = cbind(
+    descriptives.lg2t1[c(9, 13), c(3,2,1,8:10,13)]
   ),
-  xg2 = cbind(
-    descriptives.lg2t1[c(9, 13, 20), c(3,2,1,4:13)]#,
-    #descriptives.lg2t3[c(9, 13, 20), c(3,2,1,4:13)]
+  xg2t2 = cbind(
+    descriptives.lg2t2[c(9, 13), c(3,2,1,8:10,13)]
   ),
-  xg3 = cbind(
-    descriptives.lg3t1[c(9, 13, 20), c(3,2,1,4:13)]#,
-    #descriptives.lg3t3[c(9, 13, 20), c(3,2,1,4:13)]
-  ))
+  xg2t2eff = lg2t2.eff,
+  xg2t3 = cbind(
+    descriptives.lg2t3[c(9, 13), c(3,2,1,8:10,13)]
+  ),
+  xg2t3eff = lg2t3.eff,
+  xg3t1 = cbind(
+    descriptives.lg3t1[c(9, 13), c(3,2,1,8:10,13)]
+  ),
+  xg3t2 = cbind(
+    descriptives.lg3t2[c(9, 13), c(3,2,1,8:10,13)]
+  ),
+  xg3t2eff = lg3t2.eff,
+  xg3t3 = cbind(
+    descriptives.lg3t3[c(9, 13), c(3,2,1,8:10,13)]
+  ),
+  xg3t3eff = lg3t3.eff
+  )
 
 colnames(descriptives.out) <-
   rep(
     c(
-      "AAA-S adaptiv",
-      "AAA-S aggressiv",
+      "AAAS Ad",
+      "AAAS Ag",
       "Rathus",
-      "LSAS ångest",
-      "LSAS undvikande",
-      "LSAS interaktion",
-      "LSAS prestation",
-      "LSAS summa",
-      "GAD summa",
-      "PHQ summa",
-      "PHQ suidical",
-      "PHQ fråga 10",
-      "Välmåendeformuläret"
+      "LSAS",
+      "GAD",
+      "PHQ",
+      "Välmående"
     ),
     times = 1 #2
   )
+
 descriptives.out.rot <- t(descriptives.out)
-colnames(descriptives.out.rot) <- rep(c("M","SD","p"),times = 3)
 
-# xs = paste('All (N = ' , length(r2.long.data[lg1t1,1]) , ')', sep="")
-# xg = paste('All (N = ' , length(r2.long.data[lg2t1,1]) , ')', sep="")
-# xw = paste('All (N = ' , length(r2.long.data[lg3t1,1]) , ')', sep="")
+xeff = "Cohen's d"
 
-svkable(round(descriptives.out.rot,2), caption = "(ref:descriptives)") %>%
-  add_header_above(c("", "Självhjälp (N = 67)" = 3, "Med stöd (N = 69)" = 3, "Väntlista (N = 68)" = 3)) %>% #, "All (N = 204)" = 2)) %>%
-  pack_rows("Primära utfallsmått", 1, 2, bold = F) %>%
-  pack_rows("Sekundära utfallsmått/kovariat", 3, 13, bold = F)
+colnames(descriptives.out.rot) <- NULL
 
-#####
+# colnames(descriptives.out.rot) <- rep(c(
+#     rep(c("M","*SD*"),times = 2),
+#     paste(xeff,"före--under"),
+#     rep(c("M","*SD*"),times = 1),
+#     paste(xeff,"före--efter")
+# ),times = 3)
 
-# 1. Linearity (plotta): plot(resid(model),aaas_ad)
-# 2. Homegenitet av varians (se nedan)
-# 3. Residualer ska vara normalt distribuerade
-# 4. + de två andra som har med random-intercept och random-slope att göra
+descriptives.out.rot.rot <- t(descriptives.out.rot)
+
+descriptives.col.out <- cbind.data.frame(
+  "Betingelse" = rep(c(xg1,xg2,xg3),each=8),
+  "Mättillfälle" = rep(c(rep(c("Förmätning"),times=2),rep(c("Mittenmätning"),times=3),rep(c("Eftermätning"),times=3)),times=3),
+  " " = rep(c(
+    rep(c("M","SD"),times = 2),
+    paste(xeff),
+    rep(c("M","SD"),times = 1),
+    paste(xeff)
+),times = 3),
+  round(descriptives.out.rot.rot,1)
+)
+
+#  add_header_above(c("", "Självhjälp (N = 67)" = 3, "Med stöd (N = 69)" = 3, "Väntlista (N = 68)" = 3)) %>% #, "All (N = 204)" = 2)) %>%
+
+row_group_label_fonts <- list(
+list(bold = T, italic = F),
+list(bold = F, italic = T)
+)
+
+svkable(descriptives.col.out[], caption = "(ref:descriptives)", linesep = "", align="rrrccccccc") %>%
+  column_spec(1, bold=T) %>%
+  collapse_rows(1:3,latex_hline = 'custom', custom_latex_hline = 1:2, row_group_label_position = 'stack',row_group_label_fonts = row_group_label_fonts) 
+
+# kable(collapse_rows_dt, "latex",
+# booktabs = T, align = "c", linesep = '') %>%
+# collapse_rows(1:2, row_group_label_position = 'stack')
+
+# %>%
+#   pack_rows("Förmätning", 1, 2, bold = F) %>%
+#   pack_rows("Mittenmätning", 3, 5, bold = F) %>%
+#   pack_rows("Eftermätning", 6, 8, bold = F) %>%
+#   pack_rows("Förmätning", 9, 10, bold = F) %>%
+#   pack_rows("Mittenmätning", 11, 13, bold = F) %>%
+#   pack_rows("Eftermätning", 14, 16, bold = F) %>%
+#   pack_rows("Förmätning", 17, 18, bold = F) %>%
+#   pack_rows("Mittenmätning", 19, 21, bold = F) %>%
+#   pack_rows("Eftermätning", 22, 24, bold = F)
 
 
-# test for homogeneity of variance using 
-# Levene's test on all continuous variables:
-# t1varsC <- c( "rathus","aaas_ag","aaas_ad","lsas_anx","lsas_avo","lsas_int","lsas_per","lsas_sum","gad_sum","phq_sum","well")
+  # pack_rows(xg1, 1, 8, bold = F) %>%
+  # pack_rows(xg2, 9, 16, bold = F) %>%
+  # pack_rows(xg3, 17, 24, bold = F) %>%
 
-# leveneTest(pre_rathus~group, r2.wide.data)  
-# leveneTest(pre_aaas_ag~group, r2.wide.data)  
-# leveneTest(pre_aaas_ad~group, r2.wide.data)  
-# leveneTest(pre_lsas_anx~group, r2.wide.data)  
-# leveneTest(pre_lsas_avo~group, r2.wide.data)  
-# leveneTest(pre_lsas_int~group, r2.wide.data)  
-# leveneTest(pre_lsas_per~group, r2.wide.data)  
-# leveneTest(pre_lsas_sum~group, r2.wide.data)  
-# leveneTest(pre_gad_sum~group, r2.wide.data)  
-# leveneTest(pre_phq_sum~group, r2.wide.data)  
-# leveneTest(pre_well~group, r2.wide.data)  
-
-# Alla insignifikanta förutom pre_aaas_ad
-
-# > leveneTest(pre_aaas_ad~group, r2.wide.data)  
-# Levene's Test for Homogeneity of Variance (center = median)
-#        Df F value  Pr(>F)  
-# group   2  3,4202 0,03462 *
-
-# > leveneTest(pre_aaas_ad~group, r2.wide.data) 
-# Levene's Test for Homogeneity of Variance (center = median)
-#        Df F value  Pr(>F)  
-# group   2  3,4578 0,03339 *
-
-# densityPlot(pre_aaas_ad~group, r2.wide.data)
-
-# REPORT: Varianserna för aaas_ad från förmätningen var signifikant olika, F(2,3) = 3,4202, p = 0,035
-
-# För att sammanfatta har vi problem med flera icke-normalfördelade distributioner enligt shapiro-Wilks test och dessutom icke-homogena varianser för pre-värdet för aaas_ad i gruppen selfhelp.
+  # column_spec(2, width = "5em") %>%
+  # column_spec(3, width = "5em") %>%
+  # column_spec(4, width = "5em") %>%
+  # column_spec(5, width = "5em") %>%
 
 ```
 
@@ -1549,23 +1647,29 @@ rathus.pre.dur.jt.table <- xt
 
 ```
 
-```{r tjrciout, fig.align="center", dpi=196, cache=T, fig.height=3}
+\@ref(fig:tjrciout))
+
+(ref:rci) 123
+
+```{r tjrciout, fig.cap='(ref:rci)', fig.align="center", dpi=196, cache=T, fig.height=3}
+
+par(mfrow=c(3,1))
 
 ## JTRCI output
 
 # Plots
 
-AAAS_ad.pre.post.jt.plot + theme(legend.position="none")
-AAAS_ad.pre.dur.jt.plot + theme(legend.position="none")
+AAAS_ad.pre.post.jt.plot + theme(legend.position="none") + scale_color_manual(values=c(rep("white",times=4),"red"))
+#AAAS_ad.pre.dur.jt.plot + theme(legend.position="none")
 
-AAAS_ag.pre.post.jt.plot + theme(legend.position="none")
-AAAS_ag.pre.dur.jt.plot + theme(legend.position="none")
+AAAS_ag.pre.post.jt.plot + theme(legend.position="none") + scale_color_manual(values=c(rep("white",times=4),"red"))
+#AAAS_ag.pre.dur.jt.plot + theme(legend.position="none")
 
-AAAS_ag.pre.post.DOWN.jt.plot + theme(legend.position="none")
-AAAS_ag.pre.dur.DOWN.jt.plot + theme(legend.position="none")
+#AAAS_ag.pre.post.DOWN.jt.plot + theme(legend.position="none")
+#AAAS_ag.pre.dur.DOWN.jt.plot + theme(legend.position="none")
 
-rathus.pre.post.jt.plot + theme(legend.position="none")
-rathus.pre.dur.jt.plot + theme(legend.position="none")
+rathus.pre.post.jt.plot + theme(legend.position="none") + scale_color_manual(values=c(rep("white",times=4),"red"))
+#rathus.pre.dur.jt.plot + theme(legend.position="none")
 
 # Tables
 
