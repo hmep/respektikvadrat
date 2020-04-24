@@ -490,18 +490,7 @@ knitr::include_graphics("canvas-konstruktiv-slinga-X.pdf")
 
 Forskning på *assertiveness* övergavs i stort sett efter 1970-talet i och med psykatrins fokus på syndromala kategoriseringar av psykisk ohälsa. *Assertiveness* föll tillsammans med andra transdiagnostiska begrepp i glömska till förmån för diagnosspecifika interventioner och insatser. 
 
-*Fram tills att det föll i glömska intressanta fynd ... stycke om tidigare forskning kommer dyka upp här*
-
 Fram tills att *assertiveness* föll i glömska konstaterades dock flertalet intressanta fynd. @Wolpe1966 samt @Orenstein1975 upptäckte att det är oförenligt att uppleva ångest och att bete sig *assertive*. @Barrett1977 visade på att *assertiveness* hos barn korrelerade med uppvisande av prosociala beteenden och @Buell1981 följde upp det med en effektiv metod för att träna *assertiveness* hos just barn. Hos vuxna fastställdes det bland annat att god *assertiveness*: förbättrar ens interpersonella relationer [@Kincaid1978] och gör att man bemöter förhinder och motgångar med adaptiva beteenden [@Tanck1979]. [@Rakos1979] visade på att *assertiveness* kunde tränas genom självhjälpsmaterial och [@Rich1976] sammanställde flertalet metoder (samt respektive metods för- och nackdelar) som använts för att träna *assertiveness*.
-
-<!--
-[@Orenstein1975] samt [@Wolpe1968] om att assertive behaviors korrelerar negativt med att uppleva ångest.
-[@Tanck1979] och att assertiveness korrelerar med problemlösande
-[@Barrett1977] att assertiveness korrelerar med pro-social behavior hos barn samt [@Buell1981] och att det går att träna assertiveness hos barn
-[@Rakos1979] att självhjälpsmaterial för assertiveness gjorde deltagare bättre på "assertion, content of asser- tion, verbalization of assertion-related obligations, persistent assertive re- sponding, and rational cognitive behaviors."
-[@Bander1978] och att assertive träning av kvinnor fungerar samt [@Whitley1975] och att hög assertiveness hos kvinnor korrelerar med sexual satisfaction
-
--->
 
 Under de senaste åren har intresset för självhävdelse ökat något igen. @Vagos2019 konstaterar att självupplevd grad av psykiskt lidande korrelerar negativt med grad av konstruktiv självhävdelse, i linje med rationalen för träning i *assertiveness* som den presenterades av @Wolpe1966. @Amy2015 visar en negativ korrelation mellan att uppleva social ångest och konstruktiv självhävdelse. Deras slutsats är att man kan öka oddsen för konstruktivt självhävdande beteenden för en person antingen genom att i behandling exponera för antecedenterna för social ångest och/eller att arbeta med hur personen förhåller sig till själva ångesten. Den senare toleranskomponenten kan ses som ett komplement till den habitueringsrational som varit förhärskande inom KBT fram till sekelskiftet <!-- källa? -->.
 
