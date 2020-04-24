@@ -464,7 +464,7 @@ Bristande konstruktiv självhävdelse är ett exempel på ett behandlingsmål so
 
 ## Vad är konstruktiv självhävdelse?
 
-Begreppet assertiveness kom under 1970-talet att omfamna en allt längre lista med beteendemässiga operationaliseringar – så att det till slut blev svårt att skilja från begreppet ’social färdighet’ @LINEHAN1979. Det är därför viktigt att avgränsa begreppet.
+Begreppet *assertiveness* kom under 1970-talet att omfamna en allt längre lista med beteendemässiga operationaliseringar – så att det till slut blev svårt att skilja från begreppet ’social färdighet’ @LINEHAN1979. Det är därför viktigt att avgränsa begreppet.
 
 @alberti1974your definierar konstruktiv självhävdelse som handlande som återspeglar individens egna långsiktiga intressen. Det inbegriper förmågan att ”stå upp för sig själv” utan överdriven ångest och färdigheten att uttrycka sina känslor samt att utöva sina egna rättigheter utan att kränka andras rättigheter. Med ’utöva sina rättigheter’ menas att både i icke-verbal och verbal handling uttrycka sina tankar, känslor, behov och önskningar.
 
@@ -486,7 +486,18 @@ Forskning på *assertiveness* övergavs i stort sett efter 1970-talet i och med 
 
 *Fram tills att det föll i glömska intressanta fynd ... stycke om tidigare forskning kommer dyka upp här*
 
-Under de senaste åren har dock intresset för självhävdelse ökat något igen. @Vagos2019 konstaterar att självupplevd grad av psykiskt lidande korrelerar negativt med grad av konstruktiv självhävdelse, i linje med rationalen för träning i *assertiveness* som den presenterades av @Wolpe1966. @Amy2015 visar en negativ korrelation mellan att uppleva social ångest och konstruktiv självhävdelse. Deras slutsats är att man kan öka oddsen för konstruktivt självhävdande beteenden för en person antingen genom att i behandling exponera för antecedenterna för social ångest och/eller att arbeta med hur personen förhåller sig till själva ångesten. Den senare toleranskomponenten kan ses som ett komplement till den habitueringsrational som varit förhärskande inom KBT fram till sekelskiftet.,
+Fram tills att *assertiveness* föll i glömska konstaterades dock flertalet intressanta fynd. @Wolpe1966 samt @Orenstein1975 upptäckte att det är oförenligt att uppleva ångest och att bete sig *assertive*. @Barrett1977 visade på att *assertiveness* hos barn korrelerade med uppvisande av prosociala beteenden och @Buell1981 följde upp det med en effektiv metod för att träna *assertiveness* hos just barn. Hos vuxna fastställdes det bland annat att god *assertiveness*: förbättrar ens interpersonella relationer [@Kincaid1978] och gör att man bemöter förhinder och motgångar med adaptiva beteenden [@Tanck1979]. [@Rakos1979] visade på att *assertiveness* kunde tränas genom självhjälpsmaterial och [@Rich1976] sammanställde flertalet metoder (samt respektive metods för- och nackdelar) som använts för att träna *assertiveness*.
+
+<!--
+[@Orenstein1975] samt [@Wolpe1968] om att assertive behaviors korrelerar negativt med att uppleva ångest.
+[@Tanck1979] och att assertiveness korrelerar med problemlösande
+[@Barrett1977] att assertiveness korrelerar med pro-social behavior hos barn samt [@Buell1981] och att det går att träna assertiveness hos barn
+[@Rakos1979] att självhjälpsmaterial för assertiveness gjorde deltagare bättre på "assertion, content of asser- tion, verbalization of assertion-related obligations, persistent assertive re- sponding, and rational cognitive behaviors."
+[@Bander1978] och att assertive träning av kvinnor fungerar samt [@Whitley1975] och att hög assertiveness hos kvinnor korrelerar med sexual satisfaction
+
+-->
+
+Under de senaste åren har intresset för självhävdelse ökat något igen. @Vagos2019 konstaterar att självupplevd grad av psykiskt lidande korrelerar negativt med grad av konstruktiv självhävdelse, i linje med rationalen för träning i *assertiveness* som den presenterades av @Wolpe1966. @Amy2015 visar en negativ korrelation mellan att uppleva social ångest och konstruktiv självhävdelse. Deras slutsats är att man kan öka oddsen för konstruktivt självhävdande beteenden för en person antingen genom att i behandling exponera för antecedenterna för social ångest och/eller att arbeta med hur personen förhåller sig till själva ångesten. Den senare toleranskomponenten kan ses som ett komplement till den habitueringsrational som varit förhärskande inom KBT fram till sekelskiftet <!-- källa? -->.
 
 @Speed2018a sammanställer forskningsläget kring *assertiveness*. Träning i konstruktiv självhävdelse kan förbättra måendet vid både ångestsyndrom och depression och öka självförtroende samt förbättra upplevd tillfredsställelse i parrelationer. Författarna konstaterar att träning i konstruktiv självhävdelse redan ingår i de bredare begreppen som beteendeaktivering och färdighetsträning i flertalet allt mer beforskade behandlingsmetoder -- som dialektisk beteendeterapi (DBT), *Acceptance and Commitment Therapy* (ACT) och beteendeaktivering vid depression. En stor andel av den forskning om *assertiveness* som ett transdiagnostiskt begrepp är till åren kommen och det finns ett stort behov att på nytt utvärdera den specifika effekten av självhävdelseträning [@Speed2018a]. Sammanfattningsvis är forskingsläget både skralt för *assertiveness* som konstrukt och omfattande för de syndrom och symtom som associeras med det.
 
@@ -499,7 +510,7 @@ Evidensen för beteendeterapi och KBT för syndromala och icke-syndromala psykol
 @Hofmann2012 är en översikt av meta-analyser som visar att KBT alltjämt är en av de mest effektiva terapiformerna. I deras översikt visade sig KBT effektivt för att motverka bland annat trauma- och stressrelaterade symtom, liksom depressiva och ångestrelaterade syndrom. Litteraturen stödjer att KBT har god effekt för de syndrom som @Speed2018a associerar med brister i konstruktiv självhävdelse.
 
 ## Några saker att förhålla sig till
-*ovan rubrik är temporär och bör få ett bättre namn*
+*ovan rubrik är temporär och bör få ett bättre namn, detsamma går för följande underrubriker*
 
 ### En kontextuell och neurovetenskaplig inramning av \'kognitioner\'
 
@@ -517,9 +528,7 @@ Särskilt svårt är det att bryta beteenden som har som funktion att undvika de
 
 Det har även visat sig att det är ytterst menligt <!-- möjligen skriva "självdestruktivt istället för menligt? --> att försöka undvika ens aversiva känslor. Detta undvikande brukar kallas för emotionellt undvikande. Regelbundet användande av emotionellt undvikande är kopplat till flertalet negativa följder. Det är paradoxalt nog kopplat till mer upplevande av negativa emotioner (och mindre upplevande av positiva emotioner), men även till större undvikande av nära relationer, mindre socialt stöd, lägre självförtroende och sämre generellt välmående [@Gross2003]. Den paradoxala biten går inte nog att betona: att försöka undvika aversiva emotioner leder till att man upplever dem mer [@Gross2003; @Fernandez-Rodriguez2018; @Hayes1996].
 
-<!-- Fernandes-Rodriguez eller vad han nu heter -->
-<!-- @Hayes1996 om experiential avoidance -->
-<!-- *@Pittig2014 -- skriv om detta!* -->
+<!-- *@Pittig2014 är ej med i dagsläget men bör möjligen vara det? -->
 
 ### Att bryta undvikande
 
@@ -531,13 +540,19 @@ Det finns också anledning att tro att det för en person med ångestrelaterat l
 
 Lyckad exponering tenderar att vara en ombytlig exponering där obehag väcks, säkerhetsbeteenden avstås och förväntningar bryts. Förväntingar och förutsägelser som individer tenderar att ha inför exponering är allt som oftast inkorrekta (det vill säga att de förväntar sig värre utfall än vad som sker) och desto större diskrepansen är mellan en indivds förväntningar och individens faktiska upplevelse, desto större är oddsen för nyinlärning [@Craske2008; @Sewart2019]. Lärdomar kan dras båda av att ångest minskar i intensitet, eller av att ens förmåga att hantera ångesten som väcks överträffar ens förväntningar [@Craske2008; @Blakey2016; @Knowles2019; @Sewart2019].
 
-I linje med att undersöka ens egen förmåga att hantera aversiva känslor är att ändra sitt förhållningssätt till dem. <!--För många kan det stora steget i att bryta undvikande vara att arbete med att acceptera och tillåta sina känslor och upplevelser [@Hayes1996]. --> Många har aldrig fått tillgång till den vägledning eller de verktyg som behövs för att hantera starka emotionella upplevelser. De har aldrig lärt sig att förstå sorg och ilska, eller hur de ska gå tillväga för att lugna sin ångest eller sin frustration.  Istället har de lärt sig att distrahera sig och undvika. Bedöva genom att undantrycka. Att ändra dessa förutsägelser om att vissa emotioner är oacceptabla; tillåta sig känna dem, närma sig dem, acceptera dem, har återkommande gånger visat sig vara ett effektivt sätt att bryta undvikande [@Hayes1996; @Hayes2004a; @Luoma2007;] och ett effektivt sätt att behandla många av de psykatriska besvär som individer med bristande *assertiveness* upplever [@A-Tjak2015a].
+I linje med att undersöka ens egen förmåga att hantera aversiva känslor är att ändra sitt förhållningssätt till dem. <!--För många kan det stora steget i att bryta undvikande vara att arbete med att acceptera och tillåta sina känslor och upplevelser [@Hayes1996]. --> Många har aldrig fått tillgång till den vägledning eller de verktyg som behövs för att hantera starka emotionella upplevelser. De har aldrig lärt sig att förstå sorg och ilska, eller hur de ska gå tillväga för att lugna sin ångest eller sin frustration.  Istället har de lärt sig att distrahera sig och undvika. Bedöva genom att undantrycka. Att ändra dessa förutsägelser om att vissa emotioner är oacceptabla; att tillåta sig känna dem, närma sig dem, acceptera dem, har återkommande gånger visat sig vara ett effektivt sätt att bryta undvikande [@Hayes1996; @Hayes2004a; @Luoma2007;] och ett effektivt sätt att behandla många av de psykatriska besvär som individer med bristande *assertiveness* upplever [@A-Tjak2015a].
 
 <!--
 While growing up many of us never had the proper tools or guidance to deal with difficult emotions. We never learned to understand our sadness or anger. We weren't taught how to calm our anxiety or sooth our frustration. Instead we learned to distract and avoid. To tune out unpleasant feelings with numbing. Sometimes destructive behaviour.
 -->
 
 Kort och gott: Genom att *på ett närvarande sätt* i så många kontext som möjligt testa sina förutsägelser och sedan dra slutsatser om både utfallet och ens egen förmåga att hantera dessa utfall ökar man chansen att undvikande bryts och chansen till ökat engagemang i det man värdesätter i livet förbättrats.
+
+<!-- 
+här bör ytterligare ett kort avsnitt föras in om att ångest & avslappning kan inte finnas samtidigt.
+
+Förslagsvis använda L-G Öst kring TA plus fiska fram några som pratar om att avslappning & ångest inte går ihop samt Wolpe och att assertiveness och ångest inte går ihop
+-->
 
 
 <!-- Violating expectancies -->
@@ -889,10 +904,8 @@ En mycket inspirerande faktor när det engelska materialet anpassades och utveck
 
 
 
-<!-- 
-här kommmer ytterligare ett kort avsnitt föras in
-
-Ångest & avslappning kan inte finnas samtidigt. Ökning av fokus på avslappning i behandlingsprogrammet.
+<!--
+här bör ytterligare ett kort avsnitt föras in om valet att fokusera på avslappning i behandlingsprogrammet.
 -->
 
 Anpassningarna och tilläggen tog sig bland annat form av: text och illustrationer samt länkar till fördjupningsmaterial; videofilmer med konversationer och rollspel mellan PT och TH; för programmet framtagna videofilmer och ljudfiler med avslappningsövningar; inbäddade externa videoklipp och ljudfiler samt; ett stort antal nya interaktiva övningar, bland annat utvärderingsformulär av varje veckas innehåll, veckovis uppföljning av konstruktiv självhävdelse samt övningar för återfallsprevention och vidmakthållande av behandlingseffekter. Se även tabell \@ref(tab:intervention) för en översiktlig genomgång av innehållet i modulerna i interventionen *Respekt i kvadrat*.
