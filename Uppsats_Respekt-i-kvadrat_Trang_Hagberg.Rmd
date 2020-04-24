@@ -31,8 +31,9 @@ keeptex           : true
 lang              : sv-SE
 header-includes:
    - \raggedbottom
-   - \usepackage{mathspec}
-   - \setallmainfonts{Times New Roman}
+   #- \usepackage{mathspec}
+   #- \setallmainfonts{Times New Roman}
+   - \setmainfont{Times New Roman}
    - \clearcaptionsetup{figure}
    - \clearcaptionsetup{table}
    - \setlength{\abovecaptionskip}{.5\baselineskip}
@@ -487,7 +488,11 @@ knitr::include_graphics("canvas-konstruktiv-slinga-X.pdf")
 
 ## Konstruktiv självhävdelse och aktuellt forskningsläge
 
-Forskning på *assertiveness* övergavs i stort sett efter 1970-talet i och med psykatrins fokus på syndromala kategoriseringar av psykisk ohälsa. *Assertiveness* föll tillsammans med andra transdiagnostiska begrepp i glömska till förmån för diagnosspecifika interventioner och insatser. Under de senaste åren har dock intresset för självhävdelse ökat något igen. @Vagos2019 konstaterar att självupplevd grad av psykiskt lidande korrelerar negativt med grad av konstruktiv självhävdelse, i linje med rationalen för träning i *assertiveness* som den presenterades av @Wolpe1966. @Amy2015 visar en negativ korrelation mellan att uppleva social ångest och konstruktiv självhävdelse. Deras slutsats är att man kan öka oddsen för konstruktivt självhävdande beteenden för en person antingen genom att i behandling exponera för antecedenterna för social ångest och/eller att arbeta med hur personen förhåller sig till själva ångesten. Den senare toleranskomponenten kan ses som ett komplement till den habitueringsrational som varit förhärskande inom KBT fram till sekelskiftet.,
+Forskning på *assertiveness* övergavs i stort sett efter 1970-talet i och med psykatrins fokus på syndromala kategoriseringar av psykisk ohälsa. *Assertiveness* föll tillsammans med andra transdiagnostiska begrepp i glömska till förmån för diagnosspecifika interventioner och insatser. 
+
+*Fram tills att det föll i glömska intressanta fynd ... stycke om tidigare forskning kommer dyka upp här*
+
+Under de senaste åren har dock intresset för självhävdelse ökat något igen. @Vagos2019 konstaterar att självupplevd grad av psykiskt lidande korrelerar negativt med grad av konstruktiv självhävdelse, i linje med rationalen för träning i *assertiveness* som den presenterades av @Wolpe1966. @Amy2015 visar en negativ korrelation mellan att uppleva social ångest och konstruktiv självhävdelse. Deras slutsats är att man kan öka oddsen för konstruktivt självhävdande beteenden för en person antingen genom att i behandling exponera för antecedenterna för social ångest och/eller att arbeta med hur personen förhåller sig till själva ångesten. Den senare toleranskomponenten kan ses som ett komplement till den habitueringsrational som varit förhärskande inom KBT fram till sekelskiftet.,
 
 @Speed2018a sammanställer forskningsläget kring *assertiveness*. Träning i konstruktiv självhävdelse kan förbättra måendet vid både ångestsyndrom och depression och öka självförtroende samt förbättra upplevd tillfredsställelse i parrelationer. Författarna konstaterar att träning i konstruktiv självhävdelse redan ingår i de bredare begreppen som beteendeaktivering och färdighetsträning i flertalet allt mer beforskade behandlingsmetoder -- som dialektisk beteendeterapi (DBT), *Acceptance and Commitment Therapy* (ACT) och beteendeaktivering vid depression. En stor andel av den forskning om *assertiveness* som ett transdiagnostiskt begrepp är till åren kommen och det finns ett stort behov att på nytt utvärdera den specifika effekten av självhävdelseträning [@Speed2018a]. Sammanfattningsvis är forskingsläget både skralt för *assertiveness* som konstrukt och omfattande för de syndrom och symtom som associeras med det.
 
@@ -499,10 +504,7 @@ Evidensen för beteendeterapi och KBT för syndromala och icke-syndromala psykol
 
 @Hofmann2012 är en översikt av meta-analyser som visar att KBT alltjämt är en av de mest effektiva terapiformerna. I deras översikt visade sig KBT effektivt för att motverka bland annat trauma- och stressrelaterade symtom, liksom depressiva och ångestrelaterade syndrom. Litteraturen stödjer att KBT har god effekt för de syndrom som @Speed2018a associerar med brister i konstruktiv självhävdelse.
 
-<!-- Trots att evidensen för kognitiv och beteendeterapeutisk behandling vid ångestsyndrom och depressiva syndrom är god förblir majoriteten av fallen även i länder med väl utvecklad sjukvård obehandlade @Craske2017. -->
-
-
-## Vad är effektivt i KBT?
+## Några saker att förhålla sig till
 *ovan rubrik är temporär och bör få ett bättre namn*
 
 ### En kontextuell och neurovetenskaplig inramning av \'kognitioner\'
@@ -527,43 +529,37 @@ Det har även visat sig att det är ytterst menligt <!-- möjligen skriva "själ
 
 ### Att bryta undvikande
 
-Att bryta undvikandebeteenden är ofta centralt för att minska psykopatologiska besvär. Det går att göra på flertalet olika sätt. Det går att göra genom att *på ett närvarande sätt* närma sig det aversiva och ångestväckande, så kallad exponering. Att närma sig det som väcker obehag leder hos många till mycket osäkerhet. Denna osäkerhet leder i sin tur inte ovanligen till överdrivet förberedande, efterfrågande om försäkran eller andra beteenden som ökar upplevelsen av kontroll i stunden. Det är dock en viktig inlärningsprocess att få uppleva denna osäkerhet – och samtidigt få lärdomen att denna osäkerhet i sig själv både är ofarlig och hanterbar. Att bibehålla osäkerhet under exponeringstränandet går att göra genom att variera vilka aversiva stimuli som presenteras och i vilka situationer som dessa stimuli presenteras [@Sewart2019; @Knowles2019; @Craske2008]. Med andra ord, det går att göra genom variation.
+Att bryta undvikandebeteenden är ofta centralt för att minska psykopatologiska besvär. Det finns flera forskningsgrundande metoder för detta. En metod är att *på ett närvarande sätt* närma sig det aversiva och ångestväckande, så kallad exponering. Att närma sig det som väcker obehag leder hos många till mycket osäkerhet. Denna osäkerhet leder i sin tur inte ovanligen till överdrivet förberedande, efterfrågande om försäkran eller andra beteenden som ökar upplevelsen av kontroll i stunden (så kallade säkerhetsbeteenden). Det är en viktig inlärningsprocess att få uppleva denna osäkerhet – och samtidigt få lärdomen att osäkerheten i sig själv både är ofarlig och hanterbar. Att bibehålla osäkerhet under exponering går att göra genom att variera vilka aversiva stimuli som presenteras och i vilka situationer som dessa stimuli presenteras [@Sewart2019; @Knowles2019; @Craske2008]. Med andra ord, det går att väcka osäkerhet genom variation.
 
-De Castella m. fl. [-@DeCastella2015] konstaterade även att emotionellt undvikande är tydligt kopplad till sämre effekt av exponering. Detta är i linje med mycket annan forskning. Att emotionellt undvika är ett säkerhetsbeteenden och säkerhetsbeteenden – det vill säga beteenden som förhindrar, undviker eller minimerar obehag i en given situation – är ett väletablerat fenomen som har konstaterats både ha en del i utvecklandet och i bibehållandet av ångestdriven psykopatologi [@Blakey2016]. Emotionellt undvikande är särskilt vanligt hos personer som lider av ångestsyndrom och depressiva syndrom [@Campbell-Sills2006] vilket med stor sannolikhet även gör det vanligt hos individer med bristanden *assertiveness*. 
+De Castella m. fl. [-@DeCastella2015] konstaterade även att emotionellt undvikande är tydligt kopplad till sämre effekt av exponering. Detta är i linje med mycket annan forskning. Att emotionellt undvika är ett säkerhetsbeteenden och säkerhetsbeteenden – det vill säga beteenden som förhindrar, undviker eller minimerar obehag i en given situation – är ett väletablerat fenomen som har konstaterats både ha en del i utvecklandet och i bibehållandet av ångestdriven psykopatologi [@Blakey2016]. Emotionellt undvikande är särskilt vanligt hos personer som lider av ångestsyndrom och depressiva syndrom [@Campbell-Sills2006] vilket med stor sannolikhet även gör det vanligt hos individer med bristanden *assertiveness*. När obehag, ångest och andra aversiva känslor väcks är det alltså viktigt att inte försöka undertrycka dem. Genom att tillåta sig själv känna dem ger man sig möjligheten till att bemästra dem.
 
-Det finns också anledning att tro att det för en person med ångestrelaterat lidande är betydligt enklare än för en nedstämd eller deprimerad person att finna situationer som är lämpliga att träna i; ångest kan i sig ses som en signal för nyinlärning. Att ångest väcks och att det känns jobbigt kan ses som en signal för att det man håller på med är viktigt för en [@Barrett2016a].
+Det finns också anledning att tro att det för en person med ångestrelaterat lidande är betydligt enklare än för en nedstämd eller deprimerad person att finna situationer som är lämpliga att träna i; att ångest väcks och att det känns jobbigt kan i sig ses som en signal för nyinlärning samt att det man håller på med är viktigt för en [@Barrett2016a].
 
 Lyckad exponering tenderar att vara en ombytlig exponering där obehag väcks, säkerhetsbeteenden avstås och förväntningar bryts. Förväntingar och förutsägelser som individer tenderar att ha inför exponering är allt som oftast inkorrekta (det vill säga att de förväntar sig värre utfall än vad som sker) och desto större diskrepansen är mellan en indivds förväntningar och individens faktiska upplevelse, desto större är oddsen för nyinlärning [@Craske2008; @Sewart2019]. Lärdomar kan dras båda av att ångest minskar i intensitet, eller av att ens förmåga att hantera ångesten som väcks överträffar ens förväntningar [@Craske2008; @Blakey2016; @Knowles2019; @Sewart2019].
 
+I linje med att undersöka ens egen förmåga att hantera aversiva känslor är att ändra sitt förhållningssätt till dem. <!--För många kan det stora steget i att bryta undvikande vara att arbete med att acceptera och tillåta sina känslor och upplevelser [@Hayes1996]. --> Många har aldrig fått tillgång till den vägledning eller de verktyg som behövs för att hantera starka emotionella upplevelser. De har aldrig lärt sig att förstå sorg och ilska, eller hur de ska gå tillväga för att lugna sin ångest eller sin frustration.  Istället har de lärt sig att distrahera sig och undvika. Bedöva genom att undantrycka. Att ändra dessa förutsägelser om att vissa emotioner är oacceptabla; tillåta sig känna dem, närma sig dem, acceptera dem, har återkommande gånger visat sig vara ett effektivt sätt att bryta undvikande [@Hayes1996; @Hayes2004a; @Luoma2007;] och ett effektivt sätt att behandla många av de psykatriska besvär som individer med bristande *assertiveness* upplever [@A-Tjak2015a].
 
-<!-- avsnitt med accepterande av ångest a la Hayes -->
+<!--
+While growing up many of us never had the proper tools or guidance to deal with difficult emotions. We never learned to understand our sadness or anger. We weren't taught how to calm our anxiety or sooth our frustration. Instead we learned to distract and avoid. To tune out unpleasant feelings with numbing. Sometimes destructive behaviour.
+-->
 
-
-Kort och gott: Det är genom att *på ett närvarande sätt* i så många kontext som möjligt testa sina förutsägelser och sedan dra slutsatser om både utfallet och ens egen förmåga att hantera dessa utfall som undvikande bryts och oddsen för ökat engagemang i livet förbättrats.
+Kort och gott: Genom att *på ett närvarande sätt* i så många kontext som möjligt testa sina förutsägelser och sedan dra slutsatser om både utfallet och ens egen förmåga att hantera dessa utfall ökar man chansen att undvikande bryts och chansen till ökat engagemang i det man värdesätter i livet förbättrats.
 
 
 <!-- Violating expectancies -->
 
 #### Att finna motivationen till att bryta gamla vanor
 
-Många som lever med psykopatologiska besvär under en längre tid kan uppleva det som att det inte finns någonting de kan göra åt sina besvär. Som att deras symtom och deras lidande är där för att stannna. Detta brukar kallas för ett *fixed mindset*. Ett *fixed mindset* är antagandet att förmågor, färdigheter samt egenskaper är fasta och oföränderliga. Detta skiljer sig från ett *growth mindset*, antagandet att förmågor, färdigheter och egenskaper kan utvecklas och förändras. Dessa *mindset*, tankesätt, är ett sorts ramverk genom vilket man tolkar och förstår sig på sina erfarenheter, vilket i sin tur påverkar vilka beteenden och emotioner man uppvisar [@Dweck1995]. Tankesätten kan beröra mer övergripande domäner, såsom personlighet och intelligens, eller mer specifika domäner, såsom hur man tänker kring ångest och emotioner. Man kan ha ett fixerat tankesätt inom en viss domän, och ett utvecklande tankesätt inom en annan [@Schroder2016]. Har man ett utvecklande tankesätt kring ångest leder det både till större motivation under en behandlings gång och till större odds för positivt behandlingsutfall [@Schroder2015; @DeCastella2015]. Å andra sidan har det visat sig att personer med ett fixerat tankesätt i större utsträckning försöker undvika negativa emotioner samt i mindre utsträckning omvärderar sina övertygelser i ljuset av nya erfarenheter [@Schroder2015].
+Många som lever med psykopatologiska besvär under en längre tid kan uppleva det som att det inte finns någonting de kan göra åt sina besvär. Som att deras symtom och deras lidande är där för att stannna. Detta brukar kallas för ett *fixed mindset*. Ett *fixed mindset* är antagandet att förmågor, färdigheter samt egenskaper är fasta och oföränderliga. Detta skiljer sig från ett *growth mindset*, antagandet att förmågor, färdigheter och egenskaper kan utvecklas och förändras. Dessa *mindset*, tankesätt, är ett sorts ramverk genom vilket man tolkar och förstår sig på sina erfarenheter, vilket i sin tur påverkar vilka beteenden och emotioner man uppvisar [@Dweck1995]. Tankesätten kan beröra mer övergripande domäner, såsom personlighet och intelligens, eller mer specifika domäner, såsom hur man tänker kring ångest och emotioner. Man kan ha ett fixerat tankesätt inom en viss domän, och ett utvecklande tankesätt inom en annan [@Schroder2016]. Har man ett utvecklande tankesätt kring ångest leder det både till större motivation under en behandlings gång och till större odds för positivt behandlingsutfall [@Schroder2015; @DeCastella2015]. Det har även visat sig att personer med ett fixerat tankesätt i större utsträckning försöker undvika negativa emotioner samt i mindre utsträckning omvärderar sina förutsägelser i ljuset av nya erfarenheter [@Schroder2015]. Forskning konstaterar att det finns gott om anledningar att arbeta mot ett *growth mindset*.
 
+
+*work in progress* 
 
 Lösningen:
 - värden, långsiktiga skäl att uppsöka sit
-- ett sätt att få igång diskussionen kring värden är att se skillnaden i growth mindset och fixed mindset
 - direkt kontignent belöning, ex återkoppling och uppmuntran från terapeut
 
 
-
-
-<!--
-#### Growth mindset
-
-Ett fixerat tankesätt är antagandet att förmågor, färdigheter samt egenskaper är fasta och oföränderliga medans ett utvecklande tankesätt är antagandet att dessa förmågor, färdigheter och egenskaper kan utvecklas och förändras. Tankesätten är ett sorts ramverk genom vilket man tolkar och förstår sig på sina erfarenheter, vilket i sin tur påverkar vilka beteenden och emotioner man uppvisar [@Dweck1995]. Ett utvecklande tankesätt kan bland annat leda till att man tar sig ann fler utmaningar, fortsätter kämpa vid bakslag och att man i stort och smått i sitt liv presterar bättre [@Dweck2019]. I verkligheten är ens tankesätt sällan antingen eller, utan återfinns på ett kontinuum [@Dweck1995]. 
-
-Har man ett utvecklande tankesätt kring ångest leder det både till större motivation under en behandlings gång och till större odds för positivt behandlingsutfall [@Schroder2015; @DeCastella2015]. Utöver detta har det även visat sig att personer med ett fixerat tankesätt i större utsträckning försöker undvika negativa emotioner samt i mindre utsträckning omvärderar sina övertygelser i ljuset av nya erfarenheter [@Schroder2015].
--->
 
 ## Internet och internetbaserad vård
 
@@ -895,20 +891,17 @@ Materialet avslutas med ett antal kapitel för olika problemområden (säga nej,
 
 Materialet är översatt och anpassat till svenska förhållanden av TH med tillstånd av författaren och CCI. I samband med anpassningen av översättningen till I-KBT-moduler i plattformen `r xiterapi` modifierade och utökade TH och PT materialet. Detta gjordes med det dubbla syftet att förenkla administrationen av materialet via internet samt att komplettera det med inslag som TH och PT ansåg saknades i originalmaterialet.
 
-En mycket inspirerande faktor när det engelska materialet anpassades och utvecklades till programmet *Respekt i kvadrat* var det aktuella forskningsläget kring exponering [se bland annat @Sewart2019; @Knowles2019; @Craske2008; @DeCastella2015; @Gross2003, som alla lyfts i tidigare stycken]. TH och PT bedömde det som en central komponent att deltagarna så tidigt som möjligt, och så regelbundet som möjligt, tog aktiva steg för att bryta sina undvikanden. Från och med modul 3 och framåt ombedes deltagarna till att närma sig aversiva stimuli (och utvärdera sina reaktioner) på olika sätt. 
+En mycket inspirerande faktor när det engelska materialet anpassades och utvecklades till programmet *Respekt i kvadrat* var det aktuella forskningsläget kring exponering [se bland annat @Sewart2019; @Knowles2019; @Craske2008; @DeCastella2015; @Gross2003]. TH och PT bedömde det som en central komponent att deltagarna så tidigt som möjligt, och så regelbundet som möjligt, tog aktiva steg för att bryta sina undvikanden. Från och med modul 3 och framåt ombads deltagarna att närma sig aversiva stimuli (och utvärdera sina reaktioner) på olika sätt. I linje med forskning om att acceptera och tillåta sina känslor [@Hayes1996; @Hayes2004a; @Luoma2007] lades även tyngd vid att målet med att bryta undvikandet inte nödvändigtvis var att bli av med eller minska de aversiva känslorna, utan snarare att få ett nytt förhållningssätt till dem. Överrensstämmande med forskning kring *fixed-* samt *growth mindset* [@Dweck1995; @Schroder2016; @Schroder2015; @DeCastella2015] och vikten av att tro att en förändring går att få till utformades även interventionens innehåll på ett *growth mindset*-förespråkande sätt. 
 
-<!-- här kommmer ytterligare ett kort avsnitt föras in
+
+
+<!-- 
+här kommmer ytterligare ett kort avsnitt föras in
 
 Ångest & avslappning kan inte finnas samtidigt. Ökning av fokus på avslappning i behandlingsprogrammet.
-
-
 -->
 
-Dessa anpassningar tog sig i form av: text och illustrationer samt länkar till fördjupningsmaterial; videofilmer med konversationer och rollspel mellan PT och TH; för programmet framtagna videofilmer och ljudfiler med avslappningsövningar; inbäddade externa videoklipp och ljudfiler samt; ett stort antal nya interaktiva övningar, bland annat utvärderingsformulär av varje veckas innehåll, veckovis uppföljning av konstruktiv självhävdelse samt övningar för återfallsprevention och vidmakthållande av behandlingseffekter.
-
-
-
-Se tabell \@ref(tab:intervention) för en översiktlig genomgång av innehållet i modulerna i interventionen *Respekt i kvadrat*.
+Anpassningarna och tilläggen tog sig bland annat form av: text och illustrationer samt länkar till fördjupningsmaterial; videofilmer med konversationer och rollspel mellan PT och TH; för programmet framtagna videofilmer och ljudfiler med avslappningsövningar; inbäddade externa videoklipp och ljudfiler samt; ett stort antal nya interaktiva övningar, bland annat utvärderingsformulär av varje veckas innehåll, veckovis uppföljning av konstruktiv självhävdelse samt övningar för återfallsprevention och vidmakthållande av behandlingseffekter. Se även tabell \@ref(tab:intervention) för en översiktlig genomgång av innehållet i modulerna i interventionen *Respekt i kvadrat*.
 
 <!--
 
@@ -1093,7 +1086,8 @@ se tabell \@ref(tab:descriptives)
 
 (ref:descriptives) Deskriptiva mått för primära och sekundärt beroende variabler liksom oberoende variabler vid studiens start.
 
-``` {r descriptives, fig.cap='(ref:descriptives)', fig.align="center", cache = F, eval=T}
+
+``` {r descriptives, fig.cap='(ref:descriptives)', fig.align="center", cache = F, eval = F}
 
 ### Descriptives
 
@@ -2097,7 +2091,13 @@ x å andra sidan vad våra resultat visar på (?)
 + a priori powerberäkning
 -->
 
-I denna studie placerades en tredjedel av deltagarna på en väntlista. En risk med användandet av väntlista är att de deltagare som tilldelas väntlistan försämras under behandlingens gång. I en meta-analys från 2017 konstaterade @Rozental2017a att över 15% av de som tilldelas betingelsen väntlista i I-KBT-studier försämras, jämfört med cirka 6% av de som genomgick behandlingen. Detta kan även leda till att de effekter som upptäcks snarare gör det på grund av försämrandet hos väntlista-betingelsen snarare än förbättrandet hos de som betingats till behandlingen. I den aktuella studien försämrades ingen deltagare signifikant från för- till eftermätningen. Varken i väntlistan eller i någon av de andra betingelserna. Det går ändå att diskutera om användandet av väntlista som kontroll är ett klokt beslut. Användandet av väntlista höjer allt som oftast oddsen för att hitta en signifikant effekt jämfört med andra mer aktiva betingelser. Troligen hade det varit bättre att tilldela de som fick väntlistebetingelsen en aktiv betingelse så som tillgång till ett diskussionsforum.
+I denna studie placerades en tredjedel av deltagarna på en väntlista. En risk med användandet av väntlista är att de deltagare som tilldelas väntlistan försämras under behandlingens gång. I en meta-analys från 2017 konstaterade @Rozental2017a att över 15% av de som tilldelas betingelsen väntlista i I-KBT-studier försämras, jämfört med cirka 6% av de som genomgick behandlingen. Detta kan även leda till att de effekter som upptäcks snarare gör det på grund av försämrandet hos väntlista-betingelsen snarare än förbättrandet hos de som betingats till behandlingen. I den aktuella studien försämrades ingen deltagare signifikant från för- till eftermätningen. Varken i väntlistan eller i någon av de andra betingelserna. Det går ändå att diskutera om användandet av väntlista som kontroll är ett klokt beslut. Användandet av väntlista höjer allt som oftast oddsen för att hitta en signifikant effekt jämfört med att tilldela kontrollgruppen mer aktiva betingelser [@Mohr2009]. Troligen hade det varit bättre att tilldela de som fick väntlistebetingelsen en aktiv betingelse så som tillgång till ett diskussionsforum. 
+
+<!-- stycket härunder behöver jobbas med men är ett försök till att inkorporera Pers kommentar nedan-->
+
+<!--
+Å andra sidan är väntelista effektivt för att korrigera mot händelser i världen som kan påverka studiens deltagare och därmed studiens resultat. Under studiens gång spred sig viruset covid-19 i Sverige och över världen. Nästintill alla människor påverkades på något sätt av detta. Antingen i dagliga rutiner, i fysiskt och psykiskt mående eller i både och. Hade vår studies kontrollgrupp haft en annan betingelse än väntlista hade det varit svårt att konstatera vad i deras resultat som var påverkat av betingelsen i fråga, och vad i resultatet som berodde på covid-19s ankomst i Sverige. I och med att vår studies kontrollgrupp var betingade till väntlista är det enklare att ta höjd för detta. 
+-->
 
 
 <!-- [Pers kommentar] 
