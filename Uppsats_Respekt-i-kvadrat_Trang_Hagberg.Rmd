@@ -1252,8 +1252,7 @@ descriptives.col.out <- cbind.data.frame(
     paste(xg3, ", n = ", length(r2.long.data[lg3t1, 2]), sep = "")
   ), each = 8),
   "Mättillfälle" = rep(c(
-    rep(c("Förmätning"), times = 2), rep(c("Mittenmätning"), times = 3), rep(c("Eftermätning"), times =
-                                                                               3)
+    rep(c("Förmätning"), times = 2), rep(c("Mittenmätning"), times = 3), rep(c("Eftermätning"), times = 3)
   ), times = 3),
   " " = rep(c(
     rep(c("M", "SD"), times = 2),
@@ -1314,7 +1313,7 @@ scatterplotMatrix(~ aaas_ad + aaas_ag + rathus|time, data = r2.long.data[lg3,],
 
 ## Klinisk signifikans (arbeta in detta i primära och sekundära frågeställningen?)
 
-``` {r jtrci, include = FALSE, cache = T}
+``` {r jtrci, include = F, cache = T}
 
 jt_rownames <-
   factor(c(
