@@ -491,7 +491,7 @@ knitr::include_graphics("canvas-konstruktiv-slinga-X.pdf")
 
 Forskning på *assertiveness* övergavs i stort sett efter 1970-talet i och med psykatrins fokus på syndromala kategoriseringar av psykisk ohälsa. *Assertiveness* föll tillsammans med andra transdiagnostiska begrepp i glömska till förmån för diagnosspecifika interventioner och insatser. 
 
-Fram tills att *assertiveness* föll i glömska konstaterades dock flertalet intressanta fynd. @Wolpe1966 samt @Orenstein1975 upptäckte att det är oförenligt att uppleva ångest och att bete sig *assertive*. @Barrett1977 visade på att *assertiveness* hos barn korrelerade med uppvisande av prosociala beteenden och @Buell1981 följde upp det med en effektiv metod för att träna *assertiveness* hos just barn. Hos vuxna fastställdes det bland annat att god *assertiveness*: förbättrar ens interpersonella relationer [@Kincaid1978] och gör att man bemöter förhinder och motgångar med adaptiva beteenden [@Tanck1979]. [@Rakos1979] visade på att *assertiveness* kunde tränas genom självhjälpsmaterial och [@Rich1976] sammanställde flertalet metoder (samt respektive metods för- och nackdelar) som använts för att träna *assertiveness*.
+Fram tills att *assertiveness* föll i glömska konstaterades dock flertalet intressanta fynd. @Wolpe1966 samt @Orenstein1975 upptäckte att det är oförenligt att uppleva ångest och att bete sig *assertive*. @Barrett1977 visade på att *assertiveness* hos barn korrelerade med uppvisande av prosociala beteenden och @Buell1981 följde upp det med en effektiv metod för att träna *assertiveness* hos just barn. Hos vuxna fastställdes det bland annat att god *assertiveness*: förbättrar ens interpersonella relationer [@Kincaid1978] och gör att man bemöter förhinder och motgångar med adaptiva beteenden [@Tanck1979]. @Rakos1979 visade på att *assertiveness* kunde tränas genom självhjälpsmaterial och @Rich1976 sammanställde flertalet metoder (samt respektive metods för- och nackdelar) som använts för att träna *assertiveness*.
 
 Under de senaste åren har intresset för självhävdelse ökat något igen. @Vagos2019 konstaterar att självupplevd grad av psykiskt lidande korrelerar negativt med grad av konstruktiv självhävdelse, i linje med rationalen för träning i *assertiveness* som den presenterades av @Wolpe1966. @Amy2015 visar en negativ korrelation mellan att uppleva social ångest och konstruktiv självhävdelse. Deras slutsats är att man kan öka oddsen för konstruktivt självhävdande beteenden för en person antingen genom att i behandling exponera för antecedenterna för social ångest och/eller att arbeta med hur personen förhåller sig till själva ångesten. Den senare toleranskomponenten kan ses som ett komplement till den habitueringsrational som varit förhärskande inom KBT fram till sekelskiftet <!-- källa? -->.
 
@@ -506,7 +506,7 @@ Evidensen för beteendeterapi och KBT för syndromala och icke-syndromala psykol
 @Hofmann2012 är en översikt av meta-analyser som visar att KBT alltjämt är en av de mest effektiva terapiformerna. I deras översikt visade sig KBT effektivt för att motverka bland annat trauma- och stressrelaterade symtom, liksom depressiva och ångestrelaterade syndrom. Litteraturen stödjer att KBT har god effekt för de syndrom som @Speed2018a associerar med brister i konstruktiv självhävdelse.
 
 ## Några saker att förhålla sig till
-*ovan rubrik är temporär och bör få ett bättre namn, detsamma går för följande underrubriker*
+*ovan rubrik är temporär och bör få ett bättre namn, detsamma gäller följande underrubriker*
 
 ### En kontextuell och neurovetenskaplig inramning av \'kognitioner\'
 
@@ -549,7 +549,6 @@ här bör ytterligare ett kort avsnitt föras in om att ångest & avslappning ka
 
 Förslagsvis använda L-G Öst kring TA plus fiska fram några som pratar om att avslappning & ångest inte går ihop samt Wolpe och att assertiveness och ångest inte går ihop
 -->
-
 
 <!-- Violating expectancies -->
 
@@ -898,8 +897,6 @@ Materialet är översatt och anpassat till svenska förhållanden av TH med till
 
 En mycket inspirerande faktor när det engelska materialet anpassades och utvecklades till programmet *Respekt i kvadrat* var det aktuella forskningsläget kring exponering [se bland annat @Sewart2019; @Knowles2019; @Craske2008; @DeCastella2015; @Gross2003]. TH och PT bedömde det som en central komponent att deltagarna så tidigt som möjligt, och så regelbundet som möjligt, tog aktiva steg för att bryta sina undvikanden. Från och med modul 3 och framåt ombads deltagarna att närma sig aversiva stimuli (och utvärdera sina reaktioner) på olika sätt. I linje med forskning om att acceptera och tillåta sina känslor [@Hayes1996; @Hayes2004a; @Luoma2007] lades även tyngd vid att målet med att bryta undvikandet inte nödvändigtvis var att bli av med eller minska de aversiva känslorna, utan snarare att få ett nytt förhållningssätt till dem. Överrensstämmande med forskning kring *fixed-* samt *growth mindset* [@Dweck1995; @Schroder2016; @Schroder2015; @DeCastella2015] och vikten av att tro att en förändring går att få till utformades även interventionens innehåll på ett *growth mindset*-förespråkande sätt. 
 
-
-
 <!--
 här bör ytterligare ett kort avsnitt föras in om valet att fokusera på avslappning i behandlingsprogrammet.
 -->
@@ -1061,9 +1058,9 @@ Vi analyserade insamlade förmätningsvärden för att kontrollera om randomiser
 
 <!-- OBS! Vi fann en signifikant skillnad i könsfördelningen mellan grupperna. Vi har betydligt fler män i grupp 1 än övriga. -->
 
-<!-- OBS! Kom ihåg bortfallsanalys (se exempeluppsats 2) -->
-
 ### Bortfallsanalys
+
+<!-- OBS! Kom ihåg bortfallsanalys (se exempeluppsats 2) -->
 
 ### Analys av huvudeffekter och interaktionseffekter
 
@@ -2088,10 +2085,7 @@ Cuijpers, P., & Cristea, I. A. (2016). How to prove that your therapy is effecti
 MEN!! Sedan försvara er med att en väntelista ändå har en hel del poänger så som att korrigera för extrema händelser i omvärlden - VILKET JU CORONAN VERKLIGEN ÄR!
 -->
 
-
-*Detta stycke behöver kontrolleras så att det fortfarande stämmer när vi avslutat insamling av eftermätningen*
-
-<!--
+!--
 - Ingen uppföljningsmätning av deltagarnas mående, dvs svårt att veta hur ser ut över tid - tenderar att öka över tid, särskilt vid KBT [@Bandelow2018] som källa!
 
 -->
