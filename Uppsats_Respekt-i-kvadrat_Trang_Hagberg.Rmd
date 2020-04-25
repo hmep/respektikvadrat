@@ -745,7 +745,7 @@ De `r length(r2.wide.data$subject)` deltagare vars data används i den här stud
 
 (ref:dem) Demografisk data för deltagarna, redovisad per grupp.
 
-```{r demdata, out.width="100%", tab.align="center", cache = F,as.is=T}
+```{r demdata, out.width="100%", tab.align="center", cache = F}
 
 svkable(demdata.tabell, caption = "(ref:dem)", linesep = "", align="ccc") %>%
   kable_styling(full_width = F) %>%
@@ -1677,7 +1677,12 @@ chisq.test(sociodemografisk.data$group, sociodemografisk.data$Demografi.Kon, cor
 # # Inga signifikanta = inga skillnader mellan grupperna
 
 ```
+
 ```{r analyser, dpi=196,cache=T}
+
+# The marginal R-squared considers only the variance of the fixed effects, while the conditional R-squared takes both the fixed and random effects into account.
+# 
+# The p-value is a simple approximation, based on the t-statistics and using the normal distribution function. A more precise p-value can be computed using p.val = "kr". In this case, which only applies to linear mixed models, the computation of p-values is based on conditional F-tests with Kenward-Roger approximation for the degrees of freedom (using the using the pbkrtest-package). Note that here the computation is more time consuming and thus not used as default. You can also display the approximated degrees of freedom with show.df.
 
 library(lme4)
 library(ggeffects)
@@ -1686,12 +1691,23 @@ theme_set(theme_classic())
 #library(glmmTMB)
 #+ theme_classic() + theme(legend.position = "none")
 
+labradorer <- c(
+    xg1,
+    xg2,
+    xdur,
+    xpost,
+    paste(xg1, " : ", xdur,sep=""),
+    paste(xg2, " : ", xdur,sep=""),
+    paste(xg1, " : ", xpost,sep=""),
+    paste(xg2, " : ", xpost,sep="")
+  )
+
 ### 
 
 aaas_ad.interaction <-
   lmer(aaas_ad ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
 
-aaas_ad.estimatplot <- plot_model(aaas_ad.interaction,show.values=T,show.p=T,value.offset = 0.35)
+aaas_ad.estimatplot <- plot_model(aaas_ad.interaction,show.values=T,show.p=T,value.offset = 0.35,axis.labels = rev(labradorer),wrap.labels=22)
 
 #plot_model(aaas_ad.interaction, type="emm", terms=c("time","group")) # BRA!
 aaas_ad.prediktionsplot <- plot(ggpredict(aaas_ad.interaction, terms = c("time","group")), connect.lines = TRUE)
@@ -1705,7 +1721,7 @@ aaas_ad.diagnostik <- plot_model(aaas_ad.interaction, type="diag")
 aaas_ag.interaction <-
   lmer(aaas_ag ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
 
-aaas_ag.estimatplot <- plot_model(aaas_ag.interaction,show.values=T,show.p=T,value.offset = 0.35)
+aaas_ag.estimatplot <- plot_model(aaas_ag.interaction,show.values=T,show.p=T,value.offset = 0.35,axis.labels = rev(labradorer),wrap.labels=22)
 
 #plot_model(aaas_ag.interaction, type="emm", terms=c("time","group")) # BRA!
 aaas_ag.prediktionsplot <- plot(ggpredict(aaas_ag.interaction, terms = c("time","group")), connect.lines = TRUE)
@@ -1719,7 +1735,7 @@ aaas_ag.diagnostik <- plot_model(aaas_ag.interaction, type="diag")
 rathus.interaction <-
   lmer(rathus ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
 
-rathus.estimatplot <- plot_model(rathus.interaction,show.values=T,show.p=T,value.offset = 0.35)
+rathus.estimatplot <- plot_model(rathus.interaction,show.values=T,show.p=T,value.offset = 0.35,axis.labels = rev(labradorer),wrap.labels=22)
 
 #plot_model(aaas_ag.interaction, type="emm", terms=c("time","group")) # BRA!
 rathus.prediktionsplot <- plot(ggpredict(rathus.interaction, terms = c("time","group")), connect.lines = TRUE)
@@ -1733,7 +1749,7 @@ rathus.diagnostik <- plot_model(rathus.interaction, type="diag")
 lsas_sum.interaction <-
   lmer(lsas_sum ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
 
-lsas_sum.estimatplot <- plot_model(lsas_sum.interaction,show.values=T,show.p=T,value.offset = 0.35)
+lsas_sum.estimatplot <- plot_model(lsas_sum.interaction,show.values=T,show.p=T,value.offset = 0.35,axis.labels = rev(labradorer),wrap.labels=22)
 
 #plot_model(aaas_ag.interaction, type="emm", terms=c("time","group")) # BRA!
 lsas_sum.prediktionsplot <- plot(ggpredict(lsas_sum.interaction, terms = c("time","group")), connect.lines = TRUE)
@@ -1747,7 +1763,7 @@ lsas_sum.diagnostik <- plot_model(lsas_sum.interaction, type="diag")
 phq_sum.interaction <-
   lmer(phq_sum ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
 
-phq_sum.estimatplot <- plot_model(phq_sum.interaction,show.values=T,show.p=T,value.offset = 0.35)
+phq_sum.estimatplot <- plot_model(phq_sum.interaction,show.values=T,show.p=T,value.offset = 0.35,axis.labels = rev(labradorer),wrap.labels=22)
 
 #plot_model(aaas_ag.interaction, type="emm", terms=c("time","group")) # BRA!
 phq_sum.prediktionsplot <- plot(ggpredict(phq_sum.interaction, terms = c("time","group")), connect.lines = TRUE)
@@ -1761,7 +1777,7 @@ phq_sum.diagnostik <- plot_model(phq_sum.interaction, type="diag")
 gad_sum.interaction <-
   lmer(gad_sum ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
 
-gad_sum.estimatplot <- plot_model(gad_sum.interaction,show.values=T,show.p=T,value.offset = 0.35)
+gad_sum.estimatplot <- plot_model(gad_sum.interaction,show.values=T,show.p=T,value.offset = 0.35,axis.labels = rev(labradorer),wrap.labels=22)
 
 #plot_model(aaas_ag.interaction, type="emm", terms=c("time","group")) # BRA!
 gad_sum.prediktionsplot <- plot(ggpredict(gad_sum.interaction, terms = c("time","group")), connect.lines = TRUE)
@@ -1775,7 +1791,7 @@ gad_sum.diagnostik <- plot_model(gad_sum.interaction, type="diag")
 well.interaction <-
   lmer(well ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
 
-well.estimatplot <- plot_model(well.interaction,show.values=T,show.p=T,value.offset = 0.35)
+well.estimatplot <- plot_model(well.interaction,show.values=T,show.p=T,value.offset = 0.35,axis.labels = rev(labradorer),wrap.labels=22)
 
 #plot_model(aaas_ag.interaction, type="emm", terms=c("time","group")) # BRA!
 well.prediktionsplot <- plot(ggpredict(well.interaction, terms = c("time","group")), connect.lines = TRUE)
@@ -1783,6 +1799,12 @@ well.prediktionsplot <- plot(ggpredict(well.interaction, terms = c("time","group
 well.emm <- emmeans(well.interaction, ~ time | group, adjust="bonferroni")
 well.diagnostik <- plot_model(well.interaction, type="diag")
 # Allt ser ok ut!
+
+```
+
+```{r jadu,results='asis'}
+
+#tab_model(well.interaction,p.val = "kr", show.df = TRUE)
 
 ```
 
@@ -1799,17 +1821,7 @@ stargazer::stargazer(
   single.row = F,
   model.numbers = F,
   header = F,
-  covariate.labels = c(
-    "Intercept",
-    xg1,
-    xg2,
-    xdur,
-    xpost,
-    paste(xg1, "*", xdur),
-    paste(xg2, "*", xdur),
-    paste(xg1, "*", xpost),
-    paste(xg2, "*", xpost)
-  )
+  covariate.labels = c("Intercept",labradorer)
 )
 
 # https://cran.r-project.org/web/packages/stargazer/vignettes/stargazer.pdf
@@ -1817,35 +1829,52 @@ stargazer::stargazer(
 ```
 
 
-```{r analysplottar, dpi=196, eval=T,cache=T}
+```{r analysplottar, dpi=196, eval=T,cache=T,fig.height=14,fig.width=9}
 
-aaas_ad.estimatplot
-aaas_ag.estimatplot
-rathus.estimatplot
-lsas_sum.estimatplot
-gad_sum.estimatplot
-phq_sum.estimatplot
-well.estimatplot
+#plot_grid(list(p1, p2, p3, p4), tags = TRUE)
+# + theme(legend.position = "none")
 
-aaas_ad.prediktionsplot
-aaas_ag.prediktionsplot
-rathus.prediktionsplot
-lsas_sum.prediktionsplot
-gad_sum.prediktionsplot
-phq_sum.prediktionsplot
-well.prediktionsplot
+library(gridExtra)
+theme_set(theme_classic())
 
-aaas_ad.emm
-aaas_ag.emm
-rathus.emm
-lsas_sum.emm
-gad_sum.emm
-phq_sum.emm
-well.emm
+grid.arrange(
+  aaas_ad.estimatplot,
+  aaas_ag.estimatplot,
+  rathus.estimatplot,
+  lsas_sum.estimatplot,
+  gad_sum.estimatplot,
+  phq_sum.estimatplot,
+  well.estimatplot,
+  ncol = 2
+)
 
-# The marginal R-squared considers only the variance of the fixed effects, while the conditional R-squared takes both the fixed and random effects into account.
-# 
-# The p-value is a simple approximation, based on the t-statistics and using the normal distribution function. A more precise p-value can be computed using p.val = "kr". In this case, which only applies to linear mixed models, the computation of p-values is based on conditional F-tests with Kenward-Roger approximation for the degrees of freedom (using the using the pbkrtest-package). Note that here the computation is more time consuming and thus not used as default. You can also display the approximated degrees of freedom with show.df.
+grid.arrange(
+  aaas_ad.prediktionsplot + theme(legend.position = "none"),
+  aaas_ag.prediktionsplot + theme(legend.position = "none"),
+  rathus.prediktionsplot + theme(legend.position = "none"),
+  lsas_sum.prediktionsplot + theme(legend.position = "none"),
+  gad_sum.prediktionsplot + theme(legend.position = "none"),
+  phq_sum.prediktionsplot + theme(legend.position = "none"),
+  well.prediktionsplot + theme(legend.position = "none"),
+  ncol = 2
+)
+
+```
+
+### Emmeans
+
+ordningsföljd: aaas_ad, aaas_ag, rathus, lsas_sum, gad_sum, phq_sum, well
+
+```{r emmeans,results="asis"}
+
+svkable(aaas_ad.emm,linesep="", caption = 'AAA-S Adaptive')
+svkable(aaas_ag.emm,linesep="", caption = 'AAA-S Aggressive')
+svkable(rathus.emm,linesep="", caption = 'Rathus')
+svkable(lsas_sum.emm,linesep="", caption = 'LSAS')
+svkable(gad_sum.emm,linesep="", caption = 'GAD')
+svkable(phq_sum.emm,linesep="", caption = 'PHQ')
+svkable(well.emm,linesep="", caption = 'Välmåendeformuläret')
+
 ```
 
 
