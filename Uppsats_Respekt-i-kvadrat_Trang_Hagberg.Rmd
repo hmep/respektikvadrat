@@ -51,8 +51,11 @@ set.seed(42) # Seed for random number generation
 
 options(contrasts=c('contr.treatment','contr.poly'))
 
+library(devtools)
+#devtools::install_github("strengejacke/sjPlot")
 #devtools::install_github("crsh/papaja@devel",force=T)
 #devtools::install_github("AWKruijt/JT-RCI",force=T)
+#install_github("markwestcott34/stargazer-booktabs")
 
 library("papaja")
 library("broom.mixed")
@@ -108,16 +111,20 @@ xpost = "Eftermätning"
 # Put the exported Excel files in the folder where this Rmd script resides
 # and edit the lines below
 
-# From the tab "Frågeformulär"
+# From tab Frågeformulär
 raw_excel = "Respekt_surveys_200424_180943.xlsx"
 
-# From the tab "Konversationer & Moduler"
+# From tab Konversationer & Moduler
 raw_excel_conversations = "Respekt_conversations_200424_181124.xlsx"
+
+# From tab Frågeformulär" / demografi
+raw_excel_sociodemographics <- "Respekt_survey453761_200424.xlsx"
 ##################################################################################
 
 # Import data from Excel file (requires "readxl")
 r2.raw.data <- read_excel(raw_excel)
 r2.raw_conversations.data <- read_excel(raw_excel_conversations)
+r2.raw_excel_sociodemographics.data <- read_excel(raw_excel_sociodemographics)
 
 # Remove cases that should be excluded (they don't meet the inclusion criteria but was erroneously included)
 r2.raw.data <- r2.raw.data[-c(13,48,52,97,158),]
@@ -224,12 +231,14 @@ r2.wide.data[g3key,c(31:44)] <- r2.wide.data[g3key,c(45:58)]
 # Merge files from iTerapi
 # by "pre_subject" and "Användare" respectively
 r2.raw.data.merged <- merge(r2.wide.data,r2.raw_conversations.data,by.x="pre_subject",by.y="Användare")
+r2.raw.data.merged <- merge(r2.raw.data.merged,r2.raw_excel_sociodemographics.data,by.x="pre_subject",by.y="Användarnamn")
+
 names(r2.raw.data.merged)[names(r2.raw.data.merged) == 'Antal skickade meddelanden'] <- 'messages_sent'
 names(r2.raw.data.merged)[names(r2.raw.data.merged) == 'Antal tilldelade moduler'] <- 'modules_assigned'
 names(r2.raw.data.merged)[names(r2.raw.data.merged) == 'Antal öppnade moduler'] <- 'modules_opened'
 
 # Strip out unwanted columns
-r2.wide.data <- r2.raw.data.merged[,c(1:44,60:62)] # Keep columns that we want
+r2.wide.data <- r2.raw.data.merged[,c(1:44,60:62,70:73,75,77,80:83)] # Keep columns that we want
 
 # Anonymise, simplify and clean up data
 r2.wide.data$subject <- factor(c(1:length(r2.wide.data[,1]))) # Add anonymous subject IDs
@@ -254,19 +263,19 @@ r2.wide.data$therapist <-
   ),
   levels = c(1,2,3),
   labels = c("A","B","N")) # Add therapist shorthands
-r2.wide.data <- r2.wide.data[,c(48:50,1:47)] # Move categorical variables to the beginning
+r2.wide.data <- r2.wide.data[,c(58:60,1:57)] # Move categorical variables to the beginning
 r2.wide.data <- r2.wide.data[,-c(4:5)] # Drop 
 
 # Save safe data frame as a single object to the file system
 saveRDS(r2.wide.data,file="r2.wide.data.RDS")
 
 # Delete Excel file and clean up environment
-prompt.keep <-
-  readline(prompt = "Type an uppercase 'K' key to keep the Excel file (or press any other key to delete it): ")
-if (prompt.keep == "K") {
-} else {
-  file.remove(raw_excel)
-}
+# prompt.keep <-
+#   readline(prompt = "Type an uppercase 'K' key to keep the Excel file (or press any other key to delete it): ")
+# if (prompt.keep == "K") {
+# } else {
+#   file.remove(raw_excel)
+# }
 #rm(list = ls())
 
 ```
@@ -275,6 +284,11 @@ if (prompt.keep == "K") {
 
 # Get wide data
 r2.wide.data <- readRDS("r2.wide.data.RDS")
+
+# Subsetting keys
+wg1 <- grepl(xg1, r2.wide.data$group)
+wg2 <- grepl(xg2, r2.wide.data$group)
+wg3 <- grepl(xg3, r2.wide.data$group)
 
 n = length(r2.wide.data[,1])
 t = 3 # 2do: change to 4 with final data
@@ -362,10 +376,7 @@ r2.long.data <- data.frame(
     r2.wide.data$dur_well,
     r2.wide.data$post_well#,
     #r2.wide.data$fu_well # 2do: enable with final data
-  ),
-  messages_sent = as.factor(rep(r2.wide.data$messages_sent, times = t)),
-  modules_assigned = as.factor(rep(r2.wide.data$modules_assigned, times = t)),
-  modules_opened = as.factor(rep(r2.wide.data$modules_opened, times = t))
+  )
 )
 
 # Subsetting keys
@@ -404,7 +415,6 @@ r2.long.data[lg3,c(18:20)] <- NA
 ll1 = length(r2.long.data[lg1t1,1])
 ll2 = length(r2.long.data[lg2t1,1])
 ll3 = length(r2.long.data[lg3t1,1])
-
 
 ```
 
@@ -661,186 +671,92 @@ De personer som skattade 15 eller mer på självskattningsformuläret PHQ-9 exkl
 
 ```{r def demdata, cache = F}
 
-x1 <-
+xdemocat <-
   c(
-    "Kvinna",
-    "M",
-    "SD",
-    "Singel",
-    "Sambo",
-    "Gift",
-    "Annat",
-    "Folkskola/grundskola",
-    "Gymnasium",
-    "Yrkesutbildning",
-    "Högre utbildning (pågående)",
-    "Högre utbildning (avslutad)",
-    "Annat",
-    "Studerande",
-    "Arbetande",
-    "Arbetslös",
-    "Föräldraledig",
-    "Pensionär",
-    "Sjukskriven",
-    "Annat",
-    "Ja, tidigare",
-    "Ja, pågående",
-    "Nej",
-    "Ja",
-    "Nej"
+  "M (SD)",
+  "Kvinna",
+  "Singel",
+  "Sambo",
+  "Gift",
+  "Annat",
+  "Annan utbildning",
+  "Folkskola/grundskola",
+  "Gymnasium",
+  "Yrkesutbildning",
+  "Universitet/högskola (pågående)",
+  "Universitet/högskola (avslutad)",
+  "Annan sysselsättning",
+  "Studerande",
+  "Arbetande",
+  "Arbetslös",
+  "Pensionär",
+  "Föräldraledig",
+  "Sjukskriven",
+  "Nej",
+  "Ja, tidigare",
+  "Ja, pågående",
+  "Nej",
+  "Ja"
   )
 
-#Data för "Utan stöd"
-x2 <-
-  c(
-    79.1,
-    41.2,
-    8.8,
-    35.8,
-    25.4,
-    28.4,
-    10.4,
-    0,
-    9.0,
-    4.5,
-    15.0,
-    70.0,
-    1.5,
-    11.9,
-    76.1,
-    4.5,
-    0,
-    0,
-    1.5,
-    6.0,
-    9.0,
-    21.0,
-    70.0,
-    59.7,
-    40.3
-  )
+xdemodata <- rbind(
+  prop.table(table(r2.wide.data$Demografi.Kon,r2.wide.data$group),2),
+  prop.table(table(r2.wide.data$Demografi.Civilstand,r2.wide.data$group),2),
+  prop.table(table(r2.wide.data$Demografi.Utbildning,r2.wide.data$group),2),
+  prop.table(table(r2.wide.data$Demografi.Sysselsattning,r2.wide.data$group),2),
+  prop.table(table(r2.wide.data$Demografi.Psykofarmaka,r2.wide.data$group),2),
+  prop.table(table(r2.wide.data$Demografi.PsykoBehandling,r2.wide.data$group),2),
+  prop.table(table(r2.wide.data$Demografi.1,r2.wide.data$group),2),
+  prop.table(table(r2.wide.data$Demografi.2,r2.wide.data$group),2),
+  prop.table(table(r2.wide.data$Demografi.3,r2.wide.data$group),2)
+)
+  
+xdemodata <- xdemodata[-c(1,25:27),]
 
-#Data för "Med stöd"
-x3 <-
-  c(
-    92.8,
-    43.2,
-    9.3,
-    27.6,
-    17.4,
-    49.3,
-    5.7,
-    0,
-    7.2,
-    7.2,
-    10.1,
-    73.9,
-    1.5,
-    5.6,
-    76.9,
-    0,
-    3.0,
-    4.3,
-    3.0,
-    7.2,
-    17.4,
-    16.0,
-    66.6,
-    62.3,
-    37.7
-  )
+xdemodata.ext <- rbind(
+  cbind(
+    paste(round(mean(r2.wide.data[wg1, 50]), 2), " (", round(sd(r2.wide.data[wg1, 50]), 2),
+          ")",
+          sep = ""),
+    paste(round(mean(r2.wide.data[wg2, 50]), 2), " (", round(sd(r2.wide.data[wg2, 50]), 2),
+          ")",
+          sep = ""),
+    paste(round(mean(r2.wide.data[wg3, 50]), 2), " (", round(sd(r2.wide.data[wg3, 50]), 2),
+          ")",
+          sep = "")
+  ),
+  round(xdemodata * 100,2)
+)
 
-#Data för väntlista
-x4 <-
-  c(
-    91.2,
-    41.1,
-    8.8,
-    36.8,
-    36.8,
-    19.1,
-    7.3,
-    1.5,
-    10.3,
-    7.5,
-    7.5,
-    70.2,
-    3,
-    7.4,
-    73.5,
-    4.4,
-    0,
-    0,
-    5.9,
-    8.8,
-    7.4,
-    16.2,
-    76.4,
-    61.8,
-    38.2
-  )
+xdemodata.rot <- t(xdemodata.ext)
 
-#Data för totalgruppen
-x5 <-
-  c(
-    87.8,
-    41.2,
-    8.8,
-    33.3,
-    20.6,
-    38.2,
-    7.9,
-    0.5,
-    8.8,
-    6.4,
-    10.7,
-    71.6,
-    2.0,
-    8.3,
-    75.5,
-    2.9,
-    1.0,
-    1.5,
-    3.4,
-    7.4,
-    11.4,
-    17.6,
-    71.0,
-    61.3,
-    38.7
-  )
+colnames(xdemodata.rot) <- xdemocat
 
-demdata.tabell <- cbind.data.frame(x1,x4,x2,x3,x5)
+xdemodata.rot[,c(3:5)] <- sapply(xdemodata.rot[,c(3:5)], as.numeric)
 
-colnames(demdata.tabell) <-
-  c("",
-    paste(xg1, " (n = ", ll1, ")", sep = ""),
-    paste(xg2, " (n = ", ll2, ")", sep = ""),
-    paste(xg3, " (n = ", ll3, ")", sep = ""),
-    paste("Totalt (n = ", length(r2.long.data[lt1,1]), ")", sep = "")
-  )
+demdata.tabell <- t(xdemodata.rot)
 
 ```
 
 De `r length(r2.wide.data$subject)` deltagare vars data används i den här studien var mellan 20 och 65 år gamla med en medelålder på 41,8 år (standardavvikelse 8,8). En betydande majoritet (87,8&nbsp;%) identifierade sig som kvinnor, övriga som män. Knappt tre fjärdedelar av deltagarna har avslutade universitets- eller högskoleutbildningar (71,6&nbsp;%) och tre fjärdedelar av deltagarna var vid behandlingens start arbetande (75,5&nbsp;%). Mer än hälften av deltagarna (61,3&nbsp;%) hade tidigare erfarenheter av psykologisk behandling. Av dessa hade majoriteten (64,8&nbsp;%) tidigare erfarenheter av KBT. Knappt en tredjedel av alla deltagare (29,0&nbsp;%) hade erfarenhet av psykofarmaka. Vid behandlingens start stod 17,6&nbsp;% på något slags psykofarmaka. Totalt 3,4&nbsp;% av deltagarna var vid behandlingsstart sjukskrivna. För att se de demografiska faktorernas fördelningar i respektive grupp, se tabell \@ref(tab:demdata).
 
-(ref:dem) Demografisk data hos deltagarna, redovisad per grupp samt för alla studiens deltagare.
+(ref:dem) Demografisk data för deltagarna, redovisad per grupp.
 
-```{r demdata, out.width="100%", tab.align="center", cache = F}
+```{r demdata, out.width="100%", tab.align="center", cache = F,as.is=T}
 
-svkable(demdata.tabell, caption = "(ref:dem)", linesep = "", align="lrrrr") %>%
+svkable(demdata.tabell, caption = "(ref:dem)", linesep = "", align="ccc") %>%
   kable_styling(full_width = F) %>%
-  column_spec(2, width = "4.75em") %>%
-  column_spec(3, width = "4.75em") %>%
-  column_spec(4, width = "4.75em") %>%
-  column_spec(5, width = "4.75em") %>%
-  pack_rows("Kön (%)", 1, 1, bold = F) %>%
-  pack_rows("Ålder (år)", 2, 3, bold = F) %>%
-  pack_rows("Civilstånd (%)", 4, 7, bold = F) %>%
-  pack_rows("Utbildning (%)", 8, 13, bold = F) %>%
-  pack_rows("Sysselsättning (%)", 14, 20, bold = F) %>%
-  pack_rows("Användning psykofarmaka (%)", 21, 23, bold = F) %>%
-  pack_rows("Tidigare psykologisk behandling (%)", 24, 25, bold = F)
+  column_spec(2, width = "6em") %>%
+  column_spec(3, width = "6em") %>%
+  column_spec(4, width = "6em") %>%
+  pack_rows("Ålder (år)", 1, 1, bold = F) %>%
+  pack_rows("Kön (%)", 2, 2, bold = F) %>%
+  pack_rows("Civilstånd (%)", 3, 6, bold = F) %>%
+  pack_rows("Utbildning (%)", 7, 12, bold = F) %>%
+  pack_rows("Sysselsättning (%)", 13, 19, bold = F) %>%
+  pack_rows("Användning psykofarmaka (%)", 20, 22, bold = F) %>%
+  pack_rows("Tidigare psykologisk behandling (%)", 23, 24, bold = F)# %>%
+  #row_spec(c(1,2,6,12,19,22), extra_latex_after = "\\midrule")
 
 ```
 
@@ -1643,7 +1559,7 @@ AAAS_ag.pre.post.jt.plot + theme(legend.position="none") + scale_color_manual(va
 #AAAS_ag.pre.post.DOWN.jt.plot + theme(legend.position="none")
 #AAAS_ag.pre.dur.DOWN.jt.plot + theme(legend.position="none")
 
-rathus.pre.post.jt.plot + theme(legend.position="none") + scale_color_manual(values=c(rep("white",times=4),"red"))
+rathus.pre.post.jt.plot + theme(legend.position="none") + scale_color_manual(values=c("white","white","white","red","white"))
 #rathus.pre.dur.jt.plot + theme(legend.position="none")
 
 # Tables
@@ -1756,237 +1672,177 @@ chisq.test(sociodemografisk.data$group, sociodemografisk.data$Demografi.Kon, cor
 # # Inga signifikanta = inga skillnader mellan grupperna
 
 ```
+```{r analyser, dpi=196,cache=T}
 
+library(lme4)
+library(ggeffects)
+library(sjPlot)
+theme_set(theme_classic())
+#library(glmmTMB)
+#+ theme_classic() + theme(legend.position = "none")
 
-```{r mixedlme, dpi=196}
+### 
 
-### AAA-S Adaptive
+aaas_ad.interaction <-
+  lmer(aaas_ad ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
 
-x <-
-  lme(
-    aaas_ad ~ group * time,
-    random = ~ time | subject,
-    data = r2.long.data,
-    na.action = na.omit,
-    method = "REML",
-    corr=corAR1()
-  )
+aaas_ad.estimatplot <- plot_model(aaas_ad.interaction,show.values=T,show.p=T,value.offset = 0.35)
 
-# Output 
-aaas_ad.lme.tidy <- tidy(x)
-#svkable()
-#summary()
+#plot_model(aaas_ad.interaction, type="emm", terms=c("time","group")) # BRA!
+aaas_ad.prediktionsplot <- plot(ggpredict(aaas_ad.interaction, terms = c("time","group")), connect.lines = TRUE)
 
-# Estimated Marginal Means / Least Square Means
-aaas_ad.lme.emm.time.group <- emmeans(x, ~ time | group, adjust="bonferroni")
-aaas_ad.lme.emm.time.group.tidy <- tidy(aaas_ad.lme.emm.time.group)
+aaas_ad.emm <- emmeans(aaas_ad.interaction, ~ time | group, adjust="bonferroni")
+aaas_ad.diagnostik <- plot_model(aaas_ad.interaction, type="diag")
+# Allt ser ok ut!
 
-aaas_ad.lme.emm.group.time <- emmeans(x, ~ group | time, adjust="bonferroni")
-aaas_ad.lme.emm.group.time.tidy <- tidy(aaas_ad.lme.emm.group.time)
+### 
 
-# Effect size estimation
-totSD <-sqrt(sum(as.numeric(VarCorr(x)[,2])))
-aaas_ad.lme.eff.time.group <- eff_size(aaas_ad.lme.emm.time.group, sigma = totSD, edf = 2)
-aaas_ad.lme.eff.group.time <- eff_size(aaas_ad.lme.emm.group.time, sigma = totSD, edf = 2)
+aaas_ag.interaction <-
+  lmer(aaas_ag ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
 
-# Plot
-aaas_ad.lme.plot <- emmip(x,~ time | group, xlab = "Tid", ylab = "Linjär prediktion")
+aaas_ag.estimatplot <- plot_model(aaas_ag.interaction,show.values=T,show.p=T,value.offset = 0.35)
 
-### AAA-S Aggressive
+#plot_model(aaas_ag.interaction, type="emm", terms=c("time","group")) # BRA!
+aaas_ag.prediktionsplot <- plot(ggpredict(aaas_ag.interaction, terms = c("time","group")), connect.lines = TRUE)
 
-x <-
-  lme(
-    aaas_ag ~ group * time,
-    random = ~ time | subject,
-    data = r2.long.data,
-    na.action = na.omit,
-    method = "REML",
-    corr=corAR1()
-  )
+aaas_ag.emm <- emmeans(aaas_ag.interaction, ~ time | group, adjust="bonferroni")
+aaas_ag.diagnostik <- plot_model(aaas_ag.interaction, type="diag")
+# Allt ser ok ut!
 
-# Output 
-aaas_ag.lme.tidy <- tidy(x)
-#svkable()
-#summary()
+### 
 
-# Estimated Marginal Means / Least Square Means
-emmV <- emmeans(x, ~ time | group, adjust="bonferroni")
-aaas_ag.lme.emm.tidy <- tidy(emmV)
+rathus.interaction <-
+  lmer(rathus ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
 
-# Effect size estimation
-totSD <-sqrt(sum(as.numeric(VarCorr(x)[,2])))
-aaas_ag.lme.eff.tidy <- tidy(eff_size(emmV, sigma = totSD, edf = 3))
+rathus.estimatplot <- plot_model(rathus.interaction,show.values=T,show.p=T,value.offset = 0.35)
 
-# Plot
-aaas_ag.lme.plot <- emmip(x,~ time | group, xlab = "Tid", ylab = "Linjär prediktion")
+#plot_model(aaas_ag.interaction, type="emm", terms=c("time","group")) # BRA!
+rathus.prediktionsplot <- plot(ggpredict(rathus.interaction, terms = c("time","group")), connect.lines = TRUE)
 
-### Rathus
+rathus.emm <- emmeans(rathus.interaction, ~ time | group, adjust="bonferroni")
+rathus.diagnostik <- plot_model(rathus.interaction, type="diag")
+# Allt ser ok ut!
 
-x <-
-  lme(
-    rathus ~ group * time,
-    random = ~ time | subject,
-    data = r2.long.data,
-    na.action = na.omit,
-    method = "REML",
-    corr=corAR1()
-  )
+### 
 
-# Output 
-rathus.lme.tidy <- tidy(x)
-#svkable()
-#summary()
+lsas_sum.interaction <-
+  lmer(lsas_sum ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
 
-# Estimated Marginal Means / Least Square Means
-emmV <- emmeans(x, ~ time | group, adjust="bonferroni")
-rathus.lme.emm.tidy <- tidy(emmV)
+lsas_sum.estimatplot <- plot_model(lsas_sum.interaction,show.values=T,show.p=T,value.offset = 0.35)
 
-# Effect size estimation
-totSD <-sqrt(sum(as.numeric(VarCorr(x)[,2])))
-rathus.lme.eff.tidy <- tidy(eff_size(emmV, sigma = totSD, edf = 3))
+#plot_model(aaas_ag.interaction, type="emm", terms=c("time","group")) # BRA!
+lsas_sum.prediktionsplot <- plot(ggpredict(lsas_sum.interaction, terms = c("time","group")), connect.lines = TRUE)
 
-# Plot
-rathus.lme.plot <- emmip(x,~ time | group, xlab = "Tid", ylab = "Linjär prediktion")
+lsas_sum.emm <- emmeans(lsas_sum.interaction, ~ time | group, adjust="bonferroni")
+lsas_sum.diagnostik <- plot_model(lsas_sum.interaction, type="diag")
+# Allt ser ok ut!
 
-### PHQ-9
+### 
 
-x <-
-  lme(
-    phq_sum ~ group * time,
-    random = ~ 1 | subject, #### OBS!
-    data = r2.long.data,
-    na.action = na.omit,
-    method = "REML",
-    corr=corAR1()
-  )
+phq_sum.interaction <-
+  lmer(phq_sum ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
 
-# Output 
-phq_sum.lme.tidy <- tidy(x)
-#svkable()
-#summary()
+phq_sum.estimatplot <- plot_model(phq_sum.interaction,show.values=T,show.p=T,value.offset = 0.35)
 
-# Estimated Marginal Means / Least Square Means
-emmV <- emmeans(x, ~ time | group, adjust="bonferroni")
-phq_sum.lme.emm.tidy <- tidy(emmV)
+#plot_model(aaas_ag.interaction, type="emm", terms=c("time","group")) # BRA!
+phq_sum.prediktionsplot <- plot(ggpredict(phq_sum.interaction, terms = c("time","group")), connect.lines = TRUE)
 
-# Effect size estimation
-totSD <-sqrt(sum(as.numeric(VarCorr(x)[,2])))
-phq_sum.lme.eff.tidy <- tidy(eff_size(emmV, sigma = totSD, edf = 3))
+phq_sum.emm <- emmeans(phq_sum.interaction, ~ time | group, adjust="bonferroni")
+phq_sum.diagnostik <- plot_model(phq_sum.interaction, type="diag")
+# Allt ser ok ut!
 
-# Plot
-phq_sum.lme.plot <- emmip(x,~ time | group, xlab = "Tid", ylab = "Linjär prediktion")
+### 
 
-### GAD-7
+gad_sum.interaction <-
+  lmer(gad_sum ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
 
-x <-
-  lme(
-    gad_sum ~ group * time,
-    random = ~ 1 | subject,
-    data = r2.long.data,
-    na.action = na.omit,
-    method = "REML",
-    corr=corAR1()
-  )
+gad_sum.estimatplot <- plot_model(gad_sum.interaction,show.values=T,show.p=T,value.offset = 0.35)
 
-# Output 
-gad_sum.lme.tidy <- tidy(x)
-#svkable()
-#summary()
+#plot_model(aaas_ag.interaction, type="emm", terms=c("time","group")) # BRA!
+gad_sum.prediktionsplot <- plot(ggpredict(gad_sum.interaction, terms = c("time","group")), connect.lines = TRUE)
 
-# Estimated Marginal Means / Least Square Means
-emmV <- emmeans(x, ~ time | group, adjust="bonferroni")
-gad_sum.lme.emm.tidy <- tidy(emmV)
+gad_sum.emm <- emmeans(gad_sum.interaction, ~ time | group, adjust="bonferroni")
+gad_sum.diagnostik <- plot_model(gad_sum.interaction, type="diag")
+# Allt ser ok ut!
 
-# Effect size estimation
-totSD <-sqrt(sum(as.numeric(VarCorr(x)[,2])))
-gad_sum.lme.eff.tidy <- tidy(eff_size(emmV, sigma = totSD, edf = 3))
+### 
 
-# Plot
-gad_sum.lme.plot <- emmip(x,~ time | group, xlab = "Tid", ylab = "Linjär prediktion")
+well.interaction <-
+  lmer(well ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
 
-### LSAS
+well.estimatplot <- plot_model(well.interaction,show.values=T,show.p=T,value.offset = 0.35)
 
-x <-
-  lme(
-    lsas_sum ~ group * time,
-    random = ~ time | subject,
-    data = r2.long.data,
-    na.action = na.omit,
-    method = "REML",
-    corr=corAR1()
-  )
+#plot_model(aaas_ag.interaction, type="emm", terms=c("time","group")) # BRA!
+well.prediktionsplot <- plot(ggpredict(well.interaction, terms = c("time","group")), connect.lines = TRUE)
 
-# Output 
-lsas_sum.lme.tidy <- tidy(x)
-#svkable()
-#summary()
-
-# Estimated Marginal Means / Least Square Means
-emmV <- emmeans(x, ~ time | group, adjust="bonferroni")
-lsas_sum.lme.emm.tidy <- tidy(emmV)
-
-# Effect size estimation
-totSD <-sqrt(sum(as.numeric(VarCorr(x)[,2])))
-lsas_sum.lme.eff.tidy <- tidy(eff_size(emmV, sigma = totSD, edf = 3))
-
-# Plot
-lsas_sum.lme.plot <- emmip(x,~ time | group, xlab = "Tid", ylab = "Linjär prediktion")
-
-### Välmåendeformuläret
-
-x <-
-  lme(
-    well ~ group * time,
-    random = ~ time | subject,
-    data = r2.long.data,
-    na.action = na.omit,
-    method = "REML",
-    corr=corAR1()
-  )
-
-# Output 
-lsas_sum.lme.tidy <- tidy(x)
-#svkable()
-#summary()
-
-# Estimated Marginal Means / Least Square Means
-emmV <- emmeans(x, ~ time | group, adjust="bonferroni")
-well.lme.emm.tidy <- tidy(emmV)
-
-# Effect size estimation
-totSD <-sqrt(sum(as.numeric(VarCorr(x)[,2])))
-well.lme.eff.tidy <- tidy(eff_size(emmV, sigma = totSD, edf = 3))
-
-# Plot
-well.lme.plot <- emmip(x,~ time | group, xlab = "Tid", ylab = "Linjär prediktion")
+well.emm <- emmeans(well.interaction, ~ time | group, adjust="bonferroni")
+well.diagnostik <- plot_model(well.interaction, type="diag")
+# Allt ser ok ut!
 
 ```
 
-```{r mixedlmeplots, dpi=196, fig.align="center"}
 
-aaas_ag.lme.plot + ggtitle("AAA-S Aggressive")
+``` {r stargazer,results='asis'}
 
-aaas_ad.lme.plot + ggtitle("AAA-S Adaptive")
+stargazer::stargazer(
+  aaas_ad.interaction,
+  aaas_ag.interaction,
+  rathus.interaction,
+  type = "latex",
+  ci = T,
+  intercept.bottom = F,
+  single.row = F,
+  model.numbers = F,
+  header = F,
+  covariate.labels = c(
+    "Intercept",
+    xg1,
+    xg2,
+    xdur,
+    xpost,
+    paste(xg1, "*", xdur),
+    paste(xg2, "*", xdur),
+    paste(xg1, "*", xpost),
+    paste(xg2, "*", xpost)
+  )
+)
 
-rathus.lme.plot + ggtitle("Rathus")
-
-lsas_sum.lme.plot + ggtitle("LSAS-24")
-
-gad_sum.lme.plot + ggtitle("GAD-7")
-
-phq_sum.lme.plot + ggtitle("PHQ-9")
-
-well.lme.plot + ggtitle("Välmåendeformuläret")
+# https://cran.r-project.org/web/packages/stargazer/vignettes/stargazer.pdf
 
 ```
 
-```{r, fig.cap="Exempel på beräkning av effektstyrka"}
 
-aaas_ad.lme.emm.time.group
+```{r analysplottar, dpi=196, eval=T,cache=T}
 
-aaas_ad.lme.emm.group.time
+aaas_ad.estimatplot
+aaas_ag.estimatplot
+rathus.estimatplot
+lsas_sum.estimatplot
+gad_sum.estimatplot
+phq_sum.estimatplot
+well.estimatplot
 
+aaas_ad.prediktionsplot
+aaas_ag.prediktionsplot
+rathus.prediktionsplot
+lsas_sum.prediktionsplot
+gad_sum.prediktionsplot
+phq_sum.prediktionsplot
+well.prediktionsplot
+
+aaas_ad.emm
+aaas_ag.emm
+rathus.emm
+lsas_sum.emm
+gad_sum.emm
+phq_sum.emm
+well.emm
+
+# The marginal R-squared considers only the variance of the fixed effects, while the conditional R-squared takes both the fixed and random effects into account.
+# 
+# The p-value is a simple approximation, based on the t-statistics and using the normal distribution function. A more precise p-value can be computed using p.val = "kr". In this case, which only applies to linear mixed models, the computation of p-values is based on conditional F-tests with Kenward-Roger approximation for the degrees of freedom (using the using the pbkrtest-package). Note that here the computation is more time consuming and thus not used as default. You can also display the approximated degrees of freedom with show.df.
 ```
+
 
 # Diskussion
 
@@ -2001,11 +1857,10 @@ Viktigt i och med att ni tagit upp detta med behandlingsstödets effekter i intr
 
 ## Resultatdiskussion
 
+återstår att skriva!
+
 ### Primär frågeställning
 
-Vi drar slutsatsen att självhjälpsmaterialet ensamt (som för deltagarna i gruppen `r xg1`) ger ett lika bra resultat som självhjälpsmaterialet i kombination med stöttning av en terapeut (som för deltagarna i gruppen `r xg2`). 
-
-Självhjälpsmaterialet verkar ge ett lika bra resultat oavsett om deltagarna får behandlarstöd eller inte.
 
 <!-- [Pers kommentar] 
 Kanske kan ni här dock rapportera om skillnader i klinisk signifikant förbättring? 
@@ -2016,7 +1871,7 @@ Kanske kan ni här dock rapportera om skillnader i klinisk signifikant förbätt
 
 <!-- varför går både adaptiv och aggressiv självhävdelse upp? det skulle kunna ha att göra med vårt sample. Om vi hade haft flera personer med positiva rathus-skattningarna (kolla rci för dem!) kanske vi skulle kunna ha sett en minskning av aggressiv självhävdelse. Men för vårt nuvarande sample, med många socialfobiker (hur många? kolla upp) så kan vi anta att ökning av aggressiv självhävdelse är något *bra*?? -->
 
-skilland i utveckling över tid mellan rathus respektive aaas-ad/ag: patriks ide är att det skulle kunna vara så att rathus snabbare fångar upp förändring i teroetiskt förhållningssätt/avslappning medan aaas-ad/ag kanske fångar mer effekten av lyckade beteendeexperiment.
+<!-- skilland i utveckling över tid mellan rathus respektive aaas-ad/ag: patriks ide är att det skulle kunna vara så att rathus snabbare fångar upp förändring i teroetiskt förhållningssätt/avslappning medan aaas-ad/ag kanske fångar mer effekten av lyckade beteendeexperiment. -->
 
 <!-- [Pers kommentar] 
 Innan ni går över till brister så vill ni kanske säga något om övriga utfallsmått? Och relatera era fynd med tidigare forskning. Vad brukar man få för resultat i denna typ av studier? Alltså återkoppla till introduktionens studier. Kanske genom att jämföra era effektstorlekar med tidigare studier. 
