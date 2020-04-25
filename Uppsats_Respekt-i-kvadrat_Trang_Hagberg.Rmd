@@ -109,10 +109,10 @@ xpost = "Eftermätning"
 # and edit the lines below
 
 # From the tab "Frågeformulär"
-raw_excel = "Respekt_surveys_200421_102810.xlsx"
+raw_excel = "Respekt_surveys_200424_180943.xlsx"
 
 # From the tab "Konversationer & Moduler"
-raw_excel_conversations = "Respekt_conversations_200416_092107.xlsx"
+raw_excel_conversations = "Respekt_conversations_200424_181124.xlsx"
 ##################################################################################
 
 # Import data from Excel file (requires "readxl")
@@ -401,6 +401,11 @@ lg3t3 <- r2.long.data$group == xg3 & r2.long.data$time == "Post"
 # should *not* be counted.
 r2.long.data[lg3,c(18:20)] <- NA 
 
+ll1 = length(r2.long.data[lg1t1,1])
+ll2 = length(r2.long.data[lg2t1,1])
+ll3 = length(r2.long.data[lg3t1,1])
+
+
 ```
 
 ```{r norms, cache = F}
@@ -667,8 +672,8 @@ x1 <-
     "Folkskola/grundskola",
     "Gymnasium",
     "Yrkesutbildning",
-    "Universitet/högskola (pågående)",
-    "Universitet/högskola (avslutad)",
+    "Högre utbildning (pågående)",
+    "Högre utbildning (avslutad)",
     "Annat",
     "Studerande",
     "Arbetande",
@@ -808,10 +813,11 @@ demdata.tabell <- cbind.data.frame(x1,x4,x2,x3,x5)
 
 colnames(demdata.tabell) <-
   c("",
-    "Väntelista (n=68)",
-    "Självhjälp (n=67)",
-    "Med stöd (n=69)",
-    "Totalt (n=204)")
+    paste(xg1, " (n = ", ll1, ")", sep = ""),
+    paste(xg2, " (n = ", ll2, ")", sep = ""),
+    paste(xg3, " (n = ", ll3, ")", sep = ""),
+    paste("Totalt (n = ", length(r2.long.data[lt1,1]), ")", sep = "")
+  )
 
 ```
 
@@ -823,10 +829,10 @@ De `r length(r2.wide.data$subject)` deltagare vars data används i den här stud
 
 svkable(demdata.tabell, caption = "(ref:dem)", linesep = "", align="lrrrr") %>%
   kable_styling(full_width = F) %>%
-  column_spec(2, width = "5em") %>%
-  column_spec(3, width = "5em") %>%
-  column_spec(4, width = "5em") %>%
-  column_spec(5, width = "5em") %>%
+  column_spec(2, width = "4.75em") %>%
+  column_spec(3, width = "4.75em") %>%
+  column_spec(4, width = "4.75em") %>%
+  column_spec(5, width = "4.75em") %>%
   pack_rows("Kön (%)", 1, 1, bold = F) %>%
   pack_rows("Ålder (år)", 2, 3, bold = F) %>%
   pack_rows("Civilstånd (%)", 4, 7, bold = F) %>%
@@ -1244,9 +1250,9 @@ descriptives.out.rot.rot <- t(descriptives.out.rot)
 
 descriptives.col.out <- cbind.data.frame(
   "Betingelse" = rep(c(
-    paste(xg1, ", n = ", length(r2.long.data[lg1t1, 2]), sep = ""),
-    paste(xg2, ", n = ", length(r2.long.data[lg2t1, 2]), sep = ""),
-    paste(xg3, ", n = ", length(r2.long.data[lg3t1, 2]), sep = "")
+    paste(xg1, ", n = ", ll1, sep = ""),
+    paste(xg2, ", n = ", ll2, sep = ""),
+    paste(xg3, ", n = ", ll3, sep = "")
   ), each = 8),
   "Mättillfälle" = rep(c(
     rep(c("Förmätning"), times = 2), rep(c("Mittenmätning"), times = 3), rep(c("Eftermätning"), times = 3)
@@ -1968,6 +1974,14 @@ gad_sum.lme.plot + ggtitle("GAD-7")
 phq_sum.lme.plot + ggtitle("PHQ-9")
 
 well.lme.plot + ggtitle("Välmåendeformuläret")
+
+```
+
+```{r, fig.cap="Exempel på beräkning av effektstyrka"}
+
+aaas_ad.lme.emm.time.group
+
+aaas_ad.lme.emm.group.time
 
 ```
 
