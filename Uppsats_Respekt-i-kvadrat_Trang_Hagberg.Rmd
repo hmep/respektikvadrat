@@ -506,11 +506,11 @@ knitr::include_graphics("canvas-konstruktiv-slinga-X.pdf")
 
 Forskning på *assertiveness* övergavs i stort sett efter 1970-talet i och med psykatrins fokus på syndromala kategoriseringar av psykisk ohälsa. *Assertiveness* föll tillsammans med andra transdiagnostiska begrepp i glömska till förmån för diagnosspecifika interventioner och insatser. 
 
-Fram tills att *assertiveness* föll i glömska konstaterades dock flertalet intressanta fynd. @Wolpe1966 samt @Orenstein1975 upptäckte att det är oförenligt att uppleva ångest och att bete sig *assertive*. @Barrett1977 visade på att *assertiveness* hos barn korrelerade med uppvisande av prosociala beteenden och @Buell1981 följde upp det med en effektiv metod för att träna *assertiveness* hos just barn. Hos vuxna fastställdes det bland annat att god *assertiveness*: förbättrar ens interpersonella relationer [@Kincaid1978] och gör att man bemöter förhinder och motgångar med adaptiva beteenden [@Tanck1979]. [@Rakos1979] visade på att *assertiveness* kunde tränas genom självhjälpsmaterial och [@Rich1976] sammanställde flertalet metoder (samt respektive metods för- och nackdelar) som använts för att träna *assertiveness*.
+Fram tills att *assertiveness* föll i glömska konstaterades dock flertalet intressanta fynd. @Wolpe1966 samt @Orenstein1975 upptäckte att det är oförenligt att uppleva ångest och att bete sig *assertive*. @Barrett1977 visade på att *assertiveness* hos barn korrelerade med uppvisande av prosociala beteenden och @Buell1981 följde upp det med en effektiv metod för att träna *assertiveness* hos just barn. Hos vuxna fastställdes det bland annat att god *assertiveness*: förbättrar ens interpersonella relationer [@Kincaid1978] och gör att man bemöter förhinder och motgångar med adaptiva beteenden [@Tanck1979]. @Rakos1979 visade på att *assertiveness* kunde tränas genom självhjälpsmaterial och @Rich1976 sammanställde flertalet metoder (samt respektive metods för- och nackdelar) som använts för att träna *assertiveness*.
 
 Under de senaste åren har intresset för självhävdelse ökat något igen. @Vagos2019 konstaterar att självupplevd grad av psykiskt lidande korrelerar negativt med grad av konstruktiv självhävdelse, i linje med rationalen för träning i *assertiveness* som den presenterades av @Wolpe1966. @Amy2015 visar en negativ korrelation mellan att uppleva social ångest och konstruktiv självhävdelse. Deras slutsats är att man kan öka oddsen för konstruktivt självhävdande beteenden för en person antingen genom att i behandling exponera för antecedenterna för social ångest och/eller att arbeta med hur personen förhåller sig till själva ångesten. Den senare toleranskomponenten kan ses som ett komplement till den habitueringsrational som varit förhärskande inom KBT fram till sekelskiftet <!-- källa? -->.
 
-@Speed2018a sammanställer forskningsläget kring *assertiveness*. Träning i konstruktiv självhävdelse kan förbättra måendet vid både ångestsyndrom och depression och öka självförtroende samt förbättra upplevd tillfredsställelse i parrelationer. Författarna konstaterar att träning i konstruktiv självhävdelse redan ingår i de bredare begreppen som beteendeaktivering och färdighetsträning i flertalet allt mer beforskade behandlingsmetoder -- som dialektisk beteendeterapi (DBT), *Acceptance and Commitment Therapy* (ACT) och beteendeaktivering vid depression. En stor andel av den forskning om *assertiveness* som ett transdiagnostiskt begrepp är till åren kommen och det finns ett stort behov att på nytt utvärdera den specifika effekten av självhävdelseträning [@Speed2018a]. Sammanfattningsvis är forskingsläget både skralt för *assertiveness* som konstrukt och omfattande för de syndrom och symtom som associeras med det.
+@Speed2018a sammanställer forskningsläget kring *assertiveness*. Träning i konstruktiv självhävdelse kan förbättra måendet vid både ångestsyndrom och depression och öka självförtroende samt förbättra upplevd tillfredsställelse i parrelationer. Författarna konstaterar att träning i konstruktiv självhävdelse redan ingår i de bredare begreppen som beteendeaktivering och färdighetsträning i flertalet allt mer beforskade behandlingsmetoder -- som dialektisk beteendeterapi (DBT), *Acceptance and Commitment Therapy* (ACT) och beteendeaktivering vid depression. En stor andel av den forskning om *assertiveness* som ett transdiagnostiskt begrepp är till åren kommen och det finns ett stort behov att på nytt utvärdera den specifika effekten av självhävdelseträning [@Speed2018a]. Sammanfattningsvis är det moderna forskingsläget både skralt för *assertiveness* som konstrukt och omfattande för de syndrom och symtom som associeras med det.
 
 ### Evidensen för KBT vid ångest och depression
 
@@ -521,7 +521,7 @@ Evidensen för beteendeterapi och KBT för syndromala och icke-syndromala psykol
 @Hofmann2012 är en översikt av meta-analyser som visar att KBT alltjämt är en av de mest effektiva terapiformerna. I deras översikt visade sig KBT effektivt för att motverka bland annat trauma- och stressrelaterade symtom, liksom depressiva och ångestrelaterade syndrom. Litteraturen stödjer att KBT har god effekt för de syndrom som @Speed2018a associerar med brister i konstruktiv självhävdelse.
 
 ## Några saker att förhålla sig till
-*ovan rubrik är temporär och bör få ett bättre namn, detsamma går för följande underrubriker*
+*ovan rubrik är temporär och bör få ett bättre namn, detsamma gäller följande underrubriker*
 
 ### En kontextuell och neurovetenskaplig inramning av \'kognitioner\'
 
@@ -529,7 +529,7 @@ Evidensen för beteendeterapi och KBT för syndromala och icke-syndromala psykol
 
 Att benämna ovan kognitioner för förutsägelser är dessutom i linje med det forskning kring prediktiv kodning. Den övergripande funktionen av det centrala nervsystemet är att med hjälp av ytterst begränsade sensoriska indata (det vill säga det som dina sinnen förnimmer) guida betydligt mer omfattande neuronal *top-down*-aktivitet för att *predicera* organismens yttre såväl som inre kontext [@Pezzulo2015; @Clark2016]. Den samlade upplevelsen av ångest (kroppsreaktioner, tankar, beteenden) är detsamma som en förutsägelse om bristande resurs- och energihushållning i situationen. Ett annat sätt att beskriva denna förutsägelse om en brist i resurs- och energihushållning är att man upplever det som att man inte kommer räcka till [@FeldmanBarrett2009]. När en person uppfattar miljön som aversiv och ångest väcks kommer hen att vilja mobilisera sina resurser för att sätta sig i säkerhet. Men om förutsägelserna om bristande resurser är felaktig på grund av allt för stort inflytande av hjärnans kortikala *top-down*-aktivitet (på bekostnad av sensorisk känslighet för *bottom-up*-aktivitet) uppstår problem: Förutsägelserna om att man inte kommer räcka till blir självuppfyllande profetior. Om och om igen genom en kombination av alltför långvarig allostatisk belastning och undvikande som gör att organismen går miste om återhämtning och naturliga förstärkningar som kan fylla på energireserverna bekräftas förutsägelserna. @FeldmanBarrett2009 sammanbryggar elegant den aktuella neurovetenskapen med den kontextuella beteendevetenskapens perspektiv på ångest och depression, där den gemensamma vidmakthållande faktorn är undvikande -- beteendemässigt och upplevelsemässigt.
 
-### Att undvika det som känns jobbigt
+### Att undvika det aversiva
 
 Utifrån *tidigare* erfarenheter kan en individ ha giltiga och begripliga upplevelser av ångest och rädsla som dessvärre leder till undvikande *här och nu*. Detta kan i sin tur göra att individen går miste om sådant som hen värdesätter -- exempelvis att: få närhet, mer tid till egna intressen, hävda sina åsikter eller att nå andra naturliga förstärkare för stanna-kvar-och-märk-att-ångesten-går-över-beteenden.
 
@@ -541,7 +541,7 @@ Det har även visat sig att det är ytterst menligt <!-- möjligen skriva "själ
 
 <!-- *@Pittig2014 är ej med i dagsläget men bör möjligen vara det? -->
 
-### Att bryta undvikande
+### Att närma sig det aversiva
 
 Att bryta undvikandebeteenden är ofta centralt för att minska psykopatologiska besvär. Det finns flera forskningsgrundande metoder för detta. En metod är att *på ett närvarande sätt* närma sig det aversiva och ångestväckande, så kallad exponering. Att närma sig det som väcker obehag leder hos många till mycket osäkerhet. Denna osäkerhet leder i sin tur inte ovanligen till överdrivet förberedande, efterfrågande om försäkran eller andra beteenden som ökar upplevelsen av kontroll i stunden (så kallade säkerhetsbeteenden). Det är en viktig inlärningsprocess att få uppleva denna osäkerhet – och samtidigt få lärdomen att osäkerheten i sig själv både är ofarlig och hanterbar. Att bibehålla osäkerhet under exponering går att göra genom att variera vilka aversiva stimuli som presenteras och i vilka situationer som dessa stimuli presenteras [@Sewart2019; @Knowles2019; @Craske2008]. Med andra ord, det går att väcka osäkerhet genom variation.
 
@@ -553,6 +553,8 @@ Lyckad exponering tenderar att vara en ombytlig exponering där obehag väcks, s
 
 I linje med att undersöka ens egen förmåga att hantera aversiva känslor är att ändra sitt förhållningssätt till dem. <!--För många kan det stora steget i att bryta undvikande vara att arbete med att acceptera och tillåta sina känslor och upplevelser [@Hayes1996]. --> Många har aldrig fått tillgång till den vägledning eller de verktyg som behövs för att hantera starka emotionella upplevelser. De har aldrig lärt sig att förstå sorg och ilska, eller hur de ska gå tillväga för att lugna sin ångest eller sin frustration.  Istället har de lärt sig att distrahera sig och undvika. Bedöva genom att undantrycka. Att ändra dessa förutsägelser om att vissa emotioner är oacceptabla; att tillåta sig känna dem, närma sig dem, acceptera dem, har återkommande gånger visat sig vara ett effektivt sätt att bryta undvikande [@Hayes1996; @Hayes2004a; @Luoma2007;] och ett effektivt sätt att behandla många av de psykatriska besvär som individer med bristande *assertiveness* upplever [@A-Tjak2015a].
 
+Ytterligare ett sätt att närma sig aversiva stimuli är genom avslappning. Även om det fortfarande inte är konstaterat exakt vad de verksamma komponenterna i avslappningsträning vid ångestbesvär är, har forskningsstudier i decennier konstaterat avslappningsträning en effektiv metod för att minska symptom hos en del patienter som lider av ångesypsykopatoli [@Conrad2007]. Tillämpad avslappning är en copingteknik som började utvecklas i slutet av 1970-talet för patienter med fobier och panikattacker. Den har sedan dess även visat sig effektiv för bland annat generell ångeststörning  och stress [@ost2006tillampad]. En hypotes för varför avslappningsmetoder fungerar är att ångestreaktioner och att vara avslappnad ej är kongruent med varandra, det vill säga att båda inte kan existera samtidigt. Är du avslappnad kan du inte samtidigt uppleva ångest [@Conrad2007]. Då det -- som nämnt i tidigare stycke -- är ytterst svårt att konstruktivt självhävda sig när man upplever ångest [@@Amy2015], och att ångest i sin tur inte är kongruent med att vara avslappnad [@Conrad2007] går det rimligen att extrapolera att lyckad avslappningsträning ökar oddsen för uppvisande av konstruktivt självhävdande beteenden. 
+
 <!--
 While growing up many of us never had the proper tools or guidance to deal with difficult emotions. We never learned to understand our sadness or anger. We weren't taught how to calm our anxiety or sooth our frustration. Instead we learned to distract and avoid. To tune out unpleasant feelings with numbing. Sometimes destructive behaviour.
 -->
@@ -563,8 +565,9 @@ Kort och gott: Genom att *på ett närvarande sätt* i så många kontext som m�
 här bör ytterligare ett kort avsnitt föras in om att ångest & avslappning kan inte finnas samtidigt.
 
 Förslagsvis använda L-G Öst kring TA plus fiska fram några som pratar om att avslappning & ångest inte går ihop samt Wolpe och att assertiveness och ångest inte går ihop
--->
 
+[@Conrad2007] att avslappningsträning verkar effektivt för att behandla ångest, men svårt att veta exakt vad som gör det.
+-->
 
 <!-- Violating expectancies -->
 
@@ -810,7 +813,7 @@ I *Assert Yourself* föreskrivs självhävdande beteenden utifrån de teoretiska
 
 Självhjälpsmaterialet ger också rationalen för kognitiv omstrukturering med metoder från @beck1979cognitive, @Clark1986, @clark1995cognitive och @powell2017mental. Kognitiv omstrukturering uppnås enligt dessa genom att utmana negativt tänkande och att pröva giltigheten av det negativa tänkandet i verkliga livet. Genom att planera och utföra beteendeexperiment får deltagaren hjälp att pröva giltigheten av egna negativa tankar och därmed öka responsmöjligheterna i olika mer eller mindre pressande situationer. 
 
-Utöver detta innehåller arbetsmaterialet ett avsnitt om progressiv muskelavslappning, med syftet att hjälpa läsaren att känna igen spänning i kroppen, sänka den allmänna spänningsnivån och träna på en aktiv coping-teknik för stressande lägen. Avslappningskapitlet innehåller instruktioner för en progressiv och tillämpad avslappning, snarlika de som beskrivs i @ost2006tillampad.
+Utöver detta innehåller arbetsmaterialet ett avsnitt om progressiv muskelavslappning, med syftet att hjälpa läsaren att känna igen spänning i kroppen, sänka den allmänna spänningsnivån och träna på en aktiv coping-teknik för stressande lägen. Instruktioner för den progressiva och tillämpade avslappning som presenteras är snarlika de som beskrivs i @ost2006tillampad.
 
 Materialet avslutas med ett antal kapitel för olika problemområden (säga nej, hantera kritik, hantera besvikelser, ta emot och ge komplimanger). Dessa kapitel innehåller psykoedukativa inslag, inslag av kognitiv omstrukturering och planering och uppföljning av beteendeexperiment enligt ovan.
 
@@ -818,9 +821,11 @@ Materialet avslutas med ett antal kapitel för olika problemområden (säga nej,
 
 Materialet är översatt och anpassat till svenska förhållanden av TH med tillstånd av författaren och CCI. I samband med anpassningen av översättningen till I-KBT-moduler i plattformen `r xiterapi` modifierade och utökade TH och PT materialet. Detta gjordes med det dubbla syftet att förenkla administrationen av materialet via internet samt att komplettera det med inslag som TH och PT ansåg saknades i originalmaterialet.
 
-En mycket inspirerande faktor när det engelska materialet anpassades och utvecklades till programmet *Respekt i kvadrat* var det aktuella forskningsläget kring exponering [se bland annat @Sewart2019; @Knowles2019; @Craske2008; @DeCastella2015; @Gross2003]. TH och PT bedömde det som en central komponent att deltagarna så tidigt som möjligt, och så regelbundet som möjligt, tog aktiva steg för att bryta sina undvikanden. Från och med modul 3 och framåt ombads deltagarna att närma sig aversiva stimuli (och utvärdera sina reaktioner) på olika sätt. I linje med forskning om att acceptera och tillåta sina känslor [@Hayes1996; @Hayes2004a; @Luoma2007] lades även tyngd vid att målet med att bryta undvikandet inte nödvändigtvis var att bli av med eller minska de aversiva känslorna, utan snarare att få ett nytt förhållningssätt till dem. Överrensstämmande med forskning kring *fixed-* samt *growth mindset* [@Dweck1995; @Schroder2016; @Schroder2015; @DeCastella2015] och vikten av att tro att en förändring går att få till utformades även interventionens innehåll på ett *growth mindset*-förespråkande sätt. 
+En mycket inspirerande faktor när det engelska materialet anpassades och utvecklades till programmet *Respekt i kvadrat* var det aktuella forskningsläget kring exponering [se bland annat @Sewart2019; @Knowles2019; @Craske2008; @DeCastella2015; @Gross2003]. TH och PT bedömde det som en central komponent att deltagarna så tidigt som möjligt, och så regelbundet som möjligt, tog aktiva steg för att bryta sina undvikanden. Från och med modul 3 och framåt ombads deltagarna att närma sig aversiva stimuli (och utvärdera sina reaktioner) på olika sätt. 
 
+I linje med forskning om att acceptera och tillåta sina känslor [@Hayes1996; @Hayes2004a; @Luoma2007] lades även tyngd vid att målet med att bryta undvikandet inte nödvändigtvis var att bli av med eller minska de aversiva känslorna, utan snarare att få ett nytt förhållningssätt till dem. Överrensstämmande med forskning kring *fixed-* samt *growth mindset* [@Dweck1995; @Schroder2016; @Schroder2015; @DeCastella2015] och vikten av att tro att en förändring går att få till utformades även interventionens innehåll på ett *growth mindset*-förespråkande sätt.
 
+Slutligen tilläts avsnittet om muskelavslappning att genomsyra behandlingsprogrammet på ett annat sätt än det gör i *Assert Yourself* [@michel2008]. I originalmaterialet presenteras alla övningar och all information berörande muskelavslappning i samma kapitel. I linje med Östs [-@ost2006tillampad] rekommendation om att Tillämpad avslappning bör introduceras stegvis över flertalet veckor introduceras deltagarna till muskelavslappningsövningar i modul 2 och inslag av muskelavslappning återfinns i flertalet moduler därefter.
 
 <!--
 här bör ytterligare ett kort avsnitt föras in om valet att fokusera på avslappning i behandlingsprogrammet.
@@ -977,15 +982,15 @@ Signifikansnivån $\alpha$ = 0,05 tillämpades vid alla beräkningar.
 
 ### Kontroll av utgångsdata
 
-Vi analyserade insamlade förmätningsvärden för att kontrollera om randomiseringen hade gett grupper utan signifikanta skillnader. Oberoende variansanalys (ANOVA) användes för att utesluta skillnader mellan grupperna i primära utfallsmått, sekundära utfallsmått och kontinuerliga sociodemografiska variabler. Kategoriska sociodemografiska variabler undersöktes med Pearson $\chi^2$-test. Cohen's d-effektstorlekar för beroende mätningar beräknades med R-paketet *effsize* [@R-effsize]. För beräkning och sammanställning av övrig deskriptiv statistik, inklusive resultat normalfördelningstest, användes R-paketet *pastecs* [@R-pastecs].
+Vi analyserade insamlade förmätningsvärden för att kontrollera om randomiseringen hade gett grupper utan signifikanta skillnader. Oberoende variansanalys (ANOVA) användes för att utesluta skillnader mellan grupperna i primära utfallsmått, sekundära utfallsmått och kontinuerliga sociodemografiska variabler. Kategoriska sociodemografiska variabler undersöktes med Pearson $\chi^2$-test. Cohen's d-effektstorlekar för beroende mätningar beräknades med R-paketet *effsize* [@R-effsize]. För beräkning och sammanställning av övrig deskriptiv statistik, inklusive resultat för använda normalfördelningstest, användes R-paketet *pastecs* [@R-pastecs].
 
 <!-- normalfördelning shapiro wilks -->
 
 <!-- OBS! Vi fann en signifikant skillnad i könsfördelningen mellan grupperna. Vi har betydligt fler män i grupp 1 än övriga. -->
 
-<!-- OBS! Kom ihåg bortfallsanalys (se exempeluppsats 2) -->
-
 ### Bortfallsanalys
+
+<!-- OBS! Kom ihåg bortfallsanalys (se exempeluppsats 2) -->
 
 ### Analys av huvudeffekter och interaktionseffekter
 
@@ -1957,10 +1962,7 @@ Cuijpers, P., & Cristea, I. A. (2016). How to prove that your therapy is effecti
 MEN!! Sedan försvara er med att en väntelista ändå har en hel del poänger så som att korrigera för extrema händelser i omvärlden - VILKET JU CORONAN VERKLIGEN ÄR!
 -->
 
-
-*Detta stycke behöver kontrolleras så att det fortfarande stämmer när vi avslutat insamling av eftermätningen*
-
-<!--
+!--
 - Ingen uppföljningsmätning av deltagarnas mående, dvs svårt att veta hur ser ut över tid - tenderar att öka över tid, särskilt vid KBT [@Bandelow2018] som källa!
 
 -->
