@@ -2092,7 +2092,7 @@ Med nästintill 90% kvinnor i samplet var könsfördelningen ytterst ojämn. Den
 Något om att framtida studier därför bör undersöka denna behandlings effekt i andra populationer. Ni skulle kunna, om ni orkar, analysera förbättringarna hos männen vs. kvinnorna. Skulle ni finna att förbättringen är likartad så faller lite av kritiken.
 -->
 
-<!--Vi är övertygade om att detta...  [@Thompson2011] ? -->
+<!--[@Thompson2011] som vi hämtade vårt sample ifrån hade 55% kvinnor -->
 
 Över 70% av vårt sample hade avslutade universitets- eller högskoleutbildningar och ytterligare 10% studerade vid behandlingens start. Denna siffra skiljer sig markant från Sveriges befolking, där endast 43% läst vidare efter gymnasiet [@SCB2020]. Delar av förklaringen till att en så stor andel av vårt sampel har studerat på universitet eller högskola skulle kunna vara att majoriteten av studiens deltagare är kvinnor, och att de i större utsträckning än män studerar vidare efter gymnasiet [@SCB2020]. Då väldigt få deltagare i den aktuella studien hade yrkesutbildning, gymnasieutbildning, folkskola eller grundskola som högsta avslutad utbildning bör man vara restriktiv med att applicera studiens resultat inom dessa grupper.
 
