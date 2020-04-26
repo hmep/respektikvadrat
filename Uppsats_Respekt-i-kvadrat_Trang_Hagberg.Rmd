@@ -55,7 +55,7 @@ library(devtools)
 #devtools::install_github("strengejacke/sjPlot")
 #devtools::install_github("crsh/papaja@devel",force=T)
 #devtools::install_github("AWKruijt/JT-RCI",force=T)
-#install_github("markwestcott34/stargazer-booktabs")
+#devtools::install_github("markwestcott34/stargazer-booktabs")
 
 library("papaja")
 library("broom.mixed")
