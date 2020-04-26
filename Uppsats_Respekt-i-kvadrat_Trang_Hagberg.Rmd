@@ -751,7 +751,7 @@ options(OutDec= ".")
 
 ```
 
-De `r length(r2.wide.data$subject)` deltagare vars data används i den här studien var mellan 20 och 65 år gamla med en medelålder på 41,8 år (standardavvikelse 8,8). En betydande majoritet (87,8&nbsp;%) identifierade sig som kvinnor, övriga som män. Knappt tre fjärdedelar av deltagarna har avslutade universitets- eller högskoleutbildningar (71,6&nbsp;%) och tre fjärdedelar av deltagarna var vid behandlingens start arbetande (75,5&nbsp;%). Mer än hälften av deltagarna (61,3&nbsp;%) hade tidigare erfarenheter av psykologisk behandling. Av dessa hade majoriteten (64,8&nbsp;%) tidigare erfarenheter av KBT. Knappt en tredjedel av alla deltagare (29,0&nbsp;%) hade erfarenhet av psykofarmaka. Vid behandlingens start stod 17,6&nbsp;% på något slags psykofarmaka. Totalt 3,4&nbsp;% av deltagarna var vid behandlingsstart sjukskrivna. För att se de demografiska faktorernas fördelningar i respektive grupp, se tabell \@ref(tab:demdata).
+De `r length(r2.wide.data$subject)` deltagare vars data används i den här studien var mellan 20 och 65 år gamla med en medelålder på 41,8 år (standardavvikelse 8,8). En betydande majoritet (87,8&nbsp;%) identifierade sig som kvinnor, övriga som män. Knappt tre fjärdedelar av deltagarna har avslutade universitets- eller högskoleutbildningar (71,6&nbsp;%) och tre fjärdedelar av deltagarna var vid behandlingens start arbetande (75,5&nbsp;%). Mer än hälften av deltagarna (61,3&nbsp;%) hade tidigare erfarenheter av psykologisk behandling. Av dessa hade majoriteten (64,8&nbsp;%) tidigare erfarenheter av KBT. Knappt en tredjedel av alla deltagare (29,0&nbsp;%) hade erfarenhet av psykofarmaka. Vid behandlingens start stod 17,6&nbsp;% på något slags psykofarmaka. Totalt 3,4&nbsp;% av deltagarna var vid behandlingsstart sjukskrivna. Se tabell \@ref(tab:demdata) för de demografiska faktorernas fördelningar i respektive grupp.
 
 (ref:dem) Demografisk data för deltagarna, redovisad per grupp.
 
@@ -1008,11 +1008,11 @@ Vi analyserade insamlade förmätningsvärden för att kontrollera om randomiser
 
 ### Analys av huvudeffekter och interaktionseffekter
 
-Huvudeffekter och interaktion mellan grupp och tid för de primära och sekundära utfallsmått undersöktes med *mixed model*-metodik. *Mixed model* tillåter precis som MANOVA inklusion av upprepade beroende mättillfällen i modellen, men med hänsyn taget till principen om *intention to treat*. Utöver det möjliggör det även modellering och kvantifiering på gruppnivå av observerade (men inte kontrollerade) individ-relaterade effekter, exempelvis skillnader i underliggande förändringsbenägenhet över tid. I modellen tilläts skärningspunkterna för respektive deltagare att variera, liksom lutningen på regressionslinjerna mellan mättillfällena för dem. För analysen användes R-paketet *nlme* [@R-nlme]. Val av kovariansstruktur gjordes genom jämförelse av AIC-tal. För *post hoc*-test uppskattades predicerade *marginal means* (eller *least square means*) för de olika kombinationerna av betingelse och mättillfälle med R-paketet *emmeans* [@R-emmeans].
+Huvudeffekter och interaktion mellan grupp och tid för de primära och sekundära utfallsmått undersöktes med *mixed model*-metodik. *Mixed model* tillåter precis som MANOVA inklusion av upprepade beroende mättillfällen i modellen, men med hänsyn taget till principen om *intention to treat*. Utöver det möjliggör det även modellering och kvantifiering på gruppnivå av observerade (men inte kontrollerade) individ-relaterade effekter, exempelvis skillnader i underliggande förändringsbenägenhet över tid. I modellen tilläts skärningspunkterna för respektive deltagare att variera, liksom lutningen på regressionslinjerna mellan mättillfällena för dem. För analysen användes R-paketet *nlme* [@R-nlme]. Val av kovariansstruktur gjordes genom jämförelse av AIC-tal. För *post hoc*-test uppskattades predicerade *marginal means* (eller *least square means*) för de olika kombinationerna av betingelse och mättillfälle med R-paketet *emmeans* [@R-emmeans]. Figurer för presentationen av resultatet togs fram med *emmeans* och *sjPlot* [@R-sjPlot].
 
 ### Analys av reliabel förändring och klinisk signifikans
 
-För var och en av betingelserna bestämde vi frekvensen deltagare som i träningsprogrammet genomgått en reliabel förändring och dessutom befann sig på kliniskt signifikant nivå vid eftermätningen. För de deltagare som endast lämnat självskattningar vid förmätningstillfället fördes dessa värden vidare till eftermätningstillfället i enlighet med principen om *intention to treat*. Valet av nivå för kliniskt signifikans gjordes i enlighet med definitionerna och rekommendationerna i @Jacobson1991, för var och en av skattningsskalorna i relation till var och en av grupperna. En förändring mellan två mättillfällen definieras som reliabel om den är tillräckligt stor i relation till populationsvariansen. Då betraktas förändringen som en verklig förändring och inte bara ett slump- eller mätfel. Den senare ger en bild av om hur de absoluta eftermätningsvärdena förhåller sig till medelvärdet för antingen en subklinisk population eller en klinisk population (som också kan hämtas från normdata) [@Jacobson1991]. För samtliga beräkningar av klinisk signifikans och reliabel förändring användes R-paketet *JTRCI* [@R-JTRCI]. Skillnader i frekvensen reliabelt förändrade deltagare på kliniskt signifikant nivå analyserades med $\chi^2$-test.
+För var och en av betingelserna bestämde vi frekvensen deltagare som i träningsprogrammet genomgått en reliabel förändring och dessutom befann sig på kliniskt signifikant nivå vid eftermätningen. För de deltagare som endast lämnat självskattningar vid förmätningstillfället fördes dessa värden vidare till eftermätningstillfället i enlighet med principen om *intention to treat*. Valet av klinisk signifikans-kriterium gjordes i enlighet med definitionerna och rekommendationerna i @Jacobson1991 för var och en av skattningsskalorna i relation till var och en av grupperna. En förändring mellan två mättillfällen definieras som reliabel om den är tillräckligt stor i relation till populationsvariansen. Då betraktas förändringen som en verklig förändring och inte bara ett slump- eller mätfel. Den senare ger en bild av om hur de absoluta eftermätningsvärdena förhåller sig till medelvärdet för antingen en subklinisk population eller en klinisk population (som också kan hämtas från normdata) [@Jacobson1991]. För samtliga beräkningar av klinisk signifikans och reliabel förändring användes R-paketet *JTRCI* [@R-JTRCI], som väljer signifikans-kriterium (*a*, *b* eller *c*) konservativt. SKIPPA DETTA? --> Skillnader i frekvensen reliabelt förändrade deltagare på kliniskt signifikant nivå analyserades med $\chi^2$-test.
 
 <!-- 2DO: analysera frekvenser -->
 
@@ -1030,7 +1030,7 @@ se tabell \@ref(tab:descriptives)
 
 (ref:descriptives) Deskriptiv statistik för primära och sekundära utfallsmått. Cohen's d är beräknad med tillgänglig data för de deltagare som lämnat svar både inför studien och vid respektive mättillfälle.
 
-``` {r descriptives, fig.cap='(ref:descriptives)', fig.align="center", cache = T, eval = T}
+```{r descriptives, fig.cap='(ref:descriptives)', fig.align="center", cache = T, eval = T}
 
 options(OutDec= ",") 
 
@@ -1219,7 +1219,7 @@ svkable(descriptives.col.out[], caption = "(ref:descriptives)", linesep = "", al
 
 <!-- (ref:int) Interaktioner ... -->
 
-``` {r interactions, fig.cap='(ref:int)', fig.align="center", fig.width=5, fig.height=4,eval=F}
+```{r interactions, fig.cap='(ref:int)', fig.align="center", fig.width=5, fig.height=4,eval=F}
 
 par(mfrow=c(1,1))
 
@@ -1249,7 +1249,27 @@ scatterplotMatrix(~ aaas_ad + aaas_ag + rathus|time, data = r2.long.data[lg3,],
 
 ## Klinisk signifikans (arbeta in detta i primära och sekundära frågeställningen?)
 
-``` {r jtrci, include = F, cache = T}
+```{r jtrci, include = F, cache = T}
+
+r2.wide.itt.data <- r2.wide.data
+
+# ITT 
+# Pre --> Dur
+r2.wide.itt.data[which(is.na(r2.wide.itt.data[,19])),19] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,19])),5]
+r2.wide.itt.data[which(is.na(r2.wide.itt.data[,20])),20] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,20])),6]
+r2.wide.itt.data[which(is.na(r2.wide.itt.data[,21])),21] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,21])),7]
+r2.wide.itt.data[which(is.na(r2.wide.itt.data[,26])),26] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,26])),12]
+r2.wide.itt.data[which(is.na(r2.wide.itt.data[,27])),27] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,27])),13]
+r2.wide.itt.data[which(is.na(r2.wide.itt.data[,28])),28] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,28])),14]
+r2.wide.itt.data[which(is.na(r2.wide.itt.data[,31])),31] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,31])),17]
+# Pre --> Post
+r2.wide.itt.data[which(is.na(r2.wide.itt.data[,33])),33] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,33])),5]
+r2.wide.itt.data[which(is.na(r2.wide.itt.data[,34])),34] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,34])),6]
+r2.wide.itt.data[which(is.na(r2.wide.itt.data[,35])),35] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,35])),7]
+r2.wide.itt.data[which(is.na(r2.wide.itt.data[,40])),40] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,40])),12]
+r2.wide.itt.data[which(is.na(r2.wide.itt.data[,41])),41] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,41])),13]
+r2.wide.itt.data[which(is.na(r2.wide.itt.data[,42])),42] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,42])),14]
+r2.wide.itt.data[which(is.na(r2.wide.itt.data[,45])),45] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,45])),17]
 
 jt_rownames <-
   factor(c(
@@ -1266,7 +1286,7 @@ jt_colnames <- c("Jacobson & Truax-klassificering", xg3, xg1, xg2)
 
 # Run
 x <- JTRCI(
-  data = r2.wide.data,
+  data = r2.wide.itt.data,
   pre = "pre_aaas_ad",
   post = "post_aaas_ad",
   ppid = "subject",
@@ -1302,7 +1322,7 @@ AAAS_ad.pre.post.jt.table <- xt
 
 # Run
 x <- JTRCI(
-  data = r2.wide.data,
+  data = r2.wide.itt.data,
   pre = "pre_aaas_ad",
   post = "dur_aaas_ad",
   ppid = "subject",
@@ -1338,7 +1358,7 @@ AAAS_ad.pre.dur.jt.table <- xt
 
 # Run
 x <- JTRCI(
-  data = r2.wide.data,
+  data = r2.wide.itt.data,
   pre = "pre_aaas_ag",
   post = "post_aaas_ag",
   ppid = "subject",
@@ -1374,7 +1394,7 @@ AAAS_ag.pre.post.jt.table <- xt
 
 # Run
 x <- JTRCI(
-  data = r2.wide.data,
+  data = r2.wide.itt.data,
   pre = "pre_aaas_ag",
   post = "dur_aaas_ag",
   ppid = "subject",
@@ -1410,7 +1430,7 @@ AAAS_ag.pre.dur.jt.table <- xt
 
 # Run
 x <- JTRCI(
-  data = r2.wide.data,
+  data = r2.wide.itt.data,
   pre = "pre_aaas_ag",
   post = "post_aaas_ag",
   ppid = "subject",
@@ -1446,7 +1466,7 @@ AAAS_ag.pre.post.DOWN.jt.table <- xt
 
 # Run
 x <- JTRCI(
-  data = r2.wide.data,
+  data = r2.wide.itt.data,
   pre = "pre_aaas_ag",
   post = "dur_aaas_ag",
   ppid = "subject",
@@ -1482,7 +1502,7 @@ AAAS_ag.pre.dur.DOWN.jt.table <- xt
 
 # Run
 x <- JTRCI(
-  data = r2.wide.data,
+  data = r2.wide.itt.data,
   pre = "pre_rathus",
   post = "post_rathus",
   ppid = "subject",
@@ -1518,7 +1538,7 @@ rathus.pre.post.jt.table <- xt
 
 # Run
 x <- JTRCI(
-  data = r2.wide.data,
+  data = r2.wide.itt.data,
   pre = "pre_rathus",
   post = "dur_rathus",
   ppid = "subject",
@@ -1552,11 +1572,36 @@ rathus.pre.dur.jt.table <- xt
 
 ```
 
-\@ref(fig:tjrciout))
+Se tabell \@ref(tab:jtprocent) med sammanställning jt/rci
+
+(ref:jtp) Klinisk signifikans med andel tillhörande de olika kategorierna för de två huvudutfallsmåtten samt Rathus. Deltagare som gjort förmätningen men inte en uppföljande mätning har fått förmätningsvärdena framflyttade till det senare mättillfället enligt principen om *intention to treat*.
+
+```{r jtprocent, fig.cap='(ref:jtp)', tab.align="center", cache=F}
+
+x <- as.data.frame(t(rbind.data.frame(
+  prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2),
+  prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2),
+  prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)
+)))
+
+colnames(x) <- c(rep(as.vector(jt_rownames),times=3))
+
+jt_table <- round(t(x) * 100,2)
+
+svkable(jt_table, align="ccc") %>%
+  pack_rows("AAA-S Adaptive (%)", 1, 5, bold = F) %>%
+  pack_rows("AAA-S Aggressive (%)", 6, 10, bold = F) %>%
+  pack_rows("Rathus (%)", 11, 15, bold = F) %>%
+  row_spec(c(5,10), extra_latex_after = "\\midrule")
+
+```
+
+
+Se \@ref(fig:tjrciout) för mer ...
 
 (ref:rci) 123
 
-```{r tjrciout, fig.cap='(ref:rci)', fig.align="center", dpi=196, cache=T, fig.height=3}
+```{r tjrciout, fig.cap='(ref:rci)', fig.align="center", dpi=196, cache=T, fig.height=3, cache=T}
 
 par(mfrow=c(3,1))
 
@@ -1565,30 +1610,13 @@ par(mfrow=c(3,1))
 # Plots
 
 AAAS_ad.pre.post.jt.plot + theme(legend.position="none") + scale_color_manual(values=c(rep("white",times=4),"red"))
-#AAAS_ad.pre.dur.jt.plot + theme(legend.position="none")
+#AAAS_ad.pre.dur.jt.plot + theme(legend.position="none") + scale_color_manual(values=c(rep("white",times=4),"red"))
 
 AAAS_ag.pre.post.jt.plot + theme(legend.position="none") + scale_color_manual(values=c(rep("white",times=4),"red"))
-#AAAS_ag.pre.dur.jt.plot + theme(legend.position="none")
-
-#AAAS_ag.pre.post.DOWN.jt.plot + theme(legend.position="none")
-#AAAS_ag.pre.dur.DOWN.jt.plot + theme(legend.position="none")
+#AAAS_ag.pre.dur.jt.plot + theme(legend.position="none") + scale_color_manual(values=c(rep("white",times=4),"red"))
 
 rathus.pre.post.jt.plot + theme(legend.position="none") + scale_color_manual(values=c("white","white","white","red","white"))
-#rathus.pre.dur.jt.plot + theme(legend.position="none")
-
-# Tables
-
-# AAAS_ad.pre.post.jt.table
-# AAAS_ad.pre.dur.jt.table
-# 
-# AAAS_ag.pre.post.jt.table
-# AAAS_ag.pre.dur.jt.table
-# 
-# AAAS_ag.pre.post.DOWN.jt.table
-# AAAS_ag.pre.dur.DOWN.jt.table
-# 
-# rathus.pre.post.jt.table
-# rathus.pre.dur.jt.table
+#rathus.pre.dur.jt.plot + theme(legend.position="none") + scale_color_manual(values=c(rep("white",times=4),"red"))
 
 ```
 
@@ -1728,15 +1756,86 @@ aaas_ad.eff.by.time.plot <- plot(aaas_ad.eff.by.time) + geom_vline(xintercept = 
 aaas_ad.diag.plots <- plot_model(aaas_ad.interaction, type="diag")
 # Allt ser ok ut!
 
+###
+
+aaas_ad.interaction <-
+  lmer(aaas_ad ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
+
+aaas_ad.est.plot <- plot_model(aaas_ad.interaction,show.values=T,show.p=T,value.offset = 0.35,value.size = 3,axis.labels = rev(labradorer)) + labs(y="Estimat med konfidensintervall (och signifikansnivåer)",title="Modellestimat för AAA-S Adaptive")
+
+aaas_ad.emm.by.group <- emmeans(aaas_ad.interaction, ~ time | group, adjust="bonferroni")
+aaas_ad.emm.by.time <- emmeans(aaas_ad.interaction, ~ group | time, adjust="bonferroni")
+aaas_ad.emm.plot <- plot(ggemmeans(aaas_ad.interaction, terms = c("time","group")), connect.lines = TRUE) + labs(x="Tid",y="Värde på AAA-S Adaptive",colour = "Grupp", title="Predicerade värden för AAA-S Adaptive")
+
+aaas_ad.eff.by.group <- eff_size(aaas_ad.emm.by.group, sigma = sigma(aaas_ad.interaction), edf = 202) # Check edf!
+aaas_ad.eff.by.time <- eff_size(aaas_ad.emm.by.time, sigma = sigma(aaas_ad.interaction), edf = 202) # Check edf!
+aaas_ad.eff.by.group.plot <- plot(aaas_ad.eff.by.group) + geom_vline(xintercept = 0,linetype="dotted") + labs(x="Uppskattad effekt med konfidensintervall",y="Parvisa jämförelser",title="Effektstorlekar per betingelse") + geom_text(aes(label = round(the.emmean,2)),vjust=-1,size=3)
+aaas_ad.eff.by.time.plot <- plot(aaas_ad.eff.by.time) + geom_vline(xintercept = 0,linetype="dotted") + labs(x="Uppskattad effekt med konfidensintervall",y="Parvisa jämförelser",title="Effektstorlekar per mättillfälle") + geom_text(aes(label = round(the.emmean,2)),vjust=-1,size=3)
+
+aaas_ad.diag.plots <- plot_model(aaas_ad.interaction, type="diag")
+# Allt ser ok ut!
+
+###
+
+aaas_ag.interaction <-
+  lmer(aaas_ag ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
+
+aaas_ag.est.plot <- plot_model(aaas_ag.interaction,show.values=T,show.p=T,value.offset = 0.35,value.size = 3,axis.labels = rev(labradorer)) + labs(y="Estimat med konfidensintervall (och signifikansnivåer)",title="Modellestimat för AAA-S Aggressive")
+
+aaas_ag.emm.by.group <- emmeans(aaas_ag.interaction, ~ time | group, adjust="bonferroni")
+aaas_ag.emm.by.time <- emmeans(aaas_ag.interaction, ~ group | time, adjust="bonferroni")
+aaas_ag.emm.plot <- plot(ggemmeans(aaas_ag.interaction, terms = c("time","group")), connect.lines = TRUE) + labs(x="Tid",y="Värde på AAA-S Aggressive",colour = "Grupp", title="Predicerade värden för AAA-S Aggressive")
+
+aaas_ag.eff.by.group <- eff_size(aaas_ag.emm.by.group, sigma = sigma(aaas_ag.interaction), edf = 202) # Check edf!
+aaas_ag.eff.by.time <- eff_size(aaas_ag.emm.by.time, sigma = sigma(aaas_ag.interaction), edf = 202) # Check edf!
+aaas_ag.eff.by.group.plot <- plot(aaas_ag.eff.by.group) + geom_vline(xintercept = 0,linetype="dotted") + labs(x="Uppskattad effekt med konfidensintervall",y="Parvisa jämförelser",title="Effektstorlekar per betingelse") + geom_text(aes(label = round(the.emmean,2)),vjust=-1,size=3)
+aaas_ag.eff.by.time.plot <- plot(aaas_ag.eff.by.time) + geom_vline(xintercept = 0,linetype="dotted") + labs(x="Uppskattad effekt med konfidensintervall",y="Parvisa jämförelser",title="Effektstorlekar per mättillfälle") + geom_text(aes(label = round(the.emmean,2)),vjust=-1,size=3)
+
+aaas_ag.diag.plots <- plot_model(aaas_ag.interaction, type="diag")
+# Allt ser ok ut!
+
+###
+
+rathus.interaction <-
+  lmer(rathus ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
+
+rathus.est.plot <- plot_model(rathus.interaction,show.values=T,show.p=T,value.offset = 0.35,value.size = 3,axis.labels = rev(labradorer)) + labs(y="Estimat med konfidensintervall (och signifikansnivåer)",title="Modellestimat för Rathus")
+
+rathus.emm.by.group <- emmeans(rathus.interaction, ~ time | group, adjust="bonferroni")
+rathus.emm.by.time <- emmeans(rathus.interaction, ~ group | time, adjust="bonferroni")
+rathus.emm.plot <- plot(ggemmeans(rathus.interaction, terms = c("time","group")), connect.lines = TRUE) + labs(x="Tid",y="Värde på Rathus",colour = "Grupp", title="Predicerade värden för Rathus")
+
+rathus.eff.by.group <- eff_size(rathus.emm.by.group, sigma = sigma(rathus.interaction), edf = 202) # Check edf!
+rathus.eff.by.time <- eff_size(rathus.emm.by.time, sigma = sigma(rathus.interaction), edf = 202) # Check edf!
+rathus.eff.by.group.plot <- plot(rathus.eff.by.group) + geom_vline(xintercept = 0,linetype="dotted") + labs(x="Uppskattad effekt med konfidensintervall",y="Parvisa jämförelser",title="Effektstorlekar per betingelse") + geom_text(aes(label = round(the.emmean,2)),vjust=-1,size=3)
+rathus.eff.by.time.plot <- plot(rathus.eff.by.time) + geom_vline(xintercept = 0,linetype="dotted") + labs(x="Uppskattad effekt med konfidensintervall",y="Parvisa jämförelser",title="Effektstorlekar per mättillfälle") + geom_text(aes(label = round(the.emmean,2)),vjust=-1,size=3)
+
+rathus.diag.plots <- plot_model(rathus.interaction, type="diag")
+# Allt ser ok ut!
+
 
 ```
 
-```{r outputexp, dpi=196, eval=T, cache=T, fig.height=8, fig.width=11, fig.align="center", fig.cap="Exempel på figur med resultat som jag (Tobias) skulle vilja rapportera. De här graferna 'give it all away' utan behov av krångliga tabeller. Jag röstar för att vi producerar figurer liknande dessa för de tre huvudutfallsmåtten. Överst till vänster är modellestimaten från vår regression (fixed-effekter), den andra visar de predicerade värden som modellen producerar. De två understa innehåller de effektstorlekar med konfidensintervall (med inritad noll-linje) som visuellt tydligt kommunicerar vilka av de parvisa uppföljningstesten som är signifikanta (med Bonferroni-korrektion). De intressanta jämförelserna tar vi med i resultattexten, där vi också kan nämna hur stor del av felvariansen som hör till vår random-effekt (subject)."}
+```{r aaasad.res, dpi=196, eval=T, cache=T, fig.height=8, fig.width=11, fig.align="center", fig.cap="Resultat för AAA-S Adaptive. Exempel på figur med resultat som jag (Tobias) skulle vilja rapportera. De här graferna 'give it all away' utan behov av krångliga tabeller. Jag röstar för att vi producerar figurer liknande dessa för de tre huvudutfallsmåtten. Överst till vänster är modellestimaten från vår regression (fixed-effekter), den andra visar de predicerade värden som modellen producerar. De två understa innehåller de effektstorlekar med konfidensintervall (med inritad noll-linje) som visuellt tydligt kommunicerar vilka av de parvisa uppföljningstesten som är signifikanta (med Bonferroni-korrektion). De intressanta jämförelserna tar vi med i resultattexten, där vi också kan nämna hur stor del av felvariansen som hör till vår random-effekt (subject)."}
 
 library(patchwork)
 
 (aaas_ad.est.plot + aaas_ad.emm.plot + 
   aaas_ad.eff.by.time.plot + aaas_ad.eff.by.group.plot + plot_layout(nrow = 2)) * theme_set(theme_classic())
+
+```
+
+```{r aaasag.res, dpi=196, eval=T, cache=T, fig.height=8, fig.width=11, fig.align="center", fig.cap="Resultat för AAA-S Aggressive."}
+
+(aaas_ag.est.plot + aaas_ag.emm.plot + 
+  aaas_ag.eff.by.time.plot + aaas_ag.eff.by.group.plot + plot_layout(nrow = 2)) * theme_set(theme_classic())
+
+```
+
+```{r rathus.res, dpi=196, eval=T, cache=T, fig.height=8, fig.width=11, fig.align="center", fig.cap="Resultat för Rathus."}
+
+(rathus.est.plot + rathus.emm.plot + 
+  rathus.eff.by.time.plot + rathus.eff.by.group.plot + plot_layout(nrow = 2)) * theme_set(theme_classic())
 
 ```
 
@@ -1867,7 +1966,7 @@ well.diag.plots <- plot_model(well.interaction, type="diag")
 ```
 
 
-``` {r stargazer,results='asis',eval=F}
+```{r stargazer,results='asis',eval=F}
 
 stargazer::stargazer(
   aaas_ad.interaction,
