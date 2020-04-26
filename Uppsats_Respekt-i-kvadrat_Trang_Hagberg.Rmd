@@ -100,6 +100,9 @@ xiterapi = "Iterapi [@Vlaescu2016]"
 xpre = "Förmätning"
 xdur = "Mittenmätning"
 xpost = "Eftermätning"
+xt1 = "Före"
+xt2 = "Mitten"
+xt3 = "Efter"
 
 ```
 
@@ -229,7 +232,7 @@ g3key <- which(!is.na(r2.wide.data$postg3_reminders))
 r2.wide.data[g3key,c(31:44)] <- r2.wide.data[g3key,c(45:58)]
 
 # Merge files from iTerapi
-# by "pre_subject" and "Användare" respectively
+# by "pre_subject", "Användare" and "Användarnamn" respectively
 r2.raw.data.merged <- merge(r2.wide.data,r2.raw_conversations.data,by.x="pre_subject",by.y="Användare")
 r2.raw.data.merged <- merge(r2.raw.data.merged,r2.raw_excel_sociodemographics.data,by.x="pre_subject",by.y="Användarnamn")
 
@@ -297,7 +300,7 @@ t = 3 # 2do: change to 4 with final data
 r2.long.data <- data.frame(
   subject = factor(rep(r2.wide.data$subject, times = t)),
   group = factor(rep(r2.wide.data$group, times = t)),
-  time = factor(rep(c(1,2,3), each = n), labels = c("Pre","During","Post")), # 2do: add "fu" with final data
+  time = factor(rep(c(1,2,3), each = n), labels = c(xt1,xt2,xt3)), # 2do: add "fu" with final data
   therapist = as.factor(rep(r2.wide.data$therapist, times = t)),
   rathus = c(
     r2.wide.data$pre_rathus,
@@ -376,7 +379,12 @@ r2.long.data <- data.frame(
     r2.wide.data$dur_well,
     r2.wide.data$post_well#,
     #r2.wide.data$fu_well # 2do: enable with final data
-  )
+  ),
+ age = c(
+    r2.wide.data[,50],
+    r2.wide.data[,50],
+    r2.wide.data[,50]
+ )
 )
 
 # Subsetting keys
@@ -385,32 +393,21 @@ lg1 <- grepl(xg1, r2.long.data$group)
 lg2 <- grepl(xg2, r2.long.data$group)
 lg3 <- grepl(xg3, r2.long.data$group)
 
-lt1 <- grepl("Pre", r2.long.data$time)
-lt2 <- grepl("During", r2.long.data$time)
-lt3 <- grepl("Post", r2.long.data$time)
+lt1 <- grepl(xt1, r2.long.data$time)
+lt2 <- grepl(xt2, r2.long.data$time)
+lt3 <- grepl(xt3, r2.long.data$time)
 
-lg1t1 <- r2.long.data$group == xg1 & r2.long.data$time == "Pre"
-lg1t2 <- r2.long.data$group == xg1 & r2.long.data$time == "During"
-lg1t3 <- r2.long.data$group == xg1 & r2.long.data$time == "Post"
+lg1t1 <- r2.long.data$group == xg1 & r2.long.data$time == xt1
+lg1t2 <- r2.long.data$group == xg1 & r2.long.data$time == xt2
+lg1t3 <- r2.long.data$group == xg1 & r2.long.data$time == xt3
 
-lg2t1 <- r2.long.data$group == xg2 & r2.long.data$time == "Pre"
-lg2t2 <- r2.long.data$group == xg2 & r2.long.data$time == "During"
-lg2t3 <- r2.long.data$group == xg2 & r2.long.data$time == "Post"
+lg2t1 <- r2.long.data$group == xg2 & r2.long.data$time == xt1
+lg2t2 <- r2.long.data$group == xg2 & r2.long.data$time == xt2
+lg2t3 <- r2.long.data$group == xg2 & r2.long.data$time == xt3
 
-lg3t1 <- r2.long.data$group == xg3 & r2.long.data$time == "Pre"
-lg3t2 <- r2.long.data$group == xg3 & r2.long.data$time == "During"
-lg3t3 <- r2.long.data$group == xg3 & r2.long.data$time == "Post"
-
-# lg1t13 <- r2.long.data$group == xg1 & r2.long.data$time == "Pre" | r2.long.data$time == "Post"
-# lg2t13 <- r2.long.data$group == xg2 & r2.long.data$time == "Pre" & r2.long.data$time == "Post"
-# lg3t13 <- r2.long.data$group == xg3 & r2.long.data$time == "Pre" & r2.long.data$time == "Post"
-
-
-# Finally, make sure the waitlist condition has zero modules assigned & opened.
-# Rationale: At the time of writing, participants have started with module 1 just 
-# after having completed their post measurement survey; these opened modules
-# should *not* be counted.
-r2.long.data[lg3,c(18:20)] <- NA 
+lg3t1 <- r2.long.data$group == xg3 & r2.long.data$time == xt1
+lg3t2 <- r2.long.data$group == xg3 & r2.long.data$time == xt2
+lg3t3 <- r2.long.data$group == xg3 & r2.long.data$time == xt3
 
 ll1 = length(r2.long.data[lg1t1,1])
 ll2 = length(r2.long.data[lg2t1,1])
@@ -680,6 +677,7 @@ De personer som skattade 15 eller mer på självskattningsformuläret PHQ-9 exkl
 
 xdemocat <-
   c(
+#  "N",
   "M (SD)",
   "Kvinna",
   "Singel",
@@ -720,7 +718,9 @@ xdemodata <- rbind(
   
 xdemodata <- xdemodata[-c(1,25:27),]
 
+options(OutDec= ",") 
 xdemodata.ext <- rbind(
+#  cbind(ll1,ll2,ll3),
   cbind(
     paste(round(mean(r2.wide.data[wg1, 50]), 2), " (", round(sd(r2.wide.data[wg1, 50]), 2),
           ")",
@@ -739,9 +739,11 @@ xdemodata.rot <- t(xdemodata.ext)
 
 colnames(xdemodata.rot) <- xdemocat
 
-xdemodata.rot[,c(3:5)] <- sapply(xdemodata.rot[,c(3:5)], as.numeric)
+#xdemodata.rot[,c(3:5)] <- sapply(xdemodata.rot[,c(3:5)], as.numeric)
 
 demdata.tabell <- t(xdemodata.rot)
+
+options(OutDec= ".") 
 
 ```
 
@@ -751,19 +753,23 @@ De `r length(r2.wide.data$subject)` deltagare vars data används i den här stud
 
 ```{r demdata, out.width="100%", tab.align="center", cache = F}
 
-svkable(demdata.tabell, caption = "(ref:dem)", linesep = "", align="ccc") %>%
+options(OutDec= ",") 
+
+knitr::kable(demdata.tabell, format="latex", booktabs = T, caption = "(ref:dem)", linesep = "", align="ccc") %>%
   kable_styling(full_width = F) %>%
-  column_spec(2, width = "6em") %>%
-  column_spec(3, width = "6em") %>%
-  column_spec(4, width = "6em") %>%
+  column_spec(2, width = "7em") %>%
+  column_spec(3, width = "7em") %>%
+  column_spec(4, width = "7em") %>%
   pack_rows("Ålder (år)", 1, 1, bold = F) %>%
   pack_rows("Kön (%)", 2, 2, bold = F) %>%
   pack_rows("Civilstånd (%)", 3, 6, bold = F) %>%
   pack_rows("Utbildning (%)", 7, 12, bold = F) %>%
   pack_rows("Sysselsättning (%)", 13, 19, bold = F) %>%
   pack_rows("Användning psykofarmaka (%)", 20, 22, bold = F) %>%
-  pack_rows("Tidigare psykologisk behandling (%)", 23, 24, bold = F)# %>%
-  #row_spec(c(1,2,6,12,19,22), extra_latex_after = "\\midrule")
+  pack_rows("Tidigare psykologisk behandling (%)", 23, 24, bold = F) %>%
+  row_spec(c(1,2,6,12,19,22), extra_latex_after = "\\midrule")
+
+options(OutDec= ".") 
 
 ```
 
@@ -962,7 +968,7 @@ svkable(intervention.tabell, caption = "(ref:interv)", linesep = "", align="rll"
   column_spec(1, width = "2em") %>%
   column_spec(2, width = "22em") %>%
   column_spec(3, width = "12em") %>%
-  row_spec(c(1:7), extra_latex_after = "\\addlinespace")
+  row_spec(c(1:6), extra_latex_after = "\\midrule") #"\\addlinespace"
 
 ```
 
@@ -986,7 +992,7 @@ Signifikansnivån $\alpha$ = 0,05 tillämpades vid alla beräkningar.
 
 ### Kontroll av utgångsdata
 
-Vi analyserade insamlade förmätningsvärden för att kontrollera om randomiseringen hade gett grupper utan signifikanta skillnader. Oberoende variansanalys (ANOVA) användes för att utesluta skillnader mellan grupperna i primära utfallsmått, sekundära utfallsmått och kontinuerliga sociodemografiska variabler. Kategoriska sociodemografiska variabler undersöktes med Pearson $\chi^2$-test. Cohen's d-effektstorlekar för beroende mätningar beräknades med R-paketet *effsize* [@R-effsize]. För beräkning och sammanställning av övrig deskriptiv statistik, inklusive resultat för använda normalfördelningstest, användes R-paketet *pastecs* [@R-pastecs].
+Vi analyserade insamlade förmätningsvärden för att kontrollera om randomiseringen hade gett grupper utan signifikanta skillnader. Oberoende variansanalys (ANOVA) användes för att utesluta skillnader mellan grupperna i primära utfallsmått, sekundära utfallsmått och kontinuerliga sociodemografiska variabler. Kategoriska sociodemografiska variabler undersöktes med Pearson $\chi^2$-test. Cohen's d-effektstorlekar för beroende mätningar beräknades med R-paketet *effsize* [@R-effsize]. För beräkning och sammanställning av övrig deskriptiv statistik användes R-paketet *pastecs* [@R-pastecs].
 
 <!-- normalfördelning shapiro wilks -->
 
@@ -998,7 +1004,7 @@ Vi analyserade insamlade förmätningsvärden för att kontrollera om randomiser
 
 ### Analys av huvudeffekter och interaktionseffekter
 
-Huvudeffekter och interaktion mellan grupp och tid för de primära och sekundära utfallsmått undersöktes med *mixed model*-metodik. *Mixed model* tillåter precis som MANOVA inklusion av upprepade beroende mättillfällen i modellen, men med hänsyn taget till principen om *intention to treat*. Utöver det möjliggör det även modellering och kvantifiering på gruppnivå av observerade (men inte kontrollerade) individ-relaterade effekter, exempelvis skillnader i underliggande förändringsbenägenhet över tid. I modellen tilläts skärningspunkterna för respektive deltagare att variera, liksom lutningen på regressionslinjerna mellan mättillfällena för dem. För analysen användes R-paketet *nlme* [@R-nlme]. För *post hoc*-test av skillnader mellan mättillfällena för respektive behandlingsbetingelse användes R-paketet *emmeans* [@R-emmeans].
+Huvudeffekter och interaktion mellan grupp och tid för de primära och sekundära utfallsmått undersöktes med *mixed model*-metodik. *Mixed model* tillåter precis som MANOVA inklusion av upprepade beroende mättillfällen i modellen, men med hänsyn taget till principen om *intention to treat*. Utöver det möjliggör det även modellering och kvantifiering på gruppnivå av observerade (men inte kontrollerade) individ-relaterade effekter, exempelvis skillnader i underliggande förändringsbenägenhet över tid. I modellen tilläts skärningspunkterna för respektive deltagare att variera, liksom lutningen på regressionslinjerna mellan mättillfällena för dem. För analysen användes R-paketet *nlme* [@R-nlme]. Val av kovariansstruktur gjordes genom jämförelse av AIC-tal. För *post hoc*-test uppskattades predicerade *marginal means* (eller *least square means*) för de olika kombinationerna av betingelse och mättillfälle med R-paketet *emmeans* [@R-emmeans].
 
 ### Analys av reliabel förändring och klinisk signifikans
 
@@ -1018,9 +1024,11 @@ oxå sig skillnad i sociodemografisk data/kön
 
 se tabell \@ref(tab:descriptives)
 
-(ref:descriptives) Deskriptiv statistik för primära och sekundära utfallsmått. 
+(ref:descriptives) Deskriptiv statistik för primära och sekundära utfallsmått. Cohen's d är beräknad med tillgänglig data för de deltagare som lämnat svar både inför studien och vid respektive mättillfälle.
 
 ``` {r descriptives, fig.cap='(ref:descriptives)', fig.align="center", cache = T, eval = T}
+
+options(OutDec= ",") 
 
 ### Descriptives
 
@@ -1166,14 +1174,6 @@ descriptives.out.rot <- t(descriptives.out)
 xeff = "Cohen's d"
 
 colnames(descriptives.out.rot) <- NULL
-
-# colnames(descriptives.out.rot) <- rep(c(
-#     rep(c("M","*SD*"),times = 2),
-#     paste(xeff,"före--under"),
-#     rep(c("M","*SD*"),times = 1),
-#     paste(xeff,"före--efter")
-# ),times = 3)
-
 descriptives.out.rot.rot <- t(descriptives.out.rot)
 
 descriptives.col.out <- cbind.data.frame(
@@ -1193,6 +1193,7 @@ descriptives.col.out <- cbind.data.frame(
   ), times = 3),
   round(descriptives.out.rot.rot, 1)
 )
+options(OutDec= ".") 
 
 #  add_header_above(c("", "Självhjälp (N = 67)" = 3, "Med stöd (N = 69)" = 3, "Väntlista (N = 68)" = 3)) %>% #, "All (N = 204)" = 2)) %>%
 
@@ -1682,7 +1683,7 @@ chisq.test(sociodemografisk.data$group, sociodemografisk.data$Demografi.Kon, cor
 
 ```
 
-```{r analyser, dpi=196,cache=T}
+```{r analyser, dpi=196, cache=F}
 
 # The marginal R-squared considers only the variance of the fixed effects, while the conditional R-squared takes both the fixed and random effects into account.
 # 
@@ -1692,46 +1693,70 @@ library(lme4)
 library(ggeffects)
 library(sjPlot)
 theme_set(theme_classic())
-#library(glmmTMB)
-#+ theme_classic() + theme(legend.position = "none")
 
 labradorer <- c(
     xg1,
     xg2,
     xdur,
     xpost,
-    paste(xg1, " : ", xdur,sep=""),
-    paste(xg2, " : ", xdur,sep=""),
-    paste(xg1, " : ", xpost,sep=""),
-    paste(xg2, " : ", xpost,sep="")
+    paste(xg1, " : ", xt2,sep=""),
+    paste(xg2, " : ", xt2,sep=""),
+    paste(xg1, " : ", xt3,sep=""),
+    paste(xg2, " : ", xt3,sep="")
   )
 
-### 
+###
 
 aaas_ad.interaction <-
   lmer(aaas_ad ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
 
-aaas_ad.estimatplot <- plot_model(aaas_ad.interaction,show.values=T,show.p=T,value.offset = 0.45,axis.labels = rev(labradorer),wrap.labels=22)
+aaas_ad.est.plot <- plot_model(aaas_ad.interaction,show.values=T,show.p=T,value.offset = 0.35,value.size = 3,axis.labels = rev(labradorer)) + labs(y="Estimat med konfidensintervall (och signifikansnivåer)",title="Modellestimat för AAA-S Adaptive")
 
-#plot_model(aaas_ad.interaction, type="emm", terms=c("time","group")) # BRA!
-aaas_ad.prediktionsplot <- plot(ggpredict(aaas_ad.interaction, terms = c("time","group")), connect.lines = TRUE)
+aaas_ad.emm.by.group <- emmeans(aaas_ad.interaction, ~ time | group, adjust="bonferroni")
+aaas_ad.emm.by.time <- emmeans(aaas_ad.interaction, ~ group | time, adjust="bonferroni")
+aaas_ad.emm.plot <- plot(ggemmeans(aaas_ad.interaction, terms = c("time","group")), connect.lines = TRUE) + labs(x="Tid",y="Värde på AAA-S Adaptive",colour = "Grupp", title="Predicerade värden för AAA-S Adaptive")
 
-aaas_ad.emm <- emmeans(aaas_ad.interaction, ~ time | group, adjust="bonferroni")
-aaas_ad.diagnostik <- plot_model(aaas_ad.interaction, type="diag")
+aaas_ad.eff.by.group <- eff_size(aaas_ad.emm.by.group, sigma = sigma(aaas_ad.interaction), edf = 202) # Check edf!
+aaas_ad.eff.by.time <- eff_size(aaas_ad.emm.by.time, sigma = sigma(aaas_ad.interaction), edf = 202) # Check edf!
+aaas_ad.eff.by.group.plot <- plot(aaas_ad.eff.by.group) + geom_vline(xintercept = 0,linetype="dotted") + labs(x="Uppskattad effekt med konfidensintervall",y="Parvisa jämförelser",title="Effektstorlekar per betingelse") + geom_text(aes(label = round(the.emmean,2)),vjust=-1,size=3)
+aaas_ad.eff.by.time.plot <- plot(aaas_ad.eff.by.time) + geom_vline(xintercept = 0,linetype="dotted") + labs(x="Uppskattad effekt med konfidensintervall",y="Parvisa jämförelser",title="Effektstorlekar per mättillfälle") + geom_text(aes(label = round(the.emmean,2)),vjust=-1,size=3)
+
+aaas_ad.diag.plots <- plot_model(aaas_ad.interaction, type="diag")
 # Allt ser ok ut!
+
+
+```
+
+```{r outputexp, dpi=196, eval=T, cache=T, fig.height=8, fig.width=11, fig.align="center", fig.cap="Exempel på figur med resultat som jag (Tobias) skulle vilja rapportera. De här graferna 'give it all away' utan behov av krångliga tabeller. Jag röstar för att vi producerar figurer liknande dessa för de tre huvudutfallsmåtten. Överst till vänster är modellestimaten från vår regression (fixed-effekter), den andra visar de predicerade värden som modellen producerar. De två understa innehåller de effektstorlekar med konfidensintervall (med inritad noll-linje) som visuellt tydligt kommunicerar vilka av de parvisa uppföljningstesten som är signifikanta (med Bonferroni-korrektion). De intressanta jämförelserna tar vi med i resultattexten, där vi också kan nämna hur stor del av felvariansen som hör till vår random-effekt (subject)."}
+
+library(patchwork)
+
+(aaas_ad.est.plot + aaas_ad.emm.plot + 
+  aaas_ad.eff.by.time.plot + aaas_ad.eff.by.group.plot + plot_layout(nrow = 2)) * theme_set(theme_classic())
+
+```
+
+```{r therest,eval=F}
+
+library(lme4)
 
 ### 
 
 aaas_ag.interaction <-
   lmer(aaas_ag ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
 
-aaas_ag.estimatplot <- plot_model(aaas_ag.interaction,show.values=T,show.p=T,value.offset = 0.45,axis.labels = rev(labradorer),wrap.labels=22)
+aaas_ag.est.plot <- plot_model(aaas_ag.interaction,show.values=T,show.p=T,value.offset = 0.4,axis.labels = rev(labradorer),wrap.labels=22)
 
-#plot_model(aaas_ag.interaction, type="emm", terms=c("time","group")) # BRA!
-aaas_ag.prediktionsplot <- plot(ggpredict(aaas_ag.interaction, terms = c("time","group")), connect.lines = TRUE)
+aaas_ag.emm.by.group <- emmeans(aaas_ag.interaction, ~ time | group, adjust="bonferroni")
+aaas_ag.emm.by.time <- emmeans(aaas_ag.interaction, ~ group | time, adjust="bonferroni")
+aaas_ag.emm.plot <- plot(ggemmeans(aaas_ag.interaction, terms = c("time","group")), connect.lines = TRUE)
 
-aaas_ag.emm <- emmeans(aaas_ag.interaction, ~ time | group, adjust="bonferroni")
-aaas_ag.diagnostik <- plot_model(aaas_ag.interaction, type="diag")
+aaas_ag.eff.by.group <- eff_size(aaas_ag.emm.by.group, sigma = sigma(aaas_ag.interaction), edf = 202) # Check edf!
+aaas_ag.eff.by.time <- eff_size(aaas_ag.emm.by.time, sigma = sigma(aaas_ag.interaction), edf = 202) # Check edf!
+aaas_ag.eff.by.group.plot <- plot(aaas_ag.eff.by.group) + geom_vline(xintercept = 0,linetype="dotted")
+aaas_ag.eff.by.time.plot <- plot(aaas_ag.eff.by.time) + geom_vline(xintercept = 0,linetype="dotted")
+
+aaas_ag.diag.plots <- plot_model(aaas_ag.interaction, type="diag")
 # Allt ser ok ut!
 
 ### 
@@ -1739,13 +1764,18 @@ aaas_ag.diagnostik <- plot_model(aaas_ag.interaction, type="diag")
 rathus.interaction <-
   lmer(rathus ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
 
-rathus.estimatplot <- plot_model(rathus.interaction,show.values=T,show.p=T,value.offset = 0.45,axis.labels = rev(labradorer),wrap.labels=22)
+rathus.est.plot <- plot_model(rathus.interaction,show.values=T,show.p=T,value.offset = 0.4,axis.labels = rev(labradorer),wrap.labels=22)
 
-#plot_model(aaas_ag.interaction, type="emm", terms=c("time","group")) # BRA!
-rathus.prediktionsplot <- plot(ggpredict(rathus.interaction, terms = c("time","group")), connect.lines = TRUE)
+rathus.emm.by.group <- emmeans(rathus.interaction, ~ time | group, adjust="bonferroni")
+rathus.emm.by.time <- emmeans(rathus.interaction, ~ group | time, adjust="bonferroni")
+rathus.emm.plot <- plot(ggemmeans(rathus.interaction, terms = c("time","group")), connect.lines = TRUE)
 
-rathus.emm <- emmeans(rathus.interaction, ~ time | group, adjust="bonferroni")
-rathus.diagnostik <- plot_model(rathus.interaction, type="diag")
+rathus.eff.by.group <- eff_size(rathus.emm.by.group, sigma = sigma(rathus.interaction), edf = 202) # Check edf!
+rathus.eff.by.time <- eff_size(rathus.emm.by.time, sigma = sigma(rathus.interaction), edf = 202) # Check edf!
+rathus.eff.by.group.plot <- plot(rathus.eff.by.group) + geom_vline(xintercept = 0,linetype="dotted")
+rathus.eff.by.time.plot <- plot(rathus.eff.by.time) + geom_vline(xintercept = 0,linetype="dotted")
+
+rathus.diag.plots <- plot_model(rathus.interaction, type="diag")
 # Allt ser ok ut!
 
 ### 
@@ -1753,13 +1783,18 @@ rathus.diagnostik <- plot_model(rathus.interaction, type="diag")
 lsas_sum.interaction <-
   lmer(lsas_sum ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
 
-lsas_sum.estimatplot <- plot_model(lsas_sum.interaction,show.values=T,show.p=T,value.offset = 0.45,axis.labels = rev(labradorer),wrap.labels=22)
+lsas_sum.est.plot <- plot_model(lsas_sum.interaction,show.values=T,show.p=T,value.offset = 0.4,axis.labels = rev(labradorer),wrap.labels=22)
 
-#plot_model(aaas_ag.interaction, type="emm", terms=c("time","group")) # BRA!
-lsas_sum.prediktionsplot <- plot(ggpredict(lsas_sum.interaction, terms = c("time","group")), connect.lines = TRUE)
+lsas_sum.emm.by.group <- emmeans(lsas_sum.interaction, ~ time | group, adjust="bonferroni")
+lsas_sum.emm.by.time <- emmeans(lsas_sum.interaction, ~ group | time, adjust="bonferroni")
+lsas_sum.emm.plot <- plot(ggemmeans(lsas_sum.interaction, terms = c("time","group")), connect.lines = TRUE)
 
-lsas_sum.emm <- emmeans(lsas_sum.interaction, ~ time | group, adjust="bonferroni")
-lsas_sum.diagnostik <- plot_model(lsas_sum.interaction, type="diag")
+lsas_sum.eff.by.group <- eff_size(lsas_sum.emm.by.group, sigma = sigma(lsas_sum.interaction), edf = 202) # Check edf!
+lsas_sum.eff.by.time <- eff_size(lsas_sum.emm.by.time, sigma = sigma(lsas_sum.interaction), edf = 202) # Check edf!
+lsas_sum.eff.by.group.plot <- plot(lsas_sum.eff.by.group) + geom_vline(xintercept = 0,linetype="dotted")
+lsas_sum.eff.by.time.plot <- plot(lsas_sum.eff.by.time) + geom_vline(xintercept = 0,linetype="dotted")
+
+lsas_sum.diag.plots <- plot_model(lsas_sum.interaction, type="diag")
 # Allt ser ok ut!
 
 ### 
@@ -1767,13 +1802,18 @@ lsas_sum.diagnostik <- plot_model(lsas_sum.interaction, type="diag")
 phq_sum.interaction <-
   lmer(phq_sum ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
 
-phq_sum.estimatplot <- plot_model(phq_sum.interaction,show.values=T,show.p=T,value.offset = 0.45,axis.labels = rev(labradorer),wrap.labels=22)
+phq_sum.est.plot <- plot_model(phq_sum.interaction,show.values=T,show.p=T,value.offset = 0.4,axis.labels = rev(labradorer),wrap.labels=22)
 
-#plot_model(aaas_ag.interaction, type="emm", terms=c("time","group")) # BRA!
-phq_sum.prediktionsplot <- plot(ggpredict(phq_sum.interaction, terms = c("time","group")), connect.lines = TRUE)
+phq_sum.emm.by.group <- emmeans(phq_sum.interaction, ~ time | group, adjust="bonferroni")
+phq_sum.emm.by.time <- emmeans(phq_sum.interaction, ~ group | time, adjust="bonferroni")
+phq_sum.emm.plot <- plot(ggemmeans(phq_sum.interaction, terms = c("time","group")), connect.lines = TRUE)
 
-phq_sum.emm <- emmeans(phq_sum.interaction, ~ time | group, adjust="bonferroni")
-phq_sum.diagnostik <- plot_model(phq_sum.interaction, type="diag")
+phq_sum.eff.by.group <- eff_size(phq_sum.emm.by.group, sigma = sigma(phq_sum.interaction), edf = 202) # Check edf!
+phq_sum.eff.by.time <- eff_size(phq_sum.emm.by.time, sigma = sigma(phq_sum.interaction), edf = 202) # Check edf!
+phq_sum.eff.by.group.plot <- plot(phq_sum.eff.by.group) + geom_vline(xintercept = 0,linetype="dotted")
+phq_sum.eff.by.time.plot <- plot(phq_sum.eff.by.time) + geom_vline(xintercept = 0,linetype="dotted")
+
+phq_sum.diag.plots <- plot_model(phq_sum.interaction, type="diag")
 # Allt ser ok ut!
 
 ### 
@@ -1781,13 +1821,18 @@ phq_sum.diagnostik <- plot_model(phq_sum.interaction, type="diag")
 gad_sum.interaction <-
   lmer(gad_sum ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
 
-gad_sum.estimatplot <- plot_model(gad_sum.interaction,show.values=T,show.p=T,value.offset = 0.45,axis.labels = rev(labradorer),wrap.labels=22)
+gad_sum.est.plot <- plot_model(gad_sum.interaction,show.values=T,show.p=T,value.offset = 0.4,axis.labels = rev(labradorer),wrap.labels=22)
 
-#plot_model(aaas_ag.interaction, type="emm", terms=c("time","group")) # BRA!
-gad_sum.prediktionsplot <- plot(ggpredict(gad_sum.interaction, terms = c("time","group")), connect.lines = TRUE)
+gad_sum.emm.by.group <- emmeans(gad_sum.interaction, ~ time | group, adjust="bonferroni")
+gad_sum.emm.by.time <- emmeans(gad_sum.interaction, ~ group | time, adjust="bonferroni")
+gad_sum.emm.plot <- plot(ggemmeans(gad_sum.interaction, terms = c("time","group")), connect.lines = TRUE)
 
-gad_sum.emm <- emmeans(gad_sum.interaction, ~ time | group, adjust="bonferroni")
-gad_sum.diagnostik <- plot_model(gad_sum.interaction, type="diag")
+gad_sum.eff.by.group <- eff_size(gad_sum.emm.by.group, sigma = sigma(gad_sum.interaction), edf = 202) # Check edf!
+gad_sum.eff.by.time <- eff_size(gad_sum.emm.by.time, sigma = sigma(gad_sum.interaction), edf = 202) # Check edf!
+gad_sum.eff.by.group.plot <- plot(gad_sum.eff.by.group) + geom_vline(xintercept = 0,linetype="dotted")
+gad_sum.eff.by.time.plot <- plot(gad_sum.eff.by.time) + geom_vline(xintercept = 0,linetype="dotted")
+
+gad_sum.diag.plots <- plot_model(gad_sum.interaction, type="diag")
 # Allt ser ok ut!
 
 ### 
@@ -1795,25 +1840,30 @@ gad_sum.diagnostik <- plot_model(gad_sum.interaction, type="diag")
 well.interaction <-
   lmer(well ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
 
-well.estimatplot <- plot_model(well.interaction,show.values=T,show.p=T,value.offset = 0.45,axis.labels = rev(labradorer),wrap.labels=22)
+well.est.plot <- plot_model(well.interaction,show.values=T,show.p=T,value.offset = 0.4,axis.labels = rev(labradorer),wrap.labels=22)
 
-#plot_model(aaas_ag.interaction, type="emm", terms=c("time","group")) # BRA!
-well.prediktionsplot <- plot(ggpredict(well.interaction, terms = c("time","group")), connect.lines = TRUE)
+well.emm.by.group <- emmeans(well.interaction, ~ time | group, adjust="bonferroni")
+well.emm.by.time <- emmeans(well.interaction, ~ group | time, adjust="bonferroni")
+well.emm.plot <- plot(ggemmeans(well.interaction, terms = c("time","group")), connect.lines = TRUE)
 
-well.emm <- emmeans(well.interaction, ~ time | group, adjust="bonferroni")
-well.diagnostik <- plot_model(well.interaction, type="diag")
+well.eff.by.group <- eff_size(well.emm.by.group, sigma = sigma(well.interaction), edf = 202) # Check edf!
+well.eff.by.time <- eff_size(well.emm.by.time, sigma = sigma(well.interaction), edf = 202) # Check edf!
+well.eff.by.group.plot <- plot(well.eff.by.group) + geom_vline(xintercept = 0,linetype="dotted")
+well.eff.by.time.plot <- plot(well.eff.by.time) + geom_vline(xintercept = 0,linetype="dotted")
+
+well.diag.plots <- plot_model(well.interaction, type="diag")
 # Allt ser ok ut!
 
 ```
 
-```{r jadu,results='asis'}
+```{r jadu,results='asis',eval=F}
 
 #tab_model(well.interaction,p.val = "kr", show.df = TRUE)
 
 ```
 
 
-``` {r stargazer,results='asis'}
+``` {r stargazer,results='asis',eval=F}
 
 stargazer::stargazer(
   aaas_ad.interaction,
@@ -1825,6 +1875,9 @@ stargazer::stargazer(
   single.row = F,
   model.numbers = F,
   header = F,
+  decimal.mark = ',',
+  digit.separator = ' ',
+  digits = 2,
   covariate.labels = c("Intercept",labradorer)
 )
 
@@ -1833,7 +1886,9 @@ stargazer::stargazer(
 ```
 
 
-```{r analysplottar, dpi=196, eval=T, cache=T, fig.height=13, fig.width=9, fig.align="center"}
+```{r analysplottar, dpi=196, eval=T, cache=T, fig.height=12, fig.width=6, fig.align="center", fig.cap="estimat",eval=F}
+
+#13, 9
 
 #plot_grid(list(p1, p2, p3, p4), tags = TRUE)
 # + theme(legend.position = "none")
@@ -1845,22 +1900,28 @@ grid.arrange(
   aaas_ad.estimatplot,
   aaas_ag.estimatplot,
   rathus.estimatplot,
-  lsas_sum.estimatplot,
-  gad_sum.estimatplot,
-  phq_sum.estimatplot,
-  well.estimatplot,
-  ncol = 2
+  #lsas_sum.estimatplot,
+  #gad_sum.estimatplot,
+  #phq_sum.estimatplot,
+  #well.estimatplot,
+  #ncol = 2
+  ncol = 1
 )
 
+```
+
+```{r prediktionsplottar, dpi=196, eval=T, cache=T, fig.height=12, fig.width=7.3, fig.align="center", fig.cap="pred",eval=F}
+
 grid.arrange(
-  aaas_ad.prediktionsplot + theme(legend.position = "none"),
-  aaas_ag.prediktionsplot + theme(legend.position = "none"),
-  rathus.prediktionsplot + theme(legend.position = "none"),
-  lsas_sum.prediktionsplot + theme(legend.position = "none"),
-  gad_sum.prediktionsplot + theme(legend.position = "none"),
-  phq_sum.prediktionsplot + theme(legend.position = "none"),
-  well.prediktionsplot + theme(legend.position = "none"),
-  ncol = 2
+  aaas_ad.prediktionsplot, #+ theme(legend.position = "none"),
+  aaas_ag.prediktionsplot, #+ theme(legend.position = "none"),
+  rathus.prediktionsplot, #+ theme(legend.position = "none"),
+  #lsas_sum.prediktionsplot + theme(legend.position = "none"),
+  #gad_sum.prediktionsplot + theme(legend.position = "none"),
+  #phq_sum.prediktionsplot + theme(legend.position = "none"),
+  #well.prediktionsplot + theme(legend.position = "none"),
+  #ncol = 2
+  ncol = 1
 )
 
 ```
@@ -1869,15 +1930,15 @@ grid.arrange(
 
 ordningsföljd: aaas_ad, aaas_ag, rathus, lsas_sum, gad_sum, phq_sum, well
 
-```{r emmeans,results="asis"}
+```{r emmeans,results="asis",eval=F}
 
 svkable(aaas_ad.emm,linesep="", caption = 'AAA-S Adaptive')
 svkable(aaas_ag.emm,linesep="", caption = 'AAA-S Aggressive')
 svkable(rathus.emm,linesep="", caption = 'Rathus')
-svkable(lsas_sum.emm,linesep="", caption = 'LSAS')
-svkable(gad_sum.emm,linesep="", caption = 'GAD')
-svkable(phq_sum.emm,linesep="", caption = 'PHQ')
-svkable(well.emm,linesep="", caption = 'Välmåendeformuläret')
+#svkable(lsas_sum.emm,linesep="", caption = 'LSAS')
+#svkable(gad_sum.emm,linesep="", caption = 'GAD')
+#svkable(phq_sum.emm,linesep="", caption = 'PHQ')
+#svkable(well.emm,linesep="", caption = 'Välmåendeformuläret')
 
 ```
 
