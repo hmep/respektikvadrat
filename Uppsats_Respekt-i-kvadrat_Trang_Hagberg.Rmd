@@ -55,7 +55,7 @@ library(devtools)
 #devtools::install_github("strengejacke/sjPlot")
 #devtools::install_github("crsh/papaja@devel",force=T)
 #devtools::install_github("AWKruijt/JT-RCI",force=T)
-#install_github("markwestcott34/stargazer-booktabs")
+#devtools::install_github("markwestcott34/stargazer-booktabs")
 
 library("papaja")
 library("broom.mixed")
@@ -1030,7 +1030,7 @@ se tabell \@ref(tab:descriptives)
 
 (ref:descriptives) Deskriptiv statistik för primära och sekundära utfallsmått. Cohen's d är beräknad med tillgänglig data för de deltagare som lämnat svar både inför studien och vid respektive mättillfälle.
 
-```{r descriptives, fig.cap='(ref:descriptives)', fig.align="center", cache = T, eval = T}
+```{r descriptives, fig.align="center", cache = T, eval = T}
 
 options(OutDec= ",") 
 
@@ -1574,9 +1574,9 @@ rathus.pre.dur.jt.table <- xt
 
 Se tabell \@ref(tab:jtprocent) med sammanställning jt/rci
 
-(ref:jtp) Klinisk signifikans med andel tillhörande de olika kategorierna för de två huvudutfallsmåtten samt Rathus. Deltagare som gjort förmätningen men inte en uppföljande mätning har fått förmätningsvärdena framflyttade till det senare mättillfället enligt principen om *intention to treat*.
+(ref:jtp) Klinisk signifikans med andel tillhörande de olika kategorierna för de två huvudutfallsmåtten samt Rathus. Deltagare som deltog i förmätningen men inte en uppföljande mätning har fått förmätningsvärdena framflyttade till det senare mättillfället, i enlighet med principen om *intention to treat*.
 
-```{r jtprocent, fig.cap='(ref:jtp)', tab.align="center", cache=F}
+```{r jtprocent, tab.align="center", cache=F}
 
 x <- as.data.frame(t(rbind.data.frame(
   prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2),
@@ -1588,7 +1588,7 @@ colnames(x) <- c(rep(as.vector(jt_rownames),times=3))
 
 jt_table <- round(t(x) * 100,2)
 
-svkable(jt_table, align="ccc") %>%
+svkable(jt_table, align="ccc", caption = '(ref:jtp)') %>%
   pack_rows("AAA-S Adaptive (%)", 1, 5, bold = F) %>%
   pack_rows("AAA-S Aggressive (%)", 6, 10, bold = F) %>%
   pack_rows("Rathus (%)", 11, 15, bold = F) %>%
@@ -1746,26 +1746,7 @@ aaas_ad.est.plot <- plot_model(aaas_ad.interaction,show.values=T,show.p=T,value.
 
 aaas_ad.emm.by.group <- emmeans(aaas_ad.interaction, ~ time | group, adjust="bonferroni")
 aaas_ad.emm.by.time <- emmeans(aaas_ad.interaction, ~ group | time, adjust="bonferroni")
-aaas_ad.emm.plot <- plot(ggemmeans(aaas_ad.interaction, terms = c("time","group")), connect.lines = TRUE) + labs(x="Tid",y="Värde på AAA-S Adaptive",colour = "Grupp", title="Predicerade värden för AAA-S Adaptive")
-
-aaas_ad.eff.by.group <- eff_size(aaas_ad.emm.by.group, sigma = sigma(aaas_ad.interaction), edf = 202) # Check edf!
-aaas_ad.eff.by.time <- eff_size(aaas_ad.emm.by.time, sigma = sigma(aaas_ad.interaction), edf = 202) # Check edf!
-aaas_ad.eff.by.group.plot <- plot(aaas_ad.eff.by.group) + geom_vline(xintercept = 0,linetype="dotted") + labs(x="Uppskattad effekt med konfidensintervall",y="Parvisa jämförelser",title="Effektstorlekar per betingelse") + geom_text(aes(label = round(the.emmean,2)),vjust=-1,size=3)
-aaas_ad.eff.by.time.plot <- plot(aaas_ad.eff.by.time) + geom_vline(xintercept = 0,linetype="dotted") + labs(x="Uppskattad effekt med konfidensintervall",y="Parvisa jämförelser",title="Effektstorlekar per mättillfälle") + geom_text(aes(label = round(the.emmean,2)),vjust=-1,size=3)
-
-aaas_ad.diag.plots <- plot_model(aaas_ad.interaction, type="diag")
-# Allt ser ok ut!
-
-###
-
-aaas_ad.interaction <-
-  lmer(aaas_ad ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
-
-aaas_ad.est.plot <- plot_model(aaas_ad.interaction,show.values=T,show.p=T,value.offset = 0.35,value.size = 3,axis.labels = rev(labradorer)) + labs(y="Estimat med konfidensintervall (och signifikansnivåer)",title="Modellestimat för AAA-S Adaptive")
-
-aaas_ad.emm.by.group <- emmeans(aaas_ad.interaction, ~ time | group, adjust="bonferroni")
-aaas_ad.emm.by.time <- emmeans(aaas_ad.interaction, ~ group | time, adjust="bonferroni")
-aaas_ad.emm.plot <- plot(ggemmeans(aaas_ad.interaction, terms = c("time","group")), connect.lines = TRUE) + labs(x="Tid",y="Värde på AAA-S Adaptive",colour = "Grupp", title="Predicerade värden för AAA-S Adaptive")
+aaas_ad.emm.plot <- plot(ggemmeans(aaas_ad.interaction, terms = c("time","group")), connect.lines = TRUE) + labs(x="Tid",y="Värde på AAA-S Adaptive",colour = "Grupp", title="Predicerade värden för AAA-S Adaptive") + theme(legend.position="top")
 
 aaas_ad.eff.by.group <- eff_size(aaas_ad.emm.by.group, sigma = sigma(aaas_ad.interaction), edf = 202) # Check edf!
 aaas_ad.eff.by.time <- eff_size(aaas_ad.emm.by.time, sigma = sigma(aaas_ad.interaction), edf = 202) # Check edf!
@@ -1784,7 +1765,7 @@ aaas_ag.est.plot <- plot_model(aaas_ag.interaction,show.values=T,show.p=T,value.
 
 aaas_ag.emm.by.group <- emmeans(aaas_ag.interaction, ~ time | group, adjust="bonferroni")
 aaas_ag.emm.by.time <- emmeans(aaas_ag.interaction, ~ group | time, adjust="bonferroni")
-aaas_ag.emm.plot <- plot(ggemmeans(aaas_ag.interaction, terms = c("time","group")), connect.lines = TRUE) + labs(x="Tid",y="Värde på AAA-S Aggressive",colour = "Grupp", title="Predicerade värden för AAA-S Aggressive")
+aaas_ag.emm.plot <- plot(ggemmeans(aaas_ag.interaction, terms = c("time","group")), connect.lines = TRUE) + labs(x="Tid",y="Värde på AAA-S Aggressive",colour = "Grupp", title="Predicerade värden för AAA-S Aggressive") + theme(legend.position="top")
 
 aaas_ag.eff.by.group <- eff_size(aaas_ag.emm.by.group, sigma = sigma(aaas_ag.interaction), edf = 202) # Check edf!
 aaas_ag.eff.by.time <- eff_size(aaas_ag.emm.by.time, sigma = sigma(aaas_ag.interaction), edf = 202) # Check edf!
@@ -1803,7 +1784,7 @@ rathus.est.plot <- plot_model(rathus.interaction,show.values=T,show.p=T,value.of
 
 rathus.emm.by.group <- emmeans(rathus.interaction, ~ time | group, adjust="bonferroni")
 rathus.emm.by.time <- emmeans(rathus.interaction, ~ group | time, adjust="bonferroni")
-rathus.emm.plot <- plot(ggemmeans(rathus.interaction, terms = c("time","group")), connect.lines = TRUE) + labs(x="Tid",y="Värde på Rathus",colour = "Grupp", title="Predicerade värden för Rathus")
+rathus.emm.plot <- plot(ggemmeans(rathus.interaction, terms = c("time","group")), connect.lines = TRUE) + labs(x="Tid",y="Värde på Rathus",colour = "Grupp", title="Predicerade värden för Rathus") + theme(legend.position="top")
 
 rathus.eff.by.group <- eff_size(rathus.emm.by.group, sigma = sigma(rathus.interaction), edf = 202) # Check edf!
 rathus.eff.by.time <- eff_size(rathus.emm.by.time, sigma = sigma(rathus.interaction), edf = 202) # Check edf!
@@ -1816,7 +1797,7 @@ rathus.diag.plots <- plot_model(rathus.interaction, type="diag")
 
 ```
 
-```{r aaasad.res, dpi=196, eval=T, cache=T, fig.height=8, fig.width=11, fig.align="center", fig.cap="Resultat för AAA-S Adaptive. Exempel på figur med resultat som jag (Tobias) skulle vilja rapportera. De här graferna 'give it all away' utan behov av krångliga tabeller. Jag röstar för att vi producerar figurer liknande dessa för de tre huvudutfallsmåtten. Överst till vänster är modellestimaten från vår regression (fixed-effekter), den andra visar de predicerade värden som modellen producerar. De två understa innehåller de effektstorlekar med konfidensintervall (med inritad noll-linje) som visuellt tydligt kommunicerar vilka av de parvisa uppföljningstesten som är signifikanta (med Bonferroni-korrektion). De intressanta jämförelserna tar vi med i resultattexten, där vi också kan nämna hur stor del av felvariansen som hör till vår random-effekt (subject)."}
+```{r aaasad.res, dpi=196, eval=T, cache=F, fig.height=8, fig.width=11, fig.align="center", fig.cap="Resultat för AAA-S Adaptive. Exempel på figur med resultat som jag (Tobias) skulle vilja rapportera. De här graferna 'give it all away' utan behov av krångliga tabeller. Jag röstar för att vi producerar figurer liknande dessa för de tre huvudutfallsmåtten. Överst till vänster är modellestimaten från vår regression (fixed-effekter), den andra visar de predicerade värden som modellen producerar. De två understa innehåller de effektstorlekar med konfidensintervall (med inritad noll-linje) som visuellt tydligt kommunicerar vilka av de parvisa uppföljningstesten som är signifikanta (med Bonferroni-korrektion). De intressanta jämförelserna tar vi med i resultattexten, där vi också kan nämna hur stor del av felvariansen som hör till vår random-effekt (subject)."}
 
 library(patchwork)
 
@@ -1825,14 +1806,14 @@ library(patchwork)
 
 ```
 
-```{r aaasag.res, dpi=196, eval=T, cache=T, fig.height=8, fig.width=11, fig.align="center", fig.cap="Resultat för AAA-S Aggressive."}
+```{r aaasag.res, dpi=196, eval=T, cache=F, fig.height=8, fig.width=11, fig.align="center", fig.cap="Resultat för AAA-S Aggressive."}
 
 (aaas_ag.est.plot + aaas_ag.emm.plot + 
   aaas_ag.eff.by.time.plot + aaas_ag.eff.by.group.plot + plot_layout(nrow = 2)) * theme_set(theme_classic())
 
 ```
 
-```{r rathus.res, dpi=196, eval=T, cache=T, fig.height=8, fig.width=11, fig.align="center", fig.cap="Resultat för Rathus."}
+```{r rathus.res, dpi=196, eval=T, cache=F, fig.height=8, fig.width=11, fig.align="center", fig.cap="Resultat för Rathus."}
 
 (rathus.est.plot + rathus.emm.plot + 
   rathus.eff.by.time.plot + rathus.eff.by.group.plot + plot_layout(nrow = 2)) * theme_set(theme_classic())
