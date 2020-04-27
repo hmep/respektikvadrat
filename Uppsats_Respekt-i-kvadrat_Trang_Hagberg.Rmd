@@ -41,6 +41,7 @@ header-includes:
    - \usepackage{hyphenat}
    - \hyphenation{nor-mal-spann nor-mal-span-net}
    - \usepackage{tabu}
+   - \usepackage{rotating}
 editor_options: 
   chunk_output_type: inline
 ---
@@ -495,7 +496,7 @@ Graden av konstruktiv självhävdelse för en person i en given situation kan in
 
 
 <!-- Figurtexten nedan bör ordnas!  -->
-```{r assertiveness, out.width="65%", fig.align="center", out.extra='', fig.cap='Konstruktiv självhävdelse definieras i träningsprogrammet Respekt i kvadrat som handlande som är förenligt med samtidig respekt för egna och andras rättigheter. Passiv självhävdelse kan på samma sätt definieras som låg grad av respekt för egna rättigheter men hög grad av respekt för andras rättigheter; aggressiv självhävdelse kan definieras som hög grad av respekt för egna rättigheter men låg grad av respekt för andras rättigheter.'}
+```{r assertiveness, out.width="65%", fig.align="center", out.extra='', fig.cap='Konstruktiv självhävdelse definieras i träningsprogrammet Respekt i kvadrat som handlande som är förenligt med samtidig respekt för egna och andras rättigheter (figurens övre högra hörn). Passiv självhävdelse (figurens nedre högra hörn) kan på samma sätt definieras som låg grad av respekt för egna rättigheter men hög grad av respekt för andras rättigheter; aggressiv självhävdelse (figurens övre vänstra hörn) kan definieras som hög grad av respekt för egna rättigheter men låg grad av respekt för andras rättigheter. Passiv-aggressiva beteenden kan konceptualiseras som förenliga med låg grad av respekt för både egna och andras rättigheter (figurens nedre vänstra hörn).'}
 
 knitr::include_graphics("canvas-konstruktiv-slinga-X.pdf") 
 
@@ -519,7 +520,7 @@ Under de senaste åren har intresset för självhävdelse ökat något igen. @Va
 
 Evidensen för beteendeterapi och KBT för syndromala och icke-syndromala psykologiska problem har konstaterats vara god sedan många år tillbaka, både inom ramen för väl avgränsade och kontrollerade *efficacy*-studier och i ekologiskt valida *effectiveness*-studier. Det gäller även i hög grad de områden för vilka bristande konstruktiv självhävdelse är en del av problembeskrivningarna, till exempel ångestsyndrom, social fobi, generaliserat ångestsyndrom (GAD) och depression. 
 
-@Chambless2001 ger en tidig översikt av det samlade forskningsläget för KBT utifrån en tydlig definition av empiriskt underbyggda terapier: terapi som undersökts med randomiserade kontrollerade studier, specificerade testgrupper och väl beskrivna behandlingar. Sammanställningen visar att KBT överlag har bättre evidens i den samlade litteraturen än andra terapiformer (oaktat huruvida till vilken grad dessa andra terapiformer faktiskt är verksamma). Systematiska sammanställningar med uppdaterat forskningsläge utifrån dessa principer har sedan dess publicerats regelbundet i England av @NationalInstituteforHealthandCareExcellence2018 och i USA av @AmericanPsychologicalAssociation2016. @Socialstyrelsen2017 ger de senaste nationella riktlinjerna för vård vid depression och ångestsyndrom i Sverige. I dessa riktlinjer är KBT-behandling näst intill uteslutande förstahandsvalet vid psykologisk behandling.
+@Chambless2001 ger en tidig översikt av det samlade forskningsläget, utifrån en tydlig definition av vad som bör betraktas som en "empiriskt underbyggd terapi" -- det vill säga att effekten av terapin bör ha undersökts med en randomiserad och kontrollerad studie (RCT) som har haft specificerade grupper och använda väl beskrivna behandlingar. Sammanställningen visar att KBT överlag har bättre evidens i den samlade litteraturen än andra terapiformer (oaktat huruvida till vilken grad dessa andra terapiformer faktiskt är verksamma). Systematiska sammanställningar med uppdaterat forskningsläge utifrån dessa principer har sedan dess publicerats regelbundet i England av @NationalInstituteforHealthandCareExcellence2018 och i USA av @AmericanPsychologicalAssociation2016. @Socialstyrelsen2017 ger de senaste nationella riktlinjerna för vård vid depression och ångestsyndrom i Sverige. I dessa riktlinjer är KBT-behandling näst intill uteslutande förstahandsvalet vid psykologisk behandling.
 
 @Hofmann2012 är en översikt av meta-analyser som visar att KBT alltjämt är en av de mest effektiva terapiformerna. I deras översikt visade sig KBT effektivt för att motverka bland annat trauma- och stressrelaterade symtom, liksom depressiva och ångestrelaterade syndrom. Litteraturen stödjer att KBT har god effekt för de syndrom som @Speed2018a associerar med brister i konstruktiv självhävdelse.
 
@@ -530,7 +531,9 @@ Evidensen för beteendeterapi och KBT för syndromala och icke-syndromala psykol
 
 Överlag har ordet för den enligt kognitiv omstrukturering verksamma komponenten \'tankar\' i vår text ersatts av ordet \'förutsägelser\'. En negativ förutsägelse i en specifik situation (exempelvis om den egna förmågan att klara av upplevelsen av ångest eller vilken konsekvensen ska bli av konstruktiv självhävdelse) är förankrad i den specifika kontexten: \'Negativa automatiska tankar\' kan lättare förväxlas med \'livsregler\' och \'grundantaganden\' som de definieras i @beck1979cognitive. Livsregler och grundantaganden kan ses som mer eller mindre generaliserade förutsägelser.
 
-Att benämna ovan kognitioner för förutsägelser är dessutom i linje med det forskning kring prediktiv kodning. Den övergripande funktionen av det centrala nervsystemet är att med hjälp av ytterst begränsade sensoriska indata (det vill säga det som dina sinnen förnimmer) guida betydligt mer omfattande neuronal *top-down*-aktivitet för att *predicera* organismens yttre såväl som inre kontext [@Pezzulo2015; @Clark2016]. Den samlade upplevelsen av ångest (kroppsreaktioner, tankar, beteenden) är detsamma som en förutsägelse om bristande resurs- och energihushållning i situationen. Ett annat sätt att beskriva denna förutsägelse om en brist i resurs- och energihushållning är att man upplever det som att man inte kommer räcka till [@FeldmanBarrett2009]. När en person uppfattar miljön som aversiv och ångest väcks kommer hen att vilja mobilisera sina resurser för att sätta sig i säkerhet. Men om förutsägelserna om bristande resurser är felaktiga på grund av allt för stort inflytande av hjärnans kortikala *top-down*-aktivitet (på bekostnad av sensorisk känslighet för *bottom-up*-aktivitet) uppstår problem: Förutsägelserna om att man inte kommer räcka till blir självuppfyllande profetior. Om och om igen genom en kombination av alltför långvarig allostatisk belastning och undvikande som gör att organismen går miste om återhämtning och naturliga förstärkningar som kan fylla på energireserverna bekräftas förutsägelserna. @FeldmanBarrett2009 sammanbryggar elegant den aktuella neurovetenskapen med den kontextuella beteendevetenskapens perspektiv på ångest och depression, där den gemensamma vidmakthållande faktorn är undvikande -- beteendemässigt och upplevelsemässigt.
+Att benämna ovan kognitioner för förutsägelser är dessutom i linje med det forskning kring prediktiv kodning. Den övergripande funktionen av det centrala nervsystemet är att med hjälp av ytterst begränsade sensoriska indata (det vill säga det som dina sinnen förnimmer) guida betydligt mer omfattande neuronal *top-down*-aktivitet för att *predicera* organismens yttre såväl som inre kontext [@Pezzulo2015; @Clark2016]. Den samlade upplevelsen av rädsla och ångest (kroppsreaktioner, tankar, beteenden) är detsamma som en förutsägelse om bristande resurs- och energihushållning i situationen. Ett annat sätt att beskriva denna förutsägelse om en brist i resurs- och energihushållning är att man upplever det som att man inte kommer räcka till [@FeldmanBarrett2009]. När en person uppfattar miljön som aversiv och ångest väcks kommer hen att vilja mobilisera sina resurser för att sätta sig i säkerhet. Men om förutsägelserna om bristande resurser är felaktiga på grund av allt för stort inflytande av hjärnans kortikala *top-down*-aktivitet (på bekostnad av sensorisk känslighet för *bottom-up*-aktivitet) uppstår problem: Förutsägelserna om att man inte kommer räcka till blir självuppfyllande profetior. Om och om igen genom en kombination av alltför långvarig allostatisk belastning och undvikande som gör att organismen går miste om återhämtning och naturliga förstärkningar som kan fylla på energireserverna bekräftas förutsägelserna. @FeldmanBarrett2009 sammanbryggar elegant den aktuella neurovetenskapen med den kontextuella beteendevetenskapens perspektiv på ångest och depression, där den gemensamma vidmakthållande faktorn är undvikande -- beteendemässigt och upplevelsemässigt.
+
+<!-- (TOBIAS: SÄGA NÅGOT OM ATT OROANDE ÄR NÅGOT MAN GÖR FÖR ATT MINSKA ÅNGESTEN?) -->
 
 ### Att undvika det aversiva
 
@@ -546,13 +549,15 @@ Det har även visat sig att det är menligt <!-- möjligen skriva "självdestruk
 
 ### Att närma sig det aversiva
 
-Att bryta undvikandebeteenden är ofta centralt för att minska psykopatologiska besvär. Det finns flera metoder sprungna ur forskning för detta. En metod är att *på ett närvarande sätt* närma sig det aversiva och ångestväckande, så kallad exponering. Att närma sig det som väcker obehag leder hos många till mycket osäkerhet. Denna osäkerhet leder i sin tur inte ovanligen till överdrivet förberedande, efterfrågande om försäkran eller andra beteenden som ökar upplevelsen av kontroll i stunden (så kallade säkerhetsbeteenden). Det är en viktig inlärningsprocess att få uppleva denna osäkerhet – och samtidigt få lärdomen att osäkerheten i sig själv både är ofarlig och hanterbar. Att bibehålla osäkerhet under exponering går att göra genom att variera vilka aversiva stimuli som presenteras och i vilka situationer som dessa stimuli presenteras [@Sewart2019; @Knowles2019; @Craske2008]. Med andra ord, det går att väcka osäkerhet genom variation.
+Att bryta undvikandebeteenden är ofta centralt för att minska psykopatologiska besvär. Det finns flera metoder sprungna ur forskning för detta. En metod är att *på ett närvarande sätt* närma sig det aversiva och ångestväckande, så kallad exponering. 
+
+<!-- Att närma sig det som väcker obehag leder hos många till mycket osäkerhet. Denna osäkerhet leder i sin tur inte ovanligen till överdrivet förberedande, efterfrågande om försäkran eller andra beteenden som ökar upplevelsen av kontroll i stunden (så kallade säkerhetsbeteenden). Det är en viktig inlärningsprocess att få uppleva denna osäkerhet – och samtidigt få lärdomen att osäkerheten i sig själv både är ofarlig och hanterbar. Att bibehålla osäkerhet under exponering går att göra genom att variera vilka aversiva stimuli som presenteras och i vilka situationer som dessa stimuli presenteras [@Sewart2019; @Knowles2019; @Craske2008]. Med andra ord, det går att väcka osäkerhet genom variation. -->
+
+Lyckad exponering tenderar att vara en ombytlig exponering där obehag väcks, säkerhetsbeteenden avstås och förväntningar bryts. Förväntingar och förutsägelser som individer tenderar att ha inför exponering är allt som oftast inkorrekta (det vill säga att de förväntar sig värre utfall än vad som sker) och desto större diskrepansen är mellan en indivds förväntningar och individens faktiska upplevelse, desto större är oddsen för nyinlärning [@Craske2008; @Sewart2019]. Lärdomar kan dras båda av att ångest minskar i intensitet, eller av att ens förmåga att hantera ångesten som väcks överträffar ens förväntningar [@Craske2008; @Blakey2016; @Knowles2019; @Sewart2019].
 
 De Castella m. fl. [-@DeCastella2015] konstaterade även att emotionellt undvikande är tydligt kopplad till sämre effekt av exponering. Att emotionellt undvika är ett säkerhetsbeteenden och säkerhetsbeteenden – det vill säga beteenden som förhindrar, undviker eller minimerar obehag i en given situation – är ett väletablerat fenomen som har konstaterats både ha en del i utvecklandet och i bibehållandet av ångestdriven psykopatologi [@Blakey2016]. Emotionellt undvikande är särskilt vanligt hos personer som lider av ångestsyndrom och depressiva syndrom [@Campbell-Sills2006] vilket med stor sannolikhet även gör det vanligt hos individer med bristanden *assertiveness*. När obehag, ångest och andra aversiva känslor väcks är det alltså viktigt att inte försöka undertrycka dem. Genom att tillåta sig själv känna dem ger man sig möjligheten till att bemästra dem.
 
 Det finns också anledning att tro att det för en person med ångestrelaterat lidande är betydligt enklare än för en nedstämd eller deprimerad person att finna situationer som är lämpliga att träna i; att ångest väcks och att det känns jobbigt kan i sig ses som en signal för nyinlärning samt att det man håller på med är viktigt för en [@Barrett2016a].
-
-Lyckad exponering tenderar att vara en ombytlig exponering där obehag väcks, säkerhetsbeteenden avstås och förväntningar bryts. Förväntingar och förutsägelser som individer tenderar att ha inför exponering är allt som oftast inkorrekta (det vill säga att de förväntar sig värre utfall än vad som sker) och desto större diskrepansen är mellan en indivds förväntningar och individens faktiska upplevelse, desto större är oddsen för nyinlärning [@Craske2008; @Sewart2019]. Lärdomar kan dras båda av att ångest minskar i intensitet, eller av att ens förmåga att hantera ångesten som väcks överträffar ens förväntningar [@Craske2008; @Blakey2016; @Knowles2019; @Sewart2019].
 
 I linje med att undersöka ens egen förmåga att hantera aversiva känslor är att ändra sitt förhållningssätt till dem. <!--För många kan det stora steget i att bryta undvikande vara att arbete med att acceptera och tillåta sina känslor och upplevelser [@Hayes1996]. --> Vissa har aldrig fått tillgång till den vägledning eller de verktyg som behövs för att hantera starka emotionella upplevelser. De har aldrig lärt sig att förstå sorg och ilska, eller hur de ska gå tillväga för att lugna sin ångest eller sin frustration.  Istället har de lärt sig att distrahera sig och undvika. Bedöva genom att undantrycka. Att ändra dessa förutsägelser om att vissa emotioner är oacceptabla; att tillåta sig känna dem, närma sig dem, acceptera dem, har återkommande gånger visat sig vara ett effektivt sätt att bryta undvikande [@Hayes1996; @Hayes2004a; @Luoma2007] och ett effektivt sätt att behandla många av de psykatriska besvär som individer med bristande *assertiveness* upplever [@A-Tjak2015a].
 
@@ -597,7 +602,9 @@ Regeringen har som vision att Sverige år 2025 ska vara bäst i världen på e-h
 
 Internetbaserad kognitiv beteendeterapi, I-KBT, började undersökas och utvärderas kring millenniumskiftet. Under de senaste årtiondena har hundratals studier undersökt effekten av I-KBT. Idag används I-KBT som ett behandlingsalternativ inom flera olika länder som ett komplement till mer traditionella vårdalternativ [@Andersson2016]. 
 
-Det finns i Sverige flera exempel på självhjälpsmaterial i KBT som har beforskats i form av I-KBT och sedan publicerats för allmänheten i form av självhjälpsböcker. Exempel på dessa är @Furmark2019sf, @dugas2018 samt @Carlbring2011ipf. Dessa behandlingsprogram består allt som oftast av moduler (som motsvarar kapitel i självhjälpsböckerna) innehållande psykoedukativ text, övningar och hemuppgifter kopplade till klientens eller patientens besvär. Vanligtvis tilldelas deltagarna en modul per vecka. I många av dessa behandlingsprogram har även en stödbehandlare tilldelats deltagarna. Stödbehandlaren kan ge återkoppling, besvara frågor, och ge stöd allt eftersom behandlingen fortskrider [@Vlaescu2016]. Självhjälpsböcker är ett billigt sätt för en stor publik att ta del av evidensbaserad psykologisk vederhäftig kunskap. Validerade självhjälpsböcker har också potential att förbättra ansikte-mot-ansikte-behandlingar, där självhjälpsböcker kan användas som stöd för både genomförande av hemuppgifter under behandlingens gång och för vidmakthållande av behandlingseffekter.
+Det finns i Sverige flera exempel på självhjälpsmaterial i KBT som har beforskats i form av I-KBT och sedan publicerats för allmänheten i form av självhjälpsböcker. Exempel på dessa är @Furmark2019sf, @dugas2018 samt @Carlbring2011ipf. Dessa behandlingsprogram består allt som oftast av moduler (som motsvarar kapitel i självhjälpsböckerna) innehållande psykoedukativ text, övningar och hemuppgifter kopplade till klientens eller patientens besvär. Vanligtvis tilldelas deltagarna en modul per vecka. I många av dessa behandlingsprogram har även en stödbehandlare tilldelats deltagarna. Stödbehandlaren kan ge återkoppling, besvara frågor, och ge stöd allt eftersom behandlingen fortskrider [@Vlaescu2016]. 
+
+<!-- Självhjälpsböcker är ett medium som kan nå en stor publik. Med självhjälpsböcker går det att effektivt sprida evidensbaserad psykologisk kunskap. Validerade självhjälpsböcker har också potential att förbättra ansikte-mot-ansikte-behandlingar, där självhjälpsböcker kan användas som stöd för både genomförande av hemuppgifter under behandlingens gång och för vidmakthållande av behandlingseffekter. -->
 
 <!-- *[Möjligen problematisera kommersialiseringen av forskningsresultat här -- men å andra sidan är det ett billigt sätt för konsumenten att få tillgång till material ... Också skriva något här om att flera landsting och även privata aktörer erbjuder allt fler behandlingsprogram över internet.]* -->
 
@@ -615,35 +622,15 @@ I-KBT kan erbjuda klienter fördelar i förhållande till ansikte-mot-ansiktebeh
 
 En nackdel med I-KBT är att vissa deltagare hindras av besvär med tekniken vilket kan försvåra deras möjligheter till att ta del av vården. En annan är att de lösare tidsramarna erbjuder möjlighet att skjuta upp eller prioritera ned internetbaserad behandling, jämfört med fysiska besök hos en kliniker [@Burke2019]. 
 
-För att maximera oddsen för ett positivt utfall bör I-KBT-behandlingar ha tydliga inklusionskriterier samt screena och välja deltagare utifrån dessa. Framgångsrika I-KBT-behandlingar inkluderar interaktiva behandlingskomponenter, innehåller relevanta pedagogiska inslag om psykiska och kroppsliga besvär och om vad som vidmakthåller psykiska problem, liksom komponenter för att bryta vidmakthållandet av besvären [@Barak2008].
+Erfarenheter från tidigare studier av I-KBT-interventioner har visat att det är viktigt att ange tydliga inklusionskriterier samt att screena och välja deltagare utifrån dessa. I-KBT-behandlingar som inkluderar interaktiva behandlingskomponenter, innehåller relevanta pedagogiska inslag om psykiska och kroppsliga besvär och om vad som vidmakthåller psykiska problem, liksom komponenter för att bryta vidmakthållandet av besvären, ökar oddsen för positiva utfall [@Barak2008].
+
+PATRIK SKRIVER OM MED OMVÄND TANKEGÅNG: Självhjälpsböcker med ett populärt tilltal är ett medium som kan nå en stor publik. Validerade självhjälpsböcker har också potential att förbättra ansikte-mot-ansikte-behandlingar, där självhjälpsböcker kan användas som stöd för både genomförande av hemuppgifter under behandlingens gång och för vidmakthållande av behandlingseffekter.
+
+PATRIK: Säga något om att terapeutstöd inte alltid ger större effekt. EXPANDERA!!!
 
 ## Frågeställningar
 
-I den här uppsatsen undersöker vi följande frågeställningar:
-
-### Primär frågeställning
-
-Det vi primärt är intresserade av är om det finns någon skillnad (i endera riktning) i effekt mellan gruppen `r xg1` och gruppen `r xg2` med avseende på konstruktiv självhävdelse, det vill säga med utfallsmåttet AAA-S Adaptive.
-
-<!-- Är I-KBT utan terapeutstöd non-inferior I-KBT med terapeutstöd vad det gäller ökning av konstruktiv självhävdelse och minskning av passiv och aggressiv självhävdelse? Med det menas att vi vill testa om behandlingseffekten på konstruktiv självhävdelse för gruppen `r xg1` inte är sämre än effekten för gruppen `r xg2`. ** OBS det här innebär ett one-tailed t-test pre--post??** -->
-
-### Sekundära frågeställningar
-
-Vi är också intresserade av att ta reda på om effekten i gruppen `r xg3` är sämre än behandlingseffekten i gruppen  `r xg1` respektive gruppen `r xg2` med avseende på konstruktiv självhävdelse, det vill säga med utfallsmåttet AAA-S Adaptive.
-
-<!-- Är kontrollgrupp inferior I-KBT med terapeutstöd och/eller I-KBT utan terapeutstöd vad det gäller ökning av konstruktiv självhävdelse och minskning av passiv och aggressiv självhävdelse? Med det menas att vi vill testa om gruppen `r xg3` har en sämre effekt på konstruktiv självhävdelse än de två behandlingsgrupperna `r xg1` och `r xg2`. ** OBS det här innebär ett one-tailed t-test pre--post?? ** -->
-
-Slutligen vill vi också undersöka vilka prediktorer/moderatorer hos deltagarna (exempelvis grad av social ångest eller grad av depression) i behandlingsalternativen `r xg1` och `r xg2` som påverkar utfallet samt vilka mediatorer inom behandlingsalternativen (exempelvis tilldelning av terapeut) som påverkar utfallet. 
-
-<!-- Frågeställning(ar)
-
-Finns det en skillnad mellan I-KBT utan terapeutsttöd och I-KBT med terapeutstöd när det gäller ökning av konstruktiv självhävdelse (och minskning av passiv samt aggressiv självhävdelse)?
-
-Är kontrollgrupp (väntelista) sämre än I-KBT med/utan terapeutstöd? 
-
-Vilka patientfaktorer påverkar effektiviteten av endera eller båda behandlingsalternativen (prediktorer/moderatorer)? 
-
-Vilka faktorer inom behandlingsalternativen (mediatorer) påverkar behandlingseffekten? -->
+Det vi primärt är intresserade av är om det finns någon skillnad (i endera riktning) i effekt mellan gruppen `r xg1` och gruppen `r xg2` med avseende på konstruktiv självhävdelse, det vill säga med utfallsmåttet AAA-S Adaptive. Vi är också intresserade av att ta reda på om effekten i gruppen `r xg3` är sämre än behandlingseffekten i gruppen  `r xg1` respektive gruppen `r xg2` med avseende på konstruktiv självhävdelse, det vill säga med utfallsmåttet AAA-S Adaptive. Slutligen vill vi också undersöka vilka prediktorer/moderatorer hos deltagarna (exempelvis grad av social ångest eller grad av depression) i behandlingsalternativen `r xg1` och `r xg2` som påverkar utfallet samt vilka mediatorer inom behandlingsalternativen (exempelvis tilldelning av terapeut) som påverkar utfallet. 
 
 # Metod
 
@@ -651,7 +638,7 @@ Vilka faktorer inom behandlingsalternativen (mediatorer) påverkar behandlingsef
 
 <!-- Bör vi föra en en rad om att gör en RCT-design?-->
 
-Sample-storleken för varje grupp bestämdes till n = 70 med en powerberäkning innan rekrytering påbörjades. I studien planerade manipulationer, variabler, mättillfällen och insamlad data har använts i de efterföljande analyserna utan selektion i efterhand. Såväl randomiseringen av överintaget till studien, randomiseringen av 210 deltagare till sina respektive grupper samt randomiseringen av deltagarna med behandlingsstöd till respektive behandlare gjordes av oberoende tredje part vid Stockholms Universitet med hjälp av internetbaserade randomiseringstjänster (www.random.org för exkluderingen och randomiseringen till respektive behandlare samt www.sealedenvelope.com för randomiseringen till de tre grupperna). Deltagarna informerades via den webbaserade plattformen om exkludering eller vilken grupp de tillhörde. 
+Sample-storleken för varje grupp bestämdes till n = 70 med en powerberäkning innan rekrytering påbörjades. I studien planerade manipulationer, variabler, mättillfällen och insamlad data har använts i de efterföljande analyserna utan selektion i efterhand. Alla randomiseringar gjordes av oberoende tredje part vid Stockholms Universitet med hjälp av internetbaserade randomiseringstjänster (www.random.org för överintagsexkluderingen och randomiseringen till respektive behandlare samt www.sealedenvelope.com för randomiseringen till de tre grupperna). Studien uppfyller kriterierna för en RCT-design enligt @Chambless2001.
 
 ### Rekrytering
 
@@ -791,7 +778,7 @@ NI kan, om ni vill ha guldstjärna, enkelt räkna ut er egen studies Cronbach al
 
 #### Självhävdelsestil
 
-En inför den här studien gjord svensk översättning av självskattningsskalan Adaptive and Aggressive Assertiveness Scales [AAA-S; @Thompson2011] användes för att mäta vilka metoder för självhävdelse som deltagarna använde sig av. Skalorna utgörs av 30 påståenden som besvaras med en 6-gradig likertskala där 0 motsvarar ”aldrig” och 5 motsvarar ”alltid”. Svaren räknas samman till två skalor, en för aggressiv självhävdelse och en för konstruktiv (adaptiv) självhävdelse. Hög poäng på delskalan för aggressiv självhävdelse indikerar ett aggressivt självhävdande beteendeemönster och hög poäng på delskalan för konstruktiv självhävdelse indikerar ett konstruktivt självhävdande beteendemönster. (låga poäng på båda går att tolka som passiv självhävdelse.) En fördel med AAA-S jämfört med andra skalor som mäter självhävdelse är att den gör explicit skillnad mellan konstruktiv och aggressiv självhävdelse. Adaptive- och Aggressiveness-skalorna har god intern reliabilitet (α = 0,93 respektive α = 0,88). Den svenska översättningen var inte validerad inför studiestart.
+En inför den här studien gjord svensk översättning av självskattningsskalan Adaptive and Aggressive Assertiveness Scales [AAA-S; @Thompson2011] användes för att mäta vilka metoder för självhävdelse som deltagarna använde sig av. Skalorna utgörs av 30 påståenden som besvaras med en 5-gradig likertskala där 1 motsvarar ”aldrig” och 5 motsvarar ”alltid”. Svaren räknas samman till två skalor, en för aggressiv självhävdelse och en för konstruktiv (adaptiv) självhävdelse. Hög poäng på delskalan för aggressiv självhävdelse indikerar ett aggressivt självhävdande beteendeemönster och hög poäng på delskalan för konstruktiv självhävdelse indikerar ett konstruktivt självhävdande beteendemönster. (låga poäng på båda går att tolka som passiv självhävdelse.) En fördel med AAA-S jämfört med andra skalor som mäter självhävdelse är att den gör explicit skillnad mellan konstruktiv och aggressiv självhävdelse. Adaptive- och Aggressiveness-skalorna har god intern reliabilitet (α = 0,93 respektive α = 0,88). Den svenska översättningen var inte validerad inför studiestart.
 
 ### Sekundära utfallsmått
 
@@ -1008,11 +995,13 @@ Vi analyserade insamlade förmätningsvärden för att kontrollera om randomiser
 
 ### Analys av huvudeffekter och interaktionseffekter
 
-Huvudeffekter och interaktion mellan grupp och tid för de primära och sekundära utfallsmått undersöktes med *mixed model*-metodik. *Mixed model* tillåter precis som MANOVA inklusion av upprepade beroende mättillfällen i modellen, men med hänsyn taget till principen om *intention to treat*. Utöver det möjliggör det även modellering och kvantifiering på gruppnivå av observerade (men inte kontrollerade) individ-relaterade effekter, exempelvis skillnader i underliggande förändringsbenägenhet över tid. I modellen tilläts skärningspunkterna för respektive deltagare att variera, liksom lutningen på regressionslinjerna mellan mättillfällena för dem. För analysen användes R-paketet *nlme* [@R-nlme]. Val av kovariansstruktur gjordes genom jämförelse av AIC-tal. För *post hoc*-test uppskattades predicerade *marginal means* (eller *least square means*) för de olika kombinationerna av betingelse och mättillfälle med R-paketet *emmeans* [@R-emmeans]. Figurer för presentationen av resultatet togs fram med *emmeans* och *sjPlot* [@R-sjPlot].
+Huvudeffekter och interaktion mellan grupp och tid för de primära och sekundära utfallsmått undersöktes med *mixed model*-metodik. *Mixed model* tillåter precis som MANOVA inklusion av upprepade beroende mättillfällen i modellen, men med hänsyn taget till principen om *intention to treat*. Utöver det möjliggör det även modellering och kvantifiering på gruppnivå av observerade (men inte kontrollerade) individ-relaterade effekter, exempelvis skillnader i underliggande förändringsbenägenhet över tid. I modellen tilläts skärningspunkterna för respektive deltagare att variera, liksom lutningen på regressionslinjerna mellan mättillfällena för dem. För analysen användes R-paketet *nlme* [@R-nlme]. Val av kovariansstruktur gjordes genom jämförelse av AIC-tal. Granskning av homoscedasticitet, normalfördelade residualer och outliers gjordes visuellt med diagnostiska plottar av de till data anpassade modellerna. För *post hoc*-test uppskattades predicerade *marginal means* (eller *least square means*) för de olika kombinationerna av betingelse och mättillfälle med R-paketet *emmeans* [@R-emmeans]. Diagnosplottar och figurer för presentationen av resultatet togs fram med *emmeans* och *sjPlot* [@R-sjPlot].
+
+<!-- For linear (mixed) models, plots for multicollinearity-check (Variance Inflation Factors), QQ-plots, checks for normal distribution of residuals and homoscedasticity (constant variance of residuals) are shown. -->
 
 ### Analys av reliabel förändring och klinisk signifikans
 
-För var och en av betingelserna bestämde vi frekvensen deltagare som i träningsprogrammet genomgått en reliabel förändring och dessutom befann sig på kliniskt signifikant nivå vid eftermätningen. För de deltagare som endast lämnat självskattningar vid förmätningstillfället fördes dessa värden vidare till eftermätningstillfället i enlighet med principen om *intention to treat*. Valet av klinisk signifikans-kriterium gjordes i enlighet med definitionerna och rekommendationerna i @Jacobson1991 för var och en av skattningsskalorna i relation till var och en av grupperna. En förändring mellan två mättillfällen definieras som reliabel om den är tillräckligt stor i relation till populationsvariansen. Då betraktas förändringen som en verklig förändring och inte bara ett slump- eller mätfel. Den senare ger en bild av om hur de absoluta eftermätningsvärdena förhåller sig till medelvärdet för antingen en subklinisk population eller en klinisk population (som också kan hämtas från normdata) [@Jacobson1991]. För samtliga beräkningar av klinisk signifikans och reliabel förändring användes R-paketet *JTRCI* [@R-JTRCI], som väljer signifikans-kriterium (*a*, *b* eller *c*) konservativt. SKIPPA DETTA? --> Skillnader i frekvensen reliabelt förändrade deltagare på kliniskt signifikant nivå analyserades med $\chi^2$-test.
+Vi räknade ut frekvensen deltagare som i träningsprogrammet genomgått en reliabel förändring och dessutom befann sig på kliniskt signifikant nivå vid eftermätningen. För de deltagare som endast lämnat självskattningar vid förmätningstillfället fördes dessa värden vidare till eftermätningstillfället i enlighet med principen om *intention to treat*. Valet av klinisk signifikans-kriterium gjordes i enlighet med definitionerna och rekommendationerna i @Jacobson1991 för var och en av skattningsskalorna i relation till var och en av grupperna. En förändring mellan två mättillfällen definieras som reliabel om den är tillräckligt stor i relation till populationsvariansen. Då betraktas förändringen som en verklig förändring och inte bara ett slump- eller mätfel. Den senare ger en bild av om hur de absoluta eftermätningsvärdena förhåller sig till medelvärdet för antingen en subklinisk population eller en klinisk population (som också kan hämtas från normdata) [@Jacobson1991]. För samtliga beräkningar av klinisk signifikans och reliabel förändring användes R-paketet *JTRCI* [@R-JTRCI], som väljer signifikans-kriterium (*a*, *b* eller *c*) konservativt. SKIPPA DETTA? --> Skillnader i frekvensen reliabelt förändrade deltagare på kliniskt signifikant nivå analyserades med $\chi^2$-test.
 
 <!-- 2DO: analysera frekvenser -->
 
@@ -1737,16 +1726,32 @@ labradorer <- c(
     paste(xg2, " : ", xt3,sep="")
   )
 
-###
+### AAA-S Ad
 
 aaas_ad.interaction <-
-  lmer(aaas_ad ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
+  lme(aaas_ad ~ group * time,
+      random = ~ 1 | subject,
+      data = r2.long.data,
+      na.action = na.omit,
+      #corr=corAR1(),
+      method="REML")
+
+# aaas_ad.interaction.cora1 <-
+#   lme(aaas_ad ~ group * time,
+#       random = ~ time | subject,
+#       data = r2.long.data.out,
+#       na.action = na.omit,
+#       corr=corAR1(),
+#       method="ML")
+# 
+# anova(aaas_ad.interaction,aaas_ad.interaction.cora1)
+# aaas_ad.interaction har lägst AIC, skillnaden inte signifikant
 
 aaas_ad.est.plot <- plot_model(aaas_ad.interaction,show.values=T,show.p=T,value.offset = 0.35,value.size = 3,axis.labels = rev(labradorer)) + labs(y="Estimat med konfidensintervall (och signifikansnivåer)",title="Modellestimat för AAA-S Adaptive")
 
 aaas_ad.emm.by.group <- emmeans(aaas_ad.interaction, ~ time | group, adjust="bonferroni")
 aaas_ad.emm.by.time <- emmeans(aaas_ad.interaction, ~ group | time, adjust="bonferroni")
-aaas_ad.emm.plot <- plot(ggemmeans(aaas_ad.interaction, terms = c("time","group")), connect.lines = TRUE) + labs(x="Tid",y="Värde på AAA-S Adaptive",colour = "Grupp", title="Predicerade värden för AAA-S Adaptive") + theme(legend.position="top")
+aaas_ad.emm.plot <- plot(ggpredict(aaas_ad.interaction, terms = c("time","group")), connect.lines = TRUE) + labs(x="Tid",y="",colour = "Grupp", title="Predicerade värden för AAA-S Adaptive") + theme(legend.position="top",axis.title.y=element_blank())
 
 aaas_ad.eff.by.group <- eff_size(aaas_ad.emm.by.group, sigma = sigma(aaas_ad.interaction), edf = 202) # Check edf!
 aaas_ad.eff.by.time <- eff_size(aaas_ad.emm.by.time, sigma = sigma(aaas_ad.interaction), edf = 202) # Check edf!
@@ -1756,16 +1761,38 @@ aaas_ad.eff.by.time.plot <- plot(aaas_ad.eff.by.time) + geom_vline(xintercept = 
 aaas_ad.diag.plots <- plot_model(aaas_ad.interaction, type="diag")
 # Allt ser ok ut!
 
-###
+### AAA-S Ag
+
+# Ta bort outlier
+# Här ska vi skriva en rational för varför vi har gjort detta
+# r2.long.data.out <- r2.long.data
+# r2.long.data.out[which(r2.long.data.out$aaas_ag >= max(boxplot.stats(r2.long.data.out$aaas_ag)$out)),6] <- NA
 
 aaas_ag.interaction <-
-  lmer(aaas_ag ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
+  lme(aaas_ag ~ group * time,
+      random = ~ 1 | subject,
+      data = r2.long.data,
+      na.action = na.omit,
+      #corr=corAR1(),
+      method="REML")
+
+# aaas_ag.interaction.cora1 <-
+#   lme(aaas_ag ~ group * time,
+#       random = ~ time | subject,
+#       data = r2.long.data.out,
+#       na.action = na.omit,
+#       corr=corAR1(),
+#       method="ML")
+# 
+# anova(aaas_ag.interaction,aaas_ag.interaction.cora1)
+# aaas_ag.interaction har lägst AIC, skillnaden inte signifikant
+# Unstructured är också mer konservativ ....
 
 aaas_ag.est.plot <- plot_model(aaas_ag.interaction,show.values=T,show.p=T,value.offset = 0.35,value.size = 3,axis.labels = rev(labradorer)) + labs(y="Estimat med konfidensintervall (och signifikansnivåer)",title="Modellestimat för AAA-S Aggressive")
 
 aaas_ag.emm.by.group <- emmeans(aaas_ag.interaction, ~ time | group, adjust="bonferroni")
 aaas_ag.emm.by.time <- emmeans(aaas_ag.interaction, ~ group | time, adjust="bonferroni")
-aaas_ag.emm.plot <- plot(ggemmeans(aaas_ag.interaction, terms = c("time","group")), connect.lines = TRUE) + labs(x="Tid",y="Värde på AAA-S Aggressive",colour = "Grupp", title="Predicerade värden för AAA-S Aggressive") + theme(legend.position="top")
+aaas_ag.emm.plot <- plot(ggpredict(aaas_ag.interaction, terms = c("time","group")), connect.lines = TRUE) + labs(x="Tid",y="",colour = "Grupp", title="Predicerade värden för AAA-S Aggressive") + theme(legend.position="top",axis.title.y=element_blank())
 
 aaas_ag.eff.by.group <- eff_size(aaas_ag.emm.by.group, sigma = sigma(aaas_ag.interaction), edf = 202) # Check edf!
 aaas_ag.eff.by.time <- eff_size(aaas_ag.emm.by.time, sigma = sigma(aaas_ag.interaction), edf = 202) # Check edf!
@@ -1775,7 +1802,26 @@ aaas_ag.eff.by.time.plot <- plot(aaas_ag.eff.by.time) + geom_vline(xintercept = 
 aaas_ag.diag.plots <- plot_model(aaas_ag.interaction, type="diag")
 # Allt ser ok ut!
 
-###
+### Rathus
+
+rathus.interaction <-
+  lme(rathus ~ group * time,
+      random = ~ 1 | subject,
+      data = r2.long.data,
+      na.action = na.omit,
+      #corr=corAR1(),
+      method="REML")
+
+# rathus.interaction.cora1 <-
+#   lme(rathus ~ group * time,
+#       random = ~ time | subject,
+#       data = r2.long.data.out,
+#       na.action = na.omit,
+#       corr=corAR1(),
+#       method="ML")
+# 
+# anova(rathus.interaction,rathus.interaction.cora1)
+# rathus.interaction har lägst AIC, skillnaden inte signifikant
 
 rathus.interaction <-
   lmer(rathus ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
@@ -1784,7 +1830,7 @@ rathus.est.plot <- plot_model(rathus.interaction,show.values=T,show.p=T,value.of
 
 rathus.emm.by.group <- emmeans(rathus.interaction, ~ time | group, adjust="bonferroni")
 rathus.emm.by.time <- emmeans(rathus.interaction, ~ group | time, adjust="bonferroni")
-rathus.emm.plot <- plot(ggemmeans(rathus.interaction, terms = c("time","group")), connect.lines = TRUE) + labs(x="Tid",y="Värde på Rathus",colour = "Grupp", title="Predicerade värden för Rathus") + theme(legend.position="top")
+rathus.emm.plot <- plot(ggpredict(rathus.interaction, terms = c("time","group")), connect.lines = TRUE) + labs(x="Tid",y="",colour = "Grupp", title="Predicerade värden för Rathus") + theme(legend.position="top",axis.title.y=element_blank())
 
 rathus.eff.by.group <- eff_size(rathus.emm.by.group, sigma = sigma(rathus.interaction), edf = 202) # Check edf!
 rathus.eff.by.time <- eff_size(rathus.emm.by.time, sigma = sigma(rathus.interaction), edf = 202) # Check edf!
@@ -1794,29 +1840,39 @@ rathus.eff.by.time.plot <- plot(rathus.eff.by.time) + geom_vline(xintercept = 0,
 rathus.diag.plots <- plot_model(rathus.interaction, type="diag")
 # Allt ser ok ut!
 
-
 ```
 
-```{r aaasad.res, dpi=196, eval=T, cache=F, fig.height=8, fig.width=11, fig.align="center", fig.cap="Resultat för AAA-S Adaptive. Exempel på figur med resultat som jag (Tobias) skulle vilja rapportera. De här graferna 'give it all away' utan behov av krångliga tabeller. Jag röstar för att vi producerar figurer liknande dessa för de tre huvudutfallsmåtten. Överst till vänster är modellestimaten från vår regression (fixed-effekter), den andra visar de predicerade värden som modellen producerar. De två understa innehåller de effektstorlekar med konfidensintervall (med inritad noll-linje) som visuellt tydligt kommunicerar vilka av de parvisa uppföljningstesten som är signifikanta (med Bonferroni-korrektion). De intressanta jämförelserna tar vi med i resultattexten, där vi också kan nämna hur stor del av felvariansen som hör till vår random-effekt (subject)."}
+```{r aaasad.res, dpi=196, eval=T, cache=F, fig.height=7.8, fig.width=11, fig.align="center", fig.cap="Resultat för AAA-S Adaptive. Exempel på figur med resultat som jag (Tobias) skulle vilja rapportera. De här graferna 'give it all away' utan behov av krångliga tabeller. Jag röstar för att vi producerar figurer liknande dessa för de tre huvudutfallsmåtten. Överst till vänster är modellestimaten från vår regression (fixed-effekter), den andra visar de predicerade värden som modellen producerar. De två understa innehåller de effektstorlekar med konfidensintervall (med inritad noll-linje) som visuellt tydligt kommunicerar vilka av de parvisa uppföljningstesten som är signifikanta (med Bonferroni-korrektion). De intressanta jämförelserna tar vi med i resultattexten, där vi också kan nämna hur stor del av felvariansen som hör till vår random-effekt (subject)."}
+
+# out.extra='angle=90'
 
 library(patchwork)
 
-(aaas_ad.est.plot + aaas_ad.emm.plot + 
-  aaas_ad.eff.by.time.plot + aaas_ad.eff.by.group.plot + plot_layout(nrow = 2)) * theme_set(theme_classic())
+# plot_spacer() + guide_area() 
+# theme(legend.position="top")
+
+((aaas_ad.est.plot / aaas_ad.emm.plot ) | (aaas_ad.eff.by.time.plot / aaas_ad.eff.by.group.plot)) & theme_set(theme_classic()) + theme(legend.position="top")
+
+# (aaas_ad.est.plot + aaas_ad.emm.plot +
+#   aaas_ad.eff.by.time.plot + aaas_ad.eff.by.group.plot + plot_layout(nrow = 2)) * theme_set(theme_classic())
 
 ```
 
-```{r aaasag.res, dpi=196, eval=T, cache=F, fig.height=8, fig.width=11, fig.align="center", fig.cap="Resultat för AAA-S Aggressive."}
+```{r aaasag.res, dpi=196, eval=T, cache=F, fig.height=7.8, fig.width=11, fig.align="center", fig.cap="Resultat för AAA-S Aggressive."}
 
-(aaas_ag.est.plot + aaas_ag.emm.plot + 
-  aaas_ag.eff.by.time.plot + aaas_ag.eff.by.group.plot + plot_layout(nrow = 2)) * theme_set(theme_classic())
+((aaas_ag.est.plot / aaas_ag.emm.plot ) | (aaas_ag.eff.by.time.plot / aaas_ag.eff.by.group.plot)) & theme_set(theme_classic()) + theme(legend.position="top")
+
+# (aaas_ag.est.plot + aaas_ag.emm.plot + 
+#   aaas_ag.eff.by.time.plot + aaas_ag.eff.by.group.plot + plot_layout(nrow = 2)) * theme_set(theme_classic())
 
 ```
 
-```{r rathus.res, dpi=196, eval=T, cache=F, fig.height=8, fig.width=11, fig.align="center", fig.cap="Resultat för Rathus."}
+```{r rathus.res, dpi=196, eval=T, cache=F, fig.height=7.8, fig.width=11, fig.align="center", fig.cap="Resultat för Rathus."}
 
-(rathus.est.plot + rathus.emm.plot + 
-  rathus.eff.by.time.plot + rathus.eff.by.group.plot + plot_layout(nrow = 2)) * theme_set(theme_classic())
+((rathus.est.plot / rathus.emm.plot ) | (rathus.eff.by.time.plot / rathus.eff.by.group.plot)) & theme_set(theme_classic()) + theme(legend.position="top")
+
+# (rathus.est.plot + rathus.emm.plot + 
+#   rathus.eff.by.time.plot + rathus.eff.by.group.plot + plot_layout(nrow = 2)) * theme_set(theme_classic())
 
 ```
 
@@ -1947,7 +2003,7 @@ well.diag.plots <- plot_model(well.interaction, type="diag")
 ```
 
 
-```{r stargazer,results='asis',eval=F}
+```{r stargazer,results='asis',eval=T}
 
 stargazer::stargazer(
   aaas_ad.interaction,
@@ -1962,7 +2018,8 @@ stargazer::stargazer(
   decimal.mark = ',',
   digit.separator = ' ',
   digits = 2,
-  covariate.labels = c("Intercept",labradorer)
+  covariate.labels = c("Intercept",labradorer),
+  float.env = "sidewaystable"
 )
 
 # https://cran.r-project.org/web/packages/stargazer/vignettes/stargazer.pdf
@@ -2155,7 +2212,7 @@ Jag tycker detta med terapeutstödet ska upp i resultatdiskussionen. Kanske till
 
 Ytterligare en potentiell brist i studien är användandet av de nyligen översatta versionerna av självskattningsformulären AAA-S [@Thompson2011] och RAS [@Rathus1973]. Då dessa skalor ej fanns tillgängliga på svenska översattes de till den aktuella studien. Det finns många rekommendation och riktlinjer för hur översättningar bör gå till [se @Beaton2000; och @Jones2001 för två väl använda metoder]. Ett gemensamt tema i dessa översättningsmetoder är att materialet översätts från originalspråk till planerat användningsspråk (i det rådande fallet till svenska) av åtminstone två av varandra oberoende individer och att den översatta versionen sedan översätts tillbaka till sitt originalspråk av ytterligare oberoende översättare. En bedömning görs sedan mellan originalversionen och versionen översatt från det planerade användningsspråket till originalspråket. AAA-S och RAS översattes inför föreliggande uppsats endast en gång, från engelska till svenska.
 
-De nyöversatta skalorna är ej validerade och saknar svenska normer. Istället används data för både AAA-S och RAS från student-sample 1 från @Thompson2011 som icke-kliniska normer. Fördelen med dessa data är dels att de är relativt aktuella, dels att de härrör från ett och samma sample och därför ger goda möjligheter till jämförelser sins emellan. Data från föreliggande uppsats skulle potentiellt kunna användas för att validera de svensköversatta skalorna i en uppföljande studie, dock endast med dilemmat att båda översättningar på en och samma gång är icke-validerade och idealiska kriterier för varandras validering; det saknas tyvärr vedertagna skalor i litteraturen för *assertiveness* utöver RAS och AAA-S. Ytterligare en begränsning för en sådan validering är att det sample som undersöks i den här uppsatsen har en förmodad slagsida åt passiv självhävdelse och sannolikt inte innehåller tillräckligt med data från individer som kan antas ha överskott av aggressiv självhävdelse. Idealiskt sett skulle denna brist kunna avhjälpas i kommande kompletterande undersökningar.
+De nyöversatta skalorna är ej validerade och saknar svenska normer. Istället används data för både AAA-S och RAS från student-sample 1 från @Thompson2011 som icke-kliniska normer. Fördelen med dessa data är dels att de är relativt aktuella, dels att de härrör från ett och samma sample och därför ger goda möjligheter till jämförelser sins emellan. Data från föreliggande uppsats skulle potentiellt kunna användas för att validera de svensköversatta skalorna i en uppföljande studie. Ett dilemma är dock att båda översättningar på en och samma gång är icke-validerade och idealiska kriterier för varandras validering; det saknas tyvärr vedertagna skalor i litteraturen för *assertiveness* utöver RAS och AAA-S. Ytterligare en begränsning för en sådan validering är att det sample som undersöks i den här uppsatsen har en förmodad slagsida åt passiv självhävdelse och sannolikt inte innehåller tillräckligt med data från individer som kan antas ha överskott av aggressiv självhävdelse. Idealiskt sett skulle denna brist kunna avhjälpas i kommande kompletterande undersökningar.
 
 <!-- Det går därtill att problematisera reliabiliteten(????) hos de båda utfallsmåtten utifrån att konstruktet *assertiveness* och konstruktiv självhävdelse är otydligt och att många olika definitioner finns i litteraturen.  -->
 
