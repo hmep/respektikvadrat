@@ -1,7 +1,7 @@
 ---
 title             : |
-  | Respekt i kvadrat: att &ouml;ka graden av konstruktiv sj&auml;lvh&auml;vdelse  
-  | \vspace{0.5cm} *en randomiserad kontrollerad effektstudie av internetf&ouml;rmedlad kognitiv beteendeterapi*
+  | \LARGE Respekt i kvadrat: att &ouml;ka graden av konstruktiv sj&auml;lvh&auml;vdelse
+  | \vspace{0.5cm} \Large _en randomiserad kontrollerad effektstudie av internetf&ouml;rmedlad kognitiv beteendeterapi_
 shorttitle        : "Respekt i kvadrat"
 author: 
   - name          : "Tobias Hagberg"
@@ -563,7 +563,7 @@ Det finns också anledning att tro att det för en person med ångestrelaterat l
 
 I linje med att undersöka ens egen förmåga att hantera aversiva känslor är att ändra sitt förhållningssätt till dem. <!--För många kan det stora steget i att bryta undvikande vara att arbete med att acceptera och tillåta sina känslor och upplevelser [@Hayes1996]. --> Vissa har aldrig fått tillgång till den vägledning eller de verktyg som behövs för att hantera starka emotionella upplevelser. De har aldrig lärt sig att förstå sorg och ilska, eller hur de ska gå tillväga för att lugna sin ångest eller sin frustration.  Istället har de lärt sig att distrahera sig och undvika. Bedöva genom att undantrycka. Att ändra dessa förutsägelser om att vissa emotioner är oacceptabla; att tillåta sig känna dem, närma sig dem, acceptera dem, har återkommande gånger visat sig vara ett effektivt sätt att bryta undvikande [@Hayes1996; @Hayes2004a; @Luoma2007] och ett effektivt sätt att behandla många av de psykatriska besvär som individer med bristande *assertiveness* upplever [@A-Tjak2015a].
 
-Ytterligare ett sätt att närma sig aversiva stimuli är genom avslappning. Även om det fortfarande inte är konstaterat exakt vad de verksamma komponenterna i avslappningsträning vid ångestbesvär är, har forskningsstudier i decennier konstaterat avslappningsträning en effektiv metod för att minska symptom hos en del patienter som lider av ångesypsykopatoli [@Conrad2007]. Tillämpad avslappning är en copingteknik som började utvecklas i slutet av 1970-talet för patienter med fobier och panikattacker. Den har sedan dess även visat sig effektiv för bland annat generell ångeststörning  och stress [@ost2006tillampad]. En hypotes för varför avslappningsmetoder fungerar är att ångestreaktioner och att vara avslappnad ej är kongruent med varandra, det vill säga att båda inte kan existera samtidigt. Är du avslappnad kan du inte samtidigt uppleva ångest [@Conrad2007]. Då det -- som nämnt i tidigare stycke -- är ytterst svårt att konstruktivt självhävda sig när man upplever ångest [@Baker2015], och att ångest i sin tur inte är kongruent med att vara avslappnad [@Conrad2007] går det rimligen att extrapolera att lyckad avslappningsträning ökar oddsen för uppvisande av konstruktivt självhävdande beteenden. 
+Ytterligare ett sätt att närma sig aversiva stimuli är genom avslappning. Även om det fortfarande inte är konstaterat exakt vad de verksamma komponenterna i avslappningsträning vid ångestbesvär är, har forskningsstudier i decennier konstaterat avslappningsträning en effektiv metod för att minska symptom hos en del patienter som lider av ångesypsykopatoli [@Conrad2007]. Tillämpad avslappning är en copingteknik som började utvecklas i slutet av 1970-talet för patienter med fobier och panikattacker. Den har sedan dess även visat sig effektiv för bland annat generell ångeststörning  och stress [@ost2006tillampad]. En hypotes för varför avslappningsmetoder fungerar är att ångestreaktioner och att vara avslappnad ej är kongruent med varandra, det vill säga att båda inte kan existera samtidigt. Är du avslappnad kan du inte samtidigt uppleva ångest [@Conrad2007]. Då det är ytterst svårt att konstruktivt självhävda sig när man upplever ångest [@Baker2015], och att ångest i sin tur inte är kongruent med att vara avslappnad [@Conrad2007] går det rimligen att extrapolera att lyckad avslappningsträning ökar oddsen för uppvisande av konstruktivt självhävdande beteenden. 
 
 <!--
 While growing up many of us never had the proper tools or guidance to deal with difficult emotions. We never learned to understand our sadness or anger. We weren't taught how to calm our anxiety or sooth our frustration. Instead we learned to distract and avoid. To tune out unpleasant feelings with numbing. Sometimes destructive behaviour.
@@ -604,7 +604,7 @@ Regeringen har som vision att Sverige år 2025 ska vara bäst i världen på e-h
 
 Internetbaserad kognitiv beteendeterapi, I-KBT, började undersökas och utvärderas kring millenniumskiftet. Under de senaste årtiondena har hundratals studier undersökt effekten av I-KBT. Idag används I-KBT som ett behandlingsalternativ inom flera olika länder som ett komplement till mer traditionella vårdalternativ [@Andersson2016]. 
 
-Det finns i Sverige flera exempel på självhjälpsmaterial i KBT som har beforskats i form av I-KBT och sedan publicerats för allmänheten i form av självhjälpsböcker. Exempel på dessa är @Furmark2019sf, @dugas2018 samt @Carlbring2011ipf. Dessa behandlingsprogram består allt som oftast av moduler (som motsvarar kapitel i självhjälpsböckerna) innehållande psykoedukativ text, övningar och hemuppgifter kopplade till klientens eller patientens besvär. Vanligtvis tilldelas deltagarna en modul per vecka. I många av dessa behandlingsprogram har även en stödbehandlare tilldelats deltagarna. Stödbehandlaren kan ge återkoppling, besvara frågor, och ge stöd allt eftersom behandlingen fortskrider [@Vlaescu2016]. 
+Det finns i Sverige flera exempel på självhjälpsmaterial i KBT som har beforskats i form av I-KBT och sedan publicerats för allmänheten i form av självhjälpsböcker. Exempel på dessa är @Furmark2019sf, @dugas2018 samt @Carlbring2011ipf. Dessa behandlingsprogram består allt som oftast av moduler (som motsvarar kapitel i självhjälpsböckerna) innehållande psykoedukativ text, övningar och hemuppgifter kopplade till klientens eller patientens besvär. Vanligtvis tilldelas deltagarna en modul per vecka under behandlingens gång. 
 
 <!-- Självhjälpsböcker är ett medium som kan nå en stor publik. Med självhjälpsböcker går det att effektivt sprida evidensbaserad psykologisk kunskap. Validerade självhjälpsböcker har också potential att förbättra ansikte-mot-ansikte-behandlingar, där självhjälpsböcker kan användas som stöd för både genomförande av hemuppgifter under behandlingens gång och för vidmakthållande av behandlingseffekter. -->
 
@@ -613,6 +613,12 @@ Det finns i Sverige flera exempel på självhjälpsmaterial i KBT som har befors
 I-KBT är en effektiv behandlingsmetod för ett brett spektrum av olika besvär. I en meta-analys från 2018 – som inkluderade 64 RCT-studier – konstateras I-KBT vara effektivt för behandling av både depression, paniksyndrom, agorafobi, social fobi samt generaliserat ångestsyndrom [@Andrews2018]. Författarna konstaterade att medeleffektstorleken för I-KBT är *d* = 0,8 eller mer i jämförelse med kontrollbetingelse. Enligt resultaten tenderar också effekten att hålla i sig över tid. I-KBT är dessutom effektmässigt jämförbart med terapeutledd terapi. Både i en annan meta-analys från samma år samt i en meta-analys från ett decenium tidigare konstaterades I-KBT även likvärdigt ansikte-mot-ansiktebehandling [@Carlbring2018; @Barak2008]. Dessa resultat bekräftar tidigare fynd i samma riktning [@Andrews2010]. 
 
 I-KBT har även visat sig vara effektivt vid behandling av PTSD [@Sijbrandij2016], insomni [@Zachariae2016] och för att minska lidandet vid olika kroniska hälsobesvär [@Mehta2019]. I-KBT är också en verksamt vid en rad olika transdiagnostiska symtom såsom stress [@Day2013], prokrastinering [@Rozental2015] och perfektionism [@Rozental2017; @Wade2019].
+
+#### I-KBT och stödbehandlare
+
+I en del behandlingsprogram tilldelas även en stödbehandlare till deltagarna. Stödbehandlaren kan ge återkoppling, besvara frågor, och ge stöd allt eftersom behandlingen fortskrider [@Vlaescu2016]. 
+
+<!-- PATRIK: påfyllnadstext om behandlarstöd och forskning kring detta -->
 
 <!-- *Ta även med referens till @Andersson2016b ?* -->
 
@@ -640,7 +646,7 @@ Det vi primärt är intresserade av är om det finns någon skillnad (i endera r
 
 <!-- Bör vi föra en en rad om att gör en RCT-design?-->
 
-Sample-storleken för varje grupp bestämdes till n = 70 med en powerberäkning innan rekrytering påbörjades. I studien planerade manipulationer, variabler, mättillfällen och insamlad data har använts i de efterföljande analyserna utan selektion i efterhand. Alla randomiseringar gjordes av oberoende tredje part vid Stockholms Universitet med hjälp av internetbaserade randomiseringstjänster (www.random.org för överintagsexkluderingen och randomiseringen till respektive behandlare samt www.sealedenvelope.com för randomiseringen till de tre grupperna). Studien uppfyller kriterierna för en RCT-design enligt @Chambless2001.
+Sample-storleken för varje grupp bestämdes innan rekrytering påbörjades till n = 70 med en powerberäkning. I studien planerade manipulationer, variabler, mättillfällen och insamlad data har använts i de efterföljande analyserna utan selektion i efterhand. Alla randomiseringar gjordes av oberoende tredje part vid Stockholms Universitet med hjälp av internetbaserade randomiseringstjänster (www.random.org för överintagsexkluderingen och randomiseringen till respektive behandlare samt www.sealedenvelope.com för randomiseringen till de tre grupperna). Studien uppfyller kriterierna för en RCT-design enligt @Chambless2001.
 
 ### Rekrytering
 
@@ -982,6 +988,8 @@ Deltagarna blev via studiens hemsida informerade om att allt deltagande var friv
 Vi använde `r version$language`, version `r version$major`.`r version$minor` [@R-base] för samtliga analyser. 
 <!-- Vi använde `r cite_r("r-references.bib")` för samtliga analyser.  -->
 Signifikansnivån $\alpha$ = 0,05 tillämpades vid alla beräkningar. <!-- korrigerades för massignifikans? -->
+
+<!-- Pers kommentar: Lägg till att syntax och data finns deponerade -->
 
 ### Kontroll av utgångsdata
 
@@ -2230,7 +2238,7 @@ TH: Menar du de som hoppat av eller de som inte svarat på alla självskattninga
 
 -->
 
-## Sammanfattning (?)
+## Sammanfattning
 <!-- [Pers kommentar] Ja. Typ 2-3 meningar som sammanfattar hela arbetet. -->
 
 
