@@ -1,5 +1,7 @@
 ---
-title             : "Respekt i kvadrat: en randomiserad kontrollerad effektstudie av internetf&ouml;rmedlad kognitiv beteendeterapi p&aring; graden av konstruktiv sj&auml;lvh&auml;vdelse"
+title             : |
+  | Respekt i kvadrat: att &ouml;ka graden av konstruktiv sj&auml;lvh&auml;vdelse  
+  | \vspace{0.5cm} *en randomiserad kontrollerad effektstudie av internetf&ouml;rmedlad kognitiv beteendeterapi*
 shorttitle        : "Respekt i kvadrat"
 author: 
   - name          : "Tobias Hagberg"
