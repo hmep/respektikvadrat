@@ -25,7 +25,7 @@ classoption       : "doc,a4paper" # man, jou, doc
 output: 
   papaja::apa6_pdf:
     keep_tex      : TRUE
-    latex_engine  : lualatex
+    latex_engine  : xelatex
     fig_caption   : yes
     includes:
       in_header   : stay-in-place.tex
