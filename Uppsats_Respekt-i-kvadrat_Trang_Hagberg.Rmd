@@ -1124,30 +1124,37 @@ anova(kontroll_well)
 
 ```
 
-Med variansanalys fann vi inga signifikanta skillnader i fördelningarna av de primära och sekundära utfallsmåtten mellan grupperna.
+Med oberoende variansanalys av fördelningarna av de primära och sekundära utfallsmåtten mellan grupperna vid `r xpre`stillfället fann vi inga signifikanta skillnader.
 
-```{r modelcomparisons, cache = T, eval = F}
+```{r modelcomparisons, eval = F}
 
 # Select parameters and options
 
+library("nlme")
+library("lme4")
+
 # What random effects to pick?
-test.gls <-
+# Null model, using gls
+test.gls <- 
   gls(
     aaas_ag ~ 1,
     data = r2.long.data,
     na.action = na.omit,
-    REML = F
+    method = "ML"
   )
 
-test.1 <-
-  lmer(
-    aaas_ag ~ 1 + (1 | subject),
+# Random intercept model, using lme
+test.1 <- 
+  lme(
+    aaas_ag ~ 1,
+    random = ~ 1 | subject,
     data = r2.long.data,
     na.action = na.omit,
-    REML = F
+    method = "ML"
   )
-# Specifying a random intercept works ok!
-# AIC 3129,703
+anova(test.gls,test.1)
+# There is a significant difference between the models
+# We should go with the random intercept model
 
 test.2 <-
   lmer(
@@ -1161,7 +1168,8 @@ test.2 <-
 # Data does not support fitting a random slope
 
 # Unstructured or corAR1?
-# Testing with lme instead of lmer
+# Adding our independent fixed variables time and group
+# Using lme instead of lmer for this comparison
 test.1.unstructured <-
   lme(
     aaas_ag ~ time * group,
@@ -1183,17 +1191,19 @@ test.1.corAR1 <-
   )
 
 anova(test.1.unstructured,test.1.corAR1)
-# No significant difference, unstructured slightly lower AIC
-# Selecting unstructured going forward to stay conservative
+# No significant difference; unstructured has slightly lower AIC
+# Selecting unstructured going forward to stay on the conservative side
 
 # REML or ML?
-# Picking REML to get unbiased estimates of the variance parameters
+# Picking REML to get unbiased/conservative estimates of the variance parameters 
+# -- giving us slightly larger confidence intervals
 
 ```
 
 ```{r mixedmodels, cache=T}
 
 # Fit models to data
+
 library(lme4)
 
 aaas_ag.lmer <-
@@ -1212,7 +1222,7 @@ aaas_ad.lmer <-
     na.action = na.omit,
     REML = T
   )
-#plot_model(aaas_ad.lmer, type="diag") # Diagnostic plots look ok, with some outliers
+#plot_model(aaas_ad.lmer, type="diag") # Diagnostic plots look ok, with some outliers (humans)
 
 rathus.lmer <-
   lmer(
@@ -1221,7 +1231,7 @@ rathus.lmer <-
     na.action = na.omit,
     REML = T
   )
-#plot_model(rathus.lmer, type="diag") # Diagnostic plots look ok, with some outliers
+#plot_model(rathus.lmer, type="diag") # Diagnostic plots look ok, with some outliers (humans)
 
 lsas_sum.lmer <-
   lmer(
@@ -1257,11 +1267,56 @@ well.lmer <-
     na.action = na.omit,
     REML = T
   )
-#plot_model(well.lmer, type="diag") # Diagnostic plots look ok, with some outliers
+#plot_model(well.lmer, type="diag") # Diagnostic plots look ok, with some outliers (humans)
 
 ```
 
 Vi fann inga brott mot antagandena för flernivåanalys vid visuell kontroll av diagnostiska plottar av de modeller som anpassats till observerade data. 
+
+## Primära utfallsmått
+
+
+
+```{r stargazer, results='asis', eval=T}
+
+# https://cran.r-project.org/web/packages/stargazer/vignettes/stargazer.pdf
+# NB! We're using stargazer-booktabs to get prettier LaTeX table output
+
+labradorer <- c(
+  xg1,
+  xg2,
+  xdur,
+  xpost,
+  paste(xg1, " : ", xt2,sep=""),
+  paste(xg2, " : ", xt2,sep=""),
+  paste(xg1, " : ", xt3,sep=""),
+  paste(xg2, " : ", xt3,sep="")
+)
+
+stargazer::stargazer(
+  aaas_ad.lmer, 
+  aaas_ag.lmer, 
+  rathus.lmer,
+  lsas_sum.lmer,
+  gad_sum.lmer,
+  phq_sum.lmer,
+  well.lmer,
+  type = "latex",
+  ci = T,
+  intercept.bottom = F,
+  single.row = F,
+  model.numbers = F,
+  header = F,
+  decimal.mark = ',',
+  digit.separator = ' ',
+  digits = 1,
+  covariate.labels = c("Intercept",labradorer),
+  float.env = "sidewaystable",
+  omit.stat = c("aic","bic","ll")
+)
+
+```
+
 
 ```{r predicteddata, cache = T, eval = T}
 
@@ -2012,48 +2067,6 @@ library(patchwork)
 # Marginal R2 / Conditional R2	0.086 / 0.615
 
 ```
-
-
-```{r stargazer, results='asis', eval=T}
-
-# https://cran.r-project.org/web/packages/stargazer/vignettes/stargazer.pdf
-# NB! We're using stargazer-booktabs
-
-labradorer <- c(
-  xg1,
-  xg2,
-  xdur,
-  xpost,
-  paste(xg1, " : ", xt2,sep=""),
-  paste(xg2, " : ", xt2,sep=""),
-  paste(xg1, " : ", xt3,sep=""),
-  paste(xg2, " : ", xt3,sep="")
-)
-
-stargazer::stargazer(
-  aaas_ad.lmer, 
-  aaas_ag.lmer, 
-  rathus.lmer,
-  lsas_sum.lmer,
-  gad_sum.lmer,
-  phq_sum.lmer,
-  well.lmer,
-  type = "latex",
-  ci = T,
-  intercept.bottom = F,
-  single.row = F,
-  model.numbers = F,
-  header = F,
-  decimal.mark = ',',
-  digit.separator = ' ',
-  digits = 1,
-  covariate.labels = c("Intercept",labradorer),
-  float.env = "sidewaystable",
-  omit.stat = c("aic","bic","ll")
-)
-
-```
-
 
 ```{r analysplottar, dpi=196, eval=T, cache=T, fig.height=12, fig.width=6, fig.align="center", fig.cap="estimat",eval=F}
 
