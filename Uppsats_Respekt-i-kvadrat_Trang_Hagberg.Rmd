@@ -616,12 +616,7 @@ I-KBT har även visat sig vara effektivt vid behandling av PTSD [@Sijbrandij2016
 
 #### I-KBT och stödbehandlare
 
-I en del behandlingsprogram tilldelas även en stödbehandlare till deltagarna. Stödbehandlare tenderar ha möjlighet att ge återkoppling, besvara frågor, och ge stöd allt eftersom behandlingen fortskrider [@Vlaescu2016]. 
-
-<!-- 
-PATRIK: påfyllnadstext om behandlarstöd och forskning kring detta 
-[@Baumeister2014a]
--->
+I en del behandlingsprogram tilldelas även en stödbehandlare till deltagarna. Stödbehandlare tenderar ha möjlighet att ge återkoppling, besvara frågor, och ge stöd allt eftersom behandlingen fortskrider [@Vlaescu2016]. I en meta-analys från 2014 konstaterar Baumeister, Reichler, Munzinger och Lin [-@Baumeister2014a] att I-KBT oberoende av stödbehandlare eller inte var effektivt, men att I-KBT med stödbehandlare tenderar att ge något bättre effekt än I-KBT utan stödbehandlare. De fastställde även att stödbehandlarnas kompetens inte gjorde skillnad för utfallet så länge stödbehandlarna åtminstone hade grundläggande psykoterapeutiska kunskaper. Det finns även indikationer på att frekvensen av kontakt mellan stödbehandlare och deltagare ej påverkar utfallet så länge åtminstone en kontakt sker de två sinsemellan per vecka. Frekvensen av kontakt påverkar vare sig upplevd terapeutallians eller nöjdhet med behandlingen [@Klein2009]. 
 
 Trots att evidensen för kognitiv och beteendeterapeutisk behandling vid ångestsyndrom och depressiva syndrom är god förblir majoriteten av fallen även i länder med väl utvecklad sjukvård obehandlade [@Craske2017]. Många kan bära på ett psykiskt lidande utan att för den skull nå upp till kriterierna för någon av diagnoserna i DSM. Och för dem som ändå skulle göra det är tillgången till vård en begränsande faktor som I-KBT kan avhjälpa [@Andrews2018].
 
@@ -633,9 +628,10 @@ En nackdel med I-KBT är att vissa deltagare hindras av besvär med tekniken vil
 
 Erfarenheter från tidigare studier av I-KBT-interventioner har visat att det är viktigt att ange tydliga inklusionskriterier samt att screena och välja deltagare utifrån dessa. I-KBT-behandlingar som inkluderar interaktiva behandlingskomponenter, innehåller relevanta pedagogiska inslag om psykiska och kroppsliga besvär och om vad som vidmakthåller psykiska problem, liksom komponenter för att bryta vidmakthållandet av besvären, ökar oddsen för positiva utfall [@Barak2008].
 
-PATRIK SKRIVER OM MED OMVÄND TANKEGÅNG: Självhjälpsböcker med ett populärt tilltal är ett medium som kan nå en stor publik. Validerade självhjälpsböcker har också potential att förbättra ansikte-mot-ansikte-behandlingar, där självhjälpsböcker kan användas som stöd för både genomförande av hemuppgifter under behandlingens gång och för vidmakthållande av behandlingseffekter.
 
-PATRIK: Säga något om att terapeutstöd inte alltid ger större effekt. EXPANDERA!!!
+<!--
+PATRIK SKRIVER OM MED OMVÄND TANKEGÅNG: Självhjälpsböcker med ett populärt tilltal är ett medium som kan nå en stor publik. Validerade självhjälpsböcker har också potential att förbättra ansikte-mot-ansikte-behandlingar, där självhjälpsböcker kan användas som stöd för både genomförande av hemuppgifter under behandlingens gång och för vidmakthållande av behandlingseffekter.
+-->
 
 ## Frågeställningar
 
