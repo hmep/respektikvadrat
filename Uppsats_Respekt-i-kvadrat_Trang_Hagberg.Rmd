@@ -616,7 +616,7 @@ I-KBT har även visat sig vara effektivt vid behandling av PTSD [@Sijbrandij2016
 
 #### I-KBT och stödbehandlare
 
-I en del behandlingsprogram tilldelas även en stödbehandlare till deltagarna. Stödbehandlare tenderar ha möjlighet att ge återkoppling, besvara frågor, och ge stöd allt eftersom behandlingen fortskrider [@Vlaescu2016]. 
+I en del behandlingsprogram tilldelas även en stödbehandlare till deltagarna. Stödbehandlare tenderar ha möjlighet att ge återkoppling, besvara frågor, och ge stöd allt eftersom behandlingen fortskrider [@Vlaescu2016]. I en meta-analys från 2014 konstaterar Baumeister, Reichler, Munzinger och Lin [-@Baumeister2014a] att I-KBT oberoende av stödbehandlare eller inte var effektivt, men att I-KBT med stödbehandlare tenderar att ge något bättre effekt än I-KBT utan stödbehandlare. De fastställde även att stödbehandlarnas kompetens inte gjorde skillnad för utfallet så länge stödbehandlarna åtminstone hade grundläggande psykoterapeutiska kunskaper. Det finns även indikationer på att frekvensen av kontakt mellan stödbehandlare och deltagare ej påverkar utfallet så länge åtminstone en kontakt sker de två sinsemellan per vecka. Frekvensen av kontakt påverkar vare sig upplevd terapeutallians eller nöjdhet med behandlingen [@Klein2009]. 
 
 <!-- 
 PATRIK: påfyllnadstext om behandlarstöd och forskning kring detta 
