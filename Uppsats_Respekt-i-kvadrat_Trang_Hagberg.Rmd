@@ -1,7 +1,7 @@
 ---
 title             : |
-  | \LARGE Respekt i kvadrat: att &ouml;ka graden av konstruktiv sj&auml;lvh&auml;vdelse
   | \vspace{0.5cm} \Large _en randomiserad kontrollerad effektstudie av internetf&ouml;rmedlad kognitiv beteendeterapi_
+  | \LARGE Respekt i kvadrat: tr&auml;ningsprogram f&ouml;r konstruktiv sj&auml;lvh&auml;vdelse
 shorttitle        : "Respekt i kvadrat"
 author: 
   - name          : "Tobias Hagberg"
@@ -25,7 +25,7 @@ classoption       : "doc,a4paper" # man, jou, doc
 output: 
   papaja::apa6_pdf:
     keep_tex      : TRUE
-    latex_engine  : xelatex
+    latex_engine  : lualatex
     fig_caption   : yes
     includes:
       in_header   : stay-in-place.tex
@@ -33,8 +33,6 @@ keeptex           : true
 lang              : sv-SE
 header-includes:
    - \raggedbottom
-   #- \usepackage{mathspec}
-   #- \setallmainfonts{Times New Roman}
    - \setmainfont{Times New Roman}
    - \clearcaptionsetup{figure}
    - \clearcaptionsetup{table}
@@ -45,7 +43,7 @@ header-includes:
    - \usepackage{tabu}
    - \usepackage{rotating}
 editor_options: 
-  chunk_output_type: inline
+  chunk_output_type: console
 ---
 
 ```{r preferences, include = F, cache = F}
@@ -94,18 +92,30 @@ enkable = function(...) {
 
 ```
 
-```{r paramterers}
+```{r parameters}
 
-xg1 = "Självhjälp"
-xg2 = "Terapeutstöd"
-xg3 = "Väntelista"
 xiterapi = "Iterapi [@Vlaescu2016]"
-xpre = "Förmätning"
-xdur = "Mittenmätning"
-xpost = "Eftermätning"
-xt1 = "Före"
-xt2 = "Mitten"
-xt3 = "Efter"
+
+xg1 = "självhjälp"
+xg2 = "terapeutstöd"
+xg3 = "väntelista"
+xG1 = "Självhjälp"
+xG2 = "Terapeutstöd"
+xG3 = "Väntelista"
+
+xpre = "förmätning"
+xdur = "mittenmätning"
+xpost = "eftermätning"
+xPre = "Förmätning"
+xDur = "Mittenmätning"
+xPost = "Eftermätning"
+
+xt1 = "före"
+xt2 = "mitten"
+xt3 = "efter"
+xT1 = "Före"
+xT2 = "Mitten"
+xT3 = "Efter"
 
 ```
 
@@ -988,17 +998,11 @@ Deltagarna blev via studiens hemsida informerade om att allt deltagande var friv
 
 Vi använde `r version$language`, version `r version$major`.`r version$minor` [@R-base] för samtliga analyser. 
 <!-- Vi använde `r cite_r("r-references.bib")` för samtliga analyser.  -->
-Signifikansnivån $\alpha$ = 0,05 tillämpades vid alla beräkningar. <!-- korrigerades för massignifikans? -->
-
-<!-- Pers kommentar: Lägg till att syntax och data finns deponerade -->
+Signifikansnivån $\alpha$ = 0,05 tillämpades vid alla beräkningar. Öppen syntax och data finns deponerade hos Figshare på https://doi.org/10.17045/sthlmuni.12148785.
 
 ### Kontroll av utgångsdata
 
-Vi analyserade insamlade förmätningsvärden för att kontrollera om randomiseringen hade gett grupper utan signifikanta skillnader. Oberoende variansanalys (ANOVA) användes för att utesluta skillnader mellan grupperna i primära utfallsmått, sekundära utfallsmått och kontinuerliga sociodemografiska variabler. Kategoriska sociodemografiska variabler undersöktes med Pearson $\chi^2$-test. Cohen's d-effektstorlekar för beroende mätningar beräknades med R-paketet *effsize* [@R-effsize]. För beräkning och sammanställning av övrig deskriptiv statistik användes R-paketet *pastecs* [@R-pastecs].
-
-<!-- normalfördelning shapiro wilks -->
-
-<!-- OBS! Vi fann en signifikant skillnad i könsfördelningen mellan grupperna. Vi har betydligt fler män i grupp 1 än övriga. -->
+Vi analyserade insamlade förmätningsvärden för att kontrollera om randomiseringen hade gett grupper utan signifikanta skillnader. Oberoende variansanalys (ANOVA) användes för att utesluta skillnader mellan grupperna i primära utfallsmått, sekundära utfallsmått och kontinuerliga sociodemografiska variabler. Kategoriska sociodemografiska variabler undersöktes med Kruskal-Wallis-test från R-paketet *FSA* [@R-FSA]. Cohen's d-effektstorlekar för beroende mätningar beräknades test från R-paketet *effsize* [@R-effsize]. För beräkning och sammanställning av övrig deskriptiv statistik användes verktyg från R-paketet *pastecs* [@R-pastecs].
 
 ### Bortfallsanalys
 
@@ -1006,29 +1010,305 @@ Vi analyserade insamlade förmätningsvärden för att kontrollera om randomiser
 
 ### Analys av huvudeffekter och interaktionseffekter
 
-Huvudeffekter och interaktion mellan grupp och tid för de primära och sekundära utfallsmått undersöktes med *mixed model*-metodik. *Mixed model* tillåter precis som MANOVA inklusion av upprepade beroende mättillfällen i modellen, men med hänsyn taget till principen om *intention to treat*. Utöver det möjliggör det även modellering och kvantifiering på gruppnivå av observerade (men inte kontrollerade) individ-relaterade effekter, exempelvis skillnader i underliggande förändringsbenägenhet över tid. I modellen tilläts skärningspunkterna för respektive deltagare att variera, liksom lutningen på regressionslinjerna mellan mättillfällena för dem. För analysen användes R-paketet *nlme* [@R-nlme]. Val av kovariansstruktur gjordes genom jämförelse av AIC-tal. Granskning av homoscedasticitet, normalfördelade residualer och outliers gjordes visuellt med diagnostiska plottar av de till data anpassade modellerna. För *post hoc*-test uppskattades predicerade *marginal means* (eller *least square means*) för de olika kombinationerna av betingelse och mättillfälle med R-paketet *emmeans* [@R-emmeans]. Diagnosplottar och figurer för presentationen av resultatet togs fram med *emmeans* och *sjPlot* [@R-sjPlot].
-
-<!-- For linear (mixed) models, plots for multicollinearity-check (Variance Inflation Factors), QQ-plots, checks for normal distribution of residuals and homoscedasticity (constant variance of residuals) are shown. -->
+Huvudeffekter och interaktion mellan grupp och tid för de primära och sekundära utfallsmått undersöktes med *mixed model*-metodik. *Mixed model* tillåter precis som MANOVA inklusion av upprepade beroende mättillfällen i modellen, men med hänsyn taget till principen om *intention to treat*. Utöver det möjliggör det även modellering och kvantifiering på gruppnivå av observerade (men inte kontrollerade) individ-relaterade effekter, exempelvis skillnader i underliggande förändringsbenägenhet över tid. För modelleringen av de olika utfallsmåtten användes modelleringsverktyg från R-paketet *lme4* [@R-lme4]. Val av kovariansstruktur gjordes genom jämförelse av AIC-tal med *Maximum Likelihood* (ML)-metoden. Metoden *Restricted Maximum Likelihood* (REML), som ger konservativa uppskattningar av varianserna, användes för anpassningen av modellerna för utfallsmåtten till underliggande data. I modellen tilläts skärningspunkterna för respektive deltagare att variera. Granskning av homoscedasticitet, residualernas fördelning och outliers gjordes visuellt med diagnostiska plottar av de till data anpassade modellerna. För parvisa *post hoc*-test uppskattades *marginal means* (*least square means*) samt standardiserade effektstorlekar för de olika kombinationerna av betingelse och mättillfälle med verktyg från R-paketet *emmeans* [@R-emmeans]. Figurer producerades med verktyg från *emmeans*,  *sjPlot* [@R-sjPlot] och *ggplot2* [@R-ggplot2].
 
 ### Analys av reliabel förändring och klinisk signifikans
 
-Vi räknade ut frekvensen deltagare som i träningsprogrammet genomgått en reliabel förändring och dessutom befann sig på kliniskt signifikant nivå vid eftermätningen. För de deltagare som endast lämnat självskattningar vid förmätningstillfället fördes dessa värden vidare till eftermätningstillfället i enlighet med principen om *intention to treat*. Valet av klinisk signifikans-kriterium gjordes i enlighet med definitionerna och rekommendationerna i @Jacobson1991 för var och en av skattningsskalorna i relation till var och en av grupperna. En förändring mellan två mättillfällen definieras som reliabel om den är tillräckligt stor i relation till populationsvariansen. Då betraktas förändringen som en verklig förändring och inte bara ett slump- eller mätfel. Den senare ger en bild av om hur de absoluta eftermätningsvärdena förhåller sig till medelvärdet för antingen en subklinisk population eller en klinisk population (som också kan hämtas från normdata) [@Jacobson1991]. För samtliga beräkningar av klinisk signifikans och reliabel förändring användes R-paketet *JTRCI* [@R-JTRCI], som väljer signifikans-kriterium (*a*, *b* eller *c*) konservativt. SKIPPA DETTA? --> Skillnader i frekvensen reliabelt förändrade deltagare på kliniskt signifikant nivå analyserades med $\chi^2$-test.
-
-<!-- 2DO: analysera frekvenser -->
+Frekvensen deltagare som i träningsprogrammet genomgått en reliabel förändring och dessutom befann sig på kliniskt signifikant nivå vid eftermätningen fastställdes i enlighet med definitionerna och rekommendationerna i @Jacobson1991. För deltagare som endast lämnat självskattningar vid förmätningstillfället fördes förmätningvärden vidare till eftermätningstillfället i enlighet med principen om *intention to treat*. En förändring mellan två mättillfällen definieras som reliabel om den är tillräckligt stor i relation till populationsvariansen. Då betraktas förändringen som en verklig förändring och inte bara ett slump- eller mätfel. Klinisk signifikans ger en bild av om hur de absoluta eftermätningsvärdena förhåller sig till medelvärdet för normdata för en subklinisk population [@Jacobson1991]. För samtliga beräkningar av klinisk signifikans och reliabel förändring användes R-paketet *JTRCI* [@R-JTRCI], som väljer signifikans-kriterium konservativt. Skillnader mellan grupperna i frekvensen reliabelt förändrade deltagare på kliniskt signifikant nivå analyserades med Kruskal-Wallis-test.
 
 # Resultat
 
-REPORT: Varianserna för aaas_ad från förmätningen var signifikant olika, F(2,3) = 3,4202, p = 0,035
+```{r sociodemotest, eval = T}
 
-För att sammanfatta har vi problem med flera icke-normalfördelade distributioner enligt shapiro-Wilks test och dessutom icke-homogena varianser för pre-värdet för aaas_ad i gruppen selfhelp.
+sociodemografisk.data <- read_excel("Respekt_survey453761_200423.xlsx")
+sociodemografisk.data$group <-
+  factor(ifelse(
+    grepl("Grupp 1", sociodemografisk.data$Grupper),
+    1,
+    ifelse(
+      grepl("Grupp 2", sociodemografisk.data$Grupper),
+      2,
+      ifelse(grepl("Grupp 3", sociodemografisk.data$Grupper), 3, NA)
+    )
+  ))
+sociodemografisk.data <- sociodemografisk.data[-c(13,48,52,97,158),]
 
-oxå sig skillnad i sociodemografisk data/kön
+Demografi.Kon.chi <- kruskal.test(Demografi.Kon ~ group, data = sociodemografisk.data)
+# Signifikant!
+# library(lattice)
+# histogram(~ Demografi.Kon | group,
+#           data=sociodemografisk.data,
+#           layout=c(1,3))
+library(FSA)
+Demografi.Kon.posthoc <- dunnTest(Demografi.Kon ~ group,
+         data=sociodemografisk.data,
+         method="bh")
+# Könsfördelningen för väntelista skiljer sig signifikant från övriga gruppers
+Demografi.Kon.abs <- table(sociodemografisk.data$group, sociodemografisk.data$Demografi.Kon)
+Demografi.Kon.proc <- prop.table(Demografi.Kon.abs, 1)
 
-## Deskriptiv statistik
+# kruskal.test(sociodemografisk.data$Demografi.Alder ~ group, data = sociodemografisk.data)
+# kruskal.test(sociodemografisk.data$Demografi.Civilstand ~ group, data = sociodemografisk.data)
+# kruskal.test(sociodemografisk.data$Demografi.Utbildning ~ group, data = sociodemografisk.data)
+# kruskal.test(sociodemografisk.data$Demografi.Sysselsattning ~ group, data = sociodemografisk.data)
+# kruskal.test(sociodemografisk.data$Demografi.Psykofarmaka ~ group, data = sociodemografisk.data)
+# kruskal.test(sociodemografisk.data$Demografi.PsykofarmakaVad ~ group, data = sociodemografisk.data)
+# kruskal.test(sociodemografisk.data$Demografi.PsykofarmakaDos ~ group, data = sociodemografisk.data)
+# kruskal.test(sociodemografisk.data$Demografi.PsykoBehandling ~ group, data = sociodemografisk.data)
+# # Inga signifikanta = inga skillnader mellan grupperna
+
+```
+
+Vid analys av skillnader av sociodemografisk data fann vi en signifikant skillnad i könsfördelning mellan grupperna ($\chi^2$ = `r format(round(Demografi.Kon.chi$statistic,2),decimal.mark=",")`, p = `r format(round(Demografi.Kon.chi$p.value,2),decimal.mark=",")`, df = `r format(round(Demografi.Kon.chi$parameter,2),decimal.mark=",")`). Med uppföljande parvisa jämförelser fann vi att andelen kvinnor i `r xg1` hade signifikant större andel män än både `r xg2` (p = `r format(round(Demografi.Kon.posthoc$res[1,4],2),decimal.mark=",")`) och `r xg3` (p = `r format(round(Demografi.Kon.posthoc$res[2,4],2),decimal.mark=",")`). I övrigt fann vi inte några skillnader i sociodemografiska data mellan de olika grupperna.
+
+```{r groupcontrols, eval = F}
+
+kontroll_ad <-
+  lm(
+    aaas_ad ~ group,
+    data = r2.long.data[lt1,],
+    na.action = na.omit
+  )
+anova(kontroll_ad)
+# Ej signifikant = inga skillnader mellan grupperna
+
+kontroll_ag <-
+  lm(
+    aaas_ag ~ group,
+    data = r2.long.data[lt1,],
+    na.action = na.omit
+  )
+anova(kontroll_ag)
+# Ej signifikant = inga skillnader mellan grupperna
+
+kontroll_rathus <-
+  lm(
+    rathus ~ group,
+    data = r2.long.data[lt1,],
+    na.action = na.omit
+  )
+anova(kontroll_rathus)
+# Ej signifikant = inga skillnader mellan grupperna
+
+kontroll_phq <-
+  lm(
+    phq_sum ~ group,
+    data = r2.long.data[lt1,],
+    na.action = na.omit
+  )
+anova(kontroll_phq)
+# Ej signifikant = inga skillnader mellan grupperna
+
+kontroll_gad <-
+  lm(
+    gad_sum ~ group,
+    data = r2.long.data[lt1,],
+    na.action = na.omit
+  )
+anova(kontroll_gad)
+# Ej signifikant = inga skillnader mellan grupperna
+
+kontroll_lsas <-
+  lm(
+    lsas_sum ~ group,
+    data = r2.long.data[lt1,],
+    na.action = na.omit
+  )
+anova(kontroll_lsas)
+# Ej signifikant = inga skillnader mellan grupperna
+
+kontroll_well <-
+  lm(
+    well ~ group,
+    data = r2.long.data[lt1,],
+    na.action = na.omit
+  )
+anova(kontroll_well)
+# Ej signifikant = inga skillnader mellan grupperna
+
+```
+
+Med variansanalys fann vi inga signifikanta skillnader i fördelningarna av de primära och sekundära utfallsmåtten mellan grupperna.
+
+```{r modelcomparisons, cache = T, eval = F}
+
+# Select parameters and options
+
+# What random effects to pick?
+test.gls <-
+  gls(
+    aaas_ag ~ 1,
+    data = r2.long.data,
+    na.action = na.omit,
+    REML = F
+  )
+
+test.1 <-
+  lmer(
+    aaas_ag ~ 1 + (1 | subject),
+    data = r2.long.data,
+    na.action = na.omit,
+    REML = F
+  )
+# Specifying a random intercept works ok!
+# AIC 3129,703
+
+test.2 <-
+  lmer(
+    aaas_ag ~ 1 + (time | subject),
+    data = r2.long.data,
+    na.action = na.omit,
+    REML = F
+  )
+# Does not run
+# (observations = 505) <= (random effects = 615)
+# Data does not support fitting a random slope
+
+# Unstructured or corAR1?
+# Testing with lme instead of lmer
+test.1.unstructured <-
+  lme(
+    aaas_ag ~ time * group,
+    random = ~ 1 | subject,
+    data = r2.long.data,
+    na.action = na.omit,
+    #corr=corAR1(),
+    method = "ML"
+  )
+
+test.1.corAR1 <-
+  lme(
+    aaas_ag ~ time * group,
+    random = ~ time | subject,
+    data = r2.long.data,
+    na.action = na.omit,
+    corr=corAR1(),
+    method = "ML"
+  )
+
+anova(test.1.unstructured,test.1.corAR1)
+# No significant difference, unstructured slightly lower AIC
+# Selecting unstructured going forward to stay conservative
+
+# REML or ML?
+# Picking REML to get unbiased estimates of the variance parameters
+
+```
+
+```{r mixedmodels, cache=T}
+
+# Fit models to data
+library(lme4)
+
+aaas_ag.lmer <-
+  lmer(
+    aaas_ag ~ group * time + (1 | subject),
+    data = r2.long.data,
+    na.action = na.omit,
+    REML = T
+  )
+#plot_model(aaas_ag.lmer, type="diag") # Diagnostic plots look ok!
+
+aaas_ad.lmer <-
+  lmer(
+    aaas_ad ~ group * time + (1 | subject),
+    data = r2.long.data,
+    na.action = na.omit,
+    REML = T
+  )
+#plot_model(aaas_ad.lmer, type="diag") # Diagnostic plots look ok, with some outliers
+
+rathus.lmer <-
+  lmer(
+    rathus ~ group * time + (1 | subject),
+    data = r2.long.data,
+    na.action = na.omit,
+    REML = T
+  )
+#plot_model(rathus.lmer, type="diag") # Diagnostic plots look ok, with some outliers
+
+lsas_sum.lmer <-
+  lmer(
+    lsas_sum ~ group * time + (1 | subject),
+    data = r2.long.data,
+    na.action = na.omit,
+    REML = T
+  )
+#plot_model(lsas_sum.lmer, type="diag") # Diagnostic plots look more or less ok
+
+gad_sum.lmer <-
+  lmer(
+    gad_sum ~ group * time + (1 | subject),
+    data = r2.long.data,
+    na.action = na.omit,
+    REML = T
+  )
+#plot_model(gad_sum.lmer, type="diag") # Diagnostic plots look ok!
+
+phq_sum.lmer <-
+  lmer(
+    phq_sum ~ group * time + (1 | subject),
+    data = r2.long.data,
+    na.action = na.omit,
+    REML = T
+  )
+#plot_model(phq_sum.lmer, type="diag") # Diagnostic plots look ok!
+
+well.lmer <-
+  lmer(
+    well ~ group * time + (1 | subject),
+    data = r2.long.data,
+    na.action = na.omit,
+    REML = T
+  )
+#plot_model(well.lmer, type="diag") # Diagnostic plots look ok, with some outliers
+
+```
+
+Vi fann inga brott mot antagandena för flernivåanalys vid visuell kontroll av diagnostiska plottar av de modeller som anpassats till observerade data. 
+
+```{r predicteddata, cache = T, eval = T}
+
+# Output predictions to new data frame
+# https://rdrr.io/cran/modelr/man/add_predictions.html
+
+# Create new data frame with factor variables in place
+r2.new.data <- r2.long.data[,c(1:4)]
+
+# Add predicted values to data frame
+library(modelr)
+
+r2.new.data <- r2.new.data %>% spread_predictions(
+  rathus.lmer,
+  aaas_ag.lmer,
+  aaas_ad.lmer,
+  lsas_sum.lmer,
+  gad_sum.lmer,
+  phq_sum.lmer,
+  well.lmer
+)
+
+# Set column names
+colnames(r2.new.data) <-
+  c(
+    "subject",
+    "group",
+    "time",
+    "rathus",
+    "aaas_ag",
+    "aaas_ad",
+    "lsas_sum",
+    "gad_sum",
+    "phq_sum",
+    "well"
+  )
+
+```
+
 
 se tabell \@ref(tab:descriptives)
 
-(ref:descriptives) Deskriptiv statistik för primära och sekundära utfallsmått. Cohen's d är beräknad med tillgänglig data för de deltagare som lämnat svar både inför studien och vid respektive mättillfälle.
+(ref:descriptives) Deskriptiv statistik för primära och sekundära utfallsmått. Cohen's d är beräknad med tillgänglig data för de deltagare som lämnat svar både inför studien och vid respektive mättillfäll.de
 
 ```{r descriptives, fig.align="center", cache = T, eval = T}
 
@@ -1199,7 +1479,7 @@ descriptives.col.out <- cbind.data.frame(
 )
 options(OutDec= ".") 
 
-#  add_header_above(c("", "Självhjälp (N = 67)" = 3, "Med stöd (N = 69)" = 3, "Väntlista (N = 68)" = 3)) %>% #, "All (N = 204)" = 2)) %>%
+#  add_header_above(c("", "Självhjälp (N = 67)" = 3, "Med stöd (N = 69)" = 3, "Väntelista (N = 68)" = 3)) %>% #, "All (N = 204)" = 2)) %>%
 
 row_group_label_fonts <- list(
 list(bold = T, italic = F),
@@ -1628,270 +1908,6 @@ rathus.pre.post.jt.plot + theme(legend.position="none") + scale_color_manual(val
 
 ```
 
-```{r kontroller, eval=F}
-
-kontroll_ad <-
-  lm(
-    aaas_ad ~ group,
-    data = r2.long.data[lt1,],
-    na.action = na.omit
-  )
-anova(kontroll_ad)
-# Ej signifikant = inga skillnader mellan grupperna
-
-kontroll_ag <-
-  lm(
-    aaas_ag ~ group,
-    data = r2.long.data[lt1,],
-    na.action = na.omit
-  )
-anova(kontroll_ag)
-# Ej signifikant = inga skillnader mellan grupperna
-
-kontroll_rathus <-
-  lm(
-    rathus ~ group,
-    data = r2.long.data[lt1,],
-    na.action = na.omit
-  )
-anova(kontroll_rathus)
-# Ej signifikant = inga skillnader mellan grupperna
-
-kontroll_phq <-
-  lm(
-    phq_sum ~ group,
-    data = r2.long.data[lt1,],
-    na.action = na.omit
-  )
-anova(kontroll_phq)
-# Ej signifikant = inga skillnader mellan grupperna
-
-kontroll_gad <-
-  lm(
-    gad_sum ~ group,
-    data = r2.long.data[lt1,],
-    na.action = na.omit
-  )
-anova(kontroll_gad)
-# Ej signifikant = inga skillnader mellan grupperna
-
-kontroll_lsas <-
-  lm(
-    lsas_sum ~ group,
-    data = r2.long.data[lt1,],
-    na.action = na.omit
-  )
-anova(kontroll_lsas)
-# Ej signifikant = inga skillnader mellan grupperna
-
-kontroll_well <-
-  lm(
-    well ~ group,
-    data = r2.long.data[lt1,],
-    na.action = na.omit
-  )
-anova(kontroll_well)
-# Ej signifikant = inga skillnader mellan grupperna
-
-sociodemografisk.data <- read_excel("Respekt_survey453761_200423.xlsx")
-sociodemografisk.data$group <-
-  factor(ifelse(
-    grepl("Grupp 1", sociodemografisk.data$Grupper),
-    1,
-    ifelse(
-      grepl("Grupp 2", sociodemografisk.data$Grupper),
-      2,
-      ifelse(grepl("Grupp 3", sociodemografisk.data$Grupper), 3, NA)
-    )
-  ))
-sociodemografisk.data <- sociodemografisk.data[-c(13,48,52,97,158),]
-  
-chisq.test(sociodemografisk.data$group, sociodemografisk.data$Demografi.Kon, correct=T)
-# Signifikant!
-(Demografi.Kon.table <- table(sociodemografisk.data$group, sociodemografisk.data$Demografi.Kon))
-(Demografi.Kon.table <- prop.table(Demografi.Kon.table, 1))
-
-# chisq.test(sociodemografisk.data$group, sociodemografisk.data$Demografi.Alder, correct=T)
-# chisq.test(sociodemografisk.data$group, sociodemografisk.data$Demografi.Civilstand, correct=T)
-# chisq.test(sociodemografisk.data$group, sociodemografisk.data$Demografi.Utbildning, correct=T)
-# chisq.test(sociodemografisk.data$group, sociodemografisk.data$Demografi.Sysselsattning, correct=T)
-# chisq.test(sociodemografisk.data$group, sociodemografisk.data$Demografi.Psykofarmaka, correct=T)
-# chisq.test(sociodemografisk.data$group, sociodemografisk.data$Demografi.PsykofarmakaVad, correct=T)
-# chisq.test(sociodemografisk.data$group, sociodemografisk.data$Demografi.PsykofarmakaDos, correct=T)
-# chisq.test(sociodemografisk.data$group, sociodemografisk.data$Demografi.PsykoBehandling, correct=T)
-# # Inga signifikanta = inga skillnader mellan grupperna
-
-```
-
-```{r modelcomparisons, cache=T, eval=F}
-
-# Select parameters and options
-
-# What random effects to pick?
-test.gls <-
-  gls(
-    aaas_ag ~ 1,
-    data = r2.long.data,
-    na.action = na.omit,
-    REML = F
-  )
-
-test.1 <-
-  lmer(
-    aaas_ag ~ 1 + (1 | subject),
-    data = r2.long.data,
-    na.action = na.omit,
-    REML = F
-  )
-# Specifying a random intercept works ok!
-# AIC 3129,703
-
-test.2 <-
-  lmer(
-    aaas_ag ~ 1 + (time | subject),
-    data = r2.long.data,
-    na.action = na.omit,
-    REML = F
-  )
-# Does not run
-# (observations = 505) <= (random effects = 615)
-# Data does not support fitting a random slope
-
-# Unstructured or corAR1?
-# Testing with lme instead of lmer
-test.1.unstructured <-
-  lme(
-    aaas_ag ~ time * group,
-    random = ~ 1 | subject,
-    data = r2.long.data,
-    na.action = na.omit,
-    #corr=corAR1(),
-    method = "ML"
-  )
-
-test.1.corAR1 <-
-  lme(
-    aaas_ag ~ time * group,
-    random = ~ time | subject,
-    data = r2.long.data,
-    na.action = na.omit,
-    corr=corAR1(),
-    method = "ML"
-  )
-
-anova(test.1.unstructured,test.1.corAR1)
-# No significant difference, unstructured slightly lower AIC
-# Selecting unstructured going forward to stay conservative
-
-# REML or ML?
-# Picking REML to get unbiased estimates of the variance parameters
-
-```
-
-```{r mixedmodels, cache=T}
-
-# Fit models to data
-library(lme4)
-
-aaas_ag.lmer <-
-  lmer(
-    aaas_ag ~ group * time + (1 | subject),
-    data = r2.long.data,
-    na.action = na.omit,
-    REML = T
-  )
-#plot_model(aaas_ag.lmer, type="diag") # Diagnostic plots look ok!
-
-aaas_ad.lmer <-
-  lmer(
-    aaas_ad ~ group * time + (1 | subject),
-    data = r2.long.data,
-    na.action = na.omit,
-    REML = T
-  )
-#plot_model(aaas_ad.lmer, type="diag") # Diagnostic plots look ok, with some outliers
-
-rathus.lmer <-
-  lmer(
-    rathus ~ group * time + (1 | subject),
-    data = r2.long.data,
-    na.action = na.omit,
-    REML = T
-  )
-#plot_model(rathus.lmer, type="diag") # Diagnostic plots look ok, with some outliers
-
-lsas_sum.lmer <-
-  lmer(
-    lsas_sum ~ group * time + (1 | subject),
-    data = r2.long.data,
-    na.action = na.omit,
-    REML = T
-  )
-#plot_model(lsas_sum.lmer, type="diag") # Diagnostic plots look more or less ok
-
-gad_sum.lmer <-
-  lmer(
-    gad_sum ~ group * time + (1 | subject),
-    data = r2.long.data,
-    na.action = na.omit,
-    REML = T
-  )
-#plot_model(gad_sum.lmer, type="diag") # Diagnostic plots look ok!
-
-phq_sum.lmer <-
-  lmer(
-    phq_sum ~ group * time + (1 | subject),
-    data = r2.long.data,
-    na.action = na.omit,
-    REML = T
-  )
-#plot_model(phq_sum.lmer, type="diag") # Diagnostic plots look ok!
-
-well.lmer <-
-  lmer(
-    well ~ group * time + (1 | subject),
-    data = r2.long.data,
-    na.action = na.omit,
-    REML = T
-  )
-#plot_model(well.lmer, type="diag") # Diagnostic plots look ok, with some outliers
-
-# Output predictions to new data frame
-# https://rdrr.io/cran/modelr/man/add_predictions.html
-
-# Create new data frame with factor variables in place
-r2.new.data <- r2.long.data[,c(1:4)]
-
-# Add predicted values to data frame
-library(modelr)
-
-r2.new.data <- r2.new.data %>% spread_predictions(
-  rathus.lmer,
-  aaas_ag.lmer,
-  aaas_ad.lmer,
-  lsas_sum.lmer,
-  gad_sum.lmer,
-  phq_sum.lmer,
-  well.lmer
-)
-
-# Set column names
-colnames(r2.new.data) <-
-  c(
-    "subject",
-    "group",
-    "time",
-    "rathus",
-    "aaas_ag",
-    "aaas_ad",
-    "lsas_sum",
-    "gad_sum",
-    "phq_sum",
-    "well"
-  )
-
-```
-
 (ref:emmeff) bildtext
 
 ```{r emmeanseffects, dpi=196, fig.align="center", fig.cap='(ref:emmeff)', fig.height=4.5, fig.width=5.5}
@@ -2019,9 +2035,9 @@ labradorer <- c(
 )
 
 stargazer::stargazer(
-  rathus.lmer,
-  aaas_ag.lmer, 
   aaas_ad.lmer, 
+  aaas_ag.lmer, 
+  rathus.lmer,
   lsas_sum.lmer,
   gad_sum.lmer,
   phq_sum.lmer,
