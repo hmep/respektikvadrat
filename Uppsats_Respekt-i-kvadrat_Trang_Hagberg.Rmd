@@ -96,7 +96,7 @@ enkable = function(...) {
 
 xg1 = "Självhjälp"
 xg2 = "Terapeutstöd"
-xg3 = "Väntlista"
+xg3 = "Väntelista"
 xiterapi = "Iterapi [@Vlaescu2016]"
 xpre = "Förmätning"
 xdur = "Mittenmätning"
@@ -1379,6 +1379,14 @@ xt[, 1] <- jt_rownames
 colnames(xt) <- jt_colnames
 AAAS_ag.pre.post.jt.table <- xt
 
+# tab_xtab(
+#   as.numeric(as.matrix(AAAS_ag.pre.post.jt.table[5,4])),
+#   sum(as.numeric(as.matrix(AAAS_ag.pre.post.jt.table[c(1:4),4]))),
+#   statistics = "fisher",
+#   show.cell.prc =T
+# )
+
+
 ### AAAS_ag pre--during
 
 # Run
@@ -1704,145 +1712,224 @@ chisq.test(sociodemografisk.data$group, sociodemografisk.data$Demografi.Kon, cor
 
 ```
 
-```{r analyser, dpi=196, cache=F}
+```{r modelcomparisons, cache=T, eval=F}
 
-# The marginal R-squared considers only the variance of the fixed effects, while the conditional R-squared takes both the fixed and random effects into account.
-# 
-# The p-value is a simple approximation, based on the t-statistics and using the normal distribution function. A more precise p-value can be computed using p.val = "kr". In this case, which only applies to linear mixed models, the computation of p-values is based on conditional F-tests with Kenward-Roger approximation for the degrees of freedom (using the using the pbkrtest-package). Note that here the computation is more time consuming and thus not used as default. You can also display the approximated degrees of freedom with show.df.
+# Select parameters and options
 
-library(lme4)
-library(ggeffects)
-library(sjPlot)
-theme_set(theme_classic())
-
-labradorer <- c(
-    xg1,
-    xg2,
-    xdur,
-    xpost,
-    paste(xg1, " : ", xt2,sep=""),
-    paste(xg2, " : ", xt2,sep=""),
-    paste(xg1, " : ", xt3,sep=""),
-    paste(xg2, " : ", xt3,sep="")
+# What random effects to pick?
+test.gls <-
+  gls(
+    aaas_ag ~ 1,
+    data = r2.long.data,
+    na.action = na.omit,
+    REML = F
   )
 
-### AAA-S Ad
+test.1 <-
+  lmer(
+    aaas_ag ~ 1 + (1 | subject),
+    data = r2.long.data,
+    na.action = na.omit,
+    REML = F
+  )
+# Specifying a random intercept works ok!
+# AIC 3129,703
 
-aaas_ad.interaction <-
-  lme(aaas_ad ~ group * time,
-      random = ~ 1 | subject,
-      data = r2.long.data,
-      na.action = na.omit,
-      #corr=corAR1(),
-      method="REML")
+test.2 <-
+  lmer(
+    aaas_ag ~ 1 + (time | subject),
+    data = r2.long.data,
+    na.action = na.omit,
+    REML = F
+  )
+# Does not run
+# (observations = 505) <= (random effects = 615)
+# Data does not support fitting a random slope
 
-# aaas_ad.interaction.cora1 <-
-#   lme(aaas_ad ~ group * time,
-#       random = ~ time | subject,
-#       data = r2.long.data.out,
-#       na.action = na.omit,
-#       corr=corAR1(),
-#       method="ML")
-# 
-# anova(aaas_ad.interaction,aaas_ad.interaction.cora1)
-# aaas_ad.interaction har lägst AIC, skillnaden inte signifikant
+# Unstructured or corAR1?
+# Testing with lme instead of lmer
+test.1.unstructured <-
+  lme(
+    aaas_ag ~ time * group,
+    random = ~ 1 | subject,
+    data = r2.long.data,
+    na.action = na.omit,
+    #corr=corAR1(),
+    method = "ML"
+  )
 
-aaas_ad.est.plot <- plot_model(aaas_ad.interaction,show.values=T,show.p=T,value.offset = 0.35,value.size = 3,axis.labels = rev(labradorer)) + labs(y="Estimat med konfidensintervall (och signifikansnivåer)",title="Modellestimat för AAA-S Adaptive")
+test.1.corAR1 <-
+  lme(
+    aaas_ag ~ time * group,
+    random = ~ time | subject,
+    data = r2.long.data,
+    na.action = na.omit,
+    corr=corAR1(),
+    method = "ML"
+  )
 
-aaas_ad.emm.by.group <- emmeans(aaas_ad.interaction, ~ time | group, adjust="bonferroni")
-aaas_ad.emm.by.time <- emmeans(aaas_ad.interaction, ~ group | time, adjust="bonferroni")
-aaas_ad.emm.plot <- plot(ggpredict(aaas_ad.interaction, terms = c("time","group")), connect.lines = TRUE) + labs(x="Tid",y="",colour = "Grupp", title="Predicerade värden för AAA-S Adaptive") + theme(legend.position="top",axis.title.y=element_blank())
+anova(test.1.unstructured,test.1.corAR1)
+# No significant difference, unstructured slightly lower AIC
+# Selecting unstructured going forward to stay conservative
 
-aaas_ad.eff.by.group <- eff_size(aaas_ad.emm.by.group, sigma = sigma(aaas_ad.interaction), edf = 202) # Check edf!
-aaas_ad.eff.by.time <- eff_size(aaas_ad.emm.by.time, sigma = sigma(aaas_ad.interaction), edf = 202) # Check edf!
-aaas_ad.eff.by.group.plot <- plot(aaas_ad.eff.by.group) + geom_vline(xintercept = 0,linetype="dotted") + labs(x="Uppskattad effekt med konfidensintervall",y="Parvisa jämförelser",title="Effektstorlekar per betingelse") + geom_text(aes(label = round(abs(the.emmean),2)),vjust=-1,size=3)
-aaas_ad.eff.by.time.plot <- plot(aaas_ad.eff.by.time) + geom_vline(xintercept = 0,linetype="dotted") + labs(x="Uppskattad effekt med konfidensintervall",y="Parvisa jämförelser",title="Effektstorlekar per mättillfälle") + geom_text(aes(label = round(abs(the.emmean),2)),vjust=-1,size=3)
-
-aaas_ad.diag.plots <- plot_model(aaas_ad.interaction, type="diag")
-# Allt ser ok ut!
-
-### AAA-S Ag
-
-# Ta bort outlier
-# Här ska vi skriva en rational för varför vi har gjort detta
-# r2.long.data.out <- r2.long.data
-# r2.long.data.out[which(r2.long.data.out$aaas_ag >= max(boxplot.stats(r2.long.data.out$aaas_ag)$out)),6] <- NA
-
-aaas_ag.interaction <-
-  lme(aaas_ag ~ group * time,
-      random = ~ 1 | subject,
-      data = r2.long.data,
-      na.action = na.omit,
-      #corr=corAR1(),
-      method="REML")
-
-# aaas_ag.interaction.cora1 <-
-#   lme(aaas_ag ~ group * time,
-#       random = ~ time | subject,
-#       data = r2.long.data.out,
-#       na.action = na.omit,
-#       corr=corAR1(),
-#       method="ML")
-# 
-# anova(aaas_ag.interaction,aaas_ag.interaction.cora1)
-# aaas_ag.interaction har lägst AIC, skillnaden inte signifikant
-# Unstructured är också mer konservativ ....
-
-aaas_ag.est.plot <- plot_model(aaas_ag.interaction,show.values=T,show.p=T,value.offset = 0.35,value.size = 3,axis.labels = rev(labradorer)) + labs(y="Estimat med konfidensintervall (och signifikansnivåer)",title="Modellestimat för AAA-S Aggressive")
-
-aaas_ag.emm.by.group <- emmeans(aaas_ag.interaction, ~ time | group, adjust="bonferroni")
-aaas_ag.emm.by.time <- emmeans(aaas_ag.interaction, ~ group | time, adjust="bonferroni")
-aaas_ag.emm.plot <- plot(ggpredict(aaas_ag.interaction, terms = c("time","group")), connect.lines = TRUE) + labs(x="Tid",y="",colour = "Grupp", title="Predicerade värden för AAA-S Aggressive") + theme(legend.position="top",axis.title.y=element_blank())
-
-aaas_ag.eff.by.group <- eff_size(aaas_ag.emm.by.group, sigma = sigma(aaas_ag.interaction), edf = 202) # Check edf!
-aaas_ag.eff.by.time <- eff_size(aaas_ag.emm.by.time, sigma = sigma(aaas_ag.interaction), edf = 202) # Check edf!
-aaas_ag.eff.by.group.plot <- plot(aaas_ag.eff.by.group) + geom_vline(xintercept = 0,linetype="dotted") + labs(x="Uppskattad effekt med konfidensintervall",y="Parvisa jämförelser",title="Effektstorlekar per betingelse") + geom_text(aes(label = round(abs(the.emmean),2)),vjust=-1,size=3)
-aaas_ag.eff.by.time.plot <- plot(aaas_ag.eff.by.time) + geom_vline(xintercept = 0,linetype="dotted") + labs(x="Uppskattad effekt med konfidensintervall",y="Parvisa jämförelser",title="Effektstorlekar per mättillfälle") + geom_text(aes(label = round(abs(the.emmean),2)),vjust=-1,size=3)
-
-aaas_ag.diag.plots <- plot_model(aaas_ag.interaction, type="diag")
-# Allt ser ok ut!
-
-### Rathus
-
-rathus.interaction <-
-  lme(rathus ~ group * time,
-      random = ~ 1 | subject,
-      data = r2.long.data,
-      na.action = na.omit,
-      #corr=corAR1(),
-      method="REML")
-
-# rathus.interaction.cora1 <-
-#   lme(rathus ~ group * time,
-#       random = ~ time | subject,
-#       data = r2.long.data.out,
-#       na.action = na.omit,
-#       corr=corAR1(),
-#       method="ML")
-# 
-# anova(rathus.interaction,rathus.interaction.cora1)
-# rathus.interaction har lägst AIC, skillnaden inte signifikant
-
-rathus.interaction <-
-  lmer(rathus ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
-
-rathus.est.plot <- plot_model(rathus.interaction,show.values=T,show.p=T,value.offset = 0.35,value.size = 3,axis.labels = rev(labradorer)) + labs(y="Estimat med konfidensintervall (och signifikansnivåer)",title="Modellestimat för Rathus")
-
-rathus.emm.by.group <- emmeans(rathus.interaction, ~ time | group, adjust="bonferroni")
-rathus.emm.by.time <- emmeans(rathus.interaction, ~ group | time, adjust="bonferroni")
-rathus.emm.plot <- plot(ggpredict(rathus.interaction, terms = c("time","group")), connect.lines = TRUE) + labs(x="Tid",y="",colour = "Grupp", title="Predicerade värden för Rathus") + theme(legend.position="top",axis.title.y=element_blank())
-
-rathus.eff.by.group <- eff_size(rathus.emm.by.group, sigma = sigma(rathus.interaction), edf = 202) # Check edf!
-rathus.eff.by.time <- eff_size(rathus.emm.by.time, sigma = sigma(rathus.interaction), edf = 202) # Check edf!
-rathus.eff.by.group.plot <- plot(rathus.eff.by.group) + geom_vline(xintercept = 0,linetype="dotted") + labs(x="Uppskattad effekt med konfidensintervall",y="Parvisa jämförelser",title="Effektstorlekar per betingelse") + geom_text(aes(label = round(abs(the.emmean),2)),vjust=-1,size=3)
-rathus.eff.by.time.plot <- plot(rathus.eff.by.time) + geom_vline(xintercept = 0,linetype="dotted") + labs(x="Uppskattad effekt med konfidensintervall",y="Parvisa jämförelser",title="Effektstorlekar per mättillfälle") + geom_text(aes(label = round(abs(the.emmean),2)),vjust=-1,size=3)
-
-rathus.diag.plots <- plot_model(rathus.interaction, type="diag")
-# Allt ser ok ut!
+# REML or ML?
+# Picking REML to get unbiased estimates of the variance parameters
 
 ```
 
-```{r aaasad.res, dpi=196, eval=T, cache=F, fig.height=7.8, fig.width=11, fig.align="center", fig.cap="Resultat för AAA-S Adaptive. Exempel på figur med resultat som jag (Tobias) skulle vilja rapportera. De här graferna 'give it all away' utan behov av krångliga tabeller. Jag röstar för att vi producerar figurer liknande dessa för de tre huvudutfallsmåtten. Överst till vänster är modellestimaten från vår regression (fixed-effekter), den andra visar de predicerade värden som modellen producerar. De två understa innehåller de effektstorlekar med konfidensintervall (med inritad noll-linje) som visuellt tydligt kommunicerar vilka av de parvisa uppföljningstesten som är signifikanta (med Bonferroni-korrektion). De intressanta jämförelserna tar vi med i resultattexten, där vi också kan nämna hur stor del av felvariansen som hör till vår random-effekt (subject)."}
+```{r mixedmodels, cache=T}
+
+# Fit models to data
+library(lme4)
+
+aaas_ag.lmer <-
+  lmer(
+    aaas_ag ~ group * time + (1 | subject),
+    data = r2.long.data,
+    na.action = na.omit,
+    REML = T
+  )
+#plot_model(aaas_ag.lmer, type="diag") # Diagnostic plots look ok!
+
+aaas_ad.lmer <-
+  lmer(
+    aaas_ad ~ group * time + (1 | subject),
+    data = r2.long.data,
+    na.action = na.omit,
+    REML = T
+  )
+#plot_model(aaas_ad.lmer, type="diag") # Diagnostic plots look ok, with some outliers
+
+rathus.lmer <-
+  lmer(
+    rathus ~ group * time + (1 | subject),
+    data = r2.long.data,
+    na.action = na.omit,
+    REML = T
+  )
+#plot_model(rathus.lmer, type="diag") # Diagnostic plots look ok, with some outliers
+
+lsas_sum.lmer <-
+  lmer(
+    lsas_sum ~ group * time + (1 | subject),
+    data = r2.long.data,
+    na.action = na.omit,
+    REML = T
+  )
+#plot_model(lsas_sum.lmer, type="diag") # Diagnostic plots look more or less ok
+
+gad_sum.lmer <-
+  lmer(
+    gad_sum ~ group * time + (1 | subject),
+    data = r2.long.data,
+    na.action = na.omit,
+    REML = T
+  )
+#plot_model(gad_sum.lmer, type="diag") # Diagnostic plots look ok!
+
+phq_sum.lmer <-
+  lmer(
+    phq_sum ~ group * time + (1 | subject),
+    data = r2.long.data,
+    na.action = na.omit,
+    REML = T
+  )
+#plot_model(phq_sum.lmer, type="diag") # Diagnostic plots look ok!
+
+well.lmer <-
+  lmer(
+    well ~ group * time + (1 | subject),
+    data = r2.long.data,
+    na.action = na.omit,
+    REML = T
+  )
+#plot_model(well.lmer, type="diag") # Diagnostic plots look ok, with some outliers
+
+# Output predictions to new data frame
+# https://rdrr.io/cran/modelr/man/add_predictions.html
+
+# Create new data frame with factor variables in place
+r2.new.data <- r2.long.data[,c(1:4)]
+
+# Add predicted values to data frame
+library(modelr)
+
+r2.new.data <- r2.new.data %>% spread_predictions(
+  rathus.lmer,
+  aaas_ag.lmer,
+  aaas_ad.lmer,
+  lsas_sum.lmer,
+  gad_sum.lmer,
+  phq_sum.lmer,
+  well.lmer
+)
+
+# Set column names
+colnames(r2.new.data) <-
+  c(
+    "subject",
+    "group",
+    "time",
+    "rathus",
+    "aaas_ag",
+    "aaas_ad",
+    "lsas_sum",
+    "gad_sum",
+    "phq_sum",
+    "well"
+  )
+
+```
+
+(ref:emmeff) bildtext
+
+```{r emmeanseffects, dpi=196, fig.align="center", fig.cap='(ref:emmeff)', fig.height=4.5, fig.width=5.5}
+
+require(emmeans)
+require(ggeffects)
+require(sjPlot)
+library(broom.mixed)
+require(gridExtra)
+require(grid)
+
+aaas_ag.emm.by.group <- emmeans(aaas_ag.lmer, ~ time | group, adjust="bonferroni")
+aaas_ag.emm.by.time <- emmeans(aaas_ag.lmer, ~ group | time, adjust="bonferroni")
+aaas_ag.eff.by.group <- tidy(eff_size(aaas_ag.emm.by.group, sigma = sigma(aaas_ag.lmer), edf = 202)) # Check edf!
+aaas_ag.eff.by.time <- tidy(eff_size(aaas_ag.emm.by.time, sigma = sigma(aaas_ag.lmer), edf = 202)) # Check edf!
+
+Name = c(
+  NA,
+  paste(aaas_ag.eff.by.group[5,1],"-",aaas_ag.eff.by.group[5,2],": ",format(round(aaas_ag.eff.by.group[5,4],2) * -1,decimal.mark=","),sep=""),
+  paste(aaas_ag.eff.by.group[8,1],"-",aaas_ag.eff.by.group[8,2],": ",format(round(aaas_ag.eff.by.group[8,4],2) * -1,decimal.mark=","),sep=""),
+  NA,
+  paste(aaas_ag.eff.by.time[4,1],"-",aaas_ag.eff.by.time[4,2],": ",format(round(aaas_ag.eff.by.time[4,4],2) * -1,decimal.mark=","),sep=""),
+  NA,
+  NA,
+  paste(aaas_ag.eff.by.time[7,1],"-",aaas_ag.eff.by.time[7,2],": ",format(round(aaas_ag.eff.by.time[7,4],2) * -1,decimal.mark=","),sep=""),
+  paste(aaas_ag.eff.by.time[8,1],"-",aaas_ag.eff.by.time[8,2],": ",format(round(aaas_ag.eff.by.time[8,4],2) * -1,decimal.mark=","),sep="")
+)
+Nudge_x = c(0,0.1,0.1,0,0,0,0,-0.1,-0.1)
+Nudge_y = c(0,-0.55,0.55,0,0.55,0,0,0.55,-0.55)
+
+aaas_ag.emm.plot <- 
+  plot(ggemmeans(aaas_ag.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = NA, colour = "Grupp", title = "Predicerade värden och effektstyrkor för AAA-S Aggressive") + theme(legend.position = "bottom", axis.title.y = element_blank())
+
+#,arrow = arrow(length = unit(0.05, "npc"))
+p1 <- aaas_ag.emm.plot + 
+  geom_curve(aes(x = 2.9, y = aaas_ag.emm.plot$data[2]$predicted[7], xend = 3.1, yend = aaas_ag.emm.plot$data[2]$predicted[9]), color = "#888888", size = 0.1, linetype = "dashed", curvature = 0.4) +
+  geom_curve(aes(x = 2.9, y = aaas_ag.emm.plot$data[2]$predicted[7], xend = 3, yend = aaas_ag.emm.plot$data[2]$predicted[8]), color = "#888888", size = 0.1, linetype = "dashed", curvature = -0.4) +
+  #geom_curve(aes(x = 1.9, y = aaas_ag.emm.plot$data[2]$predicted[4], xend = 2.1, yend = aaas_ag.emm.plot$data[2]$predicted[6]), color = "#888888", size = 0.1, linetype = "dashed", curvature = 0.5) +
+  geom_curve(aes(x = 1.9, y = aaas_ag.emm.plot$data[2]$predicted[4], xend = 2, yend = aaas_ag.emm.plot$data[2]$predicted[5]), color = "#888888", size = 0.1, linetype = "dashed", curvature = -0.4) + 
+  geom_curve(aes(x = 1, y = aaas_ag.emm.plot$data[2]$predicted[2], xend = 3, yend = aaas_ag.emm.plot$data[2]$predicted[8]), color = "#888888", size = 0.1, linetype = "dotted", curvature = -0.2) + 
+  geom_curve(aes(x = 1.1, y = aaas_ag.emm.plot$data[2]$predicted[3], xend = 3.1, yend = aaas_ag.emm.plot$data[2]$predicted[9]), color = "#888888", size = 0.1, linetype = "dotted", curvature = 0.15) + 
+  geom_label(aes(label=Name),color="white", fill="#888888", nudge_x = Nudge_x, nudge_y = Nudge_y,size=2.5,na.rm=TRUE)
+
+p1
+
+```
+
+
+```{r aaasad.res, dpi=196, eval=F, cache=F, fig.height=7.8, fig.width=11, fig.align="center", fig.cap="Resultat för AAA-S Adaptive. Exempel på figur med resultat som jag (Tobias) skulle vilja rapportera. De här graferna 'give it all away' utan behov av krångliga tabeller. Jag röstar för att vi producerar figurer liknande dessa för de tre huvudutfallsmåtten. Överst till vänster är modellestimaten från vår regression (fixed-effekter), den andra visar de predicerade värden som modellen producerar. De två understa innehåller de effektstorlekar med konfidensintervall (med inritad noll-linje) som visuellt tydligt kommunicerar vilka av de parvisa uppföljningstesten som är signifikanta (med Bonferroni-korrektion). De intressanta jämförelserna tar vi med i resultattexten, där vi också kan nämna hur stor del av felvariansen som hör till vår random-effekt (subject)."}
 
 # out.extra='angle=90'
 
@@ -1858,7 +1945,7 @@ library(patchwork)
 
 ```
 
-```{r aaasag.res, dpi=196, eval=T, cache=F, fig.height=7.8, fig.width=11, fig.align="center", fig.cap="Resultat för AAA-S Aggressive."}
+```{r aaasag.res, dpi=196, eval=F, cache=F, fig.height=7.8, fig.width=11, fig.align="center", fig.cap="Resultat för AAA-S Aggressive."}
 
 ((aaas_ag.est.plot / aaas_ag.emm.plot ) | (aaas_ag.eff.by.time.plot / aaas_ag.eff.by.group.plot)) & theme_set(theme_classic()) + theme(legend.position="top")
 
@@ -1867,7 +1954,7 @@ library(patchwork)
 
 ```
 
-```{r rathus.res, dpi=196, eval=T, cache=F, fig.height=7.8, fig.width=11, fig.align="center", fig.cap="Resultat för Rathus."}
+```{r rathus.res, dpi=196, eval=F, cache=F, fig.height=7.8, fig.width=11, fig.align="center", fig.cap="Resultat för Rathus."}
 
 ((rathus.est.plot / rathus.emm.plot ) | (rathus.eff.by.time.plot / rathus.eff.by.group.plot)) & theme_set(theme_classic()) + theme(legend.position="top")
 
@@ -1876,139 +1963,58 @@ library(patchwork)
 
 ```
 
-```{r therest,eval=F}
+```{r rsquared, eval=F}
 
-library(lme4)
+# The marginal R-squared considers only the variance of the fixed effects, while the conditional R-squared takes both the fixed and random effects into account.
 
-### 
+# tab_model(aaas_ag.lmer,p.val = "kr", show.df = TRUE)
+# Marginal R2 / Conditional R2	0.071 / 0.757
 
-aaas_ag.interaction <-
-  lmer(aaas_ag ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
+# tab_model(aaas_ad.lmer,p.val = "kr", show.df = TRUE)
+# Marginal R2 / Conditional R2	0.175 / 0.735
 
-aaas_ag.est.plot <- plot_model(aaas_ag.interaction,show.values=T,show.p=T,value.offset = 0.4,axis.labels = rev(labradorer),wrap.labels=22)
+# tab_model(rathus.lmer,p.val = "kr", show.df = TRUE)
+# Marginal R2 / Conditional R2	0.208 / 0.798
 
-aaas_ag.emm.by.group <- emmeans(aaas_ag.interaction, ~ time | group, adjust="bonferroni")
-aaas_ag.emm.by.time <- emmeans(aaas_ag.interaction, ~ group | time, adjust="bonferroni")
-aaas_ag.emm.plot <- plot(ggemmeans(aaas_ag.interaction, terms = c("time","group")), connect.lines = TRUE)
+# tab_model(lsas_sum.lmer,p.val = "kr", show.df = TRUE)
+# Marginal R2 / Conditional R2	0.076 / 0.838
 
-aaas_ag.eff.by.group <- eff_size(aaas_ag.emm.by.group, sigma = sigma(aaas_ag.interaction), edf = 202) # Check edf!
-aaas_ag.eff.by.time <- eff_size(aaas_ag.emm.by.time, sigma = sigma(aaas_ag.interaction), edf = 202) # Check edf!
-aaas_ag.eff.by.group.plot <- plot(aaas_ag.eff.by.group) + geom_vline(xintercept = 0,linetype="dotted")
-aaas_ag.eff.by.time.plot <- plot(aaas_ag.eff.by.time) + geom_vline(xintercept = 0,linetype="dotted")
+# tab_model(gad_sum.lmer,p.val = "kr", show.df = TRUE)
+# Marginal R2 / Conditional R2	0.048 / 0.593
 
-aaas_ag.diag.plots <- plot_model(aaas_ag.interaction, type="diag")
-# Allt ser ok ut!
+# tab_model(phq_sum.lmer,p.val = "kr", show.df = TRUE)
+# Marginal R2 / Conditional R2	0.056 / 0.526
 
-### 
-
-rathus.interaction <-
-  lmer(rathus ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
-
-rathus.est.plot <- plot_model(rathus.interaction,show.values=T,show.p=T,value.offset = 0.4,axis.labels = rev(labradorer),wrap.labels=22)
-
-rathus.emm.by.group <- emmeans(rathus.interaction, ~ time | group, adjust="bonferroni")
-rathus.emm.by.time <- emmeans(rathus.interaction, ~ group | time, adjust="bonferroni")
-rathus.emm.plot <- plot(ggemmeans(rathus.interaction, terms = c("time","group")), connect.lines = TRUE)
-
-rathus.eff.by.group <- eff_size(rathus.emm.by.group, sigma = sigma(rathus.interaction), edf = 202) # Check edf!
-rathus.eff.by.time <- eff_size(rathus.emm.by.time, sigma = sigma(rathus.interaction), edf = 202) # Check edf!
-rathus.eff.by.group.plot <- plot(rathus.eff.by.group) + geom_vline(xintercept = 0,linetype="dotted")
-rathus.eff.by.time.plot <- plot(rathus.eff.by.time) + geom_vline(xintercept = 0,linetype="dotted")
-
-rathus.diag.plots <- plot_model(rathus.interaction, type="diag")
-# Allt ser ok ut!
-
-### 
-
-lsas_sum.interaction <-
-  lmer(lsas_sum ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
-
-lsas_sum.est.plot <- plot_model(lsas_sum.interaction,show.values=T,show.p=T,value.offset = 0.4,axis.labels = rev(labradorer),wrap.labels=22)
-
-lsas_sum.emm.by.group <- emmeans(lsas_sum.interaction, ~ time | group, adjust="bonferroni")
-lsas_sum.emm.by.time <- emmeans(lsas_sum.interaction, ~ group | time, adjust="bonferroni")
-lsas_sum.emm.plot <- plot(ggemmeans(lsas_sum.interaction, terms = c("time","group")), connect.lines = TRUE)
-
-lsas_sum.eff.by.group <- eff_size(lsas_sum.emm.by.group, sigma = sigma(lsas_sum.interaction), edf = 202) # Check edf!
-lsas_sum.eff.by.time <- eff_size(lsas_sum.emm.by.time, sigma = sigma(lsas_sum.interaction), edf = 202) # Check edf!
-lsas_sum.eff.by.group.plot <- plot(lsas_sum.eff.by.group) + geom_vline(xintercept = 0,linetype="dotted")
-lsas_sum.eff.by.time.plot <- plot(lsas_sum.eff.by.time) + geom_vline(xintercept = 0,linetype="dotted")
-
-lsas_sum.diag.plots <- plot_model(lsas_sum.interaction, type="diag")
-# Allt ser ok ut!
-
-### 
-
-phq_sum.interaction <-
-  lmer(phq_sum ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
-
-phq_sum.est.plot <- plot_model(phq_sum.interaction,show.values=T,show.p=T,value.offset = 0.4,axis.labels = rev(labradorer),wrap.labels=22)
-
-phq_sum.emm.by.group <- emmeans(phq_sum.interaction, ~ time | group, adjust="bonferroni")
-phq_sum.emm.by.time <- emmeans(phq_sum.interaction, ~ group | time, adjust="bonferroni")
-phq_sum.emm.plot <- plot(ggemmeans(phq_sum.interaction, terms = c("time","group")), connect.lines = TRUE)
-
-phq_sum.eff.by.group <- eff_size(phq_sum.emm.by.group, sigma = sigma(phq_sum.interaction), edf = 202) # Check edf!
-phq_sum.eff.by.time <- eff_size(phq_sum.emm.by.time, sigma = sigma(phq_sum.interaction), edf = 202) # Check edf!
-phq_sum.eff.by.group.plot <- plot(phq_sum.eff.by.group) + geom_vline(xintercept = 0,linetype="dotted")
-phq_sum.eff.by.time.plot <- plot(phq_sum.eff.by.time) + geom_vline(xintercept = 0,linetype="dotted")
-
-phq_sum.diag.plots <- plot_model(phq_sum.interaction, type="diag")
-# Allt ser ok ut!
-
-### 
-
-gad_sum.interaction <-
-  lmer(gad_sum ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
-
-gad_sum.est.plot <- plot_model(gad_sum.interaction,show.values=T,show.p=T,value.offset = 0.4,axis.labels = rev(labradorer),wrap.labels=22)
-
-gad_sum.emm.by.group <- emmeans(gad_sum.interaction, ~ time | group, adjust="bonferroni")
-gad_sum.emm.by.time <- emmeans(gad_sum.interaction, ~ group | time, adjust="bonferroni")
-gad_sum.emm.plot <- plot(ggemmeans(gad_sum.interaction, terms = c("time","group")), connect.lines = TRUE)
-
-gad_sum.eff.by.group <- eff_size(gad_sum.emm.by.group, sigma = sigma(gad_sum.interaction), edf = 202) # Check edf!
-gad_sum.eff.by.time <- eff_size(gad_sum.emm.by.time, sigma = sigma(gad_sum.interaction), edf = 202) # Check edf!
-gad_sum.eff.by.group.plot <- plot(gad_sum.eff.by.group) + geom_vline(xintercept = 0,linetype="dotted")
-gad_sum.eff.by.time.plot <- plot(gad_sum.eff.by.time) + geom_vline(xintercept = 0,linetype="dotted")
-
-gad_sum.diag.plots <- plot_model(gad_sum.interaction, type="diag")
-# Allt ser ok ut!
-
-### 
-
-well.interaction <-
-  lmer(well ~ group * time + (1 | subject),data = r2.long.data,na.action = na.omit,REML = T)
-
-well.est.plot <- plot_model(well.interaction,show.values=T,show.p=T,value.offset = 0.4,axis.labels = rev(labradorer),wrap.labels=22)
-
-well.emm.by.group <- emmeans(well.interaction, ~ time | group, adjust="bonferroni")
-well.emm.by.time <- emmeans(well.interaction, ~ group | time, adjust="bonferroni")
-well.emm.plot <- plot(ggemmeans(well.interaction, terms = c("time","group")), connect.lines = TRUE)
-
-well.eff.by.group <- eff_size(well.emm.by.group, sigma = sigma(well.interaction), edf = 202) # Check edf!
-well.eff.by.time <- eff_size(well.emm.by.time, sigma = sigma(well.interaction), edf = 202) # Check edf!
-well.eff.by.group.plot <- plot(well.eff.by.group) + geom_vline(xintercept = 0,linetype="dotted")
-well.eff.by.time.plot <- plot(well.eff.by.time) + geom_vline(xintercept = 0,linetype="dotted")
-
-well.diag.plots <- plot_model(well.interaction, type="diag")
-# Allt ser ok ut!
-
-```
-
-```{r jadu,results='asis',eval=F}
-
-#tab_model(well.interaction,p.val = "kr", show.df = TRUE)
+# tab_model(well.lmer,p.val = "kr", show.df = TRUE)
+# Marginal R2 / Conditional R2	0.086 / 0.615
 
 ```
 
 
-```{r stargazer,results='asis',eval=T}
+```{r stargazer, results='asis', eval=T}
+
+# https://cran.r-project.org/web/packages/stargazer/vignettes/stargazer.pdf
+# NB! We're using stargazer-booktabs
+
+labradorer <- c(
+  xg1,
+  xg2,
+  xdur,
+  xpost,
+  paste(xg1, " : ", xt2,sep=""),
+  paste(xg2, " : ", xt2,sep=""),
+  paste(xg1, " : ", xt3,sep=""),
+  paste(xg2, " : ", xt3,sep="")
+)
 
 stargazer::stargazer(
-  aaas_ad.interaction,
-  aaas_ag.interaction,
-  rathus.interaction,
+  rathus.lmer,
+  aaas_ag.lmer, 
+  aaas_ad.lmer, 
+  lsas_sum.lmer,
+  gad_sum.lmer,
+  phq_sum.lmer,
+  well.lmer,
   type = "latex",
   ci = T,
   intercept.bottom = F,
@@ -2017,12 +2023,11 @@ stargazer::stargazer(
   header = F,
   decimal.mark = ',',
   digit.separator = ' ',
-  digits = 2,
+  digits = 1,
   covariate.labels = c("Intercept",labradorer),
-  float.env = "sidewaystable"
+  float.env = "sidewaystable",
+  omit.stat = c("aic","bic","ll")
 )
-
-# https://cran.r-project.org/web/packages/stargazer/vignettes/stargazer.pdf
 
 ```
 
