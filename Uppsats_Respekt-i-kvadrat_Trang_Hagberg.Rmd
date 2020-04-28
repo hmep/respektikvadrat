@@ -604,9 +604,7 @@ Regeringen har som vision att Sverige år 2025 ska vara bäst i världen på e-h
 
 Internetbaserad kognitiv beteendeterapi, I-KBT, började undersökas och utvärderas kring millenniumskiftet. Under de senaste årtiondena har hundratals studier undersökt effekten av I-KBT. Idag används I-KBT som ett behandlingsalternativ inom flera olika länder som ett komplement till mer traditionella vårdalternativ [@Andersson2016]. 
 
-Det finns i Sverige flera exempel på självhjälpsmaterial i KBT som har beforskats i form av I-KBT och sedan publicerats för allmänheten i form av självhjälpsböcker. Exempel på dessa är @Furmark2019sf, @dugas2018 samt @Carlbring2011ipf. Dessa behandlingsprogram består allt som oftast av moduler (som motsvarar kapitel i självhjälpsböckerna) innehållande psykoedukativ text, övningar och hemuppgifter kopplade till klientens eller patientens besvär. Vanligtvis tilldelas deltagarna en modul per vecka under behandlingens gång. 
-
-<!-- Självhjälpsböcker är ett medium som kan nå en stor publik. Med självhjälpsböcker går det att effektivt sprida evidensbaserad psykologisk kunskap. Validerade självhjälpsböcker har också potential att förbättra ansikte-mot-ansikte-behandlingar, där självhjälpsböcker kan användas som stöd för både genomförande av hemuppgifter under behandlingens gång och för vidmakthållande av behandlingseffekter. -->
+Det finns i Sverige flera exempel på självhjälpsmaterial i KBT som har beforskats i form av I-KBT och sedan publicerats för allmänheten i form av självhjälpsböcker. Exempel på dessa är @Furmark2019sf, @dugas2018 samt @Carlbring2011ipf. Dessa behandlingsprogram består allt som oftast av moduler (som motsvarar kapitel i självhjälpsböckerna) innehållande psykoedukativ text, övningar och hemuppgifter kopplade till klientens eller patientens besvär. Vanligtvis tilldelas deltagarna en modul per vecka under behandlingens gång. I-KBT-behandlingsprogrammen brukar ges via säkra och krypterade plattformar [@Vlaescu2016] men kan även inkludera andra medier så som smartphone-appar [@Ivanova2016].
 
 <!-- *[Möjligen problematisera kommersialiseringen av forskningsresultat här -- men å andra sidan är det ett billigt sätt för konsumenten att få tillgång till material ... Också skriva något här om att flera landsting och även privata aktörer erbjuder allt fler behandlingsprogram över internet.]* -->
 
@@ -616,8 +614,7 @@ I-KBT har även visat sig vara effektivt vid behandling av PTSD [@Sijbrandij2016
 
 #### I-KBT och stödbehandlare
 
-I en del behandlingsprogram tilldelas även en stödbehandlare till deltagarna. Stödbehandlare tenderar ha möjlighet att ge återkoppling, besvara frågor, och ge stöd allt eftersom behandlingen fortskrider [@Vlaescu2016]. I en meta-analys från 2014 konstaterar Baumeister, Reichler, Munzinger och Lin [-@Baumeister2014a] att I-KBT oberoende av stödbehandlare eller inte var effektivt, men att I-KBT med stödbehandlare tenderar att ge något bättre effekt än I-KBT utan stödbehandlare. De fastställde även att stödbehandlarnas kompetens inte gjorde skillnad för utfallet så länge stödbehandlarna åtminstone hade grundläggande psykoterapeutiska kunskaper. Det finns även indikationer på att frekvensen av kontakt mellan stödbehandlare och deltagare ej påverkar utfallet så länge åtminstone en kontakt sker de två sinsemellan per vecka. Frekvensen av kontakt påverkar vare sig upplevd terapeutallians eller nöjdhet med behandlingen [@Klein2009]. 
-
+I en del behandlingsprogram tilldelas även en stödbehandlare till deltagarna. Stödbehandlare tenderar ha möjlighet att ge återkoppling, besvara frågor, och ge stöd allt eftersom behandlingen fortskrider [@Vlaescu2016]. I en meta-analys från 2014 konstaterar @Baumeister2014a att I-KBT oberoende av stödbehandlare eller inte var effektivt, men att I-KBT med stödbehandlare tenderar att ge något bättre effekt än I-KBT utan stödbehandlare. De fastställde även att stödbehandlarnas kompetens inte gjorde skillnad för utfallet så länge stödbehandlarna åtminstone hade grundläggande psykoterapeutiska kunskaper. Mängden interaktion mellan stödbehandlare och deltagare varierar beroende på behandlingsupplägg. @Berger2011 samt *Valentinstudien* [@Samuelsson2018] gav deltagare möjlighet till mejl- och telefonkontakt och @Titov2010 gav deltagarna tillgång till ett diskussionsforum som modererades av stödbehandlarna. I dagsläget finns det inte tillräckligt med forskning för att med säkerhet kunnba uttala sig om vilken stödbehandlarmetod som är effektivast. Det finns dock indikationer på att frekvensen av kontakt mellan stödbehandlare och deltagare ej påverkar utfallet så länge åtminstone en kontakt sker per vecka. Frekvensen av kontakt verkar inte heller påverka skattad terapeutallians eller nöjdhet med behandlingen [@Klein2009]. 
 
 <!-- 
 PATRIK: påfyllnadstext om behandlarstöd och forskning kring detta 
@@ -626,18 +623,15 @@ PATRIK: påfyllnadstext om behandlarstöd och forskning kring detta
 
 Trots att evidensen för kognitiv och beteendeterapeutisk behandling vid ångestsyndrom och depressiva syndrom är god förblir majoriteten av fallen även i länder med väl utvecklad sjukvård obehandlade [@Craske2017]. Många kan bära på ett psykiskt lidande utan att för den skull nå upp till kriterierna för någon av diagnoserna i DSM. Och för dem som ändå skulle göra det är tillgången till vård en begränsande faktor som I-KBT kan avhjälpa [@Andrews2018].
 
-### Användarupplevelsen och framgångsfaktorer vid I-KBT
+### Användarupplevelsen av I-KBT
 
-I-KBT kan erbjuda klienter fördelar i förhållande till ansikte-mot-ansiktebehandling. I-KBT kan erbjuda en anonymitet som gör det lättare för vissa grupper att söka sig till vård [@Lundgren2018; @Rozental2020] och ger dessutom möjlighet till tidsmässig flexibilitet. Ytterligare en fördel som @Lundgren2018 uppmärksammar är att många upplever det enklare att uttrycka sig i skrift än i tal.
+I-KBT med behandlarstöd kan erbjuda klienter fördelar i förhållande till ansikte-mot-ansiktebehandling. I-KBT kan erbjuda en anonymitet som gör det lättare för vissa grupper att söka sig till vård [@Lundgren2018; @Rozental2020] och ger dessutom möjlighet till tidsmässig flexibilitet. Ytterligare en fördel som @Lundgren2018 uppmärksammar är att många upplever det enklare att uttrycka sig i skrift än i tal.
 
 En nackdel med I-KBT är att vissa deltagare hindras av besvär med tekniken vilket kan försvåra deras möjligheter till att ta del av vården. En annan är att de lösare tidsramarna erbjuder möjlighet att skjuta upp eller prioritera ned internetbaserad behandling, jämfört med fysiska besök hos en kliniker [@Burke2019]. 
 
-Erfarenheter från tidigare studier av I-KBT-interventioner har visat att det är viktigt att ange tydliga inklusionskriterier samt att screena och välja deltagare utifrån dessa. I-KBT-behandlingar som inkluderar interaktiva behandlingskomponenter, innehåller relevanta pedagogiska inslag om psykiska och kroppsliga besvär och om vad som vidmakthåller psykiska problem, liksom komponenter för att bryta vidmakthållandet av besvären, ökar oddsen för positiva utfall [@Barak2008].
+Självhjälpsmaterial förmedlat via I-KBT har dock visat sig populärt och effektivt nog för att -- som nämnt tidigare -- flertalet självhjälpsböcker har kunnats publiceras. Självhjälpsböcker är ett medium som kan nå en stor publik. Med självhjälpsböcker eller motsvarande upplägg av I-KBT utan behandlarstöd går det att effektivt sprida evidensbaserad psykologisk kunskap. Validerade självhjälpsböcker har också potential att förbättra ansikte-mot-ansikte-behandlingar, där självhjälpsböcker kan användas som stöd för både genomförande av hemuppgifter under behandlingens gång och för vidmakthållande av behandlingseffekter. 
 
-
-<!--
-PATRIK SKRIVER OM MED OMVÄND TANKEGÅNG: Självhjälpsböcker med ett populärt tilltal är ett medium som kan nå en stor publik. Validerade självhjälpsböcker har också potential att förbättra ansikte-mot-ansikte-behandlingar, där självhjälpsböcker kan användas som stöd för både genomförande av hemuppgifter under behandlingens gång och för vidmakthållande av behandlingseffekter.
--->
+<!-- Erfarenheter från tidigare studier av I-KBT-interventioner har visat att det är viktigt att ange tydliga inklusionskriterier samt att screena och välja deltagare utifrån dessa. I-KBT-behandlingar som inkluderar interaktiva behandlingskomponenter, innehåller relevanta pedagogiska inslag om psykiska och kroppsliga besvär och om vad som vidmakthåller psykiska problem, liksom komponenter för att bryta vidmakthållandet av besvären, ökar oddsen för positiva utfall [@Barak2008]. -->
 
 ## Frågeställningar
 
@@ -2117,6 +2111,21 @@ Viktigt i och med att ni tagit upp detta med behandlingsstödets effekter i intr
 
 återstår att skriva!
 
+
+
+Då behandlingsmaterialet översatts till svenska inför den aktuella studien – och originalmaterialet användes utan inslag av behandlarstöd – fanns det ingen behandlarstödsmanual eller dylikt för studiens behandlare att använda sig av. Behandlarna hade utöver detta ingen tidigare erfarenhet av internetbaserad psykologisk behandling. Dock hade båda behandlarna tidigare erfarenhet av ansikte mot ansikte-behandling med individer med självrapporterad bristande självhävdelse. Bristen på erfarenhet av internetbaserad behandling kan ha påverkat kvalitén i det behandlarstöd som gavs. Å andra sidan har det visat sig att tidigare erfarenheter och kunskaper om I-KBT hos behandlare inte gör nämnvärd skillnad så länge de har grundläggande kunskaper inom psykologisk behandling [@Baumeister2014a]. Behandlarna hade utöver tillgodogjorda grundläggande kunskaper om psykologisk behandling även tillgång till ett dokument med generella förhållningssätt vid internetbehandling med behandlarstöd samt tillgång till vid-behov-handledning och stöd av en legitimerad psykolog med omfattande erfarenhet av I-KBT. Den generella målsättningen var att behandlarna skulle spendera cirka 15 minuter per vecka och deltagare. Detta varierade dock nämnvärt beroende på hur frekvent behandlarens deltagare hörde av sig till behandlaren med behandlingsrelaterade frågor samt hur utförligt deltagarna besvarade behandlingsprogrammets övningar. 
+
+Även fast behandlarna hade goda förutsättningar för att ge stöd till deltagarna, och behandlarstöd tenderar att leda till ett bättre utfall [@Baumeister2014a] vart så icke fallet i den föreliggande studien. Att behandlarstöd brukar vara det överlägsna alternativet till att ta sig igenom ett självhjälpsmaterial utan stöd är inte detsamma som att det alltid är så. Flertalet tidigare studier rapporterar resultat i linje med den rådande studien -- det vill säga att både gruppen med och utan behandlarstöd gör framsteg, men att det inte verkar finnas en markant skillnad mellan de två grupperna [se bland annat @Berger2011; @Ivanova2016; @Rozental2015; @Samuelsson2018]. 
+
+En intressant aspekt för framtida studier att undersöka är exakt vilka de verksamma komponenterna inom behandlarstöd är och vad som kan göras för att maximera deras inverkan.
+
+<!-- 
+@Ivanova2016 som exempel på guidad som inte var bättre än utan guidad
+@Almlv2011 om behandlareffekter möjligen användbar i diskussionen
+@Berger2011 som exempel på guidad som inte var bättre än utan guidad
+-->
+
+
 ### Primär frågeställning
 
 
@@ -2218,14 +2227,6 @@ MEN!! Sedan försvara er med att en väntelista ändå har en hel del poänger s
 <!--
 - Ingen uppföljningsmätning av deltagarnas mående, dvs svårt att veta hur ser ut över tid - tenderar att öka över tid, särskilt vid KBT [@Bandelow2018] som källa!
 
--->
-
-Då behandlingsmaterialet översatts till svenska inför den aktuella studien – och originalmaterialet användes utan inslag av behandlarstöd – fanns det ingen behandlarstödsmanual eller dylikt för studiens behandlare att använda sig av. Behandlarna hade utöver detta ingen tidigare erfarenhet av internetbaserad psykologisk behandling. Dock hade båda behandlarna tidigare erfarenhet av ansikte mot ansikte-behandling med individer med självrapporterad bristande självhävdelse. Bristen på erfarenhet av internetbaserad behandling kan ha påverkat kvalitén i det behandlarstöd som gavs. Å andra sidan har det visat sig att tidigare erfarenheter och kunskaper om I-KBT hos behandlare inte gör nämnvärd skillnad så länge de har grundläggande kunskaper inom psykologisk behandling [@Baumeister2014a]. Behandlarna hade utöver tillgodogjorda grundläggande kunskaper om psykologisk behandling även tillgång till ett dokument med generella förhållningssätt vid internetbehandling med behandlarstöd samt tillgång till vid-behov-handledning och stöd av en legitimerad psykolog med omfattande erfarenhet av I-KBT. Den generella målsättningen var att behandlarna skulle spendera cirka 15 minuter per vecka och deltagare. Detta varierade dock nämnvärt beroende på hur frekvent behandlarens deltagare hörde av sig till behandlaren med behandlingsrelaterade frågor samt hur utförligt deltagarna besvarade behandlingsprogrammets övningar. 
-
-<!-- 
-@Ivanova2016 som exempel på guidad som inte var bättre än utan guidad
-@Almlv2011 om behandlareffekter möjligen användbar i diskussionen
-@Berger2011 som exempel på guidad som inte var bättre än utan guidad
 -->
 
 Ytterligare en potentiell brist i studien är användandet av de nyligen översatta versionerna av självskattningsformulären AAA-S [@Thompson2011] och RAS [@Rathus1973]. Då dessa skalor ej fanns tillgängliga på svenska översattes de till den aktuella studien. Det finns många rekommendation och riktlinjer för hur översättningar bör gå till [se @Beaton2000; och @Jones2001 för två väl använda metoder]. Ett gemensamt tema i dessa översättningsmetoder är att materialet översätts från originalspråk till planerat användningsspråk (i det rådande fallet till svenska) av åtminstone två av varandra oberoende individer och att den översatta versionen sedan översätts tillbaka till sitt originalspråk av ytterligare oberoende översättare. En bedömning görs sedan mellan originalversionen och versionen översatt från det planerade användningsspråket till originalspråket. AAA-S och RAS översattes inför föreliggande uppsats endast en gång, från engelska till svenska.
