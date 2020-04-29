@@ -1299,6 +1299,7 @@ well.lmer <-
   )
 #plot_model(well.lmer, type="diag") # Diagnostic plots look ok, with some outliers (humans)
 
+```
 
 Vi fann inga brott mot antagandena för flernivåanalys vid visuell kontroll av diagnostiska plottar av de modeller som anpassats till observerade data. 
 
