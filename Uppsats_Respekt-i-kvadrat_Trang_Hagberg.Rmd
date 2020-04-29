@@ -11,7 +11,9 @@ author:
     email         : "patrik.trang@gmail.com"
 affiliation:
   - institution   : "Psykologiska institutionen, Stockholms universitet"
-wordcount         : "X"
+abstract          : Här bör det snart dyka upp ett litet abstract som beskriver vårt lilla arbete!
+#Keywords          :
+#wordcount         : "X"
 bibliography      : ["r-references.bib", "library.bib"]
 floatsintext      : no
 figurelist        : no
@@ -1309,9 +1311,9 @@ För det primära utfallsmåttet AAA-S Adaptive fann vi en huvudeffekt av
 
 Modellestimat för samtliga utfallsmått sammanfattas i tabell \@ref(stargazer).
 
-```{r results='asis'}
+```{r results='asis' }
 
-tab_model(aaas_ad.lmer,aaas_ag.lmer,rathus.lmer,lsas_sum.lmer,gad_sum.lmer,phq_sum.lmer,well.lmer)
+#tab_model(aaas_ad.lmer,aaas_ag.lmer,rathus.lmer,lsas_sum.lmer,gad_sum.lmer,phq_sum.lmer,well.lmer)
 
 ```
 
