@@ -2258,7 +2258,7 @@ Kanske också ta upp detta med vad ni egentligen hade för population. Var det s
 -->
 
 <!--
-+ a priori powerberäkning aaa
++ a priori powerberäkning
 -->
 
 I denna studie placerades en tredjedel av deltagarna på en väntelista. En risk med användandet av väntelista är att de deltagare som tilldelas väntelistan försämras under behandlingens gång. I en meta-analys från 2017 konstaterade @Rozental2017a att över 15% av de som tilldelas betingelsen väntelista i I-KBT-studier försämras, jämfört med cirka 6% av de som genomgick behandlingen. Detta kan även leda till att en behandlings eventuella effekt förstoras på grund av försämrandet hos väntelista-betingelsen snarare än förbättrandet hos de som betingats till behandlingen. I den aktuella studien försämrades ingen deltagare signifikant från för- till eftermätningen. Varken i väntelistan eller i någon av de andra betingelserna. Därav lider den aktuella studien ingen risk för att ha påverkats av denna felkälla. Det går ändock att diskutera om användandet av väntelista som kontroll är ett klokt beslut. Användandet av väntelista höjer allt som oftast oddsen för att hitta en signifikant effekt jämfört med att tilldela kontrollgruppen mer aktiva betingelser [@Mohr2009]. Troligen hade det varit bättre att tilldela de som fick väntlistebetingelsen en aktiv betingelse så som tillgång till ett diskussionsforum. 
