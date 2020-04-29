@@ -52,7 +52,8 @@ set.seed(42) # Seed for random number generation
 
 options(contrasts=c('contr.treatment','contr.poly'))
 
-library(devtools)
+# Install these packages from Github (instead of CRAN)
+#library(devtools)
 #devtools::install_github("strengejacke/sjPlot")
 #devtools::install_github("crsh/papaja@devel",force=T)
 #devtools::install_github("AWKruijt/JT-RCI",force=T)
@@ -70,8 +71,8 @@ library("car")
 library("ggplot2")
 library("pastecs")
 library("effsize")
+library("wesanderson")
 
-#library("wesanderson")
 #library("pander")
 #library("lmerTest")
 
