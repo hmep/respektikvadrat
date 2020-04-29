@@ -2239,8 +2239,6 @@ All data som låg till grund för inkludering eller exkludering i den aktuella s
 
 Med nästintill 90% kvinnor i samplet var könsfördelningen ytterst ojämn. Denna ojämna fördelning går troligen att tillskriva flertalet olika faktorer. För det första rapporterar kvinnor mer oro, änglsan och ångest än män [@Socialstyrelsen2004] vilket skulle kunna göra kvinnor mer benägna att söka hjälp. För det andra tenderar män överlag att i lägre utsträckning söka vård än kvinnor även när män och kvinnor upplever liknande symtom [@Galdas2005]. Slutligen – vilket troligen är den mest påverkande faktorn till den ojämna könsfördelningen i den aktuella studien – så sköttes studiens marknadsföring på sociala medier av en automatiserad algoritm. Algoritmen visar annonsen för de individer den tror har störst odds till att interagera med den. Data som sammanställdes efter avslutad annonsering visade på att någonstans mellan 85-90% av alla annonser visades för kvinnor. Om en så övervägande del av reklam visad till potentiella intressenter för studien visats för kvinnor, är det föga förvånande att huvudparten av deltagarna är kvinnor.
 
-<!--[@Thompson2011] som vi hämtade vårt sample ifrån hade 55% kvinnor -->
-
 Över 70% av vårt sample hade avslutade universitets- eller högskoleutbildningar och ytterligare 10% studerade vid behandlingens start. Denna siffra skiljer sig markant från Sveriges befolking, där endast 43% läst vidare efter gymnasiet [@SCB2020]. Delar av förklaringen till att en så stor andel av vårt sampel har studerat på universitet eller högskola skulle kunna vara att majoriteten av studiens deltagare är kvinnor, och att de i större utsträckning än män studerar vidare efter gymnasiet [@SCB2020]. Då väldigt få deltagare i den aktuella studien hade yrkesutbildning, gymnasieutbildning, folkskola eller grundskola som högsta avslutad utbildning bör man vara restriktiv med att applicera studiens resultat inom dessa grupper.
 
 <!-- [Pers kommentar] 
@@ -2249,8 +2247,10 @@ Här kanske säga (genom referens till metaanalys på internetbehandlingar) att 
 
 Både att väldigt många kvinnor deltog i den aktuella studien, och att en så stor andel av samplet hade påbörjade eller avslutade universitetsstudier, gör det svårare att generalisera resultatet till Sveriges befolkning i stort. Könsfördelning i den aktuella studien skiljer sig även signifikant från studien normerna för AAA-S samt RAS hämtas från [@Thompson2011]. Till fördel för samplets representation av populationen är däremot att det i och med en internetbaserad behandling fanns möjlighet till ett nationellt intag av deltagare. Då det i skrivande stund varken finns data om prevalens av bristande självhävdelse i Sveriges population, eller data om vilka demografiska faktorer denna brist korrelerar med, är det ytterst svårt att säga hur representativ för Sveriges befolkning samplet i den aktuella studien är. Det vore av stor nytta att framtida studier undersöker denna behandlings effekt i andra populationer med större heterogenitet.
 
+<!--[@Thompson2011] som vi hämtade vårt sample ifrån hade 55% kvinnor -->
+
 <!-- [Pers kommentar] 
-Något om att framtida studier därför bör undersöka denna behandlings effekt i andra populationer. Ni skulle kunna, om ni orkar, analysera förbättringarna hos männen vs. kvinnorna. Skulle ni finna att förbättringen är likartad så faller lite av kritiken.
+Något om att framtida studier därför bör undersöka denna behandlings effekt i andra populationer.
 -->
 
 <!-- [Pers kommentar] 
