@@ -568,7 +568,7 @@ Evidensen för beteendeterapi och KBT för syndromala och icke-syndromala psykol
 
 @Chambless2001 ger en tidig översikt av det samlade forskningsläget, utifrån en tydlig definition av vad som bör betraktas som en "empiriskt underbyggd terapi" -- det vill säga att effekten av terapin bör ha undersökts med en randomiserad och kontrollerad studie (RCT) som har haft specificerade grupper och använda väl beskrivna behandlingar. Sammanställningen visar att KBT överlag har bättre evidens i den samlade litteraturen än andra terapiformer (oaktat huruvida till vilken grad dessa andra terapiformer faktiskt är verksamma). Systematiska sammanställningar med uppdaterat forskningsläge utifrån dessa principer har sedan dess publicerats regelbundet i England av @NationalInstituteforHealthandCareExcellence2018 och i USA av @AmericanPsychologicalAssociation2016. @Socialstyrelsen2017 ger de senaste nationella riktlinjerna för vård vid depression och ångestsyndrom i Sverige. I dessa riktlinjer är KBT-behandling näst intill uteslutande förstahandsvalet vid psykologisk behandling.
 
-@Hofmann2012 är en översikt av meta-analyser som visar att KBT alltjämt är en av de mest effektiva terapiformerna. I deras översikt visade sig KBT effektivt för att motverka bland annat trauma- och stressrelaterade symtom, liksom depressiva och ångestrelaterade syndrom. Litteraturen stödjer att KBT har god effekt för de syndrom som @Speed2018a associerar med brister i konstruktiv självhävdelse.
+@Hofmann2012 är en översikt av meta-analyser som visar att KBT alltjämt är en av de mest effektiva terapiformerna. I deras översikt visade sig KBT effektivt för att motverka bland annat trauma- och stressrelaterade symtom, liksom depressiva och ångestrelaterade syndrom. Förbättring i mående och minskande av psykopatologiska symtom efter utförd KBT-behandling tenderar till och med att öka respektive minska månader efter att behandlingen avslutats [@Bandelow2018]. Litteraturen stödjer att KBT har god effekt för de syndrom som @Speed2018a associerar med brister i konstruktiv självhävdelse.
 
 ## Några saker att förhålla sig till
 *ovan rubrik är temporär och bör få ett bättre namn, detsamma gäller följande underrubriker*
@@ -2222,12 +2222,7 @@ x @Baumeister2014a om att guided treatment tenderar att vara superior och att hu
 x å andra sidan vad våra resultat visar på (?)
 -->
 
-All data som låg till grund för inkludering eller exkludering i den aktuella studien var insamlad från självskattningsformulär. I och med att forskningspersonsinformationen som potentiella deltagare kunde läsa innan de påbörjade screeningsprocessen presenterade såväl inkluderings- som exkluderingskriterier (även om exkluderingskriterierna till viss del var allmänt formulerade) medför det risken att de som sökte till studien anpassade sina svar för att bli inkluderade. Då ingen klinisk intervju användes i screeningprocessen fanns det ingen möjlighet att på så sätt upptäcka individer som borde exkluderas. Detta kan medföra att individer som egentligen borde ha exkluderats, på grund av icke sanningsenliga svar, istället blev inkluderade. Ingen klinisk intervju inkluderades då det låg utanför studiens möjliga resurser att administrera den till alla potentiella deltagare. En fördel med att inte ha använt kliniska intervjuerna är att tiden mellan påbörjad rekrytering och behandlingsstart blev kort, endast två veckor.
-
-<!-- [Pers kommentar] 
-När ni tar upp en brist så avsluta gärna med att släta ut bristen. I detta fall något om att motivationen till social önskvärdhet bör vara lägre när opersonliga nätbehandlingar görs (kontra face-to-face behandlingar där man inte vill göra sin terapeut ledsen och därför svarar att man mår bättre än vad man egentligen gör). 
--->
-
+All data som låg till grund för inkludering eller exkludering i den aktuella studien var insamlad från självskattningsformulär. I och med att forskningspersonsinformationen som potentiella deltagare kunde läsa innan de påbörjade screeningsprocessen presenterade såväl inkluderings- som exkluderingskriterier (även om exkluderingskriterierna till viss del var allmänt formulerade) medför det risken att de som sökte till studien anpassade sina svar för att bli inkluderade. Då ingen klinisk intervju användes i screeningprocessen fanns det ingen möjlighet att på så sätt upptäcka individer som borde exkluderas. Detta kan medföra att individer som egentligen borde ha exkluderats, på grund av icke sanningsenliga svar, istället blev inkluderade. Å andra sidan bör motivationen till social önskvärdhet vid deltagarnas ifyllnad av skattningsskalorna varit lägre i och med att ifyllningen gjordes mer anonymnt än om screeningen skulle skett ansikte-mot-ansikte eller via en klinisk intervju per telefon. Ingen klinisk intervju inkluderades då det låg utanför studiens möjliga resurser att administrera den till alla potentiella deltagare. En fördel med att inte ha använt kliniska intervjuerna är att tiden mellan påbörjad rekrytering och behandlingsstart blev kort, endast två veckor.
 
 ### Samplets representativitet för populationen
 
@@ -2257,10 +2252,6 @@ Då det i skrivande stund varken finns data om prevalens av bristande självhäv
 Kanske också ta upp detta med vad ni egentligen hade för population. Var det socialfobiker? I alla fall hade de ju en förhöjd LSAS-SR poäng som indikerar problem.
 -->
 
-<!--
-Bör den data vi refererar till i avsnittet om ojämn könsfördelning bifogas på något sätt? Vi kan även argumentera för att algoritmen till stor del förklarar spridningen i ålder hos vårt sample då majoriteten av de som fick se reklamen var mellan 35-54 år gamla.
--->
-
 <!-- 
 - Vårt primära utfallsmått för assertiveness är inte validerat på svenska
 - Vårt sekundära utfallsmått för assertiveness är inte validerat på svenska
@@ -2277,9 +2268,9 @@ I denna studie placerades en tredjedel av deltagarna på en väntelista. En risk
 
 <!-- stycket härunder behöver jobbas med men är ett försök till att inkorporera Pers kommentar nedan-->
 
-<!--
+
 Å andra sidan är väntelista effektivt för att korrigera mot händelser i världen som kan påverka studiens deltagare och därmed studiens resultat. Under studiens gång spred sig viruset covid-19 i Sverige och över världen. Nästintill alla människor påverkades på något sätt av detta. Antingen i dagliga rutiner, i fysiskt och psykiskt mående eller i både och. Hade vår studies kontrollgrupp haft en annan betingelse än väntelista hade det varit svårt att konstatera vad i deras resultat som var påverkat av betingelsen i fråga, och vad i resultatet som berodde på covid-19s ankomst i Sverige. I och med att vår studies kontrollgrupp var betingade till väntelista är det enklare att ta höjd för detta. 
--->
+
 
 
 <!-- [Pers kommentar] 
@@ -2287,6 +2278,8 @@ Kanske även hänvisa till
 Cuijpers, P., & Cristea, I. A. (2016). How to prove that your therapy is effective, even when it is not: A guideline. Epidemiology and Psychiatric Sciences, 25(5), 428-435. doi:10.1017/S2045796015000864
 MEN!! Sedan försvara er med att en väntelista ändå har en hel del poänger så som att korrigera för extrema händelser i omvärlden - VILKET JU CORONAN VERKLIGEN ÄR!
 -->
+
+På grund av studiens tidsomfång finns inga uppföljningsmätningar av deltagarnas mående efter behandlingens avslut (till exempel 3-, 6- eller 12-månadersuppfölningar). Det gör det svårare att predicera hur behandlingsprogrammet påverkar deltagarnas mående och konstruktiva självhävdande över tid. Forskning indikerar dock på att framsteg gjorda under KBT-behandling tenderar att bibehållas över tid. Det är till och med vanligt att ytterligare ökande i mående och minskande av symtombild sker efter avslutad behandling [@Bandelow2018].
 
 <!--
 - Ingen uppföljningsmätning av deltagarnas mående, dvs svårt att veta hur ser ut över tid - tenderar att öka över tid, särskilt vid KBT [@Bandelow2018] som källa!
@@ -2313,6 +2306,9 @@ TH: Menar du de som hoppat av eller de som inte svarat på alla självskattninga
 -->
 
 ## Sammanfattning
+Föreliggande studie ville undersöka effekten på konstruktivt självhävande av behandlingsprogrammet *Respekt i kvadrat*. Att ta del av behandlingsprogrammet (med eller utan behandlingsstöd) var effektivare än att betingas till en väntelista. Mer forskning behövs för att med större säkerhet kunna generalisera resultaten till populationen i stort.
+
+
 <!-- [Pers kommentar] Ja. Typ 2-3 meningar som sammanfattar hela arbetet. -->
 
 
