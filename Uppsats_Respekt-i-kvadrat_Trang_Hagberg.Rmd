@@ -874,7 +874,7 @@ Materialet avslutas med ett antal kapitel för olika problemområden (att säga 
 
 Materialet är översatt och anpassat till svenska förhållanden av TH med tillstånd av författaren och CCI. I samband med att materialet översattes och anpassades till I-KBT-moduler i plattformen `r xiterapi` modifierade och utökade TH och PT materialet. Detta gjordes i syfte att förenkla administrationen av materialet via internet samt att modernisera det med förhållningssätt, metoder och verktyg som har visat sig centrala enligt aktuell litteratur.
 
-En mycket inspirerande faktor när det engelska materialet anpassades och utvecklades till självhjälpsprogrammet *Respekt i kvadrat* var det aktuella forskningsläget kring exponering [se bland annat @Craske2008; @DeCastella2015; @Sewart2019; @Knowles2019; @Gross2003]. TH och PT bedömde det som en central komponent att deltagarna så tidigt som möjligt, och så regelbundet som möjligt, tog aktiva steg för att bryta sina undvikanden. Från och med modul 3 och i alla moduler därefter ombads deltagarna att närma sig aversiva stimuli (och utvärdera sina reaktioner) på olika sätt. 
+En mycket inspirerande faktor när det engelska materialet anpassades och utvecklades till självhjälpsprogrammet *Respekt i kvadrat* var det aktuella forskningsläget kring exponering [se bland annat @Craske2008; @DeCastella2015; @Sewart2019; @Knowles2019; @Gross2003]. TH och PT bedömde det som en central komponent att deltagarna så tidigt som möjligt, och så ofta som möjligt, tog aktiva steg för att bryta vidmakthållande undvikande. Redan tidigt i träningsprogrammet uppmuntrades deltagarna att närma sig aversiva stimuli (och utvärdera sina reaktioner) på olika sätt. 
 
 VARIATION 
 
@@ -1088,7 +1088,7 @@ Demografi.Kon.proc <- prop.table(Demografi.Kon.abs, 1)
 
 ```
 
-Vid analys av skillnader av sociodemografisk data fann vi en signifikant skillnad i könsfördelning mellan grupperna ($\chi^2$ = `r format(round(Demografi.Kon.chi$statistic,2),decimal.mark=",")`, p = `r format(round(Demografi.Kon.chi$p.value,2),decimal.mark=",")`, df = `r format(round(Demografi.Kon.chi$parameter,2),decimal.mark=",")`). Med uppföljande parvisa jämförelser fann vi att andelen kvinnor i `r xg1` hade signifikant större andel män än både `r xg2` (p = `r format(round(Demografi.Kon.posthoc$res[1,4],2),decimal.mark=",")`) och `r xg3` (p = `r format(round(Demografi.Kon.posthoc$res[2,4],2),decimal.mark=",")`). I övrigt fann vi inte några skillnader i sociodemografiska variabler mellan grupperna.
+Vid analys av skillnader av sociodemografisk data fann vi en signifikant skillnad i könsfördelning mellan grupperna ($\chi^2$ = `r format(round(Demografi.Kon.chi$statistic,2),decimal.mark=",")`, p = `r format(round(Demografi.Kon.chi$p.value,2),decimal.mark=",")`, df = `r format(round(Demografi.Kon.chi$parameter,2),decimal.mark=",")`). Med uppföljande parvisa jämförelser fann vi att andelen kvinnor i gruppen `r xg2` hade signifikant större andel män än både gruppen `r xg3` (p = `r format(round(Demografi.Kon.posthoc$res[1,4],2),decimal.mark=",")`) och gruppen `r xg1` (p = `r format(round(Demografi.Kon.posthoc$res[2,4],2),decimal.mark=",")`). I övrigt fann vi inte några skillnader i sociodemografiska variabler mellan grupperna.
 
 ```{r groupcontrols, eval = F}
 
@@ -1242,7 +1242,7 @@ library(lme4)
 
 aaas_ag.lmer <-
   lmer(
-    aaas_ag ~ group * time + (1 | therapist / subject),
+    aaas_ag ~ group * time + (1 | subject),
     data = r2.long.data,
     na.action = na.omit,
     REML = T
@@ -1309,26 +1309,32 @@ Vi fann inga brott mot antagandena för flernivåanalys vid visuell kontroll av 
 
 ## Primära utfallsmått
 
-<!-- Modellestimat för samtliga utfallsmått sammanfattas i tabell \@ref(tab:stargazer) -->
+För det primära utfallsmåttet AAA-S Adaptive fann vi en huvudeffekt av 
 
-<!-- (ref:stars) Interaktioner ... -->
+Modellestimat för samtliga utfallsmått sammanfattas i tabell \@ref(stargazer).
+
+```{r results='asis'}
+
+tab_model(aaas_ad.lmer,aaas_ag.lmer,rathus.lmer,lsas_sum.lmer,gad_sum.lmer,phq_sum.lmer,well.lmer)
+
+```
 
 ```{r stargazer, results='asis', fig.cap='(ref:stars)', eval=T}
 
 # https://cran.r-project.org/web/packages/stargazer/vignettes/stargazer.pdf
 # NB! We're using stargazer-booktabs to get prettier LaTeX table output
 
-scalenames = c("AAA-S Ag", "AAA-S Ad", "Rathus", "LSAS-SR", "GAD-7", "PHQ-9", "Välmåendeformuläret")
+scalenames = c("AAA-S Ad", "AAA-S Ag", "Rathus", "LSAS-SR", "GAD-7", "PHQ-9", "Välmåendeformuläret")
 
 labradorer <- c(
-  xg1,
-  xg2,
-  xdur,
-  xpost,
-  paste(xg1, " : ", xt2,sep=""),
-  paste(xg2, " : ", xt2,sep=""),
-  paste(xg1, " : ", xt3,sep=""),
-  paste(xg2, " : ", xt3,sep="")
+  xG1,
+  xG2,
+  xDur,
+  xPost,
+  paste(xG1, " -- ", xt2,sep=""),
+  paste(xG2, " -- ", xt2,sep=""),
+  paste(xG1, " -- ", xt3,sep=""),
+  paste(xG2, " -- ", xt3,sep="")
 )
 
 stargazer::stargazer(
@@ -1350,11 +1356,15 @@ stargazer::stargazer(
   digits = 1,
   covariate.labels = c("Intercept",labradorer),
   float.env = "sidewaystable",
-  omit.stat = c("aic","bic","ll","n"),
-  dep.var.caption = "Primära och sekundära utfallsmått",
+  #omit.stat = c("aic","bic","ll"),
+  keep.stat= c("n"),
+  dep.var.caption = "Beroende variabel",
+  column.labels = c("Primära utfallsmått","Sekundära utfallsmått"),
+  column.separate = c(2,5),
   dep.var.labels = scalenames,
-  notes.label = "Observera:",
-  title = "En tabelltext"
+  notes.label = "Signifikansnivåer:",
+  label = "stargazer",
+  title = "Estimat med konfidensintervall och signifikansnivåer för primära och sekundära utfallsmått."
 )
 
 ```
