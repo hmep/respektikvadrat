@@ -83,11 +83,11 @@ library("effsize")
 #   `r readLines('keywords.txt', encoding = 'UTF-8')`
 
 svkable = function(...) {
-  knitr::kable(..., format.args = list(decimal.mark = ',', big.mark = ' '), format="latex", booktabs=T)
+  knitr::kable(..., format.args = list(decimal.mark = ',', big.mark = ' '), linesep='', format="latex", booktabs=T)
 }
 
 enkable = function(...) {
-  knitr::kable(..., format.args = list(decimal.mark = '.', big.mark = ','), format="latex", booktabs=T)
+  knitr::kable(..., format.args = list(decimal.mark = '.', big.mark = ','), linesep='', format="latex", booktabs=T)
 }
 
 ```
@@ -439,7 +439,7 @@ ll3 = length(r2.long.data[lg3t1,1])
 r.AAAS_ad = 0.82 # s 329 @Thompson2011
 sd.AAAS_ad.norm = 7.5 # s 329 @Thompson2011
 mean.AAAS_ad.norm = 57.6 # s 329 @Thompson2011
-ref.AAAS_ad = "student-sample 1 från @Thompson2011"
+ref.AAAS_ad = "icke-kliniskt sample (student-sample 1) från @Thompson2011"
 
 ### AAA-S Aggressive assertiveness
 # Norms: Thompson (2011) 
@@ -480,7 +480,7 @@ ref.LSAS24 = "icke-kliniskt sample från @Fresco2001"
 r.Rathus = 0.87 # s 326 @Thompson2011
 sd.Rathus.norm = 23.9 # s 326 @Thompson2011
 mean.Rathus.norm = 6.2 # s 326 @Thompson2011
-ref.Rathus = "student-sample 1 från @Thompson2011"
+ref.Rathus = "icke-kliniskt sample (student-sample 1) från @Thompson2011"
 
 ```
 
@@ -496,8 +496,6 @@ I och med psykatrins allt tydligare inriktning mot syndromala kategoriseringar a
 
 En viktig del i kognitiv omstrukturering är så kallade beteendeexperiment. För en socialfobiker skulle ett beteendeexperiment till exempel kunna handla om att gå på en fest och att säga något om sig själv i ett samtal med andra personer utan att använda sig av så kallade säkerhetsbeteenden. Ett för konstruktiv självhävdelse relevant exempel på ett säkerhetsbeteende skulle kunna vara att titta ned i golvet, ett annat att tala tyst. Efter genomfört beteendeexperiment kan klienten få hjälp av terapeuten att utvärdera hur det gick -- hur det gick att lägga säkerhetsbeteendena åt sidan, om personen klarade av att stanna i situationen även om något oönskat inträffade, vilka konsekvenser ökat engagemang ledde till och så vidare. Det övergripande syftet med dessa metoder är att hjälpa klienten att bryta undvikande. Fördelarna för klienten är dels att hen får tillfälle att träna både på att tolerera och reglera ångest, dels att hen får ökad tillgång till sådant som hen värdesätter.
 
-Bristande konstruktiv självhävdelse som specifikt behandlingsmål kan antas ha ett stort värde för både kliniska och sub-kliniska populationer, inte minst som pendeln svingar tillbaka från syndromal diagnostik till transdiagnostik [@Speed2018a]. Det gäller särskilt om den solida KBT-grunden byggs på och kompletteras med metoder och förhållningssätt som har utvecklats inom den kontextuella beteendevetenskapen sedan slutet av 1900-talet. Dessa inkluderar motiverande värdebaserade tekniker för att hjälpa klienter att finna egna skäl att bryta det undvikande som vidmakthåller de psykologiska problemen; det klienten tränar på i terapi anvisas inte av terapeuten utan utgår från egenspecificerade mål i relation till egna värden [@Hayes1986]. Den moderna KBT-verktygslådan har under historien samlat på sig gott om verksamma verktyg. I och med de landvinningar inom internetförmedlad terapi som gjorts sedan sekelskiftet går det att nå och hjälpa individer som saknar tillgång till eller motivation att söka traditionell psykologisk behandling med dessa verktyg.
-
 ## Vad är konstruktiv självhävdelse?
 
 Begreppet *assertiveness* kom under 1970-talet att omfamna en allt längre lista med beteendemässiga operationaliseringar – så att det till slut blev svårt att skilja från begreppet ’social färdighet’ [@LINEHAN1979]. Det är därför viktigt att avgränsa begreppet.
@@ -506,9 +504,9 @@ Begreppet *assertiveness* kom under 1970-talet att omfamna en allt längre lista
 
 Graden av konstruktiv självhävdelse för en person i en given situation kan inordnas som en punkt i en graf (se figur \@ref(fig:assertiveness)) med två kontinuerliga dimensioner: handlande med respekt för andras rättigheter på x-axeln och handlande med respekt för egna rättigheter på y-axeln. Konstruktiv självhävdelse är en kommunikationsstil som skiljer sig från aggressiv självhävdelse (det vill säga hävdande av egna rättigheter på bekostnad av andras). Den skiljer sig även från kommunikationsstilen passiv självhävdelse (det vill säga förnekande av egna rättigheter till förmån för andras) och från passiv-aggressiv självhävdelse (det vill säga bristande respekt för både egna och andras rättigheter). Gränsdragningarna mellan kommunikationsstilarna är förstås flytande, eftersom dimensionerna är kontinuerliga.
 
+(ref:ass) Konstruktiv självhävdelse definieras i träningsprogrammet Respekt i kvadrat som handlande som är förenligt med samtidig respekt för egna och andras rättigheter (figurens övre högra hörn). Passiv självhävdelse (figurens nedre högra hörn) kan på samma sätt definieras som låg grad av respekt för egna rättigheter men hög grad av respekt för andras rättigheter; aggressiv självhävdelse (figurens övre vänstra hörn) kan definieras som hög grad av respekt för egna rättigheter men låg grad av respekt för andras rättigheter. Passivt aggressiva beteenden kan konceptualiseras som förenliga med låg grad av respekt för både egna och andras rättigheter (figurens nedre vänstra hörn).
 
-<!-- Figurtexten nedan bör ordnas!  -->
-```{r assertiveness, out.width="65%", fig.align="center", out.extra='', fig.cap='Konstruktiv självhävdelse definieras i träningsprogrammet Respekt i kvadrat som handlande som är förenligt med samtidig respekt för egna och andras rättigheter (figurens övre högra hörn). Passiv självhävdelse (figurens nedre högra hörn) kan på samma sätt definieras som låg grad av respekt för egna rättigheter men hög grad av respekt för andras rättigheter; aggressiv självhävdelse (figurens övre vänstra hörn) kan definieras som hög grad av respekt för egna rättigheter men låg grad av respekt för andras rättigheter. Passiv-aggressiva beteenden kan konceptualiseras som förenliga med låg grad av respekt för både egna och andras rättigheter (figurens nedre vänstra hörn).'}
+```{r assertiveness, out.width="65%", fig.align="center", fig.cap='(ref:ass)'}
 
 knitr::include_graphics("canvas-konstruktiv-slinga-X.pdf") 
 
@@ -516,7 +514,7 @@ knitr::include_graphics("canvas-konstruktiv-slinga-X.pdf")
 
 ### Vikten av en funktionell förståelse av begreppen
 
-@Mitamura2018 problematiserar skillnaden mellan aggressiv och konstruktiv självhävdelse. De olika kommunikationsstilarna behöver förstås i de sammanhang de utförs. Beteenden som i en japansk (eller för all del svensk) kontext kan framstå som aggressiva kan i en amerikansk kontext framstå som konstruktivt självhävdande; beteenden som i en viss familj eller vänskapskrets ses som konstruktiva kan i andra ses som passiva, och så vidare. Vad som i kontexten menas med handlande som är förenligt med egna och andras rättigheter är dels föremål för pågående förhandling mellan parterna i det lokala sammanhanget, dels präglat av de strukturer, normer och traditioner som samhället och kulturen påbjuder [@Hayes1986; @butler1990gender]. Genom att anlägga ett funktionellt och kontextuellt synsätt på självhävdelsebeteenden är det möjligt att använda begreppen utan att moralisera eller att vara normativt förskrivande. Begreppen 'konstruktiv självhävdelse', 'passiv självhävdelse' och 'aggressiv självhävdelse' kan användas pragmatiskt för att till exempel i en terapi särskilja och tala om beteenden i en specificerad kontext -- inklusive hur de förhåller sig till normer och regler på samhällsnivå, gruppnivå och individnivå.
+@Mitamura2018 problematiserar skillnaden mellan aggressiv och konstruktiv självhävdelse. De olika kommunikationsstilarna bör förstås i de sammanhang de utförs. Beteenden som i till exempel en japansk (eller för all del svensk) kontext kan framstå som aggressiva kan i en amerikansk kontext framstå som konstruktiv självhävdelse; beteenden som i en viss familj eller vänskapskrets ses som konstruktiva kan i andra ses som passiv självhävdelse, och så vidare. Vad som i kontexten menas med handlande som är förenligt med egna och andras rättigheter är dels föremål för pågående förhandling mellan parterna i det lokala sammanhanget, dels präglat av de strukturer, normer och traditioner som samhället och kulturen påbjuder [@Hayes1986; @butler1990gender]. Genom att anlägga ett funktionellt och kontextuellt synsätt på självhävdelsebeteenden är det möjligt att använda begreppen utan att moralisera eller att vara normativt förskrivande. Begreppen 'konstruktiv självhävdelse', 'passiv självhävdelse' och 'aggressiv självhävdelse' kan användas pragmatiskt för att till exempel i en terapi särskilja, tala om och utvärdera handlande i en specificerad kontext -- inklusive hur de förhåller sig till normer och regler på samhällsnivå, gruppnivå och individnivå. 
 
 ## Konstruktiv självhävdelse och aktuellt forskningsläge
 
@@ -547,11 +545,11 @@ Att benämna ovan kognitioner för förutsägelser är dessutom i linje med det 
 
 <!-- (TOBIAS: SÄGA NÅGOT OM ATT OROANDE ÄR NÅGOT MAN GÖR FÖR ATT MINSKA ÅNGESTEN?) -->
 
-### Att undvika det aversiva
+### Om rädsla och ångest
 
 Utifrån *tidigare* erfarenheter kan en individ ha giltiga och begripliga upplevelser av ångest och rädsla som dessvärre leder till undvikande *här och nu*. Detta kan i sin tur göra att individen går miste om sådant som hen värdesätter -- exempelvis att: få närhet, mer tid till egna intressen, hävda sina åsikter eller att nå andra naturliga förstärkare för stanna-kvar-och-märk-att-ångesten-går-över-beteenden.
 
-Undvikande av aversiva stimuli -- det vill säga undvikandet av det som väcker obehag -- finns det i sig själv inget fel med. Det är till och med centralt för många organismers överlevnad att ha ett välfungerande undvikande av det som faktiskt är farligt. Att regelbundet undvika stimuli som upplevs hotfulla men som ej är immanent farliga kan däremot leda till psykopatologiska besvär. När dessa undvikandebeteenden väl vants in är det otroligt svårt att självmant bryta dem. Undvikandet leder på kort sikt allt som oftast till positiva följder (till exempel snabb men tillfällig reduktion av obehag), och även fast det  på lång sikt allt som oftast leder till negativa följder (minskad tillgång till det som värdesätts, upplevelsen av obehag ökar över tid m.m.) tenderar vi att bortse från det. Att undvika det som erfarenhetsmässigt upplevts som aversivt framstår ofta som funktionellt och rationellt, även när det inte är det [@Hayes1996].
+Undvikande av aversiva stimuli som också är genuint farliga är ett beteende med evolutionärt centralt överlevadsvärde. Att i överskott undvika stimuli som upplevs hotfulla men som inte är farliga kan däremot leda till psykopatologiska besvär. När sådana undvikandebeteenden väl vants in är de vanligtvis svåra att bryta på egen hand. Undvikandet leder på kort sikt allt som oftast till positiva följder (till exempel snabb men tillfällig reduktion av obehag), och även fast det  på lång sikt allt som oftast leder till negativa följder (minskad tillgång till det som värdesätts, upplevelsen av obehag ökar över tid m.m.) tenderar vi att bortse från det. Att undvika det som erfarenhetsmässigt upplevts som aversivt framstår ofta som funktionellt och rationellt, även när det inte är det [@Hayes1996].
 
 Särskilt svårt är det att bryta beteenden som har som funktion att undvika det som väcker rädsla. En stor utmaning i behandling av ångestsyndrom är att överbrygga det undvikandet som följt av just rädsloinlärning. @Ohman2001 konstaterar att rädsloinlärning inte så lätt går att påverka med kognitiv kontroll i skarpt läge, inte minst för att de neuronala rädslokretsarna vid amygdala ligger djupt förankrade i limbiska delar av hjärnan och mer eller mindre lever sitt eget liv.
 
@@ -653,15 +651,15 @@ Det vi primärt är intresserade av är om det finns någon skillnad (i endera r
 
 <!-- Bör vi föra en en rad om att gör en RCT-design?-->
 
-Sample-storleken för varje grupp bestämdes innan rekrytering påbörjades till n = 70 med en powerberäkning. I studien planerade manipulationer, variabler, mättillfällen och insamlad data har använts i de efterföljande analyserna utan selektion i efterhand. Alla randomiseringar gjordes av oberoende tredje part vid Stockholms Universitet med hjälp av internetbaserade randomiseringstjänster (www.random.org för överintagsexkluderingen och randomiseringen till respektive behandlare samt www.sealedenvelope.com för randomiseringen till de tre grupperna). Studien uppfyller kriterierna för en RCT-design enligt @Chambless2001.
+Sample-storleken för varje grupp bestämdes innan rekrytering påbörjades till n = 70 med en powerberäkning. I studien planerade manipulationer, variabler, mättillfällen och insamlad data har använts i de efterföljande analyserna utan selektion i efterhand. Alla randomiseringar gjordes av oberoende tredje part vid Stockholms universitet med hjälp av internetbaserade randomiseringstjänster (www.random.org för överintagsexkluderingen och randomiseringen till respektive behandlare samt www.sealedenvelope.com för randomiseringen till de tre grupperna). Studien uppfyller kriterierna för en RCT-design (från engelskans *randomised controlled trial*) i @Chambless2001.
 
 ### Rekrytering
 
-Rekrytering skedde mellan 28 januari och 5 februari 2020. Studien annonserades på sociala medier (www.facebook.com, www.twitter.com, www.linkedin.com samt www.instagram.com). Den annonserades även på diverse andra webbplatser (t ex www.studie.nu). De som ville veta mer om studien hänvisades till studiens hemsida (www.respektikvadrat.se). Där fanns information om hur studien skulle gå till, vilka inklusions- samt exklusionskriterierna var och när studien startade. Det fanns även information om vilka som var involverade i studien samt kontaktuppgifter till studieansvarig. Deltagarna anmälde sitt intresse genom att uppge sin e-postadress. I samband med att deltagarna hade möjlighet att anmäla sitt intresse presenterades de även med information kring potentiella risker med att delta, sekretess, datasäkerhet, datahantering samt att deltagandet är frivilligt och kan avbrytas när som helst. När deltagarna väl anmält sitt intresse skickades en länk via e-post med självskattningsformulär att besvara elektroniskt. Formulären frågade efter generellt välmående, nedstämdhet, ångest, socialfobiska tendenser samt egenupplevd självhävdelse. Deltagarna fick även fylla i demografiska frågor samt frågor om erfarenhet av tidigare psykologisk behandling, motivation till att delta i den aktuella studien samt om pågående medicinering. Deltagarna hade även möjligheten att i fritext informera om de ansåg att det fanns något annat som var nödvändigt att beakta vid bedömningen.
+Rekrytering ägde rum mellan 28 januari och 5 februari 2020. Studien annonserades på sociala medier (www.facebook.com, www.twitter.com, www.linkedin.com samt www.instagram.com). Den annonserades även på diverse andra webbplatser (t ex www.studie.nu). De som ville veta mer om studien hänvisades till studiens hemsida (www.respektikvadrat.se). Där fanns information om hur studiens upplägg, inklusions- och exklusionskriterier och startdatum, liksom upplysningar om den arbetsinsats som deltagande förväntades innebära under interventionens 8 veckor. Där fanns även information om vilka personer som var involverade i studien samt kontaktuppgifter till studieansvarig. Deltagarna anmälde sitt intresse genom att uppge sin e-postadress. I anslutning till formuläret för intresseanmälan gavs även information kring potentiella risker med deltagande och villkor för sekretess, datasäkerhet, datahantering samt information om att frivillighet och möjligheten att när som helst avbryta sitt deltagande. När deltagarna väl anmält sitt intresse skickades en länk via e-post med självskattningsformulär att besvara elektroniskt. Formulären frågade efter generellt välmående, nedstämdhet, ångest, socialfobiska tendenser samt egenupplevd grad av självhävdelse. Deltagarna fick även lämna sociodemografiska uppgifter samt besvara frågor om erfarenhet av tidigare psykologisk behandling, pågående medicinering och motivation till deltagande. Deltagarna hade även möjligheten att i fritext lämna ytterligare valfria upplysningar.
 
 ### Deltagare
 
-Som framgår av figur \@ref(fig:flow) så anmälde totalt 657 personer intresse till studien varav 464 personer slutförde hela screeningsprocessen. Av dessa exkluderades 126 personer då de uppfyllde något av exklusionskriterierna. De kvarvarande 338 personerna erbjöds plats i studien. Av dessa bejakade 253 sin plats. 43 personer exkluderades från behandlingen genom randomisering så att 210 inkluderades. De deltagere som exkluderades via randomisering erbjöds tillgång till materialet på samma sätt som kontrollgruppen fick det – men med skillnaden att deras resultat ej inkluderats i beräkningarna. Vid behandlingsstart hade alltså studien 210 deltagare. Vid en extra kontroll under behandlingens gång upptäcktes det att fem deltagare (n = 3 från gruppen `r xg1` och n = 2 från gruppen `r xg3`) hade inkluderats trots pågående psykologisk behandling. Dessa deltagare har fått fullgå behandlingen på oförändrade villkor, men deras resultat har exkluderats från studiens analyser Utöver detta bad en deltagare från gruppen `r xg2` om att få bli exkluderad från studien. Ingen data har använts hos de fem deltagarna som hade pågående psykologisk behandling. Endast förmätningen har använts från deltagaren som bad om att bli exkluderad.
+Som framgår av figur \@ref(fig:flow) så anmälde totalt 657 personer sitt intresse till studien varav 464 personer slutförde screeningsprocessen. Av dessa uteslöts 126 personer då de uppfyllde något av exklusionskriterierna. De kvarvarande 338 personerna erbjöds plats i studien. Av dessa bejakade 253 sin plats. 43 personer exkluderades från behandlingen genom randomisering så att 210 inkluderades. De deltagere som exkluderades via randomisering erbjöds tillgång till träningsprogrammet på samma sätt som kontrollgruppen, men med skillnaden att deras förmätningsvärden inte användes i beräkningarna. Vid behandlingsstart hade studien 210 deltagare. Vid en extra kontroll under behandlingens gång upptäcktes att fem deltagare (n = 3 från gruppen `r xg1` och n = 2 från gruppen `r xg3`) hade annan pågående psykologisk behandling och därför felaktigt inkluderats i studien. Dessa deltagare har fått fullgå behandlingen på oförändrade villkor, men deras resultat har exkluderats från alla beräkningar. Utöver detta bad en deltagare från gruppen `r xg2` under träningsprogrammets gång att bli exkluderad från studien. Ingen data har använts hos de fem deltagarna som hade pågående psykologisk behandling och endast förmätningen har använts från deltagaren som bad om att bli exkluderad.
 
 ```{r flow, out.width="100%", fig.align="center", out.extra='', fig.cap='Flödesschema över inklusion, exklusion (med kriterier) samt bortfall.'}
 
@@ -671,11 +669,11 @@ knitr::include_graphics("flow.pdf")
 
 #### Inklusionskriterier
 
-För att delta krävdes det att man var svensk medborgare, minst 18 år gammal, hade tillgång till en internetuppkoppling samt att man behärskade svenska i tal och skrift. Alla deltagare som erbjöds plats i studien blev informerade om detta via den webbaserade plattformen de använt sig av för att anmäla sitt intresse och fylla i screeningen. Deltagarna informerades om inklusion en vecka före studiestart.
+För att delta krävdes att man var svensk medborgare, minst 18 år gammal, hade tillgång till en internetuppkoppling samt att man behärskade svenska i tal och skrift. Alla deltagare som erbjöds plats i studien blev informerade om detta via den webbaserade plattformen de använt sig av för att anmäla sitt intresse och fylla i screeningen. Deltagarna informerades om inklusion en vecka före studiestart via den krypterade och inloggningsskyddade hemsidan för studien.
 
 #### Exklusionskriterier
 
-De personer som skattade 15 eller mer på självskattningsformuläret PHQ-9 exkluderades. Utöver detta exkluderades de deltagare som inom en tremånadersperiod innan behandlingsstart gjort förändringar i sin psykofarmakabehandling. Även personer som uppgav att de hade pågående psykologisk behandling exkluderades. Slutligen exkluderades de personer som i frisvar under screeningsprocessen tydligt uppgav att de hade tidsbrist och/eller låg motivation till behandlingen. Alla personer som exkluderades blev informerade om detta via den webbaserade plattformen de använt sig för att anmäla sig till studien.
+Personer som skattade 15 eller högre på självskattningsformuläret PHQ-9 exkluderades, liksom personer som inom en tremånadersperiod innan behandlingsstart gjort förändringar i sin psykofarmakabehandling. Även personer som uppgav att de hade pågående psykologisk behandling exkluderades. Slutligen exkluderades de personer som i frisvar under screeningsprocessen tydligt uppgav att de hade tidsbrist och/eller låg motivation till deltagande i träningsprogrammet. Alla meddelanden om exklusion skickades via den krypterade och inloggningsskyddade hemsidan för studien.
 
 #### Demografisk data
 
@@ -753,15 +751,15 @@ options(OutDec= ".")
 
 ```
 
-De `r length(r2.wide.data$subject)` deltagare vars data används i den här studien var mellan 20 och 65 år gamla med en medelålder på 41,8 år (standardavvikelse 8,8). En betydande majoritet (87,8&nbsp;%) identifierade sig som kvinnor, övriga som män. Knappt tre fjärdedelar av deltagarna har avslutade universitets- eller högskoleutbildningar (71,6&nbsp;%) och tre fjärdedelar av deltagarna var vid behandlingens start arbetande (75,5&nbsp;%). Mer än hälften av deltagarna (61,3&nbsp;%) hade tidigare erfarenheter av psykologisk behandling. Av dessa hade majoriteten (64,8&nbsp;%) tidigare erfarenheter av KBT. Knappt en tredjedel av alla deltagare (29,0&nbsp;%) hade erfarenhet av psykofarmaka. Vid behandlingens start stod 17,6&nbsp;% på något slags psykofarmaka. Totalt 3,4&nbsp;% av deltagarna var vid behandlingsstart sjukskrivna. Se tabell \@ref(tab:demdata) för de demografiska faktorernas fördelningar i respektive grupp.
+De `r length(r2.wide.data$subject)` deltagare vars data används i den här studien var mellan 20 och 65 år gamla med en medelålder på 41,8 år (standardavvikelse 8,8). En betydande majoritet (87,8&nbsp;%) identifierade sig som kvinnor, samtliga övriga som män. Knappt tre fjärdedelar av deltagarna hade avslutad universitets- eller högskoleutbildning (71,6&nbsp;%) och tre fjärdedelar av deltagarna var vid behandlingens start yrkesarbetande (75,5&nbsp;%). Mer än hälften av deltagarna (61,3&nbsp;%) hade tidigare erfarenheter av psykologisk behandling. Av dessa hade majoriteten (64,8&nbsp;%) tidigare erfarenheter av KBT. Knappt en tredjedel av alla deltagare (29,0&nbsp;%) hade erfarenhet av psykofarmaka, och vid behandlingsstart stod 17,6&nbsp;% på något slags psykofarmaka. Totalt 3,4&nbsp;% av deltagarna var vid behandlingsstart sjukskrivna. Se tabell \@ref(tab:demdata) för de demografiska faktorernas fördelningar i respektive grupp.
 
 (ref:dem) Demografisk data för deltagarna, redovisad per grupp.
 
 ```{r demdata, out.width="100%", tab.align="center", cache = F}
 
-options(OutDec= ",") 
+#options(OutDec= ",") 
 
-knitr::kable(demdata.tabell, format="latex", booktabs = T, caption = "(ref:dem)", linesep = "", align="ccc") %>%
+svkable(demdata.tabell, format="latex", caption = "(ref:dem)", align="ccc") %>%
   kable_styling(full_width = F) %>%
   column_spec(2, width = "7em") %>%
   column_spec(3, width = "7em") %>%
@@ -775,7 +773,7 @@ knitr::kable(demdata.tabell, format="latex", booktabs = T, caption = "(ref:dem)"
   pack_rows("Tidigare psykologisk behandling (%)", 23, 24, bold = F) %>%
   row_spec(c(1,2,6,12,19,22), extra_latex_after = "\\midrule")
 
-options(OutDec= ".") 
+#options(OutDec= ".") 
 
 ```
 
@@ -825,9 +823,7 @@ I självhjälpsmaterialet får läsaren lära sig skillnaden mellan olika typer 
 
 I *Assert Yourself* föreskrivs självhävdande beteenden utifrån de teoretiska antagandena i @wolpe1990practice om reciprok inhibition och klassisk betingning: Genom att träna på att i ord och handling uttrycka det som i relationen till en annan person väcker ångest (exempelvis undertryckt ledsenhet eller ilska) kan klienten på sikt få minskade besvär med autonoma ångestresponser. @Wolpe1952 förespråkar träning på att uppleva de ångestväckande autonoma responserna (känslorna) *in-vivo*. Att utföra de föreskrivna beteendena handlar inte om att enbart "låtsas". Det långsiktiga målet med träningen är att lära sig att inhibera ångesten genom självhävdelse. För fall då en fysisk motpart saknas, och ångesten väcks av till exempel platser, objekt eller ord, föreslår @Wolpe1952 istället avslappning som ett sätt att inhibera ångestresponsen, utifrån rationalen att det är omöjligt att känna ångest och samtidigt vara avslappnad (så kallad reciprok inhbition).
 
-<!-- (@Wolpe2952 diskriminerar inte mellan aggressiv och adaptiv självhävdelse, och uppseendeväckande nog uttrycker författaren sig så här: "*For this reason it is quite often necessary for the patient to be guided towards achieving factual dominance in his encounters with those who disturb him by employing subtle manoeuvres in which aggression is not outwardly expressed*".) -->
-
-Självhjälpsmaterialet ger också rationalen för kognitiv omstrukturering med metoder från @beck1979cognitive, @Clark1986, @clark1995cognitive och @powell2017mental. Kognitiv omstrukturering uppnås enligt dessa genom att pröva giltigheten av det negativa tänkandet i verkliga livet. Genom att planera och utföra beteendeexperiment får deltagaren hjälp att pröva giltigheten av egna negativa tankar. Det ledr till ökad responsmöjlighet i olika mer eller mindre pressande situationer. 
+Självhjälpsmaterialet ger också rationalen för kognitiv omstrukturering med metoder från @beck1979cognitive, @Clark1986, @clark1995cognitive och @powell2017mental. Kognitiv omstrukturering uppnås enligt dessa genom att pröva giltigheten av det hindrande tänkandet i verkliga livet. Genom att planera och utföra beteendeexperiment får deltagaren hjälp att pröva giltigheten av egna negativa tankar, för att på så sätt uppnå större flexibilitet i responserna i olika mer eller mindre pressande situationer. 
 
 Utöver detta innehåller arbetsmaterialet ett avsnitt om progressiv muskelavslappning, med syftet att hjälpa läsaren att känna igen spänning i kroppen, sänka den allmänna spänningsnivån och träna på en aktiv coping-teknik för stressande lägen. Instruktioner för den progressiva och tillämpade avslappning som presenteras är snarlika de som beskrivs i @ost2006tillampad.
 
@@ -835,13 +831,17 @@ Materialet avslutas med ett antal kapitel för olika problemområden (att säga 
 
 ### Anpassningar och tillägg
 
-Materialet är översatt och anpassat till svenska förhållanden av TH med tillstånd av författaren och CCI. I samband med att materialet översattes och anpassades till I-KBT-moduler i plattformen `r xiterapi` modifierade och utökade TH och PT materialet. Detta gjordes med det dubbla syftet att förenkla administrationen av materialet via internet samt att komplettera det med inslag som TH och PT ansåg saknades i originalmaterialet.
+Materialet är översatt och anpassat till svenska förhållanden av TH med tillstånd av författaren och CCI. I samband med att materialet översattes och anpassades till I-KBT-moduler i plattformen `r xiterapi` modifierade och utökade TH och PT materialet. Detta gjordes i syfte att förenkla administrationen av materialet via internet samt att modernisera det med förhållningssätt, metoder och verktyg som har visat sig centrala enligt aktuell litteratur.
 
 En mycket inspirerande faktor när det engelska materialet anpassades och utvecklades till självhjälpsprogrammet *Respekt i kvadrat* var det aktuella forskningsläget kring exponering [se bland annat @Craske2008; @DeCastella2015; @Sewart2019; @Knowles2019; @Gross2003]. TH och PT bedömde det som en central komponent att deltagarna så tidigt som möjligt, och så regelbundet som möjligt, tog aktiva steg för att bryta sina undvikanden. Från och med modul 3 och i alla moduler därefter ombads deltagarna att närma sig aversiva stimuli (och utvärdera sina reaktioner) på olika sätt. 
 
-I linje med forskning om att acceptera och tillåta sina känslor [@Hayes1996; @Hayes2004a; @Luoma2007] lades även tyngd vid att målet med att bryta undvikande inte nödvändigtvis var att bli av med eller minska de aversiva känslorna, utan snarare att utforska sitt förhållningssätt till dem. Överrensstämmande med forskning kring *fixed-* samt *growth mindset* [@Dweck1995; @Schroder2016; @Schroder2015; @DeCastella2015] och vikten av att tro att en förändring går att få till utformades även interventionens innehåll på ett *growth mindset*-förespråkande sätt.
+VARIATION 
 
-Slutligen tilläts avsnittet om muskelavslappning att genomsyra behandlingsprogrammet på ett annat sätt än det gör i *Assert Yourself* [@michel2008]. I originalmaterialet presenteras alla övningar och all information berörande muskelavslappning i samma kapitel. I linje med Östs [-@ost2006tillampad] rekommendation om att Tillämpad avslappning bör introduceras stegvis över flertalet veckor introduceras deltagarna till muskelavslappningsövningar i modul 2 och inslag av muskelavslappning återfinns i flertalet moduler därefter.
+MÄNGDTRÄNING, MULTIPLE EXEMPLAR TRAINING Obegränsade möjligheter att genomföra beteendeexperiment.
+
+I linje med forskning om att acceptera och ge plats för tankar och känslor i pressade situationer [@Hayes1996; @Hayes2004a; @Luoma2007] lägger träningsprogrammet Respekt i kvadrat större vikt vid acceptans och tolerans av ångest än @michel2008 genom tillägg av nyskrivna avsnitt och övningar som fördelades över modulerna. Ett exempel på material som uppmanar deltagaren att aktivt stanna kvar i (eller rent av uppsöka) för brytande av undvikande relevant respondent obehag är ett videoklipp om *fixed mindset* och *growth mindset* [@Dweck1995; @Schroder2016; @Schroder2015; @DeCastella2015]. Ett annat är en övning som handlar om att identifiera handlande i situationer som tidigare har präglats av undvikande som är förenligt med långsiktiga, egenvalda värden. 
+
+I @michel2008 presenteras rationalen för och övningar i muskelavslappning i ett och samma kapitel. I linje med Östs [-@ost2006tillampad] rekommendation om att tillämpad avslappning bör introduceras stegvis över en längre tidsperiod introduceras deltagarna till progressiv muskelavslappning i modul 2, med en gradvis inriktning i modulerna 3--5 mot tillämpad avslappning. Integreringen av progressiv muskelavslappning i hela första delen av träningsprogrammet tjänar också det ytterligare syftena att ge deltagarna möjlighet att tillgodogöra sig färdigheter som relativt snabbt har potential att ge positiva effekter i vardagen och att ge dem en egen erfarenhet av fördelarna med mängdträning.
 
 <!--
 här bör ytterligare ett kort avsnitt föras in om valet att fokusera på avslappning i behandlingsprogrammet.
@@ -1006,11 +1006,11 @@ Vi analyserade insamlade förmätningsvärden för att kontrollera om randomiser
 
 ### Analys av huvudeffekter och interaktionseffekter
 
-Huvudeffekter och interaktion mellan grupp och tid för de primära och sekundära utfallsmått undersöktes med *mixed model*-metodik. *Mixed model* tillåter precis som MANOVA inklusion av upprepade beroende mättillfällen i modellen, men med hänsyn taget till principen om *intention to treat*. Utöver det möjliggör det även modellering och kvantifiering på gruppnivå av observerade (men inte kontrollerade) individ-relaterade effekter, exempelvis skillnader i underliggande förändringsbenägenhet över tid. För modelleringen av de olika utfallsmåtten användes modelleringsverktyg från R-paketet *lme4* [@R-lme4]. Val av kovariansstruktur gjordes genom jämförelse av AIC-tal med *Maximum Likelihood* (ML)-metoden. Metoden *Restricted Maximum Likelihood* (REML), som ger konservativa uppskattningar av varianserna, användes för anpassningen av modellerna för utfallsmåtten till underliggande data. I modellen tilläts skärningspunkterna för respektive deltagare att variera. Granskning av homoscedasticitet, residualernas fördelning och outliers gjordes visuellt med diagnostiska plottar av de till data anpassade modellerna. För parvisa *post hoc*-test uppskattades *marginal means* (*least square means*) samt standardiserade effektstorlekar för de olika kombinationerna av betingelse och mättillfälle med verktyg från R-paketet *emmeans* [@R-emmeans]. Figurer producerades med verktyg från *emmeans*,  *sjPlot* [@R-sjPlot] och *ggplot2* [@R-ggplot2].
+Huvudeffekter och interaktion mellan grupp och tid för de primära och sekundära utfallsmått undersöktes med flernivåanalys, (på engelska bland annat *mixed model* eller *multilevel model*). Flernivåanalys tillåter precis som MANOVA inklusion av upprepade beroende mättillfällen i modellen, men fördelen att analysmetoden i sin utformning har inbyggt stöd för principen om *intention to treat*. Flernivåanalysmodeller kan genom inklusion av *random*-effekter också uppskatta observerad (men inte kontrollerad) individ-relaterade varians, exempelvis skillnader i underliggande förändringsbenägenhet över tid. För modelleringen av de olika utfallsmåtten användes modelleringsverktyg från R-paketet *lme4* [@R-lme4]. Val av kovariansstruktur gjordes genom jämförelse av AIC-tal av modeller skapade med *Maximum Likelihood* (ML)-metoden. Den alternativa metoden *Restricted Maximum Likelihood* (REML), som ger väntesvärdesriktiga uppskattningar av varianserna, användes därefter för anpassningen av modellerna för utfallsmåtten till underliggande data. I modellerna tilläts skärningspunkterna för respektive deltagare att variera. Granskning av homoscedasticitet, residualernas fördelning och outliers gjordes visuellt med diagnostiska plottar av de till data anpassade modellerna. För parvisa uppföljningstest av signifikanta estimat uppskattades *marginal means* (*least square means*) samt standardiserade effektstorlekar med verktyg från R-paketet *emmeans* [@R-emmeans]. Figurer producerades med verktyg från *emmeans*, *sjPlot* [@R-sjPlot] och *ggplot2* [@R-ggplot2].
 
 ### Analys av reliabel förändring och klinisk signifikans
 
-Frekvensen deltagare som i träningsprogrammet genomgått en reliabel förändring och dessutom befann sig på kliniskt signifikant nivå vid eftermätningen fastställdes i enlighet med definitionerna och rekommendationerna i @Jacobson1991. För deltagare som endast lämnat självskattningar vid förmätningstillfället fördes förmätningvärden vidare till eftermätningstillfället i enlighet med principen om *intention to treat*. En förändring mellan två mättillfällen definieras som reliabel om den är tillräckligt stor i relation till populationsvariansen. Då betraktas förändringen som en verklig förändring och inte bara ett slump- eller mätfel. Klinisk signifikans ger en bild av om hur de absoluta eftermätningsvärdena förhåller sig till medelvärdet för normdata för en subklinisk population [@Jacobson1991]. För samtliga beräkningar av klinisk signifikans och reliabel förändring användes R-paketet *JTRCI* [@R-JTRCI], som väljer signifikans-kriterium konservativt. Skillnader mellan grupperna i frekvensen reliabelt förändrade deltagare på kliniskt signifikant nivå analyserades med Kruskal-Wallis-test.
+Frekvensen deltagare som i träningsprogrammet genomgått en reliabel förändring och dessutom befann sig på kliniskt signifikant nivå vid eftermätningen fastställdes i enlighet med definitionerna och rekommendationerna i @Jacobson1991. För deltagare som endast lämnat självskattningar vid förmätningstillfället fördes förmätningvärdena vidare till eftermätningstillfället i enlighet med principen om *intention to treat*. Med reliabel förändring menas att en observerad utveckling mellan två mättillfällen definieras som tillförlitlig om den är tillräckligt stor (med $\alpha$ = 0,05) i relation till populationsvariansen. Då betraktas förändringen som en verklig förändring och inte bara ett slump- eller mätfel. Med klinisk signifikans avses hur eftermätningsvärdena förhåller sig till medelvärdet för normdata för en subklinisk population [@Jacobson1991]. För sammanställningarna överlappet mellan klinisk signifikans och reliabel förändring användes R-paketet *JTRCI*, som väljer jämförelsekriterium för klinisk signifikans konservativt [@R-JTRCI]. Skillnader mellan grupperna i antalet reliabelt förändrade deltagare som också befann sig på kliniskt signifikant nivå vid eftermätningstillfället analyserades med Kruskal-Wallis-test.
 
 # Resultat
 
@@ -1055,7 +1055,7 @@ Demografi.Kon.proc <- prop.table(Demografi.Kon.abs, 1)
 
 ```
 
-Vid analys av skillnader av sociodemografisk data fann vi en signifikant skillnad i könsfördelning mellan grupperna ($\chi^2$ = `r format(round(Demografi.Kon.chi$statistic,2),decimal.mark=",")`, p = `r format(round(Demografi.Kon.chi$p.value,2),decimal.mark=",")`, df = `r format(round(Demografi.Kon.chi$parameter,2),decimal.mark=",")`). Med uppföljande parvisa jämförelser fann vi att andelen kvinnor i `r xg1` hade signifikant större andel män än både `r xg2` (p = `r format(round(Demografi.Kon.posthoc$res[1,4],2),decimal.mark=",")`) och `r xg3` (p = `r format(round(Demografi.Kon.posthoc$res[2,4],2),decimal.mark=",")`). I övrigt fann vi inte några skillnader i sociodemografiska data mellan de olika grupperna.
+Vid analys av skillnader av sociodemografisk data fann vi en signifikant skillnad i könsfördelning mellan grupperna ($\chi^2$ = `r format(round(Demografi.Kon.chi$statistic,2),decimal.mark=",")`, p = `r format(round(Demografi.Kon.chi$p.value,2),decimal.mark=",")`, df = `r format(round(Demografi.Kon.chi$parameter,2),decimal.mark=",")`). Med uppföljande parvisa jämförelser fann vi att andelen kvinnor i `r xg1` hade signifikant större andel män än både `r xg2` (p = `r format(round(Demografi.Kon.posthoc$res[1,4],2),decimal.mark=",")`) och `r xg3` (p = `r format(round(Demografi.Kon.posthoc$res[2,4],2),decimal.mark=",")`). I övrigt fann vi inte några skillnader i sociodemografiska variabler mellan grupperna.
 
 ```{r groupcontrols, eval = F}
 
@@ -1163,12 +1163,12 @@ test.2 <-
     na.action = na.omit,
     REML = F
   )
-# Does not run
+# Does not compute: 
 # (observations = 505) <= (random effects = 615)
-# Data does not support fitting a random slope
+# Data does not support also fitting a random slope
 
 # Unstructured or corAR1?
-# Adding our independent fixed variables time and group
+# Adding independent fixed variables time and group
 # Using lme instead of lmer for this comparison
 test.1.unstructured <-
   lme(
@@ -1193,9 +1193,10 @@ test.1.corAR1 <-
 anova(test.1.unstructured,test.1.corAR1)
 # No significant difference; unstructured has slightly lower AIC
 # Selecting unstructured going forward to stay on the conservative side
+# Choosing lme4 instead of lmer to get more convenient features down the line
 
 # REML or ML?
-# Picking REML to get unbiased/conservative estimates of the variance parameters 
+# Picking REML to get unbiased estimates of the variance parameters 
 # -- giving us slightly larger confidence intervals
 
 ```
@@ -1275,9 +1276,11 @@ Vi fann inga brott mot antagandena för flernivåanalys vid visuell kontroll av 
 
 ## Primära utfallsmått
 
+<!-- Modellestimat för samtliga utfallsmått sammanfattas i tabell \@ref(tab:stargazer) -->
 
+<!-- (ref:stars) Interaktioner ... -->
 
-```{r stargazer, results='asis', eval=T}
+```{r stargazer, results='asis', fig.cap='(ref:stars)', eval=T}
 
 # https://cran.r-project.org/web/packages/stargazer/vignettes/stargazer.pdf
 # NB! We're using stargazer-booktabs to get prettier LaTeX table output
@@ -1312,7 +1315,8 @@ stargazer::stargazer(
   digits = 1,
   covariate.labels = c("Intercept",labradorer),
   float.env = "sidewaystable",
-  omit.stat = c("aic","bic","ll")
+  omit.stat = c("aic","bic","ll"),
+  title = "En tabelltext"
 )
 
 ```
@@ -1359,13 +1363,15 @@ colnames(r2.new.data) <-
 
 se tabell \@ref(tab:descriptives)
 
-(ref:descriptives) Deskriptiv statistik för primära och sekundära utfallsmått. Cohen's d är beräknad med tillgänglig data för de deltagare som lämnat svar både inför studien och vid respektive mättillfäll.de
+(ref:descriptives) Deskriptiv statistik för primära och sekundära utfallsmått. Cohen's d är beräknad med tillgänglig data för de deltagare som lämnat svar både inför studien och vid respektive mättillfäll.
 
-```{r descriptives, fig.align="center", cache = T, eval = T}
+```{r descriptives, fig.align="center", cache = T, eval = F}
 
-options(OutDec= ",") 
+options(OutDec= ".") 
 
 ### Descriptives
+
+library(effsize)
 
 xhgn <-  function(num,x,y) {
   cohen.d(
@@ -1379,7 +1385,7 @@ xhgn <-  function(num,x,y) {
     within = T
   )
 }
-
+  
 lg1t2.eff <- c(
 xhgn(7,lg1t2,lg1t1)$estimate,
 xhgn(6,lg1t2,lg1t1)$estimate,
