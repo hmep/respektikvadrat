@@ -1948,7 +1948,7 @@ rathus.pre.dur.jt.table <- xt
 
 Se tabell \@ref(tab:jtprocent) med sammanställning jt/rci
 
-(ref:jtp) Klinisk signifikans med andel tillhörande de olika kategorierna för de två huvudutfallsmåtten samt Rathus. Deltagare som deltog i förmätningen men ej fyllde i en uppföljande mätning har fått förmätningsvärdena framflyttade till det senare mättillfället, i enlighet med principen om *intention to treat*.
+(ref:jtp) Klinisk signifikans med andel tillhörande de olika kategorierna för de två huvudutfallsmåtten samt Rathus. Deltagare som deltog i förmätningen mensom  ej fyllde i en uppföljande mätning har fått förmätningsvärdena framflyttade till det senare mättillfället, i enlighet med principen om *intention to treat*.
 
 ```{r jtprocent, tab.align="center", cache=F}
 
