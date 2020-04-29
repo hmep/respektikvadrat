@@ -121,32 +121,50 @@ xT3 = "Efter"
 
 ```{r data setup, eval = F, cache = F}
 
-# This chunk is to be run only once in order to set up anonymous data that can be published on figshare
+# This chunk is to be run only once in order to set up anonymous data that can be published to Github & Figshare
+# Make sure you have run the above chunks before continuing
 
 ##################################################################################
 # Put the exported Excel files in the folder where this Rmd script resides
 # and edit the lines below
 
-# From tab Frågeformulär
-raw_excel = "Respekt_surveys_200424_180943.xlsx"
+# Fliken "Frågeformulär"
+# - Välj alla mättillfällen och kontrollera att alla skalor är ikryssade för varje tillfälle
+# - Under "Alternativ för exportering"
+# -- Välj "Exportera endast de totala poängen"
+# -- Välj "Inkludera svar från" och markera "Grupp 1: Behandling exl stöd", "Grupp 2: Behandling inkl stöd" och "Grupp 3: Väntlista"
+# - OBS! Ange korrekt datumvillkor om svaren exporteras efter att grupp 3 lämna svar på mittenmätningen
+# - Klicka på knappen "Exportera"
+raw_excel = "Respekt_surveys_200429_092418.xlsx"
 
-# From tab Konversationer & Moduler
-raw_excel_conversations = "Respekt_conversations_200424_181124.xlsx"
+# Fliken "Konversationer & Moduler"
+# - Under "Exportera", välj alternativet "Statistik med antal skickade meddelanden ..."
+# - Under "Alternativ för exportering"
+# -- Välj "Lista endast med behandlarna plus användare från följande grupper"
+# -- Markera "Grupp 1: Behandling exl stöd", "Grupp 2: Behandling inkl stöd" och "Grupp 3: Väntlista"
+# - Klicka på knappen "Exportera"
+raw_excel_conversations = "Respekt_conversations_200429_093011.xlsx"
 
-# From tab Frågeformulär" / demografi
-raw_excel_sociodemographics <- "Respekt_survey453761_200424.xlsx"
+# Fliken "Frågeformulär"
+# - Välj enbart förmätningstillfället och se till att endast underalternativet "Demografi" är ikryssat
+# - Under "Alternativ för exportering"
+# -- Välj "Exportera endast de enskilda svaren på frågorna"
+# -- Välj "I tabellrubriken visa endast frågornas korta kod"
+# -- Välj "För varje svar exportera endast värdet för utvärdering"
+# -- Under "Om det finns fler svar på enkäten från samma deltagare ...", välj "Placera dem på samma rad"
+# -- Välj "Inkludera svar från" och markera "Grupp 1: Behandling exl stöd", "Grupp 2: Behandling inkl stöd" och "Grupp 3: Väntlista"
+raw_excel_sociodemographics <- "Respekt_survey453761_200429.xlsx"
+
 ##################################################################################
 
 # Import data from Excel file (requires "readxl")
 r2.raw.data <- read_excel(raw_excel)
 r2.raw_conversations.data <- read_excel(raw_excel_conversations)
-r2.raw_excel_sociodemographics.data <- read_excel(raw_excel_sociodemographics)
+r2.raw_sociodemographics.data <- read_excel(raw_excel_sociodemographics)
 
-# Remove cases that should be excluded (they don't meet the inclusion criteria but was erroneously included)
+# Remove cases that should be excluded 
+# (they don't meet the inclusion criteria but was erroneously included in the study)
 r2.raw.data <- r2.raw.data[-c(13,48,52,97,158),]
-
-# Remove outliers
-# r2.raw.data <- r2.raw.data[-c(117),]
 
 # Fix missing data labels
 r2.raw.data[r2.raw.data == "[missing data]"] <- NA
@@ -232,7 +250,7 @@ colnames <-
 # Set column names
 colnames(r2.wide.data) <- colnames
 
-# Merge post data for group 3 with post data for group 1 + 2
+# Merge column with post data for group 3 with column for post data for group 1 + 2
 # Pre: 
 # - 3--16
 # During:
@@ -244,17 +262,18 @@ colnames(r2.wide.data) <- colnames
 g3key <- which(!is.na(r2.wide.data$postg3_reminders))
 r2.wide.data[g3key,c(31:44)] <- r2.wide.data[g3key,c(45:58)]
 
-# Merge files from iTerapi
+# Merge in other files from iTerapi
 # by "pre_subject", "Användare" and "Användarnamn" respectively
-r2.raw.data.merged <- merge(r2.wide.data,r2.raw_conversations.data,by.x="pre_subject",by.y="Användare")
-r2.raw.data.merged <- merge(r2.raw.data.merged,r2.raw_excel_sociodemographics.data,by.x="pre_subject",by.y="Användarnamn")
+r2.raw.data.merged <- merge(r2.wide.data,r2.raw_conversations.data[,-c(2)],by.x="pre_subject",by.y="Användare")
+r2.raw.data.merged <- merge(r2.raw.data.merged,r2.raw_sociodemographics.data[,-c(1,3:8,13,18,23:25)],by.x="pre_subject",by.y="Användarnamn")
 
 names(r2.raw.data.merged)[names(r2.raw.data.merged) == 'Antal skickade meddelanden'] <- 'messages_sent'
 names(r2.raw.data.merged)[names(r2.raw.data.merged) == 'Antal tilldelade moduler'] <- 'modules_assigned'
 names(r2.raw.data.merged)[names(r2.raw.data.merged) == 'Antal öppnade moduler'] <- 'modules_opened'
 
 # Strip out unwanted columns
-r2.wide.data <- r2.raw.data.merged[,c(1:44,60:62,70:73,75,77,80:83)] # Keep columns that we want
+#r2.wide.data <- r2.raw.data.merged[,c(1:44,60:62,70:73,75,77,80:83)] # Keep columns that we want
+r2.wide.data <- r2.raw.data.merged
 
 # Anonymise, simplify and clean up data
 r2.wide.data$subject <- factor(c(1:length(r2.wide.data[,1]))) # Add anonymous subject IDs
@@ -279,24 +298,21 @@ r2.wide.data$therapist <-
   ),
   levels = c(1,2,3),
   labels = c("A","B","N")) # Add therapist shorthands
-r2.wide.data <- r2.wide.data[,c(58:60,1:57)] # Move categorical variables to the beginning
+r2.wide.data <- r2.wide.data[,c(74:76,1:73)] # Move categorical variables to the beginning
 r2.wide.data <- r2.wide.data[,-c(4:5)] # Drop 
 
 # Save safe data frame as a single object to the file system
 saveRDS(r2.wide.data,file="r2.wide.data.RDS")
 
-# Delete Excel file and clean up environment
-# prompt.keep <-
-#   readline(prompt = "Type an uppercase 'K' key to keep the Excel file (or press any other key to delete it): ")
-# if (prompt.keep == "K") {
-# } else {
-#   file.remove(raw_excel)
-# }
-#rm(list = ls())
+# Clean up
+file.remove(raw_excel)
+file.remove(raw_excel_conversations)
+file.remove(raw_excel_sociodemographics)
+rm(list = ls())
 
 ```
 
-```{r reshape, cache = F, collapse=T}
+```{r reshape, cache = F}
 
 # Get wide data
 r2.wide.data <- readRDS("r2.wide.data.RDS")
@@ -427,6 +443,25 @@ ll2 = length(r2.long.data[lg2t1,1])
 ll3 = length(r2.long.data[lg3t1,1])
 
 ```
+
+```{r, eval = F}
+
+############### REMOVE THIS CHUNK ##################
+library(readxl)
+sociodemografisk.data <- read_excel("Respekt_survey453761_200423.xlsx")
+sociodemografisk.data$group <-
+  factor(ifelse(
+    grepl("Grupp 1", sociodemografisk.data$Grupper),
+    1,
+    ifelse(
+      grepl("Grupp 2", sociodemografisk.data$Grupper),
+      2,
+      ifelse(grepl("Grupp 3", sociodemografisk.data$Grupper), 3, NA)
+    )
+  ))
+sociodemografisk.data <- sociodemografisk.data[-c(13,48,52,97,158),]
+```
+
 
 ```{r norms, cache = F}
 
@@ -726,13 +761,13 @@ options(OutDec= ",")
 xdemodata.ext <- rbind(
 #  cbind(ll1,ll2,ll3),
   cbind(
-    paste(round(mean(r2.wide.data[wg1, 50]), 2), " (", round(sd(r2.wide.data[wg1, 50]), 2),
+    paste(round(mean(r2.wide.data[wg1, 64]), 2), " (", round(sd(r2.wide.data[wg1, 64]), 2),
           ")",
           sep = ""),
-    paste(round(mean(r2.wide.data[wg2, 50]), 2), " (", round(sd(r2.wide.data[wg2, 50]), 2),
+    paste(round(mean(r2.wide.data[wg2, 64]), 2), " (", round(sd(r2.wide.data[wg2, 64]), 2),
           ")",
           sep = ""),
-    paste(round(mean(r2.wide.data[wg3, 50]), 2), " (", round(sd(r2.wide.data[wg3, 50]), 2),
+    paste(round(mean(r2.wide.data[wg3, 64]), 2), " (", round(sd(r2.wide.data[wg3, 64]), 2),
           ")",
           sep = "")
   ),
@@ -757,9 +792,7 @@ De `r length(r2.wide.data$subject)` deltagare vars data används i den här stud
 
 ```{r demdata, out.width="100%", tab.align="center", cache = F}
 
-#options(OutDec= ",") 
-
-svkable(demdata.tabell, format="latex", caption = "(ref:dem)", align="ccc") %>%
+svkable(demdata.tabell, caption = "(ref:dem)", align="ccc") %>%
   kable_styling(full_width = F) %>%
   column_spec(2, width = "7em") %>%
   column_spec(3, width = "7em") %>%
@@ -772,8 +805,6 @@ svkable(demdata.tabell, format="latex", caption = "(ref:dem)", align="ccc") %>%
   pack_rows("Användning psykofarmaka (%)", 20, 22, bold = F) %>%
   pack_rows("Tidigare psykologisk behandling (%)", 23, 24, bold = F) %>%
   row_spec(c(1,2,6,12,19,22), extra_latex_after = "\\midrule")
-
-#options(OutDec= ".") 
 
 ```
 
@@ -969,7 +1000,7 @@ intervention.tabell <- cbind.data.frame(
   "Material"=Innehall
   )
 
-svkable(intervention.tabell, caption = "(ref:interv)", linesep = "", align="rll") %>%
+svkable(intervention.tabell, caption = "(ref:interv)", align="rll") %>%
   kable_styling(full_width = F) %>%
   column_spec(1, width = "2em") %>%
   column_spec(2, width = "22em") %>%
@@ -994,7 +1025,7 @@ Deltagarna blev via studiens hemsida informerade om att allt deltagande var friv
 
 Vi använde `r version$language`, version `r version$major`.`r version$minor` [@R-base] för samtliga analyser. 
 <!-- Vi använde `r cite_r("r-references.bib")` för samtliga analyser.  -->
-Signifikansnivån $\alpha$ = 0,05 tillämpades vid alla beräkningar. Öppen syntax och data finns deponerade hos Figshare på https://doi.org/10.17045/sthlmuni.12148785.
+Signifikansnivån $\alpha$ = 0,05 tillämpades vid alla beräkningar. Öppen syntax och data finns deponerade hos Figshare på https://doi.org/10.17045/sthlmuni.12148785 [@R2data2020].
 
 ### Kontroll av utgångsdata
 
@@ -1006,7 +1037,7 @@ Vi analyserade insamlade förmätningsvärden för att kontrollera om randomiser
 
 ### Analys av huvudeffekter och interaktionseffekter
 
-Huvudeffekter och interaktion mellan grupp och tid för de primära och sekundära utfallsmått undersöktes med flernivåanalys, (på engelska bland annat *mixed model* eller *multilevel model*). Flernivåanalys tillåter precis som MANOVA inklusion av upprepade beroende mättillfällen i modellen, men fördelen att analysmetoden i sin utformning har inbyggt stöd för principen om *intention to treat*. Flernivåanalysmodeller kan genom inklusion av *random*-effekter också uppskatta observerad (men inte kontrollerad) individ-relaterade varians, exempelvis skillnader i underliggande förändringsbenägenhet över tid. För modelleringen av de olika utfallsmåtten användes modelleringsverktyg från R-paketet *lme4* [@R-lme4]. Val av kovariansstruktur gjordes genom jämförelse av AIC-tal av modeller skapade med *Maximum Likelihood* (ML)-metoden. Den alternativa metoden *Restricted Maximum Likelihood* (REML), som ger väntesvärdesriktiga uppskattningar av varianserna, användes därefter för anpassningen av modellerna för utfallsmåtten till underliggande data. I modellerna tilläts skärningspunkterna för respektive deltagare att variera. Granskning av homoscedasticitet, residualernas fördelning och outliers gjordes visuellt med diagnostiska plottar av de till data anpassade modellerna. För parvisa uppföljningstest av signifikanta estimat uppskattades *marginal means* (*least square means*) samt standardiserade effektstorlekar med verktyg från R-paketet *emmeans* [@R-emmeans]. Figurer producerades med verktyg från *emmeans*, *sjPlot* [@R-sjPlot] och *ggplot2* [@R-ggplot2].
+Huvudeffekter och interaktion mellan grupp och tid för de primära och sekundära utfallsmått undersöktes med flernivåanalys, (också kallad *hierarkisk analys*, på engelska bland annat *mixed model*, *multilevel model* eller *hierarchical linear model*). Flernivåanalys tillåter precis som MANOVA inklusion av upprepade beroende mättillfällen i modellen, men fördelen att analysmetoden i sin utformning har inbyggt stöd för principen om *intention to treat*. Flernivåanalysmodeller kan genom inklusion av *random*-effekter också uppskatta observerad (men inte kontrollerad) individ-relaterade varians, exempelvis skillnader i underliggande förändringsbenägenhet över tid. För modelleringen av de olika utfallsmåtten användes modelleringsverktyg från R-paketet *lme4* [@R-lme4]. Val av kovariansstruktur gjordes genom jämförelse av AIC-tal av modeller skapade med *Maximum Likelihood* (ML)-metoden. Den alternativa metoden *Restricted Maximum Likelihood* (REML), som ger väntesvärdesriktiga uppskattningar av varianserna, användes därefter för anpassningen av modellerna för utfallsmåtten till underliggande data. I modellerna tilläts skärningspunkterna för respektive deltagare att variera. Granskning av homoscedasticitet, residualernas fördelning och outliers gjordes visuellt med diagnostiska plottar av de till data anpassade modellerna. För parvisa uppföljningstest av signifikanta estimat uppskattades *marginal means* (*least square means*) samt standardiserade effektstorlekar med verktyg från R-paketet *emmeans* [@R-emmeans]. Figurer producerades med verktyg från *emmeans*, *sjPlot* [@R-sjPlot] och *ggplot2* [@R-ggplot2].
 
 ### Analys av reliabel förändring och klinisk signifikans
 
@@ -1016,42 +1047,34 @@ Frekvensen deltagare som i träningsprogrammet genomgått en reliabel förändri
 
 ```{r sociodemotest, eval = T}
 
-sociodemografisk.data <- read_excel("Respekt_survey453761_200423.xlsx")
-sociodemografisk.data$group <-
-  factor(ifelse(
-    grepl("Grupp 1", sociodemografisk.data$Grupper),
-    1,
-    ifelse(
-      grepl("Grupp 2", sociodemografisk.data$Grupper),
-      2,
-      ifelse(grepl("Grupp 3", sociodemografisk.data$Grupper), 3, NA)
-    )
-  ))
-sociodemografisk.data <- sociodemografisk.data[-c(13,48,52,97,158),]
-
-Demografi.Kon.chi <- kruskal.test(Demografi.Kon ~ group, data = sociodemografisk.data)
+Demografi.Kon.chi <- kruskal.test(Demografi.Kon ~ group, data = r2.wide.data)
 # Signifikant!
+
+# Inspektera distributionerna
 # library(lattice)
 # histogram(~ Demografi.Kon | group,
-#           data=sociodemografisk.data,
+#           data=r2.wide.data,
 #           layout=c(1,3))
+
+# Uppföljningstest
 library(FSA)
 Demografi.Kon.posthoc <- dunnTest(Demografi.Kon ~ group,
-         data=sociodemografisk.data,
+         data=r2.wide.data,
          method="bh")
 # Könsfördelningen för väntelista skiljer sig signifikant från övriga gruppers
-Demografi.Kon.abs <- table(sociodemografisk.data$group, sociodemografisk.data$Demografi.Kon)
+
+Demografi.Kon.abs <- table(r2.wide.data$group, r2.wide.data$Demografi.Kon)
 Demografi.Kon.proc <- prop.table(Demografi.Kon.abs, 1)
 
-# kruskal.test(sociodemografisk.data$Demografi.Alder ~ group, data = sociodemografisk.data)
-# kruskal.test(sociodemografisk.data$Demografi.Civilstand ~ group, data = sociodemografisk.data)
-# kruskal.test(sociodemografisk.data$Demografi.Utbildning ~ group, data = sociodemografisk.data)
-# kruskal.test(sociodemografisk.data$Demografi.Sysselsattning ~ group, data = sociodemografisk.data)
-# kruskal.test(sociodemografisk.data$Demografi.Psykofarmaka ~ group, data = sociodemografisk.data)
-# kruskal.test(sociodemografisk.data$Demografi.PsykofarmakaVad ~ group, data = sociodemografisk.data)
-# kruskal.test(sociodemografisk.data$Demografi.PsykofarmakaDos ~ group, data = sociodemografisk.data)
-# kruskal.test(sociodemografisk.data$Demografi.PsykoBehandling ~ group, data = sociodemografisk.data)
-# # Inga signifikanta = inga skillnader mellan grupperna
+# kruskal.test(Demografi.Alder ~ group, data = r2.wide.data)
+# kruskal.test(Demografi.Civilstand ~ group, data = r2.wide.data)
+# kruskal.test(Demografi.Utbildning ~ group, data = r2.wide.data)
+# kruskal.test(Demografi.Sysselsattning ~ group, data = r2.wide.data)
+# kruskal.test(Demografi.Psykofarmaka ~ group, data = r2.wide.data)
+# kruskal.test(Demografi.PsykofarmakaVad ~ group, data = r2.wide.data)
+# kruskal.test(Demografi.PsykofarmakaDos ~ group, data = r2.wide.data)
+# kruskal.test(Demografi.PsykoBehandling ~ group, data = r2.wide.data)
+# Inga signifikanta skillnader = inga skillnader mellan grupperna
 
 ```
 
@@ -1209,7 +1232,7 @@ library(lme4)
 
 aaas_ag.lmer <-
   lmer(
-    aaas_ag ~ group * time + (1 | subject),
+    aaas_ag ~ group * time + (1 | therapist / subject),
     data = r2.long.data,
     na.action = na.omit,
     REML = T
