@@ -593,7 +593,7 @@ Det har även visat sig att det är menligt <!-- möjligen skriva "självdestruk
 
 <!-- *@Pittig2014 är ej med i dagsläget men bör möjligen vara det? -->
 
-### Att närma sig det aversiva
+### Om att närma sig det aversiva
 
 Att bryta undvikandebeteenden är ofta centralt för att minska psykopatologiska besvär. Det finns flera metoder sprungna ur forskning för detta. En metod är att *på ett närvarande sätt* närma sig det aversiva och ångestväckande, så kallad exponering. 
 
@@ -625,16 +625,16 @@ Förslagsvis använda L-G Öst kring TA plus fiska fram några som pratar om att
 
 <!-- Violating expectancies -->
 
-#### Att finna motivationen till att bryta gamla vanor
+#### Om att finna motivation till att bryta gamla vanor
 
 Många som lever med psykopatologiska besvär under en längre tid kan uppleva det som att det inte finns någonting de kan göra åt sina besvär. Som att deras symtom och deras lidande är där för att stannna. Detta brukar kallas för ett *fixed mindset*. Ett *fixed mindset* är antagandet att förmågor, färdigheter samt egenskaper är fasta och oföränderliga. Det skiljer sig från ett *growth mindset*, antagandet att förmågor, färdigheter och egenskaper kan utvecklas och förändras. Dessa *mindset*, tankesätt, är ett sorts ramverk genom vilket man tolkar och förstår sig på sina erfarenheter, vilket i sin tur påverkar vilka beteenden och emotioner man uppvisar [@Dweck1995]. Tankesätt kan beröra mer övergripande domäner, såsom personlighet och intelligens, eller mer specifika domäner, såsom hur man tänker kring ångest och emotioner. Man kan ha ett fixerat tankesätt inom en viss domän, och ett utvecklande tankesätt inom en annan [@Schroder2016]. Har man ett utvecklande tankesätt kring ångest leder det både till större motivation under en behandlings gång och till bättre odds för positivt behandlingsutfall [@Schroder2015; @DeCastella2015]. Det har även visat sig att personer med ett fixerat tankesätt i större utsträckning försöker undvika negativa emotioner samt i mindre utsträckning omvärderar sina förutsägelser i ljuset av nya erfarenheter [@Schroder2015]. Forskning konstaterar att det finns gott om anledningar att arbeta mot ett *growth mindset*.
 
+<!--
+Detta avsnitt är ett work in progress och borde möjligen utvecklas med stycke om
 
-*work in progress* 
-
-Lösningen:
-- värden, långsiktiga skäl att uppsöka sit
+- värden, långsiktiga skäl att uppsöka situationer
 - direkt kontignent belöning, ex återkoppling och uppmuntran från terapeut
+-->
 
 
 
@@ -654,7 +654,7 @@ Det finns i Sverige flera exempel på självhjälpsmaterial i KBT som har befors
 
 I-KBT är en effektiv behandlingsmetod för ett brett spektrum av olika besvär. I en meta-analys från 2018 – som inkluderade 64 RCT-studier – konstateras I-KBT vara effektivt för behandling av både depression, paniksyndrom, agorafobi, social fobi samt generaliserat ångestsyndrom [@Andrews2018]. Författarna konstaterade att medeleffektstorleken för I-KBT är *d* = 0,8 eller mer i jämförelse med kontrollbetingelse. Enligt resultaten tenderar också effekten att hålla i sig över tid. I-KBT är dessutom effektmässigt jämförbart med terapeutledd terapi. Både i en annan meta-analys från samma år samt i en meta-analys från ett decenium tidigare konstaterades I-KBT även likvärdigt ansikte-mot-ansiktebehandling [@Carlbring2018; @Barak2008]. Dessa resultat bekräftar tidigare fynd i samma riktning [@Andrews2010]. 
 
-I-KBT har även visat sig vara effektivt vid behandling av PTSD [@Sijbrandij2016], insomni [@Zachariae2016] och för att minska lidandet vid olika kroniska hälsobesvär [@Mehta2019]. I-KBT är också en verksamt vid en rad olika transdiagnostiska symtom såsom stress [@Day2013], prokrastinering [@Rozental2015] och perfektionism [@Rozental2017; @Wade2019].
+I-KBT har även visat sig vara effektivt vid behandling av PTSD [*g* = 0,7 i @Sijbrandij2016], insomni [*g* = 0,21--1,03 i @Zachariae2016] och för att minska lidandet vid olika kroniska hälsobesvär [@Mehta2019]. I-KBT är också verksamt för symtomlindring vid en rad olika transdiagnostiska symtom såsom stress [\(\eta^2_p \)=.12 i @Day2013], prokrastinering [kliniskt signifikant förbättring hos 31--40% av deltagarna i @Rozental2015] och perfektionism [*d* = 0,7--1.0 i @Rozental2017; *d* = 0,86 i @Wade2019].
 
 #### I-KBT och stödbehandlare
 
@@ -687,7 +687,7 @@ Det vi primärt är intresserade av är om det finns någon skillnad (i endera r
 
 <!-- Bör vi föra en en rad om att gör en RCT-design?-->
 
-Sample-storleken för varje grupp bestämdes innan rekrytering påbörjades till n = 70 med en powerberäkning. I studien planerade manipulationer, variabler, mättillfällen och insamlad data har använts i de efterföljande analyserna utan selektion i efterhand. Alla randomiseringar gjordes av oberoende tredje part vid Stockholms universitet med hjälp av internetbaserade randomiseringstjänster (www.random.org för överintagsexkluderingen och randomiseringen till respektive behandlare samt www.sealedenvelope.com för randomiseringen till de tre grupperna). Studien uppfyller kriterierna för en RCT-design (från engelskans *randomised controlled trial*) enligt @Chambless2001.
+Sample-storleken för varje grupp bestämdes innan rekrytering påbörjades till n = 70 med en powerberäkning. I studien planerade manipulationer, variabler, mättillfällen och insamlad data har använts i de efterföljande analyserna utan selektion i efterhand. Alla randomiseringar gjordes av oberoende tredje part vid Stockholms universitet med hjälp av internetbaserade randomiseringstjänster (www.random.org för överintagsexkluderingen och randomiseringen till respektive behandlare samt www.sealedenvelope.com för randomiseringen till de tre grupperna). Studien uppfyller kriterierna för en RCT-design (från engelskans *randomised controlled trial*) i @Chambless2001.
 
 ### Rekrytering
 
@@ -2280,11 +2280,6 @@ MEN!! Sedan försvara er med att en väntelista ändå har en hel del poänger s
 -->
 
 På grund av studiens tidsomfång finns inga uppföljningsmätningar av deltagarnas mående efter behandlingens avslut (till exempel 3-, 6- eller 12-månadersuppfölningar). Det gör det svårare att predicera hur behandlingsprogrammet påverkar deltagarnas mående och konstruktiva självhävdande över tid. Forskning indikerar dock på att framsteg gjorda under KBT-behandling tenderar att bibehållas över tid. Det är till och med vanligt att ytterligare ökande i mående och minskande av symtombild sker efter avslutad behandling [@Bandelow2018].
-
-<!--
-- Ingen uppföljningsmätning av deltagarnas mående, dvs svårt att veta hur ser ut över tid - tenderar att öka över tid, särskilt vid KBT [@Bandelow2018] som källa!
-
--->
 
 Ytterligare en potentiell brist i studien är användandet av de nyligen översatta versionerna av självskattningsformulären AAA-S [@Thompson2011] och RAS [@Rathus1973]. Då dessa skalor ej fanns tillgängliga på svenska översattes de till den aktuella studien. Det finns många rekommendation och riktlinjer för hur översättningar bör gå till [se @Beaton2000; och @Jones2001 för två väl använda metoder]. Ett gemensamt tema i dessa översättningsmetoder är att materialet översätts från originalspråk till planerat användningsspråk (i det rådande fallet till svenska) av åtminstone två av varandra oberoende individer och att den översatta versionen sedan översätts tillbaka till sitt originalspråk av ytterligare oberoende översättare. En bedömning görs sedan mellan originalversionen och versionen översatt från det planerade användningsspråket till originalspråket. AAA-S och RAS översattes inför föreliggande uppsats endast en gång, från engelska till svenska.
 
