@@ -728,8 +728,10 @@ xdemocat <-
   "Folkskola/grundskola",
   "Gymnasium",
   "Yrkesutbildning",
-  "Universitet/högskola (pågående)",
-  "Universitet/högskola (avslutad)",
+#  "Universitet/högskola (pågående)",
+#  "Universitet/högskola (avslutad)",
+  "Pågående högre utbildning",
+  "Avslutad högre utbildning",
   "Annan sysselsättning",
   "Studerande",
   "Arbetande",
@@ -762,13 +764,13 @@ options(OutDec= ",")
 xdemodata.ext <- rbind(
 #  cbind(ll1,ll2,ll3),
   cbind(
+    paste(round(mean(r2.wide.data[wg3, 64]), 2), " (", round(sd(r2.wide.data[wg3, 64]), 2),
+          ")",
+          sep = ""),
     paste(round(mean(r2.wide.data[wg1, 64]), 2), " (", round(sd(r2.wide.data[wg1, 64]), 2),
           ")",
           sep = ""),
     paste(round(mean(r2.wide.data[wg2, 64]), 2), " (", round(sd(r2.wide.data[wg2, 64]), 2),
-          ")",
-          sep = ""),
-    paste(round(mean(r2.wide.data[wg3, 64]), 2), " (", round(sd(r2.wide.data[wg3, 64]), 2),
           ")",
           sep = "")
   ),
@@ -783,21 +785,28 @@ colnames(xdemodata.rot) <- xdemocat
 
 demdata.tabell <- t(xdemodata.rot)
 
+colnames(demdata.tabell) <- c(
+  paste(xG3," (n = ",ll3,")",sep=""),
+  paste(xG1," (n = ",ll1,")",sep=""),
+  paste(xG2," (n = ",ll2,")",sep="")
+)
+
 options(OutDec= ".") 
 
 ```
 
 De `r length(r2.wide.data$subject)` deltagare vars data används i den här studien var mellan 20 och 65 år gamla med en medelålder på 41,8 år (standardavvikelse 8,8). En betydande majoritet (87,8&nbsp;%) identifierade sig som kvinnor, samtliga övriga som män. Knappt tre fjärdedelar av deltagarna hade avslutad universitets- eller högskoleutbildning (71,6&nbsp;%) och tre fjärdedelar av deltagarna var vid behandlingens start yrkesarbetande (75,5&nbsp;%). Mer än hälften av deltagarna (61,3&nbsp;%) hade tidigare erfarenheter av psykologisk behandling. Av dessa hade majoriteten (64,8&nbsp;%) tidigare erfarenheter av KBT. Knappt en tredjedel av alla deltagare (29,0&nbsp;%) hade erfarenhet av psykofarmaka, och vid behandlingsstart stod 17,6&nbsp;% på något slags psykofarmaka. Totalt 3,4&nbsp;% av deltagarna var vid behandlingsstart sjukskrivna. Se tabell \@ref(tab:demdata) för de demografiska faktorernas fördelningar i respektive grupp.
 
-(ref:dem) Demografisk data för deltagarna, redovisad per grupp.
+(ref:dem) Vid förmätningstillfället insamlad sociodemografisk och annan relevant data för deltagarna.
 
-```{r demdata, out.width="100%", tab.align="center", cache = F}
+```{r demdata, tab.align="left", cache = F}
 
 svkable(demdata.tabell, caption = "(ref:dem)", align="ccc") %>%
   kable_styling(full_width = F) %>%
-  column_spec(2, width = "7em") %>%
-  column_spec(3, width = "7em") %>%
-  column_spec(4, width = "7em") %>%
+  column_spec(1, width = "12em") %>%
+  column_spec(2, width = "7.5em") %>%
+  column_spec(3, width = "7.5em") %>%
+  column_spec(4, width = "9em") %>%
   pack_rows("Ålder (år)", 1, 1, bold = F) %>%
   pack_rows("Kön (%)", 2, 2, bold = F) %>%
   pack_rows("Civilstånd (%)", 3, 6, bold = F) %>%
@@ -1314,6 +1323,8 @@ Vi fann inga brott mot antagandena för flernivåanalys vid visuell kontroll av 
 # https://cran.r-project.org/web/packages/stargazer/vignettes/stargazer.pdf
 # NB! We're using stargazer-booktabs to get prettier LaTeX table output
 
+scalenames = c("AAA-S Ag", "AAA-S Ad", "Rathus", "LSAS-SR", "GAD-7", "PHQ-9", "Välmåendeformuläret")
+
 labradorer <- c(
   xg1,
   xg2,
@@ -1344,7 +1355,10 @@ stargazer::stargazer(
   digits = 1,
   covariate.labels = c("Intercept",labradorer),
   float.env = "sidewaystable",
-  omit.stat = c("aic","bic","ll"),
+  omit.stat = c("aic","bic","ll","n"),
+  dep.var.caption = "Primära och sekundära utfallsmått",
+  dep.var.labels = scalenames,
+  notes.label = "Observera:",
   title = "En tabelltext"
 )
 
