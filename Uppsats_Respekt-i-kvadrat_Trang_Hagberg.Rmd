@@ -568,7 +568,7 @@ Evidensen för beteendeterapi och KBT för syndromala och icke-syndromala psykol
 
 @Chambless2001 ger en tidig översikt av det samlade forskningsläget, utifrån en tydlig definition av vad som bör betraktas som en "empiriskt underbyggd terapi" -- det vill säga att effekten av terapin bör ha undersökts med en randomiserad och kontrollerad studie (RCT) som har haft specificerade grupper och använda väl beskrivna behandlingar. Sammanställningen visar att KBT överlag har bättre evidens i den samlade litteraturen än andra terapiformer (oaktat huruvida till vilken grad dessa andra terapiformer faktiskt är verksamma). Systematiska sammanställningar med uppdaterat forskningsläge utifrån dessa principer har sedan dess publicerats regelbundet i England av @NationalInstituteforHealthandCareExcellence2018 och i USA av @AmericanPsychologicalAssociation2016. @Socialstyrelsen2017 ger de senaste nationella riktlinjerna för vård vid depression och ångestsyndrom i Sverige. I dessa riktlinjer är KBT-behandling näst intill uteslutande förstahandsvalet vid psykologisk behandling.
 
-@Hofmann2012 är en översikt av meta-analyser som visar att KBT alltjämt är en av de mest effektiva terapiformerna. I deras översikt visade sig KBT effektivt för att motverka bland annat trauma- och stressrelaterade symtom, liksom depressiva och ångestrelaterade syndrom. Litteraturen stödjer att KBT har god effekt för de syndrom som @Speed2018a associerar med brister i konstruktiv självhävdelse.
+@Hofmann2012 är en översikt av meta-analyser som visar att KBT alltjämt är en av de mest effektiva terapiformerna. I deras översikt visade sig KBT effektivt för att motverka bland annat trauma- och stressrelaterade symtom, liksom depressiva och ångestrelaterade syndrom. Förbättring i mående och minskande av psykopatologiska symtom efter utförd KBT-behandling tenderar till och med att öka respektive minska månader efter att behandlingen avslutats [@Bandelow2018]. Litteraturen stödjer att KBT har god effekt för de syndrom som @Speed2018a associerar med brister i konstruktiv självhävdelse.
 
 ## Några saker att förhålla sig till
 *ovan rubrik är temporär och bör få ett bättre namn, detsamma gäller följande underrubriker*
@@ -585,7 +585,7 @@ Att benämna ovan kognitioner för förutsägelser är dessutom i linje med det 
 
 Utifrån *tidigare* erfarenheter kan en individ ha giltiga och begripliga upplevelser av ångest och rädsla som dessvärre leder till undvikande *här och nu*. Detta kan i sin tur göra att individen går miste om sådant som hen värdesätter -- exempelvis att: få närhet, mer tid till egna intressen, hävda sina åsikter eller att nå andra naturliga förstärkare för stanna-kvar-och-märk-att-ångesten-går-över-beteenden.
 
-Undvikande av aversiva stimuli som också är genuint farliga är ett beteende med evolutionärt centralt överlevadsvärde. Att i överskott undvika stimuli som upplevs hotfulla men som inte är farliga kan däremot leda till psykopatologiska besvär. När sådana undvikandebeteenden väl vants in är de vanligtvis svåra att bryta på egen hand. Undvikandet leder på kort sikt allt som oftast till positiva följder (till exempel snabb men tillfällig reduktion av obehag), och även fast det  på lång sikt allt som oftast leder till negativa följder (minskad tillgång till det som värdesätts, upplevelsen av obehag ökar över tid m.m.) tenderar vi att bortse från det. Att undvika det som erfarenhetsmässigt upplevts som aversivt framstår ofta som funktionellt och rationellt, även när det inte är det [@Hayes1996].
+Undvikande av aversiva stimuli -- det vill säga händelser, situationer och saker som framkallar obehag, olust, ångest eller upplevelsen av fara -- som också är genuint farliga är ett beteende med evolutionärt centralt överlevadsvärde. Att i överskott undvika stimuli som upplevs hotfulla men som inte är farliga kan däremot leda till psykopatologiska besvär. När sådana undvikandebeteenden väl vants in är de vanligtvis svåra att bryta på egen hand. Undvikandet leder på kort sikt allt som oftast till positiva följder (till exempel snabb men tillfällig reduktion av obehag), och även fast det  på lång sikt allt som oftast leder till negativa följder (minskad tillgång till det som värdesätts, upplevelsen av obehag ökar över tid m.m.) tenderar vi att bortse från det. Att undvika det som erfarenhetsmässigt upplevts som aversivt framstår ofta som funktionellt och rationellt, även när det inte är det [@Hayes1996].
 
 Särskilt svårt är det att bryta beteenden som har som funktion att undvika det som väcker rädsla. En stor utmaning i behandling av ångestsyndrom är att överbrygga det undvikandet som följt av just rädsloinlärning. @Ohman2001 konstaterar att rädsloinlärning inte så lätt går att påverka med kognitiv kontroll i skarpt läge, inte minst för att de neuronala rädslokretsarna vid amygdala ligger djupt förankrade i limbiska delar av hjärnan och mer eller mindre lever sitt eget liv.
 
@@ -687,15 +687,15 @@ Det vi primärt är intresserade av är om det finns någon skillnad (i endera r
 
 <!-- Bör vi föra en en rad om att gör en RCT-design?-->
 
-Sample-storleken för varje grupp bestämdes innan rekrytering påbörjades till n = 70 med en powerberäkning. I studien planerade manipulationer, variabler, mättillfällen och insamlad data har använts i de efterföljande analyserna utan selektion i efterhand. Alla randomiseringar gjordes av oberoende tredje part vid Stockholms universitet med hjälp av internetbaserade randomiseringstjänster (www.random.org för överintagsexkluderingen och randomiseringen till respektive behandlare samt www.sealedenvelope.com för randomiseringen till de tre grupperna). Studien uppfyller kriterierna för en RCT-design (från engelskans *randomised controlled trial*) i @Chambless2001.
+Sample-storleken för varje grupp bestämdes innan rekrytering påbörjades till n = 70 med en powerberäkning. I studien planerade manipulationer, variabler, mättillfällen och insamlad data har använts i de efterföljande analyserna utan selektion i efterhand. Alla randomiseringar gjordes av oberoende tredje part vid Stockholms universitet med hjälp av internetbaserade randomiseringstjänster (www.random.org för överintagsexkluderingen och randomiseringen till respektive behandlare samt www.sealedenvelope.com för randomiseringen till de tre grupperna). Studien uppfyller kriterierna för en RCT-design (från engelskans *randomised controlled trial*) enligt @Chambless2001.
 
 ### Rekrytering
 
-Rekrytering ägde rum mellan 28 januari och 5 februari 2020. Studien annonserades på sociala medier (www.facebook.com, www.twitter.com, www.linkedin.com samt www.instagram.com). Den annonserades även på diverse andra webbplatser (t ex www.studie.nu). De som ville veta mer om studien hänvisades till studiens hemsida (www.respektikvadrat.se). Där fanns information om hur studiens upplägg, inklusions- och exklusionskriterier och startdatum, liksom upplysningar om den arbetsinsats som deltagande förväntades innebära under interventionens 8 veckor. Där fanns även information om vilka personer som var involverade i studien samt kontaktuppgifter till studieansvarig. Deltagarna anmälde sitt intresse genom att uppge sin e-postadress. I anslutning till formuläret för intresseanmälan gavs även information kring potentiella risker med deltagande och villkor för sekretess, datasäkerhet, datahantering samt information om att frivillighet och möjligheten att när som helst avbryta sitt deltagande. När deltagarna väl anmält sitt intresse skickades en länk via e-post med självskattningsformulär att besvara elektroniskt. Formulären frågade efter generellt välmående, nedstämdhet, ångest, socialfobiska tendenser samt egenupplevd grad av självhävdelse. Deltagarna fick även lämna sociodemografiska uppgifter samt besvara frågor om erfarenhet av tidigare psykologisk behandling, pågående medicinering och motivation till deltagande. Deltagarna hade även möjligheten att i fritext lämna ytterligare valfria upplysningar.
+Rekrytering ägde rum mellan 28 januari och 5 februari 2020. Studien annonserades på sociala medier (www.facebook.com, www.twitter.com, www.linkedin.com samt www.instagram.com). Den annonserades även på diverse andra webbplatser (t ex www.studie.nu). De som ville veta mer om studien hänvisades till studiens hemsida (www.respektikvadrat.se). Där fanns information om hur studiens upplägg, inklusions- och exklusionskriterier och startdatum, liksom upplysningar om den arbetsinsats som deltagandet förväntades innebära under interventionens 8 veckor. Där fanns även information om vilka personer som var involverade i studien samt kontaktuppgifter till studieansvarig. Deltagarna anmälde sitt intresse genom att uppge sin e-postadress. I anslutning till formuläret för intresseanmälan gavs även information kring potentiella risker med deltagande och villkor för sekretess, datasäkerhet, datahantering samt information om att frivillighet och möjligheten att när som helst avbryta sitt deltagande. När deltagarna väl anmält sitt intresse skickades en länk via e-post med självskattningsformulär att besvara elektroniskt. Formulären frågade efter generellt välmående, nedstämdhet, ångest, socialfobiska tendenser samt egenupplevd grad av självhävdelse. Deltagarna fick även lämna sociodemografiska uppgifter samt besvara frågor om erfarenhet av tidigare psykologisk behandling, pågående medicinering och motivation till deltagande. Deltagarna hade även möjligheten att i valfri fritext lämna ytterligare upplysningar.
 
 ### Deltagare
 
-Som framgår av figur \@ref(fig:flow) så anmälde totalt 657 personer sitt intresse till studien varav 464 personer slutförde screeningsprocessen. Av dessa uteslöts 126 personer då de uppfyllde något av exklusionskriterierna. De kvarvarande 338 personerna erbjöds plats i studien. Av dessa bejakade 253 sin plats. 43 personer exkluderades från behandlingen genom randomisering så att 210 inkluderades. De deltagere som exkluderades via randomisering erbjöds tillgång till träningsprogrammet på samma sätt som kontrollgruppen, men med skillnaden att deras förmätningsvärden inte användes i beräkningarna. Vid behandlingsstart hade studien 210 deltagare. Vid en extra kontroll under behandlingens gång upptäcktes att fem deltagare (n = 3 från gruppen `r xg1` och n = 2 från gruppen `r xg3`) hade annan pågående psykologisk behandling och därför felaktigt inkluderats i studien. Dessa deltagare har fått fullgå behandlingen på oförändrade villkor, men deras resultat har exkluderats från alla beräkningar. Utöver detta bad en deltagare från gruppen `r xg2` under träningsprogrammets gång att bli exkluderad från studien. Ingen data har använts hos de fem deltagarna som hade pågående psykologisk behandling och endast förmätningen har använts från deltagaren som bad om att bli exkluderad.
+Som framgår av figur \@ref(fig:flow) så anmälde totalt 657 personer sitt intresse till studien varav 464 personer slutförde screeningsprocessen. Av dessa uteslöts 126 personer då de uppfyllde något av exklusionskriterierna. De kvarvarande 338 personerna erbjöds plats i studien. Av dessa bejakade 253 sin plats. 43 personer exkluderades från behandlingen genom randomisering så att 210 inkluderades. De deltagere som exkluderades via randomisering erbjöds tillgång till träningsprogrammet på samma sätt som kontrollgruppen, men med skillnaden att deras skattningssvar inte användes i beräkningarna. Vid behandlingsstart hade studien 210 deltagare. Vid en extra kontroll under behandlingens gång upptäcktes det att fem deltagare (n = 3 från gruppen `r xg1` och n = 2 från gruppen `r xg3`) hade annan pågående psykologisk behandling och därför felaktigt inkluderats i studien. Dessa deltagare har fått fullgå behandlingen på oförändrade villkor, men deras skattningar har exkluderats från alla beräkningar. Utöver detta bad en deltagare från gruppen `r xg2` under träningsprogrammets gång att bli exkluderad från studien. Ingen data har använts hos de fem deltagarna som hade pågående psykologisk behandling och endast förmätningen har använts från deltagaren som bad om att bli exkluderad.
 
 ```{r flow, out.width="100%", fig.align="center", out.extra='', fig.cap='Flödesschema över inklusion, exklusion (med kriterier) samt bortfall.'}
 
@@ -728,10 +728,8 @@ xdemocat <-
   "Folkskola/grundskola",
   "Gymnasium",
   "Yrkesutbildning",
-#  "Universitet/högskola (pågående)",
-#  "Universitet/högskola (avslutad)",
-  "Pågående högre utbildning",
-  "Avslutad högre utbildning",
+  "Universitet/högskola (pågående)",
+  "Universitet/högskola (avslutad)",
   "Annan sysselsättning",
   "Studerande",
   "Arbetande",
@@ -764,13 +762,13 @@ options(OutDec= ",")
 xdemodata.ext <- rbind(
 #  cbind(ll1,ll2,ll3),
   cbind(
-    paste(round(mean(r2.wide.data[wg3, 64]), 2), " (", round(sd(r2.wide.data[wg3, 64]), 2),
-          ")",
-          sep = ""),
     paste(round(mean(r2.wide.data[wg1, 64]), 2), " (", round(sd(r2.wide.data[wg1, 64]), 2),
           ")",
           sep = ""),
     paste(round(mean(r2.wide.data[wg2, 64]), 2), " (", round(sd(r2.wide.data[wg2, 64]), 2),
+          ")",
+          sep = ""),
+    paste(round(mean(r2.wide.data[wg3, 64]), 2), " (", round(sd(r2.wide.data[wg3, 64]), 2),
           ")",
           sep = "")
   ),
@@ -785,28 +783,21 @@ colnames(xdemodata.rot) <- xdemocat
 
 demdata.tabell <- t(xdemodata.rot)
 
-colnames(demdata.tabell) <- c(
-  paste(xG3," (n = ",ll3,")",sep=""),
-  paste(xG1," (n = ",ll1,")",sep=""),
-  paste(xG2," (n = ",ll2,")",sep="")
-)
-
 options(OutDec= ".") 
 
 ```
 
 De `r length(r2.wide.data$subject)` deltagare vars data används i den här studien var mellan 20 och 65 år gamla med en medelålder på 41,8 år (standardavvikelse 8,8). En betydande majoritet (87,8&nbsp;%) identifierade sig som kvinnor, samtliga övriga som män. Knappt tre fjärdedelar av deltagarna hade avslutad universitets- eller högskoleutbildning (71,6&nbsp;%) och tre fjärdedelar av deltagarna var vid behandlingens start yrkesarbetande (75,5&nbsp;%). Mer än hälften av deltagarna (61,3&nbsp;%) hade tidigare erfarenheter av psykologisk behandling. Av dessa hade majoriteten (64,8&nbsp;%) tidigare erfarenheter av KBT. Knappt en tredjedel av alla deltagare (29,0&nbsp;%) hade erfarenhet av psykofarmaka, och vid behandlingsstart stod 17,6&nbsp;% på något slags psykofarmaka. Totalt 3,4&nbsp;% av deltagarna var vid behandlingsstart sjukskrivna. Se tabell \@ref(tab:demdata) för de demografiska faktorernas fördelningar i respektive grupp.
 
-(ref:dem) Vid förmätningstillfället insamlad sociodemografisk och annan relevant data för deltagarna.
+(ref:dem) Demografisk data för deltagarna, redovisad per grupp.
 
-```{r demdata, tab.align="left", cache = F}
+```{r demdata, out.width="100%", tab.align="center", cache = F}
 
 svkable(demdata.tabell, caption = "(ref:dem)", align="ccc") %>%
   kable_styling(full_width = F) %>%
-  column_spec(1, width = "12em") %>%
-  column_spec(2, width = "7.5em") %>%
-  column_spec(3, width = "7.5em") %>%
-  column_spec(4, width = "9em") %>%
+  column_spec(2, width = "7em") %>%
+  column_spec(3, width = "7em") %>%
+  column_spec(4, width = "7em") %>%
   pack_rows("Ålder (år)", 1, 1, bold = F) %>%
   pack_rows("Kön (%)", 2, 2, bold = F) %>%
   pack_rows("Civilstånd (%)", 3, 6, bold = F) %>%
@@ -864,7 +855,7 @@ I självhjälpsmaterialet får läsaren lära sig skillnaden mellan olika typer 
 
 I *Assert Yourself* föreskrivs självhävdande beteenden utifrån de teoretiska antagandena i @wolpe1990practice om reciprok inhibition och klassisk betingning: Genom att träna på att i ord och handling uttrycka det som i relationen till en annan person väcker ångest (exempelvis undertryckt ledsenhet eller ilska) kan klienten på sikt få minskade besvär med autonoma ångestresponser. @Wolpe1952 förespråkar träning på att uppleva de ångestväckande autonoma responserna (känslorna) *in-vivo*. Att utföra de föreskrivna beteendena handlar inte om att enbart "låtsas". Det långsiktiga målet med träningen är att lära sig att inhibera ångesten genom självhävdelse. För fall då en fysisk motpart saknas, och ångesten väcks av till exempel platser, objekt eller ord, föreslår @Wolpe1952 istället avslappning som ett sätt att inhibera ångestresponsen, utifrån rationalen att det är omöjligt att känna ångest och samtidigt vara avslappnad (så kallad reciprok inhbition).
 
-Självhjälpsmaterialet ger också rationalen för kognitiv omstrukturering med metoder från @beck1979cognitive, @Clark1986, @clark1995cognitive och @powell2017mental. Kognitiv omstrukturering uppnås enligt dessa genom att pröva giltigheten av det hindrande tänkandet i verkliga livet. Genom att planera och utföra beteendeexperiment får deltagaren hjälp att pröva giltigheten av egna negativa tankar, för att på så sätt uppnå större flexibilitet i responserna i olika mer eller mindre pressande situationer. 
+Självhjälpsmaterialet ger också rationalen för kognitiv omstrukturering med metoder från @beck1979cognitive, @Clark1986, @clark1995cognitive och @powell2017mental. Kognitiv omstrukturering uppnås enligt dessa genom att pröva giltigheten av det hindrande tänkandet i verkliga livet. Genom att planera och utföra beteendeexperiment får deltagaren hjälp att pröva giltigheten av egna negativa tankar. Målet med beteendeexperiment är att uppnå större flexibilitet i responser i olika mer eller mindre pressande situationer. 
 
 Utöver detta innehåller arbetsmaterialet ett avsnitt om progressiv muskelavslappning, med syftet att hjälpa läsaren att känna igen spänning i kroppen, sänka den allmänna spänningsnivån och träna på en aktiv coping-teknik för stressande lägen. Instruktioner för den progressiva och tillämpade avslappning som presenteras är snarlika de som beskrivs i @ost2006tillampad.
 
@@ -876,11 +867,16 @@ Materialet är översatt och anpassat till svenska förhållanden av TH med till
 
 En mycket inspirerande faktor när det engelska materialet anpassades och utvecklades till självhjälpsprogrammet *Respekt i kvadrat* var det aktuella forskningsläget kring exponering [se bland annat @Craske2008; @DeCastella2015; @Sewart2019; @Knowles2019; @Gross2003]. TH och PT bedömde det som en central komponent att deltagarna så tidigt som möjligt, och så ofta som möjligt, tog aktiva steg för att bryta vidmakthållande undvikande. Redan tidigt i träningsprogrammet uppmuntrades deltagarna att närma sig aversiva stimuli (och utvärdera sina reaktioner) på olika sätt. 
 
+
+<!--
+Möjligen att vi även ska kort skriva om
 VARIATION 
+MÄNGDTRÄNING, MULTIPLE EXEMPLAR TRAINING 
+Obegränsade möjligheter att genomföra beteendeexperiment.
+Dock komma ihåg att vi ska hålla det här avsnittet av metoddelen kort och koncist
+-->
 
-MÄNGDTRÄNING, MULTIPLE EXEMPLAR TRAINING Obegränsade möjligheter att genomföra beteendeexperiment.
-
-I linje med forskning om att acceptera och ge plats för tankar och känslor i pressade situationer [@Hayes1996; @Hayes2004a; @Luoma2007] lägger träningsprogrammet Respekt i kvadrat större vikt vid acceptans och tolerans av ångest än @michel2008 genom tillägg av nyskrivna avsnitt och övningar som fördelades över modulerna. Ett exempel på material som uppmanar deltagaren att aktivt stanna kvar i (eller rent av uppsöka) för brytande av undvikande relevant respondent obehag är psykoedukativa texter om optimering av inlärning via variation och mängdträning. I de avsnitten introduceras även begreppen *fixed mindset* och *growth mindset*, som handlar om effekten av olika förhållningssätt till utmaningar och hur man genom att möta obehaget skapar förutsättningar för utveckling [@Dweck1995; @Schroder2016; @Schroder2015; @DeCastella2015]. Ett annat är psykoedukativa avsnitt om vidmakthållande av ångestrelaterade besvär som också innehåller en övning som både handlar om att identifiera värdebaserade fördelar med handlande i situationer som tidigare har präglats av undvikande och om att identifiera kortsiktigt belönande anledningar att stå ut med respondenta rädsloreaktioner i situationer som tidigare undvikits. 
+I linje med forskning om att acceptera och ge plats för tankar och känslor i pressade situationer [@Hayes1996; @Hayes2004a; @Luoma2007] lade träningsprogrammet Respekt i kvadrat större vikt vid acceptans och tolerans av ångest än @michel2008. Det gjordes genom tillägg av nyskrivna avsnitt och övningar som fördelades över modulerna. Ett exempel på material som uppmanar deltagaren att aktivt stanna kvar i eller rent av uppsöka -- för brytande av undvikande relevant -- respondent obehag är psykoedukativa texter om optimering av inlärning via variation och mängdträning. I de avsnitten introduceras även begreppen *fixed mindset* och *growth mindset*, som handlar om effekten av olika förhållningssätt till utmaningar och hur man genom att möta obehaget skapar förutsättningar för utveckling [@Dweck1995; @Schroder2016; @Schroder2015; @DeCastella2015]. Ett annat är psykoedukativa avsnitt om vidmakthållande av ångestrelaterade besvär som också innehåller en övning som både handlar om att identifiera värdebaserade fördelar med handlande i situationer som tidigare har präglats av undvikande och om att identifiera kortsiktigt belönande anledningar att stå ut med respondenta rädsloreaktioner i situationer som tidigare undvikits. 
 
 I @michel2008 presenteras rationalen för och övningar i muskelavslappning översiktligt i ett kapitel. I linje med Östs [-@ost2006tillampad] rekommendation om att tillämpad avslappning bör introduceras stegvis över en längre tidsperiod introduceras deltagarna till progressiv muskelavslappning i modul 2, med en gradvis inriktning i modulerna 3--5 mot tillämpad avslappning. Under första delen av programmet uppmanas deltagarna explicit att tillämpa principerna om hög grad av variation och upprepning i färdighetsträningen av progressiv och alltmer tillämpad avslappning. Integreringen av progressiv muskelavslappning i hela första delen av träningsprogrammet tjänar syftena att ge deltagarna möjlighet att tillgodogöra sig färdigheter som relativt snabbt har potential att ge positiva effekter i vardagen och att ge dem en egen erfarenhet av fördelarna med mängdträning.
 
@@ -1303,7 +1299,6 @@ well.lmer <-
   )
 #plot_model(well.lmer, type="diag") # Diagnostic plots look ok, with some outliers (humans)
 
-```
 
 Vi fann inga brott mot antagandena för flernivåanalys vid visuell kontroll av diagnostiska plottar av de modeller som anpassats till observerade data. 
 
@@ -1967,7 +1962,7 @@ rathus.pre.dur.jt.table <- xt
 
 Se tabell \@ref(tab:jtprocent) med sammanställning jt/rci
 
-(ref:jtp) Klinisk signifikans med andel tillhörande de olika kategorierna för de två huvudutfallsmåtten samt Rathus. Deltagare som deltog i förmätningen men inte en uppföljande mätning har fått förmätningsvärdena framflyttade till det senare mättillfället, i enlighet med principen om *intention to treat*.
+(ref:jtp) Klinisk signifikans med andel tillhörande de olika kategorierna för de två huvudutfallsmåtten samt Rathus. Deltagare som deltog i förmätningen men som  ej fyllde i en uppföljande mätning har fått förmätningsvärdena framflyttade till det senare mättillfället, i enlighet med principen om *intention to treat*.
 
 ```{r jtprocent, tab.align="center", cache=F}
 
@@ -2192,7 +2187,7 @@ Viktigt i och med att ni tagit upp detta med behandlingsstödets effekter i intr
 
 ## Resultatdiskussion
 
-återstår att skriva!
+<!-- Diskussion om själva resultatet återstår att skriva! -->
 
 
 
@@ -2241,12 +2236,7 @@ x @Baumeister2014a om att guided treatment tenderar att vara superior och att hu
 x å andra sidan vad våra resultat visar på (?)
 -->
 
-All data som låg till grund för inkludering eller exkludering i den aktuella studien var insamlad från självskattningsformulär. I och med att forskningspersonsinformationen som potentiella deltagare kunde läsa innan de påbörjade screeningsprocessen presenterade såväl inkluderings- som exkluderingskriterier (även om exkluderingskriterierna till viss del var allmänt formulerade) medför det risken att de som sökte till studien anpassade sina svar för att bli inkluderade. Då ingen klinisk intervju användes i screeningprocessen fanns det ingen möjlighet att på så sätt upptäcka individer som borde exkluderas. Detta kan medföra att individer som egentligen borde ha exkluderats, på grund av icke sanningsenliga svar, istället blev inkluderade. Ingen klinisk intervju inkluderades då det låg utanför studiens möjliga resurser att administrera den till alla potentiella deltagare. En fördel med att inte ha använt kliniska intervjuerna är att tiden mellan påbörjad rekrytering och behandlingsstart blev kort, endast två veckor.
-
-<!-- [Pers kommentar] 
-När ni tar upp en brist så avsluta gärna med att släta ut bristen. I detta fall något om att motivationen till social önskvärdhet bör vara lägre när opersonliga nätbehandlingar görs (kontra face-to-face behandlingar där man inte vill göra sin terapeut ledsen och därför svarar att man mår bättre än vad man egentligen gör). 
--->
-
+All data som låg till grund för inkludering eller exkludering i den aktuella studien var insamlad från självskattningsformulär. I och med att forskningspersonsinformationen som potentiella deltagare kunde läsa innan de påbörjade screeningsprocessen presenterade såväl inkluderings- som exkluderingskriterier (även om exkluderingskriterierna till viss del var allmänt formulerade) medför det risken att de som sökte till studien anpassade sina svar för att bli inkluderade. Då ingen klinisk intervju användes i screeningprocessen fanns det ingen möjlighet att på så sätt upptäcka individer som borde exkluderas. Detta kan medföra att individer som egentligen borde ha exkluderats, på grund av icke sanningsenliga svar, istället blev inkluderade. Å andra sidan bör motivationen till social önskvärdhet vid deltagarnas ifyllnad av skattningsskalorna varit lägre i och med att ifyllningen gjordes mer anonymnt än om screeningen skulle skett ansikte-mot-ansikte eller via en klinisk intervju per telefon. Ingen klinisk intervju inkluderades då det låg utanför studiens möjliga resurser att administrera den till alla potentiella deltagare. En fördel med att inte ha använt kliniska intervjuerna är att tiden mellan påbörjad rekrytering och behandlingsstart blev kort, endast två veckor.
 
 ### Samplets representativitet för populationen
 
@@ -2276,10 +2266,6 @@ Då det i skrivande stund varken finns data om prevalens av bristande självhäv
 Kanske också ta upp detta med vad ni egentligen hade för population. Var det socialfobiker? I alla fall hade de ju en förhöjd LSAS-SR poäng som indikerar problem.
 -->
 
-<!--
-Bör den data vi refererar till i avsnittet om ojämn könsfördelning bifogas på något sätt? Vi kan även argumentera för att algoritmen till stor del förklarar spridningen i ålder hos vårt sample då majoriteten av de som fick se reklamen var mellan 35-54 år gamla.
--->
-
 <!-- 
 - Vårt primära utfallsmått för assertiveness är inte validerat på svenska
 - Vårt sekundära utfallsmått för assertiveness är inte validerat på svenska
@@ -2296,9 +2282,9 @@ I denna studie placerades en tredjedel av deltagarna på en väntelista. En risk
 
 <!-- stycket härunder behöver jobbas med men är ett försök till att inkorporera Pers kommentar nedan-->
 
-<!--
+
 Å andra sidan är väntelista effektivt för att korrigera mot händelser i världen som kan påverka studiens deltagare och därmed studiens resultat. Under studiens gång spred sig viruset covid-19 i Sverige och över världen. Nästintill alla människor påverkades på något sätt av detta. Antingen i dagliga rutiner, i fysiskt och psykiskt mående eller i både och. Hade vår studies kontrollgrupp haft en annan betingelse än väntelista hade det varit svårt att konstatera vad i deras resultat som var påverkat av betingelsen i fråga, och vad i resultatet som berodde på covid-19s ankomst i Sverige. I och med att vår studies kontrollgrupp var betingade till väntelista är det enklare att ta höjd för detta. 
--->
+
 
 
 <!-- [Pers kommentar] 
@@ -2306,6 +2292,8 @@ Kanske även hänvisa till
 Cuijpers, P., & Cristea, I. A. (2016). How to prove that your therapy is effective, even when it is not: A guideline. Epidemiology and Psychiatric Sciences, 25(5), 428-435. doi:10.1017/S2045796015000864
 MEN!! Sedan försvara er med att en väntelista ändå har en hel del poänger så som att korrigera för extrema händelser i omvärlden - VILKET JU CORONAN VERKLIGEN ÄR!
 -->
+
+På grund av studiens tidsomfång finns inga uppföljningsmätningar av deltagarnas mående efter behandlingens avslut (till exempel 3-, 6- eller 12-månadersuppfölningar). Det gör det svårare att predicera hur behandlingsprogrammet påverkar deltagarnas mående och konstruktiva självhävdande över tid. Forskning indikerar dock på att framsteg gjorda under KBT-behandling tenderar att bibehållas över tid. Det är till och med vanligt att ytterligare ökande i mående och minskande av symtombild sker efter avslutad behandling [@Bandelow2018].
 
 <!--
 - Ingen uppföljningsmätning av deltagarnas mående, dvs svårt att veta hur ser ut över tid - tenderar att öka över tid, särskilt vid KBT [@Bandelow2018] som källa!
@@ -2332,6 +2320,9 @@ TH: Menar du de som hoppat av eller de som inte svarat på alla självskattninga
 -->
 
 ## Sammanfattning
+Föreliggande studie ville undersöka effekten på konstruktivt självhävande av behandlingsprogrammet *Respekt i kvadrat*. Att ta del av behandlingsprogrammet (med eller utan behandlingsstöd) var effektivare än att betingas till en väntelista. Mer forskning behövs för att med större säkerhet kunna generalisera resultaten till populationen i stort.
+
+
 <!-- [Pers kommentar] Ja. Typ 2-3 meningar som sammanfattar hela arbetet. -->
 
 
