@@ -847,7 +847,7 @@ I @michel2008 presenteras rationalen för och övningar i muskelavslappning öve
 här bör ytterligare ett kort avsnitt föras in om valet att fokusera på avslappning i behandlingsprogrammet.
 -->
 
-Anpassningarna och tilläggen tog sig bland annat form av: text och illustrationer samt länkar till fördjupningsmaterial; videofilmer med konversationer och rollspel mellan PT och TH; för programmet framtagna videofilmer och ljudfiler med avslappningsövningar; inbäddade externa videoklipp och ljudfiler samt; ett stort antal nya interaktiva övningar, bland annat utvärderingsformulär av varje veckas innehåll, veckovis uppföljning av konstruktiv självhävdelse samt övningar för återfallsprevention och vidmakthållande av behandlingseffekter. Se även tabell \@ref(tab:intervention) för en översiktlig genomgång av innehållet i modulerna i interventionen *Respekt i kvadrat*.
+Anpassningarna och tilläggen inkluderade sammanfattningsvis nya texter och illustrationer, länkar till fördjupningsmaterial, videofilmer med konversationer och rollspel mellan PT och TH, nedladdningsbara ljudfiler med avslappningsövningar, inbäddade externa videoklipp och ljudfiler samt ett stort antal nya interaktiva övningar. Tilläggsövningarna inkluderar utvärderingsformulär av varje veckas innehåll, veckovis uppföljning av konstruktiv självhävdelse samt utökade övningar för återfallsprevention och vidmakthållande av behandlingseffekter. Se även tabell \@ref(tab:intervention) för en översiktlig genomgång av innehållet i modulerna i interventionen *Respekt i kvadrat*.
 
 <!--
 
