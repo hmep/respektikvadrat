@@ -691,11 +691,11 @@ Sample-storleken för varje grupp bestämdes innan rekrytering påbörjades till
 
 ### Rekrytering
 
-Rekrytering ägde rum mellan 28 januari och 5 februari 2020. Studien annonserades på sociala medier (www.facebook.com, www.twitter.com, www.linkedin.com samt www.instagram.com). Den annonserades även på diverse andra webbplatser (t ex www.studie.nu). De som ville veta mer om studien hänvisades till studiens hemsida (www.respektikvadrat.se). Där fanns information om hur studiens upplägg, inklusions- och exklusionskriterier och startdatum, liksom upplysningar om den arbetsinsats som deltagande förväntades innebära under interventionens 8 veckor. Där fanns även information om vilka personer som var involverade i studien samt kontaktuppgifter till studieansvarig. Deltagarna anmälde sitt intresse genom att uppge sin e-postadress. I anslutning till formuläret för intresseanmälan gavs även information kring potentiella risker med deltagande och villkor för sekretess, datasäkerhet, datahantering samt information om att frivillighet och möjligheten att när som helst avbryta sitt deltagande. När deltagarna väl anmält sitt intresse skickades en länk via e-post med självskattningsformulär att besvara elektroniskt. Formulären frågade efter generellt välmående, nedstämdhet, ångest, socialfobiska tendenser samt egenupplevd grad av självhävdelse. Deltagarna fick även lämna sociodemografiska uppgifter samt besvara frågor om erfarenhet av tidigare psykologisk behandling, pågående medicinering och motivation till deltagande. Deltagarna hade även möjligheten att i fritext lämna ytterligare valfria upplysningar.
+Rekrytering ägde rum mellan 28 januari och 5 februari 2020. Studien annonserades på sociala medier (www.facebook.com, www.twitter.com, www.linkedin.com samt www.instagram.com). Den annonserades även på diverse andra webbplatser (t ex www.studie.nu). De som ville veta mer om studien hänvisades till studiens hemsida (www.respektikvadrat.se). Där fanns information om hur studiens upplägg, inklusions- och exklusionskriterier och startdatum, liksom upplysningar om den arbetsinsats som deltagandet förväntades innebära under interventionens 8 veckor. Där fanns även information om vilka personer som var involverade i studien samt kontaktuppgifter till studieansvarig. Deltagarna anmälde sitt intresse genom att uppge sin e-postadress. I anslutning till formuläret för intresseanmälan gavs även information kring potentiella risker med deltagande och villkor för sekretess, datasäkerhet, datahantering samt information om att frivillighet och möjligheten att när som helst avbryta sitt deltagande. När deltagarna väl anmält sitt intresse skickades en länk via e-post med självskattningsformulär att besvara elektroniskt. Formulären frågade efter generellt välmående, nedstämdhet, ångest, socialfobiska tendenser samt egenupplevd grad av självhävdelse. Deltagarna fick även lämna sociodemografiska uppgifter samt besvara frågor om erfarenhet av tidigare psykologisk behandling, pågående medicinering och motivation till deltagande. Deltagarna hade även möjligheten att i valfri fritext lämna ytterligare upplysningar.
 
 ### Deltagare
 
-Som framgår av figur \@ref(fig:flow) så anmälde totalt 657 personer sitt intresse till studien varav 464 personer slutförde screeningsprocessen. Av dessa uteslöts 126 personer då de uppfyllde något av exklusionskriterierna. De kvarvarande 338 personerna erbjöds plats i studien. Av dessa bejakade 253 sin plats. 43 personer exkluderades från behandlingen genom randomisering så att 210 inkluderades. De deltagere som exkluderades via randomisering erbjöds tillgång till träningsprogrammet på samma sätt som kontrollgruppen, men med skillnaden att deras förmätningsvärden inte användes i beräkningarna. Vid behandlingsstart hade studien 210 deltagare. Vid en extra kontroll under behandlingens gång upptäcktes att fem deltagare (n = 3 från gruppen `r xg1` och n = 2 från gruppen `r xg3`) hade annan pågående psykologisk behandling och därför felaktigt inkluderats i studien. Dessa deltagare har fått fullgå behandlingen på oförändrade villkor, men deras resultat har exkluderats från alla beräkningar. Utöver detta bad en deltagare från gruppen `r xg2` under träningsprogrammets gång att bli exkluderad från studien. Ingen data har använts hos de fem deltagarna som hade pågående psykologisk behandling och endast förmätningen har använts från deltagaren som bad om att bli exkluderad.
+Som framgår av figur \@ref(fig:flow) så anmälde totalt 657 personer sitt intresse till studien varav 464 personer slutförde screeningsprocessen. Av dessa uteslöts 126 personer då de uppfyllde något av exklusionskriterierna. De kvarvarande 338 personerna erbjöds plats i studien. Av dessa bejakade 253 sin plats. 43 personer exkluderades från behandlingen genom randomisering så att 210 inkluderades. De deltagere som exkluderades via randomisering erbjöds tillgång till träningsprogrammet på samma sätt som kontrollgruppen, men med skillnaden att deras skattningssvar inte användes i beräkningarna. Vid behandlingsstart hade studien 210 deltagare. Vid en extra kontroll under behandlingens gång upptäcktes det att fem deltagare (n = 3 från gruppen `r xg1` och n = 2 från gruppen `r xg3`) hade annan pågående psykologisk behandling och därför felaktigt inkluderats i studien. Dessa deltagare har fått fullgå behandlingen på oförändrade villkor, men deras skattningar har exkluderats från alla beräkningar. Utöver detta bad en deltagare från gruppen `r xg2` under träningsprogrammets gång att bli exkluderad från studien. Ingen data har använts hos de fem deltagarna som hade pågående psykologisk behandling och endast förmätningen har använts från deltagaren som bad om att bli exkluderad.
 
 ```{r flow, out.width="100%", fig.align="center", out.extra='', fig.cap='Flödesschema över inklusion, exklusion (med kriterier) samt bortfall.'}
 
@@ -728,10 +728,8 @@ xdemocat <-
   "Folkskola/grundskola",
   "Gymnasium",
   "Yrkesutbildning",
-#  "Universitet/högskola (pågående)",
-#  "Universitet/högskola (avslutad)",
-  "Pågående högre utbildning",
-  "Avslutad högre utbildning",
+  "Universitet/högskola (pågående)",
+  "Universitet/högskola (avslutad)",
   "Annan sysselsättning",
   "Studerande",
   "Arbetande",
@@ -764,13 +762,13 @@ options(OutDec= ",")
 xdemodata.ext <- rbind(
 #  cbind(ll1,ll2,ll3),
   cbind(
-    paste(round(mean(r2.wide.data[wg3, 64]), 2), " (", round(sd(r2.wide.data[wg3, 64]), 2),
-          ")",
-          sep = ""),
     paste(round(mean(r2.wide.data[wg1, 64]), 2), " (", round(sd(r2.wide.data[wg1, 64]), 2),
           ")",
           sep = ""),
     paste(round(mean(r2.wide.data[wg2, 64]), 2), " (", round(sd(r2.wide.data[wg2, 64]), 2),
+          ")",
+          sep = ""),
+    paste(round(mean(r2.wide.data[wg3, 64]), 2), " (", round(sd(r2.wide.data[wg3, 64]), 2),
           ")",
           sep = "")
   ),
@@ -785,28 +783,21 @@ colnames(xdemodata.rot) <- xdemocat
 
 demdata.tabell <- t(xdemodata.rot)
 
-colnames(demdata.tabell) <- c(
-  paste(xG3," (n = ",ll3,")",sep=""),
-  paste(xG1," (n = ",ll1,")",sep=""),
-  paste(xG2," (n = ",ll2,")",sep="")
-)
-
 options(OutDec= ".") 
 
 ```
 
 De `r length(r2.wide.data$subject)` deltagare vars data används i den här studien var mellan 20 och 65 år gamla med en medelålder på 41,8 år (standardavvikelse 8,8). En betydande majoritet (87,8&nbsp;%) identifierade sig som kvinnor, samtliga övriga som män. Knappt tre fjärdedelar av deltagarna hade avslutad universitets- eller högskoleutbildning (71,6&nbsp;%) och tre fjärdedelar av deltagarna var vid behandlingens start yrkesarbetande (75,5&nbsp;%). Mer än hälften av deltagarna (61,3&nbsp;%) hade tidigare erfarenheter av psykologisk behandling. Av dessa hade majoriteten (64,8&nbsp;%) tidigare erfarenheter av KBT. Knappt en tredjedel av alla deltagare (29,0&nbsp;%) hade erfarenhet av psykofarmaka, och vid behandlingsstart stod 17,6&nbsp;% på något slags psykofarmaka. Totalt 3,4&nbsp;% av deltagarna var vid behandlingsstart sjukskrivna. Se tabell \@ref(tab:demdata) för de demografiska faktorernas fördelningar i respektive grupp.
 
-(ref:dem) Vid förmätningstillfället insamlad sociodemografisk och annan relevant data för deltagarna.
+(ref:dem) Demografisk data för deltagarna, redovisad per grupp.
 
-```{r demdata, tab.align="left", cache = F}
+```{r demdata, out.width="100%", tab.align="center", cache = F}
 
 svkable(demdata.tabell, caption = "(ref:dem)", align="ccc") %>%
   kable_styling(full_width = F) %>%
-  column_spec(1, width = "12em") %>%
-  column_spec(2, width = "7.5em") %>%
-  column_spec(3, width = "7.5em") %>%
-  column_spec(4, width = "9em") %>%
+  column_spec(2, width = "7em") %>%
+  column_spec(3, width = "7em") %>%
+  column_spec(4, width = "7em") %>%
   pack_rows("Ålder (år)", 1, 1, bold = F) %>%
   pack_rows("Kön (%)", 2, 2, bold = F) %>%
   pack_rows("Civilstånd (%)", 3, 6, bold = F) %>%
@@ -885,7 +876,7 @@ Obegränsade möjligheter att genomföra beteendeexperiment.
 Dock komma ihåg att vi ska hålla det här avsnittet av metoddelen kort och koncist
 -->
 
-I linje med forskning om att acceptera och ge plats för tankar och känslor i pressade situationer [@Hayes1996; @Hayes2004a; @Luoma2007] lägger träningsprogrammet Respekt i kvadrat större vikt vid acceptans och tolerans av ångest än @michel2008 genom tillägg av nyskrivna avsnitt och övningar som fördelades över modulerna. Ett exempel på material som uppmanar deltagaren att aktivt stanna kvar i (eller rent av uppsöka) för brytande av undvikande relevant respondent obehag är psykoedukativa texter om optimering av inlärning via variation och mängdträning. I de avsnitten introduceras även begreppen *fixed mindset* och *growth mindset*, som handlar om effekten av olika förhållningssätt till utmaningar och hur man genom att möta obehaget skapar förutsättningar för utveckling [@Dweck1995; @Schroder2016; @Schroder2015; @DeCastella2015]. Ett annat är psykoedukativa avsnitt om vidmakthållande av ångestrelaterade besvär som också innehåller en övning som både handlar om att identifiera värdebaserade fördelar med handlande i situationer som tidigare har präglats av undvikande och om att identifiera kortsiktigt belönande anledningar att stå ut med respondenta rädsloreaktioner i situationer som tidigare undvikits. 
+I linje med forskning om att acceptera och ge plats för tankar och känslor i pressade situationer [@Hayes1996; @Hayes2004a; @Luoma2007] lade träningsprogrammet Respekt i kvadrat större vikt vid acceptans och tolerans av ångest än @michel2008. Det gjordes genom tillägg av nyskrivna avsnitt och övningar som fördelades över modulerna. Ett exempel på material som uppmanar deltagaren att aktivt stanna kvar i eller rent av uppsöka -- för brytande av undvikande relevant -- respondent obehag är psykoedukativa texter om optimering av inlärning via variation och mängdträning. I de avsnitten introduceras även begreppen *fixed mindset* och *growth mindset*, som handlar om effekten av olika förhållningssätt till utmaningar och hur man genom att möta obehaget skapar förutsättningar för utveckling [@Dweck1995; @Schroder2016; @Schroder2015; @DeCastella2015]. Ett annat är psykoedukativa avsnitt om vidmakthållande av ångestrelaterade besvär som också innehåller en övning som både handlar om att identifiera värdebaserade fördelar med handlande i situationer som tidigare har präglats av undvikande och om att identifiera kortsiktigt belönande anledningar att stå ut med respondenta rädsloreaktioner i situationer som tidigare undvikits. 
 
 I @michel2008 presenteras rationalen för och övningar i muskelavslappning översiktligt i ett kapitel. I linje med Östs [-@ost2006tillampad] rekommendation om att tillämpad avslappning bör introduceras stegvis över en längre tidsperiod introduceras deltagarna till progressiv muskelavslappning i modul 2, med en gradvis inriktning i modulerna 3--5 mot tillämpad avslappning. Under första delen av programmet uppmanas deltagarna explicit att tillämpa principerna om hög grad av variation och upprepning i färdighetsträningen av progressiv och alltmer tillämpad avslappning. Integreringen av progressiv muskelavslappning i hela första delen av träningsprogrammet tjänar syftena att ge deltagarna möjlighet att tillgodogöra sig färdigheter som relativt snabbt har potential att ge positiva effekter i vardagen och att ge dem en egen erfarenhet av fördelarna med mängdträning.
 
@@ -1323,8 +1314,6 @@ Vi fann inga brott mot antagandena för flernivåanalys vid visuell kontroll av 
 # https://cran.r-project.org/web/packages/stargazer/vignettes/stargazer.pdf
 # NB! We're using stargazer-booktabs to get prettier LaTeX table output
 
-scalenames = c("AAA-S Ag", "AAA-S Ad", "Rathus", "LSAS-SR", "GAD-7", "PHQ-9", "Välmåendeformuläret")
-
 labradorer <- c(
   xg1,
   xg2,
@@ -1355,10 +1344,7 @@ stargazer::stargazer(
   digits = 1,
   covariate.labels = c("Intercept",labradorer),
   float.env = "sidewaystable",
-  omit.stat = c("aic","bic","ll","n"),
-  dep.var.caption = "Primära och sekundära utfallsmått",
-  dep.var.labels = scalenames,
-  notes.label = "Observera:",
+  omit.stat = c("aic","bic","ll"),
   title = "En tabelltext"
 )
 
