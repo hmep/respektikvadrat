@@ -585,7 +585,7 @@ Att benämna ovan kognitioner för förutsägelser är dessutom i linje med det 
 
 Utifrån *tidigare* erfarenheter kan en individ ha giltiga och begripliga upplevelser av ångest och rädsla som dessvärre leder till undvikande *här och nu*. Detta kan i sin tur göra att individen går miste om sådant som hen värdesätter -- exempelvis att: få närhet, mer tid till egna intressen, hävda sina åsikter eller att nå andra naturliga förstärkare för stanna-kvar-och-märk-att-ångesten-går-över-beteenden.
 
-Undvikande av aversiva stimuli som också är genuint farliga är ett beteende med evolutionärt centralt överlevadsvärde. Att i överskott undvika stimuli som upplevs hotfulla men som inte är farliga kan däremot leda till psykopatologiska besvär. När sådana undvikandebeteenden väl vants in är de vanligtvis svåra att bryta på egen hand. Undvikandet leder på kort sikt allt som oftast till positiva följder (till exempel snabb men tillfällig reduktion av obehag), och även fast det  på lång sikt allt som oftast leder till negativa följder (minskad tillgång till det som värdesätts, upplevelsen av obehag ökar över tid m.m.) tenderar vi att bortse från det. Att undvika det som erfarenhetsmässigt upplevts som aversivt framstår ofta som funktionellt och rationellt, även när det inte är det [@Hayes1996].
+Undvikande av aversiva stimuli -- det vill säga händelser, situationer och saker som framkallar obehag, olust, ångest eller upplevelsen av fara -- som också är genuint farliga är ett beteende med evolutionärt centralt överlevadsvärde. Att i överskott undvika stimuli som upplevs hotfulla men som inte är farliga kan däremot leda till psykopatologiska besvär. När sådana undvikandebeteenden väl vants in är de vanligtvis svåra att bryta på egen hand. Undvikandet leder på kort sikt allt som oftast till positiva följder (till exempel snabb men tillfällig reduktion av obehag), och även fast det  på lång sikt allt som oftast leder till negativa följder (minskad tillgång till det som värdesätts, upplevelsen av obehag ökar över tid m.m.) tenderar vi att bortse från det. Att undvika det som erfarenhetsmässigt upplevts som aversivt framstår ofta som funktionellt och rationellt, även när det inte är det [@Hayes1996].
 
 Särskilt svårt är det att bryta beteenden som har som funktion att undvika det som väcker rädsla. En stor utmaning i behandling av ångestsyndrom är att överbrygga det undvikandet som följt av just rädsloinlärning. @Ohman2001 konstaterar att rädsloinlärning inte så lätt går att påverka med kognitiv kontroll i skarpt läge, inte minst för att de neuronala rädslokretsarna vid amygdala ligger djupt förankrade i limbiska delar av hjärnan och mer eller mindre lever sitt eget liv.
 
@@ -687,7 +687,7 @@ Det vi primärt är intresserade av är om det finns någon skillnad (i endera r
 
 <!-- Bör vi föra en en rad om att gör en RCT-design?-->
 
-Sample-storleken för varje grupp bestämdes innan rekrytering påbörjades till n = 70 med en powerberäkning. I studien planerade manipulationer, variabler, mättillfällen och insamlad data har använts i de efterföljande analyserna utan selektion i efterhand. Alla randomiseringar gjordes av oberoende tredje part vid Stockholms universitet med hjälp av internetbaserade randomiseringstjänster (www.random.org för överintagsexkluderingen och randomiseringen till respektive behandlare samt www.sealedenvelope.com för randomiseringen till de tre grupperna). Studien uppfyller kriterierna för en RCT-design (från engelskans *randomised controlled trial*) i @Chambless2001.
+Sample-storleken för varje grupp bestämdes innan rekrytering påbörjades till n = 70 med en powerberäkning. I studien planerade manipulationer, variabler, mättillfällen och insamlad data har använts i de efterföljande analyserna utan selektion i efterhand. Alla randomiseringar gjordes av oberoende tredje part vid Stockholms universitet med hjälp av internetbaserade randomiseringstjänster (www.random.org för överintagsexkluderingen och randomiseringen till respektive behandlare samt www.sealedenvelope.com för randomiseringen till de tre grupperna). Studien uppfyller kriterierna för en RCT-design (från engelskans *randomised controlled trial*) enligt @Chambless2001.
 
 ### Rekrytering
 
@@ -867,9 +867,14 @@ Materialet är översatt och anpassat till svenska förhållanden av TH med till
 
 En mycket inspirerande faktor när det engelska materialet anpassades och utvecklades till självhjälpsprogrammet *Respekt i kvadrat* var det aktuella forskningsläget kring exponering [se bland annat @Craske2008; @DeCastella2015; @Sewart2019; @Knowles2019; @Gross2003]. TH och PT bedömde det som en central komponent att deltagarna så tidigt som möjligt, och så regelbundet som möjligt, tog aktiva steg för att bryta sina undvikanden. Från och med modul 3 och i alla moduler därefter ombads deltagarna att närma sig aversiva stimuli (och utvärdera sina reaktioner) på olika sätt. 
 
-VARIATION 
 
-MÄNGDTRÄNING, MULTIPLE EXEMPLAR TRAINING Obegränsade möjligheter att genomföra beteendeexperiment.
+<!--
+Möjligen att vi även ska kort skriva om
+VARIATION 
+MÄNGDTRÄNING, MULTIPLE EXEMPLAR TRAINING 
+Obegränsade möjligheter att genomföra beteendeexperiment.
+Dock komma ihåg att vi ska hålla det här avsnittet av metoddelen kort och koncist
+-->
 
 I linje med forskning om att acceptera och ge plats för tankar och känslor i pressade situationer [@Hayes1996; @Hayes2004a; @Luoma2007] lägger träningsprogrammet Respekt i kvadrat större vikt vid acceptans och tolerans av ångest än @michel2008 genom tillägg av nyskrivna avsnitt och övningar som fördelades över modulerna. Ett exempel på material som uppmanar deltagaren att aktivt stanna kvar i (eller rent av uppsöka) för brytande av undvikande relevant respondent obehag är psykoedukativa texter om optimering av inlärning via variation och mängdträning. I de avsnitten introduceras även begreppen *fixed mindset* och *growth mindset*, som handlar om effekten av olika förhållningssätt till utmaningar och hur man genom att möta obehaget skapar förutsättningar för utveckling [@Dweck1995; @Schroder2016; @Schroder2015; @DeCastella2015]. Ett annat är psykoedukativa avsnitt om vidmakthållande av ångestrelaterade besvär som också innehåller en övning som både handlar om att identifiera värdebaserade fördelar med handlande i situationer som tidigare har präglats av undvikande och om att identifiera kortsiktigt belönande anledningar att stå ut med respondenta rädsloreaktioner i situationer som tidigare undvikits. 
 
@@ -2168,7 +2173,7 @@ Viktigt i och med att ni tagit upp detta med behandlingsstödets effekter i intr
 
 ## Resultatdiskussion
 
-återstår att skriva!
+<!-- Diskussion om själva resultatet återstår att skriva! -->
 
 
 
