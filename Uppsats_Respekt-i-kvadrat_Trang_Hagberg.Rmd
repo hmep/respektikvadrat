@@ -11,8 +11,8 @@ author:
     email         : "patrik.trang@gmail.com"
 affiliation:
   - institution   : "Psykologiska institutionen, Stockholms universitet"
-#abstract          : |
-#    | `r readLines('abstract.txt', encoding = 'UTF-8')`
+abstract          : |
+    | `r readLines('abstract.txt', encoding = 'UTF-8')`
 #Keywords          :
 #wordcount         : "X"
 bibliography      : ["r-references.bib", "library.bib"]
@@ -573,9 +573,9 @@ Utifrån *tidigare* erfarenheter kan en individ ha giltiga och begripliga upplev
 
 Undvikande av aversiva stimuli -- det vill säga händelser, situationer och saker som framkallar obehag, olust, ångest eller upplevelsen av fara -- som också är genuint farliga är ett beteende med evolutionärt centralt överlevadsvärde. Att i överskott undvika stimuli som upplevs hotfulla men som inte är farliga kan däremot leda till psykopatologiska besvär. När sådana undvikandebeteenden väl vants in är de vanligtvis svåra att bryta på egen hand. Undvikandet leder på kort sikt allt som oftast till positiva följder (till exempel snabb men tillfällig reduktion av obehag), och även fast det  på lång sikt allt som oftast leder till negativa följder (minskad tillgång till det som värdesätts, upplevelsen av obehag ökar över tid m.m.) tenderar vi att bortse från det. Att undvika det som erfarenhetsmässigt upplevts som aversivt framstår ofta som funktionellt och rationellt, även när det inte är det [@Hayes1996].
 
-Särskilt svårt är det att bryta beteenden som har som funktion att undvika det som väcker rädsla. En stor utmaning i behandling av ångestsyndrom är att överbrygga det undvikandet som följt av just rädsloinlärning. @Ohman2001 konstaterar att rädsloinlärning inte så lätt går att påverka med kognitiv kontroll i skarpt läge, inte minst för att de neuronala rädslokretsarna vid amygdala ligger djupt förankrade i limbiska delar av hjärnan och mer eller mindre lever sitt eget liv.
+Särskilt svårt är det att bryta beteenden som har som funktion att undvika det som väcker rädsla. En stor utmaning i behandling av ångestsyndrom är att överbrygga det undvikandet som följt av just rädsloinlärning. @Ohman2001 konstaterar att rädsloinlärning inte är så lätt att påverka med kognitiv kontroll i skarpt läge, inte minst för att de neuronala rädslokretsarna vid amygdala ligger djupt förankrade i limbiska delar av hjärnan och mer eller mindre lever sitt eget liv.
 
-Forskningen visar också att det är självdestruktivt att försöka undvika aversiva känslor. Detta undvikande brukar kallas för emotionellt undvikande. Regelbundet användande av emotionellt undvikande är kopplat till många negativa följder. Det är paradoxalt nog kopplat till högre grad av negativa emotioner (och mindre grad av positiva emotioner), men även till större undvikande av nära relationer, mindre socialt stöd, lägre självförtroende och sämre generellt välmående [@Gross2003]. Den paradoxala biten går inte nog att betona: att försöka undvika aversiva emotioner leder till att man upplever dem mer [@Gross2003; @Fernandez-Rodriguez2018; @Hayes1996].
+Forskningen visar också att det är självdestruktivt att försöka undvika aversiva känslor. Detta undvikande brukar kallas för emotionellt undvikande. Regelbundet användande av emotionellt undvikande är kopplat till många negativa följder. Det är paradoxalt nog kopplat till högre grad av negativa emotioner (och mindre grad av positiva emotioner), men även till större undvikande av nära relationer, mindre socialt stöd, lägre självförtroende och sämre generellt välmående [@Gross2003]. Den paradoxala biten går inte nog att betona: att försöka undvika aversiva emotioner leder till att man upplever dem mer [@Gross2003; @Fernandez-Rodriguez2018; @Hayes1996]. Det emotionella undvikandet leder till mer aversiva känslor vilket i sin tur leder till mer emotionellt undvikande. Det emotionella undvikandet och känslorna är sammantvinnade i en negativ spiral.
 
 <!-- *@Pittig2014 är ej med i dagsläget men bör möjligen vara det? -->
 
@@ -611,7 +611,7 @@ Förslagsvis använda L-G Öst kring TA plus fiska fram några som pratar om att
 
 <!-- Violating expectancies -->
 
-#### Om att finna motivation till att bryta gamla vanor
+### Om att finna motivation till att bryta gamla vanor
 
 Många som lever med psykopatologiska besvär under en längre tid kan uppleva det som att det inte finns någonting de kan göra åt sina besvär. Som att deras symtom och deras lidande är där för att stannna. Detta brukar kallas för ett *fixed mindset*. Ett *fixed mindset* är antagandet att förmågor, färdigheter samt egenskaper är fasta och oföränderliga. Det skiljer sig från ett *growth mindset*, antagandet att förmågor, färdigheter och egenskaper kan utvecklas och förändras. Dessa *mindset*, tankesätt, är ett sorts ramverk genom vilket man tolkar och förstår sig på sina erfarenheter, vilket i sin tur påverkar vilka beteenden och emotioner man uppvisar [@Dweck1995]. Tankesätt kan beröra mer övergripande domäner, såsom personlighet och intelligens, eller mer specifika domäner, såsom hur man tänker kring ångest och emotioner. Man kan ha ett fixerat tankesätt inom en viss domän, och ett utvecklande tankesätt inom en annan [@Schroder2016]. Har man ett utvecklande tankesätt kring ångest leder det både till större motivation under en behandlings gång och till bättre odds för positivt behandlingsutfall [@Schroder2015; @DeCastella2015]. Det har även visat sig att personer med ett fixerat tankesätt i större utsträckning försöker undvika negativa emotioner samt i mindre utsträckning omvärderar sina förutsägelser i ljuset av nya erfarenheter [@Schroder2015]. Forskning konstaterar att det finns gott om anledningar att arbeta mot ett *growth mindset*.
 
@@ -646,11 +646,6 @@ I-KBT har även visat sig vara effektivt vid behandling av PTSD [*g* = 0,7 i @Si
 
 I en del behandlingsprogram tilldelas även en stödbehandlare till deltagarna. Stödbehandlare tenderar ha möjlighet att ge återkoppling, besvara frågor, och ge stöd allt eftersom behandlingen fortskrider [@Vlaescu2016]. I en meta-analys från 2014 konstaterar @Baumeister2014a att I-KBT oberoende av stödbehandlare eller inte var effektivt, men att I-KBT med stödbehandlare tenderar att ge något bättre effekt än I-KBT utan stödbehandlare. De fastställde även att stödbehandlarnas kompetens inte gjorde skillnad för utfallet så länge stödbehandlarna åtminstone hade grundläggande psykoterapeutiska kunskaper. Mängden interaktion mellan stödbehandlare och deltagare varierar beroende på behandlingsupplägg. @Berger2011 samt *Valentinstudien* [@Samuelsson2018] gav deltagare möjlighet till mejl- och telefonkontakt och @Titov2010 gav deltagarna tillgång till ett diskussionsforum som modererades av stödbehandlarna. I dagsläget finns det inte tillräckligt med forskning för att med säkerhet kunnba uttala sig om vilken stödbehandlarmetod som är effektivast. Det finns dock indikationer på att frekvensen av kontakt mellan stödbehandlare och deltagare ej påverkar utfallet så länge åtminstone en kontakt sker per vecka. Frekvensen av kontakt verkar inte heller påverka skattad terapeutallians eller nöjdhet med behandlingen [@Klein2009]. 
 
-<!-- 
-PATRIK: påfyllnadstext om behandlarstöd och forskning kring detta 
-[@Baumeister2014a]
--->
-
 Trots att evidensen för kognitiv och beteendeterapeutisk behandling vid ångestsyndrom och depressiva syndrom är god förblir majoriteten av fallen även i länder med väl utvecklad sjukvård obehandlade [@Craske2017]. Många kan bära på ett psykiskt lidande utan att för den skull nå upp till kriterierna för någon av diagnoserna i DSM. Och för dem som ändå skulle göra det är tillgången till vård en begränsande faktor som I-KBT kan avhjälpa [@Andrews2018].
 
 ### Användarupplevelsen av I-KBT
@@ -670,8 +665,6 @@ Det vi primärt är intresserade av är om det finns någon skillnad (i endera r
 # Metod
 
 ## Design
-
-<!-- Bör vi föra en en rad om att gör en RCT-design?-->
 
 Sample-storleken för varje grupp bestämdes innan rekrytering påbörjades till n = 70 med en powerberäkning. I studien planerade manipulationer, variabler, mättillfällen och insamlad data har använts i de efterföljande analyserna utan selektion i efterhand. Alla randomiseringar gjordes av oberoende tredje part vid Stockholms universitet med hjälp av internetbaserade randomiseringstjänster (www.random.org för överintagsexkluderingen och randomiseringen till respektive behandlare samt www.sealedenvelope.com för randomiseringen till de tre grupperna). Studien uppfyller kriterierna för en RCT-design (från engelskans *randomised controlled trial*) i @Chambless2001.
 
@@ -799,7 +792,7 @@ options(OutDec= ".")
 
 De `r length(r2.wide.data$subject)` deltagare vars data används i den här studien var mellan 20 och 65 år gamla med en medelålder på 41,8 år (standardavvikelse 8,8). En betydande majoritet (87,8&nbsp;%) identifierade sig som kvinnor, samtliga övriga som män. Knappt tre fjärdedelar av deltagarna hade avslutad universitets- eller högskoleutbildning (71,6&nbsp;%) och tre fjärdedelar av deltagarna var vid behandlingens start yrkesarbetande (75,5&nbsp;%). Mer än hälften av deltagarna (61,3&nbsp;%) hade tidigare erfarenheter av psykologisk behandling. Av dessa hade majoriteten (64,8&nbsp;%) tidigare erfarenheter av KBT. Knappt en tredjedel av alla deltagare (29,0&nbsp;%) hade erfarenhet av psykofarmaka, och vid behandlingsstart stod 17,6&nbsp;% på något slags psykofarmaka. Totalt 3,4&nbsp;% av deltagarna var vid behandlingsstart sjukskrivna. Se tabell \@ref(tab:demdata) för de demografiska faktorernas fördelningar i respektive grupp.
 
-(ref:dem) Vid förmätningstillfället insamlad sociodemografisk och annan relevant data för deltagarna.
+(ref:dem) Vid förmätningstillfället insamlad sociodemografisk och annan relevant data om deltagarna.
 
 ```{r demdata, out.width="100%", tab.align="center", cache = F}
 
@@ -830,7 +823,7 @@ En av de tre grupperna fick tillgång till behandlarstöd. Deltagarna i denna gr
 
 Behandlarstöd bestod av veckovis skriftlig kontakt med deltagarna via den krypterade webbaserade plattformen `r xiterapi`. Stödet bestod av återkoppling på genomförda övningar, uppmuntran, validering, psykoedukation samt svar på de frågor deltagarna ställde. Tidsåtgången planerades till cirka 15 minuter per deltagare och vecka. De två andra grupperna hade inte tillgång till behandlarstöd men fick kontaktuppgifter till studieansvarig för eventuella administrativa frågor.
 
-### Primära utfallsmått
+### Primärt utfallsmått
 
 <!-- [Pers kommentar]
 NI kan, om ni vill ha guldstjärna, enkelt räkna ut er egen studies Cronbach alfa för var och en av formulären vid förmätningen (och komplettera med den siffran).
@@ -895,100 +888,7 @@ I linje med vikten av att acceptera och ge plats för tankar och känslor i pres
 
 I @michel2008 presenteras rationalen för och övningar i muskelavslappning översiktligt i ett kapitel. I linje med Östs [-@ost2006tillampad] rekommendation om att tillämpad avslappning bör introduceras stegvis över en längre tidsperiod introduceras deltagarna till progressiv muskelavslappning i modul 2, med en gradvis inriktning i modulerna 3--5 mot tillämpad avslappning. Under första delen av programmet uppmanas deltagarna explicit att tillämpa principerna om hög grad av variation och upprepning i färdighetsträningen av progressiv och alltmer tillämpad avslappning. Integreringen av progressiv muskelavslappning i hela första delen av träningsprogrammet tjänar syftena att ge deltagarna möjlighet att tillgodogöra sig färdigheter som relativt snabbt har potential att ge positiva effekter i vardagen och att ge dem en egen erfarenhet av fördelarna med mängdträning.
 
-<!--
-här bör ytterligare ett kort avsnitt föras in om valet att fokusera på avslappning i behandlingsprogrammet.
--->
-
 Anpassningarna och tilläggen inkluderade sammanfattningsvis nya texter och illustrationer, länkar till fördjupningsmaterial, videofilmer med konversationer och rollspel mellan PT och TH, nedladdningsbara ljudfiler med avslappningsövningar, inbäddade externa videoklipp och ljudfiler samt ett stort antal nya interaktiva övningar. Tilläggsövningarna inkluderar utvärderingsformulär av varje veckas innehåll, veckovis uppföljning av konstruktiv självhävdelse samt utökade övningar för återfallsprevention och vidmakthållande av behandlingseffekter. Se även tabell \@ref(tab:intervention) för en översiktlig genomgång av innehållet i modulerna i interventionen *Respekt i kvadrat*.
-
-<!--
-
-#### Ökat fokus på beteendeexperiment in vivo  
-
-Originalmaterialet innehåller avsnitt för både kognitiv omstrukturering via formulär och kognitiv omstrukturering via beteendeexperiment. Kognitiv omstrukturering går vanligtvis till så att klienten i hemläxa fyller i ett formulär där hen identifierar hindrande tankar, känslor och beteenden (inklusive undvikande- och flyktbeeteenden, så kallade säkerhetsbeteenden) i situationen. Klienten ombeds också fylla i identifierande hjälpsamma tankar som kan balansera de så kallade negativa automatiska tankarna som är uttryck för förmodade livsregler och grundantaganden om den egna förmågan och andras avsikter. Klienten får också skatta sin nivå av obehag/ångest både och före efter identifikationen av de balanserande tankarna. För Respekt i kvadrat har avsnitten för vägledd kognitiv omstrukturering förenklats, utifrån bedömningen att dessa inslag hade krävt behandlarstöd för samtliga grupper, kanske även mer än de 15 minuters stöd per vecka som avsattes för varje deltagare i gruppen `r xg2`. Utifrån THs och PTs (begränsade) erfarenhet av kognitiv omstrukturering har klienter mer eller mindre lätt för att strukturerat identifiera de olika delarna av formulär för kognitiv omstrukturering, och kräver mer eller mindre stöd i processen. Det finns också anledning att tro att det för en person med ångestrelaterat lidande -- som för huvuddelen av deltagarna i programmet -- är betydligt enklare än för en nedstämd eller deprimerad person att finna situationer som är lämpliga att träna i; ångest kan i sig ses som en signal för nyinlärning [@Barrett2016a]. Formulären för kognitiv omstrukturering har i Respekt i kvadrat ersatts av enklare situationsregistreringsformulär med kartläggning av undvikande, som lägger grund för därpå följande planering av beteendeexperiment. 
-
-(HUR MÄRKS DET I PROGRAMMET?  Ut och testa ut och testa inte sitta hemma och fundera från vecka 3)
-
-#### En kontextuell och neurovetenskaplig inramning av \'kognitioner\'
-
-Överlag har ordet för den enligt kognitiv omstrukturering verksamma komponenten \'tankar\' i texten ersatts av ordet \'förutsägelser\'. En negativ förutsägelse i en specifik situation (exempelvis om den egna förmågan att klara av upplevelsen av ångest eller vilken konsekvensen ska bli av konstruktiv självhävdelse) är förankrad i den specifika kontexten: \'Negativa automatiska tankar\' kan lättare förväxlas med \'livsregler\' och \'grundantaganden\' som de definieras i @beck1979cognitive. I träningsprogrammet kan livsregler och grundantaganden ses som mer eller mindre generaliserade förutsägelser; för deltagaren i programmet är det under den begränsade tid som det pågår viktigare att uttala till den aktuella situationen tydligt specificerade förutsägelser.
-
-Ordvalet är dessutom i linje med det neurovetenskapliga paradigmet prediktiv kodning. Den övergripande funktionen av det centrala nervsystemet är att med hjälp av ytterst begränsade sensoriska indata guida betydligt mer omfattande neuronal *top-down*-aktivitet för att *predicera* organismens yttre såväl som inre kontext [@Pezzulo2015; @Clark2016]. Det inkluderar egen motoraktivitet. Den samlade upplevelsen av ångest (kroppsreaktioner, tankar, beteenden) är detsamma som en förutsägelse om bristande resurs- och energihushållning i situationen (enkelt uttryckt upplevelsen av att man inte kommer räcka till) [@FeldmanBarrett2009]. När en person uppfattar miljön som aversiv kommer hen att vilja mobilisera sina resurser för att sätta sig i säkerhet. Men om förutsägelserna om bristande resurser är felaktig på grund av allt för stort inflytande av hjärnans kortikala *top-down*-aktivitet (på bekostnad av sensorisk känslighet för *bottom-up*-aktivitet) uppstår problem: Förutsägelserna blir självuppfyllande profetior, genom en kombination av alltför långvarig allostatisk belastning och undvikande som gör att organismen går miste om återhämtning och naturliga förstärkningar som kan fylla på energireserverna. @FeldmanBarrett2009 sammanbryggar elegant den aktuella neurovetenskapen med det moderna inlärningsteoretiska perspektivet på ångest och depression, där den gemensamma vidmakthållande faktorn är undvikande -- beteendemässigt och upplevelsemässigt.
-
-<!-- I Respekt i kvadrat ligger fokus på aktivering av beteenden i enlighet med klientens värderade riktning. Syftet med programmet är att hjälpa deltagaren att genom att genomföra beteendeexperiment så snabbt som möjligt och i så många svåra situationer som möjligt.
-
-(HUR MÄRKS DET I PROGRAMMET? Konsekvent uppmana deltagarna att sätta förutsägelserna i en specifik kontext, inte på allmän nivå.)
-
-#### Metoder för att bryta rädsloinlärt undvikande
-
-Utifrån *tidigare* erfarenheter kan en individ ha giltiga och begripliga upplevelser av ångest och rädsla som dessvärre leder till undvikande *här och nu*. Detta kan i sin tur göra att individen går miste om sådant som hen värdesätter -- exempelvis att hävda sina åsikter, få mer tid till egna intressen, få närhet och andra naturliga förstärkningar för stanna-kvar-och-märk-att-ångesten-går-över-beteenden. 
-
-Den stora utmaningen i behandling av ångestsyndrom är att överbrygga undvikandet som följer av rädsloinlärning. @Ohman2001 konstaterar att rädsloinlärning inte så lätt går att påverka med kognitiv kontroll i skarpt läge, inte minst för att de neuronala rädslokretsarna vid amygdala ligger så djupt förankrade i limbiska delar av hjärnan och mer eller mindre lever sitt eget liv. Det finns fler sätt att gå runt problemet: 
-
-- värden, långsiktiga skäl att uppsöka sit
-- direkt kontignent belöning, ex återkoppling och uppmuntran från terapeut
-
-(HUR MÄRKS DET I PROGRAMMET? Vi pratar mycket om värden -- hitta egna långsiktiga skäl att utmana ångest (exempelvis ångestcirkeln). Behandlarna förstärkte ...)
-
-#### Upplevelsemässigt undvikande
-
-Regelbundet användande av undertryckande är kopplat med flertalet negativa följder, bland annat: mer upplevande av negativa emotioner (och mindre upplevande av positiva emotioner), större undvikande av nära relationer, mindre socialt stöd, lägre självförtroende och sämre upplevt generellt välmående överlag [@Gross2003].
-
-<!-- *@Pittig2014 -- skriv om detta!* -->
-
-<!--
-Individuals avoid stimuli which are associated with aversive experience to preserve safety. However, behavioral avoidance also causes impairments and prevents the individual from attaining positive rewards. Little is known about the link between fear acquisition and the development of behavioral avoidance in the presence of potential rewards. Therefore, two experiments investigated the impact of fear conditioning on a subsequent gambling task. In an experimental group (n = 30) advantageous choices (higher reward probability) were linked to a fear-relevant stimulus that was associated with an aversive unconditioned stimulus (US) during fear conditioning (conditioned stimulus, CS+). A disadvantageous choice (lower reward probability) was, however, linked to a safe stimulus that was never associated with the US (CS-). In a control group (n = 25), fear conditioning was followed by a similar gambling task with novel stimuli. A second experiment focused on individual predictors of avoidant decisions (n = 81). Compared with the control group, individuals in the experimental groups avoided the advantageous CS + choice despite fewer gains. The predictor analysis further clarified that avoidant decisions were pronounced in highly trait anxious participants who exhibited higher fear responses. On the other hand, findings also indicated a reduction in absolute avoidance across the task. Combined, these findings demonstrate that fear conditioning can lead to avoidant decision making, especially in vulnerable individuals. The resulting costs parallel impairments caused by behavioral avoidance. Such an emotional decision-making style may be a link between aversive experience and the development of habitual pathological avoidance. Introducing rewards for approach, however, may counteract avoidant decisions.
--->
-
-<!-- Den aktuella studien hade varken tankesätt eller undertryckande som huvudfokus, men vi var icke desto mindre influerade av dessa teorier i vårt utformande och anpassade av behandlingsprogrammet. Vi antog att ifall behandlingsprogrammet kan utformas på så sätt att deltagarna hjälps från ett fixerat tankesätt mot ett mer utvecklande tankesätt borde det både leda till en reduktion i negativa symtom och i frekvens av emotionsundertryckande. Allteftersom ett mer utvecklande tankesätt formas bör alltså acceptans för deltagarnas emotioner och ångest öka tillsammans med en insikt i att emotionerna och ångesten går att bemöta och bemästra. -->
-
-<!-- . Båda dessa justeringar syftade till att förenkla administrationen av materialet över internet, samt att bättre rikta in materialet i enlighet med rationalen för beteendeexperiment -- det är genom att i praktiken testa sina förutsägelser och dra slutsatser om både utfall och egen förmåga som oddsen för ökat engagemang i livet förbättrats.  -->
-
-<!--
-####  Variation i exponering -->
-<!-- *Hur saklig bör en bakgrund vara och hur mycket av "oss själva" och vad "vi ville uppnå" och hur vi tänkte kan man släppa in? Blir det egentligen mer "metoddel" av det hela när vi börjar prata om vårt förhållningssätt till deltagarna och vad vi ville "uppnå"?* -->
-
-<!-- *kommande stycken behöver vävas ihop till ett mer kongruent stycke med en tydligare röd tråd som resulterar i ett tydligare budskap om vad vi vill ha sagt här* -->
-
-<!--
-De Castella m. fl. [-@DeCastella2015] konstaterade även att undertryckandet av känslor är tydligt kopplad till sämre effekt av exponering. Detta är i linje med mycket annan forskning. Att undertrycka känslor är ett säkerhetsbeteenden och säkerhetsbeteenden – det vill säga beteenden som förhindrar, undviker eller minimerar obehag i en given situation – är ett väletablerat fenomen som har konstaterats vara både en del i utvecklandet och bibehållandet av ångestdriven psykopatologi [@Blakey2016].
-
-Utöver säkerhetsbeteenden och dess påverkan på exponeringsresultatet finns det ytterligare några fenomen som är värda att beakta. Förväntingar och förutsägelser som individer tenderar att ha inför exponering är allt som oftast inkorrekta och desto större diskrepansen är mellan en indivds förväntningar och individens faktiska upplevelse, desto större är oddsen för nyinlärning [@Craske2008; @Sewart2019].
--->
-
-<!-- Violating expectancies -->
-
-<!--
-Att exponera sig för det som väcker obehag leder även hos många till mycket osäkerhet. Denna osäkerhet leder inte ovanligen till överdrivet förberedande, efterfrågande mot närstående eller auktoriteter om försäkran eller andra beteenden som ökar upplevelsen av kontroll i situationen. Det är dock en viktig nyinlärningsprocess att få uppleva denna osäkerhet – och samtidigt få lärdomen att denna osäkerhet både är ofarlig och hanterbar. Att bibehålla osäkerhet under exponeringstränandet går att göra genom att variera vilka aversiva stimuli som presenteras och i vilka situationer som dessa stimuli presenteras [@Sewart2019, @Knowles2019, @Craske2008].
-
-<!-- Potentiellt använda DeCastella2015 som brygga in i hur variation i exponering (där man inte undantrycker sina känslor) och att närma sig obehaget (och i samma veva motbevisar sitt fixed mindset om ens ångest och ens relation till den) leder till symtomlindring och ökat välmående (Craske2008, Knowles2019, Blakey2016, Sewart2019). -->
-
-<!--
-Lyckad exponering tenderar att vara en ombytlig exponering där obehag väcks, säkerhetsbeteenden avstås och förväntningar bryts [@Craske2008; @Blakey2016; @Knowles2019 @Sewart2019].
-
-
-Genom att förespråka exponering där deltagarna (1) sätter tydliga förväntningar på vad de tror ska hända, (2) avstår ifrån säkerhetsbeteenden kombinerat med (3) **variabilitet (pot. istället föränderlighet eller ombytlighet)** i exponeringen ville vi uppnå maximal potential för nyinlärning.
-
-<!-- Variability throughout exposure (which enhanches practice of tolerating uncertainty), Wean safety signals and safety behaviors, Mismatch with expectancies -->
-
-<!-- *@Sewart2019 -- varians* -->
-
-<!-- *Ett stycke om vikten av variation i exponering kommer antagligen att dyka upp här. Referenser bl a (Craske2008) (Knowles2019) (Blakey2016) (Sewart2019)* -->
-
-<!--
-(HUR MÄRKS DET I PROGRAMMET Varit vaksamma på att inte ge försäkran när det har efterfrågats inför exponering)
-
-#### Growth mindset + undertryckande
-
-*ska få ny rubrik och bör troligen kortas ner markant*
-
-Vi tog utöver dessa väletablerade inslag även med oss inspiration från forskning om utvecklande och fixerade tankesätt. Ett fixerat tankesätt är antagandet att förmågor, färdigheter samt egenskaper är fasta och oföränderliga medans ett utvecklande tankesätt är antagandet att dessa förmågor, färdigheter och egenskaper kan utvecklas och förändras. Tankesätten är ett sorts ramverk genom vilket man tolkar och förstår sig på sina erfarenheter, vilket i sin tur påverkar vilka beteenden och emotioner man uppvisar. [@Dweck1995] Ett utvecklande tankesätt kan bland annat leda till att man tar på sig fler utmaningar, fortsätter kämpa vid bakslag och att man överlag presterar bättre [@Dweck2019]. I verkligheten är ens tankesätt sällan antingen eller, utan återfinns på ett kontinuum [@Dweck1995]. Tankesätten kan beröra mer övergripande domäner, såsom personlighet och intelligens, eller mer specifika domäner, såsom ångest och emotioner. Man kan ha ett fixerat tankesätt inom en viss domän, och ett utvecklande tankesätt inom en annan [@Schroder2016]. Har man ett utvecklande tankesätt kring ångest leder det både till större motivation under en behandlings gång och till större odds för positivt behandlingsutfall [@Schroder2015; @DeCastella2015]. Utöver detta har det även visat sig att personer med ett fixerat tankesätt i större utsträckning försöker undertrycka negativa emotioner samt i mindre utsträckning omvärderar sina övertygelser i ljuset av nya erfarenheter [@Schroder2015]. Undertryckande och oacceptabelhet är särskilt vanligt hos personer som lider av ångestsyndrom och depressiva syndrom [@Campbell-Sills2006]
-
-
-#### Ökad interaktivitet för bättre utnyttjande av webbmediet
-
-Utöver materialet i boken innehåller interventionen även: motiverande inslag i form av text och illustrationer samt länkar till fördjupningsmaterial; videofilmer med konversationer och rollspel mellan PT och TH; för programmet framtagna videofilmer och ljudfiler med avslappningsövningar; inbäddade externa videoklipp och ljudfiler samt; ett stort antal nya interaktiva övningar, bland annat utvärderingsformulär av varje veckas innehåll, veckovis uppföljning av konstruktiv självhävdelse samt övningar för för återfallsprevention och vidmakthållande av behandlingseffekter.
--->
 
 (ref:interv) Översiktlig beskrivning av interventionen *Respekt i kvadrat*. Kapitelhänvisningar avser *Assert Yourself* (Michel & Fursland, 2008).
 
@@ -1723,6 +1623,7 @@ p1 <- aaas_ag.emm.plot +
 
 ```
 
+
 Vi är också intresserade av att ta reda på om effekten i gruppen `r xg3` är sämre än behandlingseffekten i gruppen  `r xg1` respektive gruppen `r xg2` med avseende på konstruktiv självhävdelse, det vill säga med utfallsmåttet AAA-S Adaptive. Slutligen vill vi också undersöka vilka prediktorer/moderatorer hos deltagarna (exempelvis grad av social ångest eller grad av depression) i behandlingsalternativen `r xg1` och `r xg2` som påverkar utfallet samt vilka mediatorer inom behandlingsalternativen (exempelvis tilldelning av terapeut) som påverkar utfallet. 
 
 <!-- ICC ger oss proportionen av den totala variansen i utfallsmåttet som förklaras av skillnader på individnivå. Vi konstaterar att för huvudutfallsmåttet AAA-S Adaptive förklaras 68% av variansen i -->
@@ -2308,9 +2209,11 @@ svkable(rathus.emm,linesep="", caption = 'Rathus')
 
 Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt självhjälpsprogram för att förbättra individers konstruktiva självhävdelse. Programmet administrerades via en internetbaserad plattform. Studien genomfördes med en randomiserad och kontrollerad design. Interventionen byggde till stora delar på självhjälpsmaterialet *Assert Yourself* [@michel2008] och inkluderade bland annat inslag av psykoedukation, beteendeexperiment, avslappningsövningar, vidmakthållandeplanering och återfallsprevention. En tredjedel av deltagarna fick tillgång till programmet utan behandlarstöd, en tredjedel fick tillgång till programmet med behandlarstöd och en tredjedel var en väntelistebetingad kontrollgrupp. Vi konstaterade att tillgång till behandlingsmaterialet (oberoende av om man hade behandlarstöd eller inte) gav bättre resultat än att vara placerad på väntelista. Vi fann däremot ingen skillnad i utfallet mellan gruppen med behandlarstöd och gruppen utan behandlarstöd.
 
-<!-- [Pers kommentar] Egentligen är avsaknad av skillnad inte samma sak som att de är lika effektiva (de är bara inte olika effektiva).  När ni sedan diskuterar denna avsaknad av skillnad kan ni hänvisa till en annan studie som inte heller fann skillnader mellan stöd vs inget stöd: https://www.carlbring.se/pub/2018_Martin_Samuelsson_Emma_Way.pdf
+<!-- [Pers kommentar] 
+Egentligen är avsaknad av skillnad inte samma sak som att de är lika effektiva (de är bara inte olika effektiva). 
 
-Viktigt i och med att ni tagit upp detta med behandlingsstödets effekter i introduktionen -->
+Viktigt i och med att ni tagit upp detta med behandlingsstödets effekter i introduktionen 
+-->
 
 
 *Vi bör avsluta detta stycke med några få rader om den analys vi gjorde och resultatet vi fick!*
@@ -2330,15 +2233,7 @@ Då behandlingsmaterialet översatts till svenska inför den aktuella studien �
 
 En möjligt intressant aspekt för framtida studier att undersöka är vilka de verksamma komponenterna inom behandlarstöd är och vad som kan göras för att maximera dessa komponenters inverkan på behandlingsutfallet.
 
-<!-- 
-@Ivanova2016 som exempel på guidad som inte var bättre än utan guidad
-@Almlv2011 om behandlareffekter möjligen användbar i diskussionen
-@Berger2011 som exempel på guidad som inte var bättre än utan guidad
--->
-
-
 ### Primär frågeställning
-
 
 <!-- [Pers kommentar] 
 Kanske kan ni här dock rapportera om skillnader i klinisk signifikant förbättring? 
@@ -2398,10 +2293,10 @@ I denna studie placerades en tredjedel av deltagarna på en väntelista. En risk
 <!-- stycket härunder behöver jobbas med men är ett försök till att inkorporera Pers kommentar nedan-->
 
 
-Å andra sidan är väntelista effektivt för att korrigera mot händelser i världen som kan påverka studiens deltagare och därmed studiens resultat. Under studiens gång spred sig viruset covid-19 i Sverige och över världen. Nästintill alla människor påverkades på något sätt av detta. Antingen i dagliga rutiner, i fysiskt och psykiskt mående eller i både och. Hade vår studies kontrollgrupp haft en annan betingelse än väntelista hade det varit svårt att konstatera vad i deras resultat som var påverkat av betingelsen i fråga, och vad i resultatet som berodde på covid-19s ankomst i Sverige. I och med att vår studies kontrollgrupp var betingade till väntelista är det enklare att ta höjd för detta. 
+Å andra sidan är väntelista effektivt för att korrigera mot händelser i världen som kan påverka studiens deltagare och därmed studiens resultat. Under studiens gång spred sig viruset covid-19 i Sverige och över världen. Nästintill alla människor påverkades på något sätt av detta. Antingen i dagliga rutiner, i fysiskt och psykiskt mående eller i både och. Hade vår studies kontrollgrupp haft en annan betingelse än väntelista hade det varit svårt att konstatera vad i deras resultat som var påverkat av betingelsen i fråga, och vad i resultatet som berodde på covid-19s ankomst till Sverige. I och med att vår studies kontrollgrupp var betingade till väntelista är det enklare att ta höjd för detta. 
 
 
-<!-- bör skriva mer om Covid och hur det påverkat? -->
+<!-- bör skriva mer om Covid och hur det kan ha påverkat? -->
 
 <!-- [Pers kommentar] 
 Kanske även hänvisa till 
@@ -2409,7 +2304,7 @@ Cuijpers, P., & Cristea, I. A. (2016). How to prove that your therapy is effecti
 MEN!! Sedan försvara er med att en väntelista ändå har en hel del poänger så som att korrigera för extrema händelser i omvärlden - VILKET JU CORONAN VERKLIGEN ÄR!
 -->
 
-På grund av studiens tidsomfång fanns det inga möjligheter till att göra uppföljningsmätningar av deltagarnas mående efter behandlingens avslut (till exempel 3-, 6- eller 12-månadersuppfölningar). Det gör det svårare att predicera hur behandlingsprogrammet påverkar deltagarnas mående och konstruktiva självhävdande över tid. Forskning indikerar dock på att framsteg gjorda under KBT-behandling tenderar att bibehållas över tid. Det är till och med vanligt att ytterligare ökande i mående och minskande av symtombild sker efter avslutad behandling [@Bandelow2018]. Möjligen innebär det att även deltagarna i den aktuella studien kommer fortsätta förbättras framöver.
+På grund av studiens tidsomfång fanns det inga möjligheter till att göra uppföljningsmätningar av deltagarnas mående efter behandlingens avslut (till exempel 3-, 6- eller 12-månadersuppfölningar). Det gör det svårare att predicera hur behandlingsprogrammet påverkar deltagarnas mående och konstruktiva självhävdande över tid. Forskning indikerar dock på att framsteg gjorda under KBT-behandling tenderar att bibehållas över tid. Det är till och med vanligt att ytterligare ökande i mående och minskande av symtombild sker efter avslutad behandling [@Bandelow2018]. Möjligen innebär det att även deltagarna i den aktuella studien kommer fortsätta förbättras framöver. Det vore fördelaktigt om framtida studier som berör konstruktiv självhävdelse inkluderar uppföljningsmätningar. Detta skulle ge en möjlighet att se hur konstruktet påverkas över tid.
 
 Ytterligare en potentiell brist i studien är användandet av de nyligen översatta versionerna av självskattningsformulären AAA-S [@Thompson2011] och RAS [@Rathus1973]. Då dessa skalor ej fanns tillgängliga på svenska översattes de till den aktuella studien. Det finns många rekommendation och riktlinjer för hur översättningar bör gå till [se @Beaton2000; och @Jones2001 för två väl använda metoder]. Ett gemensamt tema i dessa översättningsmetoder är att materialet översätts från originalspråk till planerat användningsspråk (i det rådande fallet till svenska) av åtminstone två av varandra oberoende individer och att den översatta versionen sedan översätts tillbaka till sitt originalspråk av ytterligare oberoende översättare. En bedömning görs sedan mellan originalversionen och versionen översatt från det planerade användningsspråket till originalspråket. AAA-S och RAS översattes inför föreliggande uppsats endast en gång, från engelska till svenska.
 
