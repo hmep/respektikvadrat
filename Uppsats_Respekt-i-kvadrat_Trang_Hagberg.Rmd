@@ -1555,6 +1555,10 @@ Vi fann även en skillnad med AAA-S Adaptive vid `r xt3`-mätningen mellan grupp
 
 Båda behandlingsbetingelserna förbättrades avsevärt jämfört med `r xg3`. Effekten var påtaglig redan vid mittenmätningen. Se figur \@ref(fig:effemmplotsad).
 
+### Behandlingseffekt mellan `r xt1`och `r xt3`
+
+
+
 ### Aggressiv självhävdelse
 
 #### `r xG3`--`r xg1` vid `r xt3`-mätningen
@@ -1580,7 +1584,7 @@ Det finns möjlighet att fortsätta analysera insamlad data. Med våra initiala 
 
 (ref:emmeffag) figurtext aaas_ag
 
-```{r effemmplotsad, dpi=196, fig.align="center", fig.cap='(ref:emmeffad)', fig.height=4.5, fig.width=5.5, cache = F, eval = T}
+```{r effemmplotsag, dpi=196, fig.align="center", fig.cap='(ref:emmeffag)', fig.height=4.5, fig.width=5.5, cache = F, eval = T}
 
 # AAA-S Ag
 
