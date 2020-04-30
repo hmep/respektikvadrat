@@ -56,7 +56,7 @@ set.seed(42) # Seed for random number generation
 options(contrasts=c('contr.treatment','contr.poly'))
 
 ### Install these packages from Github (instead of CRAN)
-library(devtools)
+library("devtools")
 #devtools::install_github("strengejacke/sjPlot",force=T)
 #devtools::install_github("crsh/papaja@devel",force=T)
 #devtools::install_github("AWKruijt/JT-RCI",force=T)
@@ -309,10 +309,10 @@ r2.wide.data <- r2.wide.data[,-c(4:5)] # Drop
 saveRDS(r2.wide.data,file="r2.wide.data.RDS")
 
 # Clean up
-file.remove(raw_excel)
-file.remove(raw_excel_conversations)
-file.remove(raw_excel_sociodemographics)
-rm(list = ls())
+# file.remove(raw_excel)
+# file.remove(raw_excel_conversations)
+# file.remove(raw_excel_sociodemographics)
+# rm(list = ls())
 
 ```
 
