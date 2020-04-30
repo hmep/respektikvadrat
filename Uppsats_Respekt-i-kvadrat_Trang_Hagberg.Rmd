@@ -100,10 +100,10 @@ enkable = function(...) {
 xiterapi = "Iterapi [@Vlaescu2016]"
 
 xg1 = "självhjälp"
-xg2 = "terapeutstöd"
+xg2 = "behandlarstöd"
 xg3 = "väntelista"
 xG1 = "Självhjälp"
-xG2 = "Terapeutstöd"
+xG2 = "Behandlarstöd"
 xG3 = "Väntelista"
 
 xpre = "förmätning"
@@ -540,7 +540,7 @@ knitr::include_graphics("canvas-konstruktiv-slinga-X.pdf")
 
 Forskning på *assertiveness* övergavs i stort sett efter 1970-talet i och med psykatrins fokus på syndromala kategoriseringar av psykisk ohälsa. *Assertiveness* föll tillsammans med andra transdiagnostiska begrepp i glömska till förmån för diagnosspecifika interventioner och insatser. 
 
-Det gör att många viktiga slutsatser av den tidigaste forskningen tyvärr har hamnat i skymundan. Både @Wolpe1966 och @Orenstein1975 byggde sina metoder på premissen att det är oförenligt att samtidigt uppleva ångest och att hävda sig själv konstruktivt. @Barrett1977 visade att *assertiveness* hos barn korrelerar med prosociala beteenden. @Buell1981 ger en effektiv metod för att träna *assertiveness* hos barn -- att utveckla sin förmåga att uttrycka sina tankar, känslor, behov och önskningar på ett konstruktivt sätt förfaller vara en tillgång relationer. På samma tema visade forskningen att självhävdelse är förknippat med förbättrade interpersonella relationer [@Kincaid1978] och ökad förmåga att möta hinder och motgångar med adaptiva beteenden [@Tanck1979]. @Rakos1979 visade på att *assertiveness* med fördel kan läras ut genom självhjälpsmaterial och @Rich1976 sammanställde och utvärderade flera metoder som använts för att träna *assertiveness*.
+Det gör att många viktiga slutsatser av den tidigaste forskningen har hamnat i skymundan. Både @Wolpe1966 och @Orenstein1975 byggde sina metoder på premissen att det är oförenligt att samtidigt uppleva ångest och att hävda sig själv konstruktivt. @Barrett1977 visade att *assertiveness* hos barn korrelerar med prosociala beteenden. @Buell1981 följer upp det fyndet med en metod för att träna *assertiveness* hos barn -- att utveckla sin förmåga att uttrycka sina tankar, känslor, behov och önskningar på ett konstruktivt sätt förfaller vara en tillgång i relationer. På samma tema visade forskningen att självhävdelse är förknippat med förbättrade interpersonella relationer [@Kincaid1978] och ökad förmåga att möta hinder och motgångar med adaptiva beteenden [@Tanck1979]. @Rakos1979 visade på att *assertiveness* med fördel kan läras ut genom självhjälpsmaterial och @Rich1976 sammanställde och utvärderade flera metoder som använts för att träna *assertiveness*.
 
 Under de senaste åren har intresset för självhävdelse ökat något igen. @Vagos2019 konstaterar att självupplevd grad av psykiskt lidande korrelerar negativt med grad av konstruktivt självhävdande, i linje med rationalen för träning i *assertiveness* som den presenterades av @Wolpe1966. @Baker2015 visar en negativ korrelation mellan att uppleva social ångest och att konstruktivt självhävda. Deras slutsats är att man kan öka oddsen för konstruktivt självhävdande beteenden för en person antingen genom att i behandling exponera för antecedenterna för social ångest eller genom att arbeta med hur personen förhåller sig till själva ångesten. Den senare toleranskomponenten kan ses som ett komplement till den habitueringsrational som varit förhärskande inom KBT fram till sekelskiftet <!-- källa? -->.
 
@@ -772,10 +772,10 @@ xdemodata <- rbind(
 xdemodatax <- as.data.frame(t(round(xdemodata[-1,],2) * 100))
 
 xdemodatax$x <- as.factor(c(
-    paste(round(mean(r2.wide.data[wg3,64]),2)," (",round(sd(r2.wide.data[wg3,64]),2),")",sep=""),
-    paste(round(mean(r2.wide.data[wg1,64]),2)," (",round(sd(r2.wide.data[wg1,64]),2),")",sep=""),
-    paste(round(mean(r2.wide.data[wg2,64]),2)," (",round(sd(r2.wide.data[wg2,64]),2),")",sep=""),
-    paste(round(mean(r2.wide.data[,64]),2)," (",round(sd(r2.wide.data[,64]),2),")",sep="")
+    paste(round(mean(r2.wide.data[wg3,64]),1)," (",round(sd(r2.wide.data[wg3,64]),1),")",sep=""),
+    paste(round(mean(r2.wide.data[wg1,64]),1)," (",round(sd(r2.wide.data[wg1,64]),1),")",sep=""),
+    paste(round(mean(r2.wide.data[wg2,64]),1)," (",round(sd(r2.wide.data[wg2,64]),1),")",sep=""),
+    paste(round(mean(r2.wide.data[,64]),1)," (",round(sd(r2.wide.data[,64]),1),")",sep="")
   ))
 
 xdemodatax <- xdemodatax[,c(24,1:23)]
@@ -803,7 +803,7 @@ De `r length(r2.wide.data$subject)` deltagare vars data används i den här stud
 
 svkable(demdata.tabell, caption = "(ref:dem)", align="ccc") %>%
   kable_styling(full_width = F) %>%
-  column_spec(2, width = "11em") %>%
+  column_spec(2, width = "10em") %>%
   column_spec(2, width = "5em") %>%
   column_spec(3, width = "5em") %>%
   column_spec(4, width = "5em") %>%
@@ -886,7 +886,7 @@ Obegränsade möjligheter att genomföra beteendeexperiment.
 Dock komma ihåg att vi ska hålla det här avsnittet av metoddelen kort och koncist
 -->
 
-I linje med forskning om att acceptera och ge plats för tankar och känslor i pressade situationer [@Hayes1996; @Hayes2004a; @Luoma2007] lade träningsprogrammet Respekt i kvadrat större vikt vid acceptans och tolerans av ångest än @michel2008. Det gjordes genom tillägg av nyskrivna avsnitt och övningar som fördelades över modulerna. Ett exempel på material som uppmanar deltagaren att aktivt stanna kvar i eller rent av uppsöka -- för brytande av undvikande relevant -- respondent obehag är psykoedukativa texter om optimering av inlärning via variation och mängdträning. I de avsnitten introduceras även begreppen *fixed mindset* och *growth mindset*, som handlar om effekten av olika förhållningssätt till utmaningar och hur man genom att möta obehaget skapar förutsättningar för utveckling [@Dweck1995; @Schroder2016; @Schroder2015; @DeCastella2015]. Ett annat är psykoedukativa avsnitt om vidmakthållande av ångestrelaterade besvär som också innehåller en övning som både handlar om att identifiera värdebaserade fördelar med handlande i situationer som tidigare har präglats av undvikande och om att identifiera kortsiktigt belönande anledningar att stå ut med respondenta rädsloreaktioner i situationer som tidigare undvikits. 
+I linje med vikten av att acceptera och ge plats för tankar och känslor i pressade situationer som har lyfts fram i litteraturen under de senaste årtiondena [@Hayes1996; @Hayes2004a; @Luoma2007] lade träningsprogrammet Respekt i kvadrat större vikt vid acceptans och tolerans av ångest än @michel2008. Det gjordes genom tillägg av nyskrivna avsnitt och övningar som fördelades över modulerna. Ett exempel på material som uppmanar deltagaren att aktivt stanna kvar i eller rent av uppsöka -- för brytande av undvikande relevant -- respondent obehag är psykoedukativa texter om optimering av inlärning via variation och mängdträning. I de avsnitten introduceras även begreppen *fixed mindset* och *growth mindset*, som handlar om effekten av olika förhållningssätt till utmaningar och hur man genom att möta obehaget skapar förutsättningar för utveckling [@Dweck1995; @Schroder2016; @Schroder2015; @DeCastella2015]. Ett annat är psykoedukativa avsnitt om vidmakthållande av ångestrelaterade besvär som också innehåller en övning som både handlar om att identifiera värdebaserade fördelar med handlande i situationer som tidigare har präglats av undvikande och om att identifiera kortsiktigt belönande anledningar att stå ut med respondenta rädsloreaktioner i situationer som tidigare undvikits. 
 
 I @michel2008 presenteras rationalen för och övningar i muskelavslappning översiktligt i ett kapitel. I linje med Östs [-@ost2006tillampad] rekommendation om att tillämpad avslappning bör introduceras stegvis över en längre tidsperiod introduceras deltagarna till progressiv muskelavslappning i modul 2, med en gradvis inriktning i modulerna 3--5 mot tillämpad avslappning. Under första delen av programmet uppmanas deltagarna explicit att tillämpa principerna om hög grad av variation och upprepning i färdighetsträningen av progressiv och alltmer tillämpad avslappning. Integreringen av progressiv muskelavslappning i hela första delen av träningsprogrammet tjänar syftena att ge deltagarna möjlighet att tillgodogöra sig färdigheter som relativt snabbt har potential att ge positiva effekter i vardagen och att ge dem en egen erfarenhet av fördelarna med mängdträning.
 
@@ -1053,11 +1053,11 @@ Vi analyserade insamlade förmätningsvärden för att kontrollera om randomiser
 
 ### Analys av huvudeffekter och interaktionseffekter
 
-Huvudeffekter och interaktion mellan grupp och tid för de primära och sekundära utfallsmått undersöktes med flernivåanalys, (också kallad *hierarkisk analys*, på engelska bland annat *mixed model*, *multilevel model* eller *hierarchical linear model*). Flernivåanalys tillåter precis som multivariat variansanalys (MANOVA) inklusion av upprepade beroende mättillfällen i modellen, men fördelerna att metoden tillåter obalanserade grupper och att principen om *intention to treat* värnas utan behov av imputering av saknade datapunkter. Flernivåanalysmodeller uppskattar också inklusion av *random*-effekter observerad men inte kontrollerad varians på klusternivå (i detta fall enskilda individer som "innehåller" upprepade mättillfällen).
+Huvudeffekter och interaktion mellan grupp och tid för de primära och sekundära utfallsmåtten undersöktes med så kallad flernivåanalys (också kallad blandad modell, hierarkisk analys, på engelska bland annat *mixed model*, *multilevel model* och *hierarchical linear model*). Flernivåanalys tillåter precis som multivariat variansanalys (MANOVA) inklusion av upprepade beroende mättillfällen i modellen, men fördelerna att metoden tillåter obalanserade grupper och att principen om *intention to treat* värnas utan behov av imputering av saknade datapunkter. Flernivåanalyser uppskattar också inklusion av *random*-effekter observerad men inte kontrollerad varians på klusternivå (i detta fall enskilda individer som "innehåller" upprepade mättillfällen).
 
 Granskning av homoscedasticitet och residualernas fördelning samt identifiering av outliers gjordes visuellt med diagnostiska plottar av de till data anpassade modellerna. All data, inklusive förekommande outliers, behölls i analyserna.
 
-En modell specificerades för vart och ett av beroende utfallsmåtten som fångar olika värden på psykiskt mående i olika självskattningsskalor. Ingen standardisering eller centrering gjordes av värdena. Som oberoende prediktorer eller *fixed*-variabler angavs huvudeeffekter och interaktioner av tid (uppprepade beroende mättillfällen) och grupp (oberoende betingelse till vilka deltagarna randomiserades inför start). I modellerna tilläts skärningspunkterna (intercepten) för respektive deltagare att variera som *random*-effekt. Insamlad mängd data tillät på grund av bortfall inte inklusion av en *random* effekt för lutningen på regressionslinjen mellan mättillfällena.
+En modell specificerades för vart och ett av de beroende utfallsmåtten. Ingen standardisering eller centrering gjordes av värdena. Som oberoende prediktorer eller *fixed*-variabler angavs huvudeeffekter och interaktioner av tid (uppprepade beroende mättillfällen) och grupp (oberoende betingelse till vilka deltagarna randomiserades inför start). I modellerna tilläts skärningspunkterna (intercepten) för respektive deltagare att variera som *random*-effekt. Insamlad mängd data tillät på grund av bortfall inte inklusion av en *random* effekt för lutningen på regressionslinjen mellan mättillfällena.
 
 För modelleringen av de olika utfallsmåtten användes modelleringsverktyg från R-paketet *lme4* [@R-lme4]. Valet av kovariansstrukturen gjordes genom jämförelse av AIC-tal av modeller som anpassades till data med *Maximum Likelihood* (ML)-funktionen. Den alternativa sannolikhetsfunktionen *Restricted Maximum Likelihood* (REML), som ger väntesvärdesriktiga uppskattningar av varianserna, användes därefter för anpassningen av modellerna för utfallsmåtten till underliggande data. 
 
@@ -1109,9 +1109,7 @@ Demografi.Kon.proc <- prop.table(Demografi.Kon.abs, 1)
 
 ```
 
-
-
-Vid analys av skillnader av sociodemografisk data fann vi en signifikant skillnad i könsfördelning mellan grupperna ($\chi^2$ = `r format(round(Demografi.Kon.chi$statistic,2),decimal.mark=",")`, p = `r format(round(Demografi.Kon.chi$p.value,2),decimal.mark=",")`, df = `r format(round(Demografi.Kon.chi$parameter,2),decimal.mark=",")`). Med uppföljande parvisa jämförelser fann vi att andelen kvinnor i gruppen `r xg2` hade signifikant större andel män än både gruppen `r xg3` (p = `r format(round(Demografi.Kon.posthoc$res[1,4],2),decimal.mark=",")`) och gruppen `r xg1` (p = `r format(round(Demografi.Kon.posthoc$res[2,4],2),decimal.mark=",")`). I övrigt fann vi inte några skillnader i sociodemografiska variabler mellan grupperna.
+Vid analys av skillnader av sociodemografisk data fann vi en signifikant skillnad i könsfördelning mellan grupperna ($\chi^2$ = `r format(round(Demografi.Kon.chi$statistic,2),decimal.mark=",")`, p = `r format(round(Demografi.Kon.chi$p.value,2),decimal.mark=",")`, df = `r format(round(Demografi.Kon.chi$parameter,2),decimal.mark=",")`). Gruppen `r xg2` hade vid parvisa uppföljningstest signifikant större andel män än både gruppen `r xg3` (p = `r format(round(Demografi.Kon.posthoc$res[1,4],2),decimal.mark=",")`) och gruppen `r xg1` (p = `r format(round(Demografi.Kon.posthoc$res[2,4],2),decimal.mark=",")`). I övrigt fann vi inte några skillnader i sociodemografiska variabler mellan grupperna.
 
 ```{r groupcontrols, eval = F}
 
@@ -1180,13 +1178,11 @@ anova(kontroll_well)
 
 ```
 
-Med oberoende variansanalys av fördelningarna av de primära och sekundära utfallsmåtten mellan grupperna vid `r xpre`stillfället fann vi inga signifikanta skillnader.
+Med oberoende variansanalys (ANOVA) konstaterade vi att det inte fanns några signifikanta skillnader i några av utfallsmåtten mellan de olika grupperna vid behandlingens start.
 
 ```{r modelcomparisons, eval = F}
 
 # https://hlplab.wordpress.com/2011/06/25/more-on-random-slopes/
-
-residuals(lm(aaas_ag ~ group,data=r2.long.data))
 
 # Select parameters and options
 
@@ -1200,7 +1196,7 @@ test.gls <-
     aaas_ag ~ 1,
     data = r2.long.data,
     na.action = na.omit,
-    method = "ML"
+    method = "REML"
   )
 
 # Random intercept model, using lme
@@ -1210,7 +1206,7 @@ test.1 <-
     random = ~ 1 | subject,
     data = r2.long.data,
     na.action = na.omit,
-    method = "ML"
+    method = "REML"
   )
 anova(test.gls,test.1)
 # There is a significant difference between the models
@@ -1221,7 +1217,7 @@ test.2 <-
     aaas_ag ~ 1 + (time | subject),
     data = r2.long.data,
     na.action = na.omit,
-    REML = F
+    REML = T
   )
 # Does not compute: 
 # (observations = 505) <= (random effects = 615)
@@ -1283,7 +1279,7 @@ anova(test.intercept,test.nestedintercept)
 
 ```
 
-```{r mixedmodels, cache=F}
+```{r mixedmodels, cache=F, eval=T}
 
 # Fit models to data
 
@@ -1354,154 +1350,7 @@ well.lmer <-
 
 ```
 
-Vi fann inga brott mot antagandena för flernivåanalys vid visuell kontroll av diagnostiska plottar av de modeller som anpassats till observerade data. 
-
-## Primär fråga?
-
-Estimat av regressionskoefficienter (β) för de olika primära och sekundära utfallsmåtten sammanfattas i tabell \@ref(stargazer).
-
-```{r mmout, eval=F}
-
-#https://stats.stackexchange.com/questions/226559/how-should-i-report-the-results-from-a-mixed-model-with-vs-without-an-interactio
-
-library("lmerTest") # Overloads lmer with p values
-
-#tab_model(aaas_ad.lmer,aaas_ag.lmer,rathus.lmer,lsas_sum.lmer,gad_sum.lmer,phq_sum.lmer,well.lmer)
-
-report = function(mod, row) {
-  xsumtab = summary(as_lmerModLmerTest(mod))
-  xsumtab = xsumtab[["coefficients"]]
-  paste(
-    "t(",
-    format(round(xsumtab[row, 3], 2), decimal.mark = ','),
-    ") = ",
-    format(round(xsumtab[row, 4], 2), decimal.mark = ','),
-    ", p = ",
-    format(signif(xsumtab[row, 5], 2), decimal.mark = ','),
-    ", med en förändring på ",
-    format(round(xsumtab[row, 1], 2), decimal.mark = ','),
-    " poäng, 95% CI [",
-    format(round(xsumtab[row, 1] - 1.96 * xsumtab[row, 2], 2), decimal.mark = ','),
-    " ; ",
-    format(round(xsumtab[row, 1] + 1.96 * xsumtab[row, 2], 2), decimal.mark = ','),
-    "]",
-    sep = ""
-  )
-}
-
-
-#https://www.researchgate.net/post/How_to_report_results_for_generalised_linear_mixed_model_with_binomial_distribution
-#https://stats.stackexchange.com/questions/363638/interpretation-of-icc-when-multiple-random-intercepts-and-fixed-effects-are-coll
-performance::icc(aaas_ad.lmer)$ICC_conditional
-performance::icc(aaas_ad.lmer)$ICC_adjusted
-#Our random effect is not nested and not cross-classified
-
-#It tells you the proportion of the total variance in Y that is accounted for by the clustering
-
-
-#It can be theoretically meaningful to understand how much of the overall variation in the response is explained by clustering. For example, in a repeated measures psychological study you can tell to what extent mood is a trait (varies among people, but not within a person on different occasions) or state (varies little on average among people, but varies a lot across occasions).
-
-library(ggeffects)
-aaas_ad.emm.plot <- plot(ggemmeans(aaas_ad.lmer, terms = c("time","group")), connect.lines = TRUE)
-
-anova(aaas_ad.lmer)
-anova(aaas_ag.lmer)
-anova(rathus.lmer)
-
-# y = intercept + β*g2 + β*g3 + β*t2 + β*t3 + β*(g2 * t2) + β*(g2 * t3) + β*(g3 * t2) + β*(g3 * t3)
-
-tab_model(aaas_ad.lmer,aaas_ag.lmer,rathus.lmer,lsas_sum.lmer,gad_sum.lmer,phq_sum.lmer,well.lmer)
-
-# För det primära utfallsmåttet AAA-S Adaptive fann vi en huvudeffekt av tid för `r xt2`tillfället, `r report(aaas_ad.lmer,5)`. Vi fann också en interaktionseffekt
-
-
-```
-
-
-Vi sammanfattar våra blandade regressionsmodeller så här:
-
-
-
-
-The main effect of prime structure remained only marginally
-significant when prime surprisal and the prime structure-prime
-surprisal interactions were included in the model (β = .34, SE= .34,
-p= .1), but was statistically significant when these terms were left
-out (β = .43, SE= .21, p< .05), replicating Thothathiri and Snedeker
-(2008). The reason for the reduced significance of the main effect of
-priming is that the effect of prime structure is carried by the
-high-surprisal primes, discussed below.
-As expected, no main effect of the surprisal of either the first or the
-second prime was observed (ps> .5). Crucially, we found the
-predicted two-way interaction between the surprisal of the first prime
-and prime Structure (β = .53, SE= .24, p< .05)-for DO primes, as
-prime surprisal increased, fixations to the animal relative to the
-object increased; for PO primes, as prime surprisal increased, fixations
-to the animal relative to the object decreased. The interaction
-between the surprisal of the second prime and prime structure was
-not significant (p= .9). The significant interaction of prime structure
-and prime surprisal for prime 1 is shown in Figure 2.
-
-
-ICC ger för oss proportionen av den totala variansen i utfallsmåttet som förklaras av skillnader på individnivå.
-
-
-<!-- “…	 politeness	 affected	 pitch	 (χ2(1)=11.62,	 p=0.00065),	 lowering	 it	 by	 -->
-<!-- about	19.7 Hz	± 5.6	(standard	errors)	…” -->
-
-
-
-
-```{r stargazer, results='asis', fig.cap='(ref:stars)', eval=T}
-
-# https://cran.r-project.org/web/packages/stargazer/vignettes/stargazer.pdf
-# NB! We're using stargazer-booktabs to get prettier LaTeX table output
-
-scalenames = c("AAA-S Ad", "AAA-S Ag", "Rathus", "LSAS-SR", "GAD-7", "PHQ-9", "Välmåendeformuläret")
-
-labradorer <- c(
-  xG1,
-  xG2,
-  xDur,
-  xPost,
-  paste(xG1, " -- ", xt2,sep=""),
-  paste(xG2, " -- ", xt2,sep=""),
-  paste(xG1, " -- ", xt3,sep=""),
-  paste(xG2, " -- ", xt3,sep="")
-)
-
-stargazer::stargazer(
-  aaas_ad.lmer, 
-  aaas_ag.lmer, 
-  rathus.lmer,
-  lsas_sum.lmer,
-  gad_sum.lmer,
-  phq_sum.lmer,
-  well.lmer,
-  type = "latex",
-  ci = T,
-  intercept.bottom = F,
-  single.row = F,
-  model.numbers = F,
-  header = F,
-  decimal.mark = ',',
-  digit.separator = ' ',
-  digits = 1,
-  covariate.labels = c("Intercept",labradorer),
-  float.env = "sidewaystable",
-  #omit.stat = c("aic","bic","ll"),
-  keep.stat= c("n"),
-  dep.var.caption = "Beroende variabel",
-  column.labels = c("Primära utfallsmått","Sekundära utfallsmått"),
-  column.separate = c(2,5),
-  dep.var.labels = scalenames,
-  notes.label = "Signifikansnivåer:",
-  label = "stargazer",
-  title = "Estimat av regressionskoefficienter (β) med konfidensintervall och signifikansnivåer för primära och sekundära utfallsmått."
-)
-
-```
-
+Vi fann inga brott mot antagandena för flernivåanalys vid visuell granskning av diagnostiska plottar av de modeller som anpassats till observerade data. 
 
 ```{r predicteddata, cache = T, eval = T}
 
@@ -1530,6 +1379,7 @@ colnames(r2.new.data) <-
     "subject",
     "group",
     "time",
+    "therapist",
     "rathus",
     "aaas_ag",
     "aaas_ad",
@@ -1541,10 +1391,9 @@ colnames(r2.new.data) <-
 
 ```
 
+Tabell \@ref(tab:descriptives) sammanställer predicerade data från de olika modellerna för respektive utfallsmått, inklusive uppskattade effektstorlekar. 
 
-se tabell \@ref(tab:descriptives)
-
-(ref:descriptives) Deskriptiv statistik för primära och sekundära utfallsmått. Cohen's d är beräknad med tillgänglig data för de deltagare som lämnat svar både inför studien och vid respektive mättillfäll.
+(ref:descriptives) Estimerade medelvärden (och standardavvikelser) samt effektstorlekar för utfallsmåtten i de olika grupperna och vid de olika mättillfällena.
 
 ```{r descriptives, fig.align="center", cache = T, eval = F}
 
@@ -1552,21 +1401,38 @@ options(OutDec= ".")
 
 ### Descriptives
 
+ng1t1 <- r2.new.data$group == xg1 & r2.new.data$time == xt1
+ng1t2 <- r2.new.data$group == xg1 & r2.new.data$time == xt2
+# 
+# library(effsize)
+#   cohen.d(
+#     r2.new.data[ng1t2, 5],
+#     r2.new.data[ng1t1, 5],
+#     pooled = T,
+#     #paired = T,
+#     #subject = r2.new.data$subject,
+#     na.rm = T,
+#     hedges.correction = F,
+#     conf.level = 0.95,
+#     within = T
+#   )
+
 library(effsize)
 
 xhgn <-  function(num,x,y) {
   cohen.d(
-    r2.long.data[x, num],
-    r2.long.data[y, num],
+    r2.new.data[ng1t2, 5],
+    r2.new.data[ng1t1, 5],
     pooled = T,
-    paired = T,
+    #paired = T,
     na.rm = T,
     hedges.correction = F,
-    conf.level = 0.95,
-    within = T
+    conf.level = 0.95
   )
 }
-  
+
+xhgn(2,lg1t2,lg1t1)$estimate
+
 lg1t2.eff <- c(
 xhgn(7,lg1t2,lg1t1)$estimate,
 xhgn(6,lg1t2,lg1t1)$estimate,
@@ -1627,19 +1493,19 @@ xhgn(14,lg3t3,lg3t1)$estimate,
 xhgn(17,lg3t3,lg3t1)$estimate
 )
 
-numvars <- c(5:17) # Variables in r2.long.data that we are interested in
+numvars <- c(5:11) # Variables in r2.new.data that we are interested in
 
-descriptives.lg1t1 <- stat.desc(r2.long.data[lg1t1,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
-descriptives.lg1t2 <- stat.desc(r2.long.data[lg1t2,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
-descriptives.lg1t3 <- stat.desc(r2.long.data[lg1t3,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+descriptives.lg1t1 <- stat.desc(r2.new.data[lg1t1,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+descriptives.lg1t2 <- stat.desc(r2.new.data[lg1t2,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+descriptives.lg1t3 <- stat.desc(r2.new.data[lg1t3,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
 
-descriptives.lg2t1 <- stat.desc(r2.long.data[lg2t1,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
-descriptives.lg2t2 <- stat.desc(r2.long.data[lg2t2,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
-descriptives.lg2t3 <- stat.desc(r2.long.data[lg2t3,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+descriptives.lg2t1 <- stat.desc(r2.new.data[lg2t1,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+descriptives.lg2t2 <- stat.desc(r2.new.data[lg2t2,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+descriptives.lg2t3 <- stat.desc(r2.new.data[lg2t3,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
 
-descriptives.lg3t1 <- stat.desc(r2.long.data[lg3t1,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
-descriptives.lg3t2 <- stat.desc(r2.long.data[lg3t2,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
-descriptives.lg3t3 <- stat.desc(r2.long.data[lg3t3,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+descriptives.lg3t1 <- stat.desc(r2.new.data[lg3t1,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+descriptives.lg3t2 <- stat.desc(r2.new.data[lg3t2,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+descriptives.lg3t3 <- stat.desc(r2.new.data[lg3t3,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
 
 descriptives.out <- rbind(
   xg1t1 = cbind(
@@ -1680,10 +1546,10 @@ descriptives.out <- rbind(
 colnames(descriptives.out) <-
   rep(
     c(
-      "AAAS Ad",
-      "AAAS Ag",
+      "AAA-S Ad",
+      "AAA-S Ag",
       "Rathus",
-      "LSAS-24",
+      "LSAS-SR",
       "GAD-7",
       "PHQ-9",
       "Välmående"
@@ -1730,6 +1596,293 @@ svkable(descriptives.col.out[], caption = "(ref:descriptives)", linesep = "", al
   add_header_above(c(" " = 3, "Primära utfallsmått" = 2, "Sekundära utfallsmått" = 5))
 
 ```
+
+Estimat för intercept och regressionskoefficienter (*b*) för de olika primära och sekundära utfallsmåtten sammanfattas i tabell \@ref(stargazer). Tabellen ger den information som läggs in i regressionsformeln som ger predicerade medelvärden för alla kombinationer av grupptillhörighet och mättillfällen.
+
+Det vi primärt är intresserade av är om det finns någon skillnad (i endera riktning) i effekt mellan gruppen `r xg1` och gruppen `r xg2` med avseende på konstruktiv självhävdelse, det vill säga med utfallsmåttet AAA-S Adaptive. 
+
+
+<!-- ### Random effects -->
+<!-- ICC ger oss proportionen av den totala variansen i utfallsmåttet som förklaras av skillnader på individnivå. Vi konstaterar att för huvudutfallsmåttet AAA-S Adaptive förklaras 68% av variansen i -->
+
+<!-- ### Fixed effects -->
+
+
+
+<!-- emmeans -->
+
+<!-- effectsizes -->
+
+
+(ref:emmeff) bildtext
+
+```{r emmeanseffects, dpi=196, fig.align="center", fig.cap='(ref:emmeff)', fig.height=4.5, fig.width=5.5}
+
+
+require(emmeans)
+require(ggeffects)
+require(sjPlot)
+library(broom.mixed)
+require(gridExtra)
+require(grid)
+
+aaas_ag.emm.by.group <- emmeans(aaas_ad.lmer, ~ time | group, adjust="bonferroni")
+aaas_ag.emm.by.time <- emmeans(aaas_ad.lmer, ~ group | time, adjust="bonferroni")
+aaas_ag.eff.by.group <- eff_size(aaas_ad.emm.by.group, sigma = sigma(aaas_ag.lmer), edf = 202) # Check edf!
+aaas_ag.eff.by.time <- eff_size(aaas_ad.emm.by.time, sigma = sigma(aaas_ag.lmer), edf = 202) # Check edf!
+
+Name = c(
+  NA,
+  paste(aaas_ag.eff.by.group[5,1],"-",aaas_ag.eff.by.group[5,2],": ",format(round(aaas_ag.eff.by.group[5,4],2) * -1,decimal.mark=","),sep=""),
+  paste(aaas_ag.eff.by.group[8,1],"-",aaas_ag.eff.by.group[8,2],": ",format(round(aaas_ag.eff.by.group[8,4],2) * -1,decimal.mark=","),sep=""),
+  NA,
+  paste(aaas_ag.eff.by.time[4,1],"-",aaas_ag.eff.by.time[4,2],": ",format(round(aaas_ag.eff.by.time[4,4],2) * -1,decimal.mark=","),sep=""),
+  NA,
+  NA,
+  paste(aaas_ag.eff.by.time[7,1],"-",aaas_ag.eff.by.time[7,2],": ",format(round(aaas_ag.eff.by.time[7,4],2) * -1,decimal.mark=","),sep=""),
+  paste(aaas_ag.eff.by.time[8,1],"-",aaas_ag.eff.by.time[8,2],": ",format(round(aaas_ag.eff.by.time[8,4],2) * -1,decimal.mark=","),sep="")
+)
+Nudge_x = c(0,0.1,0.1,0,0,0,0,-0.1,-0.1)
+Nudge_y = c(0,-0.55,0.55,0,0.55,0,0,0.55,-0.55)
+
+aaas_ag.emm.plot <- 
+  plot(ggemmeans(aaas_ag.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = NA, colour = "Grupp", title = "Predicerade värden och effektstyrkor för AAA-S Adaptive") + theme(legend.position = "bottom", axis.title.y = element_blank())
+
+#,arrow = arrow(length = unit(0.05, "npc"))
+p1 <- aaas_ag.emm.plot + 
+  geom_curve(aes(x = 2.9, y = aaas_ag.emm.plot$data[2]$predicted[7], xend = 3.1, yend = aaas_ag.emm.plot$data[2]$predicted[9]), color = "#888888", size = 0.25, linetype = "dashed", curvature = 0.4) +
+  geom_curve(aes(x = 2.9, y = aaas_ag.emm.plot$data[2]$predicted[7], xend = 3, yend = aaas_ag.emm.plot$data[2]$predicted[8]), color = "#888888", size = 0.25, linetype = "dashed", curvature = -0.4) +
+  #geom_curve(aes(x = 1.9, y = aaas_ag.emm.plot$data[2]$predicted[4], xend = 2.1, yend = aaas_ag.emm.plot$data[2]$predicted[6]), color = "#888888", size = 0.25, linetype = "dashed", curvature = 0.5) +
+  geom_curve(aes(x = 1.9, y = aaas_ag.emm.plot$data[2]$predicted[4], xend = 2, yend = aaas_ag.emm.plot$data[2]$predicted[5]), color = "#888888", size = 0.25, linetype = "dashed", curvature = -0.4) + 
+  geom_curve(aes(x = 1, y = aaas_ag.emm.plot$data[2]$predicted[2], xend = 3, yend = aaas_ag.emm.plot$data[2]$predicted[8]), color = "#888888", size = 0.25, linetype = "dashed", curvature = -0.2) + 
+  geom_curve(aes(x = 1.1, y = aaas_ag.emm.plot$data[2]$predicted[3], xend = 3.1, yend = aaas_ag.emm.plot$data[2]$predicted[9]), color = "#888888", size = 0.25, linetype = "dashed", curvature = 0.15) + 
+  geom_label(aes(label=Name),color="white", fill="#888888", nudge_x = Nudge_x, nudge_y = Nudge_y,size=2.5,na.rm=TRUE)
+
+p1
+
+```
+
+
+
+Vi fann ingen skillnad (effektstorlek `r aaas_ad.eff.by.time$effect.size[9]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[9]` ; `r aaas_ad.eff.by.time$conf.high[9]`]) vid tidpunkten `r xt3` mellan gruppen `r xg1` (estimerat marginalmedelvärde `r aaas_ad.emm.by.time$effect.size[8]`, 95% CI [`r aaas_ad.emm.by.time$conf.low[8]` ; `r aaas_ad.emm.by.time$conf.high[8]`]) och gruppen `r xg2` (estimerat marginalmedelvärde `r aaas_ad.emm.by.time$effect.size[9]`, 95% CI [`r aaas_ad.emm.by.time$conf.low[9]` ; `r aaas_ad.emm.by.time$conf.high[9]`]) med avseende på AAA-S Adaptive. Vi fann inte heller någon skillnad i effekt vid tidpunkten `r xt2`. Skillnaden är försumbar mellan att få terapeutstöd och att inte få det vid deltagande i träningsprogrammet *Respekt i kvadrat*.
+
+Vi var också intresserade av att ta reda på om effekten av deltagande i grupperna `r xg1` och `r xg2` skiljer sig från `r xg3` med avseende på konstruktiv och aggressiv självhävdelse. 
+
+För AAA-S Adaptive fann vi en skillnad (effektstorlek `r aaas_ad.eff.by.time$effect.size[9]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[9]` ; `r aaas_ad.eff.by.time$conf.high[9]`]) vid  tidpunkten `r xt3` mellan gruppen `r xg1` (estimerat marginalmedelvärde `r aaas_ad.emm.by.time$effect.size[8]`, 95% CI [`r aaas_ad.emm.by.time$conf.low[8]` ; `r aaas_ad.emm.by.time$conf.high[8]`]) och gruppen `r xg3` (estimerat marginalmedelvärde `r aaas_ad.emm.by.time$effect.size[9]`, 95% CI [`r aaas_ad.emm.by.time$conf.low[9]` ; `r aaas_ad.emm.by.time$conf.high[9]`]) med avseende på AAA-S Adaptive. Vi fann också en skillnad (effektstorlek `r aaas_ad.eff.by.time$effect.size[9]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[9]` ; `r aaas_ad.eff.by.time$conf.high[9]`]) vid  tidpunkten `r xt3` mellan gruppen `r xg1` (estimerat marginalmedelvärde `r aaas_ad.emm.by.time$effect.size[8]`, 95% CI [`r aaas_ad.emm.by.time$conf.low[8]` ; `r aaas_ad.emm.by.time$conf.high[8]`]) och gruppen `r xg3` (estimerat marginalmedelvärde `r aaas_ad.emm.by.time$effect.size[9]`, 95% CI [`r aaas_ad.emm.by.time$conf.low[9]` ; `r aaas_ad.emm.by.time$conf.high[9]`]) med avseende på AAA-S Adaptive. Båda behandlingsbetingelser förbättrades avsevärt jämfört med väntelistan. Effekten var påtaglig redan vid mittenmätningen. Se figur XXXX för en sammanfattning.
+
+<!-- Skriv om nedanstående!!! -->
+För AAA-S Aggressive fann vi en skillnad (effektstorlek `r aaas_ad.eff.by.time$effect.size[9]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[9]` ; `r aaas_ad.eff.by.time$conf.high[9]`]) vid  tidpunkten `r xt3` mellan gruppen `r xg1` (estimerat marginalmedelvärde `r aaas_ad.emm.by.time$effect.size[8]`, 95% CI [`r aaas_ad.emm.by.time$conf.low[8]` ; `r aaas_ad.emm.by.time$conf.high[8]`]) och gruppen `r xg3` (estimerat marginalmedelvärde `r aaas_ad.emm.by.time$effect.size[9]`, 95% CI [`r aaas_ad.emm.by.time$conf.low[9]` ; `r aaas_ad.emm.by.time$conf.high[9]`]) med avseende på AAA-S Adaptive. Vi fann också en skillnad (effektstorlek `r aaas_ad.eff.by.time$effect.size[9]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[9]` ; `r aaas_ad.eff.by.time$conf.high[9]`]) vid  tidpunkten `r xt3` mellan gruppen `r xg1` (estimerat marginalmedelvärde `r aaas_ad.emm.by.time$effect.size[8]`, 95% CI [`r aaas_ad.emm.by.time$conf.low[8]` ; `r aaas_ad.emm.by.time$conf.high[8]`]) och gruppen `r xg3` (estimerat marginalmedelvärde `r aaas_ad.emm.by.time$effect.size[9]`, 95% CI [`r aaas_ad.emm.by.time$conf.low[9]` ; `r aaas_ad.emm.by.time$conf.high[9]`]) med avseende på AAA-S Adaptive. Båda behandlingsbetingelser förbättrades jämfört med väntelistan. Effekten var påtaglig redan vid mittenmätningen. Se figur XXXX för en sammanfattning.
+
+<!-- Var effekten märkbar vid mittenmätningen för Ag? -->
+
+Slutligen ville vi också undersöka vilka prediktorer/moderatorer hos deltagarna (exempelvis grad av social ångest eller grad av depression) i behandlingsalternativen `r xg1` och `r xg2` som påverkar utfallet samt vilka mediatorer inom behandlingsalternativen (exempelvis tilldelning av terapeut) som påverkar utfallet. 
+
+Det finns möjlighet att fortsätta analysera insamlad data. Med våra initiala analyser konstaterar vi att ICC-värdet ger att 68% av variansen i utfallsmåttet AAA-S Adaptive kan förklaras av individuella faktorer. För AAA-S Aggressive kan 74% av variansen förklaras av individuella faktorer.
+
+```{r emmeanseffectsx, dpi=196, fig.align="center", fig.cap='(ref:emmeff)', fig.height=4.5, fig.width=5.5}
+
+require(emmeans)
+require(ggeffects)
+require(sjPlot)
+library(broom.mixed)
+require(gridExtra)
+require(grid)
+
+aaas_ag.emm.by.group <- emmeans(aaas_ag.lmer, ~ time | group, adjust="bonferroni")
+aaas_ag.emm.by.time <- emmeans(aaas_ag.lmer, ~ group | time, adjust="bonferroni")
+aaas_ag.eff.by.group <- tidy(eff_size(aaas_ag.emm.by.group, sigma = sigma(aaas_ag.lmer), edf = 202)) # Check edf!
+aaas_ag.eff.by.time <- tidy(eff_size(aaas_ag.emm.by.time, sigma = sigma(aaas_ag.lmer), edf = 202)) # Check edf!
+
+Name = c(
+  NA,
+  paste(aaas_ag.eff.by.group[5,1],"-",aaas_ag.eff.by.group[5,2],": ",format(round(aaas_ag.eff.by.group[5,4],2) * -1,decimal.mark=","),sep=""),
+  paste(aaas_ag.eff.by.group[8,1],"-",aaas_ag.eff.by.group[8,2],": ",format(round(aaas_ag.eff.by.group[8,4],2) * -1,decimal.mark=","),sep=""),
+  NA,
+  paste(aaas_ag.eff.by.time[4,1],"-",aaas_ag.eff.by.time[4,2],": ",format(round(aaas_ag.eff.by.time[4,4],2) * -1,decimal.mark=","),sep=""),
+  NA,
+  NA,
+  paste(aaas_ag.eff.by.time[7,1],"-",aaas_ag.eff.by.time[7,2],": ",format(round(aaas_ag.eff.by.time[7,4],2) * -1,decimal.mark=","),sep=""),
+  paste(aaas_ag.eff.by.time[8,1],"-",aaas_ag.eff.by.time[8,2],": ",format(round(aaas_ag.eff.by.time[8,4],2) * -1,decimal.mark=","),sep="")
+)
+Nudge_x = c(0,0.1,0.1,0,0,0,0,-0.1,-0.1)
+Nudge_y = c(0,-0.55,0.55,0,0.55,0,0,0.55,-0.55)
+
+aaas_ag.emm.plot <- 
+  plot(ggemmeans(aaas_ag.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = NA, colour = "Grupp", title = "Predicerade värden och effektstyrkor för AAA-S Aggressive") + theme(legend.position = "bottom", axis.title.y = element_blank())
+
+#,arrow = arrow(length = unit(0.05, "npc"))
+p1 <- aaas_ag.emm.plot + 
+  geom_curve(aes(x = 2.9, y = aaas_ag.emm.plot$data[2]$predicted[7], xend = 3.1, yend = aaas_ag.emm.plot$data[2]$predicted[9]), color = "#888888", size = 0.25, linetype = "dashed", curvature = 0.4) +
+  geom_curve(aes(x = 2.9, y = aaas_ag.emm.plot$data[2]$predicted[7], xend = 3, yend = aaas_ag.emm.plot$data[2]$predicted[8]), color = "#888888", size = 0.25, linetype = "dashed", curvature = -0.4) +
+  #geom_curve(aes(x = 1.9, y = aaas_ag.emm.plot$data[2]$predicted[4], xend = 2.1, yend = aaas_ag.emm.plot$data[2]$predicted[6]), color = "#888888", size = 0.25, linetype = "dashed", curvature = 0.5) +
+  geom_curve(aes(x = 1.9, y = aaas_ag.emm.plot$data[2]$predicted[4], xend = 2, yend = aaas_ag.emm.plot$data[2]$predicted[5]), color = "#888888", size = 0.25, linetype = "dashed", curvature = -0.4) + 
+  geom_curve(aes(x = 1, y = aaas_ag.emm.plot$data[2]$predicted[2], xend = 3, yend = aaas_ag.emm.plot$data[2]$predicted[8]), color = "#888888", size = 0.25, linetype = "dashed", curvature = -0.2) + 
+  geom_curve(aes(x = 1.1, y = aaas_ag.emm.plot$data[2]$predicted[3], xend = 3.1, yend = aaas_ag.emm.plot$data[2]$predicted[9]), color = "#888888", size = 0.25, linetype = "dashed", curvature = 0.15) + 
+  geom_label(aes(label=Name),color="white", fill="#888888", nudge_x = Nudge_x, nudge_y = Nudge_y,size=2.5,na.rm=TRUE)
+
+p1
+
+```
+
+
+
+<!-- Vill man till exempel predicera medelvärdet för AAA-S Adaptive vid slutmätningstillfället för gruppen `r xg2`, ges svaret av följande formel (med intercept och regressionskoefficienter hämtade från motsvarande tabellrader): -->
+
+<!-- $$M_{självhjälp,slutmätning} = intercept + b_{självhjälp}\times självhjälp + b_{behandlarstöd}\times behandlarstöd + b_{mittenmätning}\times mittenmätning + b_{eftermätning}\times eftermätning + b_{självhjälp,mittenmätning}\times (självhjälp \times mittenmätning) + b_{behandlarstöd,mittenmätning}\times (behandlarstöd \times  mittenmätning) + b_{självhjälp,eftermätning}\times (självhjälp \times eftermätning) +  b_{behandlarstöd,eftermätning}\times (behandlarstöd \times eftermätning)$$ -->
+
+<!-- $$M_{självhjälp,slutmätning} = 36,38 + b*g2 + b*g3 + b*t2 + b*t3 + b*(g2 * t2) + b*(g2 * t3) + b*(g3 * t2) + b*(g3 * t3)$$ -->
+
+skvallrar om interaktioner mellan tid och grupp för utvecklingen 
+
+## Primär fråga?
+
+
+<!-- Det vi primärt är intresserade av är om det finns någon skillnad (i endera riktning) i effekt mellan gruppen `r xg1` och gruppen `r xg2` med avseende på konstruktiv självhävdelse, det vill säga med utfallsmåttet AAA-S Adaptive. -->
+
+Vi är också intresserade av att ta reda på om effekten i gruppen `r xg3` är sämre än behandlingseffekten i gruppen  `r xg1` respektive gruppen `r xg2` med avseende på konstruktiv självhävdelse, det vill säga med utfallsmåttet AAA-S Adaptive. Slutligen vill vi också undersöka vilka prediktorer/moderatorer hos deltagarna (exempelvis grad av social ångest eller grad av depression) i behandlingsalternativen `r xg1` och `r xg2` som påverkar utfallet samt vilka mediatorer inom behandlingsalternativen (exempelvis tilldelning av terapeut) som påverkar utfallet. 
+
+
+```{r mmout, eval=F}
+
+#https://stats.stackexchange.com/questions/226559/how-should-i-report-the-results-from-a-mixed-model-with-vs-without-an-interactio
+
+library("lmerTest") # Adds t and p values to lmer output
+
+#tab_model(aaas_ad.lmer,aaas_ag.lmer,rathus.lmer,lsas_sum.lmer,gad_sum.lmer,phq_sum.lmer,well.lmer)
+
+report = function(mod, row) {
+  xsumtab = summary(as_lmerModLmerTest(mod))
+  xsumtab = xsumtab[["coefficients"]]
+  paste(
+    "t(",
+    format(round(xsumtab[row, 3], 2), decimal.mark = ','),
+    ") = ",
+    format(round(xsumtab[row, 4], 2), decimal.mark = ','),
+    ", p = ",
+    format(signif(xsumtab[row, 5], 2), decimal.mark = ','),
+    ", med en förändring på ",
+    format(round(xsumtab[row, 1], 2), decimal.mark = ','),
+    " poäng, 95% CI [",
+    format(round(xsumtab[row, 1] - 1.96 * xsumtab[row, 2], 2), decimal.mark = ','),
+    " ; ",
+    format(round(xsumtab[row, 1] + 1.96 * xsumtab[row, 2], 2), decimal.mark = ','),
+    "]",
+    sep = ""
+  )
+}
+
+
+#https://www.researchgate.net/post/How_to_report_results_for_generalised_linear_mixed_model_with_binomial_distribution
+#https://stats.stackexchange.com/questions/363638/interpretation-of-icc-when-multiple-random-intercepts-and-fixed-effects-are-coll
+performance::icc(aaas_ad.lmer)$ICC_conditional
+performance::icc(aaas_ad.lmer)$ICC_adjusted
+#Our random effect is not nested and not cross-classified
+
+#It tells you the proportion of the total variance in Y that is accounted for by the clustering
+
+
+#It can be theoretically meaningful to understand how much of the overall variation in the response is explained by clustering. For example, in a repeated measures psychological study you can tell to what extent mood is a trait (varies among people, but not within a person on different occasions) or state (varies little on average among people, but varies a lot across occasions).
+
+library(ggeffects)
+aaas_ad.emm.plot <- plot(ggemmeans(aaas_ad.lmer, terms = c("time","group")), connect.lines = TRUE)
+
+anova(aaas_ad.lmer)
+anova(aaas_ag.lmer)
+anova(rathus.lmer)
+
+# y_patrik = intercept + b*g2 + b*g3 + b*t2 + b*t3 + b*(g2 * t2) + b*(g2 * t3) + b*(g3 * t2) + b*(g3 * t3)
+
+tab_model(aaas_ad.lmer,aaas_ag.lmer,rathus.lmer,lsas_sum.lmer,gad_sum.lmer,phq_sum.lmer,well.lmer)
+
+# För det primära utfallsmåttet AAA-S Adaptive fann vi en huvudeffekt av tid för `r xt2`tillfället, `r report(aaas_ad.lmer,5)`. Vi fann också en interaktionseffekt
+
+
+```
+
+
+<!-- Vi sammanfattar våra blandade regressionsmodeller så här: -->
+
+
+
+
+<!-- The main effect of prime structure remained only marginally -->
+<!-- significant when prime surprisal and the prime structure-prime -->
+<!-- surprisal interactions were included in the model (β = .34, SE= .34, -->
+<!-- p= .1), but was statistically significant when these terms were left -->
+<!-- out (β = .43, SE= .21, p< .05), replicating Thothathiri and Snedeker -->
+<!-- (2008). The reason for the reduced significance of the main effect of -->
+<!-- priming is that the effect of prime structure is carried by the -->
+<!-- high-surprisal primes, discussed below. -->
+<!-- As expected, no main effect of the surprisal of either the first or the -->
+<!-- second prime was observed (ps> .5). Crucially, we found the -->
+<!-- predicted two-way interaction between the surprisal of the first prime -->
+<!-- and prime Structure (β = .53, SE= .24, p< .05)-for DO primes, as -->
+<!-- prime surprisal increased, fixations to the animal relative to the -->
+<!-- object increased; for PO primes, as prime surprisal increased, fixations -->
+<!-- to the animal relative to the object decreased. The interaction -->
+<!-- between the surprisal of the second prime and prime structure was -->
+<!-- not significant (p= .9). The significant interaction of prime structure -->
+<!-- and prime surprisal for prime 1 is shown in Figure 2. -->
+
+
+
+
+<!-- “…	 politeness	 affected	 pitch	 (χ2(1)=11.62,	 p=0.00065),	 lowering	 it	 by	 -->
+<!-- about	19.7 Hz	± 5.6	(standard	errors)	…” -->
+
+
+
+
+```{r stargazer, results='asis', fig.cap='(ref:stars)', eval=T}
+
+# https://cran.r-project.org/web/packages/stargazer/vignettes/stargazer.pdf
+# NB! We're using stargazer-booktabs to get prettier LaTeX table output
+
+scalenames = c("AAA-S Ad", "AAA-S Ag", "Rathus", "LSAS-SR", "GAD-7", "PHQ-9", "Välmåendeformuläret")
+
+labradorer <- c(
+  xG1,
+  xG2,
+  xDur,
+  xPost,
+  paste(xG1, " -- ", xt2,sep=""),
+  paste(xG2, " -- ", xt2,sep=""),
+  paste(xG1, " -- ", xt3,sep=""),
+  paste(xG2, " -- ", xt3,sep="")
+)
+
+stargazer::stargazer(
+  aaas_ad.lmer, 
+  aaas_ag.lmer, 
+  rathus.lmer,
+  lsas_sum.lmer,
+  gad_sum.lmer,
+  phq_sum.lmer,
+  well.lmer,
+  type = "latex",
+  ci = T,
+  intercept.bottom = F,
+  single.row = F,
+  model.numbers = F,
+  header = F,
+  decimal.mark = ',',
+  digit.separator = ' ',
+  digits = 1,
+  covariate.labels = c("Intercept",labradorer),
+  float.env = "sidewaystable",
+  #omit.stat = c("aic","bic","ll"),
+  keep.stat= c("n"),
+  dep.var.caption = "Beroende variabel",
+  column.labels = c("Primära utfallsmått","Sekundära utfallsmått"),
+  column.separate = c(2,5),
+  dep.var.labels = scalenames,
+  notes.label = "Signifikansnivåer:",
+  label = "stargazer",
+  title = "Estimat av intercept och regressionskoefficienter för respektive flernivåanalys av de primära och sekundära utfallsmåtten."
+)
+
+```
+
 
 <!-- ### Interaktionsplottar -->
 
@@ -2145,54 +2298,6 @@ rathus.pre.post.jt.plot + theme(legend.position="none") + scale_color_manual(val
 #rathus.pre.dur.jt.plot + theme(legend.position="none") + scale_color_manual(values=c(rep("white",times=4),"red"))
 
 ```
-
-(ref:emmeff) bildtext
-
-```{r emmeanseffects, dpi=196, fig.align="center", fig.cap='(ref:emmeff)', fig.height=4.5, fig.width=5.5}
-
-require(emmeans)
-require(ggeffects)
-require(sjPlot)
-library(broom.mixed)
-require(gridExtra)
-require(grid)
-
-aaas_ag.emm.by.group <- emmeans(aaas_ag.lmer, ~ time | group, adjust="bonferroni")
-aaas_ag.emm.by.time <- emmeans(aaas_ag.lmer, ~ group | time, adjust="bonferroni")
-aaas_ag.eff.by.group <- tidy(eff_size(aaas_ag.emm.by.group, sigma = sigma(aaas_ag.lmer), edf = 202)) # Check edf!
-aaas_ag.eff.by.time <- tidy(eff_size(aaas_ag.emm.by.time, sigma = sigma(aaas_ag.lmer), edf = 202)) # Check edf!
-
-Name = c(
-  NA,
-  paste(aaas_ag.eff.by.group[5,1],"-",aaas_ag.eff.by.group[5,2],": ",format(round(aaas_ag.eff.by.group[5,4],2) * -1,decimal.mark=","),sep=""),
-  paste(aaas_ag.eff.by.group[8,1],"-",aaas_ag.eff.by.group[8,2],": ",format(round(aaas_ag.eff.by.group[8,4],2) * -1,decimal.mark=","),sep=""),
-  NA,
-  paste(aaas_ag.eff.by.time[4,1],"-",aaas_ag.eff.by.time[4,2],": ",format(round(aaas_ag.eff.by.time[4,4],2) * -1,decimal.mark=","),sep=""),
-  NA,
-  NA,
-  paste(aaas_ag.eff.by.time[7,1],"-",aaas_ag.eff.by.time[7,2],": ",format(round(aaas_ag.eff.by.time[7,4],2) * -1,decimal.mark=","),sep=""),
-  paste(aaas_ag.eff.by.time[8,1],"-",aaas_ag.eff.by.time[8,2],": ",format(round(aaas_ag.eff.by.time[8,4],2) * -1,decimal.mark=","),sep="")
-)
-Nudge_x = c(0,0.1,0.1,0,0,0,0,-0.1,-0.1)
-Nudge_y = c(0,-0.55,0.55,0,0.55,0,0,0.55,-0.55)
-
-aaas_ag.emm.plot <- 
-  plot(ggemmeans(aaas_ag.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = NA, colour = "Grupp", title = "Predicerade värden och effektstyrkor för AAA-S Aggressive") + theme(legend.position = "bottom", axis.title.y = element_blank())
-
-#,arrow = arrow(length = unit(0.05, "npc"))
-p1 <- aaas_ag.emm.plot + 
-  geom_curve(aes(x = 2.9, y = aaas_ag.emm.plot$data[2]$predicted[7], xend = 3.1, yend = aaas_ag.emm.plot$data[2]$predicted[9]), color = "#888888", size = 0.25, linetype = "dashed", curvature = 0.4) +
-  geom_curve(aes(x = 2.9, y = aaas_ag.emm.plot$data[2]$predicted[7], xend = 3, yend = aaas_ag.emm.plot$data[2]$predicted[8]), color = "#888888", size = 0.25, linetype = "dashed", curvature = -0.4) +
-  #geom_curve(aes(x = 1.9, y = aaas_ag.emm.plot$data[2]$predicted[4], xend = 2.1, yend = aaas_ag.emm.plot$data[2]$predicted[6]), color = "#888888", size = 0.25, linetype = "dashed", curvature = 0.5) +
-  geom_curve(aes(x = 1.9, y = aaas_ag.emm.plot$data[2]$predicted[4], xend = 2, yend = aaas_ag.emm.plot$data[2]$predicted[5]), color = "#888888", size = 0.25, linetype = "dashed", curvature = -0.4) + 
-  geom_curve(aes(x = 1, y = aaas_ag.emm.plot$data[2]$predicted[2], xend = 3, yend = aaas_ag.emm.plot$data[2]$predicted[8]), color = "#888888", size = 0.25, linetype = "dashed", curvature = -0.2) + 
-  geom_curve(aes(x = 1.1, y = aaas_ag.emm.plot$data[2]$predicted[3], xend = 3.1, yend = aaas_ag.emm.plot$data[2]$predicted[9]), color = "#888888", size = 0.25, linetype = "dashed", curvature = 0.15) + 
-  geom_label(aes(label=Name),color="white", fill="#888888", nudge_x = Nudge_x, nudge_y = Nudge_y,size=2.5,na.rm=TRUE)
-
-p1
-
-```
-
 
 ```{r aaasad.res, dpi=196, eval=F, cache=F, fig.height=7.8, fig.width=11, fig.align="center", fig.cap="Resultat för AAA-S Adaptive. Exempel på figur med resultat som jag (Tobias) skulle vilja rapportera. De här graferna 'give it all away' utan behov av krångliga tabeller. Jag röstar för att vi producerar figurer liknande dessa för de tre huvudutfallsmåtten. Överst till vänster är modellestimaten från vår regression (fixed-effekter), den andra visar de predicerade värden som modellen producerar. De två understa innehåller de effektstorlekar med konfidensintervall (med inritad noll-linje) som visuellt tydligt kommunicerar vilka av de parvisa uppföljningstesten som är signifikanta (med Bonferroni-korrektion). De intressanta jämförelserna tar vi med i resultattexten, där vi också kan nämna hur stor del av felvariansen som hör till vår random-effekt (subject)."}
 
