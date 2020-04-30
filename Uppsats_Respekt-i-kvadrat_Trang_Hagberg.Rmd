@@ -1553,12 +1553,11 @@ Vid `r xt3`-mätning fann vi en klart högre medelpoäng på AAA-S Adaptive för
 
 Motsvarande tydligt högre medelpoäng på AAA-S Adaptive vid `r xt3`-mätningen fann vi för gruppen `r xg1` (se emm ovan) jämfört med gruppen `r xg3` (se emm ovan), effektstorlek `r aaas_ad.eff.by.time$effect.size[8] * -1`, 95% CI [`r aaas_ad.eff.by.time$conf.high[8] * -1` ; `r aaas_ad.eff.by.time$conf.low[8] * -1`]. 
 
-Deltagarna i de båda behandlingsbetingelserna förbättrades avsevärt med avseende på grad av konstruktiv självhävdelse, jämfört med `r xg3`. Effekten var påtaglig redan vid mittenmätningen för båda grupperna. Se figur \@ref(fig:effemmplotsad).
+#### Behandlingseffekt mellan `r xt1` och `r xt3`
 
-### Behandlingseffekt mellan `r xt1`och `r xt3`
+För både gruppen `x g1` och gruppen `x g2` fann vi en klar förbättring mellan behandlingsstart och `r xt3`-mätning, effektstorlek `r aaas_ad.eff.by.group$effect.size[5] * -1`, 95% CI [`r aaas_ad.eff.by.group$conf.high[5] * -1` ; `r aaas_ad.eff.by.group$conf.low[5] * -1`] respektive `r aaas_ad.eff.by.group$effect.size[8] * -1`, 95% CI [`r aaas_ad.eff.by.group$conf.high[8] * -1` ; `r aaas_ad.eff.by.group$conf.low[8] * -1`].
 
-För gruppen `x g2` fann vi en 
-
+Deltagarna i de båda behandlingsbetingelserna hade efter fullgången behandling förbättrats avsevärt med avseende på graden av konstruktiv självhävdelse, i jämförelse med `r xg3`. Effekten var påtaglig redan vid mittenmätningen för båda grupperna. Förbättringen mellan behandlingsstart och `r xt3`-mätningen var för båda grupperna betydande. Se figur \@ref(fig:effemmplotsad) som sammanfattar resultaten.
 
 (ref:emmeffad) figurtext aaas_ad
 
