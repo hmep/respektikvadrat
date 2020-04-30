@@ -1562,7 +1562,7 @@ För gruppen `x g2` fann vi en
 
 (ref:emmeffad) figurtext aaas_ad
 
-```{r effemmplotsad, dpi=196, fig.align="center", fig.cap='(ref:emmeffad)', fig.height=4.5, fig.width=5.5, cache = F, eval = T}
+```{r effemmplotsad, dpi=196, fig.align="center", fig.cap='(ref:emmeffad)', fig.height=5, fig.width=5.5, cache = F, eval = T}
 
 # AAA-S Ad
 
@@ -1623,7 +1623,7 @@ Det finns möjlighet att fortsätta analysera insamlad data. Med våra initiala 
 
 (ref:emmeffag) figurtext aaas_ag
 
-```{r effemmplotsag, dpi=196, fig.align="center", fig.cap='(ref:emmeffag)', fig.height=4.5, fig.width=5.5, cache = F, eval = T}
+```{r effemmplotsag, dpi=196, fig.align="center", fig.cap='(ref:emmeffag)', fig.height=5, fig.width=5.5, cache = F, eval = T}
 
 # AAA-S Ag
 
