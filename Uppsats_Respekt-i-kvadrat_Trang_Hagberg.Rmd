@@ -11,7 +11,9 @@ author:
     email         : "patrik.trang@gmail.com"
 affiliation:
   - institution   : "Psykologiska institutionen, Stockholms universitet"
-wordcount         : "X"
+abstract          : Här bör det snart dyka upp ett litet abstract som beskriver vårt lilla arbete!
+#Keywords          :
+#wordcount         : "X"
 bibliography      : ["r-references.bib", "library.bib"]
 floatsintext      : no
 figurelist        : no
@@ -575,7 +577,7 @@ Forskningen visar också att det är självdestruktivt att försöka undvika ave
 
 <!-- *@Pittig2014 är ej med i dagsläget men bör möjligen vara det? -->
 
-### Att närma sig det aversiva
+### Om att närma sig det aversiva
 
 Att bryta undvikandebeteenden är ofta centralt för att minska psykopatologiska besvär. Det finns flera metoder sprungna ur forskning för detta. En metod är att *på ett närvarande sätt* närma sig det aversiva och ångestväckande, så kallad exponering. 
 
@@ -607,16 +609,16 @@ Förslagsvis använda L-G Öst kring TA plus fiska fram några som pratar om att
 
 <!-- Violating expectancies -->
 
-#### Att finna motivationen till att bryta gamla vanor
+#### Om att finna motivation till att bryta gamla vanor
 
 Många som lever med psykopatologiska besvär under en längre tid kan uppleva det som att det inte finns någonting de kan göra åt sina besvär. Som att deras symtom och deras lidande är där för att stannna. Detta brukar kallas för ett *fixed mindset*. Ett *fixed mindset* är antagandet att förmågor, färdigheter samt egenskaper är fasta och oföränderliga. Det skiljer sig från ett *growth mindset*, antagandet att förmågor, färdigheter och egenskaper kan utvecklas och förändras. Dessa *mindset*, tankesätt, är ett sorts ramverk genom vilket man tolkar och förstår sig på sina erfarenheter, vilket i sin tur påverkar vilka beteenden och emotioner man uppvisar [@Dweck1995]. Tankesätt kan beröra mer övergripande domäner, såsom personlighet och intelligens, eller mer specifika domäner, såsom hur man tänker kring ångest och emotioner. Man kan ha ett fixerat tankesätt inom en viss domän, och ett utvecklande tankesätt inom en annan [@Schroder2016]. Har man ett utvecklande tankesätt kring ångest leder det både till större motivation under en behandlings gång och till bättre odds för positivt behandlingsutfall [@Schroder2015; @DeCastella2015]. Det har även visat sig att personer med ett fixerat tankesätt i större utsträckning försöker undvika negativa emotioner samt i mindre utsträckning omvärderar sina förutsägelser i ljuset av nya erfarenheter [@Schroder2015]. Forskning konstaterar att det finns gott om anledningar att arbeta mot ett *growth mindset*.
 
+<!--
+Detta avsnitt är ett work in progress och borde möjligen utvecklas med stycke om
 
-*work in progress* 
-
-Lösningen:
-- värden, långsiktiga skäl att uppsöka sit
+- värden, långsiktiga skäl att uppsöka situationer
 - direkt kontignent belöning, ex återkoppling och uppmuntran från terapeut
+-->
 
 
 
@@ -636,7 +638,7 @@ Det finns i Sverige flera exempel på självhjälpsmaterial i KBT som har befors
 
 I-KBT är en effektiv behandlingsmetod för ett brett spektrum av olika besvär. I en meta-analys från 2018 – som inkluderade 64 RCT-studier – konstateras I-KBT vara effektivt för behandling av både depression, paniksyndrom, agorafobi, social fobi samt generaliserat ångestsyndrom [@Andrews2018]. Författarna konstaterade att medeleffektstorleken för I-KBT är *d* = 0,8 eller mer i jämförelse med kontrollbetingelse. Enligt resultaten tenderar också effekten att hålla i sig över tid. I-KBT är dessutom effektmässigt jämförbart med terapeutledd terapi. Både i en annan meta-analys från samma år samt i en meta-analys från ett decenium tidigare konstaterades I-KBT även likvärdigt ansikte-mot-ansiktebehandling [@Carlbring2018; @Barak2008]. Dessa resultat bekräftar tidigare fynd i samma riktning [@Andrews2010]. 
 
-I-KBT har även visat sig vara effektivt vid behandling av PTSD [@Sijbrandij2016], insomni [@Zachariae2016] och för att minska lidandet vid olika kroniska hälsobesvär [@Mehta2019]. I-KBT är också en verksamt vid en rad olika transdiagnostiska symtom såsom stress [@Day2013], prokrastinering [@Rozental2015] och perfektionism [@Rozental2017; @Wade2019].
+I-KBT har även visat sig vara effektivt vid behandling av PTSD [*g* = 0,7 i @Sijbrandij2016], insomni [*g* = 0,21--1,03 i @Zachariae2016] och för att minska lidandet vid olika kroniska hälsobesvär [@Mehta2019]. I-KBT är också verksamt för symtomlindring vid en rad olika transdiagnostiska symtom såsom stress [\(\eta^2_p \)=.12 i @Day2013], prokrastinering [kliniskt signifikant förbättring hos 31--40% av deltagarna i @Rozental2015] och perfektionism [*d* = 0,7--1.0 i @Rozental2017; *d* = 0,86 i @Wade2019].
 
 #### I-KBT och stödbehandlare
 
@@ -669,7 +671,7 @@ Det vi primärt är intresserade av är om det finns någon skillnad (i endera r
 
 <!-- Bör vi föra en en rad om att gör en RCT-design?-->
 
-Sample-storleken för varje grupp bestämdes innan rekrytering påbörjades till n = 70 med en powerberäkning. I studien planerade manipulationer, variabler, mättillfällen och insamlad data har använts i de efterföljande analyserna utan selektion i efterhand. Alla randomiseringar gjordes av oberoende tredje part vid Stockholms universitet med hjälp av internetbaserade randomiseringstjänster (www.random.org för överintagsexkluderingen och randomiseringen till respektive behandlare samt www.sealedenvelope.com för randomiseringen till de tre grupperna). Studien uppfyller kriterierna för en RCT-design (från engelskans *randomised controlled trial*) enligt @Chambless2001.
+Sample-storleken för varje grupp bestämdes innan rekrytering påbörjades till n = 70 med en powerberäkning. I studien planerade manipulationer, variabler, mättillfällen och insamlad data har använts i de efterföljande analyserna utan selektion i efterhand. Alla randomiseringar gjordes av oberoende tredje part vid Stockholms universitet med hjälp av internetbaserade randomiseringstjänster (www.random.org för överintagsexkluderingen och randomiseringen till respektive behandlare samt www.sealedenvelope.com för randomiseringen till de tre grupperna). Studien uppfyller kriterierna för en RCT-design (från engelskans *randomised controlled trial*) i @Chambless2001.
 
 ### Rekrytering
 
@@ -695,7 +697,7 @@ Personer som skattade 15 eller högre på självskattningsformuläret PHQ-9 exkl
 
 #### Demografisk data
 
-```{r def demdata, cache = F}
+```{r def demdata, cache = F, eval = T}
 
 xdemocat <-
   c(
@@ -725,7 +727,7 @@ xdemocat <-
   "Ja"
   )
 
-#options(OutDec= ",")
+options(OutDec= ",")
 
 xdemodata <- rbind(
   prop.table(cbind(
@@ -764,28 +766,10 @@ xdemodata <- rbind(
       margin.table(table(
         r2.wide.data$Demografi.PsykoBehandling, r2.wide.data$group
       ), 1)
-  ), 2),
-  prop.table(cbind(
-    table(r2.wide.data$Demografi.1, r2.wide.data$group),
-    margin.table(table(
-      r2.wide.data$Demografi.1, r2.wide.data$group
-    ), 1)
-  ), 2),
-  prop.table(cbind(
-    table(r2.wide.data$Demografi.2, r2.wide.data$group),
-    margin.table(table(
-      r2.wide.data$Demografi.2, r2.wide.data$group
-    ), 1)
-  ), 2),
-  prop.table(cbind(
-    table(r2.wide.data$Demografi.3, r2.wide.data$group),
-    margin.table(table(
-      r2.wide.data$Demografi.3, r2.wide.data$group
-    ), 1)
   ), 2)
 )
 
-xdemodatax <- as.data.frame(t(xdemodata[-c(1,24:27),]))
+xdemodatax <- as.data.frame(t(round(xdemodata[-1,],2) * 100))
 
 xdemodatax$x <- as.factor(c(
     paste(round(mean(r2.wide.data[wg3,64]),2)," (",round(sd(r2.wide.data[wg3,64]),2),")",sep=""),
@@ -794,17 +778,17 @@ xdemodatax$x <- as.factor(c(
     paste(round(mean(r2.wide.data[,64]),2)," (",round(sd(r2.wide.data[,64]),2),")",sep="")
   ))
 
-xdemodatax <- xdemodatax[c(23,1:22)]
+xdemodatax <- xdemodatax[,c(24,1:23)]
 
 colnames(xdemodatax) <- xdemocat
 
-demdata.tabell <- t(xdemodata.rot)
+demdata.tabell <- t(xdemodatax)
 
 colnames(demdata.tabell) <- c(
   paste(xG3," (n = ",ll3,")",sep=""),
   paste(xG1," (n = ",ll1,")",sep=""),
   paste(xG2," (n = ",ll2,")",sep=""),
-  paste("Alla (n = )",length(r2.wide.data[,1]),")",sep="")
+  paste("Alla (n = ",length(r2.wide.data[,1]),")",sep="")
 )
 
 options(OutDec= ".")
@@ -819,9 +803,11 @@ De `r length(r2.wide.data$subject)` deltagare vars data används i den här stud
 
 svkable(demdata.tabell, caption = "(ref:dem)", align="ccc") %>%
   kable_styling(full_width = F) %>%
-  column_spec(2, width = "7em") %>%
-  column_spec(3, width = "7em") %>%
-  column_spec(4, width = "7em") %>%
+  column_spec(2, width = "11em") %>%
+  column_spec(2, width = "5em") %>%
+  column_spec(3, width = "5em") %>%
+  column_spec(4, width = "5em") %>%
+  column_spec(5, width = "5em") %>%
   pack_rows("Ålder (år)", 1, 1, bold = F) %>%
   pack_rows("Kön (%)", 2, 2, bold = F) %>%
   pack_rows("Civilstånd (%)", 3, 6, bold = F) %>%
@@ -1374,7 +1360,7 @@ Vi fann inga brott mot antagandena för flernivåanalys vid visuell kontroll av 
 
 Estimat av regressionskoefficienter (β) för de olika primära och sekundära utfallsmåtten sammanfattas i tabell \@ref(stargazer).
 
-```{r mmout, eval=T}
+```{r mmout, eval=F}
 
 #https://stats.stackexchange.com/questions/226559/how-should-i-report-the-results-from-a-mixed-model-with-vs-without-an-interactio
 
@@ -1424,13 +1410,17 @@ anova(rathus.lmer)
 
 # y = intercept + β*g2 + β*g3 + β*t2 + β*t3 + β*(g2 * t2) + β*(g2 * t3) + β*(g3 * t2) + β*(g3 * t3)
 
+tab_model(aaas_ad.lmer,aaas_ag.lmer,rathus.lmer,lsas_sum.lmer,gad_sum.lmer,phq_sum.lmer,well.lmer)
+
+# För det primära utfallsmåttet AAA-S Adaptive fann vi en huvudeffekt av tid för `r xt2`tillfället, `r report(aaas_ad.lmer,5)`. Vi fann också en interaktionseffekt
+
+
 ```
 
 
 Vi sammanfattar våra blandade regressionsmodeller så här:
 
 
-För det primära utfallsmåttet AAA-S Adaptive fann vi en huvudeffekt av tid för `r xt2`tillfället, `r report(aaas_ad.lmer,5)`. Vi fann också en interaktionseffekt
 
 
 The main effect of prime structure remained only marginally
@@ -2342,11 +2332,11 @@ Borde ha klassificerat deltagare utifrån sökorsak/målsättning -- kan inklude
 Borde ha haft skattningsskala för emotionellt undvikande (finns flera bra)
 
 
-Då behandlingsmaterialet översatts till svenska inför den aktuella studien – och originalmaterialet användes utan inslag av behandlarstöd – fanns det ingen behandlarstödsmanual eller dylikt för studiens behandlare att använda sig av. Behandlarna hade utöver detta ingen tidigare erfarenhet av internetbaserad psykologisk behandling. Dock hade båda behandlarna tidigare erfarenhet av ansikte mot ansikte-behandling med individer med självrapporterad bristande självhävdelse. Bristen på erfarenhet av internetbaserad behandling kan ha påverkat kvalitén i det behandlarstöd som gavs. Å andra sidan har det visat sig att tidigare erfarenheter och kunskaper om I-KBT hos behandlare inte gör nämnvärd skillnad så länge de har grundläggande kunskaper inom psykologisk behandling [@Baumeister2014a]. Behandlarna hade utöver tillgodogjorda grundläggande kunskaper om psykologisk behandling även tillgång till ett dokument med generella förhållningssätt vid internetbehandling med behandlarstöd samt tillgång till vid-behov-handledning och stöd av en legitimerad psykolog med omfattande erfarenhet av I-KBT. Den generella målsättningen var att behandlarna skulle spendera cirka 15 minuter per vecka och deltagare. Detta varierade dock nämnvärt beroende på hur frekvent behandlarens deltagare hörde av sig till behandlaren med behandlingsrelaterade frågor samt hur utförligt deltagarna besvarade behandlingsprogrammets övningar. 
+Då behandlingsmaterialet översatts till svenska inför den aktuella studien – och originalmaterialet användes utan inslag av behandlarstöd – fanns det ingen behandlarstödsmanual eller dylikt för studiens behandlare att använda sig av. Behandlarna hade utöver detta ingen tidigare erfarenhet av internetbaserad psykologisk behandling. Dock hade båda behandlarna tidigare erfarenhet av ansikte mot ansikte-behandling med individer med självrapporterad bristande självhävdelse. Bristen på erfarenhet av internetbaserad behandling kan ha påverkat kvalitén i det behandlarstöd som gavs. Å andra sidan har det visat sig att tidigare erfarenheter och kunskaper om I-KBT hos behandlare inte gör nämnvärd skillnad så länge de har grundläggande kunskaper inom psykologisk behandling [@Baumeister2014a]. Behandlarna hade utöver tillgodogjorda grundläggande kunskaper om psykologisk behandling även tillgång till ett dokument med generella förhållningssätt vid internetbehandling med behandlarstöd samt tillgång till vid-behov-handledning och stöd av en legitimerad psykolog med omfattande erfarenhet av I-KBT. Den generella målsättningen var att behandlarna skulle spendera cirka 15 minuter per vecka och deltagare. Detta varierade dock nämnvärt beroende på hur frekvent behandlarens deltagare hörde av sig till behandlaren med behandlingsrelaterade frågor samt hur utförligt deltagarna besvarade behandlingsprogrammets övningar. Denna variation kan ha påverkat utfallet då vissa deltagare möjligen fick behandlarstöd på bekostnad av andra.
 
-Även fast behandlarna hade goda förutsättningar för att ge stöd till deltagarna, och behandlarstöd tenderar att leda till ett bättre utfall [@Baumeister2014a] vart så icke fallet i den föreliggande studien. Att behandlarstöd brukar vara det överlägsna alternativet till att ta sig igenom ett självhjälpsmaterial utan stöd är inte detsamma som att det alltid är så. Flertalet tidigare studier rapporterar resultat i linje med den rådande studien -- det vill säga att både gruppen med och utan behandlarstöd gör framsteg, men att det inte verkar finnas en markant skillnad mellan de två grupperna [se bland annat @Berger2011; @Ivanova2016; @Rozental2015; @Samuelsson2018]. 
+Även fast behandlarna hade goda förutsättningar för att ge stöd till deltagarna -- och behandlarstöd tenderar att leda till ett bättre utfall [@Baumeister2014a] -- vart så icke fallet i den föreliggande studien. Att behandlarstöd brukar vara det överlägsna alternativet till att ta sig igenom ett självhjälpsmaterial utan stöd är inte detsamma som att det alltid är så. Flertalet tidigare studier rapporterar resultat i linje med den rådande studien -- det vill säga att både gruppen med och utan behandlarstöd gör framsteg, men att det inte verkar finnas en markant skillnad mellan de två grupperna [se bland annat @Berger2011; @Ivanova2016; @Rozental2015; @Samuelsson2018]. 
 
-En intressant aspekt för framtida studier att undersöka är exakt vilka de verksamma komponenterna inom behandlarstöd är och vad som kan göras för att maximera deras inverkan.
+En möjligt intressant aspekt för framtida studier att undersöka är vilka de verksamma komponenterna inom behandlarstöd är och vad som kan göras för att maximera dessa komponenters inverkan på behandlingsutfallet.
 
 <!-- 
 @Ivanova2016 som exempel på guidad som inte var bättre än utan guidad
@@ -2375,8 +2365,6 @@ Innan ni går över till brister så vill ni kanske säga något om övriga utfa
 
 ## I relation till annan forskning, självhävdelse
 
-## Behov av ny forskning
-
 ## Metodologiska brister / felkällor / validitet / reliabilitet
 
 <!-- 
@@ -2389,18 +2377,7 @@ x å andra sidan vad våra resultat visar på (?)
 
 All data som låg till grund för inkludering eller exkludering i den aktuella studien var insamlad från självskattningsformulär. I och med att forskningspersonsinformationen som potentiella deltagare kunde läsa innan de påbörjade screeningsprocessen presenterade såväl inkluderings- som exkluderingskriterier (även om exkluderingskriterierna till viss del var allmänt formulerade) medför det risken att de som sökte till studien anpassade sina svar för att bli inkluderade. Då ingen klinisk intervju användes i screeningprocessen fanns det ingen möjlighet att på så sätt upptäcka individer som borde exkluderas. Detta kan medföra att individer som egentligen borde ha exkluderats, på grund av icke sanningsenliga svar, istället blev inkluderade. Å andra sidan bör motivationen till social önskvärdhet vid deltagarnas ifyllnad av skattningsskalorna varit lägre i och med att ifyllningen gjordes mer anonymnt än om screeningen skulle skett ansikte-mot-ansikte eller via en klinisk intervju per telefon. Ingen klinisk intervju inkluderades då det låg utanför studiens möjliga resurser att administrera den till alla potentiella deltagare. En fördel med att inte ha använt kliniska intervjuerna är att tiden mellan påbörjad rekrytering och behandlingsstart blev kort, endast två veckor.
 
-### Samplets representativitet för populationen
-
-<!-- Avsnittet bör få en ny underrubrik, om en underrubrik nu ens är nödvändigt -->
-
-Med nästintill 90% kvinnor i samplet var könsfördelningen ytterst ojämn. Denna ojämna fördelning går troligen att tillskriva flertalet olika faktorer. För det första rapporterar kvinnor mer oro, änglsan och ångest än män [@Socialstyrelsen2004] vilket skulle kunna göra kvinnor mer benägna att söka hjälp. För det andra tenderar män överlag att i lägre utsträckning söka vård än kvinnor även när män och kvinnor upplever liknande symtom [@Galdas2005]. Slutligen – vilket troligen är den mest påverkande faktorn i den aktuella studien – så sköttes studiens marknadsföring på sociala medier av en automatiserad algoritm. Algoritmen visar annonsen för de individer den tror har störst odds till att interagera med den. Data som sammanställdes efter avslutad annonsering visade på att någonstans mellan 85-90% av alla annonser visades för kvinnor. 
-
-
-<!-- [Pers kommentar] 
-Något om att framtida studier därför bör undersöka denna behandlings effekt i andra populationer. Ni skulle kunna, om ni orkar, analysera förbättringarna hos männen vs. kvinnorna. Skulle ni finna att förbättringen är likartad så faller lite av kritiken.
--->
-
-<!--[@Thompson2011] som vi hämtade vårt sample ifrån hade 55% kvinnor -->
+Med nästintill 90% kvinnor i samplet var könsfördelningen ytterst ojämn. Denna ojämna fördelning går troligen att tillskriva flertalet olika faktorer. För det första rapporterar kvinnor mer oro, änglsan och ångest än män [@Socialstyrelsen2004] vilket skulle kunna göra kvinnor mer benägna att söka hjälp. För det andra tenderar män överlag att i lägre utsträckning söka vård än kvinnor även när män och kvinnor upplever liknande symtom [@Galdas2005]. Slutligen – vilket troligen är den mest påverkande faktorn till den ojämna könsfördelningen i den aktuella studien – så sköttes studiens marknadsföring på sociala medier av en automatiserad algoritm. Algoritmen visar annonsen för de individer den tror har störst odds till att interagera med den. Data som sammanställdes efter avslutad annonsering visade på att någonstans mellan 85-90% av alla annonser visades för kvinnor. Om en så övervägande del av reklam visad till potentiella intressenter för studien visats för kvinnor, är det föga förvånande att huvudparten av deltagarna är kvinnor.
 
 Över 70% av vårt sample hade avslutade universitets- eller högskoleutbildningar och ytterligare 10% studerade vid behandlingens start. Denna siffra skiljer sig markant från Sveriges befolking, där endast 43% läst vidare efter gymnasiet [@SCB2020]. Delar av förklaringen till att en så stor andel av vårt sampel har studerat på universitet eller högskola skulle kunna vara att majoriteten av studiens deltagare är kvinnor, och att de i större utsträckning än män studerar vidare efter gymnasiet [@SCB2020]. Då väldigt få deltagare i den aktuella studien hade yrkesutbildning, gymnasieutbildning, folkskola eller grundskola som högsta avslutad utbildning bör man vara restriktiv med att applicera studiens resultat inom dessa grupper.
 
@@ -2408,24 +2385,19 @@ Något om att framtida studier därför bör undersöka denna behandlings effekt
 Här kanske säga (genom referens till metaanalys på internetbehandlingar) att detta är vanligt och faktiskt även i forskningsstudier generellt.
 -->
 
+Både att väldigt många kvinnor deltog i den aktuella studien, och att en så stor andel av samplet hade påbörjade eller avslutade universitetsstudier, gör det svårare att generalisera resultatet till Sveriges befolkning i stort. Könsfördelning i den aktuella studien skiljer sig även signifikant från studien normerna för AAA-S samt RAS hämtas från [@Thompson2011]. Till fördel för samplets representation av populationen är däremot att det i och med en internetbaserad behandling fanns möjlighet till ett nationellt intag av deltagare. Då det i skrivande stund varken finns data om prevalens av bristande självhävdelse i Sveriges population, eller data om vilka demografiska faktorer denna brist korrelerar med, är det ytterst svårt att säga hur representativ för Sveriges befolkning samplet i den aktuella studien är. Det vore av stor nytta att framtida studier undersöker denna behandlings effekt i andra populationer med större heterogenitet.
 
-Både att väldigt många kvinnor deltog i den aktuella studien, och att en så stor andel av samplet hade påbörjade eller avslutade universitetsstudier, gör det svårare att generalisera resultatet till Sveriges befolkning i stort. Till fördel för samplets representation av populationen är däremot att det i och med en internetbaserad behandling fanns möjlighet till ett nationellt intag av deltagare. 
+<!--[@Thompson2011] som vi hämtade vårt sample ifrån hade 55% kvinnor -->
 
-Då det i skrivande stund varken finns data om prevalens av bristande självhävdelse i Sveriges population, eller data om vilka demografiska faktorer denna brist korrelerar med, är det ytterst svårt att säga hur representativ för Sveriges befolkning samplet i den aktuella studien är.
+<!-- [Pers kommentar] 
+Något om att framtida studier därför bör undersöka denna behandlings effekt i andra populationer.
+-->
 
 <!-- [Pers kommentar] 
 Kanske också ta upp detta med vad ni egentligen hade för population. Var det socialfobiker? I alla fall hade de ju en förhöjd LSAS-SR poäng som indikerar problem.
 -->
 
-<!-- 
-- Vårt primära utfallsmått för assertiveness är inte validerat på svenska
-- Vårt sekundära utfallsmått för assertiveness är inte validerat på svenska
-
-x å andra sidan vad våra resultat visar på (?)
--->
-
 <!--
-
 + a priori powerberäkning
 -->
 
@@ -2437,6 +2409,7 @@ I denna studie placerades en tredjedel av deltagarna på en väntelista. En risk
 Å andra sidan är väntelista effektivt för att korrigera mot händelser i världen som kan påverka studiens deltagare och därmed studiens resultat. Under studiens gång spred sig viruset covid-19 i Sverige och över världen. Nästintill alla människor påverkades på något sätt av detta. Antingen i dagliga rutiner, i fysiskt och psykiskt mående eller i både och. Hade vår studies kontrollgrupp haft en annan betingelse än väntelista hade det varit svårt att konstatera vad i deras resultat som var påverkat av betingelsen i fråga, och vad i resultatet som berodde på covid-19s ankomst i Sverige. I och med att vår studies kontrollgrupp var betingade till väntelista är det enklare att ta höjd för detta. 
 
 
+<!-- bör skriva mer om Covid och hur det påverkat? -->
 
 <!-- [Pers kommentar] 
 Kanske även hänvisa till 
@@ -2444,27 +2417,23 @@ Cuijpers, P., & Cristea, I. A. (2016). How to prove that your therapy is effecti
 MEN!! Sedan försvara er med att en väntelista ändå har en hel del poänger så som att korrigera för extrema händelser i omvärlden - VILKET JU CORONAN VERKLIGEN ÄR!
 -->
 
-På grund av studiens tidsomfång finns inga uppföljningsmätningar av deltagarnas mående efter behandlingens avslut (till exempel 3-, 6- eller 12-månadersuppfölningar). Det gör det svårare att predicera hur behandlingsprogrammet påverkar deltagarnas mående och konstruktiva självhävdande över tid. Forskning indikerar dock på att framsteg gjorda under KBT-behandling tenderar att bibehållas över tid. Det är till och med vanligt att ytterligare ökande i mående och minskande av symtombild sker efter avslutad behandling [@Bandelow2018].
-
-<!--
-- Ingen uppföljningsmätning av deltagarnas mående, dvs svårt att veta hur ser ut över tid - tenderar att öka över tid, särskilt vid KBT [@Bandelow2018] som källa!
-
--->
+På grund av studiens tidsomfång fanns det inga möjligheter till att göra uppföljningsmätningar av deltagarnas mående efter behandlingens avslut (till exempel 3-, 6- eller 12-månadersuppfölningar). Det gör det svårare att predicera hur behandlingsprogrammet påverkar deltagarnas mående och konstruktiva självhävdande över tid. Forskning indikerar dock på att framsteg gjorda under KBT-behandling tenderar att bibehållas över tid. Det är till och med vanligt att ytterligare ökande i mående och minskande av symtombild sker efter avslutad behandling [@Bandelow2018]. Möjligen innebär det att även deltagarna i den aktuella studien kommer fortsätta förbättras framöver.
 
 Ytterligare en potentiell brist i studien är användandet av de nyligen översatta versionerna av självskattningsformulären AAA-S [@Thompson2011] och RAS [@Rathus1973]. Då dessa skalor ej fanns tillgängliga på svenska översattes de till den aktuella studien. Det finns många rekommendation och riktlinjer för hur översättningar bör gå till [se @Beaton2000; och @Jones2001 för två väl använda metoder]. Ett gemensamt tema i dessa översättningsmetoder är att materialet översätts från originalspråk till planerat användningsspråk (i det rådande fallet till svenska) av åtminstone två av varandra oberoende individer och att den översatta versionen sedan översätts tillbaka till sitt originalspråk av ytterligare oberoende översättare. En bedömning görs sedan mellan originalversionen och versionen översatt från det planerade användningsspråket till originalspråket. AAA-S och RAS översattes inför föreliggande uppsats endast en gång, från engelska till svenska.
 
-De nyöversatta skalorna är ej validerade och saknar svenska normer. Istället används data för både AAA-S och RAS från student-sample 1 från @Thompson2011 som icke-kliniska normer. Fördelen med dessa data är dels att de är relativt aktuella, dels att de härrör från ett och samma sample och därför ger goda möjligheter till jämförelser sins emellan. Data från föreliggande uppsats skulle potentiellt kunna användas för att validera de svensköversatta skalorna i en uppföljande studie. Ett dilemma är dock att båda översättningar på en och samma gång är icke-validerade och idealiska kriterier för varandras validering; det saknas tyvärr vedertagna skalor i litteraturen för *assertiveness* utöver RAS och AAA-S. Ytterligare en begränsning för en sådan validering är att det sample som undersöks i den här uppsatsen har en förmodad slagsida åt passiv självhävdelse och sannolikt inte innehåller tillräckligt med data från individer som kan antas ha överskott av aggressiv självhävdelse. Idealiskt sett skulle denna brist kunna avhjälpas i kommande kompletterande undersökningar.
+De nyöversatta skalorna är ej validerade och saknar svenska normer. Istället används data för både AAA-S och RAS från student-sample 1 från @Thompson2011 som icke-kliniska normer. Fördelen med dessa data är dels att de är relativt aktuella, dels att de härrör från ett och samma sample och därför ger goda möjligheter till jämförelser sins emellan. Data från föreliggande uppsats skulle potentiellt kunna användas för att validera de svensköversatta skalorna i en uppföljande studie. Ett dilemma är dock att båda översättningar på en och samma gång är icke-validerade och idealiska kriterier för varandras validering; det saknas tyvärr vedertagna skalor i litteraturen för *assertiveness* utöver RAS och AAA-S. Ytterligare en begränsning för en sådan validering är att det sample som undersöks i den här uppsatsen har en förmodad slagsida åt passiv självhävdelse och sannolikt inte innehåller tillräckligt med data från individer som kan antas ha överskott av aggressiv självhävdelse. Inför framtida studier vore det optimalt att en gedigen översättningsprocess genomförs av AAA-S samt RAS. Det vore även av nytta för forskningsfältet att skattningsskalorna valideras i en mer heterogen population.
 
-<!-- Det går därtill att problematisera reliabiliteten(????) hos de båda utfallsmåtten utifrån att konstruktet *assertiveness* och konstruktiv självhävdelse är otydligt och att många olika definitioner finns i litteraturen.  -->
+
+<!-- Idealiskt sett skulle denna brist kunna avhjälpas i kommande kompletterande undersökningar. -->
+
+<!-- Det går därtill att problematisera reliabiliteten(????) hos de båda utfallsmåtten utifrån att konstruktet *assertiveness*/konstruktiv självhävdelse är otydligt och att många olika definitioner finns i litteraturen.  -->
 
 <!-- Vet inte om man brukar skriva att det påverkar validiteten och reliabiliteten eller om man låter läsaren själv dra de slutsatserna. Sista meningen bör möjligen tas bort. 
+
 TH: Samtidigt är det bra att diskutera detta. Nu är din sista mening borta, men vi bör kanske lägga till något. Låt oss disktuera!
 -->
 
 <!--
-Möjligen även diskutera i det här avsnittet det resultat vi fått - och ifall det beror på behandlarnas kompetens?
-
-
 Sidenote: Gör vi kontroller av bortfallet för att se att det inte är ett systematiskt bortfall?
 TH: Menar du de som hoppat av eller de som inte svarat på alla självskattningar?
 
