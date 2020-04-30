@@ -11,10 +11,6 @@ author:
     email         : "patrik.trang@gmail.com"
 affiliation:
   - institution   : "Psykologiska institutionen, Stockholms universitet"
-abstract          : |
-    | `r readLines('abstract.txt', encoding = 'UTF-8')`
-#Keywords          :
-#wordcount         : "X"
 bibliography      : ["r-references.bib", "library.bib"]
 floatsintext      : no
 figurelist        : no
@@ -1508,14 +1504,15 @@ svkable(descriptives.col.out[], caption = "(ref:descriptives)", linesep = "", al
 
 ```
 
-Estimat för intercept och regressionskoefficienter för de olika primära och sekundära utfallsmåtten sammanfattas i tabell \@ref(stargazer). Intercept och lutningskoefficienter läggs in i regressionsformeln som predicerar utfall för alla kombinationer av grupptillhörighet och mättillfällen.
+Estimat för intercept och regressionskoefficienter för de olika primära och sekundära utfallsmåtten sammanfattas i tabell \@ref(stargazer). Intercept och lutningskoefficienter för respektive utfallsmått kan läggas in i regressionsformeln som predicerar utfall för alla kombinationer av grupptillhörighet och mättillfällen.
+
+## Skillnad i effekt mellan grupperna `r xg1`--`r xg2`
 
 Vår primära frågeställning var om det finns någon skillnad (i endera riktning) i effekt mellan gruppen `r xg1` och gruppen `r xg2` med avseende på konstruktiv självhävdelse, det vill säga med utfallsmåttet AAA-S Adaptive. 
 
 (ref:emmeffad) bildtext
 
 ```{r emmean_aaas_ad, dpi=196, fig.align="center", fig.cap='(ref:emmeffad)', fig.height=4.5, fig.width=5.5}
-
 
 require(emmeans)
 require(ggeffects)
@@ -1558,14 +1555,19 @@ p1 <- aaas_ad.emm.plot +
   geom_label(aes(label=Name),color="white", fill="#888888", nudge_x = Nudge_x, nudge_y = Nudge_y,size=2.5,na.rm=TRUE)
 
 #p1
+result <- function(x){format(x,decimal.mark=",")}
 
 ```
 
-Vi fann ingen skillnad (effektstorlek `r aaas_ad.eff.by.time$effect.size[9]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[9]` ; `r aaas_ad.eff.by.time$conf.high[9]`]) vid tidpunkten `r xt3` mellan gruppen `r xg1` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[8]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[8]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[8]`]) och gruppen `r xg2` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[9]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[9]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[9]`]) med avseende på AAA-S Adaptive. Vi fann inte heller någon skillnad i effekt vid tidpunkten `r xt2`. Skillnaden är försumbar mellan att få terapeutstöd och att inte få det vid deltagande i träningsprogrammet *Respekt i kvadrat*.
+Vi fann ingen skillnad i utfall med AAA-S Adaptive vid `r xt3`-mätningen mellan gruppen `r xg1` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$estimate[8]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[8]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[8]`]) och gruppen `r xg2` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$estimate[9]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[9]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[9]`]), effektstorlek `r aaas_ad.eff.by.time$effect.size[9]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[9]` ; `r aaas_ad.eff.by.time$conf.high[9]`]. Vi fann inte heller någon skillnad i effekt vid `r xt2`-mätningen, effektstorlek `r aaas_ad.eff.by.time$effect.size[6]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[6]` ; `r aaas_ad.eff.by.time$conf.high[6]`]. Skillnaden är försumbar mellan att få terapeutstöd och att inte få det vid deltagande i träningsprogrammet *Respekt i kvadrat*.
 
-Vi var också intresserade av att ta reda på om effekten av deltagande i grupperna `r xg1` och `r xg2` skiljer sig från `r xg3` med avseende på konstruktiv och aggressiv självhävdelse. 
+## Skillnader i effekt mellan grupperna `r xg3`--`r xg1` och `r xg3`--`r xg2`
 
-För AAA-S Adaptive fann vi en skillnad (effektstorlek `r aaas_ad.eff.by.time$effect.size[9]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[9]` ; `r aaas_ad.eff.by.time$conf.high[9]`]) vid  tidpunkten `r xt3` mellan gruppen `r xg1` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[8]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[8]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[8]`]) och gruppen `r xg3` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[9]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[9]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[9]`]) med avseende på AAA-S Adaptive. Vi fann också en skillnad (effektstorlek `r aaas_ad.eff.by.time$effect.size[9]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[9]` ; `r aaas_ad.eff.by.time$conf.high[9]`]) vid  tidpunkten `r xt3` mellan gruppen `r xg1` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[8]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[8]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[8]`]) och gruppen `r xg3` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[9]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[9]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[9]`]) med avseende på AAA-S Adaptive. Båda behandlingsbetingelser förbättrades avsevärt jämfört med väntelistan. Effekten var påtaglig redan vid mittenmätningen. Se figur XXXX för en sammanfattning.
+Vi var också intresserade av om effekten av deltagande i grupperna `r xg1` och `r xg2` skiljer sig från `r xg3` med avseende på konstruktiv och aggressiv självhävdelse. 
+
+Vi fann en skillnad med AAA-S Adaptive vid `r xt3`-mätningen mellan gruppen `r xg1` och gruppen `r xg3` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$estimate[7]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[7]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[7]`]), effektstorlek `r aaas_ad.eff.by.time$effect.size[7]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[7]` ; `r aaas_ad.eff.by.time$conf.high[7]`]. 
+
+Vi fann också en skillnad (effektstorlek `r aaas_ad.eff.by.time$effect.size[9]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[9]` ; `r aaas_ad.eff.by.time$conf.high[9]`]) vid  tidpunkten `r xt3` mellan gruppen `r xg1` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[8]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[8]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[8]`]) och gruppen `r xg3` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[9]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[9]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[9]`]) med avseende på AAA-S Adaptive. Båda behandlingsbetingelser förbättrades avsevärt jämfört med väntelistan. Effekten var påtaglig redan vid mittenmätningen. Se figur XXXX för en sammanfattning.
 
 <!-- Skriv om nedanstående!!! -->
 För AAA-S Aggressive fann vi en skillnad (effektstorlek `r aaas_ad.eff.by.time$effect.size[9]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[9]` ; `r aaas_ad.eff.by.time$conf.high[9]`]) vid  tidpunkten `r xt3` mellan gruppen `r xg1` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[8]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[8]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[8]`]) och gruppen `r xg3` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[9]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[9]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[9]`]) med avseende på AAA-S Adaptive. Vi fann också en skillnad (effektstorlek `r aaas_ad.eff.by.time$effect.size[9]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[9]` ; `r aaas_ad.eff.by.time$conf.high[9]`]) vid  tidpunkten `r xt3` mellan gruppen `r xg1` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[8]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[8]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[8]`]) och gruppen `r xg3` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[9]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[9]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[9]`]) med avseende på AAA-S Adaptive. Båda behandlingsbetingelser förbättrades jämfört med väntelistan. Effekten var påtaglig redan vid mittenmätningen. Se figur XXXX för en sammanfattning.
@@ -1623,7 +1625,6 @@ p1 <- aaas_ag.emm.plot +
 
 ```
 
-
 Vi är också intresserade av att ta reda på om effekten i gruppen `r xg3` är sämre än behandlingseffekten i gruppen  `r xg1` respektive gruppen `r xg2` med avseende på konstruktiv självhävdelse, det vill säga med utfallsmåttet AAA-S Adaptive. Slutligen vill vi också undersöka vilka prediktorer/moderatorer hos deltagarna (exempelvis grad av social ångest eller grad av depression) i behandlingsalternativen `r xg1` och `r xg2` som påverkar utfallet samt vilka mediatorer inom behandlingsalternativen (exempelvis tilldelning av terapeut) som påverkar utfallet. 
 
 <!-- ICC ger oss proportionen av den totala variansen i utfallsmåttet som förklaras av skillnader på individnivå. Vi konstaterar att för huvudutfallsmåttet AAA-S Adaptive förklaras 68% av variansen i -->
@@ -1640,7 +1641,7 @@ performance::icc(aaas_ad.lmer)$ICC_adjusted
 
 ```
 
-```{r stargazer, results='asis', fig.cap='(ref:stars)', eval=T}
+```{r stargazer, results='asis', eval=T}
 
 # https://cran.r-project.org/web/packages/stargazer/vignettes/stargazer.pdf
 # NB! We're using stargazer-booktabs to get prettier LaTeX table output
@@ -1679,13 +1680,13 @@ stargazer::stargazer(
   float.env = "sidewaystable",
   #omit.stat = c("aic","bic","ll"),
   keep.stat= c("n"),
-  dep.var.caption = "Beroende variabel",
+  dep.var.caption = "Utfallsmått/flernivåanalys",
   column.labels = c("Primära utfallsmått","Sekundära utfallsmått"),
   column.separate = c(2,5),
   dep.var.labels = scalenames,
   notes.label = "Signifikansnivåer:",
   label = "stargazer",
-  title = "Estimat av intercept och regressionskoefficienter för respektive flernivåanalys av de primära och sekundära utfallsmåtten."
+  title = "En sammanställning av estimat av intercept och regressionskoefficienter för respektive flernivåanalys av de primära och sekundära utfallsmåtten."
 )
 
 ```
@@ -2188,9 +2189,6 @@ grid.arrange(
 
 ```
 
-### Emmeans
-
-ordningsföljd: aaas_ad, aaas_ag, rathus, lsas_sum, gad_sum, phq_sum, well
 
 ```{r emmeans,results="asis",eval=F}
 
