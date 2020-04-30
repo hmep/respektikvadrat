@@ -1,7 +1,7 @@
 ---
 title             : |
-  | \vspace{0.5cm} \Large _en randomiserad kontrollerad effektstudie av internetf&ouml;rmedlad kognitiv beteendeterapi_
   | \LARGE Respekt i kvadrat: tr&auml;ningsprogram f&ouml;r konstruktiv sj&auml;lvh&auml;vdelse
+  | \vspace{0.5cm} \Large _en randomiserad kontrollerad effektstudie av internetf&ouml;rmedlad kognitiv beteendeterapi_
 shorttitle        : "Respekt i kvadrat"
 author: 
   - name          : "Tobias Hagberg"
@@ -11,7 +11,8 @@ author:
     email         : "patrik.trang@gmail.com"
 affiliation:
   - institution   : "Psykologiska institutionen, Stockholms universitet"
-abstract          : Här bör det snart dyka upp ett litet abstract som beskriver vårt lilla arbete!
+abstract          : |
+    | `r readLines('abstract.txt', encoding = 'UTF-8')`
 #Keywords          :
 #wordcount         : "X"
 bibliography      : ["r-references.bib", "library.bib"]
@@ -80,8 +81,8 @@ library("wesanderson")
 
 # authornote: |
 #   `r readLines('authornote.txt', encoding = 'UTF-8')`
-# abstract: |
-#   `r readLines('abstract.txt', encoding = 'UTF-8')`
+  # abstract: |
+  #  `r readLines('abstract.txt', encoding = 'UTF-8')`
 # keywords: |
 #   `r readLines('keywords.txt', encoding = 'UTF-8')`
 
