@@ -45,7 +45,6 @@ header-includes:
    - \hyphenation{nor-mal-spann nor-mal-span-net}
    - \usepackage{tabu}
    - \usepackage{rotating}
-   - \usepackage{caption}
 editor_options: 
   chunk_output_type: console
 ---
@@ -59,6 +58,7 @@ options(contrasts=c('contr.treatment','contr.poly'))
 ### Install these packages from Github (instead of CRAN)
 library("devtools")
 #devtools::install_github("strengejacke/sjPlot",force=T)
+#devtools::install_github("strengejacke/strengejacke",force=T)
 #devtools::install_github("crsh/papaja@devel",force=T)
 #devtools::install_github("AWKruijt/JT-RCI",force=T)
 #devtools::install_github("markwestcott34/stargazer-booktabs",force=T)
@@ -787,10 +787,10 @@ colnames(xdemodatax) <- xdemocat
 demdata.tabell <- t(xdemodatax)
 
 colnames(demdata.tabell) <- c(
-  paste(xG3,"\\\\(n = ",ll3,")",sep=""),
-  paste(xG1,"\\\\(n = ",ll1,")",sep=""),
-  paste(xG2,"\\\\(n = ",ll2,")",sep=""),
-  paste("Sammanlagt\\\\(n = ",length(r2.wide.data[,1]),")",sep="")
+  paste(xG3," (n = ",ll3,")",sep=""),
+  paste(xG1," (n = ",ll1,")",sep=""),
+  paste(xG2," (n = ",ll2,")",sep=""),
+  paste("Sammanlagt (n = ",length(r2.wide.data[,1]),")",sep="")
 )
 
 options(OutDec= ".")
@@ -804,10 +804,11 @@ De `r length(r2.wide.data$subject)` deltagare vars data används i den här stud
 ```{r demdata, out.width="100%", tab.align="center", cache = F}
 
 library("kableExtra")
+# http://haozhu233.github.io/kableExtra/best_practice_for_newline_in_latex_table.pdf
 
-knitr::kable(demdata.tabell, format="latex", booktabs = T, caption = "(ref:dem)", align="ccc", escape = F) %>%
+knitr::kable(demdata.tabell, format="latex", booktabs=T, caption = "(ref:dem)", align="ccc") %>%
   kable_styling(full_width = F) %>%
-  column_spec(1, width = "11em") %>%
+  column_spec(1, width = "12em") %>%
   column_spec(2, width = "5.5em") %>%
   column_spec(3, width = "5.5em") %>%
   column_spec(4, width = "5.5em") %>%
@@ -1607,26 +1608,13 @@ svkable(descriptives.col.out[], caption = "(ref:descriptives)", linesep = "", al
 
 ```
 
-Estimat för intercept och regressionskoefficienter (*b*) för de olika primära och sekundära utfallsmåtten sammanfattas i tabell \@ref(stargazer). Tabellen ger den information som läggs in i regressionsformeln som ger predicerade medelvärden för alla kombinationer av grupptillhörighet och mättillfällen.
+Estimat för intercept och regressionskoefficienter för de olika primära och sekundära utfallsmåtten sammanfattas i tabell \@ref(stargazer). Intercept och lutningskoefficienter läggs in i regressionsformeln som predicerar utfall för alla kombinationer av grupptillhörighet och mättillfällen.
 
-Det vi primärt är intresserade av är om det finns någon skillnad (i endera riktning) i effekt mellan gruppen `r xg1` och gruppen `r xg2` med avseende på konstruktiv självhävdelse, det vill säga med utfallsmåttet AAA-S Adaptive. 
+Vår primära frågeställning var om det finns någon skillnad (i endera riktning) i effekt mellan gruppen `r xg1` och gruppen `r xg2` med avseende på konstruktiv självhävdelse, det vill säga med utfallsmåttet AAA-S Adaptive. 
 
+(ref:emmeffad) bildtext
 
-<!-- ### Random effects -->
-<!-- ICC ger oss proportionen av den totala variansen i utfallsmåttet som förklaras av skillnader på individnivå. Vi konstaterar att för huvudutfallsmåttet AAA-S Adaptive förklaras 68% av variansen i -->
-
-<!-- ### Fixed effects -->
-
-
-
-<!-- emmeans -->
-
-<!-- effectsizes -->
-
-
-(ref:emmeff) bildtext
-
-```{r emmeanseffects, dpi=196, fig.align="center", fig.cap='(ref:emmeff)', fig.height=4.5, fig.width=5.5}
+```{r emmean_aaas_ad, dpi=196, fig.align="center", fig.cap='(ref:emmeffad)', fig.height=4.5, fig.width=5.5}
 
 
 require(emmeans)
@@ -1669,7 +1657,7 @@ p1 <- aaas_ad.emm.plot +
   geom_curve(aes(x = 1.1, y = aaas_ad.emm.plot$data[2]$predicted[3], xend = 3.1, yend = aaas_ad.emm.plot$data[2]$predicted[9]), color = "#888888", size = 0.25, linetype = "dashed", curvature = 0.15) + 
   geom_label(aes(label=Name),color="white", fill="#888888", nudge_x = Nudge_x, nudge_y = Nudge_y,size=2.5,na.rm=TRUE)
 
-p1
+#p1
 
 ```
 
@@ -1688,7 +1676,9 @@ Slutligen ville vi också undersöka vilka prediktorer/moderatorer hos deltagarn
 
 Det finns möjlighet att fortsätta analysera insamlad data. Med våra initiala analyser konstaterar vi att ICC-värdet ger att 68% av variansen i utfallsmåttet AAA-S Adaptive kan förklaras av individuella faktorer. För AAA-S Aggressive kan 74% av variansen förklaras av individuella faktorer.
 
-```{r emmeanseffectsx, dpi=196, fig.align="center", fig.cap='(ref:emmeff)', fig.height=4.5, fig.width=5.5}
+(ref:emmeffag)
+
+```{r emmean_aaas_ag, dpi=196, fig.align="center", fig.cap='(ref:emmeffag)', fig.height=4.5, fig.width=5.5}
 
 require(emmeans)
 require(ggeffects)
@@ -1729,124 +1719,32 @@ p1 <- aaas_ag.emm.plot +
   geom_curve(aes(x = 1.1, y = aaas_ag.emm.plot$data[2]$predicted[3], xend = 3.1, yend = aaas_ag.emm.plot$data[2]$predicted[9]), color = "#888888", size = 0.25, linetype = "dashed", curvature = 0.15) + 
   geom_label(aes(label=Name),color="white", fill="#888888", nudge_x = Nudge_x, nudge_y = Nudge_y,size=2.5,na.rm=TRUE)
 
-p1
+#p1
 
 ```
-
-
-
-<!-- Vill man till exempel predicera medelvärdet för AAA-S Adaptive vid slutmätningstillfället för gruppen `r xg2`, ges svaret av följande formel (med intercept och regressionskoefficienter hämtade från motsvarande tabellrader): -->
-
-<!-- $$M_{självhjälp,slutmätning} = intercept + b_{självhjälp}\times självhjälp + b_{behandlarstöd}\times behandlarstöd + b_{mittenmätning}\times mittenmätning + b_{eftermätning}\times eftermätning + b_{självhjälp,mittenmätning}\times (självhjälp \times mittenmätning) + b_{behandlarstöd,mittenmätning}\times (behandlarstöd \times  mittenmätning) + b_{självhjälp,eftermätning}\times (självhjälp \times eftermätning) +  b_{behandlarstöd,eftermätning}\times (behandlarstöd \times eftermätning)$$ -->
-
-<!-- $$M_{självhjälp,slutmätning} = 36,38 + b*g2 + b*g3 + b*t2 + b*t3 + b*(g2 * t2) + b*(g2 * t3) + b*(g3 * t2) + b*(g3 * t3)$$ -->
-
-skvallrar om interaktioner mellan tid och grupp för utvecklingen 
-
-## Primär fråga?
-
-
-<!-- Det vi primärt är intresserade av är om det finns någon skillnad (i endera riktning) i effekt mellan gruppen `r xg1` och gruppen `r xg2` med avseende på konstruktiv självhävdelse, det vill säga med utfallsmåttet AAA-S Adaptive. -->
 
 Vi är också intresserade av att ta reda på om effekten i gruppen `r xg3` är sämre än behandlingseffekten i gruppen  `r xg1` respektive gruppen `r xg2` med avseende på konstruktiv självhävdelse, det vill säga med utfallsmåttet AAA-S Adaptive. Slutligen vill vi också undersöka vilka prediktorer/moderatorer hos deltagarna (exempelvis grad av social ångest eller grad av depression) i behandlingsalternativen `r xg1` och `r xg2` som påverkar utfallet samt vilka mediatorer inom behandlingsalternativen (exempelvis tilldelning av terapeut) som påverkar utfallet. 
 
+<!-- ICC ger oss proportionen av den totala variansen i utfallsmåttet som förklaras av skillnader på individnivå. Vi konstaterar att för huvudutfallsmåttet AAA-S Adaptive förklaras 68% av variansen i -->
 
-```{r mmout, eval=F}
+```{r icc, eval=F}
 
-#https://stats.stackexchange.com/questions/226559/how-should-i-report-the-results-from-a-mixed-model-with-vs-without-an-interactio
-
-library("lmerTest") # Adds t and p values to lmer output
-
-#tab_model(aaas_ad.lmer,aaas_ag.lmer,rathus.lmer,lsas_sum.lmer,gad_sum.lmer,phq_sum.lmer,well.lmer)
-
-report = function(mod, row) {
-  xsumtab = summary(as_lmerModLmerTest(mod))
-  xsumtab = xsumtab[["coefficients"]]
-  paste(
-    "t(",
-    format(round(xsumtab[row, 3], 2), decimal.mark = ','),
-    ") = ",
-    format(round(xsumtab[row, 4], 2), decimal.mark = ','),
-    ", p = ",
-    format(signif(xsumtab[row, 5], 2), decimal.mark = ','),
-    ", med en förändring på ",
-    format(round(xsumtab[row, 1], 2), decimal.mark = ','),
-    " poäng, 95% CI [",
-    format(round(xsumtab[row, 1] - 1.96 * xsumtab[row, 2], 2), decimal.mark = ','),
-    " ; ",
-    format(round(xsumtab[row, 1] + 1.96 * xsumtab[row, 2], 2), decimal.mark = ','),
-    "]",
-    sep = ""
-  )
-}
-
-#https://www.researchgate.net/post/How_to_report_results_for_generalised_linear_mixed_model_with_binomial_distribution
-#https://stats.stackexchange.com/questions/363638/interpretation-of-icc-when-multiple-random-intercepts-and-fixed-effects-are-coll
 performance::icc(aaas_ad.lmer)$ICC_conditional
 performance::icc(aaas_ad.lmer)$ICC_adjusted
-#Our random effect is not nested and not cross-classified
-
-#It tells you the proportion of the total variance in Y that is accounted for by the clustering
-
-
-#It can be theoretically meaningful to understand how much of the overall variation in the response is explained by clustering. For example, in a repeated measures psychological study you can tell to what extent mood is a trait (varies among people, but not within a person on different occasions) or state (varies little on average among people, but varies a lot across occasions).
-
-library(ggeffects)
-aaas_ad.emm.plot <- plot(ggemmeans(aaas_ad.lmer, terms = c("time","group")), connect.lines = TRUE)
-
-anova(aaas_ad.lmer)
-anova(aaas_ag.lmer)
-anova(rathus.lmer)
 
 # y_patrik = intercept + b*g2 + b*g3 + b*t2 + b*t3 + b*(g2 * t2) + b*(g2 * t3) + b*(g3 * t2) + b*(g3 * t3)
 
-tab_model(aaas_ad.lmer,aaas_ag.lmer,rathus.lmer,lsas_sum.lmer,gad_sum.lmer,phq_sum.lmer,well.lmer)
-
-# För det primära utfallsmåttet AAA-S Adaptive fann vi en huvudeffekt av tid för `r xt2`tillfället, `r report(aaas_ad.lmer,5)`. Vi fann också en interaktionseffekt
+#tab_model(aaas_ad.lmer,aaas_ag.lmer,rathus.lmer,lsas_sum.lmer,gad_sum.lmer,phq_sum.lmer,well.lmer)
 
 
 ```
-
-
-<!-- Vi sammanfattar våra blandade regressionsmodeller så här: -->
-
-
-
-
-<!-- The main effect of prime structure remained only marginally -->
-<!-- significant when prime surprisal and the prime structure-prime -->
-<!-- surprisal interactions were included in the model (β = .34, SE= .34, -->
-<!-- p= .1), but was statistically significant when these terms were left -->
-<!-- out (β = .43, SE= .21, p< .05), replicating Thothathiri and Snedeker -->
-<!-- (2008). The reason for the reduced significance of the main effect of -->
-<!-- priming is that the effect of prime structure is carried by the -->
-<!-- high-surprisal primes, discussed below. -->
-<!-- As expected, no main effect of the surprisal of either the first or the -->
-<!-- second prime was observed (ps> .5). Crucially, we found the -->
-<!-- predicted two-way interaction between the surprisal of the first prime -->
-<!-- and prime Structure (β = .53, SE= .24, p< .05)-for DO primes, as -->
-<!-- prime surprisal increased, fixations to the animal relative to the -->
-<!-- object increased; for PO primes, as prime surprisal increased, fixations -->
-<!-- to the animal relative to the object decreased. The interaction -->
-<!-- between the surprisal of the second prime and prime structure was -->
-<!-- not significant (p= .9). The significant interaction of prime structure -->
-<!-- and prime surprisal for prime 1 is shown in Figure 2. -->
-
-
-
-
-<!-- “…	 politeness	 affected	 pitch	 (χ2(1)=11.62,	 p=0.00065),	 lowering	 it	 by	 -->
-<!-- about	19.7 Hz	± 5.6	(standard	errors)	…” -->
-
-
-
 
 ```{r stargazer, results='asis', fig.cap='(ref:stars)', eval=T}
 
 # https://cran.r-project.org/web/packages/stargazer/vignettes/stargazer.pdf
 # NB! We're using stargazer-booktabs to get prettier LaTeX table output
 
-scalenames = c("AAA-S Ad", "AAA-S Ag", "Rathus", "LSAS-SR", "GAD-7", "PHQ-9", "Välmåendeformuläret")
+scalenames = c("AAA-S Ad", "AAA-S Ag", "Rathus", "LSAS-SR", "GAD-7", "PHQ-9", "Välmåendef.")
 
 labradorer <- c(
   xG1,
@@ -1891,24 +1789,6 @@ stargazer::stargazer(
 
 ```
 
-
-<!-- ### Interaktionsplottar -->
-
-<!-- se figur \@ref(fig:interactions) -->
-
-<!-- (ref:int) Interaktioner ... -->
-
-```{r interactions, fig.cap='(ref:int)', fig.align="center", fig.width=5, fig.height=4,eval=F}
-
-par(mfrow=c(1,1))
-
-mean.rm.na <- function(x) mean(x,na.rm=T)
-interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$aaas_ad,fun=mean.rm.na)
-interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$aaas_ag,fun=mean.rm.na)
-interaction.plot(r2.long.data$time, r2.long.data$group, r2.long.data$rathus,fun=mean.rm.na)
-
-```
-
 ```{r scatterplots, dpi=196, fig.width=7,eval=F, cache = F}
 
 scatterplotMatrix(~ aaas_ad + aaas_ag + rathus|time, data = r2.long.data[lg1,],
@@ -1921,10 +1801,6 @@ scatterplotMatrix(~ aaas_ad + aaas_ag + rathus|time, data = r2.long.data[lg3,],
    main="Group 3, conditioned on time")
 
 ```
-
-## Primär frågeställning
-
-## Sekundära frågeställningar
 
 ## Klinisk signifikans (arbeta in detta i primära och sekundära frågeställningen?)
 
@@ -2266,8 +2142,11 @@ Se tabell \@ref(tab:jtprocent) med sammanställning jt/rci
 ```{r jtprocent, tab.align="center", cache=F}
 
 x <- as.data.frame(t(rbind.data.frame(
+  #data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]),
   prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2),
+  #data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]),
   prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2),
+  #data.matrix(rathus.pre.post.jt.table[, c(2:4)]),
   prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)
 )))
 
