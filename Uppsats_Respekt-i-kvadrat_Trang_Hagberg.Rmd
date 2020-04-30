@@ -1404,144 +1404,150 @@ options(OutDec= ".")
 
 ng1t1 <- r2.new.data$group == xg1 & r2.new.data$time == xt1
 ng1t2 <- r2.new.data$group == xg1 & r2.new.data$time == xt2
-# 
-# library(effsize)
-#   cohen.d(
-#     r2.new.data[ng1t2, 5],
-#     r2.new.data[ng1t1, 5],
-#     pooled = T,
-#     #paired = T,
-#     #subject = r2.new.data$subject,
-#     na.rm = T,
-#     hedges.correction = F,
-#     conf.level = 0.95,
-#     within = T
-#   )
+ng1t3 <- r2.new.data$group == xg1 & r2.new.data$time == xt3
+
+ng2t1 <- r2.new.data$group == xg2 & r2.new.data$time == xt1
+ng2t2 <- r2.new.data$group == xg2 & r2.new.data$time == xt2
+ng2t3 <- r2.new.data$group == xg2 & r2.new.data$time == xt3
+
+ng3t1 <- r2.new.data$group == xg3 & r2.new.data$time == xt1
+ng3t2 <- r2.new.data$group == xg3 & r2.new.data$time == xt2
+ng3t3 <- r2.new.data$group == xg3 & r2.new.data$time == xt3
+
 
 library(effsize)
 
+  # cohen.d(
+  #   r2.new.data[ng1t2, 5],
+  #   r2.new.data[ng1t1, 5],
+  #   pooled = T,
+  #   #paired = T,
+  #   #subject = r2.new.data$subject,
+  #   na.rm = T,
+  #   hedges.correction = F,
+  #   conf.level = 0.95,
+  #   within = T
+  # )
+  
 xhgn <-  function(num,x,y) {
   cohen.d(
-    r2.new.data[ng1t2, 5],
-    r2.new.data[ng1t1, 5],
+    r2.new.data[x, num],
+    r2.new.data[y, num],
     pooled = T,
-    #paired = T,
     na.rm = T,
     hedges.correction = F,
     conf.level = 0.95
   )
 }
 
-xhgn(2,lg1t2,lg1t1)$estimate
-
-lg1t2.eff <- c(
-xhgn(7,lg1t2,lg1t1)$estimate,
-xhgn(6,lg1t2,lg1t1)$estimate,
-xhgn(5,lg1t2,lg1t1)$estimate,
-xhgn(12,lg1t2,lg1t1)$estimate,
-xhgn(13,lg1t2,lg1t1)$estimate,
-xhgn(14,lg1t2,lg1t1)$estimate,
-xhgn(17,lg1t2,lg1t1)$estimate
+ng1t2.eff <- c(
+xhgn(5,ng1t2,ng1t1)$estimate,
+xhgn(6,ng1t2,ng1t1)$estimate,
+xhgn(7,ng1t2,ng1t1)$estimate,
+xhgn(8,ng1t2,ng1t1)$estimate,
+xhgn(9,ng1t2,ng1t1)$estimate,
+xhgn(10,ng1t2,ng1t1)$estimate,
+xhgn(11,ng1t2,ng1t1)$estimate
 )
 
-lg1t3.eff <- c(
-xhgn(7,lg1t3,lg1t1)$estimate,
-xhgn(6,lg1t3,lg1t1)$estimate,
-xhgn(5,lg1t3,lg1t1)$estimate,
-xhgn(12,lg1t3,lg1t1)$estimate,
-xhgn(13,lg1t3,lg1t1)$estimate,
-xhgn(14,lg1t3,lg1t1)$estimate,
-xhgn(17,lg1t3,lg1t1)$estimate
+ng1t3.eff <- c(
+xhgn(5,ng1t3,ng1t1)$estimate,
+xhgn(6,ng1t3,ng1t1)$estimate,
+xhgn(7,ng1t3,ng1t1)$estimate,
+xhgn(8,ng1t3,ng1t1)$estimate,
+xhgn(9,ng1t3,ng1t1)$estimate,
+xhgn(10,ng1t3,ng1t1)$estimate,
+xhgn(11,ng1t3,ng1t1)$estimate
 )
 
-lg2t2.eff <- c(
-xhgn(7,lg2t2,lg2t1)$estimate,
-xhgn(6,lg2t2,lg2t1)$estimate,
-xhgn(5,lg2t2,lg2t1)$estimate,
-xhgn(12,lg2t2,lg2t1)$estimate,
-xhgn(13,lg2t2,lg2t1)$estimate,
-xhgn(14,lg2t2,lg2t1)$estimate,
-xhgn(17,lg2t2,lg2t1)$estimate
+ng2t2.eff <- c(
+xhgn(5,ng2t2,ng2t1)$estimate,
+xhgn(6,ng2t2,ng2t1)$estimate,
+xhgn(7,ng2t2,ng2t1)$estimate,
+xhgn(8,ng2t2,ng2t1)$estimate,
+xhgn(9,ng2t2,ng2t1)$estimate,
+xhgn(10,ng2t2,ng2t1)$estimate,
+xhgn(11,ng2t2,ng2t1)$estimate
 )
 
-lg2t3.eff <- c(
-xhgn(7,lg2t3,lg2t1)$estimate,
-xhgn(6,lg2t3,lg2t1)$estimate,
-xhgn(5,lg2t3,lg2t1)$estimate,
-xhgn(12,lg2t3,lg2t1)$estimate,
-xhgn(13,lg2t3,lg2t1)$estimate,
-xhgn(14,lg2t3,lg2t1)$estimate,
-xhgn(17,lg2t3,lg2t1)$estimate
+ng2t3.eff <- c(
+xhgn(5,ng2t3,ng2t1)$estimate,
+xhgn(6,ng2t3,ng2t1)$estimate,
+xhgn(7,ng2t3,ng2t1)$estimate,
+xhgn(8,ng2t3,ng2t1)$estimate,
+xhgn(9,ng2t3,ng2t1)$estimate,
+xhgn(10,ng2t3,ng2t1)$estimate,
+xhgn(11,ng2t3,ng2t1)$estimate
 )
 
-lg3t2.eff <- c(
-xhgn(7,lg3t2,lg3t1)$estimate,
-xhgn(6,lg3t2,lg3t1)$estimate,
-xhgn(5,lg3t2,lg3t1)$estimate,
-xhgn(12,lg3t2,lg3t1)$estimate,
-xhgn(13,lg3t2,lg3t1)$estimate,
-xhgn(14,lg3t2,lg3t1)$estimate,
-xhgn(17,lg3t2,lg3t1)$estimate
+ng3t2.eff <- c(
+xhgn(5,ng3t2,ng3t1)$estimate,
+xhgn(6,ng3t2,ng3t1)$estimate,
+xhgn(7,ng3t2,ng3t1)$estimate,
+xhgn(8,ng3t2,ng3t1)$estimate,
+xhgn(9,ng3t2,ng3t1)$estimate,
+xhgn(10,ng3t2,ng3t1)$estimate,
+xhgn(11,ng3t2,ng3t1)$estimate
 )
 
-lg3t3.eff <- c(
-xhgn(7,lg3t3,lg3t1)$estimate,
-xhgn(6,lg3t3,lg3t1)$estimate,
-xhgn(5,lg3t3,lg3t1)$estimate,
-xhgn(12,lg3t3,lg3t1)$estimate,
-xhgn(13,lg3t3,lg3t1)$estimate,
-xhgn(14,lg3t3,lg3t1)$estimate,
-xhgn(17,lg3t3,lg3t1)$estimate
+ng3t3.eff <- c(
+xhgn(5,ng3t3,ng3t1)$estimate,
+xhgn(6,ng3t3,ng3t1)$estimate,
+xhgn(7,ng3t3,ng3t1)$estimate,
+xhgn(8,ng3t3,ng3t1)$estimate,
+xhgn(9,ng3t3,ng3t1)$estimate,
+xhgn(10,ng3t3,ng3t1)$estimate,
+xhgn(11,ng3t3,ng3t1)$estimate
 )
 
 numvars <- c(5:11) # Variables in r2.new.data that we are interested in
 
-descriptives.lg1t1 <- stat.desc(r2.new.data[lg1t1,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
-descriptives.lg1t2 <- stat.desc(r2.new.data[lg1t2,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
-descriptives.lg1t3 <- stat.desc(r2.new.data[lg1t3,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+descriptives.ng1t1 <- stat.desc(r2.new.data[ng1t1,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+descriptives.ng1t2 <- stat.desc(r2.new.data[ng1t2,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+descriptives.ng1t3 <- stat.desc(r2.new.data[ng1t3,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
 
-descriptives.lg2t1 <- stat.desc(r2.new.data[lg2t1,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
-descriptives.lg2t2 <- stat.desc(r2.new.data[lg2t2,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
-descriptives.lg2t3 <- stat.desc(r2.new.data[lg2t3,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+descriptives.ng2t1 <- stat.desc(r2.new.data[ng2t1,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+descriptives.ng2t2 <- stat.desc(r2.new.data[ng2t2,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+descriptives.ng2t3 <- stat.desc(r2.new.data[ng2t3,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
 
-descriptives.lg3t1 <- stat.desc(r2.new.data[lg3t1,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
-descriptives.lg3t2 <- stat.desc(r2.new.data[lg3t2,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
-descriptives.lg3t3 <- stat.desc(r2.new.data[lg3t3,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+descriptives.ng3t1 <- stat.desc(r2.new.data[ng3t1,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+descriptives.ng3t2 <- stat.desc(r2.new.data[ng3t2,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
+descriptives.ng3t3 <- stat.desc(r2.new.data[ng3t3,numvars], basic=TRUE, desc=TRUE, norm=TRUE, p=0.95)
 
 descriptives.out <- rbind(
   xg1t1 = cbind(
-    descriptives.lg1t1[c(9, 13), c(3,2,1,8:10,13)]
+    descriptives.ng1t1[c(9, 13), c(3,2,1,4:7)]
     ),
   xg1t2 = cbind(
-    descriptives.lg1t2[c(9, 13), c(3,2,1,8:10,13)]
+    descriptives.ng1t2[c(9, 13), c(3,2,1,4:7)]
     ),
-  xg1t2eff = lg1t2.eff,
+  xg1t2eff = ng1t2.eff,
   xg1t3 = cbind(
-    descriptives.lg1t3[c(9, 13), c(3,2,1,8:10,13)]
+    descriptives.ng1t3[c(9, 13), c(3,2,1,4:7)]
     ),
-  xg1t3eff = lg1t3.eff,
+  xg1t3eff = ng1t3.eff,
   xg2t1 = cbind(
-    descriptives.lg2t1[c(9, 13), c(3,2,1,8:10,13)]
+    descriptives.ng2t1[c(9, 13), c(3,2,1,4:7)]
   ),
   xg2t2 = cbind(
-    descriptives.lg2t2[c(9, 13), c(3,2,1,8:10,13)]
+    descriptives.ng2t2[c(9, 13), c(3,2,1,4:7)]
   ),
-  xg2t2eff = lg2t2.eff,
+  xg2t2eff = ng2t2.eff,
   xg2t3 = cbind(
-    descriptives.lg2t3[c(9, 13), c(3,2,1,8:10,13)]
+    descriptives.ng2t3[c(9, 13), c(3,2,1,4:7)]
   ),
-  xg2t3eff = lg2t3.eff,
+  xg2t3eff = ng2t3.eff,
   xg3t1 = cbind(
-    descriptives.lg3t1[c(9, 13), c(3,2,1,8:10,13)]
+    descriptives.ng3t1[c(9, 13), c(3,2,1,4:7)]
   ),
   xg3t2 = cbind(
-    descriptives.lg3t2[c(9, 13), c(3,2,1,8:10,13)]
+    descriptives.ng3t2[c(9, 13), c(3,2,1,4:7)]
   ),
-  xg3t2eff = lg3t2.eff,
+  xg3t2eff = ng3t2.eff,
   xg3t3 = cbind(
-    descriptives.lg3t3[c(9, 13), c(3,2,1,8:10,13)]
+    descriptives.ng3t3[c(9, 13), c(3,2,1,4:7)]
   ),
-  xg3t3eff = lg3t3.eff
+  xg3t3eff = ng3t3.eff
   )
 
 colnames(descriptives.out) <-
@@ -1770,7 +1776,6 @@ report = function(mod, row) {
     sep = ""
   )
 }
-
 
 #https://www.researchgate.net/post/How_to_report_results_for_generalised_linear_mixed_model_with_binomial_distribution
 #https://stats.stackexchange.com/questions/363638/interpretation-of-icc-when-multiple-random-intercepts-and-fixed-effects-are-coll
