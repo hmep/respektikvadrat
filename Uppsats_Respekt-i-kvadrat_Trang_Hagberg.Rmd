@@ -1545,19 +1545,27 @@ Vi var också intresserade av hur effekten av deltagande i grupperna `r xg1` och
 
 ### Konstruktiv självhävdelse
 
-#### `r xG3`--`r xg1` vid `r xt3`
+#### `r xG3`--`r xg1` vid `r xt3`-mätningen
 
 Med AAA-S Adaptive fann vi en skillnad vid `r xt3`-mätningen mellan gruppen `r xg1` (se emm ovan) och gruppen `r xg3` (emm `r tidy(aaas_ad.emm.by.time)$estimate[7]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[7]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[7]`]), effektstorlek `r aaas_ad.eff.by.time$effect.size[7] * -1`, 95% CI [`r aaas_ad.eff.by.time$conf.high[7] * -1` ; `r aaas_ad.eff.by.time$conf.low[7] * -1`]. 
 
-#### `r xG3`--`r xg2` vid `r xt3`
+#### `r xG3`--`r xg2` vid `r xt3`-mätningen
 
 Vi fann även en skillnad med AAA-S Adaptive vid `r xt3`-mätningen mellan gruppen `r xg1` (se emm ovan) och gruppen `r xg3` (se emm ovan), effektstorlek `r aaas_ad.eff.by.time$effect.size[8] * -1`, 95% CI [`r aaas_ad.eff.by.time$conf.high[8] * -1` ; `r aaas_ad.eff.by.time$conf.low[8] * -1`]. 
 
+Båda behandlingsbetingelserna förbättrades avsevärt jämfört med `r xg3`. Effekten var påtaglig redan vid mittenmätningen. Se figur XXXX för en sammanfattning.
 
+### Aggressiv självhävdelse
 
-Vi fann därtill en skillnad (effektstorlek `r aaas_ad.eff.by.time$effect.size[9]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[9]` ; `r aaas_ad.eff.by.time$conf.high[9]`]) vid  tidpunkten `r xt3` mellan gruppen `r xg2` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[8]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[8]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[8]`]) och gruppen `r xg3` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[9]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[9]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[9]`]) med avseende på AAA-S Adaptive. 
+#### `r xG3`--`r xg1` vid `r xt3`-mätningen
 
-Båda behandlingsbetingelser förbättrades avsevärt jämfört med väntelistan. Effekten var påtaglig redan vid mittenmätningen. Se figur XXXX för en sammanfattning.
+Med AAA-S Aggressive fann vi en skillnad vid `r xt3`-mätningen mellan gruppen `r xg1` (se emm ovan) och gruppen `r xg3` (emm `r tidy(aaas_ad.emm.by.time)$estimate[7]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[7]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[7]`]), effektstorlek `r aaas_ad.eff.by.time$effect.size[7] * -1`, 95% CI [`r aaas_ad.eff.by.time$conf.high[7] * -1` ; `r aaas_ad.eff.by.time$conf.low[7] * -1`]. 
+
+#### `r xG3`--`r xg2` vid `r xt3`-mätningen
+
+Vi fann även en skillnad med AAA-S Adaptive vid `r xt3`-mätningen mellan gruppen `r xg1` (se emm ovan) och gruppen `r xg3` (se emm ovan), effektstorlek `r aaas_ad.eff.by.time$effect.size[8] * -1`, 95% CI [`r aaas_ad.eff.by.time$conf.high[8] * -1` ; `r aaas_ad.eff.by.time$conf.low[8] * -1`]. 
+
+Båda behandlingsbetingelserna förbättrades avsevärt jämfört med `r xg3`. Effekten var påtaglig redan vid mittenmätningen. Se figur XXXX för en sammanfattning.
 
 <!-- Skriv om nedanstående!!! -->
 För AAA-S Aggressive fann vi en skillnad (effektstorlek `r aaas_ad.eff.by.time$effect.size[9]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[9]` ; `r aaas_ad.eff.by.time$conf.high[9]`]) vid  tidpunkten `r xt3` mellan gruppen `r xg1` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[8]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[8]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[8]`]) och gruppen `r xg3` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[9]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[9]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[9]`]) med avseende på AAA-S Adaptive. Vi fann också en skillnad (effektstorlek `r aaas_ad.eff.by.time$effect.size[9]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[9]` ; `r aaas_ad.eff.by.time$conf.high[9]`]) vid  tidpunkten `r xt3` mellan gruppen `r xg1` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[8]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[8]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[8]`]) och gruppen `r xg3` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[9]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[9]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[9]`]) med avseende på AAA-S Adaptive. Båda behandlingsbetingelser förbättrades jämfört med väntelistan. Effekten var påtaglig redan vid mittenmätningen. Se figur XXXX för en sammanfattning.
@@ -1592,7 +1600,7 @@ aaas_ad.emm.plot <-
   plot(ggemmeans(aaas_ad.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = NA, colour = "Grupp", title = "Predicerade värden och effektstyrkor för AAA-S Adaptive") + theme(legend.position = "bottom", axis.title.y = element_blank())
 
 #,arrow = arrow(length = unit(0.05, "npc"))
-p1 <- aaas_ad.emm.plot + 
+ad1 <- aaas_ad.emm.plot + 
   geom_curve(aes(x = 2.9, y = aaas_ad.emm.plot$data[2]$predicted[7], xend = 3.1, yend = aaas_ad.emm.plot$data[2]$predicted[9]), color = "#888888", size = 0.25, linetype = "dashed", curvature = 0.4) +
   geom_curve(aes(x = 2.9, y = aaas_ad.emm.plot$data[2]$predicted[7], xend = 3, yend = aaas_ad.emm.plot$data[2]$predicted[8]), color = "#888888", size = 0.25, linetype = "dashed", curvature = -0.4) +
   #geom_curve(aes(x = 1.9, y = aaas_ad.emm.plot$data[2]$predicted[4], xend = 2.1, yend = aaas_ad.emm.plot$data[2]$predicted[6]), color = "#888888", size = 0.25, linetype = "dashed", curvature = 0.5) +
@@ -1621,7 +1629,7 @@ aaas_ag.emm.plot <-
   plot(ggemmeans(aaas_ag.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = NA, colour = "Grupp", title = "Predicerade värden och effektstyrkor för AAA-S Aggressive") + theme(legend.position = "bottom", axis.title.y = element_blank())
 
 #,arrow = arrow(length = unit(0.05, "npc"))
-p1 <- aaas_ag.emm.plot + 
+ag1 <- aaas_ag.emm.plot + 
   geom_curve(aes(x = 2.9, y = aaas_ag.emm.plot$data[2]$predicted[7], xend = 3.1, yend = aaas_ag.emm.plot$data[2]$predicted[9]), color = "#888888", size = 0.25, linetype = "dashed", curvature = 0.4) +
   geom_curve(aes(x = 2.9, y = aaas_ag.emm.plot$data[2]$predicted[7], xend = 3, yend = aaas_ag.emm.plot$data[2]$predicted[8]), color = "#888888", size = 0.25, linetype = "dashed", curvature = -0.4) +
   #geom_curve(aes(x = 1.9, y = aaas_ag.emm.plot$data[2]$predicted[4], xend = 2.1, yend = aaas_ag.emm.plot$data[2]$predicted[6]), color = "#888888", size = 0.25, linetype = "dashed", curvature = 0.5) +
@@ -2321,6 +2329,12 @@ De nyöversatta skalorna är ej validerade och saknar svenska normer. Istället 
 
 TH: Samtidigt är det bra att diskutera detta. Nu är din sista mening borta, men vi bör kanske lägga till något. Låt oss disktuera!
 -->
+
+<!-- TH: diskutera känslan av exklusivitet att få delta i ett självhjälpsprogram som confounder för avsaknaden av skillnad självhjälp--behandlarstöd -->
+
+<!-- TH: diskutera konceptualiseringen av passiv självhävdelse (ev räkna på) -->
+
+<!-- TH: diskutera problemet med aggressiv självhävdelse och avsaknad av idiografisk fallformulering -->
 
 <!--
 Sidenote: Gör vi kontroller av bortfallet för att se att det inte är ett systematiskt bortfall?
