@@ -45,6 +45,7 @@ header-includes:
    - \hyphenation{nor-mal-spann nor-mal-span-net}
    - \usepackage{tabu}
    - \usepackage{rotating}
+   - \usepackage{caption}
 editor_options: 
   chunk_output_type: console
 ---
@@ -786,10 +787,10 @@ colnames(xdemodatax) <- xdemocat
 demdata.tabell <- t(xdemodatax)
 
 colnames(demdata.tabell) <- c(
-  paste(xG3," (n = ",ll3,")",sep=""),
-  paste(xG1," (n = ",ll1,")",sep=""),
-  paste(xG2," (n = ",ll2,")",sep=""),
-  paste("Sammanlagt (n = ",length(r2.wide.data[,1]),")",sep="")
+  paste(xG3,"\\\\(n = ",ll3,")",sep=""),
+  paste(xG1,"\\\\(n = ",ll1,")",sep=""),
+  paste(xG2,"\\\\(n = ",ll2,")",sep=""),
+  paste("Sammanlagt\\\\(n = ",length(r2.wide.data[,1]),")",sep="")
 )
 
 options(OutDec= ".")
@@ -802,13 +803,15 @@ De `r length(r2.wide.data$subject)` deltagare vars data används i den här stud
 
 ```{r demdata, out.width="100%", tab.align="center", cache = F}
 
-svkable(demdata.tabell, caption = "(ref:dem)", align="ccc") %>%
+library("kableExtra")
+
+knitr::kable(demdata.tabell, format="latex", booktabs = T, caption = "(ref:dem)", align="ccc", escape = F) %>%
   kable_styling(full_width = F) %>%
-  column_spec(2, width = "10em") %>%
-  column_spec(2, width = "5em") %>%
-  column_spec(3, width = "5em") %>%
-  column_spec(4, width = "5em") %>%
-  column_spec(5, width = "5em") %>%
+  column_spec(1, width = "11em") %>%
+  column_spec(2, width = "5.5em") %>%
+  column_spec(3, width = "5.5em") %>%
+  column_spec(4, width = "5.5em") %>%
+  column_spec(5, width = "5.5em") %>%
   pack_rows("Ålder (år)", 1, 1, bold = F) %>%
   pack_rows("Kön (%)", 2, 2, bold = F) %>%
   pack_rows("Civilstånd (%)", 3, 6, bold = F) %>%
@@ -1052,9 +1055,9 @@ Vi analyserade insamlade förmätningsvärden för att kontrollera om randomiser
 
 <!-- OBS! Kom ihåg bortfallsanalys (se exempeluppsats 2) -->
 
-### Analys av huvudeffekter och interaktionseffekter
+### Analys av fixa och slumpmässiga effekter
 
-Huvudeffekter och interaktion mellan grupp och tid för de primära och sekundära utfallsmåtten undersöktes med så kallad flernivåanalys (också kallad blandad modell, hierarkisk analys, på engelska bland annat *mixed model*, *multilevel model* och *hierarchical linear model*). Flernivåanalys tillåter precis som multivariat variansanalys (MANOVA) inklusion av upprepade beroende mättillfällen i modellen, men fördelerna att metoden tillåter obalanserade grupper och att principen om *intention to treat* värnas utan behov av imputering av saknade datapunkter. Flernivåanalyser uppskattar också inklusion av *random*-effekter observerad men inte kontrollerad varians på klusternivå (i detta fall enskilda individer som "innehåller" upprepade mättillfällen).
+Fixa och slumpmässiga effekter mellan grupp och tid för de primära och sekundära utfallsmåtten undersöktes med så kallad flernivåanalys (också kallad blandad modell, hierarkisk analys, på engelska bland annat *mixed model*, *multilevel model* och *hierarchical linear model*). Flernivåanalys tillåter precis som multivariat variansanalys (MANOVA) inklusion av upprepade beroende mättillfällen i modellen, men fördelerna att metoden tillåter obalanserade grupper och att principen om *intention to treat* värnas utan behov av imputering av saknade datapunkter. Flernivåanalyser uppskattar också inklusion av *random*-effekter observerad men inte kontrollerad varians på klusternivå (i detta fall enskilda individer som "innehåller" upprepade mättillfällen).
 
 Granskning av homoscedasticitet och residualernas fördelning samt identifiering av outliers gjordes visuellt med diagnostiska plottar av de till data anpassade modellerna. All data, inklusive förekommande outliers, behölls i analyserna.
 
