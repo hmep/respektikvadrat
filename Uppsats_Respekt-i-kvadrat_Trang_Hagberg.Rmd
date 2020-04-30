@@ -1506,13 +1506,11 @@ svkable(descriptives.col.out[], caption = "(ref:descriptives)", linesep = "", al
 
 Estimat för intercept och regressionskoefficienter för de olika primära och sekundära utfallsmåtten sammanfattas i tabell \@ref(stargazer). Intercept och lutningskoefficienter för respektive utfallsmått kan läggas in i regressionsformeln som predicerar utfall för alla kombinationer av grupptillhörighet och mättillfällen.
 
-## Skillnad i effekt mellan grupperna `r xg1`--`r xg2`
+## Skillnad i effekt på konstruktiv självhävdelse mellan `r xg1`--`r xg2`
 
 Vår primära frågeställning var om det finns någon skillnad (i endera riktning) i effekt mellan gruppen `r xg1` och gruppen `r xg2` med avseende på konstruktiv självhävdelse, det vill säga med utfallsmåttet AAA-S Adaptive. 
 
-(ref:emmeffad) bildtext
-
-```{r emmean_aaas_ad, dpi=196, fig.align="center", fig.cap='(ref:emmeffad)', fig.height=4.5, fig.width=5.5}
+```{r emmeff}
 
 require(emmeans)
 require(ggeffects)
@@ -1521,11 +1519,48 @@ library(broom.mixed)
 require(gridExtra)
 require(grid)
 
+################### CHECK EDF!!!!!! ####################
+
+# AAA-S Adaptive
+
 aaas_ad.emm.by.group <- emmeans(aaas_ad.lmer, ~ time | group, adjust="bonferroni")
 aaas_ad.emm.by.time <- emmeans(aaas_ad.lmer, ~ group | time, adjust="bonferroni")
+aaas_ad.eff.by.group <- tidy(eff_size(aaas_ad.emm.by.group, sigma = sigma(aaas_ad.lmer), edf = 202)) 
+aaas_ad.eff.by.time <- tidy(eff_size(aaas_ad.emm.by.time, sigma = sigma(aaas_ad.lmer), edf = 202))
 
-aaas_ad.eff.by.group <- tidy(eff_size(aaas_ad.emm.by.group, sigma = sigma(aaas_ad.lmer), edf = 202)) # Check edf!
-aaas_ad.eff.by.time <- tidy(eff_size(aaas_ad.emm.by.time, sigma = sigma(aaas_ad.lmer), edf = 202)) # Check edf!
+# AAA-S Aggressive
+
+aaas_ag.emm.by.group <- emmeans(aaas_ag.lmer, ~ time | group, adjust="bonferroni")
+aaas_ag.emm.by.time <- emmeans(aaas_ag.lmer, ~ group | time, adjust="bonferroni")
+aaas_ag.eff.by.group <- tidy(eff_size(aaas_ag.emm.by.group, sigma = sigma(aaas_ag.lmer), edf = 202))
+aaas_ag.eff.by.time <- tidy(eff_size(aaas_ag.emm.by.time, sigma = sigma(aaas_ag.lmer), edf = 202))
+
+```
+
+Vi fann ingen skillnad i utfall med AAA-S Adaptive vid `r xt3`-mätningen mellan gruppen `r xg1` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$estimate[8]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[8]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[8]`]) och gruppen `r xg2` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$estimate[9]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[9]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[9]`]), effektstorlek `r aaas_ad.eff.by.time$effect.size[9]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[9]` ; `r aaas_ad.eff.by.time$conf.high[9]`]. Vi fann inte heller någon skillnad i effekt vid `r xt2`-mätningen, effektstorlek `r aaas_ad.eff.by.time$effect.size[6]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[6]` ; `r aaas_ad.eff.by.time$conf.high[6]`]. Skillnaden är försumbar mellan att få terapeutstöd och att inte få det vid deltagande i träningsprogrammet *Respekt i kvadrat*.
+
+## Skillnader i effekt på konstruktiv och aggressiv självhävdelse mellan `r xg3`--`r xg1` respektive `r xg3`--`r xg2`
+
+Vi var också intresserade av om effekten av deltagande i grupperna `r xg1` och `r xg2` skiljer sig från `r xg3` med avseende på konstruktiv och aggressiv självhävdelse, det vill säga med utfallsmåtten AAA-S Adaptive och AAA-S Aggressive. 
+
+Med AAA-S Adaptive fann vi en skillnad `r xt3`-mätningen mellan gruppen `r xg1` och gruppen `r xg3` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$estimate[7]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[7]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[7]`]), effektstorlek `r aaas_ad.eff.by.time$effect.size[7]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[7]` ; `r aaas_ad.eff.by.time$conf.high[7]`]. 
+
+Vi fann också en skillnad (effektstorlek `r aaas_ad.eff.by.time$effect.size[9]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[9]` ; `r aaas_ad.eff.by.time$conf.high[9]`]) vid  tidpunkten `r xt3` mellan gruppen `r xg1` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[8]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[8]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[8]`]) och gruppen `r xg3` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[9]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[9]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[9]`]) med avseende på AAA-S Adaptive. Båda behandlingsbetingelser förbättrades avsevärt jämfört med väntelistan. Effekten var påtaglig redan vid mittenmätningen. Se figur XXXX för en sammanfattning.
+
+<!-- Skriv om nedanstående!!! -->
+För AAA-S Aggressive fann vi en skillnad (effektstorlek `r aaas_ad.eff.by.time$effect.size[9]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[9]` ; `r aaas_ad.eff.by.time$conf.high[9]`]) vid  tidpunkten `r xt3` mellan gruppen `r xg1` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[8]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[8]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[8]`]) och gruppen `r xg3` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[9]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[9]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[9]`]) med avseende på AAA-S Adaptive. Vi fann också en skillnad (effektstorlek `r aaas_ad.eff.by.time$effect.size[9]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[9]` ; `r aaas_ad.eff.by.time$conf.high[9]`]) vid  tidpunkten `r xt3` mellan gruppen `r xg1` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[8]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[8]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[8]`]) och gruppen `r xg3` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[9]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[9]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[9]`]) med avseende på AAA-S Adaptive. Båda behandlingsbetingelser förbättrades jämfört med väntelistan. Effekten var påtaglig redan vid mittenmätningen. Se figur XXXX för en sammanfattning.
+
+<!-- Var effekten märkbar vid mittenmätningen för Ag? -->
+
+Slutligen ville vi också undersöka vilka prediktorer/moderatorer hos deltagarna (exempelvis grad av social ångest eller grad av depression) i behandlingsalternativen `r xg1` och `r xg2` som påverkar utfallet samt vilka mediatorer inom behandlingsalternativen (exempelvis tilldelning av terapeut) som påverkar utfallet. 
+
+Det finns möjlighet att fortsätta analysera insamlad data. Med våra initiala analyser konstaterar vi att ICC-värdet ger att 68% av variansen i utfallsmåttet AAA-S Adaptive kan förklaras av individuella faktorer. För AAA-S Aggressive kan 74% av variansen förklaras av individuella faktorer.
+
+(ref:emmeffag)
+
+```{r effemmplots, dpi=196, fig.align="center", fig.cap='(ref:emmeffag)', fig.height=4.5, fig.width=5.5}
+
+# AAA-S Ad
 
 Name = c(
   NA,
@@ -1554,45 +1589,7 @@ p1 <- aaas_ad.emm.plot +
   geom_curve(aes(x = 1.1, y = aaas_ad.emm.plot$data[2]$predicted[3], xend = 3.1, yend = aaas_ad.emm.plot$data[2]$predicted[9]), color = "#888888", size = 0.25, linetype = "dashed", curvature = 0.15) + 
   geom_label(aes(label=Name),color="white", fill="#888888", nudge_x = Nudge_x, nudge_y = Nudge_y,size=2.5,na.rm=TRUE)
 
-#p1
-result <- function(x){format(x,decimal.mark=",")}
-
-```
-
-Vi fann ingen skillnad i utfall med AAA-S Adaptive vid `r xt3`-mätningen mellan gruppen `r xg1` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$estimate[8]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[8]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[8]`]) och gruppen `r xg2` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$estimate[9]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[9]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[9]`]), effektstorlek `r aaas_ad.eff.by.time$effect.size[9]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[9]` ; `r aaas_ad.eff.by.time$conf.high[9]`]. Vi fann inte heller någon skillnad i effekt vid `r xt2`-mätningen, effektstorlek `r aaas_ad.eff.by.time$effect.size[6]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[6]` ; `r aaas_ad.eff.by.time$conf.high[6]`]. Skillnaden är försumbar mellan att få terapeutstöd och att inte få det vid deltagande i träningsprogrammet *Respekt i kvadrat*.
-
-## Skillnader i effekt mellan grupperna `r xg3`--`r xg1` och `r xg3`--`r xg2`
-
-Vi var också intresserade av om effekten av deltagande i grupperna `r xg1` och `r xg2` skiljer sig från `r xg3` med avseende på konstruktiv och aggressiv självhävdelse. 
-
-Vi fann en skillnad med AAA-S Adaptive vid `r xt3`-mätningen mellan gruppen `r xg1` och gruppen `r xg3` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$estimate[7]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[7]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[7]`]), effektstorlek `r aaas_ad.eff.by.time$effect.size[7]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[7]` ; `r aaas_ad.eff.by.time$conf.high[7]`]. 
-
-Vi fann också en skillnad (effektstorlek `r aaas_ad.eff.by.time$effect.size[9]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[9]` ; `r aaas_ad.eff.by.time$conf.high[9]`]) vid  tidpunkten `r xt3` mellan gruppen `r xg1` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[8]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[8]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[8]`]) och gruppen `r xg3` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[9]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[9]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[9]`]) med avseende på AAA-S Adaptive. Båda behandlingsbetingelser förbättrades avsevärt jämfört med väntelistan. Effekten var påtaglig redan vid mittenmätningen. Se figur XXXX för en sammanfattning.
-
-<!-- Skriv om nedanstående!!! -->
-För AAA-S Aggressive fann vi en skillnad (effektstorlek `r aaas_ad.eff.by.time$effect.size[9]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[9]` ; `r aaas_ad.eff.by.time$conf.high[9]`]) vid  tidpunkten `r xt3` mellan gruppen `r xg1` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[8]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[8]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[8]`]) och gruppen `r xg3` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[9]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[9]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[9]`]) med avseende på AAA-S Adaptive. Vi fann också en skillnad (effektstorlek `r aaas_ad.eff.by.time$effect.size[9]`, 95% CI [`r aaas_ad.eff.by.time$conf.low[9]` ; `r aaas_ad.eff.by.time$conf.high[9]`]) vid  tidpunkten `r xt3` mellan gruppen `r xg1` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[8]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[8]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[8]`]) och gruppen `r xg3` (estimerat marginalmedelvärde `r tidy(aaas_ad.emm.by.time)$effect.size[9]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[9]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[9]`]) med avseende på AAA-S Adaptive. Båda behandlingsbetingelser förbättrades jämfört med väntelistan. Effekten var påtaglig redan vid mittenmätningen. Se figur XXXX för en sammanfattning.
-
-<!-- Var effekten märkbar vid mittenmätningen för Ag? -->
-
-Slutligen ville vi också undersöka vilka prediktorer/moderatorer hos deltagarna (exempelvis grad av social ångest eller grad av depression) i behandlingsalternativen `r xg1` och `r xg2` som påverkar utfallet samt vilka mediatorer inom behandlingsalternativen (exempelvis tilldelning av terapeut) som påverkar utfallet. 
-
-Det finns möjlighet att fortsätta analysera insamlad data. Med våra initiala analyser konstaterar vi att ICC-värdet ger att 68% av variansen i utfallsmåttet AAA-S Adaptive kan förklaras av individuella faktorer. För AAA-S Aggressive kan 74% av variansen förklaras av individuella faktorer.
-
-(ref:emmeffag)
-
-```{r emmean_aaas_ag, dpi=196, fig.align="center", fig.cap='(ref:emmeffag)', fig.height=4.5, fig.width=5.5}
-
-require(emmeans)
-require(ggeffects)
-require(sjPlot)
-library(broom.mixed)
-require(gridExtra)
-require(grid)
-
-aaas_ag.emm.by.group <- emmeans(aaas_ag.lmer, ~ time | group, adjust="bonferroni")
-aaas_ag.emm.by.time <- emmeans(aaas_ag.lmer, ~ group | time, adjust="bonferroni")
-aaas_ag.eff.by.group <- tidy(eff_size(aaas_ag.emm.by.group, sigma = sigma(aaas_ag.lmer), edf = 202)) # Check edf!
-aaas_ag.eff.by.time <- tidy(eff_size(aaas_ag.emm.by.time, sigma = sigma(aaas_ag.lmer), edf = 202)) # Check edf!
+# AAA-S Ag
 
 Name = c(
   NA,
@@ -1621,7 +1618,6 @@ p1 <- aaas_ag.emm.plot +
   geom_curve(aes(x = 1.1, y = aaas_ag.emm.plot$data[2]$predicted[3], xend = 3.1, yend = aaas_ag.emm.plot$data[2]$predicted[9]), color = "#888888", size = 0.25, linetype = "dashed", curvature = 0.15) + 
   geom_label(aes(label=Name),color="white", fill="#888888", nudge_x = Nudge_x, nudge_y = Nudge_y,size=2.5,na.rm=TRUE)
 
-#p1
 
 ```
 
