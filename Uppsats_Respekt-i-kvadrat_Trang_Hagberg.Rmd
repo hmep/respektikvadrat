@@ -445,24 +445,6 @@ ll3 = length(r2.long.data[lg3t1,1])
 
 ```
 
-```{r, eval = F}
-
-############### REMOVE THIS CHUNK ##################
-library(readxl)
-sociodemografisk.data <- read_excel("Respekt_survey453761_200423.xlsx")
-sociodemografisk.data$group <-
-  factor(ifelse(
-    grepl("Grupp 1", sociodemografisk.data$Grupper),
-    1,
-    ifelse(
-      grepl("Grupp 2", sociodemografisk.data$Grupper),
-      2,
-      ifelse(grepl("Grupp 3", sociodemografisk.data$Grupper), 3, NA)
-    )
-  ))
-sociodemografisk.data <- sociodemografisk.data[-c(13,48,52,97,158),]
-```
-
 
 ```{r norms, cache = F}
 
@@ -589,7 +571,7 @@ Undvikande av aversiva stimuli -- det vill säga händelser, situationer och sak
 
 Särskilt svårt är det att bryta beteenden som har som funktion att undvika det som väcker rädsla. En stor utmaning i behandling av ångestsyndrom är att överbrygga det undvikandet som följt av just rädsloinlärning. @Ohman2001 konstaterar att rädsloinlärning inte så lätt går att påverka med kognitiv kontroll i skarpt läge, inte minst för att de neuronala rädslokretsarna vid amygdala ligger djupt förankrade i limbiska delar av hjärnan och mer eller mindre lever sitt eget liv.
 
-Det har även visat sig att det är menligt <!-- möjligen skriva "självdestruktivt istället för menligt? --> att försöka undvika ens aversiva känslor. Detta undvikande brukar kallas för emotionellt undvikande. Regelbundet användande av emotionellt undvikande är kopplat till flertalet negativa följder. Det är paradoxalt nog kopplat till mer upplevande av negativa emotioner (och mindre upplevande av positiva emotioner), men även till större undvikande av nära relationer, mindre socialt stöd, lägre självförtroende och sämre generellt välmående [@Gross2003]. Den paradoxala biten går inte nog att betona: att försöka undvika aversiva emotioner leder till att man upplever dem mer [@Gross2003; @Fernandez-Rodriguez2018; @Hayes1996].
+Forskningen visar också att det är självdestruktivt att försöka undvika aversiva känslor. Detta undvikande brukar kallas för emotionellt undvikande. Regelbundet användande av emotionellt undvikande är kopplat till många negativa följder. Det är paradoxalt nog kopplat till högre grad av negativa emotioner (och mindre grad av positiva emotioner), men även till större undvikande av nära relationer, mindre socialt stöd, lägre självförtroende och sämre generellt välmående [@Gross2003]. Den paradoxala biten går inte nog att betona: att försöka undvika aversiva emotioner leder till att man upplever dem mer [@Gross2003; @Fernandez-Rodriguez2018; @Hayes1996].
 
 <!-- *@Pittig2014 är ej med i dagsläget men bör möjligen vara det? -->
 
@@ -717,7 +699,6 @@ Personer som skattade 15 eller högre på självskattningsformuläret PHQ-9 exkl
 
 xdemocat <-
   c(
-#  "N",
   "M (SD)",
   "Kvinna",
   "Singel",
@@ -728,8 +709,8 @@ xdemocat <-
   "Folkskola/grundskola",
   "Gymnasium",
   "Yrkesutbildning",
-  "Universitet/högskola (pågående)",
-  "Universitet/högskola (avslutad)",
+  "Pågående högre utbildning",
+  "Avslutad högre utbildning",
   "Annan sysselsättning",
   "Studerande",
   "Arbetande",
@@ -744,52 +725,95 @@ xdemocat <-
   "Ja"
   )
 
+#options(OutDec= ",")
+
 xdemodata <- rbind(
-  prop.table(table(r2.wide.data$Demografi.Kon,r2.wide.data$group),2),
-  prop.table(table(r2.wide.data$Demografi.Civilstand,r2.wide.data$group),2),
-  prop.table(table(r2.wide.data$Demografi.Utbildning,r2.wide.data$group),2),
-  prop.table(table(r2.wide.data$Demografi.Sysselsattning,r2.wide.data$group),2),
-  prop.table(table(r2.wide.data$Demografi.Psykofarmaka,r2.wide.data$group),2),
-  prop.table(table(r2.wide.data$Demografi.PsykoBehandling,r2.wide.data$group),2),
-  prop.table(table(r2.wide.data$Demografi.1,r2.wide.data$group),2),
-  prop.table(table(r2.wide.data$Demografi.2,r2.wide.data$group),2),
-  prop.table(table(r2.wide.data$Demografi.3,r2.wide.data$group),2)
+  prop.table(cbind(
+    table(r2.wide.data$Demografi.Kon, r2.wide.data$group),
+    margin.table(table(
+      r2.wide.data$Demografi.Kon, r2.wide.data$group
+    ), 1)
+  ), 2),
+  prop.table(cbind(
+    table(r2.wide.data$Demografi.Civilstand, r2.wide.data$group),
+    margin.table(table(
+      r2.wide.data$Demografi.Civilstand, r2.wide.data$group
+    ), 1)
+  ), 2),
+  prop.table(cbind(
+    table(r2.wide.data$Demografi.Utbildning, r2.wide.data$group),
+    margin.table(table(
+      r2.wide.data$Demografi.Utbildning, r2.wide.data$group
+    ), 1)
+  ), 2),
+  prop.table(cbind(
+    table(r2.wide.data$Demografi.Sysselsattning, r2.wide.data$group),
+    margin.table(table(
+      r2.wide.data$Demografi.Sysselsattning, r2.wide.data$group
+    ), 1)
+  ), 2),
+  prop.table(cbind(
+    table(r2.wide.data$Demografi.Psykofarmaka, r2.wide.data$group),
+    margin.table(table(
+      r2.wide.data$Demografi.Psykofarmaka, r2.wide.data$group
+    ), 1)
+  ), 2),
+  prop.table(cbind(
+    table(
+      r2.wide.data$Demografi.PsykoBehandling, r2.wide.data$group),
+      margin.table(table(
+        r2.wide.data$Demografi.PsykoBehandling, r2.wide.data$group
+      ), 1)
+  ), 2),
+  prop.table(cbind(
+    table(r2.wide.data$Demografi.1, r2.wide.data$group),
+    margin.table(table(
+      r2.wide.data$Demografi.1, r2.wide.data$group
+    ), 1)
+  ), 2),
+  prop.table(cbind(
+    table(r2.wide.data$Demografi.2, r2.wide.data$group),
+    margin.table(table(
+      r2.wide.data$Demografi.2, r2.wide.data$group
+    ), 1)
+  ), 2),
+  prop.table(cbind(
+    table(r2.wide.data$Demografi.3, r2.wide.data$group),
+    margin.table(table(
+      r2.wide.data$Demografi.3, r2.wide.data$group
+    ), 1)
+  ), 2)
 )
-  
-xdemodata <- xdemodata[-c(1,25:27),]
 
-options(OutDec= ",") 
-xdemodata.ext <- rbind(
-#  cbind(ll1,ll2,ll3),
-  cbind(
-    paste(round(mean(r2.wide.data[wg1, 64]), 2), " (", round(sd(r2.wide.data[wg1, 64]), 2),
-          ")",
-          sep = ""),
-    paste(round(mean(r2.wide.data[wg2, 64]), 2), " (", round(sd(r2.wide.data[wg2, 64]), 2),
-          ")",
-          sep = ""),
-    paste(round(mean(r2.wide.data[wg3, 64]), 2), " (", round(sd(r2.wide.data[wg3, 64]), 2),
-          ")",
-          sep = "")
-  ),
-  round(xdemodata * 100,2)
-)
+xdemodatax <- as.data.frame(t(xdemodata[-c(1,24:27),]))
 
-xdemodata.rot <- t(xdemodata.ext)
+xdemodatax$x <- as.factor(c(
+    paste(round(mean(r2.wide.data[wg3,64]),2)," (",round(sd(r2.wide.data[wg3,64]),2),")",sep=""),
+    paste(round(mean(r2.wide.data[wg1,64]),2)," (",round(sd(r2.wide.data[wg1,64]),2),")",sep=""),
+    paste(round(mean(r2.wide.data[wg2,64]),2)," (",round(sd(r2.wide.data[wg2,64]),2),")",sep=""),
+    paste(round(mean(r2.wide.data[,64]),2)," (",round(sd(r2.wide.data[,64]),2),")",sep="")
+  ))
 
-colnames(xdemodata.rot) <- xdemocat
+xdemodatax <- xdemodatax[c(23,1:22)]
 
-#xdemodata.rot[,c(3:5)] <- sapply(xdemodata.rot[,c(3:5)], as.numeric)
+colnames(xdemodatax) <- xdemocat
 
 demdata.tabell <- t(xdemodata.rot)
 
-options(OutDec= ".") 
+colnames(demdata.tabell) <- c(
+  paste(xG3," (n = ",ll3,")",sep=""),
+  paste(xG1," (n = ",ll1,")",sep=""),
+  paste(xG2," (n = ",ll2,")",sep=""),
+  paste("Alla (n = )",length(r2.wide.data[,1]),")",sep="")
+)
+
+options(OutDec= ".")
 
 ```
 
 De `r length(r2.wide.data$subject)` deltagare vars data används i den här studien var mellan 20 och 65 år gamla med en medelålder på 41,8 år (standardavvikelse 8,8). En betydande majoritet (87,8&nbsp;%) identifierade sig som kvinnor, samtliga övriga som män. Knappt tre fjärdedelar av deltagarna hade avslutad universitets- eller högskoleutbildning (71,6&nbsp;%) och tre fjärdedelar av deltagarna var vid behandlingens start yrkesarbetande (75,5&nbsp;%). Mer än hälften av deltagarna (61,3&nbsp;%) hade tidigare erfarenheter av psykologisk behandling. Av dessa hade majoriteten (64,8&nbsp;%) tidigare erfarenheter av KBT. Knappt en tredjedel av alla deltagare (29,0&nbsp;%) hade erfarenhet av psykofarmaka, och vid behandlingsstart stod 17,6&nbsp;% på något slags psykofarmaka. Totalt 3,4&nbsp;% av deltagarna var vid behandlingsstart sjukskrivna. Se tabell \@ref(tab:demdata) för de demografiska faktorernas fördelningar i respektive grupp.
 
-(ref:dem) Demografisk data för deltagarna, redovisad per grupp.
+(ref:dem) Vid förmätningstillfället insamlad sociodemografisk och annan relevant data för deltagarna.
 
 ```{r demdata, out.width="100%", tab.align="center", cache = F}
 
@@ -1043,7 +1067,22 @@ Vi analyserade insamlade förmätningsvärden för att kontrollera om randomiser
 
 ### Analys av huvudeffekter och interaktionseffekter
 
-Huvudeffekter och interaktion mellan grupp och tid för de primära och sekundära utfallsmått undersöktes med flernivåanalys, (också kallad *hierarkisk analys*, på engelska bland annat *mixed model*, *multilevel model* eller *hierarchical linear model*). Flernivåanalys tillåter precis som MANOVA inklusion av upprepade beroende mättillfällen i modellen, men fördelen att analysmetoden i sin utformning har inbyggt stöd för principen om *intention to treat*. Flernivåanalysmodeller kan genom inklusion av *random*-effekter också uppskatta observerad (men inte kontrollerad) individ-relaterade varians, exempelvis skillnader i underliggande förändringsbenägenhet över tid. För modelleringen av de olika utfallsmåtten användes modelleringsverktyg från R-paketet *lme4* [@R-lme4]. Val av kovariansstruktur gjordes genom jämförelse av AIC-tal av modeller skapade med *Maximum Likelihood* (ML)-metoden. Den alternativa metoden *Restricted Maximum Likelihood* (REML), som ger väntesvärdesriktiga uppskattningar av varianserna, användes därefter för anpassningen av modellerna för utfallsmåtten till underliggande data. I modellerna tilläts skärningspunkterna för respektive deltagare att variera. Granskning av homoscedasticitet, residualernas fördelning och outliers gjordes visuellt med diagnostiska plottar av de till data anpassade modellerna. För parvisa uppföljningstest av signifikanta estimat uppskattades *marginal means* (*least square means*) samt standardiserade effektstorlekar med verktyg från R-paketet *emmeans* [@R-emmeans]. Figurer producerades med verktyg från *emmeans*, *sjPlot* [@R-sjPlot] och *ggplot2* [@R-ggplot2].
+Huvudeffekter och interaktion mellan grupp och tid för de primära och sekundära utfallsmått undersöktes med flernivåanalys, (också kallad *hierarkisk analys*, på engelska bland annat *mixed model*, *multilevel model* eller *hierarchical linear model*). Flernivåanalys tillåter precis som multivariat variansanalys (MANOVA) inklusion av upprepade beroende mättillfällen i modellen, men fördelerna att metoden tillåter obalanserade grupper och att principen om *intention to treat* värnas utan behov av imputering av saknade datapunkter. Flernivåanalysmodeller uppskattar också inklusion av *random*-effekter observerad men inte kontrollerad varians på klusternivå (i detta fall enskilda individer som "innehåller" upprepade mättillfällen).
+
+Granskning av homoscedasticitet och residualernas fördelning samt identifiering av outliers gjordes visuellt med diagnostiska plottar av de till data anpassade modellerna. All data, inklusive förekommande outliers, behölls i analyserna.
+
+En modell specificerades för vart och ett av beroende utfallsmåtten som fångar olika värden på psykiskt mående i olika självskattningsskalor. Ingen standardisering eller centrering gjordes av värdena. Som oberoende prediktorer eller *fixed*-variabler angavs huvudeeffekter och interaktioner av tid (uppprepade beroende mättillfällen) och grupp (oberoende betingelse till vilka deltagarna randomiserades inför start). I modellerna tilläts skärningspunkterna (intercepten) för respektive deltagare att variera som *random*-effekt. Insamlad mängd data tillät på grund av bortfall inte inklusion av en *random* effekt för lutningen på regressionslinjen mellan mättillfällena.
+
+För modelleringen av de olika utfallsmåtten användes modelleringsverktyg från R-paketet *lme4* [@R-lme4]. Valet av kovariansstrukturen gjordes genom jämförelse av AIC-tal av modeller som anpassades till data med *Maximum Likelihood* (ML)-funktionen. Den alternativa sannolikhetsfunktionen *Restricted Maximum Likelihood* (REML), som ger väntesvärdesriktiga uppskattningar av varianserna, användes därefter för anpassningen av modellerna för utfallsmåtten till underliggande data. 
+
+Genom uträkning av så kallad intraklasskorrelation undersökte vi vilken andel av variansen som kommer av underliggande individkopplad förändringsbenägenhet över tid.
+
+<!-- s 49 http://wiki.bcs.rochester.edu/HlpLab/StatsCourses?action=AttachFile&do=get&target=Groningen11.pdf
+Consider reporting scales for outputs, inputs and predictors (e.g., range, mean, sd, median). -->
+
+<!-- s 59 hur påverkade collinearity resultaten? Inte alls eftersom varken grupp eller tid var korrelerad med utfallsmåtten -->
+
+För parvisa uppföljningstest av signifikanta koefficienter uppskattades marginalmedelvärden (*estimated marginal means* eller *least square means*) samt standardiserade effektstorlekar med verktyg från R-paketet *emmeans* [@R-emmeans]. Figurer framställdes med *sjPlot* [@R-sjPlot] och *ggplot2* [@R-ggplot2].
 
 ### Analys av reliabel förändring och klinisk signifikans
 
@@ -1083,6 +1122,8 @@ Demografi.Kon.proc <- prop.table(Demografi.Kon.abs, 1)
 # Inga signifikanta skillnader = inga skillnader mellan grupperna
 
 ```
+
+
 
 Vid analys av skillnader av sociodemografisk data fann vi en signifikant skillnad i könsfördelning mellan grupperna ($\chi^2$ = `r format(round(Demografi.Kon.chi$statistic,2),decimal.mark=",")`, p = `r format(round(Demografi.Kon.chi$p.value,2),decimal.mark=",")`, df = `r format(round(Demografi.Kon.chi$parameter,2),decimal.mark=",")`). Med uppföljande parvisa jämförelser fann vi att andelen kvinnor i gruppen `r xg2` hade signifikant större andel män än både gruppen `r xg3` (p = `r format(round(Demografi.Kon.posthoc$res[1,4],2),decimal.mark=",")`) och gruppen `r xg1` (p = `r format(round(Demografi.Kon.posthoc$res[2,4],2),decimal.mark=",")`). I övrigt fann vi inte några skillnader i sociodemografiska variabler mellan grupperna.
 
@@ -1157,6 +1198,10 @@ Med oberoende variansanalys av fördelningarna av de primära och sekundära utf
 
 ```{r modelcomparisons, eval = F}
 
+# https://hlplab.wordpress.com/2011/06/25/more-on-random-slopes/
+
+residuals(lm(aaas_ag ~ group,data=r2.long.data))
+
 # Select parameters and options
 
 library("nlme")
@@ -1224,26 +1269,39 @@ anova(test.1.unstructured,test.1.corAR1)
 # Selecting unstructured going forward to stay on the conservative side
 # Choosing lme4 instead of lmer to get more convenient features down the line
 
+# Nest subject in therapist?
+# NB! Using REML for this comparison
+test.intercept <-
+  lme(
+    aaas_ag ~ time * group,
+    random = ~ 1 | subject,
+    data = r2.long.data,
+    na.action = na.omit,
+    method = "REML"
+  )
+
+test.nestedintercept <-
+  lme(
+    aaas_ag ~ time * group,
+    random = ~ 1 | therapist / subject,
+    data = r2.long.data,
+    na.action = na.omit,
+    method = "REML"
+  )
+anova(test.intercept,test.nestedintercept)
+# The simpler model wins by a nose
+
 # REML or ML?
 # Picking REML to get unbiased estimates of the variance parameters 
 # -- giving us slightly larger confidence intervals
 
 ```
 
-```{r mixedmodels, cache=T}
+```{r mixedmodels, cache=F}
 
 # Fit models to data
 
-library(lme4)
-
-aaas_ag.lmer <-
-  lmer(
-    aaas_ag ~ group * time + (1 | subject),
-    data = r2.long.data,
-    na.action = na.omit,
-    REML = T
-  )
-#plot_model(aaas_ag.lmer, type="diag") # Diagnostic plots look ok!
+library("lme4")
 
 aaas_ad.lmer <-
   lmer(
@@ -1253,6 +1311,15 @@ aaas_ad.lmer <-
     REML = T
   )
 #plot_model(aaas_ad.lmer, type="diag") # Diagnostic plots look ok, with some outliers (humans)
+
+aaas_ag.lmer <-
+  lmer(
+    aaas_ag ~ group * time + (1 | subject),
+    data = r2.long.data,
+    na.action = na.omit,
+    REML = T
+  )
+#plot_model(aaas_ag.lmer, type="diag") # Diagnostic plots look ok!
 
 rathus.lmer <-
   lmer(
@@ -1303,17 +1370,97 @@ well.lmer <-
 
 Vi fann inga brott mot antagandena för flernivåanalys vid visuell kontroll av diagnostiska plottar av de modeller som anpassats till observerade data. 
 
-## Primära utfallsmått
+## Primär fråga?
 
-För det primära utfallsmåttet AAA-S Adaptive fann vi en huvudeffekt av 
+Estimat av regressionskoefficienter (β) för de olika primära och sekundära utfallsmåtten sammanfattas i tabell \@ref(stargazer).
 
-Modellestimat för samtliga utfallsmått sammanfattas i tabell \@ref(stargazer).
+```{r mmout, eval=T}
 
-```{r results='asis'}
+#https://stats.stackexchange.com/questions/226559/how-should-i-report-the-results-from-a-mixed-model-with-vs-without-an-interactio
 
-tab_model(aaas_ad.lmer,aaas_ag.lmer,rathus.lmer,lsas_sum.lmer,gad_sum.lmer,phq_sum.lmer,well.lmer)
+library("lmerTest") # Overloads lmer with p values
+
+#tab_model(aaas_ad.lmer,aaas_ag.lmer,rathus.lmer,lsas_sum.lmer,gad_sum.lmer,phq_sum.lmer,well.lmer)
+
+report = function(mod, row) {
+  xsumtab = summary(as_lmerModLmerTest(mod))
+  xsumtab = xsumtab[["coefficients"]]
+  paste(
+    "t(",
+    format(round(xsumtab[row, 3], 2), decimal.mark = ','),
+    ") = ",
+    format(round(xsumtab[row, 4], 2), decimal.mark = ','),
+    ", p = ",
+    format(signif(xsumtab[row, 5], 2), decimal.mark = ','),
+    ", med en förändring på ",
+    format(round(xsumtab[row, 1], 2), decimal.mark = ','),
+    " poäng, 95% CI [",
+    format(round(xsumtab[row, 1] - 1.96 * xsumtab[row, 2], 2), decimal.mark = ','),
+    " ; ",
+    format(round(xsumtab[row, 1] + 1.96 * xsumtab[row, 2], 2), decimal.mark = ','),
+    "]",
+    sep = ""
+  )
+}
+
+
+#https://www.researchgate.net/post/How_to_report_results_for_generalised_linear_mixed_model_with_binomial_distribution
+#https://stats.stackexchange.com/questions/363638/interpretation-of-icc-when-multiple-random-intercepts-and-fixed-effects-are-coll
+performance::icc(aaas_ad.lmer)$ICC_conditional
+performance::icc(aaas_ad.lmer)$ICC_adjusted
+#Our random effect is not nested and not cross-classified
+
+#It tells you the proportion of the total variance in Y that is accounted for by the clustering
+
+
+#It can be theoretically meaningful to understand how much of the overall variation in the response is explained by clustering. For example, in a repeated measures psychological study you can tell to what extent mood is a trait (varies among people, but not within a person on different occasions) or state (varies little on average among people, but varies a lot across occasions).
+
+library(ggeffects)
+aaas_ad.emm.plot <- plot(ggemmeans(aaas_ad.lmer, terms = c("time","group")), connect.lines = TRUE)
+
+anova(aaas_ad.lmer)
+anova(aaas_ag.lmer)
+anova(rathus.lmer)
+
+# y = intercept + β*g2 + β*g3 + β*t2 + β*t3 + β*(g2 * t2) + β*(g2 * t3) + β*(g3 * t2) + β*(g3 * t3)
 
 ```
+
+
+Vi sammanfattar våra blandade regressionsmodeller så här:
+
+
+För det primära utfallsmåttet AAA-S Adaptive fann vi en huvudeffekt av tid för `r xt2`tillfället, `r report(aaas_ad.lmer,5)`. Vi fann också en interaktionseffekt
+
+
+The main effect of prime structure remained only marginally
+significant when prime surprisal and the prime structure-prime
+surprisal interactions were included in the model (β = .34, SE= .34,
+p= .1), but was statistically significant when these terms were left
+out (β = .43, SE= .21, p< .05), replicating Thothathiri and Snedeker
+(2008). The reason for the reduced significance of the main effect of
+priming is that the effect of prime structure is carried by the
+high-surprisal primes, discussed below.
+As expected, no main effect of the surprisal of either the first or the
+second prime was observed (ps> .5). Crucially, we found the
+predicted two-way interaction between the surprisal of the first prime
+and prime Structure (β = .53, SE= .24, p< .05)-for DO primes, as
+prime surprisal increased, fixations to the animal relative to the
+object increased; for PO primes, as prime surprisal increased, fixations
+to the animal relative to the object decreased. The interaction
+between the surprisal of the second prime and prime structure was
+not significant (p= .9). The significant interaction of prime structure
+and prime surprisal for prime 1 is shown in Figure 2.
+
+
+ICC ger för oss proportionen av den totala variansen i utfallsmåttet som förklaras av skillnader på individnivå.
+
+
+<!-- “…	 politeness	 affected	 pitch	 (χ2(1)=11.62,	 p=0.00065),	 lowering	 it	 by	 -->
+<!-- about	19.7 Hz	± 5.6	(standard	errors)	…” -->
+
+
+
 
 ```{r stargazer, results='asis', fig.cap='(ref:stars)', eval=T}
 
@@ -1360,7 +1507,7 @@ stargazer::stargazer(
   dep.var.labels = scalenames,
   notes.label = "Signifikansnivåer:",
   label = "stargazer",
-  title = "Estimat med konfidensintervall och signifikansnivåer för primära och sekundära utfallsmått."
+  title = "Estimat av regressionskoefficienter (β) med konfidensintervall och signifikansnivåer för primära och sekundära utfallsmått."
 )
 
 ```
@@ -2190,6 +2337,9 @@ Viktigt i och med att ni tagit upp detta med behandlingsstödets effekter i intr
 
 <!-- Diskussion om själva resultatet återstår att skriva! -->
 
+Borde ha klassificerat deltagare utifrån sökorsak/målsättning -- kan inkluderas i screeningförfarandet nästa gång
+
+Borde ha haft skattningsskala för emotionellt undvikande (finns flera bra)
 
 
 Då behandlingsmaterialet översatts till svenska inför den aktuella studien – och originalmaterialet användes utan inslag av behandlarstöd – fanns det ingen behandlarstödsmanual eller dylikt för studiens behandlare att använda sig av. Behandlarna hade utöver detta ingen tidigare erfarenhet av internetbaserad psykologisk behandling. Dock hade båda behandlarna tidigare erfarenhet av ansikte mot ansikte-behandling med individer med självrapporterad bristande självhävdelse. Bristen på erfarenhet av internetbaserad behandling kan ha påverkat kvalitén i det behandlarstöd som gavs. Å andra sidan har det visat sig att tidigare erfarenheter och kunskaper om I-KBT hos behandlare inte gör nämnvärd skillnad så länge de har grundläggande kunskaper inom psykologisk behandling [@Baumeister2014a]. Behandlarna hade utöver tillgodogjorda grundläggande kunskaper om psykologisk behandling även tillgång till ett dokument med generella förhållningssätt vid internetbehandling med behandlarstöd samt tillgång till vid-behov-handledning och stöd av en legitimerad psykolog med omfattande erfarenhet av I-KBT. Den generella målsättningen var att behandlarna skulle spendera cirka 15 minuter per vecka och deltagare. Detta varierade dock nämnvärt beroende på hur frekvent behandlarens deltagare hörde av sig till behandlaren med behandlingsrelaterade frågor samt hur utförligt deltagarna besvarade behandlingsprogrammets övningar. 
