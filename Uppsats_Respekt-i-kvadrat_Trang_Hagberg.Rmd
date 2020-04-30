@@ -1576,7 +1576,7 @@ Slutligen ville vi också undersöka vilka prediktorer/moderatorer hos deltagarn
 
 Det finns möjlighet att fortsätta analysera insamlad data. Med våra initiala analyser konstaterar vi att ICC-värdet ger att 68% av variansen i utfallsmåttet AAA-S Adaptive kan förklaras av individuella faktorer. För AAA-S Aggressive kan 74% av variansen förklaras av individuella faktorer.
 
-(ref:emmeffad)
+(ref:emmeffad) figurtext aaas_ad
 
 ```{r effemmplotsad, dpi=196, fig.align="center", fig.cap='(ref:emmeffad)', fig.height=4.5, fig.width=5.5, cache = F, eval = T}
 
@@ -1594,7 +1594,7 @@ Name = c(
   paste(aaas_ad.eff.by.time[8,1],"-",aaas_ad.eff.by.time[8,2],": ",format(round(aaas_ad.eff.by.time[8,4],2) * -1,decimal.mark=","),sep="")
 )
 Nudge_x = c(0,0.1,0.1,0,0,0,0,-0.1,-0.1)
-Nudge_y = c(0,-0.55,0.55,0,0.55,0,0,0.55,-0.55)
+Nudge_y = c(0,-0.55,0.55,0,0.55,0,0,0.55,-0.55) * 2
 
 aaas_ad.emm.plot <- 
   plot(ggemmeans(aaas_ad.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = NA, colour = "Grupp", title = "Medelvärdesestimat och effektstyrkor för AAA-S Adaptive") + theme(legend.position = "top", axis.title.y = element_blank())
@@ -1609,6 +1609,7 @@ ad1 <- aaas_ad.emm.plot +
   geom_curve(aes(x = 1.1, y = aaas_ad.emm.plot$data[2]$predicted[3], xend = 3.1, yend = aaas_ad.emm.plot$data[2]$predicted[9]), color = "#999999", size = 0.25, linetype = "dashed", curvature = 0.15) + 
   geom_label(aes(label=Name),color="white", fill="#999999", nudge_x = Nudge_x, nudge_y = Nudge_y,size=2.5,na.rm=TRUE)
 
+ad1
 
 ```
 
