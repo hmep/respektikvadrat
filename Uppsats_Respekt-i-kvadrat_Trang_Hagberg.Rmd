@@ -1,6 +1,6 @@
 ---
 title             : |
-  | \LARGE Respekt i kvadrat: ett tr&auml;ningsprogram f&ouml;r konstruktiv sj&auml;lvh&auml;vdelse
+  | \LARGE Respekt i kvadrat: tr&auml;ningsprogram f&ouml;r konstruktiv sj&auml;lvh&auml;vdelse
   | \vspace{0.5cm} \Large _en randomiserad kontrollerad effektstudie av internetf&ouml;rmedlad kognitiv beteendeterapi_
 shorttitle        : "Respekt i kvadrat"
 author: 
@@ -523,9 +523,9 @@ Begreppet *assertiveness* kom under 1970-talet att omfamna en allt längre lista
 
 Graden av konstruktiv självhävdelse för en person i en given situation kan konceptuellt inordnas som en punkt i en graf (se figur \@ref(fig:assertiveness)) med två kontinuerliga dimensioner: handlande med respekt för andras rättigheter på x-axeln och handlande med respekt för egna rättigheter på y-axeln. Konstruktiv självhävdelse är en kommunikationsstil som skiljer sig från aggressiv självhävdelse (det vill säga hävdande av egna rättigheter på bekostnad av andras). Den skiljer sig även från kommunikationsstilen passiv självhävdelse (det vill säga förnekande av egna rättigheter till förmån för andras) och från passiv-aggressiv självhävdelse (det vill säga bristande respekt för både egna och andras rättigheter). Gränsdragningarna mellan kommunikationsstilarna är förstås flytande, eftersom dimensionerna är kontinuerliga.
 
-På svenska är begreppet \'sund självhävdelse\' vanligare än \'konstruktiv självhävdelse\'. I träningsprogrammet *Respekt i kvadrat* (som beskrivs i kommande avsnitt) och den här uppsatsen väljer vi att tala om konstruktiv snarare än sund självhävdelse som målbeteende, eftersom det tydligare utgår från individens perspektiv om vad som ger framkomlighet.
+På svenska är begreppet \'sund självhävdelse\' vanligare än \'konstruktiv självhävdelse\'. I träningsprogrammet Respekt i kvadrat (som beskrivs i kommande avsnitt) och den här uppsatsen väljer vi att tala om konstruktiv snarare än sund självhävdelse som målbeteende, eftersom det tydligare utgår från individens perspektiv om vad som ger framkomlighet.
 
-(ref:ass) Konstruktiv självhävdelse definieras i träningsprogrammet _Respekt i kvadrat_ som handlande som är förenligt med samtidig respekt för egna och andras rättigheter (figurens övre högra hörn). Passiv självhävdelse (figurens nedre högra hörn) kan på samma sätt definieras som låg grad av respekt för egna rättigheter men hög grad av respekt för andras rättigheter. Aggressiv självhävdelse (figurens övre vänstra hörn) kan definieras som hög grad av respekt för egna rättigheter men låg grad av respekt för andras rättigheter. Passivt aggressiva beteenden kan konceptualiseras som förenliga med låg grad av respekt för både egna och andras rättigheter (figurens nedre vänstra hörn). Figuren är tagen ifrån behandlingsprogrammet _Respekt i kvadrat_.
+(ref:ass) Konstruktiv självhävdelse definieras i träningsprogrammet Respekt i kvadrat som handlande som är förenligt med samtidig respekt för egna och andras rättigheter (figurens övre högra hörn). Passiv självhävdelse (figurens nedre högra hörn) kan på samma sätt definieras som låg grad av respekt för egna rättigheter men hög grad av respekt för andras rättigheter. Aggressiv självhävdelse (figurens övre vänstra hörn) kan definieras som hög grad av respekt för egna rättigheter men låg grad av respekt för andras rättigheter. Passivt aggressiva beteenden kan konceptualiseras som förenliga med låg grad av respekt för både egna och andras rättigheter (figurens nedre vänstra hörn). (Figur från behandlingsprogrammet Respekt i kvadrat.)
 
 ```{r assertiveness, out.width="55%", fig.align="center", fig.cap='(ref:ass)'}
 
@@ -535,13 +535,13 @@ knitr::include_graphics("canvas-konstruktiv-slinga-X.pdf")
 
 ### Vikten av en funktionell förståelse av begreppen
 
-@Mitamura2018 problematiserar skillnaden mellan aggressiv och konstruktiv självhävdelse. De olika kommunikationsstilarna bör förstås i de sammanhang de utförs. Beteenden som i till exempel en japansk (eller för all del svensk) kontext kan framstå som aggressiva kan i en amerikansk kontext framstå som konstruktivt självhävdande; beteenden som i en viss familj eller vänskapskrets ses som konstruktiva kan i andra ses som passiv självhävdelse, och så vidare. Vad som i kontexten menas med handlande som är förenligt med egna och andras rättigheter är dels föremål för pågående förhandling mellan parterna i det lokala sammanhanget, dels präglat av de strukturer, normer och traditioner som samhället och kulturen påbjuder [@Hayes1986; @butler1990gender]. Genom att anlägga ett funktionellt och kontextuellt synsätt på självhävdelsebeteenden är det möjligt att använda begreppen utan att moralisera eller att vara normativt förskrivande. Begreppen 'konstruktiv självhävdelse', 'passiv självhävdelse' och 'aggressiv självhävdelse' kan användas pragmatiskt för att till exempel i en terapi särskilja, tala om och utvärdera handlande i en specificerad kontext -- inklusive hur de förhåller sig till normer och regler på samhällsnivå, gruppnivå och individnivå. 
+@Mitamura2018 problematiserar skillnaden mellan aggressiv och konstruktiv självhävdelse. De olika kommunikationsstilarna bör förstås i de sammanhang de utförs. Beteenden som i till exempel en japansk (eller för all del svensk) kontext kan framstå som aggressiva kan i en amerikansk kontext framstå som konstruktiv självhävdelse; beteenden som i en viss familj eller vänskapskrets ses som konstruktiva kan i andra ses som passiv självhävdelse, och så vidare. Vad som i kontexten menas med handlande som är förenligt med egna och andras rättigheter är dels föremål för pågående förhandling mellan parterna i det lokala sammanhanget, dels präglat av de strukturer, normer och traditioner som samhället och kulturen påbjuder [@Hayes1986; @butler1990gender]. Genom att anlägga ett funktionellt och kontextuellt synsätt på självhävdelsebeteenden är det möjligt att använda begreppen utan att moralisera eller att vara normativt förskrivande. Begreppen 'konstruktiv självhävdelse', 'passiv självhävdelse' och 'aggressiv självhävdelse' kan användas pragmatiskt för att till exempel i en terapi särskilja, tala om och utvärdera handlande i en specificerad kontext -- inklusive hur de förhåller sig till normer och regler på samhällsnivå, gruppnivå och individnivå. 
 
 ## Aktuellt forskningsläge för konstruktiv självhävdelse
 
 Forskning på *assertiveness* övergavs i stort sett efter 1970-talet i och med psykatrins fokus på syndromala kategoriseringar av psykisk ohälsa. *Assertiveness* föll tillsammans med andra transdiagnostiska begrepp i glömska till förmån för diagnosspecifika interventioner och insatser. 
 
-Det gör att många viktiga slutsatser av den tidigaste forskningen har hamnat i skymundan. Både @Wolpe1966 och @Orenstein1975 byggde sina metoder på premissen att det är oförenligt att samtidigt uppleva ångest och att på ett genuint sätt hävda sina önskningar och behov på ett konstruktivt sätt. @Barrett1977 visade att *assertiveness* hos barn korrelerar med prosociala beteenden. @Buell1981 följde upp det fyndet med en metod för att träna *assertiveness* hos barn. Att utveckla sin förmåga att uttrycka sina tankar, känslor, behov och önskningar på ett konstruktivt sätt förfaller vara en tillgång i relationer. På samma tema visade forskningen att självhävdelse är förknippat med förbättrade interpersonella relationer [@Kincaid1978] och ökad förmåga att möta hinder och motgångar med adaptiva beteenden [@Tanck1979]. @Rakos1979 visade att *assertiveness* med fördel kan läras ut genom självhjälpsmaterial och @Rich1976 sammanställde och utvärderade olika metoder som hade använts för att träna *assertiveness*.
+Det gör att många viktiga slutsatser av den tidigaste forskningen har hamnat i skymundan. Både @Wolpe1966 och @Orenstein1975 byggde sina metoder på premissen att det är oförenligt att samtidigt uppleva ångest och att på ett genuint sätt hävda sina önskningar och behov på ett konstruktivt sätt. @Barrett1977 visade att *assertiveness* hos barn korrelerar med prosociala beteenden. @Buell1981 följer upp det fyndet med en metod för att träna *assertiveness* hos barn. Att utveckla sin förmåga att uttrycka sina tankar, känslor, behov och önskningar på ett konstruktivt sätt förfaller vara en tillgång i relationer. På samma tema visade forskningen att självhävdelse är förknippat med förbättrade interpersonella relationer [@Kincaid1978] och ökad förmåga att möta hinder och motgångar med adaptiva beteenden [@Tanck1979]. @Rakos1979 visade att *assertiveness* med fördel kan läras ut genom självhjälpsmaterial och @Rich1976 sammanställde och utvärderade olika metoder som hade använts för att träna *assertiveness*.
 
 Under de senaste åren har intresset för självhävdelse ökat något igen. @Vagos2019 konstaterar att självupplevd grad av psykiskt lidande korrelerar negativt med grad av konstruktivt självhävdande. Det ligger i linje med den underliggande teorin om reciprok inhibition som den presenterades av @Wolpe1966: *assertiveness* inhiberar ångest och ångest inhiberar *assertiveness*. @Baker2015 visar en negativ korrelation mellan att uppleva social ångest och att hävda sig själv konstruktivt. Deras slutsats är att man kan öka oddsen för konstruktivt självhävdande beteenden för en person antingen genom att i behandling exponera för antecedenterna för social ångest eller genom att arbeta med hur personen förhåller sig till själva ångesten. Denna tolerans- och acceptansrationalen kan ses som ett alternativ (eller helt pragmatiskt som ett komplement) till den habitueringsrational som varit förhärskande inom KBT fram till sekelskiftet.
 
@@ -597,7 +597,7 @@ Ambitionen för den här uppsatsen är att 1) belysa forskningsläget för konst
 
 Det som i vardagsspråk beskrivs som antingen tankar, känslor eller beteenden sammanfattas i det moderna neurovetenskapliga paradigmet *prediktiv kodning* som upplevelsen av ett och samma fenomen -- förutsägelser, eller prediktioner [@Pezzulo2015]. Den övergripande funktionen av det centrala nervsystemet är att med hjälp av begränsade sensoriska indata guida betydligt mer omfattande neuronal *top-down*-aktivitet för att predicera organismens yttre såväl som inre kontext [@Pezzulo2015; @Clark2016]. Den samlade upplevelsen av rädsla och ångest (det som individen subjektiv uppfattar som kroppsreaktioner, tankar, beteenden) utgörs av osäkerhetssignaler om prediktionernas tillförlitlighet, enkelt uttryckt som osäkerhet om kroppens resurs- och energihushållning i situationen [@FeldmanBarrett2009]. Psykopatologi är enligt @FeldmanBarrett2009 ett uttryck för allt för stort inflytande av hjärnans kortikala *top-down*-aktivitet på bekostnad av sensorisk känslighet för *bottom-up*-aktivitet -- som kommer till uttryck som beteendemässigt undvikande, inklusive undvikande av emotioner. Sådant undvikande kan låsa fast en person i allostatisk belastning, där kroppen varken får återhämtning eller tillgång till belöningar. KBT är potentiellt verksamt genom att bidrar till att "vikta om" balansen till favör för *bottom-up*-aktivitet [@FeldmanBarrett2009]. Med beteendevetenskapliga termer går det att benämna samma fenomen som att personen genom KBT bir mer känslig för faktiska kontingenser. 
 
-Ordet \'tankar\' har i *Respekt i kvadrat* ersatts av \'förutsägelser\', för att i möjligaste mån hjälpa till att vrida fokus från allmänt negativt tankeinnehåll till så exakt precision som möjigt av hindrande förutsägelser i de situationer som klienten vill arbeta med. En negativ förutsägelse i en specifik situation (exempelvis om den egna förmågan att klara av upplevelsen av ångest eller vilken konsekvensen ska bli av konstruktiv självhävdelse) bör enligt denna utgångspunkter förankras så tydligt det går i den specifika kontexten, vilket också hänger samman med den beteendeaktiveringsrational som präglar behandlingsprogrammet. Det som i @beck1979cognitive benämns som  \'livsregler\' och \'grundantaganden\' ägnas mindre uppmärksamhet.
+Ordet \'tankar\' i Respekt i kvadrat ersatts av \'förutsägelser\', för att i möjligaste mån hjälpa till att vrida fokus från allmänt negativt tankeinnehåll till så exakt precision som möjigt av hindrande förutsägelser i de situationer som klienten vill arbeta med. En negativ förutsägelse i en specifik situation (exempelvis om den egna förmågan att klara av upplevelsen av ångest eller vilken konsekvensen ska bli av konstruktiv självhävdelse) bör enligt denna utgångspunkter förankras så tydligt det går i den specifika kontexten, vilket också hänger samman med den beteendeaktiveringsrational som präglar behandlingsprogrammet. Det som i @beck1979cognitive benämns som  \'livsregler\' och \'grundantaganden\' ägnas mindre uppmärksamhet.
 
 ### Fokus på brytande av undvikande genom identifiering av belöningar
 
@@ -795,7 +795,7 @@ options(OutDec= ".")
 
 De `r length(r2.wide.data$subject)` deltagare vars data används i den här studien var mellan 20 och 65 år gamla med en medelålder på 41,8 år (standardavvikelse 8,8). En betydande majoritet (87,8&nbsp;%) identifierade sig som kvinnor, samtliga övriga som män. Knappt tre fjärdedelar av deltagarna hade avslutad universitets- eller högskoleutbildning (71,6&nbsp;%) och tre fjärdedelar av deltagarna var vid behandlingens start yrkesarbetande (75,5&nbsp;%). Mer än hälften av deltagarna (61,3&nbsp;%) hade tidigare erfarenheter av psykologisk behandling. Av dessa hade majoriteten (64,8&nbsp;%) tidigare erfarenheter av KBT. Knappt en tredjedel av alla deltagare (29,0&nbsp;%) hade erfarenhet av psykofarmaka, och vid behandlingsstart stod 17,6&nbsp;% på något slags psykofarmaka. Totalt 3,4&nbsp;% av deltagarna var vid behandlingsstart sjukskrivna. Se tabell \@ref(tab:demdata) för de demografiska faktorernas fördelningar i respektive grupp.
 
-(ref:dem) Vid förmätningstillfället insamlad sociodemografisk data om deltagarna.
+(ref:dem) Vid förmätningstillfället insamlad sociodemografisk och annan relevant data om deltagarna.
 
 ```{r demdata, out.width="100%", tab.align="center", cache = F}
 
@@ -887,7 +887,7 @@ Obegränsade möjligheter att genomföra beteendeexperiment.
 Dock komma ihåg att vi ska hålla det här avsnittet av metoddelen kort och koncist
 -->
 
-I linje med vikten av att acceptera och ge plats för tankar och känslor i pressade situationer som har lyfts fram i litteraturen under de senaste årtiondena [@Hayes1996; @Hayes2004a; @Luoma2007] lade träningsprogrammet *Respekt i kvadrat* större vikt vid acceptans och tolerans av ångest än @michel2008. Det gjordes genom tillägg av nyskrivna avsnitt och övningar som fördelades över modulerna. Ett exempel på material som uppmanar deltagaren att aktivt stanna kvar i eller rent av uppsöka -- för brytande av undvikande relevant -- respondent obehag är psykoedukativa texter om optimering av inlärning via variation och mängdträning. I de avsnitten introduceras även begreppen *fixed mindset* och *growth mindset*, som handlar om effekten av olika förhållningssätt till utmaningar och hur man genom att möta obehaget skapar förutsättningar för utveckling [@Dweck1995; @Schroder2016; @Schroder2015; @DeCastella2015]. Ett annat är psykoedukativa avsnitt om vidmakthållande av ångestrelaterade besvär som också innehåller en övning som både handlar om att identifiera värdebaserade fördelar med handlande i situationer som tidigare har präglats av undvikande och om att identifiera kortsiktigt belönande anledningar att stå ut med respondenta rädsloreaktioner i situationer som tidigare undvikits. 
+I linje med vikten av att acceptera och ge plats för tankar och känslor i pressade situationer som har lyfts fram i litteraturen under de senaste årtiondena [@Hayes1996; @Hayes2004a; @Luoma2007] lade träningsprogrammet Respekt i kvadrat större vikt vid acceptans och tolerans av ångest än @michel2008. Det gjordes genom tillägg av nyskrivna avsnitt och övningar som fördelades över modulerna. Ett exempel på material som uppmanar deltagaren att aktivt stanna kvar i eller rent av uppsöka -- för brytande av undvikande relevant -- respondent obehag är psykoedukativa texter om optimering av inlärning via variation och mängdträning. I de avsnitten introduceras även begreppen *fixed mindset* och *growth mindset*, som handlar om effekten av olika förhållningssätt till utmaningar och hur man genom att möta obehaget skapar förutsättningar för utveckling [@Dweck1995; @Schroder2016; @Schroder2015; @DeCastella2015]. Ett annat är psykoedukativa avsnitt om vidmakthållande av ångestrelaterade besvär som också innehåller en övning som både handlar om att identifiera värdebaserade fördelar med handlande i situationer som tidigare har präglats av undvikande och om att identifiera kortsiktigt belönande anledningar att stå ut med respondenta rädsloreaktioner i situationer som tidigare undvikits. 
 
 I @michel2008 presenteras rationalen för och övningar i muskelavslappning översiktligt i ett kapitel. I linje med Östs [-@ost2006tillampad] rekommendation om att tillämpad avslappning bör introduceras stegvis över en längre tidsperiod introduceras deltagarna till progressiv muskelavslappning i modul 2, med en gradvis inriktning i modulerna 3--5 mot tillämpad avslappning. Under första delen av programmet uppmanas deltagarna explicit att tillämpa principerna om hög grad av variation och upprepning i färdighetsträningen av progressiv och alltmer tillämpad avslappning. Integreringen av progressiv muskelavslappning i hela första delen av träningsprogrammet tjänar syftena att ge deltagarna möjlighet att tillgodogöra sig färdigheter som relativt snabbt har potential att ge positiva effekter i vardagen och att ge dem en egen erfarenhet av fördelarna med mängdträning.
 
@@ -1021,7 +1021,7 @@ Demografi.Kon.proc <- prop.table(Demografi.Kon.abs, 1)
 
 ```
 
-Vid analys av skillnader av sociodemografisk data fann vi en signifikant skillnad i könsfördelning mellan grupperna ($\chi^2$ = `r format(round(Demografi.Kon.chi$statistic,2),decimal.mark=",")`, $p$ = `r format(round(Demografi.Kon.chi$p.value,2),decimal.mark=",")`, df = `r format(round(Demografi.Kon.chi$parameter,2),decimal.mark=",")`). Gruppen `r xg2` hade vid parvisa uppföljningstest signifikant större andel män än både gruppen `r xg3` (p = `r format(round(Demografi.Kon.posthoc$res[1,4],2),decimal.mark=",")`) och gruppen `r xg1` (p = `r format(round(Demografi.Kon.posthoc$res[2,4],2),decimal.mark=",")`). I övrigt fann vi inte några skillnader i sociodemografiska variabler mellan grupperna. Med oberoende variansanalys konstaterade vi att det inte fanns några signifikanta skillnader i några av utfallsmåtten mellan de olika grupperna vid behandlingens start.
+Vid analys av skillnader av sociodemografisk data fann vi en signifikant skillnad i könsfördelning mellan grupperna ($\chi^2$ = `r format(round(Demografi.Kon.chi$statistic,2),decimal.mark=",")`, $p$ = `r format(round(Demografi.Kon.chi$p.value,2),decimal.mark=",")`, df = `r format(round(Demografi.Kon.chi$parameter,2),decimal.mark=",")`). Gruppen `r xg2` hade vid parvisa uppföljningstest signifikant större andel män än både gruppen `r xg3` (p = `r format(round(Demografi.Kon.posthoc$res[1,4],2),decimal.mark=",")`) och gruppen `r xg1` (p = `r format(round(Demografi.Kon.posthoc$res[2,4],2),decimal.mark=",")`). I övrigt fann vi inte några skillnader i sociodemografiska variabler mellan grupperna.
 
 ```{r groupcontrols, eval = F}
 
@@ -1099,6 +1099,7 @@ anova(kontroll_well)
 
 ```
 
+Med oberoende variansanalys konstaterade vi att det inte fanns några signifikanta skillnader i några av utfallsmåtten mellan de olika grupperna vid behandlingens start.
 
 ```{r modelcomparisons, eval = F}
 
@@ -1299,11 +1300,7 @@ well.lmer <-
 
 ```
 
-Vid visuell granskning av diagnostiska plottar av observerad data fann vi inga brott mot antaganden för flernivåanalys.
-
-<!--
 Vi fann inga brott mot antagandena för flernivåanalys vid visuell granskning av diagnostiska plottar av de modeller som anpassats till observerade data. 
--->
 
 ```{r predicteddata, cache = T, eval = T}
 
@@ -1497,17 +1494,17 @@ descriptives.out <- rbind(
   # xg3t2eff = ng3t2.eff,
   xg3t3 = cbind(
     descriptives.ng3t3[c(9, 13), c(3,2,1,4:7)]
-  ),
+  )
   # xg3t3eff = ng3t3.eff
   )
 
 scalenames = c("AAA-S Ad", "AAA-S Ag", "Rathus", "LSAS-SR", "GAD-7", "PHQ-9", "Välmåendef.")
 
-colnames(descriptives.out) <- scalenames
+#colnames(descriptives.out) <- scalenames
 
 descriptives.out.rot <- t(descriptives.out)
 
-xeff = "Cohen's d"
+#xeff = "Cohen's d"
 
 colnames(descriptives.out.rot) <- NULL
 descriptives.out.rot.rot <- t(descriptives.out.rot)
@@ -1525,10 +1522,10 @@ descriptives.col.out <- cbind.data.frame(
     rep(c("M", "SD"), times = 2),
     paste(xeff),
     rep(c("M", "SD"), times = 1),
-    paste(xeff)
-  ), times = 3),
+    paste(xeff)), times = 3),
   round(descriptives.out.rot.rot, 1)
 )
+
 options(OutDec= ".") 
 
 #  add_header_above(c("", "Självhjälp (N = 67)" = 3, "Med stöd (N = 69)" = 3, "Väntelista (N = 68)" = 3)) %>% #, "All (N = 204)" = 2)) %>%
@@ -2153,7 +2150,7 @@ Se \@ref(fig:tjrciout) för mer ...
 
 (ref:rci) 123
 
-```{r tjrciout, fig.cap='(ref:rci)', fig.align="center", dpi=196, cache=T, fig.height=3, cache=T}
+```{r tjrciout, fig.cap='(ref:rci)', fig.align="center", dpi=196, cache=T, fig.height=3, eval=F}
 
 par(mfrow=c(3,1))
 
