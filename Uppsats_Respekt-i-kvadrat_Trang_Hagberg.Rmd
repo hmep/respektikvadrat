@@ -1347,6 +1347,7 @@ colnames(r2.new.data) <-
 ```
 
 ## Resultat på individnivå
+
 För att undersöka utfallen på individnivå gjordes en analys av reliabel förändring och klinisk signifikans. Deltagare som deltog i förmätningen men som  ej fyllde i en uppföljande mätning fick förmätningsvärdena framflyttade till det senare mättillfället i enlighet med principen om *intention to treat*. 
 
 För utfallsmåttet AAA-S Adaptive var det signifikant fler personer inom gruppen `r xg1` som förbättrades än inom gruppen `r xg3` (**Här presenteras [1] antalet individer som förändrats + [2] den statistiska beräkningen som visar att det är en signifikant skillnad mellan grupperna** ). Motsvarande signifikanta skillnad återfanns mellan grupp `r xg2`och `r xg1` (**Se föregående fetstilta parantes** ). För utfallsmåttet AA-S Aggresive återfanns ingen skillnad mellan grupperna i antalet kliniskt och reliabelt förbättrade individer. För utfallsmåttet Rathus var det signifikant fler personer inom gruppen `r xg1` som förbättrades än inom gruppen `r xg3` (**Här presenteras [1] antalet individer som förändrats + [2] den statistiska beräkningen som visar att det är en signifikant skillnad mellan grupperna** ). Motsvarande signifikanta skillnad återfanns mellan grupp `r xg2`och `r xg1` (**Se föregående fetstilta parantes** ).
@@ -2135,52 +2136,54 @@ rathus.pre.dur.jt.table <- xt
 ```
 
 
+
+Se \@ref(jtprocent) för mer ...
+
+(ref:jtp) 123
+
 ```{r jtprocent, tab.align="center", cache=F}
 
-jtrci.tab <- rbind.data.frame(
+library("tibble")
+
+jtrci.tab <- tibble(rbind.data.frame(
   AD = cbind(
     F1 = data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)])[, 1],
-    P1 = round(prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2)[, 1] * 100,2),
+    P1 = round(prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2)[, 1] * 100,1),
     F2 = data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)])[, 2],
-    P2 = round(prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2)[, 2] * 100,2),
+    P2 = round(prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2)[, 2] * 100,1),
     F3 = data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)])[, 3],
-    P3 = round(prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2)[, 3] * 100,2)
+    P3 = round(prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2)[, 3] * 100,1)
   ),
   AG = cbind(
     F1 = data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)])[, 1],
-    P1 = round(prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2)[, 1] * 100,2),
+    P1 = round(prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2)[, 1] * 100,1),
     F2 = data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)])[, 2],
-    P2 = round(prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2)[, 2] * 100,2),
+    P2 = round(prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2)[, 2] * 100,1),
     F3 = data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)])[, 3],
-    P3 = round(prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2)[, 3] * 100,2)
+    P3 = round(prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2)[, 3] * 100,1)
   ),
   RAS = cbind(
     F1 = data.matrix(rathus.pre.post.jt.table[, c(2:4)])[, 1],
-    P1 = round(prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)[, 1] * 100,2),
+    P1 = round(prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)[, 1] * 100,1),
     F2 = data.matrix(rathus.pre.post.jt.table[, c(2:4)])[, 2],
-    P2 = round(prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)[, 2] * 100,2),
+    P2 = round(prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)[, 2] * 100,1),
     F3 = data.matrix(rathus.pre.post.jt.table[, c(2:4)])[, 3],
-    P3 = round(prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)[, 3] * 100,2)
+    P3 = round(prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)[, 3] * 100,1)
   )
-)
+))
 
-jtrci.tab.rot <- t(jtrci.tab)
-colnames(jtrci.tab.rot) <- rep(jt_rownames,times=3)
+colnames(jtrci.tab) = rep(c("N","%"),times=3)
+jtrci.tab$"" = rep(jt_rownames,times=3)
 
-jtrci.tab.rot.rot <- as.data.frame(t(jtrci.tab.rot))
-colnames(jtrci.tab.rot) <- rep(c("N","%"),times=3)
-
-svkable(jtrci.tab.rot.rot, align="cccccc", caption = '(ref:jtp)') %>%
-  pack_rows("AAA-S Adaptive (%)", 1, 5, bold = F) %>%
-  pack_rows("AAA-S Aggressive (%)", 6, 10, bold = F) %>%
-  pack_rows("Rathus (%)", 11, 15, bold = F) %>%
-  row_spec(c(5,10), extra_latex_after = "\\midrule")
+svkable(jtrci.tab[,c(7,1:6)], align="lcccccc", caption = '(ref:jtp)') %>%
+  pack_rows("AAA-S Adaptive", 1, 5, bold = F) %>%
+  pack_rows("AAA-S Aggressive", 6, 10, bold = F) %>%
+  pack_rows("Rathus", 11, 15, bold = F) %>%
+  row_spec(c(5,10), extra_latex_after = "\\midrule") %>%
+  add_header_above(c(" "=1,xG3=2,xG1=2,xG2=2))
 
 ```
 
-Se \@ref(fig:tjrciout) för mer ...
-
-(ref:rci) 123
 
 ```{r tjrciout, fig.cap='(ref:rci)', fig.align="center", dpi=196, cache=T, fig.height=3, eval=F}
 
