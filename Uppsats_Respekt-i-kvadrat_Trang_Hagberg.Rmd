@@ -1018,6 +1018,15 @@ Vid analys av skillnader av sociodemografisk data fann vi en signifikant skillna
 
 ```{r groupcontrols, eval = F}
 
+# scatterplotMatrix(~ aaas_ad + aaas_ag + rathus|time, data = r2.long.data[lg1,],
+#    main="Group 1, conditioned on time",col=c("blue","green","orange"))
+# 
+# scatterplotMatrix(~ aaas_ad + aaas_ag + rathus|time, data = r2.long.data[lg2,],
+#    main="Group 2, conditioned on time")
+# 
+# scatterplotMatrix(~ aaas_ad + aaas_ag + rathus|time, data = r2.long.data[lg3,],
+#    main="Group 3, conditioned on time")
+
 kontroll_ad <-
   lm(
     aaas_ad ~ group,
@@ -1255,6 +1264,35 @@ well.lmer <-
 
 ```
 
+```{r rsquared, eval=F}
+
+# Do we report Conditional R2?
+
+# The marginal R-squared considers only the variance of the fixed effects, while the conditional R-squared takes both the fixed and random effects into account.
+
+# tab_model(aaas_ag.lmer,p.val = "kr", show.df = TRUE)
+# Marginal R2 / Conditional R2	0.071 / 0.757
+
+# tab_model(aaas_ad.lmer,p.val = "kr", show.df = TRUE)
+# Marginal R2 / Conditional R2	0.175 / 0.735
+
+# tab_model(rathus.lmer,p.val = "kr", show.df = TRUE)
+# Marginal R2 / Conditional R2	0.208 / 0.798
+
+# tab_model(lsas_sum.lmer,p.val = "kr", show.df = TRUE)
+# Marginal R2 / Conditional R2	0.076 / 0.838
+
+# tab_model(gad_sum.lmer,p.val = "kr", show.df = TRUE)
+# Marginal R2 / Conditional R2	0.048 / 0.593
+
+# tab_model(phq_sum.lmer,p.val = "kr", show.df = TRUE)
+# Marginal R2 / Conditional R2	0.056 / 0.526
+
+# tab_model(well.lmer,p.val = "kr", show.df = TRUE)
+# Marginal R2 / Conditional R2	0.086 / 0.615
+
+```
+
 Vi fann inga brott mot antagandena för flernivåanalys vid visuell granskning av diagnostiska plottar av de modeller som anpassats till observerade data. 
 
 ```{r predicteddata, cache = T, eval = T}
@@ -1317,7 +1355,6 @@ ng2t3 <- r2.new.data$group == xg2 & r2.new.data$time == xt3
 ng3t1 <- r2.new.data$group == xg3 & r2.new.data$time == xt1
 ng3t2 <- r2.new.data$group == xg3 & r2.new.data$time == xt2
 ng3t3 <- r2.new.data$group == xg3 & r2.new.data$time == xt3
-
 
 library(effsize)
 
@@ -1552,7 +1589,7 @@ options(OutDec= ",")
 
 ```
 
-Vi fann ingen skillnad i utfall med AAA-S Adaptive vid `r xt3`mätningen mellan gruppen `r xg1` (estimerat marginalmedelvärde [emm] `r xresult(tidy(aaas_ad.emm.by.time)$estimate[8])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[8])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[8])`]) och gruppen `r xg2` (emm `r xresult(tidy(aaas_ad.emm.by.time)$estimate[9])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[9])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[9])`]), $t$(`r xresult(aaas_ad.emmpairs.by.time$df[9])`) = `r xresult(aaas_ad.emmpairs.by.time$t.ratio[9])`, $p$ = `r xresult(aaas_ad.emmpairs.by.time$p.value[9])`, effektstorlek `xresult(r aaas_ad.eff.by.time$effect.size[9] * -1)`. Vi fann inte heller någon skillnad i effekt vid `r xt2`-mätningen. För de deltagare som har deltagit i *Respekt i kvadrat* är skillnaden i konstruktiv självhävdelse vid `r xt3`mätningen försumbar mellan de som fått behandlarstöd och de som har fått klara sig på egen hand.
+Vi fann ingen skillnad i utfall med AAA-S Adaptive vid `r xt3`mätningen mellan gruppen `r xg1` (estimerat marginalmedelvärde [emm] `r xresult(tidy(aaas_ad.emm.by.time)$estimate[8])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[8])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[8])`]) och gruppen `r xg2` (emm `r xresult(tidy(aaas_ad.emm.by.time)$estimate[9])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[9])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[9])`]), $t$(`r xresult(aaas_ad.emmpairs.by.time$df[9])`) = `r xresult(aaas_ad.emmpairs.by.time$t.ratio[9])`, $p$ = `r xresult(aaas_ad.emmpairs.by.time$p.value[9])`, effektstorlek `r xresult(aaas_ad.eff.by.time$effect.size[9] * -1)`. Vi fann inte heller någon skillnad i effekt vid `r xt2`-mätningen. För de deltagare som har deltagit i *Respekt i kvadrat* är skillnaden i konstruktiv självhävdelse vid `r xt3`mätningen försumbar mellan de som fått behandlarstöd och de som har fått klara sig på egen hand.
 
 ## Skillnader i effekt på konstruktiv och aggressiv självhävdelse mellan `r xg3`--`r xg1` respektive `r xg3`--`r xg2`
 
@@ -1743,19 +1780,6 @@ stargazer::stargazer(
   label = "stargazertab",
   title = "En sammanställning av estimat av intercept och regressionskoefficienter för respektive flernivåanalys av de primära och sekundära utfallsmåtten."
 )
-
-```
-
-```{r scatterplots, dpi=196, fig.width=7,eval=F, cache = F}
-
-scatterplotMatrix(~ aaas_ad + aaas_ag + rathus|time, data = r2.long.data[lg1,],
-   main="Group 1, conditioned on time",col=c("blue","green","orange"))
-
-scatterplotMatrix(~ aaas_ad + aaas_ag + rathus|time, data = r2.long.data[lg2,],
-   main="Group 2, conditioned on time")
-
-scatterplotMatrix(~ aaas_ad + aaas_ag + rathus|time, data = r2.long.data[lg3,],
-   main="Group 3, conditioned on time")
 
 ```
 
@@ -2140,67 +2164,6 @@ AAAS_ag.pre.post.jt.plot + theme(legend.position="none") + scale_color_manual(va
 
 rathus.pre.post.jt.plot + theme(legend.position="none") + scale_color_manual(values=c("white","white","white","red","white"))
 #rathus.pre.dur.jt.plot + theme(legend.position="none") + scale_color_manual(values=c(rep("white",times=4),"red"))
-
-```
-
-```{r aaasad.res, dpi=196, eval=F, cache=F, fig.height=7.8, fig.width=11, fig.align="center", fig.cap="Resultat för AAA-S Adaptive. Exempel på figur med resultat som jag (Tobias) skulle vilja rapportera. De här graferna 'give it all away' utan behov av krångliga tabeller. Jag röstar för att vi producerar figurer liknande dessa för de tre huvudutfallsmåtten. Överst till vänster är modellestimaten från vår regression (fixed-effekter), den andra visar de predicerade värden som modellen producerar. De två understa innehåller de effektstorlekar med konfidensintervall (med inritad noll-linje) som visuellt tydligt kommunicerar vilka av de parvisa uppföljningstesten som är signifikanta (med Bonferroni-korrektion). De intressanta jämförelserna tar vi med i resultattexten, där vi också kan nämna hur stor del av felvariansen som hör till vår random-effekt (subject)."}
-
-# out.extra='angle=90'
-
-library(patchwork)
-
-# plot_spacer() + guide_area() 
-# theme(legend.position="top")
-
-((aaas_ad.est.plot / aaas_ad.emm.plot ) | (aaas_ad.eff.by.time.plot / aaas_ad.eff.by.group.plot)) & theme_set(theme_classic()) + theme(legend.position="top")
-
-# (aaas_ad.est.plot + aaas_ad.emm.plot +
-#   aaas_ad.eff.by.time.plot + aaas_ad.eff.by.group.plot + plot_layout(nrow = 2)) * theme_set(theme_classic())
-
-```
-
-```{r aaasag.res, dpi=196, eval=F, cache=F, fig.height=7.8, fig.width=11, fig.align="center", fig.cap="Resultat för AAA-S Aggressive."}
-
-((aaas_ag.est.plot / aaas_ag.emm.plot ) | (aaas_ag.eff.by.time.plot / aaas_ag.eff.by.group.plot)) & theme_set(theme_classic()) + theme(legend.position="top")
-
-# (aaas_ag.est.plot + aaas_ag.emm.plot + 
-#   aaas_ag.eff.by.time.plot + aaas_ag.eff.by.group.plot + plot_layout(nrow = 2)) * theme_set(theme_classic())
-
-```
-
-```{r rathus.res, dpi=196, eval=F, cache=F, fig.height=7.8, fig.width=11, fig.align="center", fig.cap="Resultat för Rathus."}
-
-((rathus.est.plot / rathus.emm.plot ) | (rathus.eff.by.time.plot / rathus.eff.by.group.plot)) & theme_set(theme_classic()) + theme(legend.position="top")
-
-# (rathus.est.plot + rathus.emm.plot + 
-#   rathus.eff.by.time.plot + rathus.eff.by.group.plot + plot_layout(nrow = 2)) * theme_set(theme_classic())
-
-```
-
-```{r rsquared, eval=F}
-
-# The marginal R-squared considers only the variance of the fixed effects, while the conditional R-squared takes both the fixed and random effects into account.
-
-# tab_model(aaas_ag.lmer,p.val = "kr", show.df = TRUE)
-# Marginal R2 / Conditional R2	0.071 / 0.757
-
-# tab_model(aaas_ad.lmer,p.val = "kr", show.df = TRUE)
-# Marginal R2 / Conditional R2	0.175 / 0.735
-
-# tab_model(rathus.lmer,p.val = "kr", show.df = TRUE)
-# Marginal R2 / Conditional R2	0.208 / 0.798
-
-# tab_model(lsas_sum.lmer,p.val = "kr", show.df = TRUE)
-# Marginal R2 / Conditional R2	0.076 / 0.838
-
-# tab_model(gad_sum.lmer,p.val = "kr", show.df = TRUE)
-# Marginal R2 / Conditional R2	0.048 / 0.593
-
-# tab_model(phq_sum.lmer,p.val = "kr", show.df = TRUE)
-# Marginal R2 / Conditional R2	0.056 / 0.526
-
-# tab_model(well.lmer,p.val = "kr", show.df = TRUE)
-# Marginal R2 / Conditional R2	0.086 / 0.615
 
 ```
 
