@@ -963,7 +963,7 @@ Vi analyserade insamlade förmätningsvärden för att kontrollera om randomiser
 
 <!-- OBS! Kom ihåg bortfallsanalys (se exempeluppsats 2) -->
 
-### Analys av fixa effekter
+### Analys av *fixed* och *random* effekter
 
 Fixa och slumpmässiga effekter mellan grupp och tid för de primära och sekundära utfallsmåtten undersöktes med så kallad flernivåanalys (också kallad blandad modell, hierarkisk analys, på engelska bland annat *mixed model*, *multilevel model* och *hierarchical linear model*). Flernivåanalys tillåter precis som multivariat variansanalys (MANOVA) inklusion av upprepade beroende mättillfällen i modellen, men fördelerna att metoden tillåter obalanserade grupper och att principen om *intention to treat* värnas utan behov av imputering av saknade datapunkter. Flernivåanalyser uppskattar också inklusion av *random*-effekter observerad men inte kontrollerad varians på klusternivå (i detta fall enskilda individer som "innehåller" upprepade mättillfällen).
 
@@ -1204,8 +1204,6 @@ anova(test.intercept,test.nestedintercept)
 
 ```
 
-Vid visuell granskning av diagnostiska plottar av observerad data fann vi inga brott mot de antaganden som behöver uppfyllas för flernivåanalys.
-
 ```{r mixedmodels, cache=F, eval=T}
 
 # Fit models to data
@@ -1276,6 +1274,8 @@ well.lmer <-
 #plot_model(well.lmer, type="diag") # Diagnostic plots look ok, with some outliers (humans)
 
 ```
+
+Vid visuell granskning av diagnostiska plottar av observerad data fann vi inga brott mot de antaganden som behöver uppfyllas för flernivåanalys.
 
 ```{r rsquared, eval=F}
 
