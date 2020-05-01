@@ -957,7 +957,9 @@ Signifikansnivån $\alpha$ = 0,05 tillämpades vid alla beräkningar. Öppen syn
 
 Vi analyserade insamlade förmätningsvärden för att kontrollera om randomiseringen hade gett grupper utan signifikanta skillnader. Oberoende variansanalys (ANOVA) användes för att utesluta skillnader mellan grupperna i primära utfallsmått, sekundära utfallsmått och kontinuerliga sociodemografiska variabler. Kategoriska sociodemografiska variabler undersöktes med Kruskal-Wallis-test från R-paketet *FSA* [@R-FSA]. Cohen's d-effektstorlekar för beroende mätningar beräknades test från R-paketet *effsize* [@R-effsize]. För beräkning och sammanställning av övrig deskriptiv statistik användes verktyg från R-paketet *pastecs* [@R-pastecs].
 
-### Bortfallsanalys
+### Bortfallsanalys 
+
+(ATT GENOMFÖRA OCH RAPPORTERA - För alla utfallsmått, jämför grupp som hoppat av mellan förmätning--eftermätning och grupp som fullgått behandling.  Också jämföra dem som hoppat av (poolat) med dem som fullgått med avseende på betingelse, terapeut, tidigare psyk behandling, psykofarmaka ...)
 
 <!-- OBS! Kom ihåg bortfallsanalys (se exempeluppsats 2) -->
 
@@ -1742,7 +1744,7 @@ svkable(jtrci.tab[,c(7,1:6)], align="lcccccc", caption = '(ref:jtp)') %>%
 
 ```
 
-Se tabell \@ref(tab:descriptives) för en sammanställning av predicerade data från de olika modellerna för respektive utfallsmått, inklusive uppskattade effektstorlekar.
+Se tabell \@ref(tab:descriptives) (INTE KLAR ÄNNU) för en sammanställning av predicerade data från de olika modellerna för respektive utfallsmått, inklusive uppskattade effektstorlekar.
 
 (ref:descriptives) Estimerade medelvärden (och standardavvikelser) samt effektstorlekar för utfallsmåtten i de olika grupperna och vid de olika mättillfällena.
 
