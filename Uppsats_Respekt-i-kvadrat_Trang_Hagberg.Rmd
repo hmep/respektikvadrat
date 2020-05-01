@@ -1642,7 +1642,7 @@ Nudge_x = c(0,0.1,0.1,0,0,0,0,-0.1,-0.1) * 2
 Nudge_y = c(0,-0.55,0.55,0,0.55,-0.55,0,0.55,-0.55) * 2
 
 aaas_ad.emm.plot <- 
-  plot(ggemmeans(aaas_ad.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = NA, colour = "Grupp", title = "Medelvärdesestimat och effektstyrkor för AAA-S Aggressive") + theme(legend.position = "top", axis.title.y = element_blank())
+  plot(ggemmeans(aaas_ad.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = NA, colour = "Grupp", title = "Medelvärdesestimat och effektstyrkor för AAA-S Adaptive") + theme(legend.position = "top", axis.title.y = element_blank())
 
 #,arrow = arrow(length = unit(0.05, "npc"))
 ad1 <- aaas_ad.emm.plot + 
