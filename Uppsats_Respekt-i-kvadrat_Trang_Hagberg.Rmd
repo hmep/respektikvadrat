@@ -607,11 +607,11 @@ Att i överskott undvika stimuli som upplevs som hotfulla utan att vara det dock
 
 Forskningen visar att det är självdestruktivt att försöka undvika aversiva emotioner: Emotionellt undvikande är paradoxalt nog kopplat till ökning av graden emotioner (och mindre grad av positiva emotioner). Det har också negativa konsekvenser i form av ökat undvikande av nära relationer, mindre socialt stöd, lägre självförtroende och sämre generellt välmående [@Gross2003]. Den paradoxala biten går inte nog att betona: Att försöka undvika aversiva emotioner leder till att man upplever dem mer [@Gross2003; @Fernandez-Rodriguez2018; @Hayes1996]. 
 
-I vidmakthållandet av ångestsyndrom är undvikande således en central komponent -- och detta trots att den som lider av det ofta själv är helt medveten om vad som hen går miste om på grund av sitt undvikande. Ett sätt att bidra till att trumfa det emotionella undvikandet i psykologisk behandling är att introducera belöningar [@Pittig2014]. I *Respekt i kvadrat* har flera avsnitt och övningar för identifiering av egenvalda skäl att bryta undvikande och komma i åtnjutande av naturliga förstärkningar lagts till originalmaterialet.
+I vidmakthållandet av ångestsyndrom är undvikande således en central komponent -- och detta trots att den som lider av det ofta själv är helt medveten om vad som hen går miste om på grund av sitt undvikande. Ett sätt att bidra till att trumfa det emotionella undvikandet i psykologisk behandling är att introducera belöningar [@Pittig2014]. För *Respekt i kvadrat* har flera avsnitt och övningar för identifiering av egenvalda skäl att bryta undvikande och komma i åtnjutande av naturliga förstärkningar lagts till originalmaterialet.
 
 <!-- TH: Har redigerat/korrekturläst bakgrunden hit -->
 
-### Fokus på aktivering
+### Fokus på aktivering med varierad grad av osäkerhet
 
 Att bryta undvikandebeteenden är ofta centralt för att minska psykopatologiska besvär. Det finns flera metoder sprungna ur forskning för detta. En metod är att *på ett närvarande sätt* närma sig det aversiva och ångestväckande, så kallad exponering. 
 
