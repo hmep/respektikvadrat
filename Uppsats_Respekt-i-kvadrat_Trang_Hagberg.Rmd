@@ -605,11 +605,11 @@ Ordet \'tankar\' har i *Respekt i kvadrat* ersatts av \'förutsägelser\', för 
 
 Undvikande av aversiva stimuli har ett uppbenbart överlevadsvärde. Rädsloinlärning tenderar att vara stark: @Ohman2001 konstaterar att rädsloinlärning inte är så lätt att påverka med kognitiv kontroll i skarpt läge, inte minst för att de neuronala osäkerhetskretsarna vid amygdala ligger djupt förankrade i limbiska delar av hjärnan och mer eller mindre lever sitt eget liv. 
 
-Att i överskott undvika stimuli som upplevs som hotfulla utan att vara det dock kan leda till psykopatologiska besvär både genom förlust av kontingent positiv förstärkning och ökad grad av sekundära besvär som exempelvis nedstämdhet. Att undvika det som erfarenhetsmässigt upplevts som aversivt framstår ofta som funktionellt och rationellt, även när det inte är det [@Hayes1996].
+Att i överskott undvika stimuli som upplevs som hotfulla utan att vara det kan dock leda till psykopatologiska besvär både genom förlust av kontingent positiv förstärkning och ökad grad av sekundära besvär som exempelvis nedstämdhet. Att undvika det som erfarenhetsmässigt upplevts som aversivt framstår ofta som funktionellt och rationellt, även när det inte är det [@Hayes1996].
 
 Forskningen visar att det är självdestruktivt att försöka undvika aversiva emotioner: Emotionellt undvikande är paradoxalt nog kopplat till ökning av graden emotioner (och mindre grad av positiva emotioner). Det har också negativa konsekvenser i form av ökat undvikande av nära relationer, mindre socialt stöd, lägre självförtroende och sämre generellt välmående [@Gross2003]. Den paradoxala biten går inte nog att betona: Att försöka undvika aversiva emotioner leder till att man upplever dem mer [@Gross2003; @Fernandez-Rodriguez2018; @Hayes1996]. 
 
-I vidmakthållandet av ångestsyndrom är undvikande således en central komponent -- och detta trots att den som lider av det ofta själv är helt medveten om vad som hen går miste om på grund av sitt undvikande. Ett sätt att bidra till att trumfa det emotionella undvikandet i psykologisk behandling är att introducera belöningar [@Pittig2014]. För *Respekt i kvadrat* har flera avsnitt och övningar för identifiering av egenvalda skäl att bryta undvikande och komma i åtnjutande av naturliga förstärkningar lagts till originalmaterialet.
+I vidmakthållandet av ångestsyndrom är undvikande således en central komponent -- och detta trots att den som lider av det ofta själv är helt medveten om vad hen går miste om på grund av sitt undvikande. Ett sätt att bidra till att trumfa det emotionella undvikandet i psykologisk behandling är att introducera belöningar [@Pittig2014]. 
 
 <!-- TH: Har redigerat/korrekturläst bakgrunden hit -->
 
@@ -2231,7 +2231,7 @@ Då behandlingsmaterialet översatts till svenska inför den aktuella studien �
 
 En möjligt intressant aspekt för framtida studier att undersöka är vilka de verksamma komponenterna inom behandlarstöd är och vad som kan göras för att maximera dessa komponenters inverkan på behandlingsutfallet.
 
-### Primär frågeställning
+Ytterligare något som bör belysas är att vårt sample hade ett medelvärde på LSAS-SR (49) som med råge överskrider den gräns som brukar användas (30) för att bedömma om social fobi föreligger [@@Fresco2001]. En rimlig slutsats att dra av detta är att en stor andel av studiens deltagare har socialfobiska tendenser och att delar av dem till och med sannolikt skulle diagnosticeras med social fobi vid en djupare klinisk bedömning. Vi vet också med oss att emotionellt undvikande är vanligt hos personer som upplever socialfobiska besvär [@Campbell-Sills2006; @Gross2003; @Hayes1996] och att emotionellt undvikande leder till sämre behandlingsresultat [@DeCastella2015]. Det hade troligen varit fördelaktigt för föreliggande studie att inkludera ett mätinstrument för emotionellt undvikande. Det hade gett möjligheten till att utvärdera om en individs resultat i *Respekt i kvadrat* påverkas av hens användande av emotionellt undvikande. Förslagsvis kan framtida studier undersöka sambandet mellan emotionellt undvikande och tränande i konstruktivt självhävdande.  
 
 <!-- [Pers kommentar] 
 Kanske kan ni här dock rapportera om skillnader i klinisk signifikant förbättring? 
@@ -2248,7 +2248,7 @@ Kanske kan ni här dock rapportera om skillnader i klinisk signifikant förbätt
 Innan ni går över till brister så vill ni kanske säga något om övriga utfallsmått? Och relatera era fynd med tidigare forskning. Vad brukar man få för resultat i denna typ av studier? Alltså återkoppla till introduktionens studier. Kanske genom att jämföra era effektstorlekar med tidigare studier. 
 -->
 
-## I relation till annan forskning, självhävdelse
+## Vårt resultat + i relation till annan forskning
 
 ## Metodologiska brister / felkällor / validitet / reliabilitet
 
@@ -2259,13 +2259,6 @@ Med nästintill 90% kvinnor i samplet var könsfördelningen ytterst ojämn. Den
 Över 70% av vårt sample hade avslutade universitets- eller högskoleutbildningar och ytterligare 10% studerade vid behandlingens start. Denna siffra skiljer sig markant från Sveriges befolking, där endast 43% läst vidare efter gymnasiet [@SCB2020]. Delar av förklaringen till att en så stor andel av vårt sampel har studerat på universitet eller högskola skulle kunna vara att majoriteten av studiens deltagare är kvinnor, och att de i större utsträckning än män studerar vidare efter gymnasiet [@SCB2020]. Då väldigt få deltagare i den aktuella studien hade yrkesutbildning, gymnasieutbildning, folkskola eller grundskola som högsta avslutad utbildning bör man vara restriktiv med att applicera studiens resultat inom dessa grupper.
 
 Både att väldigt många kvinnor deltog i den aktuella studien, och att en så stor andel av samplet hade påbörjade eller avslutade universitetsstudier, gör det svårare att generalisera resultatet till Sveriges befolkning i stort. Könsfördelning i den aktuella studien skiljer sig även signifikant från studien normerna för AAA-S samt RAS hämtas från [@Thompson2011] (där fördelningar var 55% kvinnor och 45% män). Till fördel för samplets representation av populationen är däremot att det i och med en internetbaserad behandling fanns möjlighet till ett nationellt intag av deltagare. Då det i skrivande stund varken finns data om prevalens av bristande självhävdelse i Sveriges population, eller data om vilka demografiska faktorer denna brist korrelerar med, är det ytterst svårt att säga hur representativ för Sveriges befolkning samplet i den aktuella studien är. Det vore av stor nytta att framtida studier undersöker denna behandlings effekt i andra populationer med större heterogenitet.
-
-<!-- [Pers kommentar] 
-Kanske också ta upp detta med vad ni egentligen hade för population. Var det socialfobiker? I alla fall hade de ju en förhöjd LSAS-SR poäng som indikerar problem.
-
-Borde ha haft skattningsskala för emotionellt undvikande (finns flera bra) kopplat till att vi hade socialfobiker och 
-
--->
 
 <!--
 + a priori powerberäkning
