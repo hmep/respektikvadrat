@@ -1023,7 +1023,7 @@ Demografi.Kon.proc <- prop.table(Demografi.Kon.abs, 1)
 
 ```
 
-Vid analys av skillnader av sociodemografisk data fann vi en signifikant skillnad i könsfördelning mellan grupperna ($\chi^2$ = `r format(round(Demografi.Kon.chi$statistic,2),decimal.mark=",")`, $p$ = `r format(round(Demografi.Kon.chi$p.value,2),decimal.mark=",")`, df = `r format(round(Demografi.Kon.chi$parameter,2),decimal.mark=",")`). Gruppen `r xg2` hade vid parvisa uppföljningstest signifikant större andel män än både gruppen `r xg3` (p = `r format(round(Demografi.Kon.posthoc$res[1,4],2),decimal.mark=",")`) och gruppen `r xg1` (p = `r format(round(Demografi.Kon.posthoc$res[2,4],2),decimal.mark=",")`). I övrigt fann vi inte några skillnader i sociodemografiska variabler mellan grupperna. Med oberoende variansanalys konstaterade vi att det inte fanns några signifikanta skillnader i några av utfallsmåtten mellan de olika grupperna vid behandlingens start.
+Vid analys av skillnader av sociodemografisk data fann vi en signifikant skillnad i könsfördelning mellan grupperna ($\chi^2$ = `r format(round(Demografi.Kon.chi$statistic,2),decimal.mark=",")`, $p$ = `r format(round(Demografi.Kon.chi$p.value,2),decimal.mark=",")`, df = `r format(round(Demografi.Kon.chi$parameter,2),decimal.mark=",")`). Gruppen `r xg2` hade vid parvisa uppföljningstest signifikant större andel män än både gruppen `r xg3` (p = `r format(round(Demografi.Kon.posthoc$res[1,4],2),decimal.mark=",")`) och gruppen `r xg1` (p = `r format(round(Demografi.Kon.posthoc$res[2,4],2),decimal.mark=",")`). I övrigt fann vi inte några skillnader i sociodemografiska variabler mellan grupperna. 
 
 ```{r groupcontrols, eval = F}
 
@@ -1101,6 +1101,7 @@ anova(kontroll_well)
 
 ```
 
+Med oberoende variansanalys konstaterade vi att det inte fanns några signifikanta skillnader i några av utfallsmåtten mellan de olika grupperna vid behandlingens start.
 
 ```{r modelcomparisons, eval = F}
 
@@ -1200,6 +1201,8 @@ anova(test.intercept,test.nestedintercept)
 # -- giving us slightly larger confidence intervals
 
 ```
+
+Vid visuell granskning av diagnostiska plottar av observerad data fann vi inga brott mot de antaganden som behöver uppfyllas för flernivåanalys.
 
 ```{r mixedmodels, cache=F, eval=T}
 
@@ -1301,13 +1304,6 @@ well.lmer <-
 
 ```
 
-
-Vid visuell granskning av diagnostiska plottar av observerad data fann vi inga brott mot de antaganden som behöver uppfyllas för flernivåanalys.
-
-<!--
-Vi fann inga brott mot antagandena för flernivåanalys vid visuell granskning av diagnostiska plottar av de modeller som anpassats till observerade data. 
--->
-
 ```{r predicteddata, cache = T, eval = T}
 
 # Output predictions to new data frame
@@ -1347,21 +1343,406 @@ colnames(r2.new.data) <-
 
 ```
 
-## Resultat på individnivå
+```{r jtrci, include = F, cache = T}
 
-För att undersöka utfallen på individnivå gjordes en analys av reliabel förändring och klinisk signifikans. Deltagare som deltog i förmätningen men som  ej fyllde i en uppföljande mätning fick förmätningsvärdena framflyttade till det senare mättillfället i enlighet med principen om *intention to treat*. 
+r2.wide.itt.data <- r2.wide.data
 
-För utfallsmåttet AAA-S Adaptive var det signifikant fler personer inom gruppen `r xg1` som förbättrades än inom gruppen `r xg3` (**Här presenteras [1] antalet individer som förändrats + [2] den statistiska beräkningen som visar att det är en signifikant skillnad mellan grupperna** ). Motsvarande signifikanta skillnad återfanns mellan grupp `r xg2`och `r xg1` (**Se föregående fetstilta parantes** ). För utfallsmåttet AA-S Aggresive återfanns ingen skillnad mellan grupperna i antalet kliniskt och reliabelt förbättrade individer. För utfallsmåttet Rathus var det signifikant fler personer inom gruppen `r xg1` som förbättrades än inom gruppen `r xg3` (**Här presenteras [1] antalet individer som förändrats + [2] den statistiska beräkningen som visar att det är en signifikant skillnad mellan grupperna** ). Motsvarande signifikanta skillnad återfanns mellan grupp `r xg2`och `r xg1` (**Se föregående fetstilta parantes** ).
+# ITT 
+# Pre --> Dur
+r2.wide.itt.data[which(is.na(r2.wide.itt.data[,19])),19] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,19])),5]
+r2.wide.itt.data[which(is.na(r2.wide.itt.data[,20])),20] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,20])),6]
+r2.wide.itt.data[which(is.na(r2.wide.itt.data[,21])),21] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,21])),7]
+r2.wide.itt.data[which(is.na(r2.wide.itt.data[,26])),26] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,26])),12]
+r2.wide.itt.data[which(is.na(r2.wide.itt.data[,27])),27] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,27])),13]
+r2.wide.itt.data[which(is.na(r2.wide.itt.data[,28])),28] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,28])),14]
+r2.wide.itt.data[which(is.na(r2.wide.itt.data[,31])),31] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,31])),17]
+# Pre --> Post
+r2.wide.itt.data[which(is.na(r2.wide.itt.data[,33])),33] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,33])),5]
+r2.wide.itt.data[which(is.na(r2.wide.itt.data[,34])),34] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,34])),6]
+r2.wide.itt.data[which(is.na(r2.wide.itt.data[,35])),35] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,35])),7]
+r2.wide.itt.data[which(is.na(r2.wide.itt.data[,40])),40] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,40])),12]
+r2.wide.itt.data[which(is.na(r2.wide.itt.data[,41])),41] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,41])),13]
+r2.wide.itt.data[which(is.na(r2.wide.itt.data[,42])),42] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,42])),14]
+r2.wide.itt.data[which(is.na(r2.wide.itt.data[,45])),45] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,45])),17]
+
+jt_rownames <-
+  factor(c(
+    "Försämrade",
+    "Oförändrande",
+    "Förbättrade",
+    "Tillfrisknade (ej reliabelt)",
+    "Tillfrisknade (reliabelt)"
+  ))
+
+jt_colnames <- c("Jacobson & Truax-klassificering", xg3, xg1, xg2)
+
+### AAAS_ad pre--post
+
+# Run
+x <- JTRCI(
+  data = r2.wide.itt.data,
+  pre = "pre_aaas_ad",
+  post = "post_aaas_ad",
+  ppid = "subject",
+  group = "group",
+  reliability = r.AAAS_ad,
+  higherIsBetter = T,
+  indextype = "JT",
+  JTcrit = "auto",
+  normM = mean.AAAS_ad.norm,
+  normSD = sd.AAAS_ad.norm
+)
+
+# Plot
+xp <-
+  plotJT(
+    x,
+    facetplot = T,
+    addJitter = T,
+    plottitle = paste("AAA-S Adaptive, ",xpost,sep=""),
+    xlab = xpre,
+    ylab = xpost
+  )
+xp$labels$colour <- paste("Jacobson & Truax-klassificering\n",xg3," / ",xg1," / ",xg2,sep="")
+AAAS_ad.pre.post.jt.plot <- xp
+
+# Data frame / table
+xt <- tableJT(data = x, useGroups = T)
+xt[, 1] <- jt_rownames
+colnames(xt) <- jt_colnames
+AAAS_ad.pre.post.jt.table <- xt
+
+### AAAS_ad pre--during
+
+# Run
+x <- JTRCI(
+  data = r2.wide.itt.data,
+  pre = "pre_aaas_ad",
+  post = "dur_aaas_ad",
+  ppid = "subject",
+  group = "group",
+  reliability = r.AAAS_ad,
+  higherIsBetter = T,
+  indextype = "JT",
+  JTcrit = "auto",
+  normM = mean.AAAS_ad.norm,
+  normSD = sd.AAAS_ad.norm
+)
+
+# Plot
+xp <-
+  plotJT(
+    x,
+    facetplot = T,
+    addJitter = T,
+    plottitle = paste("AAA-S Adaptive, ",xdur,sep=""),
+    xlab = xpre,
+    ylab = xdur
+  )
+xp$labels$colour <- paste("Jacobson & Truax-klassificering\n",xg3," / ",xg1," / ",xg2,sep="")
+AAAS_ad.pre.dur.jt.plot <- xp
+
+# Data frame / table
+xt <- tableJT(data = x, useGroups = T)
+xt[, 1] <- jt_rownames
+colnames(xt) <- jt_colnames
+AAAS_ad.pre.dur.jt.table <- xt
+
+### AAAS_ag pre--post UPWARDS
+
+# Run
+x <- JTRCI(
+  data = r2.wide.itt.data,
+  pre = "pre_aaas_ag",
+  post = "post_aaas_ag",
+  ppid = "subject",
+  group = "group",
+  reliability = r.AAAS_ag,
+  higherIsBetter = T,
+  indextype = "JT",
+  JTcrit = "auto",
+  normM = mean.AAAS_ag.norm,
+  normSD = sd.AAAS_ag.norm
+)
+
+# Plot
+xp <-
+  plotJT(
+    x,
+    facetplot = T,
+    addJitter = T,
+    plottitle = paste("AAA-S Aggressive, ",xpost,sep=""),
+    xlab = xpre,
+    ylab = xpost
+  )
+xp$labels$colour <- paste("Jacobson & Truax-klassificering\n",xg3," / ",xg1," / ",xg2,sep="")
+AAAS_ag.pre.post.jt.plot <- xp
+
+# Data frame / table
+xt <- tableJT(data = x, useGroups = T)
+xt[, 1] <- jt_rownames
+colnames(xt) <- jt_colnames
+AAAS_ag.pre.post.jt.table <- xt
+
+# tab_xtab(
+#   as.numeric(as.matrix(AAAS_ag.pre.post.jt.table[5,4])),
+#   sum(as.numeric(as.matrix(AAAS_ag.pre.post.jt.table[c(1:4),4]))),
+#   statistics = "fisher",
+#   show.cell.prc =T
+# )
 
 
-Se tabell \@ref(tab:jtprocent) för en sammanställning av kliniskt signifikanta och reliabla förändringarna inom de olika grupperna för utfallsmåtten AAA-S samt Rathus. 
+### AAAS_ag pre--during
 
-(ref:jtp) Klinisk signifikans med andel tillhörande de olika kategorierna för AAA-S två delskalar samt Rathus.
+# Run
+x <- JTRCI(
+  data = r2.wide.itt.data,
+  pre = "pre_aaas_ag",
+  post = "dur_aaas_ag",
+  ppid = "subject",
+  group = "group",
+  reliability = r.AAAS_ag,
+  higherIsBetter = T,
+  indextype = "JT",
+  JTcrit = "auto",
+  normM = mean.AAAS_ag.norm,
+  normSD = sd.AAAS_ag.norm
+)
 
+# Plot
+xp <-
+  plotJT(
+    x,
+    facetplot = T,
+    addJitter = T,
+    plottitle = paste("AAA-S Aggressive, ",xdur,sep=""),
+    xlab = xpre,
+    ylab = xdur
+  )
+xp$labels$colour <- paste("Jacobson & Truax-klassificering\n",xg3," / ",xg1," / ",xg2,sep="")
+AAAS_ag.pre.dur.jt.plot <- xp
 
-## Resultat på gruppnivå
+# Data frame / table
+xt <- tableJT(data = x, useGroups = T)
+xt[, 1] <- jt_rownames
+colnames(xt) <- jt_colnames
+AAAS_ag.pre.dur.jt.table <- xt
 
-Tabell \@ref(tab:descriptives) sammanställer predicerade data från de olika modellerna för respektive utfallsmått, inklusive uppskattade effektstorlekar. 
+### AAAS_ag pre--post DOWNWARDS
+
+# Run
+x <- JTRCI(
+  data = r2.wide.itt.data,
+  pre = "pre_aaas_ag",
+  post = "post_aaas_ag",
+  ppid = "subject",
+  group = "group",
+  reliability = r.AAAS_ag,
+  higherIsBetter = F,
+  indextype = "JT",
+  JTcrit = "auto",
+  normM = mean.AAAS_ag.norm,
+  normSD = sd.AAAS_ag.norm
+)
+
+# Plot
+xp <-
+  plotJT(
+    x,
+    facetplot = T,
+    addJitter = T,
+    plottitle = paste("AAA-S Aggressive, ",xpost,sep=""),
+    xlab = xpre,
+    ylab = xpost
+  )
+xp$labels$colour <- paste("Jacobson & Truax-klassificering\n",xg3," / ",xg1," / ",xg2,sep="")
+AAAS_ag.pre.post.DOWN.jt.plot <- xp
+
+# Data frame / table
+xt <- tableJT(data = x, useGroups = T)
+xt[, 1] <- jt_rownames
+colnames(xt) <- jt_colnames
+AAAS_ag.pre.post.DOWN.jt.table <- xt
+
+### AAAS_ag pre--during
+
+# Run
+x <- JTRCI(
+  data = r2.wide.itt.data,
+  pre = "pre_aaas_ag",
+  post = "dur_aaas_ag",
+  ppid = "subject",
+  group = "group",
+  reliability = r.AAAS_ag,
+  higherIsBetter = F,
+  indextype = "JT",
+  JTcrit = "auto",
+  normM = mean.AAAS_ag.norm,
+  normSD = sd.AAAS_ag.norm
+)
+
+# Plot
+xp <-
+  plotJT(
+    x,
+    facetplot = T,
+    addJitter = T,
+    plottitle = paste("AAA-S Aggressive, ",xdur,sep=""),
+    xlab = xpre,
+    ylab = xdur
+  )
+xp$labels$colour <- paste("Jacobson & Truax-klassificering\n",xg3," / ",xg1," / ",xg2,sep="")
+AAAS_ag.pre.dur.DOWN.jt.plot <- xp
+
+# Data frame / table
+xt <- tableJT(data = x, useGroups = T)
+xt[, 1] <- jt_rownames
+colnames(xt) <- jt_colnames
+AAAS_ag.pre.dur.DOWN.jt.table <- xt
+
+### Rathus pre--post
+
+# Run
+x <- JTRCI(
+  data = r2.wide.itt.data,
+  pre = "pre_rathus",
+  post = "post_rathus",
+  ppid = "subject",
+  group = "group",
+  reliability = r.Rathus,
+  higherIsBetter = T,
+  indextype = "JT",
+  JTcrit = "auto",
+  normM = mean.Rathus.norm,
+  normSD = sd.Rathus.norm
+)
+
+# Plot
+xp <-
+  plotJT(
+    x,
+    facetplot = T,
+    addJitter = T,
+    plottitle = paste("Rathus, ",xpost,sep=""),
+    xlab = xpre,
+    ylab = xpost
+  )
+xp$labels$colour <- paste("Jacobson & Truax-klassificering\n",xg3," / ",xg1," / ",xg2,sep="")
+rathus.pre.post.jt.plot <- xp
+
+# Data frame / table
+xt <- tableJT(data = x, useGroups = T)
+xt[, 1] <- jt_rownames
+colnames(xt) <- jt_colnames
+rathus.pre.post.jt.table <- xt
+
+### rathus pre--during
+
+# Run
+x <- JTRCI(
+  data = r2.wide.itt.data,
+  pre = "pre_rathus",
+  post = "dur_rathus",
+  ppid = "subject",
+  group = "group",
+  reliability = r.Rathus,
+  higherIsBetter = T,
+  indextype = "JT",
+  JTcrit = "auto",
+  normM = mean.Rathus.norm,
+  normSD = sd.Rathus.norm
+)
+
+# Plot
+xp <-
+  plotJT(
+    x,
+    facetplot = T,
+    addJitter = T,
+    plottitle = paste("Rathus, ",xdur,sep=""),
+    xlab = xpre,
+    ylab = xdur
+  )
+xp$labels$colour <- paste("Jacobson & Truax-klassificering\n",xg3," / ",xg1," / ",xg2,sep="")
+rathus.pre.dur.jt.plot <- xp
+
+# Data frame / table
+xt <- tableJT(data = x, useGroups = T)
+xt[, 1] <- jt_rownames
+colnames(xt) <- jt_colnames
+rathus.pre.dur.jt.table <- xt
+
+## Significance testing of clinical significance
+
+# AAA-S Ad
+aaas_ad.sigsig = kruskal.test(
+  ifelse(AAAS_ad.pre.dur.jt.plot$data$class_JTRCI == "recovered","imp","not") ~
+    AAAS_ad.pre.dur.jt.plot$data$group)
+# Not significant
+
+# AAA-S Ag
+aaas_ag.sigsig = kruskal.test(
+  ifelse(AAAS_ag.pre.dur.jt.plot$data$class_JTRCI == "recovered","imp","not") ~
+    AAAS_ag.pre.dur.jt.plot$data$group)
+# Not significant
+
+# Rathus
+rathus.sigsig = kruskal.test(
+  ifelse(rathus.pre.dur.jt.plot$data$class_JTRCI == "recovered","imp","not") ~ 
+    rathus.pre.dur.jt.plot$data$group)
+# Significant
+
+```
+
+Inga signifikanta skillnader mellan grupperna i andel personer som uppnått både klinisk signikans-status och reliabel förbättring fanns för de primära utfallsmåtten AAA-S Adaptive och AAA-S Aggressive. För båda måtten definerades ökning i poäng som en förbättring. Vi fann en signifikant skillnad mellan grupperna för självhävdelseskalan Rathus, $\chi^2$ = `r rathus.sigsig$statistic`, $p$ = `r rathus.sigsig$p.value`, df = `r rathus.sigsig$parameter`. Se tabell \@ref(tab:jtprocent) för en sammanställning av kliniskt signifikanta och reliabla förändringarna inom de olika grupperna de utfallsmått som fångar konstruktiv och aggressiv självhävdelse.
+
+(ref:jtp) Antal och andel i procent av deltagare i respektive grupp som vid behandlingens slut tillhör de olika kategorierna med överlapp mellan klinisk signifikans och reliabel förändring. Deltagare som endast har lämnat förmätningsvärden har fått dessa värden framflyttade till följande mättillfällen. 
+
+```{r jtprocent, tab.align="center", cache=F}
+
+library("tibble")
+
+jtrci.tab <- tibble(rbind.data.frame(
+  AD = cbind(
+    F1 = data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)])[, 1],
+    P1 = round(prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2)[, 1] * 100,1),
+    F2 = data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)])[, 2],
+    P2 = round(prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2)[, 2] * 100,1),
+    F3 = data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)])[, 3],
+    P3 = round(prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2)[, 3] * 100,1)
+  ),
+  AG = cbind(
+    F1 = data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)])[, 1],
+    P1 = round(prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2)[, 1] * 100,1),
+    F2 = data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)])[, 2],
+    P2 = round(prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2)[, 2] * 100,1),
+    F3 = data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)])[, 3],
+    P3 = round(prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2)[, 3] * 100,1)
+  ),
+  RAS = cbind(
+    F1 = data.matrix(rathus.pre.post.jt.table[, c(2:4)])[, 1],
+    P1 = round(prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)[, 1] * 100,1),
+    F2 = data.matrix(rathus.pre.post.jt.table[, c(2:4)])[, 2],
+    P2 = round(prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)[, 2] * 100,1),
+    F3 = data.matrix(rathus.pre.post.jt.table[, c(2:4)])[, 3],
+    P3 = round(prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)[, 3] * 100,1)
+  )
+))
+
+colnames(jtrci.tab) = rep(c("N","%"),times=3)
+jtrci.tab$"" = rep(jt_rownames,times=3)
+
+svkable(jtrci.tab[,c(7,1:6)], align="lcccccc", caption = '(ref:jtp)') %>%
+  pack_rows("AAA-S Adaptive", 1, 5, bold = F) %>%
+  pack_rows("AAA-S Aggressive", 6, 10, bold = F) %>%
+  pack_rows("Rathus", 11, 15, bold = F) %>%
+  row_spec(c(5,10), extra_latex_after = "\\midrule") %>%
+  column_spec(2:6, width = "4em") %>%
+  add_header_above(c(" "=1,"Väntelista"=2,"Självhjälp"=2,"Behandlarstöd"=2))
+
+```
+
+Se tabell \@ref(tab:descriptives) för en sammanställning av predicerade data från de olika modellerna för respektive utfallsmått, inklusive uppskattade effektstorlekar.
 
 (ref:descriptives) Estimerade medelvärden (och standardavvikelser) samt effektstorlekar för utfallsmåtten i de olika grupperna och vid de olika mättillfällena.
 
@@ -1804,387 +2185,6 @@ stargazer::stargazer(
 )
 
 ```
-
-```{r jtrci, include = F, cache = T}
-
-r2.wide.itt.data <- r2.wide.data
-
-# ITT 
-# Pre --> Dur
-r2.wide.itt.data[which(is.na(r2.wide.itt.data[,19])),19] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,19])),5]
-r2.wide.itt.data[which(is.na(r2.wide.itt.data[,20])),20] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,20])),6]
-r2.wide.itt.data[which(is.na(r2.wide.itt.data[,21])),21] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,21])),7]
-r2.wide.itt.data[which(is.na(r2.wide.itt.data[,26])),26] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,26])),12]
-r2.wide.itt.data[which(is.na(r2.wide.itt.data[,27])),27] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,27])),13]
-r2.wide.itt.data[which(is.na(r2.wide.itt.data[,28])),28] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,28])),14]
-r2.wide.itt.data[which(is.na(r2.wide.itt.data[,31])),31] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,31])),17]
-# Pre --> Post
-r2.wide.itt.data[which(is.na(r2.wide.itt.data[,33])),33] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,33])),5]
-r2.wide.itt.data[which(is.na(r2.wide.itt.data[,34])),34] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,34])),6]
-r2.wide.itt.data[which(is.na(r2.wide.itt.data[,35])),35] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,35])),7]
-r2.wide.itt.data[which(is.na(r2.wide.itt.data[,40])),40] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,40])),12]
-r2.wide.itt.data[which(is.na(r2.wide.itt.data[,41])),41] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,41])),13]
-r2.wide.itt.data[which(is.na(r2.wide.itt.data[,42])),42] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,42])),14]
-r2.wide.itt.data[which(is.na(r2.wide.itt.data[,45])),45] <- r2.wide.itt.data[which(is.na(r2.wide.itt.data[,45])),17]
-
-jt_rownames <-
-  factor(c(
-    "Försämrade",
-    "Oförändrande",
-    "Förbättrade",
-    "Tillfrisknade (ej reliabelt)",
-    "Tillfrisknade (reliabelt)"
-  ))
-
-jt_colnames <- c("Jacobson & Truax-klassificering", xg3, xg1, xg2)
-
-### AAAS_ad pre--post
-
-# Run
-x <- JTRCI(
-  data = r2.wide.itt.data,
-  pre = "pre_aaas_ad",
-  post = "post_aaas_ad",
-  ppid = "subject",
-  group = "group",
-  reliability = r.AAAS_ad,
-  higherIsBetter = T,
-  indextype = "JT",
-  JTcrit = "auto",
-  normM = mean.AAAS_ad.norm,
-  normSD = sd.AAAS_ad.norm
-)
-
-# Plot
-xp <-
-  plotJT(
-    x,
-    facetplot = T,
-    addJitter = T,
-    plottitle = paste("AAA-S Adaptive, ",xpost,sep=""),
-    xlab = xpre,
-    ylab = xpost
-  )
-xp$labels$colour <- paste("Jacobson & Truax-klassificering\n",xg3," / ",xg1," / ",xg2,sep="")
-AAAS_ad.pre.post.jt.plot <- xp
-
-# Data frame / table
-xt <- tableJT(data = x, useGroups = T)
-xt[, 1] <- jt_rownames
-colnames(xt) <- jt_colnames
-AAAS_ad.pre.post.jt.table <- xt
-
-### AAAS_ad pre--during
-
-# Run
-x <- JTRCI(
-  data = r2.wide.itt.data,
-  pre = "pre_aaas_ad",
-  post = "dur_aaas_ad",
-  ppid = "subject",
-  group = "group",
-  reliability = r.AAAS_ad,
-  higherIsBetter = T,
-  indextype = "JT",
-  JTcrit = "auto",
-  normM = mean.AAAS_ad.norm,
-  normSD = sd.AAAS_ad.norm
-)
-
-# Plot
-xp <-
-  plotJT(
-    x,
-    facetplot = T,
-    addJitter = T,
-    plottitle = paste("AAA-S Adaptive, ",xdur,sep=""),
-    xlab = xpre,
-    ylab = xdur
-  )
-xp$labels$colour <- paste("Jacobson & Truax-klassificering\n",xg3," / ",xg1," / ",xg2,sep="")
-AAAS_ad.pre.dur.jt.plot <- xp
-
-# Data frame / table
-xt <- tableJT(data = x, useGroups = T)
-xt[, 1] <- jt_rownames
-colnames(xt) <- jt_colnames
-AAAS_ad.pre.dur.jt.table <- xt
-
-### AAAS_ag pre--post UPWARDS
-
-# Run
-x <- JTRCI(
-  data = r2.wide.itt.data,
-  pre = "pre_aaas_ag",
-  post = "post_aaas_ag",
-  ppid = "subject",
-  group = "group",
-  reliability = r.AAAS_ag,
-  higherIsBetter = T,
-  indextype = "JT",
-  JTcrit = "auto",
-  normM = mean.AAAS_ag.norm,
-  normSD = sd.AAAS_ag.norm
-)
-
-# Plot
-xp <-
-  plotJT(
-    x,
-    facetplot = T,
-    addJitter = T,
-    plottitle = paste("AAA-S Aggressive, ",xpost,sep=""),
-    xlab = xpre,
-    ylab = xpost
-  )
-xp$labels$colour <- paste("Jacobson & Truax-klassificering\n",xg3," / ",xg1," / ",xg2,sep="")
-AAAS_ag.pre.post.jt.plot <- xp
-
-# Data frame / table
-xt <- tableJT(data = x, useGroups = T)
-xt[, 1] <- jt_rownames
-colnames(xt) <- jt_colnames
-AAAS_ag.pre.post.jt.table <- xt
-
-# tab_xtab(
-#   as.numeric(as.matrix(AAAS_ag.pre.post.jt.table[5,4])),
-#   sum(as.numeric(as.matrix(AAAS_ag.pre.post.jt.table[c(1:4),4]))),
-#   statistics = "fisher",
-#   show.cell.prc =T
-# )
-
-
-### AAAS_ag pre--during
-
-# Run
-x <- JTRCI(
-  data = r2.wide.itt.data,
-  pre = "pre_aaas_ag",
-  post = "dur_aaas_ag",
-  ppid = "subject",
-  group = "group",
-  reliability = r.AAAS_ag,
-  higherIsBetter = T,
-  indextype = "JT",
-  JTcrit = "auto",
-  normM = mean.AAAS_ag.norm,
-  normSD = sd.AAAS_ag.norm
-)
-
-# Plot
-xp <-
-  plotJT(
-    x,
-    facetplot = T,
-    addJitter = T,
-    plottitle = paste("AAA-S Aggressive, ",xdur,sep=""),
-    xlab = xpre,
-    ylab = xdur
-  )
-xp$labels$colour <- paste("Jacobson & Truax-klassificering\n",xg3," / ",xg1," / ",xg2,sep="")
-AAAS_ag.pre.dur.jt.plot <- xp
-
-# Data frame / table
-xt <- tableJT(data = x, useGroups = T)
-xt[, 1] <- jt_rownames
-colnames(xt) <- jt_colnames
-AAAS_ag.pre.dur.jt.table <- xt
-
-### AAAS_ag pre--post DOWNWARDS
-
-# Run
-x <- JTRCI(
-  data = r2.wide.itt.data,
-  pre = "pre_aaas_ag",
-  post = "post_aaas_ag",
-  ppid = "subject",
-  group = "group",
-  reliability = r.AAAS_ag,
-  higherIsBetter = F,
-  indextype = "JT",
-  JTcrit = "auto",
-  normM = mean.AAAS_ag.norm,
-  normSD = sd.AAAS_ag.norm
-)
-
-# Plot
-xp <-
-  plotJT(
-    x,
-    facetplot = T,
-    addJitter = T,
-    plottitle = paste("AAA-S Aggressive, ",xpost,sep=""),
-    xlab = xpre,
-    ylab = xpost
-  )
-xp$labels$colour <- paste("Jacobson & Truax-klassificering\n",xg3," / ",xg1," / ",xg2,sep="")
-AAAS_ag.pre.post.DOWN.jt.plot <- xp
-
-# Data frame / table
-xt <- tableJT(data = x, useGroups = T)
-xt[, 1] <- jt_rownames
-colnames(xt) <- jt_colnames
-AAAS_ag.pre.post.DOWN.jt.table <- xt
-
-### AAAS_ag pre--during
-
-# Run
-x <- JTRCI(
-  data = r2.wide.itt.data,
-  pre = "pre_aaas_ag",
-  post = "dur_aaas_ag",
-  ppid = "subject",
-  group = "group",
-  reliability = r.AAAS_ag,
-  higherIsBetter = F,
-  indextype = "JT",
-  JTcrit = "auto",
-  normM = mean.AAAS_ag.norm,
-  normSD = sd.AAAS_ag.norm
-)
-
-# Plot
-xp <-
-  plotJT(
-    x,
-    facetplot = T,
-    addJitter = T,
-    plottitle = paste("AAA-S Aggressive, ",xdur,sep=""),
-    xlab = xpre,
-    ylab = xdur
-  )
-xp$labels$colour <- paste("Jacobson & Truax-klassificering\n",xg3," / ",xg1," / ",xg2,sep="")
-AAAS_ag.pre.dur.DOWN.jt.plot <- xp
-
-# Data frame / table
-xt <- tableJT(data = x, useGroups = T)
-xt[, 1] <- jt_rownames
-colnames(xt) <- jt_colnames
-AAAS_ag.pre.dur.DOWN.jt.table <- xt
-
-### Rathus pre--post
-
-# Run
-x <- JTRCI(
-  data = r2.wide.itt.data,
-  pre = "pre_rathus",
-  post = "post_rathus",
-  ppid = "subject",
-  group = "group",
-  reliability = r.Rathus,
-  higherIsBetter = T,
-  indextype = "JT",
-  JTcrit = "auto",
-  normM = mean.Rathus.norm,
-  normSD = sd.Rathus.norm
-)
-
-# Plot
-xp <-
-  plotJT(
-    x,
-    facetplot = T,
-    addJitter = T,
-    plottitle = paste("Rathus, ",xpost,sep=""),
-    xlab = xpre,
-    ylab = xpost
-  )
-xp$labels$colour <- paste("Jacobson & Truax-klassificering\n",xg3," / ",xg1," / ",xg2,sep="")
-rathus.pre.post.jt.plot <- xp
-
-# Data frame / table
-xt <- tableJT(data = x, useGroups = T)
-xt[, 1] <- jt_rownames
-colnames(xt) <- jt_colnames
-rathus.pre.post.jt.table <- xt
-
-### rathus pre--during
-
-# Run
-x <- JTRCI(
-  data = r2.wide.itt.data,
-  pre = "pre_rathus",
-  post = "dur_rathus",
-  ppid = "subject",
-  group = "group",
-  reliability = r.Rathus,
-  higherIsBetter = T,
-  indextype = "JT",
-  JTcrit = "auto",
-  normM = mean.Rathus.norm,
-  normSD = sd.Rathus.norm
-)
-
-# Plot
-xp <-
-  plotJT(
-    x,
-    facetplot = T,
-    addJitter = T,
-    plottitle = paste("Rathus, ",xdur,sep=""),
-    xlab = xpre,
-    ylab = xdur
-  )
-xp$labels$colour <- paste("Jacobson & Truax-klassificering\n",xg3," / ",xg1," / ",xg2,sep="")
-rathus.pre.dur.jt.plot <- xp
-
-# Data frame / table
-xt <- tableJT(data = x, useGroups = T)
-xt[, 1] <- jt_rownames
-colnames(xt) <- jt_colnames
-rathus.pre.dur.jt.table <- xt
-
-```
-
-
-Se \@ref(jtprocent) för mer ...
-
-(ref:jtp) 123
-
-```{r jtprocent, tab.align="center", cache=F}
-
-library("tibble")
-
-jtrci.tab <- tibble(rbind.data.frame(
-  AD = cbind(
-    F1 = data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)])[, 1],
-    P1 = round(prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2)[, 1] * 100,1),
-    F2 = data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)])[, 2],
-    P2 = round(prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2)[, 2] * 100,1),
-    F3 = data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)])[, 3],
-    P3 = round(prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2)[, 3] * 100,1)
-  ),
-  AG = cbind(
-    F1 = data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)])[, 1],
-    P1 = round(prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2)[, 1] * 100,1),
-    F2 = data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)])[, 2],
-    P2 = round(prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2)[, 2] * 100,1),
-    F3 = data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)])[, 3],
-    P3 = round(prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2)[, 3] * 100,1)
-  ),
-  RAS = cbind(
-    F1 = data.matrix(rathus.pre.post.jt.table[, c(2:4)])[, 1],
-    P1 = round(prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)[, 1] * 100,1),
-    F2 = data.matrix(rathus.pre.post.jt.table[, c(2:4)])[, 2],
-    P2 = round(prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)[, 2] * 100,1),
-    F3 = data.matrix(rathus.pre.post.jt.table[, c(2:4)])[, 3],
-    P3 = round(prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)[, 3] * 100,1)
-  )
-))
-
-colnames(jtrci.tab) = rep(c("N","%"),times=3)
-jtrci.tab$"" = rep(jt_rownames,times=3)
-
-svkable(jtrci.tab[,c(7,1:6)], align="lcccccc", caption = '(ref:jtp)') %>%
-  pack_rows("AAA-S Adaptive", 1, 5, bold = F) %>%
-  pack_rows("AAA-S Aggressive", 6, 10, bold = F) %>%
-  pack_rows("Rathus", 11, 15, bold = F) %>%
-  row_spec(c(5,10), extra_latex_after = "\\midrule") %>%
-  column_spec(2:6, width = "4em") %>%
-  add_header_above(c(" "=1,"Väntelista"=2,"Självhjälp"=2,"Behandlarstöd"=2))
-
-```
-
 
 ```{r tjrciout, fig.cap='(ref:rci)', fig.align="center", dpi=196, cache=T, fig.height=3, eval=F}
 
