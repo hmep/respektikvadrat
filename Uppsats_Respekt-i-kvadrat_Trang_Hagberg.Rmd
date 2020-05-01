@@ -952,13 +952,13 @@ Vi analyserade insamlade förmätningsvärden för att kontrollera om randomiser
 
 <!-- OBS! Kom ihåg bortfallsanalys (se exempeluppsats 2) -->
 
-### Analys av fixa och slumpmässiga effekter
+### Analys av fixa effekter
 
 Fixa och slumpmässiga effekter mellan grupp och tid för de primära och sekundära utfallsmåtten undersöktes med så kallad flernivåanalys (också kallad blandad modell, hierarkisk analys, på engelska bland annat *mixed model*, *multilevel model* och *hierarchical linear model*). Flernivåanalys tillåter precis som multivariat variansanalys (MANOVA) inklusion av upprepade beroende mättillfällen i modellen, men fördelerna att metoden tillåter obalanserade grupper och att principen om *intention to treat* värnas utan behov av imputering av saknade datapunkter. Flernivåanalyser uppskattar också inklusion av *random*-effekter observerad men inte kontrollerad varians på klusternivå (i detta fall enskilda individer som "innehåller" upprepade mättillfällen).
 
 Granskning av homoscedasticitet och residualernas fördelning samt identifiering av outliers gjordes visuellt med diagnostiska plottar av de till data anpassade modellerna. All data, inklusive förekommande outliers, behölls i analyserna.
 
-En modell specificerades för vart och ett av de beroende utfallsmåtten. Ingen standardisering eller centrering gjordes av värdena. Som oberoende prediktorer eller *fixed*-variabler angavs huvudeeffekter och interaktioner av tid (uppprepade beroende mättillfällen) och grupp (oberoende betingelse till vilka deltagarna randomiserades inför start). I modellerna tilläts skärningspunkterna (intercepten) för respektive deltagare att variera som *random*-effekt. Insamlad mängd data tillät på grund av bortfall inte inklusion av en *random* effekt för lutningen på regressionslinjen mellan mättillfällena.
+En modell specificerades för vart och ett av de beroende utfallsmåtten. Ingen standardisering eller centrering gjordes av värdena. Som oberoende prediktorer eller fixa variabler angavs huvudeeffekter och interaktioner av tid (uppprepade beroende mättillfällen) och grupp (oberoende betingelse till vilka deltagarna randomiserades inför start). I modellerna tilläts skärningspunkterna (intercepten) för respektive deltagare att variera som *random*-effekt. Insamlad mängd data tillät på grund av bortfall inte inklusion av en *random* effekt för lutningen på regressionslinjen mellan mättillfällena.
 
 För modelleringen av de olika utfallsmåtten användes modelleringsverktyg från R-paketet *lme4* [@R-lme4]. Valet av kovariansstrukturen gjordes genom jämförelse av AIC-tal av modeller som anpassades till data med *Maximum Likelihood* (ML)-funktionen. Den alternativa sannolikhetsfunktionen *Restricted Maximum Likelihood* (REML), som ger väntesvärdesriktiga uppskattningar av varianserna, användes därefter för anpassningen av modellerna för utfallsmåtten till underliggande data. 
 
@@ -969,7 +969,9 @@ Consider reporting scales for outputs, inputs and predictors (e.g., range, mean,
 
 <!-- s 59 hur påverkade collinearity resultaten? Inte alls eftersom varken grupp eller tid var korrelerad med utfallsmåtten -->
 
-För parvisa uppföljningstest av signifikanta koefficienter uppskattades marginalmedelvärden (*estimated marginal means* eller *least square means*) samt standardiserade effektstorlekar med verktyg från R-paketet *emmeans* [@R-emmeans]. Figurer framställdes med *sjPlot* [@R-sjPlot] och *ggplot2* [@R-ggplot2].
+För parvisa uppföljningstest av signifikanta koefficienter uppskattades marginalmedelvärden (*estimated marginal means* eller *least square means*) samt standardiserade effektstorlekar med verktyg från R-paketet *emmeans* [@R-emmeans]. För beräkning av effektstorlekar från parvisa jämförelser av flernivåmodellerna prediktioner används så kallade ekvivalenta frihetsgrader för specificeringen av standardavvikelsens noggrannhet. Dessa kan vara svåra att bestämma. Ett sätt att approximera de ekvivalenta frihetsgraderna är att utgå från residulernas frihetsgrader. Vi valde att underskatta de ekvivalenta frihetsgraderna genom att använda hälfen av residualernas frihetsgrader, för att undvika att underskatta konfidensintervallen för effektstorlekarna.
+
+Figurer framställdes med *sjPlot* [@R-sjPlot] och *ggplot2* [@R-ggplot2].
 
 ### Analys av reliabel förändring och klinisk signifikans
 
@@ -1519,23 +1521,26 @@ library(broom.mixed)
 require(gridExtra)
 require(grid)
 
-################### CHECK EDF!!!!!! ####################
-
 # AAA-S Adaptive
 
 aaas_ad.emm.by.group <- emmeans(aaas_ad.lmer, ~ time | group, adjust="bonferroni")
 aaas_ad.emm.by.time <- emmeans(aaas_ad.lmer, ~ group | time, adjust="bonferroni")
+aaas_ad.emmpairs.by.group <- tidy(pairs(emmeans(aaas_ad.lmer, ~ time | group), adjust="bonferroni"))
+aaas_ad.emmpairs.by.time <- tidy(pairs(emmeans(aaas_ad.lmer, ~ group | time), adjust="bonferroni"))
+
 aaas_ad.sd <- sqrt(6.7247^2 + 4.6582^2) # VarCorr(aaas_ag.lmer)
-aaas_ad.eff.by.group <- tidy(eff_size(aaas_ad.emm.by.group, sigma = aaas_ad.sd, edf = 205)) 
-aaas_ad.eff.by.time <- tidy(eff_size(aaas_ad.emm.by.time, sigma = aaas_ad.sd, edf = 205))
+aaas_ad.eff.by.group <- tidy(eff_size(aaas_ad.emm.by.group, sigma = aaas_ad.sd, edf = 0.5 * df.residual(aaas_ad.lmer))) # residual-SD
+aaas_ad.eff.by.time <- tidy(eff_size(aaas_ad.emm.by.time, sigma = aaas_ad.sd, edf = 0.5 * df.residual(aaas_ad.lmer))) # residual-SD
 
 # AAA-S Aggressive
 
 aaas_ag.emm.by.group <- emmeans(aaas_ag.lmer, ~ time | group, adjust="bonferroni")
 aaas_ag.emm.by.time <- emmeans(aaas_ag.lmer, ~ group | time, adjust="bonferroni")
+pairs(emmeans(aaas_ad.lmer, ~ time | group), adjust="bonferroni")
+
 aaas_ag.sd <- sqrt(5.6919^2 + 3.3895^2) # VarCorr(aaas_ag.lmer)
-aaas_ag.eff.by.group <- tidy(eff_size(aaas_ag.emm.by.group, sigma = aaas_ag.sd, edf = 205))
-aaas_ag.eff.by.time <- tidy(eff_size(aaas_ag.emm.by.time, sigma = aaas_ag.sd, edf = 205))
+aaas_ag.eff.by.group <- tidy(eff_size(aaas_ag.emm.by.group, sigma = aaas_ag.sd, edf = 3.3895)) # residual-SD
+aaas_ag.eff.by.time <- tidy(eff_size(aaas_ag.emm.by.time, sigma = aaas_ag.sd, edf = 3.3895)) # residual-SD
 
 ```
 
@@ -1603,7 +1608,9 @@ ad1
 
 #### `r xG3`--`r xg1` vid `r xt3`-mätningen
 
-Vid `r xt3`-mätning fann vi en klart högre medelpoäng på AAA-S Adaptive för gruppen `r xg1` (se emm ovan) än för gruppen `r xg3` (emm `r tidy(aaas_ad.emm.by.time)$estimate[7]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[7]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[7]`]), effektstorlek `r aaas_ad.eff.by.time$effect.size[7] * -1`, 95% CI [`r aaas_ad.eff.by.time$conf.high[7] * -1` ; `r aaas_ad.eff.by.time$conf.low[7] * -1`]. 
+Vid `r xt3`-mätning fann vi en signifikant högre medelpoäng på AAA-S Adaptive för gruppen `r xg1` (se emm ovan) än för gruppen `r xg3` (emm `r tidy(aaas_ad.emm.by.time)$estimate[7]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[7]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[7]`]), 
+medelvärdesskillnad `r aaas_ad.emmpairs.by.time$estimate[7]`, t(`r aaas_ad.emmpairs.by.time$df[7]`) = `r aaas_ad.emmpairs.by.time$t.ratio[7]`, p = `r aaas_ad.emmpairs.by.time$p.value[7]`.
+<!-- effektstorlek `r aaas_ad.eff.by.time$effect.size[7] * -1`, 95% CI [`r aaas_ad.eff.by.time$conf.high[7] * -1` ; `r aaas_ad.eff.by.time$conf.low[7] * -1`].  -->
 
 #### `r xG3`--`r xg2` vid `r xt3`-mätningen
 
