@@ -1552,7 +1552,7 @@ svkable(descriptives.col.out[], caption = "(ref:descriptives)", linesep = "", al
 
 ```
 
-Estimat av intercept och regressionskoefficienter för de olika primära och sekundära utfallsmåtten sammanfattas i tabell \@ref(stargazertab). Intercept och lutningskoefficienter för respektive utfallsmått kan läggas in i regressionsformeln som predicerar utfall för alla kombinationer av grupptillhörighet och mättillfällen.
+Estimat av intercept och regressionskoefficienter för de olika primära och sekundära utfallsmåtten sammanfattas i tabell \@ref(stargazertab). Intercept och lutningskoefficienter som anges i tabellen för respektive utfallsmått kan läggas in i regressionsformeln för modellen för att predicera utfall för alla kombinationer av grupptillhörighet och mättillfällen.
 
 ## Skillnad i effekt på konstruktiv självhävdelse mellan `r xg1`--`r xg2`
 
