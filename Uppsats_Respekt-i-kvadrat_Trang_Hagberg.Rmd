@@ -526,9 +526,9 @@ Graden av konstruktiv självhävdelse för en person i en given situation kan ko
 
 På svenska är begreppet \'sund självhävdelse\' vanligare än \'konstruktiv självhävdelse\'. I träningsprogrammet Respekt i kvadrat (som beskrivs i kommande avsnitt) och den här uppsatsen väljer vi att tala om konstruktiv snarare än sund självhävdelse som målbeteende, eftersom det tydligare utgår från individens perspektiv om vad som ger framkomlighet.
 
-(ref:ass) Konstruktiv självhävdelse definieras i träningsprogrammet Respekt i kvadrat som handlande som är förenligt med samtidig respekt för egna och andras rättigheter (figurens övre högra hörn). Passiv självhävdelse (figurens nedre högra hörn) kan på samma sätt definieras som låg grad av respekt för egna rättigheter men hög grad av respekt för andras rättigheter. Aggressiv självhävdelse (figurens övre vänstra hörn) kan definieras som hög grad av respekt för egna rättigheter men låg grad av respekt för andras rättigheter. Passivt aggressiva beteenden kan konceptualiseras som förenliga med låg grad av respekt för både egna och andras rättigheter (figurens nedre vänstra hörn).
+(ref:ass) Konstruktiv självhävdelse definieras i träningsprogrammet Respekt i kvadrat som handlande som är förenligt med samtidig respekt för egna och andras rättigheter (figurens övre högra hörn). Passiv självhävdelse (figurens nedre högra hörn) kan på samma sätt definieras som låg grad av respekt för egna rättigheter men hög grad av respekt för andras rättigheter. Aggressiv självhävdelse (figurens övre vänstra hörn) kan definieras som hög grad av respekt för egna rättigheter men låg grad av respekt för andras rättigheter. Passivt aggressiva beteenden kan konceptualiseras som förenliga med låg grad av respekt för både egna och andras rättigheter (figurens nedre vänstra hörn). (Figur från behandlingsprogrammet Respekt i kvadrat.)
 
-```{r assertiveness, out.width="65%", fig.align="center", fig.cap='(ref:ass)'}
+```{r assertiveness, out.width="55%", fig.align="center", fig.cap='(ref:ass)'}
 
 knitr::include_graphics("canvas-konstruktiv-slinga-X.pdf") 
 
@@ -558,7 +558,7 @@ Evidensen för beteendeterapi och KBT för syndromala och icke-syndromala psykol
 
 ## Viktiga teoretiska utgångspunkter
 
-Ambitionen för den här uppsatsen är att 1) belysa forskningsläget för konstruktiv självhävdelse, 2) beskriva några empiriskt underbyggda principer, förhållningssätt och behandlingskomponenter som är verksamma i klinisk psykologi i allmänhet och som också kan förmodas vara det för träning i konstruktiv självhävdelse och 3) beskriva och utvärdera ett KBT-behandlingsprogram via internet för konstruktiv självhävdelse som har utformats utifrån med de förhållningssätten och behandlingskomponenterna. Det här avsnittet går översiktligt genom några av delarna i (2) för att ge en något fördjupad bild av vad det som utvärderas i (3). 
+Ambitionen för den här uppsatsen är att 1) belysa forskningsläget för konstruktiv självhävdelse, 2) beskriva några empiriskt underbyggda principer, förhållningssätt och behandlingskomponenter som är verksamma i klinisk psykologi i allmänhet och som också kan förmodas vara det för träning i konstruktiv självhävdelse samt 3) beskriva och utvärdera ett KBT-behandlingsprogram via internet för konstruktiv självhävdelse som har utformats utifrån med de förhållningssätten och behandlingskomponenterna. Det här avsnittet går översiktligt genom några av principerna och komponenterna för att ge en något fördjupad bild av vad det som utvärderas i kommande avsnitt.
 
 ### En kontextuell och neurovetenskaplig inramning av \'kognitioner\'
 
@@ -1552,7 +1552,7 @@ svkable(descriptives.col.out[], caption = "(ref:descriptives)", linesep = "", al
 
 ```
 
-Estimat för intercept och regressionskoefficienter för de olika primära och sekundära utfallsmåtten sammanfattas i tabell \@ref(stargazertab) \@ref(fig:stargazertab) \@ref(tab:stargazertab). Intercept och lutningskoefficienter för respektive utfallsmått kan läggas in i regressionsformeln som predicerar utfall för alla kombinationer av grupptillhörighet och mättillfällen.
+Estimat av intercept och regressionskoefficienter för de olika primära och sekundära utfallsmåtten sammanfattas i tabell \@ref(stargazertab). Intercept och lutningskoefficienter för respektive utfallsmått kan läggas in i regressionsformeln som predicerar utfall för alla kombinationer av grupptillhörighet och mättillfällen.
 
 ## Skillnad i effekt på konstruktiv självhävdelse mellan `r xg1`--`r xg2`
 
@@ -1622,7 +1622,7 @@ För både gruppen `r xg1` och gruppen `r xg2` fann vi en klar förbättring mel
 
 Se figur \@ref(fig:effemmplotsad) som sammanfattar resultaten.
 
-(ref:emmeffad) Deltagarna i de båda behandlingsbetingelserna hade efter fullgången behandling förbättrats avsevärt med avseende på graden av konstruktiv självhävdelse, i jämförelse med `r xg3`. Effekten var påtaglig redan vid mittenmätningen för båda grupperna. Även förbättringen mellan behandlingsstart och `r xt3`mätningen var för båda grupperna betydande. 
+(ref:emmeffad) Deltagarna i de båda behandlingsbetingelserna hade efter fullgången behandling förbättrats avsevärt med avseende på graden av konstruktiv självhävdelse, i jämförelse med `r xg3`. Effekten var påtaglig redan vid mittenmätningen för båda grupperna. Även förbättringen mellan behandlingsstart och `r xt3`mätningen var för båda grupperna betydande. Etiketterna i figuren anger respektive effektstorlek av den med streckad linje indikerad parvisa jämförelse som var signifikant.
 
 ```{r effemmplotsad, dpi=196, fig.align="center", fig.cap='(ref:emmeffad)', fig.height=5, fig.width=5.5, cache = F, eval = T}
 
@@ -1681,7 +1681,7 @@ För båda grupperna `r xg1` och `r xg2` fann vi en signifikant höjning mellan 
 
 Se sammanfattning i \@ref(fig:effemmplotsag).
 
-(ref:emmeffag) Det är notabelt att medelvärdet för gruppen `r xg2` var lägre än för gruppen `r xg1`, som inte fick något behandlarstöd, vid båda tidpunkterna. Båda behandlingsbetingelserna uppvisar en höjning av graden av aggressiv självhävdelse, i jämförelse med `r xg3`. Effekten var signifikant vid mittenmätningen för gruppen `r xg1` (men inte för gruppen `r xg2`). Även höjningen av aggressiv självhävdelse mellan behandlingsstart och `r xt3`mätningen var för båda grupperna signifikant. 
+(ref:emmeffag) Det är notabelt att medelvärdet för gruppen `r xg2` var lägre än för gruppen `r xg1`, som inte fick något behandlarstöd, vid båda tidpunkterna. Båda behandlingsbetingelserna uppvisar en höjning av graden av aggressiv självhävdelse, i jämförelse med `r xg3`. Effekten var signifikant vid mittenmätningen för gruppen `r xg1` (men inte för gruppen `r xg2`). Även höjningen av aggressiv självhävdelse mellan behandlingsstart och `r xt3`mätningen var för båda grupperna signifikant. Etiketterna i figuren anger respektive effektstorlek av den med streckad linje indikerad parvisa jämförelse som var signifikant.
 
 ```{r effemmplotsag, dpi=196, fig.align="center", fig.cap='(ref:emmeffag)', fig.height=5, fig.width=5.5, cache = F, eval = T}
 
@@ -1783,7 +1783,7 @@ stargazer::stargazer(
   covariate.labels = c("Intercept",labradorer),
   float.env = "sidewaystable",
   #omit.stat = c("aic","bic","ll"),
-  #keep.stat= c("n"),
+  keep.stat= c("n"),
   dep.var.caption = "Utfallsmått/flernivåanalys",
   column.labels = c("Primära utfallsmått","Sekundära utfallsmått"),
   column.separate = c(2,5),
