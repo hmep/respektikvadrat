@@ -984,7 +984,7 @@ Från prediktioner estimerade marginalmedelvärden (*estimated marginal means* e
 
 ### Analys av reliabel förändring och klinisk signifikans
 
-Frekvensen deltagare som i träningsprogrammet genomgått en reliabel förändring och dessutom befann sig på kliniskt signifikant nivå vid eftermätningen fastställdes i enlighet med definitionerna och rekommendationerna i @Jacobson1991. För deltagare som endast lämnat självskattningar vid förmätningstillfället fördes förmätningvärdena vidare till eftermätningstillfället i enlighet med principen om *intention to treat*. Med reliabel förändring menas att en observerad utveckling mellan två mättillfällen definieras som tillförlitlig om den är tillräckligt stor (med $\alpha$ = 0,05) i relation till populationsvariansen. Då betraktas förändringen som en verklig förändring och inte bara ett slump- eller mätfel. Med klinisk signifikans avses hur eftermätningsvärdena förhåller sig till medelvärdet för normdata för en subklinisk population [@Jacobson1991]. För sammanställningarna överlappet mellan klinisk signifikans och reliabel förändring användes R-paketet *JTRCI*, som väljer jämförelsekriterium för klinisk signifikans konservativt [@R-JTRCI]. Skillnader mellan grupperna i antalet reliabelt förändrade deltagare som också befann sig på kliniskt signifikant nivå vid eftermätningstillfället analyserades med Kruskal-Wallis-test.
+Frekvensen deltagare som i träningsprogrammet genomgått en reliabel förändring och dessutom befann sig på kliniskt signifikant nivå vid eftermätningen fastställdes i enlighet med definitionerna och rekommendationerna i @Jacobson1991. För deltagare som endast lämnat självskattningar vid förmätningstillfället fördes förmätningvärdena vidare till eftermätningstillfället i enlighet med principen om *intention to treat*. Med reliabel förändring menas att en observerad utveckling mellan två mättillfällen definieras som tillförlitlig om den är tillräckligt stor (med $\alpha$ = 0,05) i relation till populationsvariansen. Då betraktas förändringen som en verklig förändring och inte bara ett slump- eller mätfel. Med klinisk signifikans avses hur eftermätningsvärdena förhåller sig till medelvärdet för normdata för en subklinisk population [@Jacobson1991]. För sammanställningarna av överlappet mellan klinisk signifikans och reliabel förändring användes R-paketet *JTRCI*, som väljer jämförelsekriterium för klinisk signifikans konservativt [@R-JTRCI]. Skillnader mellan grupperna i antalet reliabelt förändrade deltagare som också befann sig på kliniskt signifikant nivå vid eftermätningstillfället analyserades med Kruskal-Wallis-test.
 
 # Resultat
 
@@ -1299,7 +1299,7 @@ well.lmer <-
 
 ```
 
-Vid visuell granskning av diagnostiska plottar av observerad data fann vi inga brott mot antaganden för flernivåanalys.
+Vid visuell granskning av diagnostiska plottar av observerad data fann vi inga brott mot de antaganden som behöver uppfyllas för flernivåanalys.
 
 <!--
 Vi fann inga brott mot antagandena för flernivåanalys vid visuell granskning av diagnostiska plottar av de modeller som anpassats till observerade data. 
@@ -1343,6 +1343,19 @@ colnames(r2.new.data) <-
   )
 
 ```
+
+## Resultat på individnivå
+För att undersöka utfallen på individnivå gjordes en analys av reliabel förändring och klinisk signifikans. Deltagare som deltog i förmätningen men som  ej fyllde i en uppföljande mätning fick förmätningsvärdena framflyttade till det senare mättillfället i enlighet med principen om *intention to treat*. 
+
+För utfallsmåttet AAA-S Adaptive var det signifikant fler personer inom gruppen `r xg1` som förbättrades än inom gruppen `r xg3` (**Här presenteras [1] antalet individer som förändrats + [2] den statistiska beräkningen som visar att det är en signifikant skillnad mellan grupperna** ). Motsvarande signifikanta skillnad återfanns mellan grupp `r xg2`och `r xg1` (**Se föregående fetstilta parantes** ). För utfallsmåttet AA-S Aggresive återfanns ingen skillnad mellan grupperna i antalet kliniskt och reliabelt förbättrade individer. För utfallsmåttet Rathus var det signifikant fler personer inom gruppen `r xg1` som förbättrades än inom gruppen `r xg3` (**Här presenteras [1] antalet individer som förändrats + [2] den statistiska beräkningen som visar att det är en signifikant skillnad mellan grupperna** ). Motsvarande signifikanta skillnad återfanns mellan grupp `r xg2`och `r xg1` (**Se föregående fetstilta parantes** ).
+
+
+Se tabell \@ref(tab:jtprocent) för en sammanställning av kliniskt signifikanta och reliabla förändringarna inom de olika grupperna för utfallsmåtten AAA-S samt Rathus. 
+
+(ref:jtp) Klinisk signifikans med andel tillhörande de olika kategorierna för AAA-S två delskalar samt Rathus.
+
+
+## Resultat på gruppnivå
 
 Tabell \@ref(tab:descriptives) sammanställer predicerade data från de olika modellerna för respektive utfallsmått, inklusive uppskattade effektstorlekar. 
 
@@ -1798,8 +1811,6 @@ stargazer::stargazer(
 
 ```
 
-## Klinisk signifikans (arbeta in detta i primära och sekundära frågeställningen?)
-
 ```{r jtrci, include = F, cache = T}
 
 r2.wide.itt.data <- r2.wide.data
@@ -2131,9 +2142,6 @@ rathus.pre.dur.jt.table <- xt
 
 ```
 
-Se tabell \@ref(tab:jtprocent) med sammanställning jt/rci
-
-(ref:jtp) Klinisk signifikans med andel tillhörande de olika kategorierna för de två huvudutfallsmåtten samt Rathus. Deltagare som deltog i förmätningen men som  ej fyllde i en uppföljande mätning har fått förmätningsvärdena framflyttade till det senare mättillfället, i enlighet med principen om *intention to treat*.
 
 ```{r jtprocent, tab.align="center", cache=F}
 
@@ -2197,12 +2205,12 @@ Viktigt i och med att ni tagit upp detta med behandlingsstödets effekter i intr
 
 ## Resultatdiskussion
 
-<!-- Diskussion om själva resultatet återstår att skriva! -->
+<!-- 
+Diskussion om själva resultatet återstår att skriva!
 
 Borde ha klassificerat deltagare utifrån sökorsak/målsättning -- kan inkluderas i screeningförfarandet nästa gång
 
-Borde ha haft skattningsskala för emotionellt undvikande (finns flera bra)
-
+-->
 
 Då behandlingsmaterialet översatts till svenska inför den aktuella studien – och originalmaterialet användes utan inslag av behandlarstöd – fanns det ingen behandlarstödsmanual eller dylikt för studiens behandlare att använda sig av. Behandlarna hade utöver detta ingen tidigare erfarenhet av internetbaserad psykologisk behandling. Dock hade båda behandlarna tidigare erfarenhet av ansikte mot ansikte-behandling med individer med självrapporterad bristande självhävdelse. Bristen på erfarenhet av internetbaserad behandling kan ha påverkat kvalitén i det behandlarstöd som gavs. Å andra sidan har det visat sig att tidigare erfarenheter och kunskaper om I-KBT hos behandlare inte gör nämnvärd skillnad så länge de har grundläggande kunskaper inom psykologisk behandling [@Baumeister2014a]. Behandlarna hade utöver tillgodogjorda grundläggande kunskaper om psykologisk behandling även tillgång till ett dokument med generella förhållningssätt vid internetbehandling med behandlarstöd samt tillgång till vid-behov-handledning och stöd av en legitimerad psykolog med omfattande erfarenhet av I-KBT. Den generella målsättningen var att behandlarna skulle spendera cirka 15 minuter per vecka och deltagare. Detta varierade dock nämnvärt beroende på hur frekvent behandlarens deltagare hörde av sig till behandlaren med behandlingsrelaterade frågor samt hur utförligt deltagarna besvarade behandlingsprogrammets övningar. Denna variation kan ha påverkat utfallet då vissa deltagare möjligen fick behandlarstöd på bekostnad av andra.
 
@@ -2231,30 +2239,19 @@ Innan ni går över till brister så vill ni kanske säga något om övriga utfa
 
 ## Metodologiska brister / felkällor / validitet / reliabilitet
 
-<!-- 
-+/- användande av de skalor vi har gjort och hur tillförlitliga de är.
-
--/+ (?) Terapeuters erfarenhet av tidigare behandling (ingen erfarenhet av internetbehandling)
-x @Baumeister2014a om att guided treatment tenderar att vara superior och att hur kunniga terapeuterna är tenderar att vara av liten betydelse
-x å andra sidan vad våra resultat visar på (?)
--->
-
 All data som låg till grund för inkludering eller exkludering i den aktuella studien var insamlad från självskattningsformulär. I och med att forskningspersonsinformationen som potentiella deltagare kunde läsa innan de påbörjade screeningsprocessen presenterade såväl inkluderings- som exkluderingskriterier (även om exkluderingskriterierna till viss del var allmänt formulerade) medför det risken att de som sökte till studien anpassade sina svar för att bli inkluderade. Då ingen klinisk intervju användes i screeningprocessen fanns det ingen möjlighet att på så sätt upptäcka individer som borde exkluderas. Detta kan medföra att individer som egentligen borde ha exkluderats, på grund av icke sanningsenliga svar, istället blev inkluderade. Å andra sidan bör motivationen till social önskvärdhet vid deltagarnas ifyllnad av skattningsskalorna varit lägre i och med att ifyllningen gjordes mer anonymnt än om screeningen skulle skett ansikte-mot-ansikte eller via en klinisk intervju per telefon. Ingen klinisk intervju inkluderades då det låg utanför studiens möjliga resurser att administrera den till alla potentiella deltagare. En fördel med att inte ha använt kliniska intervjuerna är att tiden mellan påbörjad rekrytering och behandlingsstart blev kort, endast två veckor.
 
 Med nästintill 90% kvinnor i samplet var könsfördelningen ytterst ojämn. Denna ojämna fördelning går troligen att tillskriva flertalet olika faktorer. För det första rapporterar kvinnor mer oro, änglsan och ångest än män [@Socialstyrelsen2004] vilket skulle kunna göra kvinnor mer benägna att söka hjälp. För det andra tenderar män överlag att i lägre utsträckning söka vård än kvinnor även när män och kvinnor upplever liknande symtom [@Galdas2005]. Det är även så att kvinnor i större utsträckning tenderar att delta i forskningsstudier. När @Rozental2017a  hade sammanställt sin meta-analys konstaterade de att 62% av deltagarna i alla inkluderade studier var kvinnor. Slutligen – vilket troligen är den mest påverkande faktorn till den ojämna könsfördelningen i den aktuella studien – så sköttes studiens marknadsföring på sociala medier av en automatiserad algoritm. Algoritmen visar annonsen för de individer den tror har störst odds till att interagera med den. Data som sammanställdes efter avslutad annonsering visade på att någonstans mellan 85-90% av alla annonser visades för kvinnor. Om en så övervägande del av reklam visad till potentiella intressenter för studien visats för kvinnor, är det föga förvånande att huvudparten av deltagarna är kvinnor.
 
 Över 70% av vårt sample hade avslutade universitets- eller högskoleutbildningar och ytterligare 10% studerade vid behandlingens start. Denna siffra skiljer sig markant från Sveriges befolking, där endast 43% läst vidare efter gymnasiet [@SCB2020]. Delar av förklaringen till att en så stor andel av vårt sampel har studerat på universitet eller högskola skulle kunna vara att majoriteten av studiens deltagare är kvinnor, och att de i större utsträckning än män studerar vidare efter gymnasiet [@SCB2020]. Då väldigt få deltagare i den aktuella studien hade yrkesutbildning, gymnasieutbildning, folkskola eller grundskola som högsta avslutad utbildning bör man vara restriktiv med att applicera studiens resultat inom dessa grupper.
 
-Både att väldigt många kvinnor deltog i den aktuella studien, och att en så stor andel av samplet hade påbörjade eller avslutade universitetsstudier, gör det svårare att generalisera resultatet till Sveriges befolkning i stort. Könsfördelning i den aktuella studien skiljer sig även signifikant från studien normerna för AAA-S samt RAS hämtas från [@Thompson2011]. Till fördel för samplets representation av populationen är däremot att det i och med en internetbaserad behandling fanns möjlighet till ett nationellt intag av deltagare. Då det i skrivande stund varken finns data om prevalens av bristande självhävdelse i Sveriges population, eller data om vilka demografiska faktorer denna brist korrelerar med, är det ytterst svårt att säga hur representativ för Sveriges befolkning samplet i den aktuella studien är. Det vore av stor nytta att framtida studier undersöker denna behandlings effekt i andra populationer med större heterogenitet.
-
-<!--[@Thompson2011] som vi hämtade vårt sample ifrån hade 55% kvinnor -->
-
-<!-- [Pers kommentar] 
-Något om att framtida studier därför bör undersöka denna behandlings effekt i andra populationer.
--->
+Både att väldigt många kvinnor deltog i den aktuella studien, och att en så stor andel av samplet hade påbörjade eller avslutade universitetsstudier, gör det svårare att generalisera resultatet till Sveriges befolkning i stort. Könsfördelning i den aktuella studien skiljer sig även signifikant från studien normerna för AAA-S samt RAS hämtas från [@Thompson2011] (där fördelningar var 55% kvinnor och 45% män). Till fördel för samplets representation av populationen är däremot att det i och med en internetbaserad behandling fanns möjlighet till ett nationellt intag av deltagare. Då det i skrivande stund varken finns data om prevalens av bristande självhävdelse i Sveriges population, eller data om vilka demografiska faktorer denna brist korrelerar med, är det ytterst svårt att säga hur representativ för Sveriges befolkning samplet i den aktuella studien är. Det vore av stor nytta att framtida studier undersöker denna behandlings effekt i andra populationer med större heterogenitet.
 
 <!-- [Pers kommentar] 
 Kanske också ta upp detta med vad ni egentligen hade för population. Var det socialfobiker? I alla fall hade de ju en förhöjd LSAS-SR poäng som indikerar problem.
+
+Borde ha haft skattningsskala för emotionellt undvikande (finns flera bra) kopplat till att vi hade socialfobiker och 
+
 -->
 
 <!--
