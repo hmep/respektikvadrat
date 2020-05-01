@@ -2124,20 +2124,40 @@ Se tabell \@ref(tab:jtprocent) med sammanställning jt/rci
 
 ```{r jtprocent, tab.align="center", cache=F}
 
-x <- as.data.frame(t(rbind.data.frame(
-  #data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]),
-  prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2),
-  #data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]),
-  prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2),
-  #data.matrix(rathus.pre.post.jt.table[, c(2:4)]),
-  prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)
-)))
+jtrci.tab <- rbind.data.frame(
+  AD = cbind(
+    F1 = data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)])[, 1],
+    P1 = round(prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2)[, 1] * 100,2),
+    F2 = data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)])[, 2],
+    P2 = round(prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2)[, 2] * 100,2),
+    F3 = data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)])[, 3],
+    P3 = round(prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2)[, 3] * 100,2)
+  ),
+  AG = cbind(
+    F1 = data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)])[, 1],
+    P1 = round(prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2)[, 1] * 100,2),
+    F2 = data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)])[, 2],
+    P2 = round(prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2)[, 2] * 100,2),
+    F3 = data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)])[, 3],
+    P3 = round(prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2)[, 3] * 100,2)
+  ),
+  RAS = cbind(
+    F1 = data.matrix(rathus.pre.post.jt.table[, c(2:4)])[, 1],
+    P1 = round(prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)[, 1] * 100,2),
+    F2 = data.matrix(rathus.pre.post.jt.table[, c(2:4)])[, 2],
+    P2 = round(prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)[, 2] * 100,2),
+    F3 = data.matrix(rathus.pre.post.jt.table[, c(2:4)])[, 3],
+    P3 = round(prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)[, 3] * 100,2)
+  )
+)
 
-colnames(x) <- c(rep(as.vector(jt_rownames),times=3))
+jtrci.tab.rot <- t(jtrci.tab)
+colnames(jtrci.tab.rot) <- rep(jt_rownames,times=3)
 
-jt_table <- round(t(x) * 100,2)
+jtrci.tab.rot.rot <- as.data.frame(t(jtrci.tab.rot))
+colnames(jtrci.tab.rot) <- c(rep(c("N","%"),times=3))
 
-svkable(jt_table, align="ccc", caption = '(ref:jtp)') %>%
+svkable(jtrci.tab.rot.rot, align="cccccc", caption = '(ref:jtp)') %>%
   pack_rows("AAA-S Adaptive (%)", 1, 5, bold = F) %>%
   pack_rows("AAA-S Aggressive (%)", 6, 10, bold = F) %>%
   pack_rows("Rathus (%)", 11, 15, bold = F) %>%
