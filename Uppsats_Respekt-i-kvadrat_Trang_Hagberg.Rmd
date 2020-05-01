@@ -2155,7 +2155,7 @@ jtrci.tab.rot <- t(jtrci.tab)
 colnames(jtrci.tab.rot) <- rep(jt_rownames,times=3)
 
 jtrci.tab.rot.rot <- as.data.frame(t(jtrci.tab.rot))
-colnames(jtrci.tab.rot) <- c(rep(c("N","%"),times=3))
+colnames(jtrci.tab.rot) <- rep(c("N","%"),times=3)
 
 svkable(jtrci.tab.rot.rot, align="cccccc", caption = '(ref:jtp)') %>%
   pack_rows("AAA-S Adaptive (%)", 1, 5, bold = F) %>%
@@ -2164,7 +2164,6 @@ svkable(jtrci.tab.rot.rot, align="cccccc", caption = '(ref:jtp)') %>%
   row_spec(c(5,10), extra_latex_after = "\\midrule")
 
 ```
-
 
 Se \@ref(fig:tjrciout) för mer ...
 
