@@ -1,7 +1,9 @@
 ---
 title             : |
-  | \LARGE Respekt i kvadrat: ett tr&auml;ningsprogram f&ouml;r konstruktiv sj&auml;lvh&auml;vdelse
-  | \vspace{0.5cm} \Large _en randomiserad kontrollerad effektstudie av internetf&ouml;rmedlad kognitiv beteendeterapi_
+  | \LARGE Respekt i kvadrat: ett tr&auml;ningsprogram f&ouml;r
+  | \LARGE konstruktiv sj&auml;lvh&auml;vdelse
+  | \vspace{0.3cm} \Large _en randomiserad kontrollerad effektstudie av internetf&ouml;rmedlad_
+  | \Large _kognitiv beteendeterapi_
 shorttitle        : "Respekt i kvadrat"
 author: 
   - name          : "Tobias Hagberg"
@@ -2134,7 +2136,7 @@ rathus.pre.dur.jt.table <- xt
 ```
 
 
-```{r jtprocent, tab.align="center", cache=F}
+```{r jtprocent, tab.align="center", cache=F, eval=F}
 
 jtrci.tab <- rbind.data.frame(
   AD = cbind(
