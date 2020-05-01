@@ -1587,6 +1587,8 @@ xresult <- function(x){x}
 
 options(OutDec= ",")
 
+#svkable(aaas_ag.emm.by.group,linesep="", caption = 'AAA-S Aggressive')
+
 ```
 
 Vi fann ingen skillnad i utfall med AAA-S Adaptive vid `r xt3`mätningen mellan gruppen `r xg1` (estimerat marginalmedelvärde [emm] `r xresult(tidy(aaas_ad.emm.by.time)$estimate[8])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[8])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[8])`]) och gruppen `r xg2` (emm `r xresult(tidy(aaas_ad.emm.by.time)$estimate[9])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[9])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[9])`]), $t$(`r xresult(aaas_ad.emmpairs.by.time$df[9])`) = `r xresult(aaas_ad.emmpairs.by.time$t.ratio[9])`, $p$ = `r xresult(aaas_ad.emmpairs.by.time$p.value[9])`, effektstorlek `r xresult(aaas_ad.eff.by.time$effect.size[9] * -1)`. Vi fann inte heller någon skillnad i effekt vid `r xt2`-mätningen. För de deltagare som har deltagit i *Respekt i kvadrat* är skillnaden i konstruktiv självhävdelse vid `r xt3`mätningen försumbar mellan de som fått behandlarstöd och de som har fått klara sig på egen hand.
@@ -2166,60 +2168,6 @@ rathus.pre.post.jt.plot + theme(legend.position="none") + scale_color_manual(val
 #rathus.pre.dur.jt.plot + theme(legend.position="none") + scale_color_manual(values=c(rep("white",times=4),"red"))
 
 ```
-
-```{r analysplottar, dpi=196, eval=T, cache=T, fig.height=12, fig.width=6, fig.align="center", fig.cap="estimat",eval=F}
-
-#13, 9
-
-#plot_grid(list(p1, p2, p3, p4), tags = TRUE)
-# + theme(legend.position = "none")
-
-library(gridExtra)
-theme_set(theme_classic())
-
-grid.arrange(
-  aaas_ad.estimatplot,
-  aaas_ag.estimatplot,
-  rathus.estimatplot,
-  #lsas_sum.estimatplot,
-  #gad_sum.estimatplot,
-  #phq_sum.estimatplot,
-  #well.estimatplot,
-  #ncol = 2
-  ncol = 1
-)
-
-```
-
-```{r prediktionsplottar, dpi=196, eval=T, cache=T, fig.height=12, fig.width=7.3, fig.align="center", fig.cap="pred",eval=F}
-
-grid.arrange(
-  aaas_ad.prediktionsplot, #+ theme(legend.position = "none"),
-  aaas_ag.prediktionsplot, #+ theme(legend.position = "none"),
-  rathus.prediktionsplot, #+ theme(legend.position = "none"),
-  #lsas_sum.prediktionsplot + theme(legend.position = "none"),
-  #gad_sum.prediktionsplot + theme(legend.position = "none"),
-  #phq_sum.prediktionsplot + theme(legend.position = "none"),
-  #well.prediktionsplot + theme(legend.position = "none"),
-  #ncol = 2
-  ncol = 1
-)
-
-```
-
-
-```{r emmeans,results="asis",eval=F}
-
-svkable(aaas_ad.emm,linesep="", caption = 'AAA-S Adaptive')
-svkable(aaas_ag.emm,linesep="", caption = 'AAA-S Aggressive')
-svkable(rathus.emm,linesep="", caption = 'Rathus')
-#svkable(lsas_sum.emm,linesep="", caption = 'LSAS')
-#svkable(gad_sum.emm,linesep="", caption = 'GAD')
-#svkable(phq_sum.emm,linesep="", caption = 'PHQ')
-#svkable(well.emm,linesep="", caption = 'Välmåendeformuläret')
-
-```
-
 
 # Diskussion
 
