@@ -1014,7 +1014,7 @@ Demografi.Kon.proc <- prop.table(Demografi.Kon.abs, 1)
 
 ```
 
-Vid analys av skillnader av sociodemografisk data fann vi en signifikant skillnad i könsfördelning mellan grupperna ($\chi^2$ = `r format(round(Demografi.Kon.chi$statistic,2),decimal.mark=",")`, p = `r format(round(Demografi.Kon.chi$p.value,2),decimal.mark=",")`, df = `r format(round(Demografi.Kon.chi$parameter,2),decimal.mark=",")`). Gruppen `r xg2` hade vid parvisa uppföljningstest signifikant större andel män än både gruppen `r xg3` (p = `r format(round(Demografi.Kon.posthoc$res[1,4],2),decimal.mark=",")`) och gruppen `r xg1` (p = `r format(round(Demografi.Kon.posthoc$res[2,4],2),decimal.mark=",")`). I övrigt fann vi inte några skillnader i sociodemografiska variabler mellan grupperna.
+Vid analys av skillnader av sociodemografisk data fann vi en signifikant skillnad i könsfördelning mellan grupperna ($\chi^2$ = `r format(round(Demografi.Kon.chi$statistic,2),decimal.mark=",")`, $p$ = `r format(round(Demografi.Kon.chi$p.value,2),decimal.mark=",")`, df = `r format(round(Demografi.Kon.chi$parameter,2),decimal.mark=",")`). Gruppen `r xg2` hade vid parvisa uppföljningstest signifikant större andel män än både gruppen `r xg3` (p = `r format(round(Demografi.Kon.posthoc$res[1,4],2),decimal.mark=",")`) och gruppen `r xg1` (p = `r format(round(Demografi.Kon.posthoc$res[2,4],2),decimal.mark=",")`). I övrigt fann vi inte några skillnader i sociodemografiska variabler mellan grupperna.
 
 ```{r groupcontrols, eval = F}
 
@@ -1558,22 +1558,22 @@ Vi var också intresserade av hur effekten av deltagande i grupperna `r xg1` och
 #### `r xG3`--`r xg1` vid `r xt3`-mätningen
 
 Vi fann en högre medelpoäng på AAA-S Adaptive för gruppen `r xg1` (se emm ovan) än för gruppen `r xg3` (emm `r tidy(aaas_ad.emm.by.time)$estimate[7]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[7]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[7]`]) vid `r xt3`-mätningen, 
-medelvärdesskillnad `r aaas_ad.emmpairs.by.time$estimate[7] * -1`, t(`r aaas_ad.emmpairs.by.time$df[7]`) = `r aaas_ad.emmpairs.by.time$t.ratio[7]`, p = `r aaas_ad.emmpairs.by.time$p.value[7]`.
+medelvärdesskillnad `r aaas_ad.emmpairs.by.time$estimate[7] * -1`, $t$(`r aaas_ad.emmpairs.by.time$df[7]`) = `r aaas_ad.emmpairs.by.time$t.ratio[7]`, $p$ = `r aaas_ad.emmpairs.by.time$p.value[7]`.
 <!-- effektstorlek `r aaas_ad.eff.by.time$effect.size[7] * -1`, 95% CI [`r aaas_ad.eff.by.time$conf.high[7] * -1` ; `r aaas_ad.eff.by.time$conf.low[7] * -1`].  -->
 
 #### `r xG3`--`r xg2` vid `r xt3`-mätningen
 
 Motsvarande tydligt högre medelpoäng på AAA-S Adaptive vid `r xt3`-mätningen fann vi för gruppen `r xg2` (se emm ovan) jämfört med gruppen `r xg3` (se emm ovan),
-medelvärdesskillnad `r aaas_ad.emmpairs.by.time$estimate[8] * -1`, t(`r aaas_ad.emmpairs.by.time$df[8]`) = `r aaas_ad.emmpairs.by.time$t.ratio[8]`, p = `r aaas_ad.emmpairs.by.time$p.value[8]`.
+medelvärdesskillnad `r aaas_ad.emmpairs.by.time$estimate[8] * -1`, $t$(`r aaas_ad.emmpairs.by.time$df[8]`) = `r aaas_ad.emmpairs.by.time$t.ratio[8]`, $p$ = `r aaas_ad.emmpairs.by.time$p.value[8]`.
 <!-- effektstorlek `r aaas_ad.eff.by.time$effect.size[8] * -1`, 95% CI [`r aaas_ad.eff.by.time$conf.high[8] * -1` ; `r aaas_ad.eff.by.time$conf.low[8] * -1`].  -->
 
 #### Behandlingseffekt mellan behandlingsstart och `r xt3`-mätning
 
 För både gruppen `r xg1` och gruppen `r xg2` fann vi en klar förbättring mellan behandlingsstart och `r xt3`-mätning,
-t(`r aaas_ad.emmpairs.by.group$df[5]`) = `r aaas_ad.emmpairs.by.group$t.ratio[5]`, p = `r aaas_ad.emmpairs.by.group$p.value[5]`.
+t(`r aaas_ad.emmpairs.by.group$df[5]`) = `r aaas_ad.emmpairs.by.group$t.ratio[5]`, $p$ = `r aaas_ad.emmpairs.by.group$p.value[5]`.
 <!-- effektstorlek `r aaas_ad.eff.by.group$effect.size[5] * -1`, 95% CI [`r aaas_ad.eff.by.group$conf.high[5] * -1` ; `r aaas_ad.eff.by.group$conf.low[5] * -1`] -->
 respektive 
-`r aaas_ad.emmpairs.by.group$estimate[8] * -1`, t(`r aaas_ad.emmpairs.by.group$df[8]`) = `r aaas_ad.emmpairs.by.group$t.ratio[8]`, p = `r aaas_ad.emmpairs.by.group$p.value[8]`.
+`r aaas_ad.emmpairs.by.group$estimate[8] * -1`, $t$(`r aaas_ad.emmpairs.by.group$df[8]`) = `r aaas_ad.emmpairs.by.group$t.ratio[8]`, $p$ = `r aaas_ad.emmpairs.by.group$p.value[8]`.
 <!-- `r aaas_ad.eff.by.group$effect.size[8] * -1`, 95% CI [`r aaas_ad.eff.by.group$conf.high[8] * -1` ; `r aaas_ad.eff.by.group$conf.low[8] * -1`]. -->
 
 Deltagarna i de båda behandlingsbetingelserna hade efter fullgången behandling förbättrats avsevärt med avseende på graden av konstruktiv självhävdelse, i jämförelse med `r xg3`. Effekten var påtaglig redan vid mittenmätningen för båda grupperna. Även förbättringen mellan behandlingsstart och `r xt3`-mätningen var för båda grupperna betydande. Se figur \@ref(fig:effemmplotsad) som sammanfattar resultaten.
@@ -1621,17 +1621,17 @@ ad1
 #### `r xG3`--`r xg1` vid `r xt3`-mätningen
 
 Precis som för konstruktiv självhävdelse hade gruppen `r xg1` en klart högre (emm `r tidy(aaas_ag.emm.by.time)$estimate[8]`, 95% CI [`r tidy(aaas_ag.emm.by.time)$conf.low[8]` ; `r tidy(aaas_ag.emm.by.time)$conf.high[8]`]) medelpoäng på måttet för aggressiv självhävdelse, AAA-S Aggressive, än gruppen `r xg3` (emm `r tidy(aaas_ag.emm.by.time)$estimate[7]`, 95% CI [`r tidy(aaas_ad.emm.by.time)$conf.low[7]` ; `r tidy(aaas_ad.emm.by.time)$conf.high[7]`]) vid `r xt3`-mätningen, 
-medelvärdesskillnad `r aaas_ag.emmpairs.by.time$estimate[7] * -1`, t(`r aaas_ag.emmpairs.by.time$df[7]`) = `r aaas_ag.emmpairs.by.time$t.ratio[7]`, p = `r aaas_ag.emmpairs.by.time$p.value[7]`.
+medelvärdesskillnad `r aaas_ag.emmpairs.by.time$estimate[7] * -1`, $t$(`r aaas_ag.emmpairs.by.time$df[7]`) = `r aaas_ag.emmpairs.by.time$t.ratio[7]`, $p$ = `r aaas_ag.emmpairs.by.time$p.value[7]`.
 
 #### `r xG3`--`r xg2` vid `r xt3`-mätningen
 
-Vid `r xt3`-mätningen fann vi också att medelpoängen för `r xg2` (emm `r tidy(aaas_ag.emm.by.time)$estimate[9]`, 95% CI [`r tidy(aaas_ag.emm.by.time)$conf.low[9]` ; `r tidy(aaas_ag.emm.by.time)$conf.high[9]`]) var högre jämfört med gruppen `r xg3` (se emm ovan). Skillnaden var `r aaas_ag.emmpairs.by.time$estimate[8] * -1`, t(`r aaas_ag.emmpairs.by.time$df[8]`) = `r aaas_ag.emmpairs.by.time$t.ratio[8]`, p = `r aaas_ag.emmpairs.by.time$p.value[8]`.
+Vid `r xt3`-mätningen fann vi också att medelpoängen för `r xg2`sgruppen (emm `r tidy(aaas_ag.emm.by.time)$estimate[9]`, 95% CI [`r tidy(aaas_ag.emm.by.time)$conf.low[9]` ; `r tidy(aaas_ag.emm.by.time)$conf.high[9]`]) var högre i jämförelse med gruppen `r xg3` (se emm ovan). Skillnaden var `r aaas_ag.emmpairs.by.time$estimate[8] * -1`, $t$(`r aaas_ag.emmpairs.by.time$df[8]`) = `r aaas_ag.emmpairs.by.time$t.ratio[8]`, $p$ = `r aaas_ag.emmpairs.by.time$p.value[8]`.
 
 #### Behandlingseffekt mellan behandlingsstart och `r xt3`-mätning
 
-För båda grupperna `r xg1` och `r xg2` fann vi en signifikant höjning mellan behandlingsstart och `r xt3`-mätning. För `r xg1` var medelvärdesskillnaden `r aaas_ag.emmpairs.by.group$estimate[5] * -1`, t(`r aaas_ag.emmpairs.by.group$df[5]`) = `r aaas_ag.emmpairs.by.group$t.ratio[5]`, p = `r aaas_ag.emmpairs.by.group$p.value[5]`, för `r xg2` var den `r aaas_ag.emmpairs.by.group$estimate[8] * -1`, t(`r aaas_ag.emmpairs.by.group$df[8]`) = `r aaas_ag.emmpairs.by.group$t.ratio[8]`, p = `r aaas_ag.emmpairs.by.group$p.value[8]`, .
+För båda grupperna `r xg1` och `r xg2` fann vi en signifikant höjning mellan behandlingsstart och `r xt3`-mätning. För `r xg1`sgruppen var medelvärdesskillnaden `r aaas_ag.emmpairs.by.group$estimate[5] * -1`, $t$(`r aaas_ag.emmpairs.by.group$df[5]`) = `r aaas_ag.emmpairs.by.group$t.ratio[5]`, $p$ = `r aaas_ag.emmpairs.by.group$p.value[5]`, för `r xg2`sgruppen var den `r aaas_ag.emmpairs.by.group$estimate[8] * -1`, $t$(`r aaas_ag.emmpairs.by.group$df[8]`) = `r aaas_ag.emmpairs.by.group$t.ratio[8]`, $p$ = `r aaas_ag.emmpairs.by.group$p.value[8]`, .
 
-Det är notabelt att medelvärdet för gruppen `r xg2` (som fick behandlarstöd) var lägre än för gruppen `r xg1` (som inte fick det). Båda behandlingsbetingelserna uppvisar en höjning av graden av aggressiv självhävdelse, i jämförelse med `r xg3`. Effekten var signifikant vid mittenmätningen för gruppen `r xg1`. Även höjningen av aggressiv självhävdelse mellan behandlingsstart och `r xt3`-mätningen var för båda grupperna relativt stor. Se figur \@ref(fig:effemmplotsag).
+Det är notabelt att medelvärdet för gruppen `r xg2` (som fick behandlarstöd) var lägre än för gruppen `r xg1` (som inte fick det) vid båda tidpunkterna. Båda behandlingsbetingelserna uppvisar en höjning av graden av aggressiv självhävdelse, i jämförelse med `r xg3`. Effekten var signifikant vid mittenmätningen för gruppen `r xg1`. Även höjningen av aggressiv självhävdelse mellan behandlingsstart och `r xt3`-mätningen var för båda grupperna relativt stor. Se figur \@ref(fig:effemmplotsag).
 
 (ref:emmeffag) figurtext aaas_ag
 
