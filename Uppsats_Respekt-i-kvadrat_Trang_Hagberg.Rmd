@@ -656,7 +656,9 @@ Självhjälpsmaterial förmedlat via I-KBT har dock visat sig populärt och effe
 
 ## Frågeställningar
 
-Det vi primärt är intresserade av är om det finns någon skillnad (i endera riktning) i effekt mellan gruppen `r xg1` och gruppen `r xg2` med avseende på konstruktiv självhävdelse, det vill säga med utfallsmåttet AAA-S Adaptive. Vi är också intresserade av att ta reda på om effekten i gruppen `r xg3` är sämre än behandlingseffekten i gruppen  `r xg1` respektive gruppen `r xg2` med avseende på konstruktiv självhävdelse, det vill säga med utfallsmåttet AAA-S Adaptive. Slutligen vill vi också undersöka vilka prediktorer/moderatorer hos deltagarna (exempelvis grad av social ångest eller grad av depression) i behandlingsalternativen `r xg1` och `r xg2` som påverkar utfallet samt vilka mediatorer inom behandlingsalternativen (exempelvis tilldelning av terapeut) som påverkar utfallet. 
+Det vi primärt är intresserade av är om det finns någon skillnad (i endera riktning) i effekt mellan gruppen `r xg1` och gruppen `r xg2` med avseende på konstruktiv självhävdelse, det vill säga med utfallsmåttet AAA-S Adaptive. Vi är också intresserade av att ta reda på hur effekten av behandling (deltagande i grupperna `r xg1` och `r xg2` skiljer sig från gruppen `r xg3` med avseende på både konstruktiv självhävdelse fångad med AAA-S Adaptive och aggressiv självhävdelse fångad med AAA-S Aggressive. 
+
+<!-- Slutligen vill vi också undersöka vilka prediktorer/moderatorer hos deltagarna (exempelvis grad av social ångest eller grad av depression) i behandlingsalternativen `r xg1` och `r xg2` som påverkar utfallet samt vilka mediatorer inom behandlingsalternativen (exempelvis tilldelning av terapeut) som påverkar utfallet.  -->
 
 # Metod
 
@@ -1674,7 +1676,7 @@ Vid `r xt3`mätningen fann vi också att medelpoängen för `r xg2`sgruppen (emm
 
 För båda grupperna `r xg1` och `r xg2` fann vi en signifikant höjning mellan behandlingsstart och `r xt3`mätning. För `r xg1`sgruppen var medelvärdesskillnaden `r xresult(aaas_ag.emmpairs.by.group$estimate[5] * -1)`, $t$(`r xresult(aaas_ag.emmpairs.by.group$df[5])`) = `r xresult(aaas_ag.emmpairs.by.group$statistic[5])`, $p$ = `r xresult(aaas_ag.emmpairs.by.group$p.value[5])`, effektstorlek `r xresult(aaas_ad.eff.by.group$effect.size[5] * -1)`, för `r xg2`sgruppen var den `r xresult(aaas_ag.emmpairs.by.group$estimate[8] * -1)`, $t$(`r xresult(aaas_ag.emmpairs.by.group$df[8])`) = `r xresult(aaas_ag.emmpairs.by.group$statistic[8])`, $p$ = `r xresult(aaas_ag.emmpairs.by.group$p.value[8])`, effektstorlek `r xresult(aaas_ad.eff.by.group$effect.size[8] * -1)`.
 
-Det är notabelt att medelvärdet för gruppen `r xg2` (som fick behandlarstöd) var lägre än för gruppen `r xg1` (som inte fick det) vid båda tidpunkterna. Båda behandlingsbetingelserna uppvisar en höjning av graden av aggressiv självhävdelse, i jämförelse med `r xg3`. Effekten var signifikant vid mittenmätningen för gruppen `r xg1`. Även höjningen av aggressiv självhävdelse mellan behandlingsstart och `r xt3`mätningen var för båda grupperna relativt stor. Se sammanfattning i \@ref(fig:effemmplotsag).
+Det är notabelt att medelvärdet för gruppen `r xg2` var lägre än för gruppen `r xg1`, som inte fick något behandlarstöd, vid båda tidpunkterna. Båda behandlingsbetingelserna uppvisar en höjning av graden av aggressiv självhävdelse, i jämförelse med `r xg3`. Effekten var signifikant vid mittenmätningen för gruppen `r xg1`. Även höjningen av aggressiv självhävdelse mellan behandlingsstart och `r xt3`mätningen var för båda grupperna relativt stor. Se sammanfattning i \@ref(fig:effemmplotsag).
 
 (ref:emmeffag) figurtext aaas_ag
 
@@ -1717,9 +1719,7 @@ options(OutDec= ".")
 
 ```
 
-<!-- Var effekten märkbar vid mittenmätningen för Ag? -->
-
-Slutligen ville vi också undersöka vilka prediktorer/moderatorer hos deltagarna (exempelvis grad av social ångest eller grad av depression) i behandlingsalternativen `r xg1` och `r xg2` som påverkar utfallet samt vilka mediatorer inom behandlingsalternativen (exempelvis tilldelning av terapeut) som påverkar utfallet. 
+<!-- Slutligen ville vi också undersöka vilka prediktorer/moderatorer hos deltagarna (exempelvis grad av social ångest eller grad av depression) i behandlingsalternativen `r xg1` och `r xg2` som påverkar utfallet samt vilka mediatorer inom behandlingsalternativen (exempelvis tilldelning av terapeut) som påverkar utfallet.  -->
 
 ```{r icc, eval=F}
 
@@ -1730,12 +1730,17 @@ performance::icc(aaas_ad.lmer)$ICC_adjusted
 
 #tab_model(aaas_ad.lmer,aaas_ag.lmer,rathus.lmer,lsas_sum.lmer,gad_sum.lmer,phq_sum.lmer,well.lmer)
 
+options(OutDec= ",")
 
 ```
 
-Det finns möjlighet att fortsätta analysera insamlad data. Med våra initiala flernivåanalyser konstaterar vi att ICC-värdet ger att `r xresult(performance::icc(aaas_ad.lmer)$ICC_adjusted * 100)`% av variansen i utfallsmåttet AAA-S Adaptive kan förklaras av individuella faktorer. För AAA-S Aggressive kan `r xresult(performance::icc(aaas_ag.lmer)$ICC_adjusted * 100)`% av variansen förklaras av individuella faktorer.
+<!-- Det finns möjlighet att fortsätta analysera insamlad data.  -->
+
+Med våra initiala flernivåanalyser konstaterar vi att ICC-värdet ger att `r xresult(performance::icc(aaas_ad.lmer)$ICC_adjusted * 100)`% av variansen i utfallsmåttet AAA-S Adaptive kan förklaras av individuella faktorer. För AAA-S Aggressive kan `r xresult(performance::icc(aaas_ag.lmer)$ICC_adjusted * 100)`% av variansen förklaras av individuella faktorer.
 
 ```{r stargazer, results='asis', eval=T}
+
+options(OutDec= ".")
 
 # https://cran.r-project.org/web/packages/stargazer/vignettes/stargazer.pdf
 # NB! We're using stargazer-booktabs to get prettier LaTeX table output
