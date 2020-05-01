@@ -1021,7 +1021,7 @@ Demografi.Kon.proc <- prop.table(Demografi.Kon.abs, 1)
 
 ```
 
-Vid analys av skillnader av sociodemografisk data fann vi en signifikant skillnad i könsfördelning mellan grupperna ($\chi^2$ = `r format(round(Demografi.Kon.chi$statistic,2),decimal.mark=",")`, $p$ = `r format(round(Demografi.Kon.chi$p.value,2),decimal.mark=",")`, df = `r format(round(Demografi.Kon.chi$parameter,2),decimal.mark=",")`). Gruppen `r xg2` hade vid parvisa uppföljningstest signifikant större andel män än både gruppen `r xg3` (p = `r format(round(Demografi.Kon.posthoc$res[1,4],2),decimal.mark=",")`) och gruppen `r xg1` (p = `r format(round(Demografi.Kon.posthoc$res[2,4],2),decimal.mark=",")`). I övrigt fann vi inte några skillnader i sociodemografiska variabler mellan grupperna.
+Vid analys av sociodemografisk data fann vi en signifikant skillnad i könsfördelning mellan grupperna ($\chi^2$ = `r format(round(Demografi.Kon.chi$statistic,2),decimal.mark=",")`, $p$ = `r format(round(Demografi.Kon.chi$p.value,2),decimal.mark=",")`, df = `r format(round(Demografi.Kon.chi$parameter,2),decimal.mark=",")`). Gruppen `r xg2` hade vid parvisa uppföljningstest signifikant större andel män än både gruppen `r xg3` (p = `r format(round(Demografi.Kon.posthoc$res[1,4],2),decimal.mark=",")`) och gruppen `r xg1` (p = `r format(round(Demografi.Kon.posthoc$res[2,4],2),decimal.mark=",")`). I övrigt fann vi inte några skillnader i sociodemografiska variabler mellan grupperna. Med oberoende variansanalys konstaterade vi att det inte fanns några signifikanta skillnader i några av utfallsmåtten mellan de olika grupperna vid behandlingens start.
 
 ```{r groupcontrols, eval = F}
 
@@ -1098,8 +1098,6 @@ anova(kontroll_well)
 # Ej signifikant = inga skillnader mellan grupperna
 
 ```
-
-Med oberoende variansanalys konstaterade vi att det inte fanns några signifikanta skillnader i några av utfallsmåtten mellan de olika grupperna vid behandlingens start.
 
 ```{r modelcomparisons, eval = F}
 
@@ -1300,7 +1298,11 @@ well.lmer <-
 
 ```
 
-Vi fann inga brott mot antagandena för flernivåanalys vid visuell granskning av diagnostiska plottar av de modeller som anpassats till observerade data. 
+Vid visuell granskning av diagnostiska plottar av observerad data fann vi inga brott mot antaganden för flernivåanalys.
+
+<!-- 
+Vi fann inga brott mot antagandena för flernivåanalys vid visuell granskning av diagnostiska plottar av de modeller som anpassats till observerade data.
+-->
 
 ```{r predicteddata, cache = T, eval = T}
 
