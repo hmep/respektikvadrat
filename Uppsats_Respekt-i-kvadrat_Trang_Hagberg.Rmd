@@ -1377,76 +1377,76 @@ library(effsize)
   #   within = T
   # )
   
-xhgn <-  function(num,x,y) {
-  cohen.d(
-    r2.new.data[x, num],
-    r2.new.data[y, num],
-    pooled = T,
-    na.rm = T,
-    hedges.correction = F,
-    conf.level = 0.95
-  )
-}
-
-ng1t2.eff <- c(
-xhgn(5,ng1t2,ng1t1)$estimate,
-xhgn(6,ng1t2,ng1t1)$estimate,
-xhgn(7,ng1t2,ng1t1)$estimate,
-xhgn(8,ng1t2,ng1t1)$estimate,
-xhgn(9,ng1t2,ng1t1)$estimate,
-xhgn(10,ng1t2,ng1t1)$estimate,
-xhgn(11,ng1t2,ng1t1)$estimate
-)
-
-ng1t3.eff <- c(
-xhgn(5,ng1t3,ng1t1)$estimate,
-xhgn(6,ng1t3,ng1t1)$estimate,
-xhgn(7,ng1t3,ng1t1)$estimate,
-xhgn(8,ng1t3,ng1t1)$estimate,
-xhgn(9,ng1t3,ng1t1)$estimate,
-xhgn(10,ng1t3,ng1t1)$estimate,
-xhgn(11,ng1t3,ng1t1)$estimate
-)
-
-ng2t2.eff <- c(
-xhgn(5,ng2t2,ng2t1)$estimate,
-xhgn(6,ng2t2,ng2t1)$estimate,
-xhgn(7,ng2t2,ng2t1)$estimate,
-xhgn(8,ng2t2,ng2t1)$estimate,
-xhgn(9,ng2t2,ng2t1)$estimate,
-xhgn(10,ng2t2,ng2t1)$estimate,
-xhgn(11,ng2t2,ng2t1)$estimate
-)
-
-ng2t3.eff <- c(
-xhgn(5,ng2t3,ng2t1)$estimate,
-xhgn(6,ng2t3,ng2t1)$estimate,
-xhgn(7,ng2t3,ng2t1)$estimate,
-xhgn(8,ng2t3,ng2t1)$estimate,
-xhgn(9,ng2t3,ng2t1)$estimate,
-xhgn(10,ng2t3,ng2t1)$estimate,
-xhgn(11,ng2t3,ng2t1)$estimate
-)
-
-ng3t2.eff <- c(
-xhgn(5,ng3t2,ng3t1)$estimate,
-xhgn(6,ng3t2,ng3t1)$estimate,
-xhgn(7,ng3t2,ng3t1)$estimate,
-xhgn(8,ng3t2,ng3t1)$estimate,
-xhgn(9,ng3t2,ng3t1)$estimate,
-xhgn(10,ng3t2,ng3t1)$estimate,
-xhgn(11,ng3t2,ng3t1)$estimate
-)
-
-ng3t3.eff <- c(
-xhgn(5,ng3t3,ng3t1)$estimate,
-xhgn(6,ng3t3,ng3t1)$estimate,
-xhgn(7,ng3t3,ng3t1)$estimate,
-xhgn(8,ng3t3,ng3t1)$estimate,
-xhgn(9,ng3t3,ng3t1)$estimate,
-xhgn(10,ng3t3,ng3t1)$estimate,
-xhgn(11,ng3t3,ng3t1)$estimate
-)
+# xhgn <-  function(num,x,y) {
+#   cohen.d(
+#     r2.new.data[x, num],
+#     r2.new.data[y, num],
+#     pooled = T,
+#     na.rm = T,
+#     hedges.correction = F,
+#     conf.level = 0.95
+#   )
+# }
+# 
+# ng1t2.eff <- c(
+# xhgn(5,ng1t2,ng1t1)$estimate,
+# xhgn(6,ng1t2,ng1t1)$estimate,
+# xhgn(7,ng1t2,ng1t1)$estimate,
+# xhgn(8,ng1t2,ng1t1)$estimate,
+# xhgn(9,ng1t2,ng1t1)$estimate,
+# xhgn(10,ng1t2,ng1t1)$estimate,
+# xhgn(11,ng1t2,ng1t1)$estimate
+# )
+# 
+# ng1t3.eff <- c(
+# xhgn(5,ng1t3,ng1t1)$estimate,
+# xhgn(6,ng1t3,ng1t1)$estimate,
+# xhgn(7,ng1t3,ng1t1)$estimate,
+# xhgn(8,ng1t3,ng1t1)$estimate,
+# xhgn(9,ng1t3,ng1t1)$estimate,
+# xhgn(10,ng1t3,ng1t1)$estimate,
+# xhgn(11,ng1t3,ng1t1)$estimate
+# )
+# 
+# ng2t2.eff <- c(
+# xhgn(5,ng2t2,ng2t1)$estimate,
+# xhgn(6,ng2t2,ng2t1)$estimate,
+# xhgn(7,ng2t2,ng2t1)$estimate,
+# xhgn(8,ng2t2,ng2t1)$estimate,
+# xhgn(9,ng2t2,ng2t1)$estimate,
+# xhgn(10,ng2t2,ng2t1)$estimate,
+# xhgn(11,ng2t2,ng2t1)$estimate
+# )
+# 
+# ng2t3.eff <- c(
+# xhgn(5,ng2t3,ng2t1)$estimate,
+# xhgn(6,ng2t3,ng2t1)$estimate,
+# xhgn(7,ng2t3,ng2t1)$estimate,
+# xhgn(8,ng2t3,ng2t1)$estimate,
+# xhgn(9,ng2t3,ng2t1)$estimate,
+# xhgn(10,ng2t3,ng2t1)$estimate,
+# xhgn(11,ng2t3,ng2t1)$estimate
+# )
+# 
+# ng3t2.eff <- c(
+# xhgn(5,ng3t2,ng3t1)$estimate,
+# xhgn(6,ng3t2,ng3t1)$estimate,
+# xhgn(7,ng3t2,ng3t1)$estimate,
+# xhgn(8,ng3t2,ng3t1)$estimate,
+# xhgn(9,ng3t2,ng3t1)$estimate,
+# xhgn(10,ng3t2,ng3t1)$estimate,
+# xhgn(11,ng3t2,ng3t1)$estimate
+# )
+# 
+# ng3t3.eff <- c(
+# xhgn(5,ng3t3,ng3t1)$estimate,
+# xhgn(6,ng3t3,ng3t1)$estimate,
+# xhgn(7,ng3t3,ng3t1)$estimate,
+# xhgn(8,ng3t3,ng3t1)$estimate,
+# xhgn(9,ng3t3,ng3t1)$estimate,
+# xhgn(10,ng3t3,ng3t1)$estimate,
+# xhgn(11,ng3t3,ng3t1)$estimate
+# )
 
 numvars <- c(5:11) # Variables in r2.new.data that we are interested in
 
@@ -1469,48 +1469,38 @@ descriptives.out <- rbind(
   xg1t2 = cbind(
     descriptives.ng1t2[c(9, 13), c(3,2,1,4:7)]
     ),
-  xg1t2eff = ng1t2.eff,
+  # xg1t2eff = ng1t2.eff,
   xg1t3 = cbind(
     descriptives.ng1t3[c(9, 13), c(3,2,1,4:7)]
     ),
-  xg1t3eff = ng1t3.eff,
+  # xg1t3eff = ng1t3.eff,
   xg2t1 = cbind(
     descriptives.ng2t1[c(9, 13), c(3,2,1,4:7)]
   ),
   xg2t2 = cbind(
     descriptives.ng2t2[c(9, 13), c(3,2,1,4:7)]
   ),
-  xg2t2eff = ng2t2.eff,
+  # xg2t2eff = ng2t2.eff,
   xg2t3 = cbind(
     descriptives.ng2t3[c(9, 13), c(3,2,1,4:7)]
   ),
-  xg2t3eff = ng2t3.eff,
+  # xg2t3eff = ng2t3.eff,
   xg3t1 = cbind(
     descriptives.ng3t1[c(9, 13), c(3,2,1,4:7)]
   ),
   xg3t2 = cbind(
     descriptives.ng3t2[c(9, 13), c(3,2,1,4:7)]
   ),
-  xg3t2eff = ng3t2.eff,
+  # xg3t2eff = ng3t2.eff,
   xg3t3 = cbind(
     descriptives.ng3t3[c(9, 13), c(3,2,1,4:7)]
   ),
-  xg3t3eff = ng3t3.eff
+  # xg3t3eff = ng3t3.eff
   )
 
-colnames(descriptives.out) <-
-  rep(
-    c(
-      "AAA-S Ad",
-      "AAA-S Ag",
-      "Rathus",
-      "LSAS-SR",
-      "GAD-7",
-      "PHQ-9",
-      "Välmående"
-    ),
-    times = 1 #2
-  )
+scalenames = c("AAA-S Ad", "AAA-S Ag", "Rathus", "LSAS-SR", "GAD-7", "PHQ-9", "Välmåendef.")
+
+colnames(descriptives.out) <- scalenames
 
 descriptives.out.rot <- t(descriptives.out)
 
