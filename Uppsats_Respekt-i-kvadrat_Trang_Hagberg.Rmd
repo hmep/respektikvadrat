@@ -913,9 +913,9 @@ svkable(intervention.tabell, caption = "(ref:interv)", align="rll") %>%
 
 ## Behandlingsplattformen
 
-I studien användes behandlingsplattformen `r xiterapi` Det är en plattform som använts upprepade gånger vid forskning på internetbaserade psykologiska interventioner och behandlingar. Plattformen använder sig av tvåfaktorsautentisering och är krypterad. I rådande fall innebar det att deltagarna blev tilldelade en anonym studiekod till vilken de valde ett eget lösenord. Vid varje inloggningstillfälle skickades sedan engångskoder till deras mobiltelefoner per SMS.
+I studien användes behandlingsplattformen `r xiterapi` Det är en plattform som använts upprepade gånger vid forskning på internetbaserade psykologiska interventioner och behandlingar. Plattformen använder sig av tvåfaktorsautentisering och är krypterad. Deltagarna blev tilldelade en anonym studiekod till vilken de valde ett eget lösenord. Vid varje inloggningstillfälle skickades sedan en engånskod per SMS.
 
-Alla deltagare fyllde i för-, halvtids- och eftermätning via plattformen. Alla moduler och övningar gick att nå via plattformen. De deltagare som tillhörde gruppen `r xg2` konverserade uteslutande med sina behandlare via plattformens meddelandefunktion.
+Vid screening i samband med anmälan lämnade samtliga deltagare svar på förmätningen. Alla antagna deltagare uppmanades att fylla i halvtids- och eftermätning via plattformen. Alla moduler och övningar gick att nå via plattformen. De deltagare som tillhörde gruppen `r xg2` konverserade uteslutande med sina behandlare via plattformens meddelandefunktion.
 
 ## Etiska aspekter
 
