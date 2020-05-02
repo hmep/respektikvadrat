@@ -1891,7 +1891,7 @@ z <- t(y)
 
 colnames(z) <- c("AAA-S Ad", "AAA-S Ag", "Rathus", "LSAS-SR", "GAD-7", "PHQ-9", "Välm.")
 
-xeff = "EF"
+xeff = "ES"
 
 descriptives.col.out <- cbind.data.frame(
   "Betingelse" = rep(c(
