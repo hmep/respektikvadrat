@@ -1027,7 +1027,7 @@ Demografi.Kon.proc <- prop.table(Demografi.Kon.abs, 1)
 # Inga signifikanta skillnader = inga skillnader mellan grupperna
 
 #xresult <- function(x){format(x,decimal.mark=",")}
-xresult <- function(x){paste("$",prettyNum(x,decimal.mark=",",digits=2),"$",sep="")}
+xresult <- function(x){format(round(x,digits=2),decimal.mark=",")}
 
 xpr <- function(x) {
   paste("$p$",
@@ -1708,7 +1708,7 @@ rathus.sigsig = kruskal.test(
 
 ```
 
-Inga signifikanta skillnader mellan grupperna i andel personer som uppnått både klinisk signikans-status och reliabel förbättring fanns för de primära utfallsmåtten AAA-S Adaptive och AAA-S Aggressive. För båda måtten definerades ökning i poäng som en förbättring. Vi fann en signifikant skillnad mellan grupperna för självhävdelseskalan Rathus ($\chi^2_`r xresult(rathus.sigsig[["parameter"]])`$ = `r xresult(rathus.sigsig$statistic)`, `r xpr(rathus.sigsig[["p.value"]])`). Se tabell \@ref(tab:jtprocent) för en sammanställning av kliniskt signifikanta och reliabla förändringarna inom de olika grupperna.
+Inga signifikanta skillnader mellan grupperna i andel personer som uppnått både klinisk signikans-status och reliabel förbättring fanns för de primära utfallsmåtten AAA-S Adaptive och AAA-S Aggressive. För båda måtten definerades ökning i poäng som en förbättring. Vi fann en signifikant skillnad mellan grupperna för självhävdelseskalan Rathus ($\chi^2_{`r xresult(rathus.sigsig[["parameter"]])`}$ = `r xresult(rathus.sigsig$statistic)`, `r xpr(rathus.sigsig[["p.value"]])`). Se tabell \@ref(tab:jtprocent) för en sammanställning av kliniskt signifikanta och reliabla förändringarna inom de olika grupperna.
 
 (ref:jtp) Antal och andel i procent av deltagare i respektive grupp som vid behandlingens slut tillhör de olika kategorierna med överlapp mellan klinisk signifikans och reliabel förändring. Deltagare som endast har lämnat förmätningsvärden har fått dessa värden framflyttade till följande mättillfällen. 
 
@@ -2051,7 +2051,7 @@ Nudge_x = c(0,0.1,0.1,0,0,0,0,-0.1,-0.1) * 1.3
 Nudge_y = c(0,-0.55,0.55,0,0.55,-0.55,0,0.55,-0.55) * 2
 
 aaas_ad.emm.plot <- 
-  plot(ggemmeans(aaas_ad.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = NA, colour = "Grupp:", title = element_blank()) + theme(legend.position = "top", axis.title.y = element_blank())
+  plot(ggemmeans(aaas_ad.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = NA, colour = "Grupp:", title = element_blank()) + theme(legend.position = "bottom", axis.title.y = element_blank())
 
 #,arrow = arrow(length = unit(0.05, "npc"))
 ad1 <- aaas_ad.emm.plot + 
@@ -2111,7 +2111,7 @@ Nudge_x = c(0,0.1,0.1,0,0,0,0,-0.1,-0.1) * 1.3
 Nudge_y = c(0,-0.55,0.55,0,0.55,-0.55,0,0.55,-0.55) * 2
 
 aaas_ag.emm.plot <- 
-  plot(ggemmeans(aaas_ag.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = NA, colour = "Grupp:", title = element_blank()) + theme(legend.position = "top", axis.title.y = element_blank())
+  plot(ggemmeans(aaas_ag.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = NA, colour = "Grupp:", title = element_blank()) + theme(legend.position = "bottom", axis.title.y = element_blank())
 
 #,arrow = arrow(length = unit(0.05, "npc"))
 ag1 <- aaas_ag.emm.plot + 
