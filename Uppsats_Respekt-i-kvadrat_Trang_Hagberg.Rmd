@@ -2145,7 +2145,7 @@ options(OutDec= ",")
 
 <!-- Det finns möjlighet att fortsätta analysera insamlad data.  -->
 
-Med våra initiala flernivåanalyser konstaterar vi att ICC-värdet ger att <!-- `r format(performance::icc(aaas_ad.lmer)$ICC_adjusted * 100,decimal.mark=",")`% --> 68% av variansen i utfallsmåttet AAA-S Adaptive kan förklaras av individuella faktorer. För AAA-S Aggressive kan <!-- `r format(performance::icc(aaas_ag.lmer)$ICC_adjusted * 100,decimal.mark=",")`% --> 74% av variansen förklaras av individuella faktorer.
+Med våra initiala flernivåanalyser konstaterar vi att ICC-värdet ger att `r xresult(performance::icc(aaas_ad.lmer)$ICC_adjusted * 100)`% av variansen i utfallsmåttet AAA-S Adaptive kan förklaras av individuella faktorer. För AAA-S Aggressive kan `r xresult(performance::icc(aaas_ad.lmer)$ICC_adjusted * 100)`% av variansen förklaras av individuella faktorer.
 
 ```{r stargazer, results='asis', eval=T}
 
