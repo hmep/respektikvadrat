@@ -1024,7 +1024,7 @@ Demografi.Kon.proc <- prop.table(Demografi.Kon.abs, 1)
 # Inga signifikanta skillnader = inga skillnader mellan grupperna
 
 #xresult <- function(x){format(x,decimal.mark=",")}
-xresult <- function(x){format(x,decimal.mark=",",digits=2)}
+xresult <- function(x){format(x,decimal.mark=",",digits=3)}
 
 xpr <- function(x) {
   paste("$p$",
@@ -1705,7 +1705,7 @@ rathus.sigsig = kruskal.test(
 
 ```
 
-Inga signifikanta skillnader mellan grupperna i andel personer som uppnått både klinisk signikans-status och reliabel förbättring fanns för de primära utfallsmåtten AAA-S Adaptive och AAA-S Aggressive. För båda måtten definerades ökning i poäng som en förbättring. Vi fann en signifikant skillnad mellan grupperna för självhävdelseskalan Rathus ($\chi^2_`r rathus.sigsig$parameter`$ = `r rathus.sigsig$statistic`, `r xpr(rathus.sigsig[["p.value"]])`). Se tabell \@ref(tab:jtprocent) för en sammanställning av kliniskt signifikanta och reliabla förändringarna inom de olika grupperna.
+Inga signifikanta skillnader mellan grupperna i andel personer som uppnått både klinisk signikans-status och reliabel förbättring fanns för de primära utfallsmåtten AAA-S Adaptive och AAA-S Aggressive. För båda måtten definerades ökning i poäng som en förbättring. Vi fann en signifikant skillnad mellan grupperna för självhävdelseskalan Rathus ($\chi^2_`r xresult(rathus.sigsig$parameter)`$ = `r xresult(rathus.sigsig$statistic)`, `r xpr(rathus.sigsig[["p.value"]])`). Se tabell \@ref(tab:jtprocent) för en sammanställning av kliniskt signifikanta och reliabla förändringarna inom de olika grupperna.
 
 (ref:jtp) Antal och andel i procent av deltagare i respektive grupp som vid behandlingens slut tillhör de olika kategorierna med överlapp mellan klinisk signifikans och reliabel förändring. Deltagare som endast har lämnat förmätningsvärden har fått dessa värden framflyttade till följande mättillfällen. 
 
