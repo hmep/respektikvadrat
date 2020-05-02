@@ -1,15 +1,11 @@
 ---
-title             : |
-  | \LARGE konstruktiv sj&auml;lvh&auml;vdelse
-  | \vspace{0.3cm} \Large _en randomiserad kontrollerad effektstudie av internetf&ouml;rmedlad_
-  | \Large _kognitiv beteendeterapi_
-  | \LARGE Respekt i kvadrat: ett tr&auml;ningsprogram f&ouml;r
+title             : "En randomiserad kontrollerad effektstudie av kognitiv beteendeterapi för konstruktiv självhävdelse"
 shorttitle        : "Respekt i kvadrat"
 author: 
   - name          : "Tobias Hagberg"
     email         : "tobias@hagberg.com"
     address       : "Psykologprogrammet, Psykologiska institutionen, Stockholms universitet"
-  - name          : "Patrik Trang"
+  - name          : "Patrik Trång"
     email         : "patrik.trang@gmail.com"
 affiliation:
   - institution   : "Psykologiska institutionen, Stockholms universitet"
@@ -53,6 +49,12 @@ editor_options:
 ---
 
 ```{r preferences, include = F, cache = F}
+
+# title             : |
+#   | \LARGE konstruktiv sj&auml;lvh&auml;vdelse
+#   | \vspace{0.3cm} \Large _en randomiserad kontrollerad effektstudie av internetf&ouml;rmedlad_
+#   | \Large _kognitiv beteendeterapi_
+#   | \LARGE Respekt i kvadrat: ett tr&auml;ningsprogram f&ouml;r
 
 set.seed(42) # Seed for random number generation
 
@@ -777,8 +779,8 @@ library("kableExtra")
 knitr::kable(demdata.tabell, format="latex", booktabs=T, caption = "(ref:dem)", align="ccc") %>%
   kable_styling(full_width = F) %>%
   column_spec(1, width = "12em") %>%
-  column_spec(2, width = "5.5em") %>%
-  column_spec(3, width = "5.5em") %>%
+  column_spec(2, width = "6.5em") %>%
+  column_spec(3, width = "6.5em") %>%
   column_spec(4, width = "5.5em") %>%
   column_spec(5, width = "5.5em") %>%
   pack_rows("Ålder (år)", 1, 1, bold = F) %>%
