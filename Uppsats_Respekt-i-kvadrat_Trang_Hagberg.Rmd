@@ -1,9 +1,9 @@
 ---
 title             : |
-  | \LARGE Respekt i kvadrat: ett tr&auml;ningsprogram f&ouml;r
   | \LARGE konstruktiv sj&auml;lvh&auml;vdelse
   | \vspace{0.3cm} \Large _en randomiserad kontrollerad effektstudie av internetf&ouml;rmedlad_
   | \Large _kognitiv beteendeterapi_
+  | \LARGE Respekt i kvadrat: ett tr&auml;ningsprogram f&ouml;r
 shorttitle        : "Respekt i kvadrat"
 author: 
   - name          : "Tobias Hagberg"
@@ -1717,105 +1717,13 @@ svkable(jtrci.tab[,c(7,1:6)], align="lcccccc", caption = '(ref:jtp)') %>%
 
 ```
 
-Se tabell \@ref(tab:descriptives) (INTE KLAR ÄNNU) för en sammanställning av predicerade data från de olika modellerna för respektive utfallsmått, inklusive uppskattade effektstorlekar.
+Se tabell \@ref(tab:descriptives) för en sammanställning av predicerade data från de olika modellerna för respektive utfallsmått, inklusive uppskattade effektstorlekar.
 
 <!-- 
 Patrik: Jag tycker ovan mening (som refererar till alla medelvärden) kan flyttas upp i resultatdelen så att den kommer direkt efter meningen "Med oberoende variansanalys konstaterade vi att det inte fanns några signifikanta skillnader i några av utfallsmåtten mellan de olika grupperna vid behandlingens start.". Möjligen att den då behöver skrivas om lite men jag tror att det passar bra i flödet så att säga. " [...] grupperna vid behandlingens start. Se även tabell X för en sammanställning av predicerade data/värden (?) för respektive utfallsmått modell".
 -->
 
-(ref:descriptives) Estimerade medelvärden (och standardavvikelser) samt effektstorlekar för utfallsmåtten i de olika grupperna och vid de olika mättillfällena.
-
-```{r descriptives, fig.align="center", cache = T, eval = T}
-
-xg1 = "självhjälp"
-xg2 = "behandlarstöd"
-xg3 = "väntelista"
-
-xt1 = "före"
-xt2 = "mitten"
-xt3 = "efter"
-
-ng1t1 <- r2.new.data$group == xg1 & r2.new.data$time == xt1
-ng1t2 <- r2.new.data$group == xg1 & r2.new.data$time == xt2
-ng1t3 <- r2.new.data$group == xg1 & r2.new.data$time == xt3
-
-# ng2t1 <- r2.new.data$group == "behandlarstöd" & r2.new.data$time == xt1
-# ng2t2 <- r2.new.data$group == "behandlarstöd" & r2.new.data$time == xt2
-# ng2t3 <- r2.new.data$group == "behandlarstöd" & r2.new.data$time == xt3
-ng2t1 <- r2.new.data$group == xg2 & r2.new.data$time == xt1
-ng2t2 <- r2.new.data$group == xg2 & r2.new.data$time == xt2
-ng2t3 <- r2.new.data$group == xg2 & r2.new.data$time == xt3
-
-ng3t1 <- r2.new.data$group == xg3 & r2.new.data$time == xt1
-ng3t2 <- r2.new.data$group == xg3 & r2.new.data$time == xt2
-ng3t3 <- r2.new.data$group == xg3 & r2.new.data$time == xt3
-
-library(psych)
-
-a <- psych::describe(r2.new.data[ng1t1,])[,c(3:4)]
-b <- psych::describe(r2.new.data[ng1t2,])[,c(3:4)]
-c <- psych::describe(r2.new.data[ng1t3,])[,c(3:4)]
-d <- psych::describe(r2.new.data[ng2t1,])[,c(3:4)]
-e <- psych::describe(r2.new.data[ng2t2,])[,c(3:4)]
-f <- psych::describe(r2.new.data[ng2t3,])[,c(3:4)]
-g <- psych::describe(r2.new.data[ng3t1,])[,c(3:4)]
-h <- psych::describe(r2.new.data[ng3t2,])[,c(3:4)]
-i <- psych::describe(r2.new.data[ng3t3,])[,c(3:4)]
-
-y <- cbind(a,b,c,d,e,f,g,h,i)
-
-z <- as.data.frame(t(y)[,c(7,6,5,8:11)])
-
-colnames(z) <- c("AAA-S Ad", "AAA-S Ag", "Rathus", "LSAS-SR", "GAD-7", "PHQ-9", "Välmåendef.")
-
-knitr::kable(z,format="latex")
-
-# xeff = "EF"
-# 
-# colnames(descriptives.out) = scalenames
-# 
-# descriptives.col.out <- cbind.data.frame(
-#   "Betingelse" = rep(c(
-#     paste(xg1, ", n = ", ll1, sep = ""),
-#     paste(xg2, ", n = ", ll2, sep = ""),
-#     paste(xg3, ", n = ", ll3, sep = "")
-#   ), each = 8),
-#   "Mättillfälle" = rep(c(
-#     rep(c("Förmätning"), times = 2), rep(c("Mittenmätning"), times = 3), rep(c("Eftermätning"), times = 3)
-#   ), times = 3),
-#   " " = rep(c(
-#     rep(c("M", "SD"), times = 2),
-#     paste(xeff),
-#     rep(c("M", "SD"), times = 1),
-#     paste(xeff)), times = 3),
-#   round(descriptives.out, 1)
-# )
-
-# options(OutDec= ".") 
-
-#  add_header_above(c("", "Självhjälp (N = 67)" = 3, "Med stöd (N = 69)" = 3, "Väntelista (N = 68)" = 3)) %>% #, "All (N = 204)" = 2)) %>%
-
-# row_group_label_fonts <- list(
-# list(bold = T, italic = F),
-# list(bold = F, italic = T)
-# )
-
-#enkable(x, caption = "")
-
-# svkable(descriptives.col.out[], caption = "(ref:descriptives)", align="rrrcccccc") %>%
-#   column_spec(1, bold=T) %>%
-#   collapse_rows(1:3,latex_hline = 'custom', custom_latex_hline = 1:2, row_group_label_position = 'stack',row_group_label_fonts = row_group_label_fonts) %>%
-#   add_header_above(c(" " = 3, "Primära utfallsmått" = 2, "Sekundära utfallsmått" = 5))
-
-```
-
-Estimat av intercept och regressionskoefficienter för de olika primära och sekundära utfallsmåtten sammanfattas i tabell \@ref(stargazertab). Intercept och lutningskoefficienter som anges i tabellen för respektive utfallsmått kan läggas in i regressionsformeln för modellen för att predicera utfall för alla kombinationer av grupptillhörighet och mättillfällen.
-
-## Skillnad i effekt på konstruktiv självhävdelse mellan `r xg1`--`r xg2`
-
-Vår primära frågeställning var om det fanns någon skillnad (i endera riktning) i effekt mellan gruppen `r xg1` och gruppen `r xg2` med avseende på konstruktiv självhävdelse (det vill säga med utfallsmåttet AAA-S Adaptive).
-
-```{r emmeff}
+```{r emmeff, eval = T}
 
 require(emmeans)
 require(ggeffects)
@@ -1846,11 +1754,171 @@ aaas_ag.sd <- sqrt(5.6919^2 + 3.3895^2) # VarCorr(aaas_ag.lmer)
 aaas_ag.eff.by.group <- tidy(eff_size(aaas_ag.emm.by.group, sigma = aaas_ag.sd, edf = df.residual(aaas_ag.lmer)))
 aaas_ag.eff.by.time <- tidy(eff_size(aaas_ag.emm.by.time, sigma = aaas_ag.sd, edf = df.residual(aaas_ag.lmer)))
 
+# Rathus
+
+rathus.emm.by.group <- emmeans(rathus.lmer, ~ time | group, adjust="bonferroni")
+rathus.sd <- sqrt(19.908^2 + 11.678^2) # VarCorr(rathus.lmer)
+rathus.eff.by.group <- tidy(eff_size(rathus.emm.by.group, sigma = rathus.sd, edf = df.residual(rathus.lmer)))
+
+# LSAS-SR
+
+lsas_sum.emm.by.group <- emmeans(lsas_sum.lmer, ~ time | group, adjust="bonferroni")
+lsas_sum.sd <- sqrt(19.1059^2 + 8.7701^2) # VarCorr(lsas_sum.lmer)
+lsas_sum.eff.by.group <- tidy(eff_size(lsas_sum.emm.by.group, sigma = lsas_sum.sd, edf = df.residual(lsas_sum.lmer)))
+
+# GAD-7
+
+gad_sum.emm.by.group <- emmeans(gad_sum.lmer, ~ time | group, adjust="bonferroni")
+gad_sum.sd <- sqrt(3.1746^2 + 2.72911^2) # VarCorr(gad_sum.lmer)
+gad_sum.eff.by.group <- tidy(eff_size(gad_sum.emm.by.group, sigma = gad_sum.sd, edf = df.residual(gad_sum.lmer)))
+
+# PHQ-9
+
+phq_sum.emm.by.group <- emmeans(phq_sum.lmer, ~ time | group, adjust="bonferroni")
+phq_sum.sd <- sqrt(2.9778^2 + 3.0234^2) # VarCorr(phq_sum.lmer)
+phq_sum.eff.by.group <- tidy(eff_size(phq_sum.emm.by.group, sigma = phq_sum.sd, edf = df.residual(phq_sum.lmer)))
+
+# Välmåendeformuläret
+
+well.emm.by.group <- emmeans(well.lmer, ~ time | group, adjust="bonferroni")
+well.sd <- sqrt(8.6002^2 + 7.2944^2) # VarCorr(well.lmer)
+well.eff.by.group <- tidy(eff_size(well.emm.by.group, sigma = well.sd, edf = df.residual(well.lmer)))
+
 options(OutDec= ",")
 
-#svkable(aaas_ag.emm.by.group,linesep="", caption = 'AAA-S Aggressive')
+```
+
+
+(ref:descriptives) Estimerade medelvärden (och standardavvikelser) samt effektstorlekar för utfallsmåtten i de olika grupperna och vid de olika mättillfällena.
+
+```{r descriptives, fig.align="center", cache = T, eval = T}
+
+ng1t1 <- r2.new.data$group == xg1 & r2.new.data$time == xt1
+ng1t2 <- r2.new.data$group == xg1 & r2.new.data$time == xt2
+ng1t3 <- r2.new.data$group == xg1 & r2.new.data$time == xt3
+
+ng2t1 <- r2.new.data$group == xg2 & r2.new.data$time == xt1
+ng2t2 <- r2.new.data$group == xg2 & r2.new.data$time == xt2
+ng2t3 <- r2.new.data$group == xg2 & r2.new.data$time == xt3
+
+ng3t1 <- r2.new.data$group == xg3 & r2.new.data$time == xt1
+ng3t2 <- r2.new.data$group == xg3 & r2.new.data$time == xt2
+ng3t3 <- r2.new.data$group == xg3 & r2.new.data$time == xt3
+
+library(psych)
+
+xa <- psych::describe(r2.new.data[ng1t1,])[,c(3:4)][c(7,6,5,8:11),]
+xb <- psych::describe(r2.new.data[ng1t2,])[,c(3:4)][c(7,6,5,8:11),]
+xc <- psych::describe(r2.new.data[ng1t3,])[,c(3:4)][c(7,6,5,8:11),]
+xd <- psych::describe(r2.new.data[ng2t1,])[,c(3:4)][c(7,6,5,8:11),]
+xe <- psych::describe(r2.new.data[ng2t2,])[,c(3:4)][c(7,6,5,8:11),]
+xf <- psych::describe(r2.new.data[ng2t3,])[,c(3:4)][c(7,6,5,8:11),]
+xg <- psych::describe(r2.new.data[ng3t1,])[,c(3:4)][c(7,6,5,8:11),]
+xh <- psych::describe(r2.new.data[ng3t2,])[,c(3:4)][c(7,6,5,8:11),]
+xi <- psych::describe(r2.new.data[ng3t3,])[,c(3:4)][c(7,6,5,8:11),]
+
+y <- cbind(
+  xa,
+  cbind(xb,"es"=c(
+      aaas_ad.eff.by.group[1,4]$effect.size,
+      aaas_ag.eff.by.group[1,4]$effect.size,
+      rathus.eff.by.group[1,4]$effect.size,
+      lsas_sum.eff.by.group[1,4]$effect.size,
+      gad_sum.eff.by.group[1,4]$effect.size,
+      phq_sum.eff.by.group[1,4]$effect.size,
+      well.eff.by.group[1,4]$effect.size
+    )),
+    cbind(xc,"es"=c(
+      aaas_ad.eff.by.group[2,4]$effect.size,
+      aaas_ag.eff.by.group[2,4]$effect.size,
+      rathus.eff.by.group[2,4]$effect.size,
+      lsas_sum.eff.by.group[2,4]$effect.size,
+      gad_sum.eff.by.group[2,4]$effect.size,
+      phq_sum.eff.by.group[2,4]$effect.size,
+      well.eff.by.group[2,4]$effect.size
+    )),
+  xd,
+  cbind(xe,"es"=c(
+      aaas_ad.eff.by.group[4,4]$effect.size * -1,
+      aaas_ag.eff.by.group[4,4]$effect.size * -1,
+      rathus.eff.by.group[4,4]$effect.size * -1,
+      lsas_sum.eff.by.group[4,4]$effect.size * -1,
+      gad_sum.eff.by.group[4,4]$effect.size * -1,
+      phq_sum.eff.by.group[4,4]$effect.size * -1,
+      well.eff.by.group[4,4]$effect.size * -1
+    )),
+    cbind(xf,"es"=c(
+      aaas_ad.eff.by.group[5,4]$effect.size * -1,
+      aaas_ag.eff.by.group[5,4]$effect.size * -1,
+      rathus.eff.by.group[5,4]$effect.size * -1,
+      lsas_sum.eff.by.group[5,4]$effect.size * -1,
+      gad_sum.eff.by.group[5,4]$effect.size * -1,
+      phq_sum.eff.by.group[5,4]$effect.size * -1,
+      well.eff.by.group[5,4]$effect.size * -1
+    )),
+  xg,cbind(xh,"es"=c(
+      aaas_ad.eff.by.group[7,4]$effect.size * -1,
+      aaas_ag.eff.by.group[7,4]$effect.size * -1,
+      rathus.eff.by.group[7,4]$effect.size * -1,
+      lsas_sum.eff.by.group[7,4]$effect.size * -1,
+      gad_sum.eff.by.group[7,4]$effect.size * -1,
+      phq_sum.eff.by.group[7,4]$effect.size * -1,
+      well.eff.by.group[7,4]$effect.size * -1
+    )),cbind(xi,"es"=c(
+      aaas_ad.eff.by.group[8,4]$effect.size * -1,
+      aaas_ag.eff.by.group[8,4]$effect.size * -1,
+      rathus.eff.by.group[8,4]$effect.size * -1,
+      lsas_sum.eff.by.group[8,4]$effect.size * -1,
+      gad_sum.eff.by.group[8,4]$effect.size * -1,
+      phq_sum.eff.by.group[8,4]$effect.size * -1,
+      well.eff.by.group[8,4]$effect.size * -1
+    ))
+  )
+
+z <- t(y)
+
+colnames(z) <- c("AAA-S Ad", "AAA-S Ag", "Rathus", "LSAS-SR", "GAD-7", "PHQ-9", "Välm.")
+
+xeff = "EF"
+
+descriptives.col.out <- cbind.data.frame(
+  "Betingelse" = rep(c(
+    paste(xG1, ", n = ", ll1, sep = ""),
+    paste(xG2, ", n = ", ll2, sep = ""),
+    paste(xG3, ", n = ", ll3, sep = "")
+  ), each = 8),
+  "Mättillfälle" = rep(c(
+    rep(c(xT1), times = 2), rep(c(xT2), times = 3), rep(c(xT3), times = 3)
+  ), times = 3),
+  " " = rep(c(
+    rep(c("M", "SD"), times = 2),
+    paste(xeff),
+    rep(c("M", "SD"), times = 1),
+    paste(xeff)
+  ), times = 3),
+  round(z, 1)
+)
+
+row_group_label_fonts <- list(
+list(bold = T, italic = F),
+list(bold = F, italic = F)
+)
+
+rownames(descriptives.col.out) <- NULL
+
+svkable(descriptives.col.out, caption = "(ref:descriptives)", align="lllccccccc") %>%
+  column_spec(1:3, width = "1em") %>%
+  collapse_rows(1:3, latex_hline = "major", valign = "middle", row_group_label_position = "stack") %>%
+  add_header_above(c(" " = 3, "Primära utfallsmått" = 2, "Sekundära utfallsmått" = 5))
+
 
 ```
+
+Estimat av intercept och regressionskoefficienter för de olika primära och sekundära utfallsmåtten sammanfattas i tabell \@ref(stargazertab). Intercept och lutningskoefficienter som anges i tabellen för respektive utfallsmått kan läggas in i regressionsformeln för modellen för att predicera utfall för alla kombinationer av grupptillhörighet och mättillfällen.
+
+## Skillnad i effekt på konstruktiv självhävdelse mellan `r xg1`--`r xg2`
+
+Vår primära frågeställning var om det fanns någon skillnad (i endera riktning) i effekt mellan gruppen `r xg1` och gruppen `r xg2` med avseende på konstruktiv självhävdelse (det vill säga med utfallsmåttet AAA-S Adaptive).
 
 Vi fann ingen skillnad i utfall med AAA-S Adaptive vid `r xt3`mätningen mellan gruppen `r xg1` och gruppen `r xg2`. Vi fann inte heller någon skillnad i effekt vid `r xt2`mätningen. Skillnaden i konstruktiv självhävdelse vid `r xt3`mätningen är försumbar mellan de som fått behandlarstöd och de som har fått klara sig på egen hand.
 
@@ -1863,8 +1931,6 @@ Vi var också intresserade av hur effekten av deltagande i grupperna `r xg1` och
 ### Konstruktiv självhävdelse
 
 #### `r xG3`--`r xg1` vid `r xt3`mätningen
-
-
 
 Vi fann en högre medelpoäng på AAA-S Adaptive för gruppen `r xg1` (estimerat marginalmedelvärde [emm] `r xresult(tidy(aaas_ad.emm.by.time)$estimate[8])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[8])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[8])`]) än för gruppen `r xg3` (emm `r xresult(tidy(aaas_ad.emm.by.time)$estimate[7])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[7])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[7])`]) vid `r xt3`mätningen, 
 medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.time$estimate[7] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.time$df[7])`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[7])`; `r xpr(aaas_ad.emmpairs.by.time[["p.value"]][7])`; effektstorlek `r xresult(aaas_ad.eff.by.time$effect.size[7] * -1)`.
