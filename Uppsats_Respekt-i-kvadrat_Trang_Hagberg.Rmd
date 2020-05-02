@@ -1024,7 +1024,7 @@ Demografi.Kon.proc <- prop.table(Demografi.Kon.abs, 1)
 # Inga signifikanta skillnader = inga skillnader mellan grupperna
 
 #xresult <- function(x){format(x,decimal.mark=",")}
-xresult <- function(x){x}
+xresult <- function(x){format(x,decimal.mark=",",digits=2)}
 
 xpr <- function(x) {
   paste("$p$",
@@ -2019,7 +2019,7 @@ medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.time$estimate[8] * -1)`, $t$
 
 #### Behandlingseffekt mellan behandlingsstart och `r xt3`mätning
 
-För både gruppen `r xg1` och gruppen `r xg2` fann vi en klar förbättring mellan behandlingsstart och `r xt3`mätning, medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.group$estimate[5] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.group$df[5])`}\) = `r xresult(aaas_ad.emmpairs.by.group$statistic[5]) * -1`, `r xpr(aaas_ad.emmpairs.by.group[["p.value"]][5])`, effektstorlek `r xresult(aaas_ad.eff.by.group$effect.size[5] * -1)` respektive medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.group$estimate[8] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.group$df[8])`}\) = `r xresult(aaas_ad.emmpairs.by.group$statistic[8])`, `r xpr(aaas_ad.emmpairs.by.group[["p.value"]][8])`, effektstorlek `r xresult(aaas_ad.eff.by.group$effect.size[8] * -1)`.
+För både gruppen `r xg1` och gruppen `r xg2` fann vi en klar förbättring mellan behandlingsstart och `r xt3`mätning, medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.group$estimate[5] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.group$df[5])`}\) = `r xresult(aaas_ad.emmpairs.by.group$statistic[5] * -1)`, `r xpr(aaas_ad.emmpairs.by.group[["p.value"]][5])`, effektstorlek `r xresult(aaas_ad.eff.by.group$effect.size[5] * -1)` respektive medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.group$estimate[8] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.group$df[8])`}\) = `r xresult(aaas_ad.emmpairs.by.group$statistic[8])`, `r xpr(aaas_ad.emmpairs.by.group[["p.value"]][8])`, effektstorlek `r xresult(aaas_ad.eff.by.group$effect.size[8] * -1)`.
 
 Se figur \@ref(fig:effemmplotsad) för en visualisering av resultaten.
 
