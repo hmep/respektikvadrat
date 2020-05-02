@@ -1983,9 +1983,9 @@ aaas_ag.eff.by.group <- tidy(eff_size(aaas_ag.emm.by.group, sigma = aaas_ag.sd, 
 aaas_ag.eff.by.time <- tidy(eff_size(aaas_ag.emm.by.time, sigma = aaas_ag.sd, edf = df.residual(aaas_ag.lmer)))
 
 #xresult <- function(x){format(x,decimal.mark=",")}
-xresult <- function(x){
-  paste()
-}
+xresult <- function(x){}
+
+xpresult <- function(x){}
 
 options(OutDec= ",")
 
@@ -1994,6 +1994,8 @@ options(OutDec= ",")
 ```
 
 Vi fann ingen skillnad i utfall med AAA-S Adaptive vid `r xt3`mätningen mellan gruppen `r xg1` (estimerat marginalmedelvärde [emm] `r xresult(tidy(aaas_ad.emm.by.time)$estimate[8])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[8])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[8])`]) och gruppen `r xg2` (emm `r xresult(tidy(aaas_ad.emm.by.time)$estimate[9])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[9])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[9])`]), $t$\(_{`r xresult(aaas_ad.emmpairs.by.time$df[9])`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[9] * -1)`, $p$ = `r xresult(aaas_ad.emmpairs.by.time$p.value[9])`, effektstorlek `r xresult(aaas_ad.eff.by.time$effect.size[9] * -1)`. Vi fann inte heller någon skillnad i effekt vid `r xt2`-mätningen. För de deltagare som har deltagit i *Respekt i kvadrat* är skillnaden i konstruktiv självhävdelse vid `r xt3`mätningen försumbar mellan de som fått behandlarstöd och de som har fått klara sig på egen hand.
+
+$t$
 
 ## Skillnader i effekt på konstruktiv och aggressiv självhävdelse mellan `r xg3`--`r xg1` respektive `r xg3`--`r xg2`
 
