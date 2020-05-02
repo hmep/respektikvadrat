@@ -597,7 +597,7 @@ Ambitionen för den här uppsatsen är att 1) belysa forskningsläget för konst
 
 <!-- TH: Jag är fortfarande lite tveksam till den här avsnittet -->
 
-Det som i vardagsspråk beskrivs som antingen tankar, känslor eller beteenden sammanfattas i det moderna neurovetenskapliga paradigmet *prediktiv kodning* som upplevelsen av ett och samma fenomen -- förutsägelser, eller prediktioner [@Pezzulo2015]. Den övergripande funktionen av det centrala nervsystemet är att med hjälp av begränsade sensoriska indata guida betydligt mer omfattande neuronal *top-down*-aktivitet för att predicera organismens yttre såväl som inre kontext [@Pezzulo2015; @Clark2016]. Den samlade upplevelsen av rädsla och ångest (det som individen subjektiv uppfattar som kroppsreaktioner, tankar, beteenden) utgörs av osäkerhetssignaler om prediktionernas tillförlitlighet, enkelt uttryckt som osäkerhet om kroppens resurs- och energihushållning i situationen [@FeldmanBarrett2009]. Psykopatologi är enligt @FeldmanBarrett2009 ett uttryck för allt för stort inflytande av hjärnans kortikala *top-down*-aktivitet på bekostnad av sensorisk känslighet för *bottom-up*-aktivitet -- som kommer till uttryck som beteendemässigt undvikande, inklusive undvikande av emotioner. Sådant undvikande kan låsa fast en person i allostatisk belastning, där kroppen varken får återhämtning eller tillgång till belöningar. KBT är potentiellt verksamt genom att bidrar till att "vikta om" balansen till favör för *bottom-up*-aktivitet [@FeldmanBarrett2009]. Med beteendevetenskapliga termer går det att benämna samma fenomen som att personen genom KBT bir mer känslig för faktiska kontingenser. 
+Det som i vardagsspråk beskrivs som antingen tankar, känslor eller beteenden sammanfattas i det moderna neurovetenskapliga paradigmet *prediktiv kodning* som upplevelsen av ett och samma fenomen -- förutsägelser, eller prediktioner [@Pezzulo2015]. Den övergripande funktionen av det centrala nervsystemet är att med hjälp av begränsade sensoriska indata guida betydligt mer omfattande neuronal *top-down*-aktivitet för att predicera organismens yttre såväl som inre kontext [@Pezzulo2015; @Clark2016]. Den samlade upplevelsen av rädsla och ångest (det som individen subjektiv uppfattar som kroppsreaktioner, tankar, beteenden) utgörs av osäkerhetssignaler om prediktionernas tillförlitlighet, enkelt uttryckt som osäkerhet om kroppens resurs- och energihushållning i situationen [@FeldmanBarrett2009]. Psykopatologi är enligt @FeldmanBarrett2009 ett uttryck för allt för stort inflytande av hjärnans kortikala *top-down*-aktivitet på bekostnad av sensorisk känslighet för *bottom-up*-aktivitet -- som kommer till uttryck som beteendemässigt undvikande, inklusive undvikande av emotioner. Sådant undvikande kan låsa fast en person i allostatisk belastning, där kroppen varken får återhämtning eller tillgång till belöningar. KBT är potentiellt verksamt genom att bidrar till att "vikta om" balansen till favör för *bottom-up*-aktivitet [@FeldmanBarrett2009]. Med beteendevetenskapliga termer går det att benämna samma fenomen som att personen genom KBT blir mer känslig för faktiska kontingenser. 
 
 Ordet \'tankar\' har i *Respekt i kvadrat* ersatts av \'förutsägelser\', för att i möjligaste mån hjälpa till att vrida fokus från allmänt negativt tankeinnehåll till så exakt precision som möjigt av hindrande förutsägelser i de situationer som klienten vill arbeta med. En negativ förutsägelse i en specifik situation (exempelvis om den egna förmågan att klara av upplevelsen av ångest eller vilken konsekvensen ska bli av konstruktiv självhävdelse) bör enligt denna utgångspunkter förankras så tydligt det går i den specifika kontexten, vilket också hänger samman med den beteendeaktiveringsrational som präglar behandlingsprogrammet. Det som i @beck1979cognitive benämns som  \'livsregler\' och \'grundantaganden\' ägnas mindre uppmärksamhet.
 
@@ -1983,7 +1983,9 @@ aaas_ag.eff.by.group <- tidy(eff_size(aaas_ag.emm.by.group, sigma = aaas_ag.sd, 
 aaas_ag.eff.by.time <- tidy(eff_size(aaas_ag.emm.by.time, sigma = aaas_ag.sd, edf = df.residual(aaas_ag.lmer)))
 
 #xresult <- function(x){format(x,decimal.mark=",")}
-xresult <- function(x){x}
+xresult <- function(x){
+  paste()
+}
 
 options(OutDec= ",")
 
@@ -2311,6 +2313,7 @@ TH: Menar du de som hoppat av eller de som inte svarat på alla självskattninga
 -->
 
 ## Sammanfattning
+
 Föreliggande studie ville undersöka effekten på konstruktivt självhävande av behandlingsprogrammet *Respekt i kvadrat*. Att ta del av behandlingsprogrammet (med eller utan behandlingsstöd) var effektivare än att betingas till en väntelista. Mer forskning behövs för att med större säkerhet kunna generalisera resultaten till populationen i stort.
 
 
