@@ -76,10 +76,9 @@ library("nlme")
 library("emmeans")
 library("car")
 library("ggplot2")
-library("pastecs")
+#library("pastecs")
 library("effsize")
-library("wesanderson")
-
+#library("wesanderson")
 #library("pander")
 #library("lmerTest")
 
@@ -598,67 +597,31 @@ Ambitionen för den här uppsatsen är att 1) belysa forskningsläget för konst
 
 ### Fokus på precisering av hindrande förutsägelser
 
-Det som i vardagsspråk beskrivs som antingen tankar, känslor eller beteenden sammanfattas i det moderna neurovetenskapliga paradigmet *prediktiv kodning* som upplevelsen av ett och samma fenomen -- förutsägelser, eller prediktioner [@Pezzulo2015]. Den övergripande funktionen av det centrala nervsystemet är att med hjälp av begränsade sensoriska indata guida betydligt mer omfattande neuronal *top-down*-aktivitet för att predicera organismens yttre såväl som inre kontext [@Pezzulo2015; @Clark2016]. Den samlade upplevelsen av rädsla och ångest (det som individen subjektiv uppfattar som kroppsreaktioner, tankar, beteenden) utgörs av osäkerhetssignaler om prediktionernas tillförlitlighet, enkelt uttryckt som osäkerhet om kroppens resurs- och energihushållning i situationen [@FeldmanBarrett2009]. Psykopatologi är enligt @FeldmanBarrett2009 ett uttryck för allt för stort inflytande av hjärnans kortikala *top-down*-aktivitet på bekostnad av sensorisk känslighet för *bottom-up*-aktivitet -- som kommer till uttryck som beteendemässigt undvikande, inklusive undvikande av emotioner. Sådant undvikande kan låsa fast en person i allostatisk belastning, där kroppen varken får återhämtning eller tillgång till belöningar. KBT är potentiellt verksamt genom att bidrar till att "vikta om" balansen till favör för *bottom-up*-aktivitet [@FeldmanBarrett2009]. Med beteendevetenskapliga termer går det att benämna samma fenomen som att personen genom KBT blir mer känslig för faktiska kontingenser. 
-
-Ordet \'tankar\' har i *Respekt i kvadrat* ersatts av \'förutsägelser\', för att i möjligaste mån hjälpa till att vrida fokus från allmänt negativt tankeinnehåll till så exakt precision som möjigt av hindrande förutsägelser i de situationer som klienten vill arbeta med. En negativ förutsägelse i en specifik situation (exempelvis förutsägelsen om den egna förmågan att klara av upplevelsen av ångest eller förutsägelsen om vad konsekvensen blir av att konstruktivt självhävda) bör enligt denna utgångspunkter förankras så tydligt det går i den specifika kontexten, vilket också hänger samman med den beteendeaktiveringsrational som präglar behandlingsprogrammet. Det som i @beck1979cognitive benämns som  \'livsregler\' och \'grundantaganden\' ägnas mindre uppmärksamhet.
+Det som i vardagsspråk beskrivs som antingen tankar, känslor eller beteenden sammanfattas i det moderna neurovetenskapliga paradigmet *prediktiv kodning* som upplevelsen av ett och samma fenomen: förutsägelser [@Pezzulo2015]. Den övergripande funktionen av det centrala nervsystemet är att med hjälp av begränsade sensoriska indata guida betydligt mer omfattande neuronal *top-down*-aktivitet för att predicera organismens yttre såväl som inre kontext [@Pezzulo2015; @Clark2016]. Den samlade upplevelsen av rädsla och ångest är med det här synsättet osäkerhetssignaler om tillförlitligheten i prediktionerna i situationen. Oäkerheten utgör ett hot mot organismens resurs- och energihushållning i situationen [@FeldmanBarrett2009]. Psykopatologi är enligt @FeldmanBarrett2009 ett uttryck för allt för stort inflytande av hjärnans kortikala *top-down*-aktivitet på bekostnad av sensorisk känslighet för *bottom-up*-aktivitet -- som kommer till uttryck som beteendemässigt undvikande, inklusive undvikande av själva upplevelsen av osäkerhet. Sådant undvikande kan låsa fast en person i förhöjd allostatisk belastning, där kroppen varken får återhämtning eller tillgång till naturliga belöningar. KBT är potentiellt verksamt genom att bidrar till att "vikta om" balansen till favör för *bottom-up*-aktivitet [@FeldmanBarrett2009]. Med beteendevetenskapliga termer går det att benämna samma fenomen som att personen genom KBT blir mer känslig för faktiska kontingenser och vinner agens. För att i möjligaste mån hjälpa deltagarna att vrida fokus från allmänt negativt tankeinnehåll till preciserande av hindrande förutsägelser i självvalda situationer att arbeta med ligger fokus i träningsprogrammet *Respekt i kvadrat* snarare på förutsägelser i specifika situationer än generaliserade hindrande förutsägelser (som i  @beck1979cognitive benämns som  \'livsregler\' och \'grundantaganden\'). 
 
 ### Fokus på brytande av undvikande genom identifiering av belöningar
 
-Undvikande av aversiva stimuli har ett uppbenbart överlevadsvärde. Rädsloinlärning tenderar att vara stark: @Ohman2001 konstaterar att rädsloinlärning inte är så lätt att påverka med kognitiv kontroll i skarpt läge, inte minst för att de neuronala osäkerhetskretsarna vid amygdala ligger djupt förankrade i limbiska delar av hjärnan och mer eller mindre lever sitt eget liv. 
-
-Att i överskott undvika stimuli som upplevs som hotfulla utan att vara det kan dock leda till psykopatologiska besvär både genom förlust av kontingent positiv förstärkning och ökad grad av sekundära besvär som exempelvis nedstämdhet. Att undvika det som erfarenhetsmässigt upplevts som aversivt framstår ofta som funktionellt och rationellt, även när det inte är det [@Hayes1996].
-
-Forskningen visar att det är självdestruktivt att försöka undvika aversiva emotioner: Emotionellt undvikande är paradoxalt nog kopplat till ökning av graden emotioner (och mindre grad av positiva emotioner). Det har också negativa konsekvenser i form av ökat undvikande av nära relationer, mindre socialt stöd, lägre självförtroende och sämre generellt välmående [@Gross2003]. Den paradoxala biten går inte nog att betona: Att försöka undvika aversiva emotioner leder till att man upplever dem mer [@Gross2003; @Fernandez-Rodriguez2018; @Hayes1996]. 
-
-I vidmakthållandet av ångestsyndrom är undvikande således en central komponent -- och detta trots att den som lider av det ofta själv är helt medveten om vad hen går miste om på grund av sitt undvikande. Ett sätt att bidra till att trumfa det emotionella undvikandet i psykologisk behandling är att introducera belöningar [@Pittig2014]. I *Respekt i kvadrat* ägnas många övningar åt att identifiera långsiktiga och naturliga förstärkare för de adaptiva självhävdelsebeteenden som deltagarna vill arbeta med.
+Undvikande av aversiva stimuli har ett uppbenbart överlevadsvärde och rädsloinlärning tenderar att vara stark: @Ohman2001 konstaterar att rädsloinlärning inte enkelt låter sig påverkas av kognitiv kontroll i skarpt läge, inte minst för att de neuronala osäkerhetskretsarna vid amygdala ligger djupt förankrade i limbiska delar av hjärnan. Att i överskott undvika stimuli som upplevs som hotfulla utan att vara det kan leda till psykopatologiska besvär både genom förlust av kontingent positiv förstärkning och ökad grad av sekundära besvär som exempelvis nedstämdhet. Att undvika det som erfarenhetsmässigt upplevts som aversivt framstår ofta som funktionellt och rationellt, även när det inte är det [@Hayes1996]. Forskningen visar att det är emotionellt undvikande verkar självdestruktivt. Undvikande är paradoxalt nog kopplat till ökning av graden av negativa emotioner (och samtidigt mindre grad av positiva emotioner). Det har också negativa konsekvenser i form av minskad tillgång till hälsofrämjande faktorer som nära relationer och socialt stöd, och är associerat med lägre självförtroende och sämre generellt välmående [@Gross2003]. Den paradoxala effekten går inte nog att betona: Att försöka undvika aversiva emotioner leder till att man upplever dem mer [@Gross2003; @Fernandez-Rodriguez2018; @Hayes1996]. I vidmakthållandet av ångestsyndrom är undvikande således ett centralt behandlingsmål -- och detta trots att individen ofta själv är helt medveten om vad hen går miste om på grund av sitt undvikande. Ett sätt att bidra till att trumfa det emotionella undvikandet i psykologisk behandling är att introducera belöningar [@Pittig2014]. I *Respekt i kvadrat* ägnas många övningar åt att identifiera långsiktiga och naturliga förstärkare för de adaptiva självhävdelsebeteenden som deltagarna vill arbeta med för att i möjligaste mån bredda och fördjupa skälen att bryta det vanemässiga undvikandet. I behandlingsgrenen som har terapeutstöd används beteendeanalyser och transparent självavslöjande i relation till deltagarna som ett sätt att förhoppningsvis förstärka adaptiva beteenden naturligt för så många som möjligt av dem.
 
 ### Fokus på aktivering med varierad grad av osäkerhet
 
-Att bryta undvikandebeteenden är ofta centralt för att minska psykopatologiska besvär. Inom KBT används begrepp som exponering, beteendeexperiment eller beteendeaktivering, var och en med sin egen rational men samma handlande i praktiken. Gemensamt för dem är aktivering och närmande mot avsersiva och ångestväckande stimulit, med så hög grad av medveten närvaro och med utförande av så få säkerhetsbeteenden som möjligt. 
+För att bryta undvikande används inom KBT metoder som exponering, beteendeexperiment och beteendeaktivering, var och en med sin egen rational men samma resultat i praktiken: närmande till aversiva stimuli med så hög grad av medveten närvaro och med utförande av så få säkerhetsbeteenden som möjligt. Att emotionellt undvikande är ett säkerhetsbeteende är ett väletablerat fenomen som har konstaterats både bidra till utvecklingen av och vidmakthålla ångestdriven psykopatologi [@Blakey2016]. @DeCastella2015 konstaterar att emotionellt undvikande är tydligt kopplad till sämre effekt av exponering. Emotionellt undvikande är särskilt vanligt hos personer som lider av ångestsyndrom och depressiva syndrom [@Campbell-Sills2006], för vilka underskott i *assertiveness* är en del av problembilden. Att närmande av tidigare undvikta stimuli väcker obehag ramas i psykoedukativa inslag i *Respekt i kvadrat* in som en fördel och en tillgång för etablerandet av korrigerande nyinlärning. Ju större diskrepansen är mellan en individs förväntningar och individens faktiska upplevelse, desto större är oddsen för nyinlärning [@Craske2008; @Sewart2019]. Lärdomar kan dessutom dras båda av att ångesten i situationen minskar i intensitet och av att förmågan att hantera ångesten som väcks överträffar ens förväntningar [@Craske2008; @Blakey2016; @Knowles2019; @Sewart2019]. @Craske2008 poängterar att variation i vilka aversiva stimuli som presenteras och i vilka situationer som de presenteras förbättrar oddsen för diskonfirmering av hindrande förutsägelser. Redan tidigt i programmet uppmanas deltagarna att träna på att variera utförandet av avslappningsövningar i varierade situationer, vid olika tidpunkter och vid så många olika sinnesstämningar som möjligt. Målsättningen är att bidra till att generalisera vunna erfarenheter av att reglera och tolerera ångest vid avslappning till de beteendeexperiment som följer i senare moduler i behandlingsprogrammet. 
 
-De Castella m. fl. [-@DeCastella2015] konstaterar att emotionellt undvikande är tydligt kopplad till sämre effekt av exponering. Att emotionellt undvikande är ett säkerhetsbeteende är ett väletablerat fenomen som har konstaterats både bidra till utvecklingen av och vidmakthålla ångestdriven psykopatologi [@Blakey2016]. Emotionellt undvikande är särskilt vanligt hos personer som lider av ångestsyndrom och depressiva syndrom [@Campbell-Sills2006], för vilka underskott i *assertiveness* är en del av problembilden. 
+### Fokus på färdigheter för avslappning och medveten närvaro
 
-Att närmande av tidigare undvikta stimuli väcker obehag ramas i psykoedukativa inslag i behandlingsprogrammet in som en fördel och en tillgång för etablerandet av korrigerande nyinlärning. Ju större diskrepansen är mellan en individs förväntningar och individens faktiska upplevelse, desto större är oddsen för nyinlärning [@Craske2008; @Sewart2019]. Lärdomar kan dessutom dras båda av att ångesten i situationen minskar i intensitet och av att förmågan att hantera ångesten som väcks överträffar ens förväntningar [@Craske2008; @Blakey2016; @Knowles2019; @Sewart2019]. 
-
-@Craske2008 poängterar att variation i vilka aversiva stimuli som presenteras och i vilka situationer som de presenteras förbättrar oddsen för diskonfirmering av hindrande förutsägelser. Redan tidigt i programmet uppmanas deltagarna att träna på att variera utförandet av avslappningsövningar -- i så många situationer och vid så många olika tidpunkter och i så många olika sinnesstämningar som möjligt. Förhoppningen har varit att hjälpa deltagarna att vinna några första goda erfarenheter av att ha klarat av även obehag med någon grad av medveten närvaro i situationen, för att kunna generalisera slutsatserna till de beteendeexeriment för konstruktiv självhävdelse som följer i senare moduler i behandlingsprogrammet. 
+Även om litteraturen inte anger exakt vilka de verksamma komponenterna i avslappningsträning vid ångestbesvär är, har forskningsstudier i decennier konstaterat att avslappningsträning effektivt minskar symptom hos en del patienter med ångespsykopatologi [@Conrad2007]. Tillämpad avslappning är en copingteknik som utvecklades i slutet av 1970-talet för patienter med fobier och panikattacker. Den har sedan dess även visat sig effektiv för bland annat generell ångeststörning  och stress [@ost2006tillampad]. En tidigt formulerad hypotes är att avslappning inhiberar ångest, och vice versa [@Wolpe1952; @Conrad2007]. Det är hur som helst ytterst svårt att hävda sig själv konstruktivt med samtidigt ångestpåslag [@Baker2015]. @ost2006tillampad anför avslappningsträningens generella dämpande effekt på spänningsgraden; avslappningsträning som genomförs ofta kan genom reciprok inhibering öka oddsen för medveten närvaro och adaptivt handlande. I behandlingsprogrammet *Respekt i kvadrat* har avslappningsmomenten utökats jämfört @michel2008 och kompletterats med övningar i medveten närvaro.
 
 <!-- TH: Har redigerat hit -->
 
-### Fokus på färdigheter för medveten närvaro
-
-Ytterligare ett sätt att närma sig aversiva stimuli är genom avslappning. Även om det fortfarande inte är konstaterat exakt vad de verksamma komponenterna i avslappningsträning vid ångestbesvär är, har forskningsstudier i decennier konstaterat avslappningsträning en effektiv metod för att minska symptom hos en del patienter som lider av ångesypsykopatoli [@Conrad2007]. Tillämpad avslappning är en copingteknik som började utvecklas i slutet av 1970-talet för patienter med fobier och panikattacker. Den har sedan dess även visat sig effektiv för bland annat generell ångeststörning  och stress [@ost2006tillampad]. En hypotes för varför avslappningsmetoder fungerar är att ångestreaktioner och att vara avslappnad ej är kongruent med varandra, det vill säga att båda inte kan existera samtidigt. Är du avslappnad kan du inte samtidigt uppleva ångest [@Conrad2007]. Då det är ytterst svårt att konstruktivt självhävda sig när man upplever ångest [@Baker2015], och att ångest i sin tur inte är kongruent med att vara avslappnad [@Conrad2007] går det rimligen att extrapolera att lyckad avslappningsträning ökar oddsen för uppvisande av konstruktivt självhävdande beteenden. 
-
-<!--
-While growing up many of us never had the proper tools or guidance to deal with difficult emotions. We never learned to understand our sadness or anger. We weren't taught how to calm our anxiety or sooth our frustration. Instead we learned to distract and avoid. To tune out unpleasant feelings with numbing. Sometimes destructive behaviour.
--->
-
-Kort och gott: Genom att *på ett närvarande sätt* i så många kontext som möjligt testa sina förutsägelser och sedan dra slutsatser om både utfallet och ens egen förmåga att hantera utfallen ökar man chansen att undvikande bryts och chansen till ökat engagemang i det man värdesätter i livet förbättrats.
-
-<!-- 
-här bör ytterligare ett kort avsnitt föras in om att ångest & avslappning kan inte finnas samtidigt.
-
-Förslagsvis använda L-G Öst kring TA plus fiska fram några som pratar om att avslappning & ångest inte går ihop samt Wolpe och att assertiveness och ångest inte går ihop
-
-[@Conrad2007] att avslappningsträning verkar effektivt för att behandla ångest, men svårt att veta exakt vad som gör det.
--->
-
-<!-- Violating expectancies -->
 
 ### Om att finna motivation till att bryta gamla vanor
 
 
 I linje med att undersöka ens egen förmåga att hantera aversiva känslor är att ändra sitt förhållningssätt till dem. <!--För många kan det stora steget i att bryta undvikande vara att arbete med att acceptera och tillåta sina känslor och upplevelser [@Hayes1996]. --> Vissa har aldrig fått tillgång till den vägledning eller de verktyg som behövs för att hantera starka emotionella upplevelser. De har aldrig lärt sig att förstå sorg och ilska, eller hur de ska gå tillväga för att lugna sin ångest eller sin frustration.  Istället har de lärt sig att distrahera sig och undvika. Bedöva genom att undantrycka. Att ändra dessa förutsägelser om att vissa emotioner är oacceptabla; att tillåta sig känna dem, närma sig dem, acceptera dem, har återkommande gånger visat sig vara ett effektivt sätt att bryta undvikande [@Hayes1996; @Hayes2004a; @Luoma2007] och ett effektivt sätt att behandla många av de psykatriska besvär som individer med bristande *assertiveness* upplever [@A-Tjak2015a].
 
+Programmet refererar och använder metaforer och 
 
 Många som lever med psykopatologiska besvär under en längre tid kan uppleva det som att det inte finns någonting de kan göra åt sina besvär. Som att deras symtom och deras lidande är där för att stannna. Detta brukar kallas för ett *fixed mindset*. Ett *fixed mindset* är antagandet att förmågor, färdigheter samt egenskaper är fasta och oföränderliga. Det skiljer sig från ett *growth mindset*, antagandet att förmågor, färdigheter och egenskaper kan utvecklas och förändras. Dessa *mindset*, tankesätt, är ett sorts ramverk genom vilket man tolkar och förstår sig på sina erfarenheter, vilket i sin tur påverkar vilka beteenden och emotioner man uppvisar [@Dweck1995]. Tankesätt kan beröra mer övergripande domäner, såsom personlighet och intelligens, eller mer specifika domäner, såsom hur man tänker kring ångest och emotioner. Man kan ha ett fixerat tankesätt inom en viss domän, och ett utvecklande tankesätt inom en annan [@Schroder2016]. Har man ett utvecklande tankesätt kring ångest leder det både till större motivation under en behandlings gång och till bättre odds för positivt behandlingsutfall [@Schroder2015; @DeCastella2015]. Det har även visat sig att personer med ett fixerat tankesätt i större utsträckning försöker undvika negativa emotioner samt i mindre utsträckning omvärderar sina förutsägelser i ljuset av nya erfarenheter [@Schroder2015]. Forskning konstaterar att det finns gott om anledningar att arbeta mot ett *growth mindset*.
-
-<!--
-Detta avsnitt är ett work in progress och borde möjligen utvecklas med stycke om
-
-- värden, långsiktiga skäl att uppsöka situationer
-- direkt kontignent belöning, ex återkoppling och uppmuntran från terapeut
--->
-
 
 
 
@@ -956,7 +919,7 @@ Signifikansnivån $\alpha$ = 0,05 tillämpades vid alla beräkningar. Öppen syn
 
 ### Kontroll av utgångsdata
 
-Vi analyserade insamlade förmätningsvärden för att kontrollera om randomiseringen hade gett grupper utan signifikanta skillnader. Oberoende variansanalys (ANOVA) användes för att utesluta skillnader mellan grupperna i primära utfallsmått, sekundära utfallsmått och kontinuerliga sociodemografiska variabler. Kategoriska sociodemografiska variabler undersöktes med Kruskal-Wallis-test från R-paketet *FSA* [@R-FSA]. Cohen's d-effektstorlekar för beroende mätningar beräknades test från R-paketet *effsize* [@R-effsize]. För beräkning och sammanställning av övrig deskriptiv statistik användes verktyg från R-paketet *pastecs* [@R-pastecs].
+Vi analyserade insamlade förmätningsvärden för att kontrollera om randomiseringen hade gett grupper utan signifikanta skillnader. Oberoende variansanalys (ANOVA) användes för att utesluta skillnader mellan grupperna i primära utfallsmått, sekundära utfallsmått och kontinuerliga sociodemografiska variabler. Kategoriska sociodemografiska variabler undersöktes med Kruskal-Wallis-test från R-paketet *FSA* [@R-FSA]. Cohen's d-effektstorlekar för beroende mätningar beräknades test från R-paketet *effsize* [@R-effsize].
 
 ### Bortfallsanalys 
 
@@ -1761,12 +1724,6 @@ Patrik: Jag tycker ovan mening (som refererar till alla medelvärden) kan flytta
 -->
 
 (ref:descriptives) Estimerade medelvärden (och standardavvikelser) samt effektstorlekar för utfallsmåtten i de olika grupperna och vid de olika mättillfällena.
-
-```{r}
-library("car")
-some(r2.new.data)
-```
-
 
 ```{r descriptives, fig.align="center", cache = T, eval = T}
 
