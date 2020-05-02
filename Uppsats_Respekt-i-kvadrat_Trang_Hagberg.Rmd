@@ -29,6 +29,8 @@ output:
   papaja::apa6_pdf:
     keep_tex      : TRUE
     latex_engine  : xelatex
+    citation_package: biblatex
+    csl           : apa.csl
     fig_caption   : yes
     includes:
       in_header   : stay-in-place.tex
@@ -45,6 +47,7 @@ header-includes:
    - \hyphenation{nor-mal-spann nor-mal-span-net}
    - \usepackage{tabu}
    - \usepackage{rotating}
+   - \PassOptionsToPackage{style=apa}{biblatex}
 editor_options: 
   chunk_output_type: console
 ---
@@ -2328,11 +2331,12 @@ Föreliggande studie ville undersöka effekten på konstruktivt självhävande a
 
 \newpage
 
-# Referenser
+<!-- # Referenser -->
 
 
 ```{r create_r-references}
 r_refs(file = "r-references.bib")
+
 ```
 
 \begingroup
