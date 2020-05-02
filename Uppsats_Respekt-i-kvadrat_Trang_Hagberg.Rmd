@@ -2080,7 +2080,7 @@ Vid `r xt3`mätningen fann vi också att medelpoängen för `r xg2`sgruppen (emm
 
 För båda grupperna `r xg1` och `r xg2` fann vi en signifikant höjning mellan behandlingsstart och `r xt3`mätning. För `r xg1`sgruppen var medelvärdesskillnaden `r xresult(aaas_ag.emmpairs.by.group$estimate[5] * -1)`, $t$\(_{`r xresult(aaas_ag.emmpairs.by.group$df[5])`}\) = `r xresult(aaas_ag.emmpairs.by.group$statistic[5])`; `r xpr(aaas_ag.emmpairs.by.group$p.value[5])`; effektstorlek `r xresult(aaas_ad.eff.by.group$effect.size[5] * -1)`, för `r xg2`sgruppen var den `r xresult(aaas_ag.emmpairs.by.group$estimate[8] * -1)`, $t$\(_{`r xresult(aaas_ag.emmpairs.by.group$df[8])`}\) = `r xresult(aaas_ag.emmpairs.by.group$statistic[8])`; `r xpr(aaas_ag.emmpairs.by.group$p.value[8])`; effektstorlek `r xresult(aaas_ad.eff.by.group$effect.size[8] * -1)`.
 
-Se sammanfattning i figur \@ref(fig:effemmplotsag).
+Se figur \@ref(fig:effemmplotsag) för en visualisering av resultaten.
 
 (ref:emmeffag) Det är notabelt att medelvärdet för gruppen `r xg2` var lägre än för gruppen `r xg1`, som inte fick något behandlarstöd, vid båda tidpunkterna. Båda behandlingsbetingelserna uppvisar en höjning av graden av aggressiv självhävdelse, i jämförelse med `r xg3`. Effekten var signifikant vid mittenmätningen för gruppen `r xg1` (men inte för gruppen `r xg2`). Även höjningen av aggressiv självhävdelse mellan behandlingsstart och `r xt3`mätningen var för båda grupperna signifikant. Etiketterna i figuren anger respektive effektstorlek av den med streckad linje indikerad parvisa jämförelse som var signifikant.
 
