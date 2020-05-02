@@ -2217,7 +2217,7 @@ rathus.pre.post.jt.plot + theme(legend.position="none") + scale_color_manual(val
 
 # Diskussion
 
-Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt självhjälpsprogram för att förbättra individers konstruktiva självhävdelse. Programmet administrerades via en internetbaserad plattform. Studien genomfördes med en randomiserad och kontrollerad design. Interventionen byggde till stora delar på självhjälpsmaterialet *Assert Yourself* [@michel2008] och inkluderade bland annat inslag av psykoedukation, beteendeexperiment, avslappningsövningar, vidmakthållandeplanering och återfallsprevention. En tredjedel av deltagarna fick tillgång till programmet utan behandlarstöd, en tredjedel fick tillgång till programmet med behandlarstöd och en tredjedel var en väntelistebetingad kontrollgrupp. Vi konstaterade att tillgång till behandlingsmaterialet (oberoende av om man hade behandlarstöd eller inte) gav bättre resultat än att vara placerad på väntelista. Vi fann däremot ingen skillnad i utfallet mellan gruppen med behandlarstöd och gruppen utan behandlarstöd.
+Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt självhjälpsprogram för att förbättra individers konstruktiva självhävdelse. Programmet administrerades via en internetbaserad plattform. Studien genomfördes med en randomiserad och kontrollerad design. Interventionen byggde till stora delar på självhjälpsmaterialet *Assert Yourself* [@michel2008] och inkluderade bland annat inslag av psykoedukation, beteendeexperiment, avslappningsövningar, vidmakthållandeplanering och återfallsprevention. En tredjedel av deltagarna fick tillgång till programmet utan behandlarstöd, en tredjedel fick tillgång till programmet med behandlarstöd och en tredjedel var en väntelistebetingad kontrollgrupp. Vi konstaterade att tillgång till behandlingsmaterialet (oberoende av om man hade behandlarstöd eller inte) gav bättre resultat än att vara placerad på väntelista. Vi fann däremot ingen skillnad i utfallet mellan gruppen med behandlarstöd och gruppen utan behandlarstöd. Vid beräknande av klinisk signifikant skillnad på självskattningsskalan AAA-S fann vi ingen skillnad mellan grupperna.
 
 <!-- [Pers kommentar] 
 Egentligen är avsaknad av skillnad inte samma sak som att de är lika effektiva (de är bara inte olika effektiva). 
@@ -2225,10 +2225,10 @@ Egentligen är avsaknad av skillnad inte samma sak som att de är lika effektiva
 Viktigt i och med att ni tagit upp detta med behandlingsstödets effekter i introduktionen 
 -->
 
-
-*Vi bör avsluta detta stycke med några få rader om den analys vi gjorde och resultatet vi fick!*
-
 ## Resultatdiskussion
+
+Vi har tidigare konstaterat att träning i konstruktiv självhävdelse kan förbättra mående i  
+
 
 <!-- 
 Diskussion om själva resultatet återstår att skriva!
@@ -2320,7 +2320,7 @@ TH: Menar du de som hoppat av eller de som inte svarat på alla självskattninga
 
 ## Sammanfattning
 
-Föreliggande studie ville undersöka effekten på konstruktivt självhävande av behandlingsprogrammet *Respekt i kvadrat*. Att ta del av behandlingsprogrammet (med eller utan behandlingsstöd) var effektivare än att betingas till en väntelista. Mer forskning behövs för att med större säkerhet kunna generalisera resultaten till populationen i stort.
+Föreliggande studie ville undersöka effekten på konstruktivt självhävande av behandlingsprogrammet *Respekt i kvadrat*. Att ta del av behandlingsprogrammet (med eller utan behandlingsstöd) var effektivare än att betingas till en väntelista. Resultatet från den föreliggande studien styrker att det går att använda konstruktiv självhävdelse som ett transdiagnostiskt konstrukt. Den bekräftar även att fokus på konstruktiv självhävdelse i behandlingsprogram kan vara ett effektivt sätt att minska symtom och lidande vid ett antal olika ångestbesvär. Mer forskning behövs för att med större säkerhet kunna generalisera resultaten till populationen i stort.
 
 
 <!-- [Pers kommentar] Ja. Typ 2-3 meningar som sammanfattar hela arbetet. -->
