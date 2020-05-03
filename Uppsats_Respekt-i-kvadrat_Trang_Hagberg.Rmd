@@ -44,6 +44,8 @@ header-includes:
    - \usepackage{tabu}
    - \usepackage{rotating}
    - \PassOptionsToPackage{style=apa}{biblatex}
+   - \widowpenalty10000
+   - \clubpenalty10000
 editor_options: 
   chunk_output_type: console
 ---
@@ -927,7 +929,7 @@ Deltagarna blev via studiens hemsida informerade om att allt deltagande var friv
 
 Vi använde `r version$language`, version `r version$major`.`r version$minor` [@R-base] för samtliga analyser. 
 <!-- Vi använde `r cite_r("r-references.bib")` för samtliga analyser.  -->
-Signifikansnivån $\alpha$ = 0,05 tillämpades vid alla beräkningar. Öppen syntax och data finns deponerade hos Figshare på https://doi.org/10.17045/sthlmuni.12148785 [@R2data2020].
+Signifikansnivån $\alpha$ = 0,05 tillämpades vid alla beräkningar. Öppen syntax och data finns deponerade hos Figshare på https://doi.org/10.17045/sthlmuni.12148785 [@R2data2020] (OBS! Deponering sker EFTER inlämning av godkänd uppsats. Data och syntax finns också tillgängliga på https://github.com/hmep/respektikvadrat).
 
 ### Analys av fixa effekter
 
@@ -2005,7 +2007,7 @@ Nudge_x = c(0.05,0.15,0.25,0,0,0,0,-0.1,-0.1) * 1.2
 Nudge_y = c(-0.55,-0.55,0.55,0,0.55,-0.55,0,0.55,-0.55) * 2
 
 aaas_ad.emm.plot <- 
-  plot(ggemmeans(aaas_ad.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = NA, colour = "Grupp:", title = element_blank()) + theme(legend.position = "top", axis.title.y = element_blank())
+  plot(ggemmeans(aaas_ad.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = NA, colour = "Grupp:", title = element_blank()) + theme(legend.position = "bottom", axis.title.y = element_blank())
 
 #,arrow = arrow(length = unit(0.05, "npc"))
 ad1 <- aaas_ad.emm.plot + 
@@ -2049,7 +2051,7 @@ Nudge_x = c(0.05,0.15,0.25,0,0,0,0,-0.1,-0.1) * 1.2
 Nudge_y = c(-0.55,-0.55,0.55,0,0.55,-0.55,0,0.55,-0.55) * 1.2
 
 aaas_ag.emm.plot <- 
-  plot(ggemmeans(aaas_ag.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = NA, colour = "Grupp:", title = element_blank()) + theme(legend.position = "top", axis.title.y = element_blank())
+  plot(ggemmeans(aaas_ag.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = NA, colour = "Grupp:", title = element_blank()) + theme(legend.position = "bottom", axis.title.y = element_blank())
 
 #,arrow = arrow(length = unit(0.05, "npc"))
 ag1 <- aaas_ag.emm.plot + 
