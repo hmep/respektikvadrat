@@ -929,15 +929,40 @@ Vi använde `r version$language`, version `r version$major`.`r version$minor` [@
 <!-- Vi använde `r cite_r("r-references.bib")` för samtliga analyser.  -->
 Signifikansnivån $\alpha$ = 0,05 tillämpades vid alla beräkningar. Öppen syntax och data finns deponerade hos Figshare på https://doi.org/10.17045/sthlmuni.12148785 [@R2data2020].
 
-<!-- ### Kontroll av utgångsdata -->
+```{r attrition, eval = F}
 
-<!-- Vi analyserade insamlade förmätningsvärden för att kontrollera om randomiseringen hade gett grupper utan signifikanta skillnader. Oberoende variansanalys (ANOVA) användes för att utesluta skillnader mellan grupperna i primära utfallsmått, sekundära utfallsmått och kontinuerliga sociodemografiska variabler. Kategoriska sociodemografiska variabler undersöktes med Kruskal-Wallis-test från R-paketet *FSA* [@R-FSA]. -->
+# Who has taken the post survey?
+# Rathus is the first presented questionnaire in the battery
+completers <- as.factor(ifelse(!is.na(r2.wide.data$post_rathus),1,0))
+
+# Response scales
+anova(lm(r2.wide.data$pre_aaas_ad ~ completers * r2.wide.data$group))
+anova(lm(r2.wide.data$pre_aaas_ag ~ completers * r2.wide.data$group))
+anova(lm(r2.wide.data$pre_rathus ~ completers * r2.wide.data$group))
+anova(lm(r2.wide.data$pre_lsas_sum ~ completers * r2.wide.data$group))
+anova(lm(r2.wide.data$pre_gad_sum ~ completers * r2.wide.data$group))
+anova(lm(r2.wide.data$pre_phq_sum ~ completers * r2.wide.data$group))
+anova(lm(r2.wide.data$pre_well ~ completers * r2.wide.data$group))
+# All non-significant
+
+# Sociodemographics
+chisq.test(r2.wide.data$Demografi.Kon, completers)
+kruskal.test(r2.wide.data$Demografi.Alder, completers)
+kruskal.test(r2.wide.data$Demografi.Civilstand, completers)
+kruskal.test(r2.wide.data$Demografi.Utbildning, completers)
+kruskal.test(r2.wide.data$Demografi.Sysselsattning, completers)
+chisq.test(r2.wide.data$Demografi.Psykofarmaka, completers)
+kruskal.test(r2.wide.data$Demografi.PsykofarmakaVad, completers)
+chisq.test(r2.wide.data$Demografi.PsykoBehandling, completers)
+# All non-significant
+
+```
 
 ### Bortfallsanalys 
 
-(ATT GENOMFÖRA OCH RAPPORTERA - För alla utfallsmått, jämför grupp som hoppat av mellan förmätning--eftermätning och grupp som fullgått behandling.  Också jämföra dem som hoppat av (poolat) med dem som fullgått med avseende på betingelse, terapeut, tidigare psyk behandling, psykofarmaka ...)
-
-<!-- OBS! Kom ihåg bortfallsanalys (se exempeluppsats 2) -->
+Med oberoende variansanalys fann vi inga signifikanta 
+skillnader på någon av förmätningspoängen för utfallsmåtten mellan de deltagare som
+genomförde eftermätningen (N = `r length(which(!is.na(r2.wide.data$post_rathus)))`) och de som inte gjorde det (N = `r length(which(is.na(r2.wide.data$post_rathus)))`) i de olika grupperna. Med Pearsons $\chi^2$-test och Kruskal-Wallis $\chi^2$-test hittades inte heller några signifikanta skillnader för sociodemografiska variabler mellan de som svara eller inte svarat på eftermätningen.
 
 ### Analys av *fixed* och *random* effekter
 
@@ -999,12 +1024,16 @@ Demografi.Kon.proc <- prop.table(Demografi.Kon.abs, 1)
 # kruskal.test(Demografi.PsykoBehandling ~ group, data = r2.wide.data)
 # Inga signifikanta skillnader = inga skillnader mellan grupperna
 
-#xresult <- function(x){format(x,decimal.mark=",")}
 xresult <- function(x){format(round(x,digits=2),decimal.mark=",")}
 
 xpr <- function(x) {
   paste("$p$",
         ifelse(x < 0.001, "< 0,001", ifelse(x < 0.05, paste("=",format(round(x,2),decimal.mark=',')), ifelse(x > 0.05, "DO NOT REPORT", "= 0,05")))
+  )
+}
+
+xps <- function(x) {
+  paste(ifelse(x < 0.001, "***", ifelse(x < 0.01, "**", ifelse(x > 0.05, "DO NOT REPORT", "*")))
   )
 }
 
@@ -1906,15 +1935,15 @@ descriptives.col.out <- cbind.data.frame(
 )
 
 row_group_label_fonts <- list(
-list(bold = T, italic = F),
-list(bold = F, italic = F)
+list(bold = F, italic = F),
+list(bold = F, italic = T)
 )
 
 rownames(descriptives.col.out) <- NULL
 
-svkable(descriptives.col.out, caption = "(ref:descriptives)", align="lllccccccc") %>%
+svkable(descriptives.col.out, caption = "(ref:descriptives)", align="llrccccccc") %>%
   column_spec(1:3, width = "1em") %>%
-  collapse_rows(1:3, latex_hline = "major", valign = "middle", row_group_label_position = "stack") %>%
+  collapse_rows(1:3, latex_hline = "major", valign = "middle", row_group_label_position = "stack", row_group_label_fonts = row_group_label_fonts) %>%
   add_header_above(c(" " = 3, "Primära utfallsmått" = 2, "Sekundära utfallsmått" = 5))
 
 
@@ -2034,11 +2063,6 @@ options(OutDec= ",")
 
 options(OutDec= ".")
 
-xps <- function(x) {
-  paste(ifelse(x < 0.001, "***", ifelse(x < 0.01, "**", ifelse(x > 0.05, "DO NOT REPORT", "*")))
-  )
-}
-
 # AAA-S Ag
 
 Name = c(
@@ -2124,7 +2148,7 @@ I studien användes även skattningsskalan Rathus som ett komplement till AAA-S 
 
 Utifrån konceptualiseringen som gjordes i den föreliggande studien om självhävdelse (se figur \@ref(fig:assertiveness)) är det även svårt att utvärdera resultatet på AAA-S delskala om aggressivitet. För delskalan AAA-S Adaptive var målsättningen tydlig, desto högre skattningar desto bättre. I tolkandet av resultatet på delskalan AAA-S Aggresive är det mer invecklat. Rimligtvis bör låga resultat vara bra då de är en indikation på låg grad av aggressivt självhävdande. I föreliggande studie ökade skattningarna på AAA-S Aggressive på ungefär samma sätt som skattningarna för AAA-S Adaptive (om än något mindre). Vi tror att en stor del av förklaringen av denna utveckling ligger i vilka deltagare som sökt sig till studien. Vårt sample hade ett medelvärde på LSAS-SR (*M* = 49) som med råge överskrider den gräns som brukar användas (30) för att bedömma om social fobi föreligger [@Fresco2001]. En rimlig slutsats att dra av detta är att en stor andel av studiens deltagare har socialfobiska tendenser och att delar av dem till och med sannolikt skulle diagnosticeras med social fobi vid en djupare klinisk bedömning. Symtombilden för social fobi är väl överensstämmande med beskrivningen av passivt självhävdande individer. Med största sannolikhet var deltagarna i den aktuella studien för passivt självhävdande vid studiens start.   
 
-Möjligen upplever dessa individer sig -- med sitt väldigt passiva självhävdande -- som både mer aggressivt- och mer konstruktivt självhävdande när de börjar stå upp för sig själva och sina behov. Vid studiens start var behandlarstöds- och självhjälpsgruppens aggresiva självhävdelse (*M* = 27,7 respektive *M* = 27,9) lägre än normgruppen [*M* = 33.2 @Thompson2011], efter behandlingen var behandlarstöds- och självhjälpsgruppens skattningar (*M* = 31,5 respektive *M* = 30,5) närmare normgruppens värde. Potentiellt var ökningen av aggressiv självhävdelse i den föreliggande studien en positiv utveckling för deltagarna. I framtida studier om konstruktiv självhävdelse vore det fördelaktigt att vid screening klassificera deltagarna utifrån huvudsakliga sökorsak och målsättning. Det skulle ge möjligheten till att se hur grupper av individer med olika sorters självupplevda brister i konstruktivt självhävdande (exempelvis grupperna "för aggressivt självhävdande" och "för passivt självhävdande") tar till sig behandlingen. 
+Möjligen upplever dessa individer sig -- med sitt väldigt passiva självhävdande -- som både mer aggressivt- och mer konstruktivt självhävdande när de börjar stå upp för sig själva och sina behov. Vid studiens start var behandlarstöds- och självhjälpsgruppens aggresiva självhävdelse (*M* = 27,7 respektive *M* = 27,9) lägre än normgruppen [*M* = 33,2 @Thompson2011], efter behandlingen var behandlarstöds- och självhjälpsgruppens skattningar (*M* = 31,5 respektive *M* = 30,5) närmare normgruppens värde. Potentiellt var ökningen av aggressiv självhävdelse i den föreliggande studien en positiv utveckling för deltagarna. I framtida studier om konstruktiv självhävdelse vore det fördelaktigt att vid screening klassificera deltagarna utifrån huvudsakliga sökorsak och målsättning. Det skulle ge möjligheten till att se hur grupper av individer med olika sorters självupplevda brister i konstruktivt självhävdande (exempelvis grupperna "för aggressivt självhävdande" och "för passivt självhävdande") tar till sig behandlingen. 
 
 <!-- 
 Diskussion om själva resultatet återstår att skriva!
