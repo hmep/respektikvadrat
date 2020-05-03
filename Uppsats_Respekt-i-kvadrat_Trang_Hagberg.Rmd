@@ -2181,15 +2181,22 @@ I föreliggande studie ökade skattningarna på AAA-S Aggressive över tid på u
 
 <!-- I efterhand konstaterar vi att behandlingsprogrammet hade behövt mätverktyg för att systematiskt klassificera individer utifrån självuppgivna målsättningar i relation till aggressiv självhävdelse -- det skulle kunna göra det möjligt att i resultatet sammanblanda den deltagare med humörproblem som vill minska graden av aggressiv självhävdelse med den som söker för att hen önskar bli bättre på att uttrycka ilska. Dilemmat sätter fingret på behovet (som går att generalisera till alla terapiformer) av idiografisk målformulering. -->
 
-<!-- FLYTTA NED:Hur det faktum att covid-19-epedemin bröt ut i Sverige en bit in i programmet, i början på mars 2020, är svårt att säga, men genom randomseringen till två behandlingsgrupper och väntelista erhölls full kontroll för händelseutvecklingen; den påverkan den har haft på deltagarna antas vara densamma i alla betingelser. -->
-
 ### Behandlarstöd och självhjälp gav samma resultat
 
 Vid deltagande i *Respekt i kvadrat* spelar det ingen roll om man arbetar på egen hand eller får guidning av en behandlare under de åttat veckor som programmet pågår. Skillnaden i förändring av grad av konstruktiv självhävdelse mellan grupperna `r xg1` och `r xg2` var statistiskt försumbar. Vi fann inte heller någon skillnad i effekt vid `r xt2`mätningen. Fyndet överensstämmer med resultaten för @Samuelsson2018 som undersökte ett KBT-självhjälpsmaterial för par med relationsproblem med eller utan behandlarstöd. I en metanalys noterar @Baumeister2014as att terapeutstödda interventioner på aggreggerad nivå har bättre effekt än enbart självhjälpsmaterial, men också att skillnaden är mindre än vad som har rapporterats tidigare. Flertalet tidigare studier rapporterar liknande utfall -- det vill säga att både gruppen med och utan behandlarstöd gör framsteg, utan markant skillnad mellan grupperna [se bland annat @Berger2011; @Ivanova2016; @Rozental2015; @Samuelsson2018]. För framtida studier vore det intressant att undersöka vilka de verksamma effekterna av behandlarstöd är och vad som kan göras för att maximera dessa komponenters inverkan på behandlingsutfallet. Det finns många faktorer som avgör om en intervention ska ges med eller utan stöd, bland dem ekonomiska hänsyn och tillgänglighet. Huruvida avsaknaden av skillnad i effekt för de båda behandlingsgrenarna av *Respekt i kvadrat* beror på terapeuteffekter, takeffekter av materialet eller andra interventionsbundna faktorer går inte att avgöra med vägledning av den utförda analysen. Vi nöjer oss här med att konstatera att det samtidiga goda utfallen för de båda behandlingsgrenarna bekräftar att programmet *Respekt i kvadrat* är verksamt för ökning av grad av konstruktiv självhävdelse och att den stora effekten i självhjälpsgruppen är ett gott tecken på att materialet kan komma till nytta som självhjälpsmaterial.
 
-### Metodologiska brister
+### Metodologiska styrkor och förbättringsmöjligheter
 
-#### Icke-validerade skattningsskalor
+#### För- och nackdelar med väntelista som kontrollbetingelse
+
+I denna studie placerades en tredjedel av deltagarna på en väntelista. En risk med användandet av väntelista är att de deltagare som tilldelas väntelistan försämras under behandlingens gång. I en meta-analys från 2017 konstaterade @Rozental2017a att över 15% av de som tilldelas betingelsen väntelista i I-KBT-studier försämras, jämfört med cirka 6% av de som genomgick behandlingen. Detta kan även leda till att en behandlings eventuella effekt överdreivs. Ur teoretisk synpunkt hade det varit bättre att tilldela kontrollgruppen en aktiv betingelse, exempelvis tillgång till ett diskussionsforum utan behandlingsinslag. I den aktuella studien försämrades dock ingen deltagare signifikant från för- till eftermätningen, varken i väntelistan eller i någon av de andra betingelserna. Hur det faktum att covid-19-epedemin bröt ut i Sverige en bit in i programmet, i början på mars 2020, är svårt att säga, men genom randomseringen till två behandlingsgrupper och väntelista erhölls full kontroll för händelseutvecklingen; den påverkan den har haft på deltagarna antas vara densamma i alla betingelser.
+
+<!-- Det går ändå att diskutera om användandet av väntelista som kontroll är det bästa valet i utformningen av studiens design: Användandet av väntelista höjer allt som oftast oddsen för att hitta en signifikant effekt jämfört med att tilldela kontrollgruppen mer aktiva betingelser [@Mohr2009].   -->
+
+<!-- Randomisering av kontrollgruppen till väntlistebetingelse är ett effektivt för att kontrollera för inverkan av händelser i omvärlden som kan påverka studiens deltagare och därmed studiens resultat. Ungefär mitt under behandlingen för grupperna `r xg1` och `r xg2`, kring tilldelningarna av modul 4--5, tog spridningen av viruset covid-19 fart i Sverige. Vi kan anta att effekterna av pandemin har haft olika slags effekter i dagliga rutiner och i fysiskt och psykiskt mående för studiens deltagare. Hade vår  kontrollgrupp haft en annan betingelse än väntelista hade det varit svårt att konstatera vad i deras resultat som var påverkat av betingelsen i fråga, och vad i resultatet som berodde på covid-19s spridning i Sverige. I och med att vår studies kontrollgrupp var tilldelade en väntelista kan vi vara säkra på tillförlitligheten i den behandlingseffekt mellan grupperna som vi har konstaterat.  -->
+
+
+#### Validering av skattningsskalor
 
 En potentiell brist i studien att de nyligen översatta versionerna av självskattningsformulären AAA-S [@Thompson2011] och Rathus [@Rathus1973] varken är validerade med originalskalorna som kriterium eller har svenska normer. Översättningen är inte heller fullt ut kvalitetssäkrad (exempelvis genom fram-och-tillbaka-översättning) [se @Beaton2000; och @Jones2001 för riktlinjer för översättning av skalor]. Icke-klinisk normdata är hämtad från student-sample 1 från @Thompson2011 både för AAA-S och Rathus. Det är en fördel att båda skalor använder normer från samma grupp; det gör resultaten (oaktat den extra osäkerhet som översättningen har inneburit) enklare att relaterad till varandra. Data från föreliggande uppsats skulle potentiellt kunna användas för att validera de svensköversatta skalorna i en uppföljande studie med ett breddat sample med större spridning med avseende på exempelvis social fobi. Ett dilemma är dock att båda översättningar på en och samma gång är icke-validerade och idealiska kriterier för varandras validering; det saknas tyvärr vedertagna skalor i litteraturen för *assertiveness* utöver Rathus och AAA-S. 
 
@@ -2197,15 +2204,17 @@ En potentiell brist i studien att de nyligen översatta versionerna av självska
 
 <!-- Som nämnt tidigare hade vårt sample höga skattningar på självskattningsformuläret LSAS-SR, som screenar för social fobi.  Vi vet också med oss att emotionellt undvikande är vanligt hos personer som upplever socialfobiska besvär [@Campbell-Sills2006; @Gross2003; @Hayes1996] och att emotionellt undvikande leder till sämre behandlingsresultat [@DeCastella2015]. Det hade troligen varit fördelaktigt för föreliggande studie att inkludera ett mätinstrument för emotionellt undvikande. Det hade gett möjligheten till att utvärdera om en individs resultat i *Respekt i kvadrat* påverkas av hens användande av emotionellt undvikande. Förslagsvis kan framtida studier undersöka sambandet mellan emotionellt undvikande och tränande i konstruktivt självhävdande.  -->
 
-#### Bristande uppföljning
+#### Uppföljningsmätning
 
 På grund tidsbegränsning för studiens upplägg fanns inga möjligheter till att göra uppföljningsmätningar. Det gör det svårare att avgöra hur behandlingsprogrammet har påverkat deltagarnas mående och konstruktiva självhävdande över tid. Forskning indikerar att framsteg gjorda under KBT-behandling tenderar att bibehållas över tid. Det är till och med vanligt att ytterligare ökande i mående och minskande av symtombild sker efter avslutad behandling [@Bandelow2018].
 
 <!-- Möjligen innebär det att även deltagarna i den aktuella studien kommer att fortsätta förbättras framöver. Det vore fördelaktigt om framtida studier som berör konstruktiv självhävdelse inkluderar uppföljningsmätningar. Detta skulle ge en möjlighet att se hur konstruktet påverkas över tid. -->
 
-#### Snedvridet sample
+#### Rekrytering av mer varierat sample
 
-Med nästintill 90% kvinnor i samplet var könsfördelningen ytterst ojämn. Denna ojämna fördelning går troligen att tillskriva flertalet faktorer. Kvinnor rapporterar mer oro, änglsan och ångest än män [@Socialstyrelsen2004] vilket skulle kunna göra kvinnor mer benägna än män att söka hjälp. Utöver detta tenderar män överlag i lägre utsträckning söka vård än kvinnor även när män och kvinnor upplever liknande symtom [@Galdas2005]. Kvinnor tenderar också att i större grad än män att delta i forskningsstudier. I metaanalysen @Rozental2017a konstateras att 62% av deltagarna i alla inkluderade studier var kvinnor. 
+Med nästintill 90% kvinnor i samplet var könsfördelningen ytterst ojämn. Denna ojämna fördelning går troligen att tillskriva flera orsaker. Kvinnor rapporterar mer oro, änglsan och ångest än män [@Socialstyrelsen2004] vilket skulle kunna göra kvinnor mer benägna än män att söka hjälp. Utöver detta tenderar män överlag i lägre utsträckning söka vård än kvinnor även när män och kvinnor upplever liknande symtom [@Galdas2005]. Kvinnor tenderar också att i större grad än män att delta i forskningsstudier. I metaanalysen @Rozental2017a konstateras att 62% av deltagarna i alla inkluderade studier var kvinnor. För den aktuella studien är den främsta orsaken till det snedvridna samplet rekryteringsförfarandet med annonsering i sociala medier. Vid kontroll i efterhand har det visats det sig att den algoritmstyrda annonsvisningen till mer än 85% av riktades till kvinnor och till ungefär 60% till personer i åldersspannat 35--54 år. Vilken påverkan annonsvisningen har haft på andra faktorer, exempelvis grad av social ångest, går inte att utläsa. För den aktuella studien innebär rekryteringsförfarandet att samplet med sin begränsade spridning inte har passat den operationalisering av begreppen konstruktiv, passiv och aggressiv självhävdelse som *Respekt i kvadrat* utgår från.
+
+operationaliseringen av konstruktiv, passiv och aggressiv självhävdelse inte .
 
 Slutligen – vilket troligen är den mest påverkande faktorn till den ojämna könsfördelningen i den föreliggande studien – så sköttes studiens marknadsföring på sociala medier av en automatiserad algoritm. Algoritmen visar annonsen för de individer den tror har störst odds till att interagera med den. Data som sammanställdes efter avslutad annonsering visade på att mer än 85% av annonserna hade visats för kvinnor. 
 
@@ -2218,27 +2227,28 @@ Både att väldigt många kvinnor deltog i den aktuella studien, och att en så 
 Då det i skrivande stund varken finns data om prevalens av bristande självhävdelse i Sveriges population, eller data om vilka demografiska faktorer denna brist korrelerar med, är det ytterst svårt att säga hur representativ för Sveriges befolkning samplet i den aktuella studien är. Det vore av stor nytta att framtida studier undersöker denna behandlings effekt i andra populationer med större heterogenitet.
 
 
+
 <!-- VÅGAR VI SÄGA NÅGOT OM ICC????? Vi konstaterar att den individkopplade korrelationen mellan mätningstidpunkterna är 68% respektive 74% för AAA-S-måtten Adaptive respektive Aggressive i det sample som studien har rekryterat. Det betyder att en individernas svar på de upprepade mätningarna är starkt korrelerade. Dessa *random*-effekter kan spekulativt handla om generell grad av emotionellt undvikande i samplet, begränsningar i tid för medverkan eller andra variabler som inte kontrolleras i studiedesignen. För att bättre kunna kontrollera för sådana individuella bidrag till behandlingsutfall bör effektstudier innehålla fler sätt att mäta individrelaterade variabler än vad den här studien har gjort (exempelvis frågor om hur mycket tid deltagarna har haft till förfogande för deltagande). -->
 
 
-    * Snedvridet sample med liten spridning
-      * väldigt många socialfobiker
-      * få med problem med aggressiv självhävdelse
-      * ej jämn könsfördelning -- även utifrån utbildningsnivå, ålder mm
-    * Väntelista som kontrollbetingelse
-    * Data bara insamlat från självskattningsformulär
+<!--     * Snedvridet sample med liten spridning -->
+<!--       * väldigt många socialfobiker -->
+<!--       * få med problem med aggressiv självhävdelse -->
+<!--       * ej jämn könsfördelning -- även utifrån utbildningsnivå, ålder mm -->
+<!--     * Väntelista som kontrollbetingelse -->
+<!--     * Data bara insamlat från självskattningsformulär -->
 
-### Framtida forskning
+<!-- ### Framtida forskning -->
 
-    * Bättre operationalisering av begreppen (ref japansk studie)
-    * Bättre validerade skattningsskalor
-    * Utveckling över längre tid (follow-up-mätning)
-    * Undersöka fler random-effekter
-      * Terapeuteffekter
-      * Individeffekter, traits vs states
-      * Lämpligt anpassa materialet för olika grupper, eller att välja generella verksamma komponenter?
-      * Kombination av fysisk behandling och internetterapi, lämpligt vid emotionellt undvikande, möjligehet att adressera detta är lägre via internet (ACT, affektfokuserade psykodynamiska terapier)
-    * Replikera resultaten, även vid tidpunkt när pandemi inte pågår
+<!--     * Bättre operationalisering av begreppen (ref japansk studie) -->
+<!--     * Bättre validerade skattningsskalor -->
+<!--     * Utveckling över längre tid (follow-up-mätning) -->
+<!--     * Undersöka fler random-effekter -->
+<!--       * Terapeuteffekter -->
+<!--       * Individeffekter, traits vs states -->
+<!--       * Lämpligt anpassa materialet för olika grupper, eller att välja generella verksamma komponenter? -->
+<!--       * Kombination av fysisk behandling och internetterapi, lämpligt vid emotionellt undvikande, möjligehet att adressera detta är lägre via internet (ACT, affektfokuserade psykodynamiska terapier) -->
+<!--     * Replikera resultaten, även vid tidpunkt när pandemi inte pågår -->
 
 
 <!-- ## VVV Bra textunderlag att inkorporera i delarna ovan VVV -->
@@ -2282,15 +2292,6 @@ Innan ni går över till brister så vill ni kanske säga något om övriga utfa
 <!-- ### Samplet och dess representation av populationen -->
 
 <!-- All data som låg till grund för inkludering eller exkludering i den aktuella studien var insamlad från självskattningsformulär. I och med att forskningspersonsinformationen som potentiella deltagare kunde läsa innan de påbörjade screeningsprocessen presenterade såväl inkluderings- som exkluderingskriterier (även om exkluderingskriterierna till viss del var allmänt formulerade) medför det risken att de som sökte till studien anpassade sina svar för att bli inkluderade. Då ingen klinisk intervju användes i screeningprocessen fanns det ingen möjlighet att på så sätt upptäcka individer som borde exkluderas. Detta kan medföra att individer som egentligen borde ha exkluderats, på grund av icke sanningsenliga svar, istället blev inkluderade. Å andra sidan bör motivationen till social önskvärdhet vid ifyllnad av förmätningen varit lägre i och med att screeningen gjordes mer anonymnt än om den skulle skett via en klinisk intervju ansikte-mot-ansikte eller per telefon. Ingen klinisk intervju inkluderades då det låg utanför studiens möjliga resurser att administrera den till alla potentiella deltagare. En stor fördel med att inte ha använt kliniska intervjuerna är att tiden mellan påbörjad rekrytering och behandlingsstart blev kort, endast två veckor. -->
-
-
-### Väntelista som kontrollbetingelse
-
-I denna studie placerades en tredjedel av deltagarna på en väntelista. En risk med användandet av väntelista är att de deltagare som tilldelas väntelistan försämras under behandlingens gång. I en meta-analys från 2017 konstaterade @Rozental2017a att över 15% av de som tilldelas betingelsen väntelista i I-KBT-studier försämras, jämfört med cirka 6% av de som genomgick behandlingen. Detta kan även leda till att en behandlings eventuella effekt förstoras på grund av försämrandet hos väntelista-betingelsen snarare än förbättrandet hos de som betingats till behandlingen. I den aktuella studien försämrades ingen deltagare kliniskt signifikant från för- till eftermätningen, varken i väntelistan eller i någon av de andra betingelserna. Därav lider den aktuella studien ingen risk för att ha påverkats av denna felkälla. 
-
-Det går ändå att diskutera om användandet av väntelista som kontroll är det bästa valet i utformningen av studiens design: Användandet av väntelista höjer allt som oftast oddsen för att hitta en signifikant effekt jämfört med att tilldela kontrollgruppen mer aktiva betingelser [@Mohr2009]. Ur teoretisk synpunkt hade det varit bättre att tilldela kontrollgruppen en aktiv betingelse, exempelvis tillgång till ett diskussionsforum utan behandlingsinslag. 
-
-Randomisering av kontrollgruppen till väntlistebetingelse är ett effektivt för att kontrollera för inverkan av händelser i omvärlden som kan påverka studiens deltagare och därmed studiens resultat. Ungefär mitt under behandlingen för grupperna `r xg1` och `r xg2`, kring tilldelningarna av modul 4--5, tog spridningen av viruset covid-19 fart i Sverige. Vi kan anta att effekterna av pandemin har haft olika slags effekter i dagliga rutiner och i fysiskt och psykiskt mående för studiens deltagare. Hade vår  kontrollgrupp haft en annan betingelse än väntelista hade det varit svårt att konstatera vad i deras resultat som var påverkat av betingelsen i fråga, och vad i resultatet som berodde på covid-19s spridning i Sverige. I och med att vår studies kontrollgrupp var tilldelade en väntelista kan vi vara säkra på tillförlitligheten i den behandlingseffekt mellan grupperna som vi har konstaterat. 
 
 <!-- [Pers kommentar] 
 Kanske även hänvisa till 
