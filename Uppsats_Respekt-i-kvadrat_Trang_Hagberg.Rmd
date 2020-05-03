@@ -941,7 +941,9 @@ För modelleringen av de olika utfallsmåtten användes modelleringsverktyg frå
 
 ### Analys av *random*-effekter
 
-Genom beräkning av så kallad intraklasskorrelation (ICC) undersökte vi vilken andel av variansen som kommer av underliggande individkopplad förändringsbenägenhet över tid.
+Genom beräkning av så kallad intraklasskorrelation (ICC) undersökte vi vilken andel av variansen som kan förklaras av underliggande individuella förutsättningar, exempelvis generell förändringsbenägenhet (individuella egenskaper, *traits*) eller yttre omständigheter (*states*). Intraklasskorrelationen kan också tolkas som korrelationen mellan observationer inom individer.
+
+<!-- https://www.theanalysisfactor.com/the-intraclass-correlation-coefficient-in-mixed-models/ -->
 
 <!-- s 49 http://wiki.bcs.rochester.edu/HlpLab/StatsCourses?action=AttachFile&do=get&target=Groningen11.pdf
 Consider reporting scales for outputs, inputs and predictors (e.g., range, mean, sd, median). -->
@@ -2083,7 +2085,9 @@ medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.time$estimate[8] * -1)`, $t$
 
 För både gruppen `r xg1` och gruppen `r xg2` fann vi en klar förbättring mellan behandlingsstart och `r xt3`mätning, medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.group$estimate[5] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.group$df[5])`}\) = `r xresult(aaas_ad.emmpairs.by.group$statistic[5] * -1)`; `r xpr(aaas_ad.emmpairs.by.group[["p.value"]][5])`; effektstorlek `r xresult(aaas_ad.eff.by.group$effect.size[5] * -1)` respektive medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.group$estimate[8] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.group$df[8])`}\) = `r xresult(aaas_ad.emmpairs.by.group$statistic[8])`; `r xpr(aaas_ad.emmpairs.by.group[["p.value"]][8])`; effektstorlek `r xresult(aaas_ad.eff.by.group$effect.size[8] * -1)`.
 
-Deltagarna i de båda behandlingsbetingelserna hade efter fullgången behandling förbättrats avsevärt med avseende på graden av konstruktiv självhävdelse, i jämförelse med `r xg3`. Effekten var påtaglig redan vid mittenmätningen för båda grupperna. Även förbättringen mellan behandlingsstart och `r xt3`mätningen var för båda grupperna betydande. Se figur \@ref(fig:effemmplotsad) för en visualisering av resultaten. Med våra initiala flernivåanalyser konstaterar vi att ICC-värdet ger att `r xresult(performance::icc(aaas_ad.lmer)$ICC_adjusted * 100)`% av variansen i utfallsmåttet AAA-S Adaptive kan förklaras av individuella faktorer.
+Deltagarna i de båda behandlingsbetingelserna hade efter fullgången behandling förbättrats avsevärt med avseende på graden av konstruktiv självhävdelse, i jämförelse med `r xg3`. Effekten var påtaglig redan vid mittenmätningen för båda grupperna. Även förbättringen mellan behandlingsstart och `r xt3`mätningen var för båda grupperna betydande. Se figur \@ref(fig:effemmplotsad) för en visualisering av resultaten. 
+
+I flernivåanalysen konstaterar vi att `r xresult(performance::icc(aaas_ad.lmer)$ICC_adjusted * 100)`% av variansen i utfallsmåttet AAA-S Adaptive mellan mättidpunkterna kan förklaras av individuella faktorer.
 
 ### Aggressiv självhävdelse
 
@@ -2100,7 +2104,7 @@ Vid `r xt3`mätningen fann vi också att medelpoängen för `r xg2`sgruppen (*M*
 
 För båda grupperna `r xg1` och `r xg2` fann vi en signifikant höjning mellan tidpunkterna för behandlingsstart och `r xt3`mätning. För `r xg1`sgruppen var medelvärdesskillnaden `r xresult(aaas_ag.emmpairs.by.group$estimate[5] * -1)`, $t$\(_{`r xresult(aaas_ag.emmpairs.by.group$df[5])`}\) = `r xresult(aaas_ag.emmpairs.by.group$statistic[5])`; `r xpr(aaas_ag.emmpairs.by.group$p.value[5])`; effektstorlek `r xresult(aaas_ag.eff.by.group$effect.size[5] * -1)`, för `r xg2`sgruppen var den `r xresult(aaas_ag.emmpairs.by.group$estimate[8] * -1)`, $t$\(_{`r xresult(aaas_ag.emmpairs.by.group$df[8])`}\) = `r xresult(aaas_ag.emmpairs.by.group$statistic[8])`; `r xpr(aaas_ag.emmpairs.by.group$p.value[8])`; effektstorlek `r xresult(aaas_ag.eff.by.group$effect.size[8] * -1)`.
 
-Det är notabelt att medelvärdet för gruppen `r xg2` var lägre än för gruppen `r xg1`, som inte fick något behandlarstöd, vid båda tidpunkterna. Skillnaden är dock ej signifikant. Båda behandlingsbetingelserna uppvisar en höjning av graden av aggressiv självhävdelse, i jämförelse med `r xg3`. Effekten var signifikant vid mittenmätningen för gruppen `r xg1` (men inte för gruppen `r xg2`). Även höjningen av aggressiv självhävdelse mellan behandlingsstart och `r xt3`mätningen var för båda grupperna signifikant. Figur \@ref(fig:effemmplotsag) ger en visualisering av resultaten. `r xresult(performance::icc(aaas_ag.lmer)$ICC_adjusted * 100)`% av variansen på AAA-s Aggressive kan förklaras av individuella faktorer.
+Det är notabelt att medelvärdet för gruppen `r xg2` var lägre än för gruppen `r xg1`, som inte fick något behandlarstöd, vid båda tidpunkterna. Skillnaden är dock ej signifikant. Båda behandlingsbetingelserna uppvisar en höjning av graden av aggressiv självhävdelse, i jämförelse med `r xg3`. Effekten var signifikant vid mittenmätningen för gruppen `r xg1` (men inte för gruppen `r xg2`). Även höjningen av aggressiv självhävdelse mellan behandlingsstart och `r xt3`mätningen var för båda grupperna signifikant. Figur \@ref(fig:effemmplotsag) ger en visualisering av resultaten. `r xresult(performance::icc(aaas_ag.lmer)$ICC_adjusted * 100)`% av variansen på AAA-S Aggressive kan förklaras av individuella faktorer.
 
 ```{r attrition, eval = F}
 
@@ -2230,6 +2234,10 @@ TH: Samtidigt är det bra att diskutera detta. Nu är din sista mening borta, me
 <!-- TH: diskutera problemet med aggressiv självhävdelse och avsaknad av idiografisk fallformulering -->
 
 <!-- TH: möjligen valde vi en lite för självcentrerad primär frågeställning -- eller i alla fall kan det uppfattas som det. Egentligen översatte vi ju bara frågeställningarna från en annan studie ... -->
+
+<!-- Det är uppenbart att olika individer har olika förutsättningar att ta till sig effekterna av en viss terapi som den ges vid en viss tipunkt. Intraklasskorrelationerna, som ger andelen av den totala variansen som förklaras av klusternivån i analysen. I våra analyser är klustrenivån individer som "innehåller" mätvärden från tre tidpunkter.  -->
+
+<!-- Hur relaterar detta till corona? -->
 
 <!--
 + klämma in någonstans styrkan av att ha gjoren en "a priori"-powerberäkning?
