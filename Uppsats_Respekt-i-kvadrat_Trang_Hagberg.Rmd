@@ -929,9 +929,9 @@ Vi använde `r version$language`, version `r version$major`.`r version$minor` [@
 <!-- Vi använde `r cite_r("r-references.bib")` för samtliga analyser.  -->
 Signifikansnivån $\alpha$ = 0,05 tillämpades vid alla beräkningar. Öppen syntax och data finns deponerade hos Figshare på https://doi.org/10.17045/sthlmuni.12148785 [@R2data2020].
 
-### Kontroll av utgångsdata
+<!-- ### Kontroll av utgångsdata -->
 
-Vi analyserade insamlade förmätningsvärden för att kontrollera om randomiseringen hade gett grupper utan signifikanta skillnader. Oberoende variansanalys (ANOVA) användes för att utesluta skillnader mellan grupperna i primära utfallsmått, sekundära utfallsmått och kontinuerliga sociodemografiska variabler. Kategoriska sociodemografiska variabler undersöktes med Kruskal-Wallis-test från R-paketet *FSA* [@R-FSA]. Cohen's d-effektstorlekar för beroende mätningar beräknades med R-paketet *effsize* [@R-effsize].
+<!-- Vi analyserade insamlade förmätningsvärden för att kontrollera om randomiseringen hade gett grupper utan signifikanta skillnader. Oberoende variansanalys (ANOVA) användes för att utesluta skillnader mellan grupperna i primära utfallsmått, sekundära utfallsmått och kontinuerliga sociodemografiska variabler. Kategoriska sociodemografiska variabler undersöktes med Kruskal-Wallis-test från R-paketet *FSA* [@R-FSA]. -->
 
 ### Bortfallsanalys 
 
@@ -1010,7 +1010,7 @@ xpr <- function(x) {
 
 ```
 
-Vid analys av sociodemografisk data fann vi en signifikant skillnad i könsfördelning mellan grupperna ($\chi^2_`r format(round(Demografi.Kon.chi[["parameter"]],2),decimal.mark=",")`$ = `r format(round(Demografi.Kon.chi$statistic,2),decimal.mark=",")`, `r xpr(Demografi.Kon.chi[["p.value"]])`). Gruppen `r xg1` hade vid parvisa uppföljningstest signifikant större andel män än både gruppen `r xg3` (`r xpr(Demografi.Kon.posthoc[["res"]][3,4])`) och gruppen `r xg2` (`r xpr(Demografi.Kon.posthoc[["res"]][1,4])`). I övrigt fann vi inte några skillnader i sociodemografiska variabler mellan grupperna. 
+<!-- Vid analys av sociodemografisk data fann vi en signifikant skillnad i könsfördelning mellan grupperna ($\chi^2_`r format(round(Demografi.Kon.chi[["parameter"]],2),decimal.mark=",")`$ = `r format(round(Demografi.Kon.chi$statistic,2),decimal.mark=",")`, `r xpr(Demografi.Kon.chi[["p.value"]])`). Gruppen `r xg1` hade vid parvisa uppföljningstest signifikant större andel män än både gruppen `r xg3` (`r xpr(Demografi.Kon.posthoc[["res"]][3,4])`) och gruppen `r xg2` (`r xpr(Demografi.Kon.posthoc[["res"]][1,4])`). I övrigt fann vi inte några skillnader i sociodemografiska variabler mellan grupperna. -->
 
 ```{r groupcontrols, eval = F}
 
@@ -1088,7 +1088,7 @@ anova(kontroll_well)
 
 ```
 
-Med oberoende variansanalys konstaterade vi att det inte fanns några signifikanta skillnader i några av utfallsmåtten mellan de olika grupperna vid behandlingens start.
+<!-- Med oberoende variansanalys konstaterade vi att det inte fanns några signifikanta skillnader i några av utfallsmåtten mellan de olika grupperna vid behandlingens start. -->
 
 ```{r modelcomparisons, eval = F}
 
@@ -1264,7 +1264,7 @@ Vid visuell granskning av diagnostiska plottar av observerad data fann vi inga b
 
 ```{r rsquared, eval=F}
 
-# Do we report Conditional R2?
+# Do we report Conditional R2? No, not for now. There's no use reporting model fit since we have a model that is specified by theory.
 
 # The marginal R-squared considers only the variance of the fixed effects, while the conditional R-squared takes both the fixed and random effects into account.
 
@@ -1731,10 +1731,6 @@ svkable(jtrci.tab[,c(7,1:6)], align="lcccccc", caption = '(ref:jtp)') %>%
 
 Se tabell \@ref(tab:descriptives) för en sammanställning av predicerade data från de olika modellerna för respektive utfallsmått, inklusive uppskattade effektstorlekar.
 
-<!-- 
-Patrik: Jag tycker ovan mening (som refererar till alla medelvärden) kan flyttas upp i resultatdelen så att den kommer direkt efter meningen "Med oberoende variansanalys konstaterade vi att det inte fanns några signifikanta skillnader i några av utfallsmåtten mellan de olika grupperna vid behandlingens start.". Möjligen att den då behöver skrivas om lite men jag tror att det passar bra i flödet så att säga. " [...] grupperna vid behandlingens start. Se även tabell X för en sammanställning av predicerade data/värden (?) för respektive utfallsmått modell".
--->
-
 ```{r emmeff, eval = T}
 
 require(emmeans)
@@ -1926,160 +1922,6 @@ svkable(descriptives.col.out, caption = "(ref:descriptives)", align="lllccccccc"
 
 Estimat av intercept och regressionskoefficienter för de olika primära och sekundära utfallsmåtten sammanfattas i tabell \@ref(stargazertab). Intercept och lutningskoefficienter som anges i tabellen för respektive utfallsmått kan läggas in i regressionsformeln för modellen för att predicera utfall för alla kombinationer av grupptillhörighet och mättillfällen.
 
-## Skillnad i effekt på konstruktiv självhävdelse mellan `r xg1`--`r xg2`
-
-Vår primära frågeställning var om det fanns någon skillnad (i endera riktning) i effekt mellan gruppen `r xg1` och gruppen `r xg2` med avseende på konstruktiv självhävdelse (det vill säga med utfallsmåttet AAA-S Adaptive).
-
-Vi fann ingen skillnad i utfall med AAA-S Adaptive vid `r xt3`mätningen mellan gruppen `r xg1` och gruppen `r xg2`. Vi fann inte heller någon skillnad i effekt vid `r xt2`mätningen. Skillnaden i konstruktiv självhävdelse vid `r xt3`mätningen är försumbar mellan de som fått behandlarstöd och de som har fått klara sig på egen hand.
-
-<!-- $t$\(_{`r xresult(aaas_ad.emmpairs.by.time$df[9])`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[9] * -1)`, `r xpr(aaas_ad.emmpairs.by.time[["p.value"]][9])`, effektstorlek `r xresult(aaas_ad.eff.by.time$effect.size[9] * -1)` -->
-
-## Skillnader i effekt på konstruktiv och aggressiv självhävdelse mellan `r xg3`--`r xg1` respektive `r xg3`--`r xg2`
-
-Vi var också intresserade av hur effekten av deltagande i grupperna `r xg1` och `r xg2` skiljer sig från deltagande i `r xg3` med avseende på konstruktiv och aggressiv självhävdelse, fångade med utfallsmåtten AAA-S Adaptive respektive AAA-S Aggressive.
-
-### Konstruktiv självhävdelse
-
-#### `r xG3`--`r xg1` vid `r xt3`mätningen
-
-Vi fann en högre medelpoäng på AAA-S Adaptive för gruppen `r xg1` (estimerat marginalmedelvärde [emm] `r xresult(tidy(aaas_ad.emm.by.time)$estimate[8])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[8])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[8])`]) än för gruppen `r xg3` (emm `r xresult(tidy(aaas_ad.emm.by.time)$estimate[7])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[7])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[7])`]) vid `r xt3`mätningen, 
-medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.time$estimate[7] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.time$df[7])`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[7])`; `r xpr(aaas_ad.emmpairs.by.time[["p.value"]][7])`; effektstorlek `r xresult(aaas_ad.eff.by.time$effect.size[7] * -1)`.
-
-#### `r xG3`--`r xg2` vid `r xt3`mätningen
-
-Vi fann också en tydligt högre medelpoäng på AAA-S Adaptive vid `r xt3`mätningen för gruppen `r xg2` (emm `r xresult(tidy(aaas_ad.emm.by.time)$estimate[9])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[9])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[9])`]) jämfört med gruppen `r xg3` (se emm ovan),
-medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.time$estimate[8] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.time$df[8])`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[8])`; `r xpr(aaas_ad.emmpairs.by.time[["p.value"]][8])`; effektstorlek `r xresult(aaas_ad.eff.by.time$effect.size[8] * -1)`.
-
-#### Behandlingseffekt mellan behandlingsstart och `r xt3`mätning
-
-För både gruppen `r xg1` och gruppen `r xg2` fann vi en klar förbättring mellan behandlingsstart och `r xt3`mätning, medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.group$estimate[5] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.group$df[5])`}\) = `r xresult(aaas_ad.emmpairs.by.group$statistic[5] * -1)`; `r xpr(aaas_ad.emmpairs.by.group[["p.value"]][5])`; effektstorlek `r xresult(aaas_ad.eff.by.group$effect.size[5] * -1)` respektive medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.group$estimate[8] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.group$df[8])`}\) = `r xresult(aaas_ad.emmpairs.by.group$statistic[8])`; `r xpr(aaas_ad.emmpairs.by.group[["p.value"]][8])`; effektstorlek `r xresult(aaas_ad.eff.by.group$effect.size[8] * -1)`.
-
-Deltagarna i de båda behandlingsbetingelserna hade efter fullgången behandling förbättrats avsevärt med avseende på graden av konstruktiv självhävdelse, i jämförelse med `r xg3`. Effekten var påtaglig redan vid mittenmätningen för båda grupperna. Även förbättringen mellan behandlingsstart och `r xt3`mätningen var för båda grupperna betydande. Se figur \@ref(fig:effemmplotsad) för en visualisering av resultaten. Med våra initiala flernivåanalyser konstaterar vi att ICC-värdet ger att `r xresult(performance::icc(aaas_ad.lmer)$ICC_adjusted * 100)`% av variansen i utfallsmåttet AAA-S Adaptive kan förklaras av individuella faktorer.
-
-(ref:emmeffad) Medelvärdesestimat och effektstyrkor för AAA−S Adaptive. Etiketterna i figuren anger respektive effektstorlek av den med streckad linje indikerade parvisa jämförelse som var signifikant.
-
-```{r effemmplotsad, dpi=196, fig.align="center", fig.cap='(ref:emmeffad)', fig.height=5, fig.width=5.5, cache = F, eval = T}
-
-options(OutDec= ".")
-
-# AAA-S Ad
-
-Name = c(
-  NA,
-  paste(aaas_ad.eff.by.group[5,1],"-",aaas_ad.eff.by.group[5,2],": ",format(round(aaas_ad.eff.by.group[5,4],2) * -1,decimal.mark=","),sep=""),
-  paste(aaas_ad.eff.by.group[8,1],"-",aaas_ad.eff.by.group[8,2],": ",format(round(aaas_ad.eff.by.group[8,4],2) * -1,decimal.mark=","),sep=""),
-  NA,
-  paste(aaas_ad.eff.by.time[4,1],"-",aaas_ad.eff.by.time[4,2],": ",format(round(aaas_ad.eff.by.time[4,4],2) * -1,decimal.mark=","),sep=""),
-  paste(aaas_ad.eff.by.time[5,1],"-",aaas_ad.eff.by.time[5,2],": ",format(round(aaas_ad.eff.by.time[5,4],2) * -1,decimal.mark=","),sep=""),
-  NA,
-  paste(aaas_ad.eff.by.time[7,1],"-",aaas_ad.eff.by.time[7,2],": ",format(round(aaas_ad.eff.by.time[7,4],2) * -1,decimal.mark=","),sep=""),
-  paste(aaas_ad.eff.by.time[8,1],"-",aaas_ad.eff.by.time[8,2],": ",format(round(aaas_ad.eff.by.time[8,4],2) * -1,decimal.mark=","),sep="")
-)
-Nudge_x = c(0,0.1,0.1,0,0,0,0,-0.1,-0.1) * 1.3
-Nudge_y = c(0,-0.55,0.55,0,0.55,-0.55,0,0.55,-0.55) * 2
-
-aaas_ad.emm.plot <- 
-  plot(ggemmeans(aaas_ad.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = NA, colour = "Grupp:", title = element_blank()) + theme(legend.position = "bottom", axis.title.y = element_blank())
-
-#,arrow = arrow(length = unit(0.05, "npc"))
-ad1 <- aaas_ad.emm.plot + 
-  geom_curve(aes(x = 2.9, y = aaas_ad.emm.plot$data[2]$predicted[7], xend = 3.1, yend = aaas_ad.emm.plot$data[2]$predicted[9]), color = "#999999", size = 0.25, linetype = "dashed", curvature = 0.4) +
-  geom_curve(aes(x = 2.9, y = aaas_ad.emm.plot$data[2]$predicted[7], xend = 3, yend = aaas_ad.emm.plot$data[2]$predicted[8]), color = "#999999", size = 0.25, linetype = "dashed", curvature = -0.4) +
-  #geom_curve(aes(x = 1.9, y = aaas_ad.emm.plot$data[2]$predicted[4], xend = 2.1, yend = aaas_ad.emm.plot$data[2]$predicted[6]), color = "#999999", size = 0.25, linetype = "dashed", curvature = 0.5) +
-  geom_curve(aes(x = 1.9, y = aaas_ad.emm.plot$data[2]$predicted[4], xend = 2, yend = aaas_ad.emm.plot$data[2]$predicted[5]), color = "#999999", size = 0.25, linetype = "dashed", curvature = -0.4) + 
-  geom_curve(aes(x = 1.9, y = aaas_ad.emm.plot$data[2]$predicted[4], xend = 2.1, yend = aaas_ad.emm.plot$data[2]$predicted[6]), color = "#999999", size = 0.25, linetype = "dashed", curvature = 0.4) + 
-  geom_curve(aes(x = 1, y = aaas_ad.emm.plot$data[2]$predicted[2], xend = 3, yend = aaas_ad.emm.plot$data[2]$predicted[8]), color = "#999999", size = 0.25, linetype = "dashed", curvature = -0.4) + 
-  geom_curve(aes(x = 1.1, y = aaas_ad.emm.plot$data[2]$predicted[3], xend = 3.1, yend = aaas_ad.emm.plot$data[2]$predicted[9]), color = "#999999", size = 0.25, linetype = "dashed", curvature = 0.12) + 
-  geom_label(aes(label=Name),color="white", fill="#999999", nudge_x = Nudge_x, nudge_y = Nudge_y,size=2.5,na.rm=TRUE)
-
-ad1
-
-options(OutDec= ",")
-
-```
-
-### Aggressiv självhävdelse
-
-#### `r xG3`--`r xg1` vid `r xt3`mätningen
-
-Precis som för konstruktiv självhävdelse hade gruppen `r xg1` en klart högre medelpoäng (emm `r xresult(tidy(aaas_ag.emm.by.time)$estimate[8])`, 95% CI [`r xresult(tidy(aaas_ag.emm.by.time)$conf.low[8])` ; `r xresult(tidy(aaas_ag.emm.by.time)$conf.high[8])`]) på måttet för aggressiv självhävdelse, AAA-S Aggressive, än gruppen `r xg3` (emm `r xresult(tidy(aaas_ag.emm.by.time)$estimate[7])`, 95% CI [`r xresult(tidy(aaas_ag.emm.by.time)$conf.low[7])` ; `r xresult(tidy(aaas_ag.emm.by.time)$conf.high[7])`]) vid `r xt3`mätningen, 
-medelvärdesskillnad `r xresult(aaas_ag.emmpairs.by.time$estimate[7] * -1)`, $t$\(_{`r xresult(aaas_ag.emmpairs.by.time$df[7])`}\) = `r xresult(aaas_ag.emmpairs.by.time$statistic[7])`; `r xpr(aaas_ag.emmpairs.by.time$p.value[7])`; effektstorlek `r xresult(aaas_ag.eff.by.time$effect.size[7] * -1)`.
-
-#### `r xG3`--`r xg2` vid `r xt3`mätningen
-
-Vid `r xt3`mätningen fann vi också att medelpoängen för `r xg2`sgruppen (emm `r xresult(tidy(aaas_ag.emm.by.time)$estimate[9])`, 95% CI [`r xresult(tidy(aaas_ag.emm.by.time)$conf.low[9])` ; `r xresult(tidy(aaas_ag.emm.by.time)$conf.high[9])`]) var högre i jämförelse med gruppen `r xg3` (se emm ovan). Skillnaden var `r xresult(aaas_ag.emmpairs.by.time$estimate[8] * -1)`, $t$\(_{`r xresult(aaas_ag.emmpairs.by.time$df[8])`}\) = `r xresult(aaas_ag.emmpairs.by.time$statistic[8])`; `r xpr(aaas_ag.emmpairs.by.time$p.value[8])`; effektstorlek `r xresult(aaas_ag.eff.by.time$effect.size[8] * -1)`.
-
-#### Behandlingseffekt mellan behandlingsstart och `r xt3`mätning
-
-För båda grupperna `r xg1` och `r xg2` fann vi en signifikant höjning mellan behandlingsstart och `r xt3`mätning. För `r xg1`sgruppen var medelvärdesskillnaden `r xresult(aaas_ag.emmpairs.by.group$estimate[5] * -1)`, $t$\(_{`r xresult(aaas_ag.emmpairs.by.group$df[5])`}\) = `r xresult(aaas_ag.emmpairs.by.group$statistic[5])`; `r xpr(aaas_ag.emmpairs.by.group$p.value[5])`; effektstorlek `r xresult(aaas_ag.eff.by.group$effect.size[5] * -1)`, för `r xg2`sgruppen var den `r xresult(aaas_ag.emmpairs.by.group$estimate[8] * -1)`, $t$\(_{`r xresult(aaas_ag.emmpairs.by.group$df[8])`}\) = `r xresult(aaas_ag.emmpairs.by.group$statistic[8])`; `r xpr(aaas_ag.emmpairs.by.group$p.value[8])`; effektstorlek `r xresult(aaas_ag.eff.by.group$effect.size[8] * -1)`.
-
-Det är notabelt att medelvärdet för gruppen `r xg2` var lägre än för gruppen `r xg1`, som inte fick något behandlarstöd, vid båda tidpunkterna. Skillnaden är dock ej signifikant. Båda behandlingsbetingelserna uppvisar en höjning av graden av aggressiv självhävdelse, i jämförelse med `r xg3`. Effekten var signifikant vid mittenmätningen för gruppen `r xg1` (men inte för gruppen `r xg2`). Även höjningen av aggressiv självhävdelse mellan behandlingsstart och `r xt3`mätningen var för båda grupperna signifikant. Figur \@ref(fig:effemmplotsag) ger en visualisering av resultaten. `r xresult(performance::icc(aaas_ag.lmer)$ICC_adjusted * 100)`% av variansen på AAA-s Aggressive kan förklaras av individuella faktorer.
-
-(ref:emmeffag) Medelvärdesestimat och effektstyrkor för AAA-S Aggressive. Etiketterna i figuren anger respektive effektstorlek av den med streckad linje indikerade parvisa jämförelse som var signifikant.
-
-```{r effemmplotsag, dpi=196, fig.align="center", fig.cap='(ref:emmeffag)', fig.height=5, fig.width=5.5, cache = F, eval = T}
-
-options(OutDec= ".")
-
-# AAA-S Ag
-
-Name = c(
-  NA,
-  paste(aaas_ag.eff.by.group[5,1],"-",aaas_ag.eff.by.group[5,2],": ",format(round(aaas_ag.eff.by.group[5,4],2) * -1,decimal.mark=","),sep=""),
-  paste(aaas_ag.eff.by.group[8,1],"-",aaas_ag.eff.by.group[8,2],": ",format(round(aaas_ag.eff.by.group[8,4],2) * -1,decimal.mark=","),sep=""),
-  NA,
-  paste(aaas_ag.eff.by.time[4,1],"-",aaas_ag.eff.by.time[4,2],": ",format(round(aaas_ag.eff.by.time[4,4],2) * -1,decimal.mark=","),sep=""),
-  #paste(aaas_ag.eff.by.time[5,1],"-",aaas_ag.eff.by.time[5,2],": ",format(round(aaas_ag.eff.by.time[5,4],2) * -1,decimal.mark=","),sep=""),
-  NA,
-  NA,
-  paste(aaas_ag.eff.by.time[7,1],"-",aaas_ag.eff.by.time[7,2],": ",format(round(aaas_ag.eff.by.time[7,4],2) * -1,decimal.mark=","),sep=""),
-  paste(aaas_ag.eff.by.time[8,1],"-",aaas_ag.eff.by.time[8,2],": ",format(round(aaas_ag.eff.by.time[8,4],2) * -1,decimal.mark=","),sep="")
-)
-Nudge_x = c(0,0.1,0.1,0,0,0,0,-0.1,-0.1) * 1.3
-Nudge_y = c(0,-0.55,0.55,0,0.55,-0.55,0,0.55,-0.55) * 2
-
-aaas_ag.emm.plot <- 
-  plot(ggemmeans(aaas_ag.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = NA, colour = "Grupp:", title = element_blank()) + theme(legend.position = "bottom", axis.title.y = element_blank())
-
-#,arrow = arrow(length = unit(0.05, "npc"))
-ag1 <- aaas_ag.emm.plot + 
-  geom_curve(aes(x = 2.9, y = aaas_ag.emm.plot$data[2]$predicted[7], xend = 3.1, yend = aaas_ag.emm.plot$data[2]$predicted[9]), color = "#999999", size = 0.25, linetype = "dashed", curvature = 0.4) +
-  geom_curve(aes(x = 2.9, y = aaas_ag.emm.plot$data[2]$predicted[7], xend = 3, yend = aaas_ag.emm.plot$data[2]$predicted[8]), color = "#999999", size = 0.25, linetype = "dashed", curvature = -0.4) +
-  #geom_curve(aes(x = 1.9, y = aaas_ag.emm.plot$data[2]$predicted[4], xend = 2.1, yend = aaas_ag.emm.plot$data[2]$predicted[6]), color = "#999999", size = 0.25, linetype = "dashed", curvature = 0.5) +
-  geom_curve(aes(x = 1.9, y = aaas_ag.emm.plot$data[2]$predicted[4], xend = 2, yend = aaas_ag.emm.plot$data[2]$predicted[5]), color = "#999999", size = 0.25, linetype = "dashed", curvature = -0.4) + 
-  #geom_curve(aes(x = 1.9, y = aaas_ag.emm.plot$data[2]$predicted[4], xend = 2.1, yend = aaas_ag.emm.plot$data[2]$predicted[6]), color = "#999999", size = 0.25, linetype = "dashed", curvature = 0.4) + 
-  geom_curve(aes(x = 1, y = aaas_ag.emm.plot$data[2]$predicted[2], xend = 3, yend = aaas_ag.emm.plot$data[2]$predicted[8]), color = "#999999", size = 0.25, linetype = "dashed", curvature = -0.2) + 
-  geom_curve(aes(x = 1.1, y = aaas_ag.emm.plot$data[2]$predicted[3], xend = 3.1, yend = aaas_ag.emm.plot$data[2]$predicted[9]), color = "#999999", size = 0.25, linetype = "dashed", curvature = 0.15) + 
-  geom_label(aes(label=Name),color="white", fill="#999999", nudge_x = Nudge_x, nudge_y = Nudge_y,size=2.5,na.rm=TRUE)
-
-ag1
-
-options(OutDec= ".")
-
-```
-
-<!-- Slutligen ville vi också undersöka vilka prediktorer/moderatorer hos deltagarna (exempelvis grad av social ångest eller grad av depression) i behandlingsalternativen `r xg1` och `r xg2` som påverkar utfallet samt vilka mediatorer inom behandlingsalternativen (exempelvis tilldelning av terapeut) som påverkar utfallet.  -->
-
-```{r icc, eval=F}
-
-performance::icc(aaas_ad.lmer)$ICC_conditional
-performance::icc(aaas_ad.lmer)$ICC_adjusted
-
-# y_patrik = intercept + b*g2 + b*g3 + b*t2 + b*t3 + b*(g2 * t2) + b*(g2 * t3) + b*(g3 * t2) + b*(g3 * t3)
-
-#tab_model(aaas_ad.lmer,aaas_ag.lmer,rathus.lmer,lsas_sum.lmer,gad_sum.lmer,phq_sum.lmer,well.lmer)
-
-options(OutDec= ",")
-
-```
-
-<!-- Det finns möjlighet att fortsätta analysera insamlad data.  -->
-
-<!--
-Nedan stycke har inkorporerats på ett annat ställe i texten men behålls här som en "border" mellan r-chunks.
-
-Med våra initiala flernivåanalyser konstaterar vi att ICC-värdet ger att `r xresult(performance::icc(aaas_ad.lmer)$ICC_adjusted * 100)`% av variansen i utfallsmåttet AAA-S Adaptive kan förklaras av individuella faktorer. För AAA-S Aggressive kan `r xresult(performance::icc(aaas_ad.lmer)$ICC_adjusted * 100)`% av variansen förklaras av individuella faktorer.
--->
 
 ```{r stargazer, results='asis', eval=T}
 
@@ -2133,28 +1975,148 @@ stargazer::stargazer(
 
 ```
 
-```{r tjrciout, fig.cap='(ref:rci)', fig.align="center", dpi=196, cache=T, fig.height=3, eval=F}
+## Skillnad i effekt på konstruktiv självhävdelse mellan `r xg1`--`r xg2`
 
-par(mfrow=c(3,1))
+Vår primära frågeställning var om det fanns någon skillnad (i endera riktning) i effekt mellan gruppen `r xg1` och gruppen `r xg2` med avseende på konstruktiv självhävdelse (det vill säga med utfallsmåttet AAA-S Adaptive).
 
-## JTRCI output
+Vi fann ingen skillnad i utfall med AAA-S Adaptive vid `r xt3`mätningen mellan gruppen `r xg1` och gruppen `r xg2`. Vi fann inte heller någon skillnad i effekt vid `r xt2`mätningen. Skillnaden i konstruktiv självhävdelse vid `r xt3`mätningen är försumbar mellan de som fått behandlarstöd och de som har fått klara sig på egen hand.
 
-# Plots
+<!-- $t$\(_{`r xresult(aaas_ad.emmpairs.by.time$df[9])`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[9] * -1)`, `r xpr(aaas_ad.emmpairs.by.time[["p.value"]][9])`, effektstorlek `r xresult(aaas_ad.eff.by.time$effect.size[9] * -1)` -->
 
-AAAS_ad.pre.post.jt.plot + theme(legend.position="none") + scale_color_manual(values=c(rep("white",times=4),"red"))
-#AAAS_ad.pre.dur.jt.plot + theme(legend.position="none") + scale_color_manual(values=c(rep("white",times=4),"red"))
+## Skillnader i effekt på konstruktiv och aggressiv självhävdelse mellan `r xg3`--`r xg1` respektive `r xg3`--`r xg2`
 
-AAAS_ag.pre.post.jt.plot + theme(legend.position="none") + scale_color_manual(values=c(rep("white",times=4),"red"))
-#AAAS_ag.pre.dur.jt.plot + theme(legend.position="none") + scale_color_manual(values=c(rep("white",times=4),"red"))
+Vi var också intresserade av hur effekten av deltagande i grupperna `r xg1` och `r xg2` skiljer sig från deltagande i `r xg3` med avseende på konstruktiv och aggressiv självhävdelse, fångade med utfallsmåtten AAA-S Adaptive respektive AAA-S Aggressive.
 
-rathus.pre.post.jt.plot + theme(legend.position="none") + scale_color_manual(values=c("white","white","white","red","white"))
-#rathus.pre.dur.jt.plot + theme(legend.position="none") + scale_color_manual(values=c(rep("white",times=4),"red"))
+(ref:emmeffad) Medelvärdesestimat och effektstyrkor för AAA−S Adaptive. Etiketterna i figuren anger respektive effektstorlek (ES) för med prickade linjer indikerade parvisa jämförelser.
+
+```{r effemmplotsad, dpi=196, fig.align="center", fig.cap='(ref:emmeffad)', fig.height=5, fig.width=5.5, cache = F, eval = T}
+
+options(OutDec= ".")
+
+# AAA-S Ad
+
+Name = c(
+  paste("ES ",aaas_ad.eff.by.group[2,1],"-",aaas_ad.eff.by.group[2,2],": ",format(round(aaas_ad.eff.by.group[2,4],2) * -1,decimal.mark=","),sep=""),
+  paste("ES ",aaas_ad.eff.by.group[5,1],"-",aaas_ad.eff.by.group[5,2],": ",format(round(aaas_ad.eff.by.group[5,4],2) * -1,decimal.mark=","),sep=""),
+  paste("ES ",aaas_ad.eff.by.group[8,1],"-",aaas_ad.eff.by.group[8,2],": ",format(round(aaas_ad.eff.by.group[8,4],2) * -1,decimal.mark=","),sep=""),
+  NA,
+  paste("ES ",aaas_ad.eff.by.time[4,1],"-",aaas_ad.eff.by.time[4,2],": ",format(round(aaas_ad.eff.by.time[4,4],2) * -1,decimal.mark=","),sep=""),
+  paste("ES ",aaas_ad.eff.by.time[5,1],"-",aaas_ad.eff.by.time[5,2],": ",format(round(aaas_ad.eff.by.time[5,4],2) * -1,decimal.mark=","),sep=""),
+  NA,
+  paste("ES ",aaas_ad.eff.by.time[7,1],"-",aaas_ad.eff.by.time[7,2],": ",format(round(aaas_ad.eff.by.time[7,4],2) * -1,decimal.mark=","),sep=""),
+  paste("ES ",aaas_ad.eff.by.time[8,1],"-",aaas_ad.eff.by.time[8,2],": ",format(round(aaas_ad.eff.by.time[8,4],2) * -1,decimal.mark=","),sep="")
+)
+Nudge_x = c(0.05,0.15,0.25,0,0,0,0,-0.1,-0.1) * 1.2
+Nudge_y = c(-0.55,-0.55,0.55,0,0.55,-0.55,0,0.55,-0.55) * 2
+
+aaas_ad.emm.plot <- 
+  plot(ggemmeans(aaas_ad.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = NA, colour = "Grupp:", title = element_blank()) + theme(legend.position = "top", axis.title.y = element_blank())
+
+#,arrow = arrow(length = unit(0.05, "npc"))
+ad1 <- aaas_ad.emm.plot + 
+  geom_curve(aes(x = 2.9, y = aaas_ad.emm.plot$data[2]$predicted[7], xend = 3.1, yend = aaas_ad.emm.plot$data[2]$predicted[9]), color = "#999999", size = 0.25, linetype = "dotted", curvature = 0.4) +
+  geom_curve(aes(x = 2.9, y = aaas_ad.emm.plot$data[2]$predicted[7], xend = 3, yend = aaas_ad.emm.plot$data[2]$predicted[8]), color = "#999999", size = 0.25, linetype = "dotted", curvature = -0.4) +
+  #geom_curve(aes(x = 1.9, y = aaas_ad.emm.plot$data[2]$predicted[4], xend = 2.1, yend = aaas_ad.emm.plot$data[2]$predicted[6]), color = "#999999", size = 0.25, linetype = "dotted", curvature = 0.5) +
+  geom_curve(aes(x = 1.9, y = aaas_ad.emm.plot$data[2]$predicted[4], xend = 2, yend = aaas_ad.emm.plot$data[2]$predicted[5]), color = "#999999", size = 0.25, linetype = "dotted", curvature = -0.4) + 
+  geom_curve(aes(x = 1.9, y = aaas_ad.emm.plot$data[2]$predicted[4], xend = 2.1, yend = aaas_ad.emm.plot$data[2]$predicted[6]), color = "#999999", size = 0.25, linetype = "dotted", curvature = 0.4) + 
+  geom_curve(aes(x = 1, y = aaas_ad.emm.plot$data[2]$predicted[2], xend = 3, yend = aaas_ad.emm.plot$data[2]$predicted[8]), color = "#999999", size = 0.25, linetype = "dotted", curvature = -0.4) + 
+  geom_curve(aes(x = 1.1, y = aaas_ad.emm.plot$data[2]$predicted[3], xend = 3.1, yend = aaas_ad.emm.plot$data[2]$predicted[9]), color = "#999999", size = 0.25, linetype = "dotted", curvature = 0.12) + 
+  geom_curve(aes(x = 0.9, y = aaas_ad.emm.plot$data[2]$predicted[1], xend = 2.9, yend = aaas_ad.emm.plot$data[2]$predicted[7]), color = "#999999", size = 0.25, linetype = "dotted", curvature = 0.16) + 
+  geom_label(aes(label=Name),color="white", fill="#999999", nudge_x = Nudge_x, nudge_y = Nudge_y,size=2.5,na.rm=TRUE)
+
+ad1
+
+options(OutDec= ",")
 
 ```
 
+(ref:emmeffag) Medelvärdesestimat och effektstyrkor för AAA-S Aggressive. Medelvärdesestimat och effektstyrkor för AAA−S Adaptive. Etiketterna i figuren anger respektive effektstorlek (ES) för med prickade linjer indikerade parvisa jämförelser.
+
+```{r effemmplotsag, dpi=196, fig.align="center", fig.cap='(ref:emmeffag)', fig.height=5, fig.width=5.5, cache = F, eval = T}
+
+options(OutDec= ".")
+
+xps <- function(x) {
+  paste(ifelse(x < 0.001, "***", ifelse(x < 0.01, "**", ifelse(x > 0.05, "DO NOT REPORT", "*")))
+  )
+}
+
+# AAA-S Ag
+
+Name = c(
+  paste("ES ",aaas_ag.eff.by.group[2,1],"-",aaas_ag.eff.by.group[2,2],": ",format(round(aaas_ag.eff.by.group[2,4],2) * -1,decimal.mark=","),"",sep=""),
+  paste("ES ",aaas_ag.eff.by.group[5,1],"-",aaas_ag.eff.by.group[5,2],": ",format(round(aaas_ag.eff.by.group[5,4],2) * -1,decimal.mark=","),"",sep=""),
+  paste("ES ",aaas_ag.eff.by.group[8,1],"-",aaas_ag.eff.by.group[8,2],": ",format(round(aaas_ag.eff.by.group[8,4],2) * -1,decimal.mark=","),sep=""),
+  NA,
+  paste("ES ",aaas_ag.eff.by.time[4,1],"-",aaas_ag.eff.by.time[4,2],": ",format(round(aaas_ag.eff.by.time[4,4],2) * -1,decimal.mark=","),sep=""),
+  paste("ES ",aaas_ag.eff.by.time[5,1],"-",aaas_ag.eff.by.time[5,2],": ",format(round(aaas_ag.eff.by.time[5,4],2) * -1,decimal.mark=","),sep=""),
+  #NA,
+  NA,
+  paste("ES ",aaas_ag.eff.by.time[7,1],"-",aaas_ag.eff.by.time[7,2],": ",format(round(aaas_ag.eff.by.time[7,4],2) * -1,decimal.mark=","),sep=""),
+  paste("ES ",aaas_ag.eff.by.time[8,1],"-",aaas_ag.eff.by.time[8,2],": ",format(round(aaas_ag.eff.by.time[8,4],2) * -1,decimal.mark=","),sep="")
+)
+Nudge_x = c(0.05,0.15,0.25,0,0,0,0,-0.1,-0.1) * 1.2
+Nudge_y = c(-0.55,-0.55,0.55,0,0.55,-0.55,0,0.55,-0.55) * 1.2
+
+aaas_ag.emm.plot <- 
+  plot(ggemmeans(aaas_ag.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = NA, colour = "Grupp:", title = element_blank()) + theme(legend.position = "top", axis.title.y = element_blank())
+
+#,arrow = arrow(length = unit(0.05, "npc"))
+ag1 <- aaas_ag.emm.plot + 
+  geom_curve(aes(x = 2.9, y = aaas_ag.emm.plot$data[2]$predicted[7], xend = 3.1, yend = aaas_ag.emm.plot$data[2]$predicted[9]), color = "#999999", size = 0.25, linetype = "dotted", curvature = 0.4) +
+  geom_curve(aes(x = 2.9, y = aaas_ag.emm.plot$data[2]$predicted[7], xend = 3, yend = aaas_ag.emm.plot$data[2]$predicted[8]), color = "#999999", size = 0.25, linetype = "dotted", curvature = -0.4) +
+  #geom_curve(aes(x = 1.9, y = aaas_ag.emm.plot$data[2]$predicted[4], xend = 2.1, yend = aaas_ag.emm.plot$data[2]$predicted[6]), color = "#999999", size = 0.25, linetype = "dotted", curvature = 0.5) +
+  geom_curve(aes(x = 1.9, y = aaas_ag.emm.plot$data[2]$predicted[4], xend = 2, yend = aaas_ag.emm.plot$data[2]$predicted[5]), color = "#999999", size = 0.25, linetype = "dotted", curvature = -0.4) + 
+  geom_curve(aes(x = 1.9, y = aaas_ag.emm.plot$data[2]$predicted[4], xend = 2.1, yend = aaas_ag.emm.plot$data[2]$predicted[6]), color = "#999999", size = 0.25, linetype = "dotted", curvature = 0.5) + 
+  geom_curve(aes(x = 1, y = aaas_ag.emm.plot$data[2]$predicted[2], xend = 3, yend = aaas_ag.emm.plot$data[2]$predicted[8]), color = "#999999", size = 0.25, linetype = "dotted", curvature = -0.25) + 
+  geom_curve(aes(x = 1.1, y = aaas_ag.emm.plot$data[2]$predicted[3], xend = 3.1, yend = aaas_ag.emm.plot$data[2]$predicted[9]), color = "#999999", size = 0.25, linetype = "dotted", curvature = 0.2) + 
+  geom_curve(aes(x = 0.9, y = aaas_ag.emm.plot$data[2]$predicted[1], xend = 2.9, yend = aaas_ag.emm.plot$data[2]$predicted[7]), color = "#999999", size = 0.25, linetype = "dotted", curvature = 0.18) + 
+  geom_label(aes(label=Name),color="white", fill="#999999", nudge_x = Nudge_x, nudge_y = Nudge_y,size=2.5,na.rm=TRUE)
+
+ag1
+
+options(OutDec= ".")
+
+```
+
+### Konstruktiv självhävdelse
+
+#### `r xG3`--`r xg1` vid `r xt3`mätningen
+
+Vi fann en högre medelpoäng på AAA-S Adaptive för gruppen `r xg1` (estimerat marginalmedelvärde [emm] `r xresult(tidy(aaas_ad.emm.by.time)$estimate[8])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[8])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[8])`]) än för gruppen `r xg3` (emm `r xresult(tidy(aaas_ad.emm.by.time)$estimate[7])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[7])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[7])`]) vid `r xt3`mätningen, 
+medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.time$estimate[7] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.time$df[7])`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[7])`; `r xpr(aaas_ad.emmpairs.by.time[["p.value"]][7])`; effektstorlek `r xresult(aaas_ad.eff.by.time$effect.size[7] * -1)`.
+
+#### `r xG3`--`r xg2` vid `r xt3`mätningen
+
+Vi fann också en tydligt högre medelpoäng på AAA-S Adaptive vid `r xt3`mätningen för gruppen `r xg2` (emm `r xresult(tidy(aaas_ad.emm.by.time)$estimate[9])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[9])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[9])`]) jämfört med gruppen `r xg3` (se emm ovan),
+medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.time$estimate[8] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.time$df[8])`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[8])`; `r xpr(aaas_ad.emmpairs.by.time[["p.value"]][8])`; effektstorlek `r xresult(aaas_ad.eff.by.time$effect.size[8] * -1)`.
+
+#### Behandlingseffekt mellan behandlingsstart och `r xt3`mätning
+
+För både gruppen `r xg1` och gruppen `r xg2` fann vi en klar förbättring mellan behandlingsstart och `r xt3`mätning, medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.group$estimate[5] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.group$df[5])`}\) = `r xresult(aaas_ad.emmpairs.by.group$statistic[5] * -1)`; `r xpr(aaas_ad.emmpairs.by.group[["p.value"]][5])`; effektstorlek `r xresult(aaas_ad.eff.by.group$effect.size[5] * -1)` respektive medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.group$estimate[8] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.group$df[8])`}\) = `r xresult(aaas_ad.emmpairs.by.group$statistic[8])`; `r xpr(aaas_ad.emmpairs.by.group[["p.value"]][8])`; effektstorlek `r xresult(aaas_ad.eff.by.group$effect.size[8] * -1)`.
+
+Deltagarna i de båda behandlingsbetingelserna hade efter fullgången behandling förbättrats avsevärt med avseende på graden av konstruktiv självhävdelse, i jämförelse med `r xg3`. Effekten var påtaglig redan vid mittenmätningen för båda grupperna. Även förbättringen mellan behandlingsstart och `r xt3`mätningen var för båda grupperna betydande. Se figur \@ref(fig:effemmplotsad) för en visualisering av resultaten. Med våra initiala flernivåanalyser konstaterar vi att ICC-värdet ger att `r xresult(performance::icc(aaas_ad.lmer)$ICC_adjusted * 100)`% av variansen i utfallsmåttet AAA-S Adaptive kan förklaras av individuella faktorer.
+
+### Aggressiv självhävdelse
+
+#### `r xG3`--`r xg1` vid `r xt3`mätningen
+
+Precis som för konstruktiv självhävdelse hade gruppen `r xg1` en klart högre medelpoäng (emm `r xresult(tidy(aaas_ag.emm.by.time)$estimate[8])`, 95% CI [`r xresult(tidy(aaas_ag.emm.by.time)$conf.low[8])` ; `r xresult(tidy(aaas_ag.emm.by.time)$conf.high[8])`]) på måttet för aggressiv självhävdelse, AAA-S Aggressive, än gruppen `r xg3` (emm `r xresult(tidy(aaas_ag.emm.by.time)$estimate[7])`, 95% CI [`r xresult(tidy(aaas_ag.emm.by.time)$conf.low[7])` ; `r xresult(tidy(aaas_ag.emm.by.time)$conf.high[7])`]) vid `r xt3`mätningen, 
+medelvärdesskillnad `r xresult(aaas_ag.emmpairs.by.time$estimate[7] * -1)`, $t$\(_{`r xresult(aaas_ag.emmpairs.by.time$df[7])`}\) = `r xresult(aaas_ag.emmpairs.by.time$statistic[7])`; `r xpr(aaas_ag.emmpairs.by.time$p.value[7])`; effektstorlek `r xresult(aaas_ag.eff.by.time$effect.size[7] * -1)`.
+
+#### `r xG3`--`r xg2` vid `r xt3`mätningen
+
+Vid `r xt3`mätningen fann vi också att medelpoängen för `r xg2`sgruppen (emm `r xresult(tidy(aaas_ag.emm.by.time)$estimate[9])`, 95% CI [`r xresult(tidy(aaas_ag.emm.by.time)$conf.low[9])` ; `r xresult(tidy(aaas_ag.emm.by.time)$conf.high[9])`]) var högre i jämförelse med gruppen `r xg3` (se emm ovan). Skillnaden var `r xresult(aaas_ag.emmpairs.by.time$estimate[8] * -1)`, $t$\(_{`r xresult(aaas_ag.emmpairs.by.time$df[8])`}\) = `r xresult(aaas_ag.emmpairs.by.time$statistic[8])`; `r xpr(aaas_ag.emmpairs.by.time$p.value[8])`; effektstorlek `r xresult(aaas_ag.eff.by.time$effect.size[8] * -1)`.
+
+#### Behandlingseffekt mellan behandlingsstart och `r xt3`mätning
+
+För båda grupperna `r xg1` och `r xg2` fann vi en signifikant höjning mellan behandlingsstart och `r xt3`mätning. För `r xg1`sgruppen var medelvärdesskillnaden `r xresult(aaas_ag.emmpairs.by.group$estimate[5] * -1)`, $t$\(_{`r xresult(aaas_ag.emmpairs.by.group$df[5])`}\) = `r xresult(aaas_ag.emmpairs.by.group$statistic[5])`; `r xpr(aaas_ag.emmpairs.by.group$p.value[5])`; effektstorlek `r xresult(aaas_ag.eff.by.group$effect.size[5] * -1)`, för `r xg2`sgruppen var den `r xresult(aaas_ag.emmpairs.by.group$estimate[8] * -1)`, $t$\(_{`r xresult(aaas_ag.emmpairs.by.group$df[8])`}\) = `r xresult(aaas_ag.emmpairs.by.group$statistic[8])`; `r xpr(aaas_ag.emmpairs.by.group$p.value[8])`; effektstorlek `r xresult(aaas_ag.eff.by.group$effect.size[8] * -1)`.
+
+Det är notabelt att medelvärdet för gruppen `r xg2` var lägre än för gruppen `r xg1`, som inte fick något behandlarstöd, vid båda tidpunkterna. Skillnaden är dock ej signifikant. Båda behandlingsbetingelserna uppvisar en höjning av graden av aggressiv självhävdelse, i jämförelse med `r xg3`. Effekten var signifikant vid mittenmätningen för gruppen `r xg1` (men inte för gruppen `r xg2`). Även höjningen av aggressiv självhävdelse mellan behandlingsstart och `r xt3`mätningen var för båda grupperna signifikant. Figur \@ref(fig:effemmplotsag) ger en visualisering av resultaten. `r xresult(performance::icc(aaas_ag.lmer)$ICC_adjusted * 100)`% av variansen på AAA-s Aggressive kan förklaras av individuella faktorer.
+
 # Diskussion
 
-Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt självhjälpsprogram för att förbättra individers konstruktiva självhävdelse. Programmet administrerades via en internetbaserad plattform. Studien genomfördes med en randomiserad och kontrollerad design. Interventionen byggde till stora delar på självhjälpsmaterialet *Assert Yourself* [@michel2008] och inkluderade bland annat inslag av psykoedukation, beteendeexperiment, avslappningsövningar, vidmakthållandeplanering och återfallsprevention. En tredjedel av deltagarna fick tillgång till programmet utan behandlarstöd, en tredjedel fick tillgång till programmet med behandlarstöd och en tredjedel var en väntelistebetingad kontrollgrupp. Vi konstaterade att tillgång till behandlingsmaterialet (oberoende av om man hade behandlarstöd eller inte) gav bättre resultat än att vara placerad på väntelista. Vi fann däremot ingen skillnad i utfallet mellan gruppen med behandlarstöd och gruppen utan behandlarstöd. Vid beräknande av kliniskt signifikant skillnad på självskattningsskalan AAA-S fann vi ingen skillnad mellan grupperna.
+Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt självhjälpsprogram för att förbättra individers konstruktiva självhävdelse. Programmet administrerades via en internetbaserad plattform. Studien genomfördes med en randomiserad och kontrollerad design. Interventionen byggde till stora delar på självhjälpsmaterialet *Assert Yourself* [@michel2008] och inkluderade bland annat inslag av psykoedukation, beteendeexperiment, avslappningsövningar, vidmakthållandeplanering och återfallsprevention. En tredjedel av deltagarna fick tillgång till programmet utan behandlarstöd, en tredjedel fick tillgång till programmet med behandlarstöd och en tredjedel var en väntelistebetingad kontrollgrupp. Vi konstaterade att tillgång till behandlingsmaterialet (oberoende av om man hade behandlarstöd eller inte) gav bättre resultat än att vara placerad på väntelista. Vi fann däremot ingen skillnad i utfallet mellan gruppen med behandlarstöd och gruppen utan behandlarstöd. Vi fann inte heller någon klinisk signifikant skillnad i andelen deltagare i respektive grupp som hade förbättrats reliabelt och till kliniskt signifikant nivå.
 
 <!-- [Pers kommentar] 
 Egentligen är avsaknad av skillnad inte samma sak som att de är lika effektiva (de är bara inte olika effektiva). 
@@ -2163,6 +2125,8 @@ Viktigt i och med att ni tagit upp detta med behandlingsstödets effekter i intr
 -->
 
 ## Resultatdiskussion
+
+
 
 Vi har tidigare konstaterat att träning i konstruktiv självhävdelse kan förbättra mående vid diverse ångestproblem [@Speed2018a]. Vi har även konstaterat att I-KBT är en effektiv behandlingsmetod [@Andrews2018; @Andrews2010; @Carlbring2018; @Barak2008]. I föreliggande studie kombinerades ett självhjälpsprogram för konstruktiv självhävdelse med I-KBT. Effektstyrkan för de två grupperna som fick behandling var cirka 1. Det finns knapert med I-KBT-studier för konstruktiv självhävdelse att jämföra dessa resultat emot, men effektstyrkan är i linje med effekstyrkan hos behandlingsprogram för en rad andra transdiagnostiska symtom, så som stress [\(\eta^2_p \)=.12 i @Day2013], prokrastinering [*d* = 0,29--1.09 i @Rozental2015] och perfektionism [*d* = 0,7--1.0 i @Rozental2017; *d* = 0,86 i @Wade2019]. Resultaten är något högre än den medeleffektstorleken @Andrews2018 konstaterade att I-KBT överlag tenderar att ha (*d* = 0,8). 
 
