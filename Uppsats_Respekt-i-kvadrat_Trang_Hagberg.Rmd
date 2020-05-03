@@ -2003,7 +2003,7 @@ stargazer::stargazer(
 
 Vi var huvudsakligen intresserade av hur effekten av deltagande i grupperna `r xg1` och `r xg2` skilde sig från deltagande i `r xg3` med avseende på konstruktiv och aggressiv självhävdelse, fångade med utfallsmåtten AAA-S Adaptive respektive AAA-S Aggressive.
 
-(ref:emmeffad) Medelvärdesestimat och effektstyrkor för AAA−S Adaptive. Etiketterna i figuren anger respektive effektstorlek (ES) för med prickade linjer indikerade parvisa jämförelser.
+(ref:emmeffad) Medelvärdesestimat (M) och effektstorlek (ES) för AAA−S Adaptive. Etiketterna i figuren anger respektive effektstorlek för med prickade linjer indikerade parvisa jämförelser.
 
 ```{r effemmplotsad, dpi=196, fig.align="center", fig.cap='(ref:emmeffad)', fig.height=5, fig.width=5.5, cache = F, eval = T}
 
@@ -2026,7 +2026,7 @@ Nudge_x = c(0.05,0.15,0.25,0,0,0,0,-0.1,-0.1) * 1.2
 Nudge_y = c(-0.55,-0.55,0.55,0,0.55,-0.55,0,0.55,-0.55) * 2
 
 aaas_ad.emm.plot <- 
-  plot(ggemmeans(aaas_ad.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = NA, colour = "Grupp:", title = element_blank()) + theme(legend.position = "bottom", axis.title.y = element_blank())
+  plot(ggemmeans(aaas_ad.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = "M", colour = "Grupp:", title = element_blank()) + theme(legend.position = "bottom")
 
 #,arrow = arrow(length = unit(0.05, "npc"))
 ad1 <- aaas_ad.emm.plot + 
@@ -2046,7 +2046,7 @@ options(OutDec= ",")
 
 ```
 
-(ref:emmeffag) Medelvärdesestimat och effektstyrkor för AAA-S Aggressive. Medelvärdesestimat och effektstyrkor för AAA−S Adaptive. Etiketterna i figuren anger respektive effektstorlek (ES) för med prickade linjer indikerade parvisa jämförelser.
+(ref:emmeffag) Medelvärdesestimat (M) och effektstorlek (ES) för AAA-S Aggressive. Etiketterna i figuren anger respektive effektstorlek för med prickade linjer indikerade parvisa jämförelser.
 
 ```{r effemmplotsag, dpi=196, fig.align="center", fig.cap='(ref:emmeffag)', fig.height=5, fig.width=5.5, cache = F, eval = T}
 
@@ -2070,7 +2070,7 @@ Nudge_x = c(0.05,0.15,0.25,0,0,0,0,-0.1,-0.1) * 1.2
 Nudge_y = c(-0.55,-0.55,0.55,0,0.55,-0.55,0,0.55,-0.55) * 1.2
 
 aaas_ag.emm.plot <- 
-  plot(ggemmeans(aaas_ag.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = NA, colour = "Grupp:", title = element_blank()) + theme(legend.position = "bottom", axis.title.y = element_blank())
+  plot(ggemmeans(aaas_ag.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = "M", colour = "Grupp:", title = element_blank()) + theme(legend.position = "bottom")
 
 #,arrow = arrow(length = unit(0.05, "npc"))
 ag1 <- aaas_ag.emm.plot + 
