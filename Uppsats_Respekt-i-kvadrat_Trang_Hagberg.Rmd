@@ -1696,13 +1696,11 @@ rathus.pre.post.sigsig.posthoc <- dunnTest(ifelse(rathus.pre.post.jt.plot$data$c
 # Pairwise comparison behandlarstöd--väntelista is significant
 # Pairwise comparison självhjälp--väntelista is also significant
 
-# ($\chi^2_{`r xresult(rathus.sigsig[["parameter"]])`}$ = `r xresult(rathus.sigsig$statistic)`, `r xpr(rathus.sigsig[["p.value"]])`)
-
 ```
 
-SKRIV OM, FEL TIDPUNKTER HAR ANVÄNTS I JÄMFÖRELSEN! VI HAR VISST SIGNIFIKANTA SKILLNADER FÖR AD OCH RATHUS MELLAN BEHANDLARSTÖD OCH VÄNTESLISTA, *.sigsig.posthoc-objekten i chunken ovan för detaljer!!! ~~Inga signifikanta skillnader mellan grupperna i andel personer som uppnått både klinisk signikans-status och reliabel förbättring fanns för de primära utfallsmåtten AAA-S Adaptive och AAA-S Aggressive. För båda måtten definerades ökning i poäng som en förbättring. Vi fann en signifikant skillnad mellan grupperna för självhävdelseskalan Rathus .~~ Se tabell \@ref(tab:jtprocent) för en sammanställning av kliniskt signifikanta och reliabla förändringarna inom de olika grupperna.
+SKRIV OM, ALLA TIDPUNKTER HAR INTE ANVÄNTS I JÄMFÖRELSEN! VI HAR VISST SIGNIFIKANTA SKILLNADER FÖR AD OCH RATHUS MELLAN BEHANDLARSTÖD OCH VÄNTESLISTA, *.sigsig.posthoc-objekten i chunken ovan för detaljer!!! ~~Inga signifikanta skillnader mellan grupperna i andel personer som uppnått både klinisk signikans-status och reliabel förbättring fanns för de primära utfallsmåtten AAA-S Adaptive och AAA-S Aggressive. För båda måtten definerades ökning i poäng som en förbättring. Vi fann en signifikant skillnad mellan grupperna för självhävdelseskalan Rathus.~~ ($\chi^2_{`r xresult(rathus.pre.dur.sigsig[["parameter"]])`}$ = `r xresult(rathus.pre.dur.sigsig$statistic)`, `r xpr(rathus.pre.dur.sigsig[["p.value"]])`). Se tabell \@ref(tab:jtprocent) för en sammanställning av kliniskt signifikanta och reliabla förändringarna inom de olika grupperna.
 
-(ref:jtp) Antal och andel i procent av deltagare i respektive grupp som vid behandlingens slut tillhör de olika kategorierna med överlapp mellan klinisk signifikans och reliabel förändring. Deltagare som endast har lämnat förmätningsvärden har fått dessa värden framflyttade till följande mättillfällen. Med 'tillfrisknad' menas att personen vid eftermätningstillfället befinner sig inom två standardavvikelser från medelvärdet för en icke-klinisk population.
+(ref:jtp) Antal och andel i procent av deltagare i respektive grupp som vid behandlingens slut tillhör de olika kategorierna med överlapp mellan klinisk signifikans och reliabel förändring. Deltagare som endast har lämnat förmätningsvärden har fått dessa värden framflyttade till följande mättillfällen. Med 'tillfrisknad' menas att personen vid eftermätningstillfället befinner sig inom två standardavvikelser från medelvärdet för en icke-klinisk population. <!-- Fetstil indikerar statistisk signfikant förändring av klinisk signifikans och reliabel förändring. -->
 
 ```{r jtprocent, tab.align="center", cache=F}
 
@@ -1711,32 +1709,37 @@ library("tibble")
 jtrci.tab <- tibble(rbind.data.frame(
   AD = cbind(
     F1 = data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)])[, 1],
-    P1 = round(prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2)[, 1] * 100,1),
+    P1 = round(prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2)[, 1] * 100,0),
     F2 = data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)])[, 2],
-    P2 = round(prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2)[, 2] * 100,1),
+    P2 = round(prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2)[, 2] * 100,0),
     F3 = data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)])[, 3],
-    P3 = round(prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2)[, 3] * 100,1)
+    P3 = round(prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2)[, 3] * 100,0)
   ),
   AG = cbind(
     F1 = data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)])[, 1],
-    P1 = round(prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2)[, 1] * 100,1),
+    P1 = round(prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2)[, 1] * 100,0),
     F2 = data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)])[, 2],
-    P2 = round(prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2)[, 2] * 100,1),
+    P2 = round(prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2)[, 2] * 100,0),
     F3 = data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)])[, 3],
-    P3 = round(prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2)[, 3] * 100,1)
+    P3 = round(prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2)[, 3] * 100,0)
   ),
   RAS = cbind(
     F1 = data.matrix(rathus.pre.post.jt.table[, c(2:4)])[, 1],
-    P1 = round(prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)[, 1] * 100,1),
+    P1 = round(prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)[, 1] * 100,0),
     F2 = data.matrix(rathus.pre.post.jt.table[, c(2:4)])[, 2],
-    P2 = round(prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)[, 2] * 100,1),
+    P2 = round(prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)[, 2] * 100,0),
     F3 = data.matrix(rathus.pre.post.jt.table[, c(2:4)])[, 3],
-    P3 = round(prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)[, 3] * 100,1)
+    P3 = round(prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)[, 3] * 100,0)
   )
 ))
 
-colnames(jtrci.tab) = rep(c("N","%"),times=3)
 jtrci.tab$"" = rep(jt_rownames,times=3)
+
+#jtrci.tab.df <- as.data.frame(jtrci.tab) # The below line requires a regular data frame
+#jtrci.tab.df[1, 5] <- cell_spec(jtrci.tab.df[1, 5], "latex", bold = T) # Does not work, reverting :-(
+#colnames(jtrci.tab.df) = rep(c("N","%"),times=3)
+
+colnames(jtrci.tab) = rep(c("N","%"),times=3)
 
 svkable(jtrci.tab[,c(7,1:6)], align="lcccccc", caption = '(ref:jtp)') %>%
   pack_rows("AAA-S Adaptive", 1, 5, bold = F) %>%
@@ -1939,7 +1942,6 @@ svkable(descriptives.col.out, caption = "(ref:descriptives)", align="llrccccccc"
 ```
 
 Estimat av intercept och regressionskoefficienter för de olika primära och sekundära utfallsmåtten sammanfattas i tabell \@ref(stargazertab). Intercept och lutningskoefficienter som anges i tabellen för respektive utfallsmått kan läggas in i regressionsformeln för modellen för att predicera utfall för alla kombinationer av grupptillhörighet och mättillfällen.
-
 
 ```{r stargazer, results='asis', eval=T}
 
@@ -2165,6 +2167,50 @@ Med oberoende variansanalys fann vi inga signifikanta skillnader på någon av f
 Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt självhjälpsprogram för att förbättra individers konstruktiva självhävdelse. Programmet administrerades via en internetbaserad plattform. Studien genomfördes med en randomiserad och kontrollerad design. Interventionen byggde till stora delar på självhjälpsmaterialet *Assert Yourself* [@michel2008] och inkluderade bland annat inslag av psykoedukation, beteendeexperiment, avslappningsövningar, vidmakthållandeplanering och återfallsprevention. En tredjedel av deltagarna fick tillgång till programmet utan behandlarstöd, en tredjedel fick tillgång till programmet med behandlarstöd och en tredjedel var en väntelistebetingad kontrollgrupp. Vi konstaterade att tillgång till behandlingsmaterialet (oberoende av om man hade behandlarstöd eller inte) gav bättre resultat än att vara placerad på väntelista. Vi fann däremot ingen skillnad i utfallet mellan gruppen med behandlarstöd och gruppen utan behandlarstöd. Vi fann inte heller någon klinisk signifikant skillnad i andelen deltagare i respektive grupp som hade förbättrats reliabelt och till kliniskt signifikant nivå.
 
 ## Resultatdiskussion
+
+Jag föreslår ett (1) kort och mycket kärnfullt stycke om vardera punkt!
+
+### Behandlarstöd och självhjälp ger samma resultat
+
+    * Ingen skillnad mellan självhjälp och behandlarstöd, i linje med Baumeister
+
+### Deltagande i behandlingsprogrammet ger signifikant och stor effekt på konstruktiv självhävdelse
+    
+    * Klinisk signifikans, signifikant skillnad
+      * För konstruktiv självhävdelse
+      * Men inte för aggressiv självhävdelse
+    * Överensstämmer med funna effektstyrkor
+      * Interaktionseffekter grupp över tid
+      * Interaktionseffekter tid över grupp
+
+### Metodologiska brister
+
+    * Icke-validerade skattningsskalor (men bra att originalversionerna använder samma normer)
+    * Snedvridet sample jämfört med ambitionen att täcka in aggressiv självhävdelse
+    * Väntelista som kontrollbetingelse
+
+### Framtida forskning
+
+    * Bättre operationalisering av begreppen (ref japansk studie)
+    * Bättre validerade skattningsskalor
+    * Utveckling över längre tid (follow-up-mätning)
+    * Undersöka fler random-effekter
+      * Terapeuteffekter
+      * Individeffekter, traits vs states
+      * Lämpligt anpassa materialet för olika grupper, eller att välja generella verksamma komponenter?
+      * Kombination av fysisk behandling och internetterapi, lämpligt vid emotionellt undvikande, möjligehet att adressera detta är lägre via internet (ACT, affektfokuserade psykodynamiska terapier)
+    * Replikera resultaten, även vid tidpunkt när pandemi inte pågår
+
+### Övergripande slutsats
+
+    * God effekt, ingen skillnad mellan självhjälp och behandlarstöd
+    * Kan betraktas som pilotstudie, mer forskning behövs
+      * Lovande mål för behandling för både kliniska och subkliniska populationer
+      * Undersöka skillnader i effekt vid olika syndrom (social ångest, gad, depression osv)
+      * Undersöka _hur_ internetterapi bäst ska administreras
+    * Förhoppning om att tillgången till terapi kan fortsätta öka med allt fler validerade internetbehandlingar
+
+## VVV Bra textunderlag att inkorporera i delarna ovan VVV
 
 Vi har tidigare konstaterat att träning i konstruktiv självhävdelse kan förbättra mående vid diverse ångestproblem [@Speed2018a]. Vi har även konstaterat att I-KBT är en effektiv behandlingsmetod [@Andrews2018; @Andrews2010; @Carlbring2018; @Barak2008]. I föreliggande studie kombinerades ett självhjälpsprogram för konstruktiv självhävdelse med I-KBT. Effektstyrkan för de två grupperna som fick behandling var cirka 1. Det finns knapert med I-KBT-studier för konstruktiv självhävdelse att jämföra dessa resultat emot, men effektstyrkan är i linje med effekstyrkan hos behandlingsprogram för en rad andra transdiagnostiska symtom, så som stress [\(\eta^2_p \)=.12 i @Day2013], prokrastinering [*d* = 0,29--1.09 i @Rozental2015] och perfektionism [*d* = 0,7--1.0 i @Rozental2017; *d* = 0,86 i @Wade2019]. Resultaten är något högre än den medeleffektstorleken @Andrews2018 konstaterade att I-KBT överlag tenderar att ha (*d* = 0,8). 
 
