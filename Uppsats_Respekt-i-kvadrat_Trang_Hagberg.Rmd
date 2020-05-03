@@ -936,7 +936,7 @@ För modelleringen av de olika utfallsmåtten användes modelleringsverktyg frå
 
 ### Analys av *random*-effekter
 
-Genom beräkning av så kallad intraklasskorrelation (ICC) undersökte vi vilken andel av variansen som kan förklaras av underliggande individuella förutsättningar, exempelvis generell förändringsbenägenhet (individuella egenskaper, *traits*) eller yttre omständigheter (*states*). Intraklasskorrelationen kan också tolkas som korrelationen mellan observationer inom individer.
+Genom beräkning av så kallad intraklasskorrelation (ICC) undersökte vi vilken andel av variansen som kan förklaras av underliggande individuella förutsättningar, exempelvis generell förändringsbenägenhet (individuella egenskaper, *traits*) eller av yttre omständigheter påverkade tillstånd (*states*). Intraklasskorrelationen är korrelationen mellan observationer inom klusternivån för analysen, i den här studien de enskilda deltagarna.
 
 <!-- https://www.theanalysisfactor.com/the-intraclass-correlation-coefficient-in-mixed-models/ -->
 
