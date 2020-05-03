@@ -759,7 +759,7 @@ colnames(demdata.tabell) <- c(
   paste(xG3," (n = ",ll3,")",sep=""),
   paste(xG1," (n = ",ll1,")",sep=""),
   paste(xG2," (n = ",ll2,")",sep=""),
-  paste("Totalt (n = ",length(r2.wide.data[,1]),")",sep="")
+  paste("Sammanlagt (n = ",length(r2.wide.data[,1]),")",sep="")
 )
 
 options(OutDec= ".")
@@ -770,7 +770,7 @@ De `r length(r2.wide.data$subject)` deltagare vars data används i den här stud
 
 (ref:dem) Vid förmätningstillfället insamlad sociodemografisk data om deltagarna.
 
-```{r demdata, out.width="100%", tab.align="center", cache = F}
+```{r demdata, out.width="100%", tab.align="center", cache = F, escape=F}
 
 library("kableExtra")
 # http://haozhu233.github.io/kableExtra/best_practice_for_newline_in_latex_table.pdf
@@ -778,10 +778,10 @@ library("kableExtra")
 knitr::kable(demdata.tabell, format="latex", booktabs=T, caption = "(ref:dem)", align="ccc") %>%
   kable_styling(full_width = F) %>%
   column_spec(1, width = "12em") %>%
-  column_spec(2, width = "6.5em") %>%
-  column_spec(3, width = "6.5em") %>%
-  column_spec(4, width = "5.5em") %>%
-  column_spec(5, width = "5.5em") %>%
+  column_spec(2, width = "4em") %>%
+  column_spec(3, width = "4em") %>%
+  column_spec(4, width = "5.7em") %>%
+  column_spec(5, width = "5em") %>%
   pack_rows("Ålder (år)", 1, 1, bold = F) %>%
   pack_rows("Kön (%)", 2, 2, bold = F) %>%
   pack_rows("Civilstånd (%)", 3, 6, bold = F) %>%
@@ -1253,7 +1253,7 @@ well.lmer <-
 
 ```
 
-Vid visuell granskning av diagnostiska plottar av observerad data fann vi inga brott mot de antaganden som behöver uppfyllas för flernivåanalys.
+Vid visuell granskning av diagnostiska plottar av observerad data fann vi inga brott mot de villkor som behöver uppfyllas för flernivåanalys.
 
 ```{r rsquared, eval=F}
 
@@ -1655,26 +1655,52 @@ rathus.pre.dur.jt.table <- xt
 ## Significance testing of clinical significance
 
 # AAA-S Ad
-aaas_ad.sigsig = kruskal.test(
+aaas_ad.pre.dur.sigsig = kruskal.test(
   ifelse(AAAS_ad.pre.dur.jt.plot$data$class_JTRCI == "recovered","imp","not") ~
     AAAS_ad.pre.dur.jt.plot$data$group)
-# Not significant
+aaas_ad.pre.post.sigsig = kruskal.test(
+  ifelse(AAAS_ad.pre.post.jt.plot$data$class_JTRCI == "recovered","imp","not") ~
+    AAAS_ad.pre.post.jt.plot$data$group)
+# Pre--post is significant
+# Follow-up
+aaas_ad.pre.post.sigsig.posthoc <- dunnTest(ifelse(AAAS_ad.pre.post.jt.plot$data$class_JTRCI == "recovered",1,0) ~ 
+    AAAS_ad.pre.post.jt.plot$data$group,
+         method="bh")
+# Pairwise comparison behandlarstöd--väntelista is significant
 
 # AAA-S Ag
-aaas_ag.sigsig = kruskal.test(
+aaas_ag.pre.dur.sigsig = kruskal.test(
   ifelse(AAAS_ag.pre.dur.jt.plot$data$class_JTRCI == "recovered","imp","not") ~
     AAAS_ag.pre.dur.jt.plot$data$group)
-# Not significant
+aaas_ag.pre.post.sigsig = kruskal.test(
+  ifelse(AAAS_ag.pre.post.jt.plot$data$class_JTRCI == "recovered","imp","not") ~
+    AAAS_ag.pre.post.jt.plot$data$group)
+# Neither is significant
 
-# Rathus
-rathus.sigsig = kruskal.test(
+# Rathus Pre--Post
+rathus.pre.dur.sigsig = kruskal.test(
   ifelse(rathus.pre.dur.jt.plot$data$class_JTRCI == "recovered","imp","not") ~ 
     rathus.pre.dur.jt.plot$data$group)
-# Significant
+rathus.pre.dur.sigsig = kruskal.test(
+  ifelse(rathus.pre.dur.jt.plot$data$class_JTRCI == "recovered","imp","not") ~ 
+    rathus.pre.dur.jt.plot$data$group)
+# Both are significant!
+# Follow-up
+rathus.pre.dur.sigsig.posthoc <- dunnTest(ifelse(rathus.pre.dur.jt.plot$data$class_JTRCI == "recovered",1,0) ~ 
+    rathus.pre.dur.jt.plot$data$group,
+         method="bh")
+# Pairwise comparison behandlarstöd--väntelista is significant
+rathus.pre.post.sigsig.posthoc <- dunnTest(ifelse(rathus.pre.post.jt.plot$data$class_JTRCI == "recovered",1,0) ~ 
+    rathus.pre.post.jt.plot$data$group,
+         method="bh")
+# Pairwise comparison behandlarstöd--väntelista is significant
+# Pairwise comparison självhjälp--väntelista is also significant
+
+# ($\chi^2_{`r xresult(rathus.sigsig[["parameter"]])`}$ = `r xresult(rathus.sigsig$statistic)`, `r xpr(rathus.sigsig[["p.value"]])`)
 
 ```
 
-Inga signifikanta skillnader mellan grupperna i andel personer som uppnått både klinisk signikans-status och reliabel förbättring fanns för de primära utfallsmåtten AAA-S Adaptive och AAA-S Aggressive. För båda måtten definerades ökning i poäng som en förbättring. Vi fann en signifikant skillnad mellan grupperna för självhävdelseskalan Rathus ($\chi^2_{`r xresult(rathus.sigsig[["parameter"]])`}$ = `r xresult(rathus.sigsig$statistic)`, `r xpr(rathus.sigsig[["p.value"]])`). Se tabell \@ref(tab:jtprocent) för en sammanställning av kliniskt signifikanta och reliabla förändringarna inom de olika grupperna.
+SKRIV OM, FEL TIDPUNKTER HAR ANVÄNTS I JÄMFÖRELSEN! VI HAR VISST SIGNIFIKANTA SKILLNADER FÖR AD OCH RATHUS MELLAN BEHANDLARSTÖD OCH VÄNTESLISTA, *.sigsig.posthoc-objekten i chunken ovan för detaljer!!! ~~Inga signifikanta skillnader mellan grupperna i andel personer som uppnått både klinisk signikans-status och reliabel förbättring fanns för de primära utfallsmåtten AAA-S Adaptive och AAA-S Aggressive. För båda måtten definerades ökning i poäng som en förbättring. Vi fann en signifikant skillnad mellan grupperna för självhävdelseskalan Rathus .~~ Se tabell \@ref(tab:jtprocent) för en sammanställning av kliniskt signifikanta och reliabla förändringarna inom de olika grupperna.
 
 (ref:jtp) Antal och andel i procent av deltagare i respektive grupp som vid behandlingens slut tillhör de olika kategorierna med överlapp mellan klinisk signifikans och reliabel förändring. Deltagare som endast har lämnat förmätningsvärden har fått dessa värden framflyttade till följande mättillfällen. 
 
