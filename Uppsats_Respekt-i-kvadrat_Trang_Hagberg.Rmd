@@ -2139,7 +2139,7 @@ chisq.test(r2.wide.data$Demografi.PsykoBehandling, completers)
 
 ### Bortfallsanalys 
 
-Med oberoende variansanalys fann vi inga signifikanta skillnader på någon av förmätningspoängen för utfallsmåtten mellan de deltagare som genomförde eftermätningen (N = `r length(which(!is.na(r2.wide.data$post_rathus)))`) och de som inte gjorde det (N = `r length(which(is.na(r2.wide.data$post_rathus)))`) i de olika grupperna. Med Pearsons $\chi^2$-test och Kruskal-Wallis $\chi^2$-test fann vi inte heller några signifikanta skillnader i svaren på de sociodemografiska frågorna mellan de som hade svarat och de som inte hade svarat på eftermätningen.
+Med oberoende variansanalys fann vi inga signifikanta skillnader på någon av förmätningspoängen för utfallsmåtten mellan de deltagare som genomförde eftermätningen (n = `r length(which(!is.na(r2.wide.data$post_rathus)))`) och de som inte gjorde det (n = `r length(which(is.na(r2.wide.data$post_rathus)))`) i de olika grupperna. Med Pearsons $\chi^2$-test och Kruskal-Wallis $\chi^2$-test fann vi inte heller några signifikanta skillnader i svaren på de sociodemografiska frågorna mellan de som hade svarat och de som inte hade svarat på eftermätningen.
 
 # Diskussion
 
