@@ -939,7 +939,7 @@ En modell specificerades för vart och ett av de beroende utfallsmåtten. Ingen 
 
 För modelleringen av de olika utfallsmåtten användes modelleringsverktyg från R-paketet *lme4* [@R-lme4]. Valet av kovariansstrukturen gjordes genom jämförelse av AIC-tal av modeller som anpassades till data med *Maximum Likelihood* (ML)-funktionen. Den alternativa sannolikhetsfunktionen *Restricted Maximum Likelihood* (REML), som ger väntesvärdesriktiga uppskattningar av varianserna, användes därefter för anpassningen av modellerna för utfallsmåtten till underliggande data. 
 
-## Analys av *random*-effekter
+### Analys av *random*-effekter
 
 Genom beräkning av så kallad intraklasskorrelation (ICC) undersökte vi vilken andel av variansen som kommer av underliggande individkopplad förändringsbenägenhet över tid.
 
@@ -956,7 +956,7 @@ Från prediktioner estimerade marginalmedelvärden (*estimated marginal means* e
 
 ### Analys av reliabel förändring och klinisk signifikans
 
-Frekvensen deltagare som i behandlingsprogrammet genomgått en reliabel förändring och dessutom befann sig på kliniskt signifikant nivå vid eftermätningen fastställdes i enlighet med definitionerna och rekommendationerna i @Jacobson1991. För deltagare som endast lämnat självskattningar vid förmätningstillfället fördes förmätningvärdena vidare till eftermätningstillfället i enlighet med principen om *intention to treat*. Med reliabel förändring menas att en observerad utveckling mellan två mättillfällen definieras som tillförlitlig om den är tillräckligt stor (med $\alpha$ = 0,05) i relation till populationsvariansen. Då betraktas förändringen som en verklig förändring och inte bara ett slump- eller mätfel. Med klinisk signifikans avses hur eftermätningsvärdena förhåller sig till medelvärdet för normdata för en subklinisk population [@Jacobson1991]. För sammanställningarna av överlappet mellan klinisk signifikans och reliabel förändring användes R-paketet *JTRCI*, som väljer jämförelsekriterium för klinisk signifikans konservativt [@R-JTRCI]. Skillnader mellan grupperna i antalet reliabelt förändrade deltagare som också befann sig på kliniskt signifikant nivå vid eftermätningstillfället analyserades med Kruskal-Wallis-test.
+Frekvensen deltagare som i behandlingsprogrammet genomgått en reliabel förändring och dessutom befann sig på kliniskt signifikant nivå vid eftermätningen fastställdes i enlighet med definitionerna och rekommendationerna i @Jacobson1991. För deltagare som endast lämnat självskattningar vid förmätningstillfället fördes förmätningvärdena vidare till eftermätningstillfället i enlighet med principen om *intention to treat*. Med reliabel förändring menas att en observerad utveckling mellan två mättillfällen definieras som tillförlitlig om den är tillräckligt stor (med $\alpha$ = 0,05) i relation till populationsvariansen. Då betraktas förändringen som en verklig förändring och inte bara ett slump- eller mätfel. Med klinisk signifikans avses hur eftermätningsvärdena förhåller sig till medelvärdet för normdata för en subklinisk population [@Jacobson1991]. För sammanställningarna av överlappet mellan klinisk signifikans och reliabel förändring användes R-paketet *JTRCI*, som väljer jämförelsekriterium för klinisk signifikans konservativt [@R-JTRCI]. Skillnader mellan grupperna i antalet reliabelt förändrade deltagare som också befann sig på kliniskt signifikant nivå vid eftermätningstillfället analyserades med Kruskal-Wallis $\chi^2$-test.
 
 # Resultat
 
@@ -2133,7 +2133,7 @@ chisq.test(r2.wide.data$Demografi.PsykoBehandling, completers)
 
 ### Bortfallsanalys 
 
-Med oberoende variansanalys fann vi inga signifikanta skillnader på någon av förmätningspoängen för utfallsmåtten mellan de deltagare som genomförde eftermätningen (N = `r length(which(!is.na(r2.wide.data$post_rathus)))`) och de som inte gjorde det (N = `r length(which(is.na(r2.wide.data$post_rathus)))`) i de olika grupperna. Med Pearsons $\chi^2$-test och Kruskal-Wallis $\chi^2$-test fann vi inte heller några signifikanta skillnader för sociodemografiska variabler mellan de som hade svarat och de som inte hade svarat på eftermätningen.
+Med oberoende variansanalys fann vi inga signifikanta skillnader på någon av förmätningspoängen för utfallsmåtten mellan de deltagare som genomförde eftermätningen (N = `r length(which(!is.na(r2.wide.data$post_rathus)))`) och de som inte gjorde det (N = `r length(which(is.na(r2.wide.data$post_rathus)))`) i de olika grupperna. Med Pearsons $\chi^2$-test och Kruskal-Wallis $\chi^2$-test fann vi inte heller några signifikanta skillnader i svaren på de sociodemografiska frågorna mellan de som hade svarat och de som inte hade svarat på eftermätningen.
 
 # Diskussion
 
