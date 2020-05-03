@@ -5,7 +5,7 @@ author:
   - name          : "Tobias Hagberg"
     email         : "tobias@hagberg.com"
     address       : "Psykologprogrammet, Psykologiska institutionen, Stockholms universitet"
-  - name          : "Patrik Trang"
+  - name          : "Patrik Trång"
     email         : "patrik.trang@gmail.com"
 affiliation:
   - institution   : "Psykologiska institutionen, Stockholms universitet"
