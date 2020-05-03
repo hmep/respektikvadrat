@@ -43,7 +43,7 @@ header-includes:
    - \hyphenation{nor-mal-spann nor-mal-span-net}
    - \usepackage{tabu}
    - \usepackage{rotating}
-   - \PassOptionsToPackage{style=apa}{biblatex}
+   - \PassOptionsToPackage{style=apa,uniquename=false}{biblatex}
    - \widowpenalty10000
    - \clubpenalty10000
 editor_options: 
@@ -51,12 +51,6 @@ editor_options:
 ---
 
 ```{r preferences, include = F, cache = F}
-
-# title             : |
-#   | \LARGE konstruktiv sj&auml;lvh&auml;vdelse
-#   | \vspace{0.3cm} \Large _en randomiserad kontrollerad effektstudie av internetf&ouml;rmedlad_
-#   | \Large _kognitiv beteendeterapi_
-#   | \LARGE Respekt i kvadrat: ett tr&auml;ningsprogram f&ouml;r
 
 set.seed(42) # Seed for random number generation
 
@@ -80,7 +74,6 @@ library("nlme")
 library("emmeans")
 library("car")
 library("ggplot2")
-#library("pastecs")
 library("effsize")
 #library("wesanderson")
 #library("pander")
