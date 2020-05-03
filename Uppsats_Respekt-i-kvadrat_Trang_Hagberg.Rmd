@@ -780,7 +780,7 @@ knitr::kable(demdata.tabell, format="latex", booktabs=T, caption = "(ref:dem)", 
   column_spec(1, width = "12em") %>%
   column_spec(2, width = "4em") %>%
   column_spec(3, width = "4em") %>%
-  column_spec(4, width = "5.7em") %>%
+  column_spec(4, width = "6.3em") %>%
   column_spec(5, width = "5em") %>%
   pack_rows("Ålder (år)", 1, 1, bold = F) %>%
   pack_rows("Kön (%)", 2, 2, bold = F) %>%
@@ -1702,7 +1702,7 @@ rathus.pre.post.sigsig.posthoc <- dunnTest(ifelse(rathus.pre.post.jt.plot$data$c
 
 SKRIV OM, FEL TIDPUNKTER HAR ANVÄNTS I JÄMFÖRELSEN! VI HAR VISST SIGNIFIKANTA SKILLNADER FÖR AD OCH RATHUS MELLAN BEHANDLARSTÖD OCH VÄNTESLISTA, *.sigsig.posthoc-objekten i chunken ovan för detaljer!!! ~~Inga signifikanta skillnader mellan grupperna i andel personer som uppnått både klinisk signikans-status och reliabel förbättring fanns för de primära utfallsmåtten AAA-S Adaptive och AAA-S Aggressive. För båda måtten definerades ökning i poäng som en förbättring. Vi fann en signifikant skillnad mellan grupperna för självhävdelseskalan Rathus .~~ Se tabell \@ref(tab:jtprocent) för en sammanställning av kliniskt signifikanta och reliabla förändringarna inom de olika grupperna.
 
-(ref:jtp) Antal och andel i procent av deltagare i respektive grupp som vid behandlingens slut tillhör de olika kategorierna med överlapp mellan klinisk signifikans och reliabel förändring. Deltagare som endast har lämnat förmätningsvärden har fått dessa värden framflyttade till följande mättillfällen. 
+(ref:jtp) Antal och andel i procent av deltagare i respektive grupp som vid behandlingens slut tillhör de olika kategorierna med överlapp mellan klinisk signifikans och reliabel förändring. Deltagare som endast har lämnat förmätningsvärden har fått dessa värden framflyttade till följande mättillfällen. Med 'tillfrisknad' menas att personen vid eftermätningstillfället befinner sig inom två standardavvikelser från medelvärdet för en icke-klinisk population.
 
 ```{r jtprocent, tab.align="center", cache=F}
 
