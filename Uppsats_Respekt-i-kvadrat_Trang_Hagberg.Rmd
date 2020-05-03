@@ -953,7 +953,7 @@ Från prediktioner estimerade marginalmedelvärden (*estimated marginal means* e
 
 ### Analys av reliabel förändring och klinisk signifikans
 
-Frekvensen deltagare som i behandlingsprogrammet genomgått en reliabel förändring och dessutom befann sig på kliniskt signifikant nivå vid eftermätningen fastställdes i enlighet med definitionerna och rekommendationerna i @Jacobson1991. För deltagare som endast lämnat självskattningar vid förmätningstillfället fördes förmätningvärdena vidare till eftermätningstillfället i enlighet med principen om *intention to treat*. Med reliabel förändring menas att en observerad utveckling mellan två mättillfällen definieras som tillförlitlig om den är tillräckligt stor (med $\alpha$ = 0,05) i relation till populationsvariansen. Då betraktas förändringen som en verklig förändring och inte bara ett slump- eller mätfel. Med klinisk signifikans avses hur eftermätningsvärdena förhåller sig till medelvärdet för normdata för en subklinisk population [@Jacobson1991]. För sammanställningarna av överlappet mellan klinisk signifikans och reliabel förändring användes R-paketet *JTRCI*, som väljer jämförelsekriterium för klinisk signifikans konservativt [@R-JTRCI]. Skillnader mellan grupperna i antalet reliabelt förändrade deltagare som också befann sig på kliniskt signifikant nivå vid eftermätningstillfället analyserades med Kruskal-Wallis $\chi^2$-test.
+Frekvensen deltagare som i behandlingsprogrammet genomgått en reliabel förändring och dessutom befann sig på kliniskt signifikant nivå vid eftermätningen fastställdes i enlighet med definitionerna och rekommendationerna i @Jacobson1991. För deltagare som endast lämnat självskattningar vid förmätningstillfället fördes förmätningvärdena vidare till eftermätningstillfället i enlighet med principen om *intention to treat*. Med reliabel förändring menas att en observerad utveckling mellan två mättillfällen definieras som tillförlitlig om den är tillräckligt stor (med $\alpha$ = 0,05) i relation till populationsvariansen. Då betraktas förändringen som en verklig förändring och inte bara ett slump- eller mätfel. Med klinisk signifikans avses hur eftermätningsvärdena förhåller sig till medelvärdet för normdata för en subklinisk population [@Jacobson1991]. För sammanställningarna av överlappet mellan klinisk signifikans och reliabel förändring användes R-paketet *JTRCI*, som väljer jämförelsekriterium för klinisk signifikans konservativt [@R-JTRCI]. Skillnader mellan grupperna i antalet reliabelt förändrade deltagare som också befann sig på kliniskt signifikant nivå vid eftermätningstillfället analyserades med Kruskal-Wallis $\chi^2$-test samt Dunns post-hoc test för multipla jämförelser av flera grupper.
 
 # Resultat
 
@@ -1698,7 +1698,8 @@ rathus.pre.post.sigsig.posthoc <- dunnTest(ifelse(rathus.pre.post.jt.plot$data$c
 
 ```
 
-SKRIV OM, ALLA TIDPUNKTER HAR INTE ANVÄNTS I JÄMFÖRELSEN! VI HAR VISST SIGNIFIKANTA SKILLNADER FÖR AD OCH RATHUS MELLAN BEHANDLARSTÖD OCH VÄNTESLISTA, *.sigsig.posthoc-objekten i chunken ovan för detaljer!!! ~~Inga signifikanta skillnader mellan grupperna i andel personer som uppnått både klinisk signikans-status och reliabel förbättring fanns för de primära utfallsmåtten AAA-S Adaptive och AAA-S Aggressive. För båda måtten definerades ökning i poäng som en förbättring. Vi fann en signifikant skillnad mellan grupperna för självhävdelseskalan Rathus.~~ ($\chi^2_{`r xresult(rathus.pre.dur.sigsig[["parameter"]])`}$ = `r xresult(rathus.pre.dur.sigsig$statistic)`, `r xpr(rathus.pre.dur.sigsig[["p.value"]])`). Se tabell \@ref(tab:jtprocent) för en sammanställning av kliniskt signifikanta och reliabla förändringarna inom de olika grupperna.
+
+Skillnader i både klinisk signifikans-status och reliabel förbättring återfanns mellan grupperna på huvudutfallsmåttet AAAS-AD. ($\chi^2_{`r xresult(aaas_ad.pre.post.sigsig[["parameter"]])`}$ = `r xresult(aaas_ad.pre.post.sigsig$statistic)`, `r xpr(aaas_ad.pre.post.sigsig[["p.value"]])`). Vid post-hoc test konstaterades en signifikant förbättring hos behandlarstöds- och självhjälpsgruppen jämfört med väntelista (z = 2,8, p < 0,01 för behandlarstödsgruppen och z = 2,9, p < 0,05 för självhjälpsgruppen). Se tabell \@ref(tab:jtprocent) för en sammanställning av kliniskt signifikanta och reliabla förändringarna inom de olika grupperna.
 
 (ref:jtp) Antal och andel i procent av deltagare i respektive grupp som vid behandlingens slut tillhör de olika kategorierna med överlapp mellan klinisk signifikans och reliabel förändring. Deltagare som endast har lämnat förmätningsvärden har fått dessa värden framflyttade till följande mättillfällen. Med 'tillfrisknad' menas att personen vid eftermätningstillfället befinner sig inom två standardavvikelser från medelvärdet för en icke-klinisk population. <!-- Fetstil indikerar statistisk signfikant förändring av klinisk signifikans och reliabel förändring. -->
 
@@ -1751,7 +1752,7 @@ svkable(jtrci.tab[,c(7,1:6)], align="lcccccc", caption = '(ref:jtp)') %>%
 
 ```
 
-Se tabell \@ref(tab:descriptives) för en sammanställning av predicerade data från de olika modellerna för respektive utfallsmått, inklusive uppskattade effektstorlekar.
+<!-- Se tabell \@ref(tab:descriptives) för en sammanställning av predicerade data från de olika modellerna för respektive utfallsmått, inklusive uppskattade effektstorlekar. -->
 
 ```{r emmeff, eval = T}
 
@@ -1941,7 +1942,7 @@ svkable(descriptives.col.out, caption = "(ref:descriptives)", align="llrccccccc"
 
 ```
 
-Estimat av intercept och regressionskoefficienter för de olika primära och sekundära utfallsmåtten sammanfattas i tabell \@ref(stargazertab). Intercept och lutningskoefficienter som anges i tabellen för respektive utfallsmått kan läggas in i regressionsformeln för modellen för att predicera utfall för alla kombinationer av grupptillhörighet och mättillfällen.
+Se tabell \@ref(tab:descriptives) för en sammanställning av predicerade data från de olika flernivåanalys-modellerna för respektive utfallsmått, inklusive uppskattade effektstorlekar. Estimat av intercept och regressionskoefficienter för de olika primära och sekundära utfallsmåtten sammanfattas i tabell \@ref(stargazertab). Intercept och lutningskoefficienter som anges i tabellen för respektive utfallsmått kan läggas in i regressionsformeln för modellen för att predicera utfall för alla kombinationer av grupptillhörighet och mättillfällen.
 
 ```{r stargazer, results='asis', eval=T}
 
@@ -2108,9 +2109,7 @@ medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.time$estimate[8] * -1)`, $t$
 
 För både gruppen `r xg1` och gruppen `r xg2` fann vi en klar förbättring mellan behandlingsstart och `r xt3`mätning, medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.group$estimate[5] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.group$df[5])`}\) = `r xresult(aaas_ad.emmpairs.by.group$statistic[5] * -1)`; `r xpr(aaas_ad.emmpairs.by.group[["p.value"]][5])`; effektstorlek `r xresult(aaas_ad.eff.by.group$effect.size[5] * -1)` respektive medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.group$estimate[8] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.group$df[8])`}\) = `r xresult(aaas_ad.emmpairs.by.group$statistic[8])`; `r xpr(aaas_ad.emmpairs.by.group[["p.value"]][8])`; effektstorlek `r xresult(aaas_ad.eff.by.group$effect.size[8] * -1)`.
 
-Deltagarna i de båda behandlingsbetingelserna hade efter fullgången behandling förbättrats avsevärt med avseende på graden av konstruktiv självhävdelse, i jämförelse med `r xg3`. Effekten var påtaglig redan vid mittenmätningen för båda grupperna. Även förbättringen mellan behandlingsstart och `r xt3`mätningen var för båda grupperna betydande. Se figur \@ref(fig:effemmplotsad) för en visualisering av resultaten. 
-
-I flernivåanalysen konstaterar vi att `r xresult(performance::icc(aaas_ad.lmer)$ICC_adjusted * 100)`% av variansen i utfallsmåttet AAA-S Adaptive mellan mättidpunkterna kan förklaras av individuella faktorer.
+Deltagarna i de båda behandlingsbetingelserna hade efter fullgången behandling förbättrats avsevärt med avseende på graden av konstruktiv självhävdelse, i jämförelse med `r xg3`. Effekten var påtaglig redan vid mittenmätningen för båda grupperna. Även förbättringen mellan behandlingsstart och `r xt3`mätningen var för båda grupperna betydande. Se figur \@ref(fig:effemmplotsad) för en visualisering av resultaten. I flernivåanalysen konstaterar vi att `r xresult(performance::icc(aaas_ad.lmer)$ICC_adjusted * 100)`% av variansen i utfallsmåttet AAA-S Adaptive mellan mättidpunkterna kan förklaras av individuella faktorer.
 
 ### Aggressiv självhävdelse
 
