@@ -1801,7 +1801,7 @@ options(OutDec= ",")
 ```
 
 
-(ref:descriptives) Estimerade medelvärden (och standardavvikelser) samt effektstorlekar (ES) för utfallsmåtten i de olika grupperna och vid de olika mättillfällena.
+(ref:descriptives) Estimerade marginalmedelvärden (*M*), standardavvikelser (*SD*) samt effektstorlekar (*ES*) för utfallsmåtten i de olika grupperna och vid de olika mättillfällena.
 
 ```{r descriptives, fig.align="center", cache = T, eval = T}
 
@@ -1942,12 +1942,12 @@ Vi var också intresserade av hur effekten av deltagande i grupperna `r xg1` och
 
 #### `r xG3`--`r xg1` vid `r xt3`mätningen
 
-Vi fann en högre medelpoäng på AAA-S Adaptive för gruppen `r xg1` (estimerat marginalmedelvärde [emm] `r xresult(tidy(aaas_ad.emm.by.time)$estimate[8])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[8])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[8])`]) än för gruppen `r xg3` (emm `r xresult(tidy(aaas_ad.emm.by.time)$estimate[7])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[7])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[7])`]) vid `r xt3`mätningen, 
+Vi fann en högre medelpoäng på AAA-S Adaptive för gruppen `r xg1` (estimerat marginalmedelvärde [*M*] `r xresult(tidy(aaas_ad.emm.by.time)$estimate[8])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[8])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[8])`]) än för gruppen `r xg3` (*M* `r xresult(tidy(aaas_ad.emm.by.time)$estimate[7])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[7])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[7])`]) vid `r xt3`mätningen, 
 medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.time$estimate[7] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.time$df[7])`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[7])`; `r xpr(aaas_ad.emmpairs.by.time[["p.value"]][7])`; effektstorlek `r xresult(aaas_ad.eff.by.time$effect.size[7] * -1)`.
 
 #### `r xG3`--`r xg2` vid `r xt3`mätningen
 
-Vi fann också en tydligt högre medelpoäng på AAA-S Adaptive vid `r xt3`mätningen för gruppen `r xg2` (emm `r xresult(tidy(aaas_ad.emm.by.time)$estimate[9])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[9])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[9])`]) jämfört med gruppen `r xg3` (se emm ovan),
+Vi fann också en tydligt högre medelpoäng på AAA-S Adaptive vid `r xt3`mätningen för gruppen `r xg2` (*M* `r xresult(tidy(aaas_ad.emm.by.time)$estimate[9])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[9])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[9])`]) jämfört med gruppen `r xg3` (se *M* ovan),
 medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.time$estimate[8] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.time$df[8])`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[8])`; `r xpr(aaas_ad.emmpairs.by.time[["p.value"]][8])`; effektstorlek `r xresult(aaas_ad.eff.by.time$effect.size[8] * -1)`.
 
 #### Behandlingseffekt mellan behandlingsstart och `r xt3`mätning
@@ -2002,12 +2002,12 @@ options(OutDec= ",")
 
 #### `r xG3`--`r xg1` vid `r xt3`mätningen
 
-Precis som för konstruktiv självhävdelse hade gruppen `r xg1` en klart högre medelpoäng (emm `r xresult(tidy(aaas_ag.emm.by.time)$estimate[8])`, 95% CI [`r xresult(tidy(aaas_ag.emm.by.time)$conf.low[8])` ; `r xresult(tidy(aaas_ag.emm.by.time)$conf.high[8])`]) på måttet för aggressiv självhävdelse, AAA-S Aggressive, än gruppen `r xg3` (emm `r xresult(tidy(aaas_ag.emm.by.time)$estimate[7])`, 95% CI [`r xresult(tidy(aaas_ag.emm.by.time)$conf.low[7])` ; `r xresult(tidy(aaas_ag.emm.by.time)$conf.high[7])`]) vid `r xt3`mätningen, 
+Precis som för konstruktiv självhävdelse hade gruppen `r xg1` en klart högre medelpoäng (*M* `r xresult(tidy(aaas_ag.emm.by.time)$estimate[8])`, 95% CI [`r xresult(tidy(aaas_ag.emm.by.time)$conf.low[8])` ; `r xresult(tidy(aaas_ag.emm.by.time)$conf.high[8])`]) på måttet för aggressiv självhävdelse, AAA-S Aggressive, än gruppen `r xg3` (*M* `r xresult(tidy(aaas_ag.emm.by.time)$estimate[7])`, 95% CI [`r xresult(tidy(aaas_ag.emm.by.time)$conf.low[7])` ; `r xresult(tidy(aaas_ag.emm.by.time)$conf.high[7])`]) vid `r xt3`mätningen, 
 medelvärdesskillnad `r xresult(aaas_ag.emmpairs.by.time$estimate[7] * -1)`, $t$\(_{`r xresult(aaas_ag.emmpairs.by.time$df[7])`}\) = `r xresult(aaas_ag.emmpairs.by.time$statistic[7])`; `r xpr(aaas_ag.emmpairs.by.time$p.value[7])`; effektstorlek `r xresult(aaas_ag.eff.by.time$effect.size[7] * -1)`.
 
 #### `r xG3`--`r xg2` vid `r xt3`mätningen
 
-Vid `r xt3`mätningen fann vi också att medelpoängen för `r xg2`sgruppen (emm `r xresult(tidy(aaas_ag.emm.by.time)$estimate[9])`, 95% CI [`r xresult(tidy(aaas_ag.emm.by.time)$conf.low[9])` ; `r xresult(tidy(aaas_ag.emm.by.time)$conf.high[9])`]) var högre i jämförelse med gruppen `r xg3` (se emm ovan). Skillnaden var `r xresult(aaas_ag.emmpairs.by.time$estimate[8] * -1)`, $t$\(_{`r xresult(aaas_ag.emmpairs.by.time$df[8])`}\) = `r xresult(aaas_ag.emmpairs.by.time$statistic[8])`; `r xpr(aaas_ag.emmpairs.by.time$p.value[8])`; effektstorlek `r xresult(aaas_ag.eff.by.time$effect.size[8] * -1)`.
+Vid `r xt3`mätningen fann vi också att medelpoängen för `r xg2`sgruppen (*M* `r xresult(tidy(aaas_ag.emm.by.time)$estimate[9])`, 95% CI [`r xresult(tidy(aaas_ag.emm.by.time)$conf.low[9])` ; `r xresult(tidy(aaas_ag.emm.by.time)$conf.high[9])`]) var högre i jämförelse med gruppen `r xg3` (se *M* ovan). Skillnaden var `r xresult(aaas_ag.emmpairs.by.time$estimate[8] * -1)`, $t$\(_{`r xresult(aaas_ag.emmpairs.by.time$df[8])`}\) = `r xresult(aaas_ag.emmpairs.by.time$statistic[8])`; `r xpr(aaas_ag.emmpairs.by.time$p.value[8])`; effektstorlek `r xresult(aaas_ag.eff.by.time$effect.size[8] * -1)`.
 
 #### Behandlingseffekt mellan behandlingsstart och `r xt3`mätning
 
