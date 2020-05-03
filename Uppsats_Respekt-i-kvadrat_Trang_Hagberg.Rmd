@@ -172,7 +172,7 @@ r2.raw_conversations.data <- read_excel(raw_excel_conversations)
 r2.raw_sociodemographics.data <- read_excel(raw_excel_sociodemographics)
 
 # Remove cases that should be excluded 
-# (they don't meet the inclusion criteria but was erroneously included in the study)
+# (they met exklusion criterias but were erroneously included in the study)
 r2.raw.data <- r2.raw.data[-c(13,48,52,97,158),]
 
 # Fix missing data labels
@@ -764,7 +764,7 @@ colnames(demdata.tabell) <- c(
   paste(xG3," (n = ",ll3,")",sep=""),
   paste(xG1," (n = ",ll1,")",sep=""),
   paste(xG2," (n = ",ll2,")",sep=""),
-  paste("Sammanlagt (n = ",length(r2.wide.data[,1]),")",sep="")
+  paste("Totalt (n = ",length(r2.wide.data[,1]),")",sep="")
 )
 
 options(OutDec= ".")
@@ -1797,7 +1797,7 @@ options(OutDec= ",")
 ```
 
 
-(ref:descriptives) Estimerade medelvärden (och standardavvikelser) samt effektstorlekar (ES) för utfallsmåtten i de olika grupperna och vid de olika mättillfällena.
+(ref:descriptives) Estimerade marginalmedelvärden (*M*), standardavvikelser (*SD*) samt effektstorlekar (*ES*) för utfallsmåtten i de olika grupperna och vid de olika mättillfällena.
 
 ```{r descriptives, fig.align="center", cache = T, eval = T}
 
@@ -1981,8 +1981,6 @@ Vår primära frågeställning var om det fanns någon skillnad (i endera riktni
 
 Vi fann ingen skillnad i utfall med AAA-S Adaptive vid `r xt3`mätningen mellan gruppen `r xg1` och gruppen `r xg2`. Vi fann inte heller någon skillnad i effekt vid `r xt2`mätningen. Skillnaden i konstruktiv självhävdelse vid `r xt3`mätningen är försumbar mellan de som fått behandlarstöd och de som har fått klara sig på egen hand.
 
-<!-- $t$\(_{`r xresult(aaas_ad.emmpairs.by.time$df[9])`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[9] * -1)`, `r xpr(aaas_ad.emmpairs.by.time[["p.value"]][9])`, effektstorlek `r xresult(aaas_ad.eff.by.time$effect.size[9] * -1)` -->
-
 ## Skillnader i effekt på konstruktiv och aggressiv självhävdelse mellan `r xg3`--`r xg1` respektive `r xg3`--`r xg2`
 
 Vi var också intresserade av hur effekten av deltagande i grupperna `r xg1` och `r xg2` skiljer sig från deltagande i `r xg3` med avseende på konstruktiv och aggressiv självhävdelse, fångade med utfallsmåtten AAA-S Adaptive respektive AAA-S Aggressive.
@@ -2083,12 +2081,12 @@ options(OutDec= ".")
 
 #### `r xG3`--`r xg1` vid `r xt3`mätningen
 
-Vi fann en högre medelpoäng på AAA-S Adaptive för gruppen `r xg1` (estimerat marginalmedelvärde [emm] `r xresult(tidy(aaas_ad.emm.by.time)$estimate[8])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[8])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[8])`]) än för gruppen `r xg3` (emm `r xresult(tidy(aaas_ad.emm.by.time)$estimate[7])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[7])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[7])`]) vid `r xt3`mätningen, 
+Vi fann en högre medelpoäng på AAA-S Adaptive för gruppen `r xg1` (estimerat marginalmedelvärde [*M*] `r xresult(tidy(aaas_ad.emm.by.time)$estimate[8])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[8])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[8])`]) än för gruppen `r xg3` (*M* `r xresult(tidy(aaas_ad.emm.by.time)$estimate[7])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[7])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[7])`]) vid `r xt3`mätningen,
 medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.time$estimate[7] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.time$df[7])`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[7])`; `r xpr(aaas_ad.emmpairs.by.time[["p.value"]][7])`; effektstorlek `r xresult(aaas_ad.eff.by.time$effect.size[7] * -1)`.
 
 #### `r xG3`--`r xg2` vid `r xt3`mätningen
 
-Vi fann också en tydligt högre medelpoäng på AAA-S Adaptive vid `r xt3`mätningen för gruppen `r xg2` (emm `r xresult(tidy(aaas_ad.emm.by.time)$estimate[9])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[9])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[9])`]) jämfört med gruppen `r xg3` (se emm ovan),
+Vi fann också en tydligt högre medelpoäng på AAA-S Adaptive vid `r xt3`mätningen för gruppen `r xg2` (*M* `r xresult(tidy(aaas_ad.emm.by.time)$estimate[9])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[9])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[9])`]) jämfört med gruppen `r xg3` (se *M* ovan),
 medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.time$estimate[8] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.time$df[8])`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[8])`; `r xpr(aaas_ad.emmpairs.by.time[["p.value"]][8])`; effektstorlek `r xresult(aaas_ad.eff.by.time$effect.size[8] * -1)`.
 
 #### Behandlingseffekt mellan behandlingsstart och `r xt3`mätning
@@ -2101,16 +2099,16 @@ Deltagarna i de båda behandlingsbetingelserna hade efter fullgången behandling
 
 #### `r xG3`--`r xg1` vid `r xt3`mätningen
 
-Precis som för konstruktiv självhävdelse hade gruppen `r xg1` en klart högre medelpoäng (emm `r xresult(tidy(aaas_ag.emm.by.time)$estimate[8])`, 95% CI [`r xresult(tidy(aaas_ag.emm.by.time)$conf.low[8])` ; `r xresult(tidy(aaas_ag.emm.by.time)$conf.high[8])`]) på måttet för aggressiv självhävdelse, AAA-S Aggressive, än gruppen `r xg3` (emm `r xresult(tidy(aaas_ag.emm.by.time)$estimate[7])`, 95% CI [`r xresult(tidy(aaas_ag.emm.by.time)$conf.low[7])` ; `r xresult(tidy(aaas_ag.emm.by.time)$conf.high[7])`]) vid `r xt3`mätningen, 
+Precis som för konstruktiv självhävdelse hade gruppen `r xg1` en klart högre medelpoäng (*M* `r xresult(tidy(aaas_ag.emm.by.time)$estimate[8])`, 95% CI [`r xresult(tidy(aaas_ag.emm.by.time)$conf.low[8])` ; `r xresult(tidy(aaas_ag.emm.by.time)$conf.high[8])`]) på måttet för aggressiv självhävdelse, AAA-S Aggressive, än gruppen `r xg3` (*M* `r xresult(tidy(aaas_ag.emm.by.time)$estimate[7])`, 95% CI [`r xresult(tidy(aaas_ag.emm.by.time)$conf.low[7])` ; `r xresult(tidy(aaas_ag.emm.by.time)$conf.high[7])`]) vid `r xt3`mätningen,
 medelvärdesskillnad `r xresult(aaas_ag.emmpairs.by.time$estimate[7] * -1)`, $t$\(_{`r xresult(aaas_ag.emmpairs.by.time$df[7])`}\) = `r xresult(aaas_ag.emmpairs.by.time$statistic[7])`; `r xpr(aaas_ag.emmpairs.by.time$p.value[7])`; effektstorlek `r xresult(aaas_ag.eff.by.time$effect.size[7] * -1)`.
 
 #### `r xG3`--`r xg2` vid `r xt3`mätningen
 
-Vid `r xt3`mätningen fann vi också att medelpoängen för `r xg2`sgruppen (emm `r xresult(tidy(aaas_ag.emm.by.time)$estimate[9])`, 95% CI [`r xresult(tidy(aaas_ag.emm.by.time)$conf.low[9])` ; `r xresult(tidy(aaas_ag.emm.by.time)$conf.high[9])`]) var högre i jämförelse med gruppen `r xg3` (se emm ovan). Skillnaden var `r xresult(aaas_ag.emmpairs.by.time$estimate[8] * -1)`, $t$\(_{`r xresult(aaas_ag.emmpairs.by.time$df[8])`}\) = `r xresult(aaas_ag.emmpairs.by.time$statistic[8])`; `r xpr(aaas_ag.emmpairs.by.time$p.value[8])`; effektstorlek `r xresult(aaas_ag.eff.by.time$effect.size[8] * -1)`.
+Vid `r xt3`mätningen fann vi också att medelpoängen för `r xg2`sgruppen (*M* `r xresult(tidy(aaas_ag.emm.by.time)$estimate[9])`, 95% CI [`r xresult(tidy(aaas_ag.emm.by.time)$conf.low[9])` ; `r xresult(tidy(aaas_ag.emm.by.time)$conf.high[9])`]) var högre i jämförelse med gruppen `r xg3` (se *M* ovan). Skillnaden var `r xresult(aaas_ag.emmpairs.by.time$estimate[8] * -1)`, $t$\(_{`r xresult(aaas_ag.emmpairs.by.time$df[8])`}\) = `r xresult(aaas_ag.emmpairs.by.time$statistic[8])`; `r xpr(aaas_ag.emmpairs.by.time$p.value[8])`; effektstorlek `r xresult(aaas_ag.eff.by.time$effect.size[8] * -1)`.
 
 #### Behandlingseffekt mellan behandlingsstart och `r xt3`mätning
 
-För båda grupperna `r xg1` och `r xg2` fann vi en signifikant höjning mellan behandlingsstart och `r xt3`mätning. För `r xg1`sgruppen var medelvärdesskillnaden `r xresult(aaas_ag.emmpairs.by.group$estimate[5] * -1)`, $t$\(_{`r xresult(aaas_ag.emmpairs.by.group$df[5])`}\) = `r xresult(aaas_ag.emmpairs.by.group$statistic[5])`; `r xpr(aaas_ag.emmpairs.by.group$p.value[5])`; effektstorlek `r xresult(aaas_ag.eff.by.group$effect.size[5] * -1)`, för `r xg2`sgruppen var den `r xresult(aaas_ag.emmpairs.by.group$estimate[8] * -1)`, $t$\(_{`r xresult(aaas_ag.emmpairs.by.group$df[8])`}\) = `r xresult(aaas_ag.emmpairs.by.group$statistic[8])`; `r xpr(aaas_ag.emmpairs.by.group$p.value[8])`; effektstorlek `r xresult(aaas_ag.eff.by.group$effect.size[8] * -1)`.
+För båda grupperna `r xg1` och `r xg2` fann vi en signifikant höjning mellan tidpunkterna för behandlingsstart och `r xt3`mätning. För `r xg1`sgruppen var medelvärdesskillnaden `r xresult(aaas_ag.emmpairs.by.group$estimate[5] * -1)`, $t$\(_{`r xresult(aaas_ag.emmpairs.by.group$df[5])`}\) = `r xresult(aaas_ag.emmpairs.by.group$statistic[5])`; `r xpr(aaas_ag.emmpairs.by.group$p.value[5])`; effektstorlek `r xresult(aaas_ag.eff.by.group$effect.size[5] * -1)`, för `r xg2`sgruppen var den `r xresult(aaas_ag.emmpairs.by.group$estimate[8] * -1)`, $t$\(_{`r xresult(aaas_ag.emmpairs.by.group$df[8])`}\) = `r xresult(aaas_ag.emmpairs.by.group$statistic[8])`; `r xpr(aaas_ag.emmpairs.by.group$p.value[8])`; effektstorlek `r xresult(aaas_ag.eff.by.group$effect.size[8] * -1)`.
 
 Det är notabelt att medelvärdet för gruppen `r xg2` var lägre än för gruppen `r xg1`, som inte fick något behandlarstöd, vid båda tidpunkterna. Skillnaden är dock ej signifikant. Båda behandlingsbetingelserna uppvisar en höjning av graden av aggressiv självhävdelse, i jämförelse med `r xg3`. Effekten var signifikant vid mittenmätningen för gruppen `r xg1` (men inte för gruppen `r xg2`). Även höjningen av aggressiv självhävdelse mellan behandlingsstart och `r xt3`mätningen var för båda grupperna signifikant. Figur \@ref(fig:effemmplotsag) ger en visualisering av resultaten. `r xresult(performance::icc(aaas_ag.lmer)$ICC_adjusted * 100)`% av variansen på AAA-s Aggressive kan förklaras av individuella faktorer.
 
@@ -2118,15 +2116,7 @@ Det är notabelt att medelvärdet för gruppen `r xg2` var lägre än för grupp
 
 Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt självhjälpsprogram för att förbättra individers konstruktiva självhävdelse. Programmet administrerades via en internetbaserad plattform. Studien genomfördes med en randomiserad och kontrollerad design. Interventionen byggde till stora delar på självhjälpsmaterialet *Assert Yourself* [@michel2008] och inkluderade bland annat inslag av psykoedukation, beteendeexperiment, avslappningsövningar, vidmakthållandeplanering och återfallsprevention. En tredjedel av deltagarna fick tillgång till programmet utan behandlarstöd, en tredjedel fick tillgång till programmet med behandlarstöd och en tredjedel var en väntelistebetingad kontrollgrupp. Vi konstaterade att tillgång till behandlingsmaterialet (oberoende av om man hade behandlarstöd eller inte) gav bättre resultat än att vara placerad på väntelista. Vi fann däremot ingen skillnad i utfallet mellan gruppen med behandlarstöd och gruppen utan behandlarstöd. Vi fann inte heller någon klinisk signifikant skillnad i andelen deltagare i respektive grupp som hade förbättrats reliabelt och till kliniskt signifikant nivå.
 
-<!-- [Pers kommentar] 
-Egentligen är avsaknad av skillnad inte samma sak som att de är lika effektiva (de är bara inte olika effektiva). 
-
-Viktigt i och med att ni tagit upp detta med behandlingsstödets effekter i introduktionen 
--->
-
 ## Resultatdiskussion
-
-
 
 Vi har tidigare konstaterat att träning i konstruktiv självhävdelse kan förbättra mående vid diverse ångestproblem [@Speed2018a]. Vi har även konstaterat att I-KBT är en effektiv behandlingsmetod [@Andrews2018; @Andrews2010; @Carlbring2018; @Barak2008]. I föreliggande studie kombinerades ett självhjälpsprogram för konstruktiv självhävdelse med I-KBT. Effektstyrkan för de två grupperna som fick behandling var cirka 1. Det finns knapert med I-KBT-studier för konstruktiv självhävdelse att jämföra dessa resultat emot, men effektstyrkan är i linje med effekstyrkan hos behandlingsprogram för en rad andra transdiagnostiska symtom, så som stress [\(\eta^2_p \)=.12 i @Day2013], prokrastinering [*d* = 0,29--1.09 i @Rozental2015] och perfektionism [*d* = 0,7--1.0 i @Rozental2017; *d* = 0,86 i @Wade2019]. Resultaten är något högre än den medeleffektstorleken @Andrews2018 konstaterade att I-KBT överlag tenderar att ha (*d* = 0,8). 
 
@@ -2134,7 +2124,7 @@ I studien användes även skattningsskalan Rathus som ett komplement till AAA-S 
 
 Utifrån konceptualiseringen som gjordes i den föreliggande studien om självhävdelse (se figur \@ref(fig:assertiveness)) är det även svårt att utvärdera resultatet på AAA-S delskala om aggressivitet. För delskalan AAA-S Adaptive var målsättningen tydlig, desto högre skattningar desto bättre. I tolkandet av resultatet på delskalan AAA-S Aggresive är det mer invecklat. Rimligtvis bör låga resultat vara bra då de är en indikation på låg grad av aggressivt självhävdande. I föreliggande studie ökade skattningarna på AAA-S Aggressive på ungefär samma sätt som skattningarna för AAA-S Adaptive (om än något mindre). Vi tror att en stor del av förklaringen av denna utveckling ligger i vilka deltagare som sökt sig till studien. Vårt sample hade ett medelvärde på LSAS-SR (*M* = 49) som med råge överskrider den gräns som brukar användas (30) för att bedömma om social fobi föreligger [@Fresco2001]. En rimlig slutsats att dra av detta är att en stor andel av studiens deltagare har socialfobiska tendenser och att delar av dem till och med sannolikt skulle diagnosticeras med social fobi vid en djupare klinisk bedömning. Symtombilden för social fobi är väl överensstämmande med beskrivningen av passivt självhävdande individer. Med största sannolikhet var deltagarna i den aktuella studien för passivt självhävdande vid studiens start.   
 
-Möjligen upplever dessa individer sig -- med sitt väldigt passiva självhävdande -- som både mer aggressivt- och mer konstruktivt självhävdande när de börjar stå upp för sig själva och sina behov. Vid studiens start var deltagarnas aggresiva självhävdelse (*M* = **XXX**) lägre än normgruppen [*M* = 33.2 @Thompson2011], efter behandlingen hade behandlingsstöds- och självhjälpsgrupperna skattningar (*M* = **XXX** respektive *M* = **XXX**) snarlika normgruppen. Potentiellt var ökningen av aggressiv självhävdelse i den föreliggande studien en positiv utveckling för deltagarna. I framtida studier om konstruktiv självhävdelse vore det fördelaktigt att vid screening klassificera deltagarna utifrån huvudsakliga sökorsak och målsättning. Det skulle ge möjligheten till att se hur grupper av individer med olika sorters självupplevda brister i konstruktivt självhävdande (exempelvis grupperna "för aggressivt självhävdande" och "för passivt självhävdande") tar till sig behandlingen. 
+Möjligen upplever dessa individer sig -- med sitt väldigt passiva självhävdande -- som både mer aggressivt- och mer konstruktivt självhävdande när de börjar stå upp för sig själva och sina behov. Vid studiens start var behandlarstöds- och självhjälpsgruppens aggresiva självhävdelse (*M* = 27,7 respektive *M* = 27,9) lägre än normgruppen [*M* = 33.2 @Thompson2011], efter behandlingen var behandlarstöds- och självhjälpsgruppens skattningar (*M* = 31,5 respektive *M* = 30,5) närmare normgruppens värde. Potentiellt var ökningen av aggressiv självhävdelse i den föreliggande studien en positiv utveckling för deltagarna. I framtida studier om konstruktiv självhävdelse vore det fördelaktigt att vid screening klassificera deltagarna utifrån huvudsakliga sökorsak och målsättning. Det skulle ge möjligheten till att se hur grupper av individer med olika sorters självupplevda brister i konstruktivt självhävdande (exempelvis grupperna "för aggressivt självhävdande" och "för passivt självhävdande") tar till sig behandlingen. 
 
 <!-- 
 Diskussion om själva resultatet återstår att skriva!
