@@ -764,7 +764,7 @@ colnames(demdata.tabell) <- c(
   paste(xG3," (n = ",ll3,")",sep=""),
   paste(xG1," (n = ",ll1,")",sep=""),
   paste(xG2," (n = ",ll2,")",sep=""),
-  paste("Sammanlagt (n = ",length(r2.wide.data[,1]),")",sep="")
+  paste("Totalt (n = ",length(r2.wide.data[,1]),")",sep="")
 )
 
 options(OutDec= ".")
