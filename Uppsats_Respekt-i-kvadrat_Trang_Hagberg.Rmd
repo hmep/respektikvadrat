@@ -1830,60 +1830,58 @@ xh <- psych::describe(r2.new.data[ng3t2,])[,c(3:4)][c(7,6,5,8:11),]
 xi <- psych::describe(r2.new.data[ng3t3,])[,c(3:4)][c(7,6,5,8:11),]
 
 y <- cbind(
-  xa,
-  cbind(xb,"es"=c(
-      aaas_ad.eff.by.group[1,4]$effect.size,
-      aaas_ag.eff.by.group[1,4]$effect.size,
-      rathus.eff.by.group[1,4]$effect.size,
-      lsas_sum.eff.by.group[1,4]$effect.size,
-      gad_sum.eff.by.group[1,4]$effect.size,
-      phq_sum.eff.by.group[1,4]$effect.size,
-      well.eff.by.group[1,4]$effect.size
+  xg,cbind(xh,"es"=c(
+      abs(aaas_ad.eff.by.group[1,4]$effect.size),
+      abs(aaas_ag.eff.by.group[1,4]$effect.size),
+      abs(rathus.eff.by.group[1,4]$effect.size),
+      abs(lsas_sum.eff.by.group[1,4]$effect.size),
+      abs(gad_sum.eff.by.group[1,4]$effect.size),
+      abs(phq_sum.eff.by.group[1,4]$effect.size),
+      abs(well.eff.by.group[1,4]$effect.size)
+    )),cbind(xi,"es"=c(
+      abs(aaas_ad.eff.by.group[2,4]$effect.size),
+      abs(aaas_ag.eff.by.group[2,4]$effect.size),
+      abs(rathus.eff.by.group[2,4]$effect.size),
+      abs(lsas_sum.eff.by.group[2,4]$effect.size),
+      abs(gad_sum.eff.by.group[2,4]$effect.size),
+      abs(phq_sum.eff.by.group[2,4]$effect.size),
+      abs(well.eff.by.group[2,4]$effect.size)
+    )),
+  xa,cbind(xb,"es"=c(
+      abs(aaas_ad.eff.by.group[4,4]$effect.size),
+      abs(aaas_ag.eff.by.group[4,4]$effect.size),
+      abs(rathus.eff.by.group[4,4]$effect.size),
+      abs(lsas_sum.eff.by.group[4,4]$effect.size),
+      abs(gad_sum.eff.by.group[4,4]$effect.size),
+      abs(phq_sum.eff.by.group[4,4]$effect.size),
+      abs(well.eff.by.group[4,4]$effect.size)
     )),
     cbind(xc,"es"=c(
-      aaas_ad.eff.by.group[2,4]$effect.size,
-      aaas_ag.eff.by.group[2,4]$effect.size,
-      rathus.eff.by.group[2,4]$effect.size,
-      lsas_sum.eff.by.group[2,4]$effect.size,
-      gad_sum.eff.by.group[2,4]$effect.size,
-      phq_sum.eff.by.group[2,4]$effect.size,
-      well.eff.by.group[2,4]$effect.size
+      abs(aaas_ad.eff.by.group[5,4]$effect.size),
+      abs(aaas_ag.eff.by.group[5,4]$effect.size),
+      abs(rathus.eff.by.group[5,4]$effect.size),
+      abs(lsas_sum.eff.by.group[5,4]$effect.size),
+      abs(gad_sum.eff.by.group[5,4]$effect.size),
+      abs(phq_sum.eff.by.group[5,4]$effect.size),
+      abs(well.eff.by.group[5,4]$effect.size)
     )),
-  xd,
-  cbind(xe,"es"=c(
-      aaas_ad.eff.by.group[4,4]$effect.size * -1,
-      aaas_ag.eff.by.group[4,4]$effect.size * -1,
-      rathus.eff.by.group[4,4]$effect.size * -1,
-      lsas_sum.eff.by.group[4,4]$effect.size * -1,
-      gad_sum.eff.by.group[4,4]$effect.size * -1,
-      phq_sum.eff.by.group[4,4]$effect.size * -1,
-      well.eff.by.group[4,4]$effect.size * -1
+  xd,cbind(xe,"es"=c(
+      abs(aaas_ad.eff.by.group[7,4]$effect.size),
+      abs(aaas_ag.eff.by.group[7,4]$effect.size),
+      abs(rathus.eff.by.group[7,4]$effect.size),
+      abs(lsas_sum.eff.by.group[7,4]$effect.size),
+      abs(gad_sum.eff.by.group[7,4]$effect.size),
+      abs(phq_sum.eff.by.group[7,4]$effect.size),
+      abs(well.eff.by.group[7,4]$effect.size)
     )),
     cbind(xf,"es"=c(
-      aaas_ad.eff.by.group[5,4]$effect.size * -1,
-      aaas_ag.eff.by.group[5,4]$effect.size * -1,
-      rathus.eff.by.group[5,4]$effect.size * -1,
-      lsas_sum.eff.by.group[5,4]$effect.size * -1,
-      gad_sum.eff.by.group[5,4]$effect.size * -1,
-      phq_sum.eff.by.group[5,4]$effect.size * -1,
-      well.eff.by.group[5,4]$effect.size * -1
-    )),
-  xg,cbind(xh,"es"=c(
-      aaas_ad.eff.by.group[7,4]$effect.size * -1,
-      aaas_ag.eff.by.group[7,4]$effect.size * -1,
-      rathus.eff.by.group[7,4]$effect.size * -1,
-      lsas_sum.eff.by.group[7,4]$effect.size * -1,
-      gad_sum.eff.by.group[7,4]$effect.size * -1,
-      phq_sum.eff.by.group[7,4]$effect.size * -1,
-      well.eff.by.group[7,4]$effect.size * -1
-    )),cbind(xi,"es"=c(
-      aaas_ad.eff.by.group[8,4]$effect.size * -1,
-      aaas_ag.eff.by.group[8,4]$effect.size * -1,
-      rathus.eff.by.group[8,4]$effect.size * -1,
-      lsas_sum.eff.by.group[8,4]$effect.size * -1,
-      gad_sum.eff.by.group[8,4]$effect.size * -1,
-      phq_sum.eff.by.group[8,4]$effect.size * -1,
-      well.eff.by.group[8,4]$effect.size * -1
+      abs(aaas_ad.eff.by.group[8,4]$effect.size),
+      abs(aaas_ag.eff.by.group[8,4]$effect.size),
+      abs(rathus.eff.by.group[8,4]$effect.size),
+      abs(lsas_sum.eff.by.group[8,4]$effect.size),
+      abs(gad_sum.eff.by.group[8,4]$effect.size),
+      abs(phq_sum.eff.by.group[8,4]$effect.size),
+      abs(well.eff.by.group[8,4]$effect.size)
     ))
   )
 
@@ -1895,9 +1893,9 @@ xeff = "ES"
 
 descriptives.col.out <- cbind.data.frame(
   "Betingelse" = rep(c(
+    paste(xG3, ", n = ", ll3, sep = ""),
     paste(xG1, ", n = ", ll1, sep = ""),
-    paste(xG2, ", n = ", ll2, sep = ""),
-    paste(xG3, ", n = ", ll3, sep = "")
+    paste(xG2, ", n = ", ll2, sep = "")
   ), each = 8),
   "Mättillfälle" = rep(c(
     rep(c(xT1), times = 2), rep(c(xT2), times = 3), rep(c(xT3), times = 3)
