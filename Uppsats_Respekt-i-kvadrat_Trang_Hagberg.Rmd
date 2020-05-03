@@ -929,40 +929,7 @@ Vi använde `r version$language`, version `r version$major`.`r version$minor` [@
 <!-- Vi använde `r cite_r("r-references.bib")` för samtliga analyser.  -->
 Signifikansnivån $\alpha$ = 0,05 tillämpades vid alla beräkningar. Öppen syntax och data finns deponerade hos Figshare på https://doi.org/10.17045/sthlmuni.12148785 [@R2data2020].
 
-```{r attrition, eval = F}
-
-# Who has taken the post survey?
-# Rathus is the first presented questionnaire in the battery
-completers <- as.factor(ifelse(!is.na(r2.wide.data$post_rathus),1,0))
-
-# Response scales
-anova(lm(r2.wide.data$pre_aaas_ad ~ completers * r2.wide.data$group))
-anova(lm(r2.wide.data$pre_aaas_ag ~ completers * r2.wide.data$group))
-anova(lm(r2.wide.data$pre_rathus ~ completers * r2.wide.data$group))
-anova(lm(r2.wide.data$pre_lsas_sum ~ completers * r2.wide.data$group))
-anova(lm(r2.wide.data$pre_gad_sum ~ completers * r2.wide.data$group))
-anova(lm(r2.wide.data$pre_phq_sum ~ completers * r2.wide.data$group))
-anova(lm(r2.wide.data$pre_well ~ completers * r2.wide.data$group))
-# All non-significant
-
-# Sociodemographics
-chisq.test(r2.wide.data$Demografi.Kon, completers)
-kruskal.test(r2.wide.data$Demografi.Alder, completers)
-kruskal.test(r2.wide.data$Demografi.Civilstand, completers)
-kruskal.test(r2.wide.data$Demografi.Utbildning, completers)
-kruskal.test(r2.wide.data$Demografi.Sysselsattning, completers)
-chisq.test(r2.wide.data$Demografi.Psykofarmaka, completers)
-kruskal.test(r2.wide.data$Demografi.PsykofarmakaVad, completers)
-chisq.test(r2.wide.data$Demografi.PsykoBehandling, completers)
-# All non-significant
-
-```
-
-### Bortfallsanalys 
-
-Med oberoende variansanalys fann vi inga signifikanta skillnader på någon av förmätningspoängen för utfallsmåtten mellan de deltagare som genomförde eftermätningen (N = `r length(which(!is.na(r2.wide.data$post_rathus)))`) och de som inte gjorde det (N = `r length(which(is.na(r2.wide.data$post_rathus)))`) i de olika grupperna. Med Pearsons $\chi^2$-test och Kruskal-Wallis $\chi^2$-test fann vi inte heller några signifikanta skillnader för sociodemografiska variabler mellan de som hade svarat och de som inte hade svarat på eftermätningen.
-
-### Analys av *fixed* och *random* effekter
+### Analys av fixa effekter
 
 Fixa och slumpmässiga effekter mellan grupp och tid för de primära och sekundära utfallsmåtten undersöktes med så kallad flernivåanalys (också kallad blandad modell, hierarkisk analys, på engelska bland annat *mixed model*, *multilevel model* och *hierarchical linear model*). Flernivåanalys tillåter precis som multivariat variansanalys (MANOVA) inklusion av upprepade beroende mättillfällen i modellen, men fördelerna att metoden tillåter obalanserade grupper och att principen om *intention to treat* värnas utan behov av imputering av saknade datapunkter. Flernivåanalyser uppskattar också inklusion av *random*-effekter observerad men inte kontrollerad varians på klusternivå (i detta fall enskilda individer som "innehåller" upprepade mättillfällen).
 
@@ -972,7 +939,9 @@ En modell specificerades för vart och ett av de beroende utfallsmåtten. Ingen 
 
 För modelleringen av de olika utfallsmåtten användes modelleringsverktyg från R-paketet *lme4* [@R-lme4]. Valet av kovariansstrukturen gjordes genom jämförelse av AIC-tal av modeller som anpassades till data med *Maximum Likelihood* (ML)-funktionen. Den alternativa sannolikhetsfunktionen *Restricted Maximum Likelihood* (REML), som ger väntesvärdesriktiga uppskattningar av varianserna, användes därefter för anpassningen av modellerna för utfallsmåtten till underliggande data. 
 
-Genom uträkning av så kallad intraklasskorrelation (ICC) undersökte vi vilken andel av variansen som kommer av underliggande individkopplad förändringsbenägenhet över tid.
+## Analys av *random*-effekter
+
+Genom beräkning av så kallad intraklasskorrelation (ICC) undersökte vi vilken andel av variansen som kommer av underliggande individkopplad förändringsbenägenhet över tid.
 
 <!-- s 49 http://wiki.bcs.rochester.edu/HlpLab/StatsCourses?action=AttachFile&do=get&target=Groningen11.pdf
 Consider reporting scales for outputs, inputs and predictors (e.g., range, mean, sd, median). -->
@@ -1823,7 +1792,6 @@ options(OutDec= ",")
 
 ```
 
-
 (ref:descriptives) Estimerade marginalmedelvärden (*M*), standardavvikelser (*SD*) samt effektstorlekar (*ES*) för utfallsmåtten i de olika grupperna och vid de olika mättillfällena.
 
 ```{r descriptives, fig.align="center", cache = T, eval = T}
@@ -2133,6 +2101,39 @@ Vid `r xt3`mätningen fann vi också att medelpoängen för `r xg2`sgruppen (*M*
 För båda grupperna `r xg1` och `r xg2` fann vi en signifikant höjning mellan tidpunkterna för behandlingsstart och `r xt3`mätning. För `r xg1`sgruppen var medelvärdesskillnaden `r xresult(aaas_ag.emmpairs.by.group$estimate[5] * -1)`, $t$\(_{`r xresult(aaas_ag.emmpairs.by.group$df[5])`}\) = `r xresult(aaas_ag.emmpairs.by.group$statistic[5])`; `r xpr(aaas_ag.emmpairs.by.group$p.value[5])`; effektstorlek `r xresult(aaas_ag.eff.by.group$effect.size[5] * -1)`, för `r xg2`sgruppen var den `r xresult(aaas_ag.emmpairs.by.group$estimate[8] * -1)`, $t$\(_{`r xresult(aaas_ag.emmpairs.by.group$df[8])`}\) = `r xresult(aaas_ag.emmpairs.by.group$statistic[8])`; `r xpr(aaas_ag.emmpairs.by.group$p.value[8])`; effektstorlek `r xresult(aaas_ag.eff.by.group$effect.size[8] * -1)`.
 
 Det är notabelt att medelvärdet för gruppen `r xg2` var lägre än för gruppen `r xg1`, som inte fick något behandlarstöd, vid båda tidpunkterna. Skillnaden är dock ej signifikant. Båda behandlingsbetingelserna uppvisar en höjning av graden av aggressiv självhävdelse, i jämförelse med `r xg3`. Effekten var signifikant vid mittenmätningen för gruppen `r xg1` (men inte för gruppen `r xg2`). Även höjningen av aggressiv självhävdelse mellan behandlingsstart och `r xt3`mätningen var för båda grupperna signifikant. Figur \@ref(fig:effemmplotsag) ger en visualisering av resultaten. `r xresult(performance::icc(aaas_ag.lmer)$ICC_adjusted * 100)`% av variansen på AAA-s Aggressive kan förklaras av individuella faktorer.
+
+```{r attrition, eval = F}
+
+# Who has taken the post survey?
+# Rathus is the first presented questionnaire in the battery
+completers <- as.factor(ifelse(!is.na(r2.wide.data$post_rathus),1,0))
+
+# Response scales
+anova(lm(r2.wide.data$pre_aaas_ad ~ completers * r2.wide.data$group))
+anova(lm(r2.wide.data$pre_aaas_ag ~ completers * r2.wide.data$group))
+anova(lm(r2.wide.data$pre_rathus ~ completers * r2.wide.data$group))
+anova(lm(r2.wide.data$pre_lsas_sum ~ completers * r2.wide.data$group))
+anova(lm(r2.wide.data$pre_gad_sum ~ completers * r2.wide.data$group))
+anova(lm(r2.wide.data$pre_phq_sum ~ completers * r2.wide.data$group))
+anova(lm(r2.wide.data$pre_well ~ completers * r2.wide.data$group))
+# All non-significant
+
+# Sociodemographics
+chisq.test(r2.wide.data$Demografi.Kon, completers)
+kruskal.test(r2.wide.data$Demografi.Alder, completers)
+kruskal.test(r2.wide.data$Demografi.Civilstand, completers)
+kruskal.test(r2.wide.data$Demografi.Utbildning, completers)
+kruskal.test(r2.wide.data$Demografi.Sysselsattning, completers)
+chisq.test(r2.wide.data$Demografi.Psykofarmaka, completers)
+kruskal.test(r2.wide.data$Demografi.PsykofarmakaVad, completers)
+chisq.test(r2.wide.data$Demografi.PsykoBehandling, completers)
+# All non-significant
+
+```
+
+### Bortfallsanalys 
+
+Med oberoende variansanalys fann vi inga signifikanta skillnader på någon av förmätningspoängen för utfallsmåtten mellan de deltagare som genomförde eftermätningen (N = `r length(which(!is.na(r2.wide.data$post_rathus)))`) och de som inte gjorde det (N = `r length(which(is.na(r2.wide.data$post_rathus)))`) i de olika grupperna. Med Pearsons $\chi^2$-test och Kruskal-Wallis $\chi^2$-test fann vi inte heller några signifikanta skillnader för sociodemografiska variabler mellan de som hade svarat och de som inte hade svarat på eftermätningen.
 
 # Diskussion
 
