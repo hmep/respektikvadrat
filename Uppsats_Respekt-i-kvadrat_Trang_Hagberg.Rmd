@@ -5,7 +5,7 @@ author:
   - name          : "Tobias Hagberg"
     email         : "tobias@hagberg.com"
     address       : "Psykologprogrammet, Psykologiska institutionen, Stockholms universitet"
-  - name          : "Patrik Trång"
+  - name          : "Patrik Trang"
     email         : "patrik.trang@gmail.com"
 affiliation:
   - institution   : "Psykologiska institutionen, Stockholms universitet"
@@ -639,7 +639,7 @@ Många som lever med psykopatologiska besvär under en längre tid kan uppleva d
 
 ## Frågeställningar
 
-Det vi primärt är intresserade av är om det finns någon skillnad (i endera riktning) i effekt mellan gruppen `r xg1` och gruppen `r xg2` med avseende på konstruktiv självhävdelse, det vill säga med utfallsmåttet AAA-S Adaptive. Vi är också intresserade av att ta reda på hur effekten av behandling (deltagande i grupperna `r xg1` och `r xg2` skiljer sig från gruppen `r xg3` med avseende på både konstruktiv självhävdelse fångad med AAA-S Adaptive och aggressiv självhävdelse fångad med AAA-S Aggressive. 
+Det vi primärt var intresserade av var om det fanns någon skillnad (i endera riktning) i effekt mellan gruppen `r xg1` och gruppen `r xg2` med avseende på konstruktiv självhävdelse, det vill säga med utfallsmåttet AAA-S Adaptive. Vi var också intresserade av att ta reda på hur effekten av behandling (deltagande i grupperna `r xg1` och `r xg2` skiljer sig från gruppen `r xg3` med avseende på både konstruktiv självhävdelse fångad med AAA-S Adaptive och aggressiv självhävdelse fångad med AAA-S Aggressive. 
 
 <!-- Slutligen vill vi också undersöka vilka prediktorer/moderatorer hos deltagarna (exempelvis grad av social ångest eller grad av depression) i behandlingsalternativen `r xg1` och `r xg2` som påverkar utfallet samt vilka mediatorer inom behandlingsalternativen (exempelvis tilldelning av terapeut) som påverkar utfallet.  -->
 
@@ -919,7 +919,7 @@ Vid screening i samband med anmälan lämnade samtliga deltagare svar på förm�
 
 ## Etiska aspekter
 
-Den föreliggande studien godkändes av etikprövningsnämnden. Diarienummer för etikansökan är 2019-05165. Studien förregistrerades på https://clinicaltrials.gov/ct2/show/NCT04240249. 
+Den föreliggande studien godkändes av etikprövningsmyndigheten. Diarienummer för etikansökan är 2019-05165. Studien förregistrerades på https://clinicaltrials.gov/ct2/show/NCT04240249. 
 
 Deltagarna blev via studiens hemsida informerade om att allt deltagande var frivilligt och att de kunde avbryta sitt deltagande när som helst. De kunde ta del av syftet med studien och studiens övergripande plan. Information fanns om att all information samlades in under sekretess och i enlighet med personuppgiftslagen samt GDPR. Deltagandet var helt anonymt och all insamlad data var kopplad till den anonyma studiekod som genererades för varje deltagare. Vid intresseanmälan till studien lämnade deltagarna informerat samtycke till sitt deltagande. Vid exkludering från studien under rekryteringsfasen informerades deltagaren om anledningen samt fick rekommendationer (t ex om vart hen kunde vända sig för att söka vård). Vid tecken på svår depression rekommenderades deltagarna att uppsöka psykiatrisk vård. Under hela studiens gång hade deltagarna möjlighet att kontakta studieansvarig per telefon samt e-post.
 
@@ -1801,7 +1801,7 @@ options(OutDec= ",")
 ```
 
 
-(ref:descriptives) Estimerade medelvärden (och standardavvikelser) samt effektstorlekar för utfallsmåtten i de olika grupperna och vid de olika mättillfällena.
+(ref:descriptives) Estimerade medelvärden (och standardavvikelser) samt effektstorlekar (ES) för utfallsmåtten i de olika grupperna och vid de olika mättillfällena.
 
 ```{r descriptives, fig.align="center", cache = T, eval = T}
 
