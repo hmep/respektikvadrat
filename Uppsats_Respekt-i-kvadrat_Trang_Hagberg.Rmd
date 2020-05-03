@@ -2164,21 +2164,21 @@ Med oberoende variansanalys fann vi inga signifikanta skillnader på någon av f
 
 # Diskussion
 
-Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt självhjälpsprogram för att förbättra individers konstruktiva självhävdelse. Programmet administrerades via en internetbaserad plattform. Studien genomfördes med en randomiserad och kontrollerad design. Interventionen byggde till stora delar på självhjälpsmaterialet *Assert Yourself* [@michel2008] och inkluderade bland annat inslag av psykoedukation, beteendeexperiment, avslappningsövningar, vidmakthållandeplanering och återfallsprevention. En tredjedel av deltagarna fick tillgång till programmet utan behandlarstöd, en tredjedel fick tillgång till programmet med behandlarstöd och en tredjedel var en väntelistebetingad kontrollgrupp. Vi konstaterade att tillgång till behandlingsmaterialet (oberoende av om man hade behandlarstöd eller inte) gav bättre resultat än att vara placerad på väntelista. Vi fann däremot ingen skillnad i utfallet mellan gruppen med behandlarstöd och gruppen utan behandlarstöd. Vi fann inte heller någon klinisk signifikant skillnad i andelen deltagare i respektive grupp som hade förbättrats reliabelt och till kliniskt signifikant nivå.
+Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt självhjälpsprogram för att förbättra individers konstruktiva självhävdelse. Programmet administrerades via en internetbaserad plattform. Studien genomfördes med en randomiserad och kontrollerad design. Interventionen byggde till stora delar på självhjälpsmaterialet *Assert Yourself* [@michel2008] och inkluderade bland annat inslag av psykoedukation, beteendeexperiment, avslappningsövningar, vidmakthållandeplanering och återfallsprevention. En tredjedel av deltagarna fick tillgång till programmet utan behandlarstöd, en tredjedel fick tillgång till programmet med behandlarstöd och en tredjedel var en väntelistebetingad kontrollgrupp. Vi konstaterade att tillgång till behandlingsmaterialet (oberoende av om man hade behandlarstöd eller inte) gav bättre resultat än att vara placerad på väntelista. Vi fann däremot ingen skillnad i utfallet mellan gruppen med behandlarstöd och gruppen utan behandlarstöd. ~~Vi fann inte heller någon klinisk signifikant skillnad i andelen deltagare i respektive grupp som hade förbättrats reliabelt och till kliniskt signifikant nivå.~~
 
 ## Resultatdiskussion
 
 Jag föreslår ett (1) kort och mycket kärnfullt stycke om vardera punkt!
 
-### Behandlarstöd och självhjälp ger samma resultat
+### Behandlarstöd och självhjälp gav samma resultat
 
-    * Ingen skillnad mellan självhjälp och behandlarstöd, i linje med Baumeister
+Vid deltagande i *Respekt i kvadrat* spelar det ingen roll om man arbetar på egen hand eller får guidning av en behandlare under de åttat veckor som programmet pågår. Skillnaden i förändring av grad av konstruktiv självhävdelse mellan grupperna `r xg1` och `r xg2` var statistiskt försumbar. Vi fann inte heller någon skillnad i effekt vid `r xt2`mätningen. Fyndet överensstämmer med resultaten för @Samuelsson2018 som undersökte ett KBT-självhjälpsmaterial för par med relationsproblem med eller utan behandlarstöd. I en metanalys noterar @Baumeister2014as behandlarstödda interventioner på aggreggerad nivå har bättre effekt än självhjälpsmaterial, men också att skillnaden är mindre än vad som har rapporterats i tidigare metaanalyser. Det finns många faktorer som avgör om en intervention ska ges med eller utan stöd, bland dem ekonomiska hänsyn och tillgänglighet. Huruvida avsaknaden av skillnad i effekt för de båda behandlingsgrenarna av *Respekt i kvadrat* beror på terapeuteffekter, takeffekter av materialet eller andra faktorer går inte att svara med på med vägledning av de funna resultaten.
 
 ### Deltagande i behandlingsprogrammet ger signifikant och stor effekt på konstruktiv självhävdelse
     
     * Klinisk signifikans, signifikant skillnad
       * För konstruktiv självhävdelse
-      * Men inte för aggressiv självhävdelse
+      * Men inte för aggressiv självhävdelse (olika individer vill gå i olika riktning)
     * Överensstämmer med funna effektstyrkor
       * Interaktionseffekter grupp över tid
       * Interaktionseffekter tid över grupp
@@ -2186,8 +2186,12 @@ Jag föreslår ett (1) kort och mycket kärnfullt stycke om vardera punkt!
 ### Metodologiska brister
 
     * Icke-validerade skattningsskalor (men bra att originalversionerna använder samma normer)
-    * Snedvridet sample jämfört med ambitionen att täcka in aggressiv självhävdelse
+    * Snedvridet sample med liten spridning
+      * väldigt många socialfobiker
+      * få med problem med aggressiv självhävdelse
+      * ej jämn könsfördelning -- även utifrån utbildningsnivå, ålder mm
     * Väntelista som kontrollbetingelse
+    * Data bara insamlat från självskattningsformulär
 
 ### Framtida forskning
 
@@ -2203,12 +2207,14 @@ Jag föreslår ett (1) kort och mycket kärnfullt stycke om vardera punkt!
 
 ### Övergripande slutsats
 
-    * God effekt, ingen skillnad mellan självhjälp och behandlarstöd
-    * Kan betraktas som pilotstudie, mer forskning behövs
-      * Lovande mål för behandling för både kliniska och subkliniska populationer
-      * Undersöka skillnader i effekt vid olika syndrom (social ångest, gad, depression osv)
-      * Undersöka _hur_ internetterapi bäst ska administreras
-    * Förhoppning om att tillgången till terapi kan fortsätta öka med allt fler validerade internetbehandlingar
+Föreliggande studie ville undersöka effekten på konstruktivt självhävande av behandlingsprogrammet *Respekt i kvadrat*. Att ta del av behandlingsprogrammet (med eller utan behandlingsstöd) var effektivare än att betingas till en väntelista. Resultatet bekräftar även att fokus på konstruktiv självhävdelse i behandlingsprogram ett effektivt sätt att minska symtom och lidande vid ett antal olika ångestbesvär. Mer forskning behövs för att med större säkerhet kunna generalisera resultaten till populationen i stort.
+
+<!-- * God effekt, ingen skillnad mellan självhjälp och behandlarstöd -->
+<!-- * Kan betraktas som pilotstudie, mer forskning behövs -->
+<!--   * Lovande mål för behandling för både kliniska och subkliniska populationer -->
+<!--   * Undersöka skillnader i effekt vid olika syndrom (social ångest, gad, depression osv) -->
+<!--   * Undersöka _hur_ internetterapi bäst ska administreras -->
+<!-- * Förhoppning om att tillgången till terapi kan fortsätta öka med allt fler validerade internetbehandlingar -->
 
 ## VVV Bra textunderlag att inkorporera i delarna ovan VVV
 
@@ -2318,7 +2324,7 @@ TH: Menar du de som hoppat av eller de som inte svarat på alla självskattninga
 
 ## Sammanfattning
 
-Föreliggande studie ville undersöka effekten på konstruktivt självhävande av behandlingsprogrammet *Respekt i kvadrat*. Att ta del av behandlingsprogrammet (med eller utan behandlingsstöd) var effektivare än att betingas till en väntelista. Resultatet från den föreliggande studien styrker att det går att använda konstruktiv självhävdelse som ett transdiagnostiskt konstrukt. Den bekräftar även att fokus på konstruktiv självhävdelse i behandlingsprogram kan vara ett effektivt sätt att minska symtom och lidande vid ett antal olika ångestbesvär. Mer forskning behövs för att med större säkerhet kunna generalisera resultaten till populationen i stort.
+Föreliggande studie ville undersöka effekten på konstruktivt självhävande av behandlingsprogrammet *Respekt i kvadrat*. Att ta del av behandlingsprogrammet (med eller utan behandlingsstöd) var effektivare än att betingas till en väntelista. Resultatet bekräftar även att fokus på konstruktiv självhävdelse i behandlingsprogram ett effektivt sätt att minska symtom och lidande vid ett antal olika ångestbesvär. Mer forskning behövs för att med större säkerhet kunna generalisera resultaten till populationen i stort.
 
 
 <!-- [Pers kommentar] Ja. Typ 2-3 meningar som sammanfattar hela arbetet. -->
