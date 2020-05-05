@@ -1000,7 +1000,7 @@ xresult <- function(x){formatC(x,digits=1,decimal.mark=",",drop0trailing = F,for
 
 xpr <- function(x) {
   paste("$p$",
-        ifelse(x < 0.001, "< 0,001", ifelse(x < 0.05, paste("=",prettyNum(x,digits=1,decimal.mark=',')), ifelse(x > 0.05, "DO NOT REPORT", "= 0,05")))
+        ifelse(x < 0.001, "< 0,001", ifelse(x < 0.05, paste("=",formatC(x,digits=1,decimal.mark=",",drop0trailing = F,format="f")), ifelse(x > 0.05, "DO NOT REPORT", "= 0,05")))
   )
 }
 
@@ -2011,6 +2011,18 @@ stargazer::stargazer(
 
 Vi var huvudsakligen intresserade av hur effekten av deltagande i grupperna `r xg1` och `r xg2` skilde sig från deltagande i `r xg3` med avseende på konstruktiv och aggressiv självhävdelse, fångade med utfallsmåtten AAA-S Adaptive respektive AAA-S Aggressive.
 
+### Konstruktiv självhävdelse
+
+#### `r xG3`--`r xg1` vid `r xt3`mätningen
+
+Vi fann en högre medelpoäng på AAA-S Adaptive för gruppen `r xg1` (estimerat marginalmedelvärde [*M*] `r xresult(tidy(aaas_ad.emm.by.time)$estimate[8])` , 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[8])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[8])`]) än för gruppen `r xg3` (*M* `r xresult(tidy(aaas_ad.emm.by.time)$estimate[7])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[7])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[7])`]) vid `r xt3`mätningen,
+medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.time$estimate[7] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.time$df[7])`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[7])`; `r xpr(aaas_ad.emmpairs.by.time[["p.value"]][7])`; effektstorlek `r xresult(aaas_ad.eff.by.time$effect.size[7] * -1)`.
+
+#### `r xG3`--`r xg2` vid `r xt3`mätningen
+
+Vi fann också en tydligt högre medelpoäng på AAA-S Adaptive vid `r xt3`mätningen för gruppen `r xg2` (*M* `r xresult(tidy(aaas_ad.emm.by.time)$estimate[9])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[9])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[9])`]) jämfört med gruppen `r xg3` (se *M* ovan),
+medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.time$estimate[8] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.time$df[8])`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[8])`; `r xpr(aaas_ad.emmpairs.by.time[["p.value"]][8])`; effektstorlek `r xresult(aaas_ad.eff.by.time$effect.size[8] * -1)`.
+
 (ref:emmeffad) Medelvärdesestimat (M) och effektstorlek (ES) för AAA−S Adaptive. Etiketterna i figuren anger respektive effektstorlek för med prickade linjer indikerade parvisa jämförelser.
 
 ```{r effemmplotsad, dpi=196, fig.align="center", fig.cap='(ref:emmeffad)', fig.height=5, fig.width=5.5, cache = F, eval = T}
@@ -2053,6 +2065,12 @@ ad1
 options(OutDec= ",")
 
 ```
+
+#### Behandlingseffekt mellan behandlingsstart och `r xt3`mätning
+
+För både gruppen `r xg1` och gruppen `r xg2` fann vi en klar förbättring mellan behandlingsstart och `r xt3`mätning, medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.group$estimate[5] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.group$df[5])`}\) = `r xresult(aaas_ad.emmpairs.by.group$statistic[5] * -1)`; `r xpr(aaas_ad.emmpairs.by.group[["p.value"]][5])`; effektstorlek `r xresult(aaas_ad.eff.by.group$effect.size[5] * -1)` respektive medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.group$estimate[8] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.group$df[8])`}\) = `r xresult(aaas_ad.emmpairs.by.group$statistic[8])`; `r xpr(aaas_ad.emmpairs.by.group[["p.value"]][8])`; effektstorlek `r xresult(aaas_ad.eff.by.group$effect.size[8] * -1)`.
+
+Deltagarna i de båda behandlingsbetingelserna hade efter fullgången behandling förbättrats avsevärt med avseende på graden av konstruktiv självhävdelse, i jämförelse med `r xg3`. Effekten var påtaglig redan vid mittenmätningen för båda grupperna. Även förbättringen mellan behandlingsstart och `r xt3`mätningen var för båda grupperna betydande. Se figur \@ref(fig:effemmplotsad) för en visualisering av resultaten. I flernivåanalysen konstaterar vi att `r xresult(performance::icc(aaas_ad.lmer)$ICC_adjusted * 100)`% av variansen i utfallsmåttet AAA-S Adaptive mellan mättidpunkterna kan förklaras av individuella faktorer. 
 
 (ref:emmeffag) Medelvärdesestimat (M) och effektstorlek (ES) för AAA-S Aggressive. Etiketterna i figuren anger respektive effektstorlek för med prickade linjer indikerade parvisa jämförelser.
 
@@ -2097,24 +2115,6 @@ ag1
 options(OutDec= ".")
 
 ```
-
-### Konstruktiv självhävdelse
-
-#### `r xG3`--`r xg1` vid `r xt3`mätningen
-
-Vi fann en högre medelpoäng på AAA-S Adaptive för gruppen `r xg1` (estimerat marginalmedelvärde [*M*] `r xresult(tidy(aaas_ad.emm.by.time)$estimate[8])` , 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[8])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[8])`]) än för gruppen `r xg3` (*M* `r xresult(tidy(aaas_ad.emm.by.time)$estimate[7])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[7])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[7])`]) vid `r xt3`mätningen,
-medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.time$estimate[7] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.time$df[7])`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[7])`; `r xpr(aaas_ad.emmpairs.by.time[["p.value"]][7])`; effektstorlek `r xresult(aaas_ad.eff.by.time$effect.size[7] * -1)`.
-
-#### `r xG3`--`r xg2` vid `r xt3`mätningen
-
-Vi fann också en tydligt högre medelpoäng på AAA-S Adaptive vid `r xt3`mätningen för gruppen `r xg2` (*M* `r xresult(tidy(aaas_ad.emm.by.time)$estimate[9])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[9])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[9])`]) jämfört med gruppen `r xg3` (se *M* ovan),
-medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.time$estimate[8] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.time$df[8])`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[8])`; `r xpr(aaas_ad.emmpairs.by.time[["p.value"]][8])`; effektstorlek `r xresult(aaas_ad.eff.by.time$effect.size[8] * -1)`.
-
-#### Behandlingseffekt mellan behandlingsstart och `r xt3`mätning
-
-För både gruppen `r xg1` och gruppen `r xg2` fann vi en klar förbättring mellan behandlingsstart och `r xt3`mätning, medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.group$estimate[5] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.group$df[5])`}\) = `r xresult(aaas_ad.emmpairs.by.group$statistic[5] * -1)`; `r xpr(aaas_ad.emmpairs.by.group[["p.value"]][5])`; effektstorlek `r xresult(aaas_ad.eff.by.group$effect.size[5] * -1)` respektive medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.group$estimate[8] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.group$df[8])`}\) = `r xresult(aaas_ad.emmpairs.by.group$statistic[8])`; `r xpr(aaas_ad.emmpairs.by.group[["p.value"]][8])`; effektstorlek `r xresult(aaas_ad.eff.by.group$effect.size[8] * -1)`.
-
-Deltagarna i de båda behandlingsbetingelserna hade efter fullgången behandling förbättrats avsevärt med avseende på graden av konstruktiv självhävdelse, i jämförelse med `r xg3`. Effekten var påtaglig redan vid mittenmätningen för båda grupperna. Även förbättringen mellan behandlingsstart och `r xt3`mätningen var för båda grupperna betydande. Se figur \@ref(fig:effemmplotsad) för en visualisering av resultaten. I flernivåanalysen konstaterar vi att `r xresult(performance::icc(aaas_ad.lmer)$ICC_adjusted * 100)`% av variansen i utfallsmåttet AAA-S Adaptive mellan mättidpunkterna kan förklaras av individuella faktorer. 
 
 ### Aggressiv självhävdelse
 
