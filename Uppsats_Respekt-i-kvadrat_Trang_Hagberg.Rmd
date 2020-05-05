@@ -26,7 +26,6 @@ output:
     keep_tex      : TRUE
     latex_engine  : xelatex
     citation_package: biblatex
-    csl           : apa.csl
     fig_caption   : yes
     includes:
       in_header   : texincludes.tex
@@ -794,29 +793,29 @@ NI kan, om ni vill ha guldstjärna, enkelt räkna ut er egen studies Cronbach al
 
 #### Självhävdelsestil
 
-En inför den här studien gjord svensk översättning av självskattningsskalan Adaptive and Aggressive Assertiveness Scales [AAA-S; @Thompson2011] användes för att mäta vilka metoder för självhävdelse som deltagarna använde sig av. Skalorna utgörs av 30 påståenden som besvaras med en 5-gradig likertskala där 1 motsvarar ”aldrig” och 5 motsvarar ”alltid”. Svaren räknas samman till två skalor, en för aggressiv självhävdelse och en för konstruktiv (adaptiv) självhävdelse. Hög poäng på delskalan för aggressiv självhävdelse indikerar ett aggressivt självhävdande beteendeemönster och hög poäng på delskalan för konstruktiv självhävdelse indikerar ett konstruktivt självhävdande beteendemönster. (låga poäng på båda går att tolka som passiv självhävdelse.) En fördel med AAA-S jämfört med andra skalor som mäter självhävdelse är att den gör explicit skillnad mellan konstruktiv och aggressiv självhävdelse. Adaptive- och Aggressiveness-skalorna har god intern reliabilitet (α = 0,93 respektive α = 0,88). Den svenska översättningen var inte validerad inför studiestart.
+En inför den här studien gjord svensk översättning av självskattningsskalan Adaptive and Aggressive Assertiveness Scales [AAA-S; @Thompson2011] användes för att mäta vilka metoder för självhävdelse som deltagarna använde sig av. Skalorna utgörs av 30 påståenden som besvaras med en 5-gradig likertskala där 1 motsvarar ”aldrig” och 5 motsvarar ”alltid”. Svaren räknas samman till två skalor, en för aggressiv självhävdelse och en för konstruktiv (adaptiv) självhävdelse. Hög poäng på delskalan för aggressiv självhävdelse indikerar ett aggressivt självhävdande beteendeemönster och hög poäng på delskalan för konstruktiv självhävdelse indikerar ett konstruktivt självhävdande beteendemönster. (låga poäng på båda går att tolka som passiv självhävdelse.) En fördel med AAA-S jämfört med andra skalor som mäter självhävdelse är att den gör explicit skillnad mellan konstruktiv och aggressiv självhävdelse. Adaptive- och Aggressiveness-skalorna har god intern reliabilitet ($\alpha$ = 0,93 respektive $\alpha$ = 0,88). Den svenska översättningen var inte validerad inför studiestart.
 
 ### Sekundära utfallsmått
 
 #### Depression
 
-Skattningsskalan Patient Health Questionnaire 9-Item Scale [PHQ-9; @Kroenke2010] användes för att mäta symtom på depression. Det är en självskattningsskala bestående av nio frågor som besvaras med en 4-gradig likertskala där 0 motsvara ”Inte alls”, 1 ”Flera dagar”, 2 ”Mer än hälften av dagarna” och 3 ”Nästan varje dag”. Utöver dessa nio frågor ställs en fråga om funktionspåverkan av symtomen. Summan på de nio första frågorna summeras. Maximal totalpoäng på PHQ-9 är 27. En summa på 0–4 indikerar minimal allvarlighetsgrad/ingen depression, 5–9 mild allvarlighetsgrad, 10–15 måttlig allvarlighetsgrad och 15–27 svår allvarlighetsgrad [@Kroenke2010]. I den föreliggande studien exkluderades de individer med ett resultat ≥15, då poäng 15–27 tyder på att egentlig depression kan föreligga. Skalan bedöms ha en hög intern reliabilitet [α = 0,89; @Kroenke2001a]. Det har även visat sig att de psykometriska egenskaperna föreligger vid administrering online [@Titov2011].
+Skattningsskalan Patient Health Questionnaire 9-Item Scale [PHQ-9; @Kroenke2010] användes för att mäta symtom på depression. Det är en självskattningsskala bestående av nio frågor som besvaras med en 4-gradig likertskala där 0 motsvara ”Inte alls”, 1 ”Flera dagar”, 2 ”Mer än hälften av dagarna” och 3 ”Nästan varje dag”. Utöver dessa nio frågor ställs en fråga om funktionspåverkan av symtomen. Summan på de nio första frågorna summeras. Maximal totalpoäng på PHQ-9 är 27. En summa på 0–4 indikerar minimal allvarlighetsgrad/ingen depression, 5–9 mild allvarlighetsgrad, 10–15 måttlig allvarlighetsgrad och 15–27 svår allvarlighetsgrad [@Kroenke2010]. I den föreliggande studien exkluderades de individer med ett resultat ≥15, då poäng 15–27 tyder på att egentlig depression kan föreligga. Skalan bedöms ha en hög intern reliabilitet [$\alpha$ = 0,89; @Kroenke2001a]. Det har även visat sig att de psykometriska egenskaperna föreligger vid administrering online [@Titov2011].
 
 #### Ångest
 
-Symtom på ångest mäts genom Generalised Anxiety Disorder 7-item scale [GAD-7; @Kroenke2006]. Skalan består av sju stycken frågor rörande symtom på ångest de senaste två veckorna som besvaras på en 4-gradig likertskala där 0 står för ”Inte alls”, 1 för ”Flera dagar”, 2  för ”Mer än hälften av dagarna” och 3 för ”Varje dag”. Svaren på de sju frågorna summeras. Maximal totalpoäng på GAD-7 är 21. Tröskelvärden för mild, måttlig och allvarlig ångest ligger vid 5, 10 respektive 15 [@Kroenke2010]. Skalan har god intern reliabilitet (α = 0,92) och hög test-retest-reliabilitet (*r* = 0,83).
+Symtom på ångest mäts genom Generalised Anxiety Disorder 7-item scale [GAD-7; @Kroenke2006]. Skalan består av sju stycken frågor rörande symtom på ångest de senaste två veckorna som besvaras på en 4-gradig likertskala där 0 står för ”Inte alls”, 1 för ”Flera dagar”, 2  för ”Mer än hälften av dagarna” och 3 för ”Varje dag”. Svaren på de sju frågorna summeras. Maximal totalpoäng på GAD-7 är 21. Tröskelvärden för mild, måttlig och allvarlig ångest ligger vid 5, 10 respektive 15 [@Kroenke2010]. Skalan har god intern reliabilitet ($\alpha$ = 0,92) och hög test-retest-reliabilitet (*r* = 0,83).
 
 #### Social Ångest
 
-Symtom för social ångest mättes med Liebowitz Social Anxiety Scale [LSAS-SR; @Fresco2001]. I självskattningsskalan presenteras 24 situationer som besvaras på två stycken 4-gradiga likertskalor. Den ena skalan frågar om mängd rädsla eller ångest i respektive situation där 0 motsvarar ”Ingen”, 1 ”Mild”, 2 ”Måttlig”, och 3 ”Stark”. Den andra skalan frågar om mängd undvikande av respektive situation där 0 motsvarar ”Aldrig (0%)”, 1 ”Ibland (1–33% av tiden)”, 2 ”Ofta (33–67% av tiden), och 3 ”Vanligtvis (67–100% av tiden)”. Svaren på alla frågor summeras. Maximal totalpoäng på LSAS-SR är 144. Vid en totalpoäng på över 30 föreligger troligen social fobi. Vid en totalpoäng på över 60 föreligger troligen generaliserad social fobi. Skalan har god intern reliabilitet (α = 0,96).
+Symtom för social ångest mättes med Liebowitz Social Anxiety Scale [LSAS-SR; @Fresco2001]. I självskattningsskalan presenteras 24 situationer som besvaras på två stycken 4-gradiga likertskalor. Den ena skalan frågar om mängd rädsla eller ångest i respektive situation där 0 motsvarar ”Ingen”, 1 ”Mild”, 2 ”Måttlig”, och 3 ”Stark”. Den andra skalan frågar om mängd undvikande av respektive situation där 0 motsvarar ”Aldrig (0%)”, 1 ”Ibland (1–33% av tiden)”, 2 ”Ofta (33–67% av tiden), och 3 ”Vanligtvis (67–100% av tiden)”. Svaren på alla frågor summeras. Maximal totalpoäng på LSAS-SR är 144. Vid en totalpoäng på över 30 föreligger troligen social fobi. Vid en totalpoäng på över 60 föreligger troligen generaliserad social fobi. Skalan har god intern reliabilitet ($\alpha$ = 0,96).
 
 #### Allmänt psykiskt välmående
 
-Självskattningsskalan Välmåendeskalan [VS; @Braconier2015], användes för att mäta deltagarnas allmänna psykiska välmående. Skalan består av 18 frågor om mående den senaste veckan. Frågorna besvaras på en 5-gradig likertskala där 0 motsvarar ”Aldrig”, 1 ”Sällan”, 2 ”Ibland”, 3 ”Ofta” och 4 ”Mycket ofta”. Svaren på alla frågor summeras. Maximal totalpoäng på VS är 72. En hög poäng anger en högre grad av upplevt välmående. Skalan har god intern reliabilitet (α = 0,93) och hög test-retest-reliabilitet (*r* = 0,8).
+Självskattningsskalan Välmåendeskalan [VS; @Braconier2015], användes för att mäta deltagarnas allmänna psykiska välmående. Skalan består av 18 frågor om mående den senaste veckan. Frågorna besvaras på en 5-gradig likertskala där 0 motsvarar ”Aldrig”, 1 ”Sällan”, 2 ”Ibland”, 3 ”Ofta” och 4 ”Mycket ofta”. Svaren på alla frågor summeras. Maximal totalpoäng på VS är 72. En hög poäng anger en högre grad av upplevt välmående. Skalan har god intern reliabilitet ($\alpha$ = 0,93) och hög test-retest-reliabilitet (*r* = 0,8).
 
 #### Självhävdelsestil
 
-Utöver AAA-S användes även en svensk översättning av The Rathus Assertiveness Schedule [RAS; @Rathus1973] för att samla in information om deltagarnas självhävdelsestil. Självskattningsskalan består av 30 frågor som besvaras på en 6-gradig likertskala där –3 motsvarar ”stämmer inte alls” och 3 motsvarar ”stämmer helt”. Svaren på alla frågor summeras. Maximal totalpoäng på skalan är 90. En hög poäng indikerar hög grad av självhävdelse. En lång poäng (vilken i och med poängsättningen kan vara negativ) indikerar på låg grad av självhävdelse. Den svenska översättningen gjordes inför den aktuella studien och var inte validerad inför studiestart. Aktuella normer från @Thompson2011 användes i den här studien, som också rapporterar god intern reliabilitet för Rathus (α = 0,87).
+Utöver AAA-S användes även en svensk översättning av The Rathus Assertiveness Schedule [RAS; @Rathus1973] för att samla in information om deltagarnas självhävdelsestil. Självskattningsskalan består av 30 frågor som besvaras på en 6-gradig likertskala där –3 motsvarar ”stämmer inte alls” och 3 motsvarar ”stämmer helt”. Svaren på alla frågor summeras. Maximal totalpoäng på skalan är 90. En hög poäng indikerar hög grad av självhävdelse. En lång poäng (vilken i och med poängsättningen kan vara negativ) indikerar på låg grad av självhävdelse. Den svenska översättningen gjordes inför den aktuella studien och var inte validerad inför studiestart. Aktuella normer från @Thompson2011 användes i den här studien, som också rapporterar god intern reliabilitet för Rathus ($\alpha$ = 0,87).
 
 ## Interventionen Respekt i kvadrat
 
@@ -983,7 +982,7 @@ xresult <- function(x){formatC(x,digits=1,decimal.mark=",",drop0trailing = F,for
 
 xpr <- function(x) {
   paste("$p$",
-        ifelse(x < 0.001, "< 0,001", ifelse(x < 0.05, paste("=",formatC(x,digits=1,decimal.mark=",",drop0trailing = F,format="f")), ifelse(x > 0.05, "DO NOT REPORT", "= 0,05")))
+        ifelse(x < 0.001, "< 0,001", ifelse(x < 0.05, paste("=",prettyNum(x,digits=1,decimal.mark=",")), ifelse(x > 0.05, "DO NOT REPORT", "= 0,05")))
   )
 }
 
