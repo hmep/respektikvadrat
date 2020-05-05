@@ -15,7 +15,7 @@ authornote: |
   `r readLines('includes/authornote.txt', encoding = 'UTF-8')`
 keywords: |
   `r readLines('includes/keywords.txt', encoding = 'UTF-8')`
-wordcount         : "10434"
+wordcount         : "10492"
 bibliography      : ["r-references.bib", "library.bib"] 
 floatsintext      : no
 figurelist        : no
@@ -23,7 +23,7 @@ tablelist         : no
 footnotelist      : no 
 linenumbers       : yes
 mask              : no
-draft             : no
+draft             : no 
 documentclass     : "apa6"
 classoption       : "doc,a4paper" # man, jou, doc
 output: 
