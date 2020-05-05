@@ -34,7 +34,6 @@ output:
     fig_caption   : yes
     includes:
       in_header   : includes/texincludes.tex
-keeptex           : true
 lang              : sv-SE
 ---
 
@@ -323,92 +322,79 @@ wg1 <- grepl(xg1, r2.wide.data$group)
 wg2 <- grepl(xg2, r2.wide.data$group)
 wg3 <- grepl(xg3, r2.wide.data$group)
 
-n = length(r2.wide.data[,1])
-t = 3 # 2do: change to 4 with final data
+n = length(r2.wide.data[,1]) # Number of subjects
+t = 3 # Number of measurement time points
 
 # Reshape (manually) to long data
 r2.long.data <- data.frame(
   subject = factor(rep(r2.wide.data$subject, times = t)),
   group = factor(rep(r2.wide.data$group, times = t)),
-  time = factor(rep(c(1,2,3), each = n), labels = c(xt1,xt2,xt3)), # 2do: add "fu" with final data
+  time = factor(rep(c(1,2,3), each = n), labels = c(xt1,xt2,xt3)),
   therapist = as.factor(rep(r2.wide.data$therapist, times = t)),
   rathus = c(
     r2.wide.data$pre_rathus,
     r2.wide.data$dur_rathus,
-    r2.wide.data$post_rathus#,
-    #r2.wide.data$fu_rathus # 2do: enable with final data
+    r2.wide.data$post_rathus
   ),
   aaas_ag = c(
     r2.wide.data$pre_aaas_ag,
     r2.wide.data$dur_aaas_ag,
-    r2.wide.data$post_aaas_ag#,
-    #r2.wide.data$fu_aaas_ag # 2do: enable with final data
+    r2.wide.data$post_aaas_ag
   ),
   aaas_ad = c(
     r2.wide.data$pre_aaas_ad,
     r2.wide.data$dur_aaas_ad,
-    r2.wide.data$post_aaas_ad#,
-    #r2.wide.data$fu_aaas_ad # 2do: enable with final data
+    r2.wide.data$post_aaas_ad
   ),
   lsas_anx = c(
     r2.wide.data$pre_lsas_sum,
     r2.wide.data$dur_lsas_sum,
-    r2.wide.data$post_lsas_sum#,
-    #r2.wide.data$fu_lsas_sum # 2do: enable with final data
+    r2.wide.data$post_lsas_sum
   ),
   lsas_avo = c(
     r2.wide.data$pre_lsas_avo,
     r2.wide.data$dur_lsas_avo,
-    r2.wide.data$post_lsas_avo#,
-    #r2.wide.data$fu_lsas_avo # 2do: enable with final data
+    r2.wide.data$post_lsas_avo
   ),
   lsas_int = c(
     r2.wide.data$pre_lsas_int,
     r2.wide.data$dur_lsas_int,
-    r2.wide.data$post_lsas_int#,
-    #r2.wide.data$fu_lsas_int # 2do: enable with final data
+    r2.wide.data$post_lsas_int
   ),
   lsas_per = c(
     r2.wide.data$pre_lsas_per,
     r2.wide.data$dur_lsas_per,
-    r2.wide.data$post_lsas_per#,
-    #r2.wide.data$fu_lsas_per # 2do: enable with final data
+    r2.wide.data$post_lsas_per
   ),
   lsas_sum = c(
     r2.wide.data$pre_lsas_sum,
     r2.wide.data$dur_lsas_sum,
-    r2.wide.data$post_lsas_sum#,
-    #r2.wide.data$fu_lsas_sum # 2do: enable with final data
+    r2.wide.data$post_lsas_sum
   ),
   gad_sum = c(
     r2.wide.data$pre_gad_sum,
     r2.wide.data$dur_gad_sum,
-    r2.wide.data$post_gad_sum#,
-    #r2.wide.data$fu_gad_sum # 2do: enable with final data
+    r2.wide.data$post_gad_sum
   ),
   phq_sum = c(
     r2.wide.data$pre_phq_sum,
     r2.wide.data$dur_phq_sum,
-    r2.wide.data$post_phq_sum#,
-    #r2.wide.data$fu_phq_sum # 2do: enable with final data
+    r2.wide.data$post_phq_sum
   ),
   phq_sui = c(
     r2.wide.data$pre_phq_sui,
     r2.wide.data$dur_phq_sui,
-    r2.wide.data$post_phq_sui#,
-    #r2.wide.data$fu_phq_sui # 2do: enable with final data
+    r2.wide.data$post_phq_sui
   ),
   phq_q10 = c(
     r2.wide.data$pre_phq_q10,
     r2.wide.data$dur_phq_q10,
-    r2.wide.data$post_phq_q10#,
-    #r2.wide.data$fu_phq_q10 # 2do: enable with final data
+    r2.wide.data$post_phq_q10
   ),
- well = c(
+  well = c(
     r2.wide.data$pre_well,
     r2.wide.data$dur_well,
-    r2.wide.data$post_well#,
-    #r2.wide.data$fu_well # 2do: enable with final data
+    r2.wide.data$post_well
   ),
  age = c(
     r2.wide.data[,50],
