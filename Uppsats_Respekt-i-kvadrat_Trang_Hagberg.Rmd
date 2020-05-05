@@ -34,7 +34,9 @@ keeptex           : true
 lang              : sv-SE
 header-includes:
    - \raggedbottom
-   - \setmainfont{Times New Roman}
+   - \setmainfont[BoldFont={texgyretermes-bold.otf},ItalicFont={texgyretermes-italic.otf},BoldItalicFont={texgyretermes-bolditalic.otf}]{texgyretermes-regular.otf}
+   - \usepackage{unicode-math}
+   - \setmathfont{texgyretermes-math.otf}
    - \clearcaptionsetup{figure}
    - \clearcaptionsetup{table}
    - \setlength{\abovecaptionskip}{.5\baselineskip}
@@ -46,6 +48,7 @@ header-includes:
    - \PassOptionsToPackage{style=apa,uniquename=false}{biblatex}
    - \widowpenalty10000
    - \clubpenalty10000
+   - \setlength{\parskip}{0pt plus 0pt minus 0pt}
 editor_options: 
   chunk_output_type: console
 ---
@@ -58,11 +61,12 @@ options(contrasts=c('contr.treatment','contr.poly'))
 
 ### Install these packages from Github (instead of CRAN)
 library("devtools")
-#devtools::install_github("strengejacke/sjPlot",force=T)
-#devtools::install_github("strengejacke/strengejacke",force=T)
-#devtools::install_github("crsh/papaja@devel",force=T)
-#devtools::install_github("AWKruijt/JT-RCI",force=T)
-#devtools::install_github("markwestcott34/stargazer-booktabs",force=T)
+# devtools::install_github("strengejacke/sjPlot",force=T)
+# devtools::install_github("strengejacke/strengejacke",force=T)
+# devtools::install_github("crsh/papaja@devel",force=T)
+# devtools::install_github("AWKruijt/JT-RCI",force=T)
+# devtools::install_github("markwestcott34/stargazer-booktabs",force=T)
+# devtools::install_github("ropensci/magick",force=T)
 
 library("papaja")
 library("broom.mixed")
@@ -77,7 +81,6 @@ library("ggplot2")
 library("effsize")
 #library("wesanderson")
 #library("pander")
-#library("lmerTest")
 
 # authornote: |
 #   `r readLines('authornote.txt', encoding = 'UTF-8')`
@@ -570,7 +573,7 @@ Det finns i Sverige flera exempel på självhjälpsmaterial i KBT som har befors
 
 I-KBT är en effektiv behandlingsmetod för ett brett spektrum av olika besvär. I en meta-analys från 2018 – som inkluderade 64 RCT-studier – konstateras I-KBT vara effektivt för behandling av både depression, paniksyndrom, agorafobi, social fobi samt generaliserat ångestsyndrom [@Andrews2018]. Författarna konstaterade att medeleffektstorleken för I-KBT är *d* = 0,8 eller mer i jämförelse med kontrollbetingelse. Enligt resultaten tenderar också effekten att hålla i sig över tid. I-KBT är dessutom effektmässigt jämförbart med terapeutledd terapi. Både i en annan meta-analys från samma år samt i en meta-analys från ett decenium tidigare konstaterades I-KBT även likvärdigt ansikte-mot-ansiktebehandling [@Carlbring2018; @Barak2008]. Dessa resultat bekräftar tidigare fynd i samma riktning [@Andrews2010]. 
 
-I-KBT har även visat sig vara effektivt vid behandling av PTSD [@Sijbrandij2016], insomni [@Zachariae2016] och för att minska lidandet vid olika kroniska hälsobesvär [@Mehta2019]. I-KBT är också verksamt för symtomlindring vid en rad olika transdiagnostiska symtom såsom stress [\(\eta^2_p \)=.12 i @Day2013], prokrastinering [*d* = 0,29--1.09 i @Rozental2015] och perfektionism [*d* = 0,7--1.0 i @Rozental2017; *d* = 0,86 i @Wade2019].
+I-KBT har även visat sig vara effektivt vid behandling av PTSD [@Sijbrandij2016], insomni [@Zachariae2016] och för att minska lidandet vid olika kroniska hälsobesvär [@Mehta2019]. I-KBT är också verksamt för symtomlindring vid en rad olika transdiagnostiska symtom såsom stress [\(\eta^2_p \)=0,12 i @Day2013], prokrastinering [*d* = 0,29--1,09 i @Rozental2015] och perfektionism [*d* = 0,7--1,0 i @Rozental2017; *d* = 0,86 i @Wade2019].
 
 #### I-KBT och stödbehandlare
 
@@ -604,7 +607,7 @@ Undvikande av aversiva stimuli har ett uppbenbart överlevadsvärde och rädsloi
 
 Att undvika det som erfarenhetsmässigt upplevts som aversivt framstår ofta som funktionellt och rationellt, även när det inte är det [@Hayes1996]. Forskningen visar att emotionellt undvikande verkar självdestruktivt: Det emotionella undvikandet är paradoxalt nog kopplat till ökning av graden av negativa emotioner (och samtidigt mindre grad av positiva emotioner). Det har också negativa konsekvenser i form av minskad tillgång till hälsofrämjande faktorer som nära relationer och socialt stöd, och är associerat med lägre självförtroende och sämre generellt välmående [@Gross2003]. Den paradoxala effekten går inte nog att betona: Att försöka undvika aversiva emotioner leder till att man upplever dem mer [@Gross2003; @Fernandez-Rodriguez2018; @Hayes1996]. 
 
-I vidmakthållandet av ångestsyndrom är undvikande således centralt -- och detta trots att individen ofta själv är helt medveten om vad hen går miste om på grund av sitt undvikande. Ett sätt att bidra till att trumfa det emotionella undvikandet i psykologisk behandling är att introducera belöningar [@Pittig2014]. I *Respekt i kvadrat* ägnas flera övningar åt att identifiera långsiktiga och naturliga förstärkare för de adaptiva självhävdelsebeteenden som deltagarna vill arbeta med. I behandlingsgrenen som har terapeutstöd används beteendeanalyser och transparent självavslöjande i relation till deltagarna med det explicita målet att naturligt förstärka adaptiva beteenden naturligt för så många av deltagarna som möjligt.
+För vidmakthållandet av ångestsyndrom är undvikande således centralt -- och detta trots att individen ofta själv är helt medveten om vad hen går miste om på grund av sitt undvikande. Ett sätt att bidra till att trumfa det emotionella undvikandet i psykologisk behandling är att introducera belöningar [@Pittig2014]. I *Respekt i kvadrat* ägnas flera övningar åt att identifiera långsiktiga och naturliga förstärkare för de adaptiva självhävdelsebeteenden som deltagarna vill arbeta med. I behandlingsgrenen som har terapeutstöd används beteendeanalyser och transparent självavslöjande i relation till deltagarna med det explicita målet att naturligt förstärka adaptiva beteenden naturligt för så många av deltagarna som möjligt.
 
 ### Fokus på aktivering med varierad grad av osäkerhet
 
@@ -914,19 +917,21 @@ Vid screening i samband med anmälan lämnade samtliga deltagare svar på förm�
 
 ## Etiska aspekter
 
-Den föreliggande studien godkändes av etikprövningsmyndigheten. Diarienummer för etikansökan är 2019-05165. Studien förregistrerades på https://clinicaltrials.gov/ct2/show/NCT04240249. 
+Den föreliggande studien godkändes av etikprövningsmyndigheten. Diarienummer för etikansökan är 2019-05165. 
+
+Studien förregistrerades på https://clinicaltrials.gov/ct2/show/NCT04240249. 
 
 Deltagarna blev via studiens hemsida informerade om att allt deltagande var frivilligt och att de kunde avbryta sitt deltagande när som helst. De kunde ta del av syftet med studien och studiens övergripande plan. Information fanns om att all information samlades in under sekretess och i enlighet med personuppgiftslagen samt GDPR. Deltagandet var helt anonymt och all insamlad data var kopplad till den anonyma studiekod som genererades för varje deltagare. Vid intresseanmälan till studien lämnade deltagarna informerat samtycke till sitt deltagande. Vid exkludering från studien under rekryteringsfasen informerades deltagaren om anledningen samt fick rekommendationer (t ex om vart hen kunde vända sig för att söka vård). Vid tecken på svår depression rekommenderades deltagarna att uppsöka psykiatrisk vård. Under hela studiens gång hade deltagarna möjlighet att kontakta studieansvarig per telefon samt e-post.
 
+R-syntax för utförda test och analyser, anonymiserad öppen data samt källkoden till manuskriptet har gjorts tillgängliga via öppen källa i enlighet med rekommendationerna för största möjliga grad av transparens och replikerbarhet i @Asendorpf2013. Materialet finns deponerat hos Figshare på https://doi.org/10.17045/sthlmuni.12148785 [@R2data2020] (OBS! Deponering sker EFTER inlämning av godkänd uppsats. Materialet finns också tillgängligt på https://github.com/hmep/respektikvadrat).
+
 ## Analyser
 
-Vi använde `r version$language`, version `r version$major`.`r version$minor` [@R-base] för samtliga analyser. 
-<!-- Vi använde `r cite_r("r-references.bib")` för samtliga analyser.  -->
-Signifikansnivån $\alpha$ = 0,05 tillämpades vid alla beräkningar. Öppen syntax och data finns deponerade hos Figshare på https://doi.org/10.17045/sthlmuni.12148785 [@R2data2020] (OBS! Deponering sker EFTER inlämning av godkänd uppsats. Data och syntax finns också tillgängliga på https://github.com/hmep/respektikvadrat).
+Vi använde `r version$language`, version `r version$major`.`r version$minor` [@R-base] för samtliga analyser. Signifikansnivån $\alpha$ = 0,05 tillämpades vid alla beräkningar. 
 
 ### Analys av fixa effekter
 
-Fixa och slumpmässiga effekter mellan grupp och tid för de primära och sekundära utfallsmåtten undersöktes med så kallad flernivåanalys (också kallad blandad modell, hierarkisk analys, på engelska bland annat *mixed model*, *multilevel model* och *hierarchical linear model*). Flernivåanalys tillåter precis som multivariat variansanalys (MANOVA) inklusion av upprepade beroende mättillfällen i modellen, men fördelerna att metoden tillåter obalanserade grupper och att principen om *intention to treat* värnas utan behov av imputering av saknade datapunkter. Flernivåanalyser uppskattar också inklusion av *random*-effekter observerad men inte kontrollerad varians på klusternivå (i detta fall enskilda individer som "innehåller" upprepade mättillfällen).
+Fixa och slumpmässiga effekter mellan grupp och tid för de primära och sekundära utfallsmåtten undersöktes med så kallad flernivåanalys (också kallad blandad modell, hierarkisk analys, på engelska bland annat *mixed model*, *multilevel model* och *hierarchical linear model*). Flernivåanalys tillåter precis som multivariat variansanalys (MANOVA) inklusion av upprepade beroende mättillfällen i modellen, men fördelerna att metoden tillåter obalanserade grupper och att principen om *intention to treat* värnas  utan behov av imputering av saknade datapunkter. Flernivåanalyser uppskattar också inklusion av *random*-effekter observerad men inte kontrollerad varians på klusternivå (i detta fall enskilda individer som "innehåller" upprepade mättillfällen).
 
 Granskning av homoscedasticitet och residualernas fördelning samt identifiering av outliers gjordes visuellt med diagnostiska plottar av de till data anpassade modellerna. All data, inklusive förekommande outliers, behölls i analyserna.
 
@@ -2183,7 +2188,7 @@ I föreliggande studie ökade skattningarna på AAA-S Aggressive över tid på u
 
 ### Behandlarstöd och självhjälp gav samma resultat
 
-Vid deltagande i *Respekt i kvadrat* spelar det ingen roll om man arbetar på egen hand eller får guidning av en behandlare under de åtta veckor som programmet pågår. Skillnaden i förändring av grad av konstruktiv självhävdelse mellan grupperna `r xg1` och `r xg2` var statistiskt försumbar. Vi fann inte heller någon skillnad i effekt vid `r xt2`mätningen. Fyndet överensstämmer med resultaten från @Samuelsson2018 som undersökte ett KBT-självhjälpsmaterial -- med eller utan behandlarstöd -- för par med relationsproblem. I en metanalys noterar @Baumeister2014as att terapeutstödda interventioner på aggregerad nivå har bättre effekt än enbart självhjälpsmaterial, men också att skillnaden är mindre än vad som har rapporterats tidigare. Andra tidigare studier rapporterar också liknande utfall -- det vill säga att både gruppen med och gruppen utan behandlarstöd gör framsteg, men utan markant skillnad mellan grupperna [se bland annat @Berger2011; @Ivanova2016; @Rozental2015; @Samuelsson2018]. För framtida studier vore det intressant att undersöka vilka de verksamma effekterna av behandlarstöd är och vad som kan göras för att maximera dessa komponenters inverkan på behandlingsutfallet. 
+Vid deltagande i *Respekt i kvadrat* spelar det ingen roll om man arbetar på egen hand eller får guidning av en behandlare under de åtta veckor som programmet pågår. Skillnaden i förändring av grad av konstruktiv självhävdelse mellan grupperna `r xg1` och `r xg2` var statistiskt försumbar. Vi fann inte heller någon skillnad i effekt vid `r xt2`mätningen. Fyndet överensstämmer med resultaten från @Samuelsson2018 som undersökte ett KBT-självhjälpsmaterial -- med eller utan behandlarstöd -- för par med relationsproblem. I en metanalys noterar @Baumeister2014a att terapeutstödda interventioner på aggregerad nivå har bättre effekt än enbart självhjälpsmaterial, men också att skillnaden är mindre än vad som har rapporterats tidigare. Andra tidigare studier rapporterar också liknande utfall -- det vill säga att både gruppen med och gruppen utan behandlarstöd gör framsteg, men utan markant skillnad mellan grupperna [se bland annat @Berger2011; @Ivanova2016; @Rozental2015; @Samuelsson2018]. För framtida studier vore det intressant att undersöka vilka de verksamma effekterna av behandlarstöd är och vad som kan göras för att maximera dessa komponenters inverkan på behandlingsutfallet. 
 
 Det finns många faktorer som avgör om en intervention ska ges med eller utan stöd, bland dem ekonomiska hänsyn och tillgänglighet. Huruvida avsaknaden av skillnad i effekt för de båda behandlingsgrenarna av *Respekt i kvadrat* beror på terapeuteffekter, takeffekter av materialet eller andra interventionsbundna faktorer går inte att avgöra med vägledning av den utförda analysen. Vi nöjer oss här med att konstatera att de goda utfallen för de båda behandlingsgrenarna bekräftar att programmet *Respekt i kvadrat* är verksamt för ökning av grad av konstruktiv självhävdelse och att den stora effekten i självhjälpsgruppen är ett gott tecken på att materialet kan komma till nytta som självhjälpsmaterial.
 
