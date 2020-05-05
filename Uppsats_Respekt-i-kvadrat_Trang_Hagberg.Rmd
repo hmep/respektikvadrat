@@ -29,28 +29,9 @@ output:
     csl           : apa.csl
     fig_caption   : yes
     includes:
-      in_header   : stay-in-place.tex
+      in_header   : texincludes.tex
 keeptex           : true
 lang              : sv-SE
-header-includes:
-   - \raggedbottom
-   - \setmainfont[BoldFont={texgyretermes-bold.otf},ItalicFont={texgyretermes-italic.otf},BoldItalicFont={texgyretermes-bolditalic.otf}]{texgyretermes-regular.otf}
-   - \usepackage{unicode-math}
-   - \setmathfont{texgyretermes-math.otf}
-   - \clearcaptionsetup{figure}
-   - \clearcaptionsetup{table}
-   - \setlength{\abovecaptionskip}{.5\baselineskip}
-   - \setlength{\belowcaptionskip}{.5\baselineskip}
-   - \usepackage{hyphenat}
-   - \hyphenation{nor-mal-spann nor-mal-span-net}
-   - \usepackage{tabu}
-   - \usepackage{rotating}
-   - \PassOptionsToPackage{style=apa,uniquename=false}{biblatex}
-   - \widowpenalty10000
-   - \clubpenalty10000
-   - \setlength{\parskip}{0pt plus 0pt minus 0pt}
-editor_options: 
-  chunk_output_type: console
 ---
 
 ```{r preferences, include = F, cache = F}
