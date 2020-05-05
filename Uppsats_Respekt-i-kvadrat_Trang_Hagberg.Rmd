@@ -940,6 +940,8 @@ En modell specificerades för vart och ett av de beroende utfallsmåtten. Ingen 
 
 För modelleringen av de olika utfallsmåtten användes modelleringsverktyg från R-paketet *lme4* [@R-lme4]. Valet av kovariansstrukturen gjordes genom jämförelse av AIC-tal av modeller som anpassades till data med *Maximum Likelihood* (ML)-funktionen. Den alternativa sannolikhetsfunktionen *Restricted Maximum Likelihood* (REML), som ger väntesvärdesriktiga uppskattningar av varianserna, användes därefter för anpassningen av modellerna för utfallsmåtten till underliggande data. 
 
+Från prediktioner estimerade marginalmedelvärden (*estimated marginal means* eller *least square means*) samt parvisa jämförelser av dessa genomfördes med R-paketet *emmeans* [@R-emmeans]. P-värden korrigerades med Bonferroni-metoden. 
+
 ### Analys av *random*-effekter
 
 Genom beräkning av så kallad intraklasskorrelation (ICC) undersökte vi vilken andel av variansen som kan förklaras av underliggande individuella förutsättningar, exempelvis generell förändringsbenägenhet (individuella egenskaper, *traits*) eller av yttre omständigheter påverkade tillstånd (*states*). Intraklasskorrelationen är korrelationen mellan observationer inom klusternivån för analysen, i den här studien de enskilda deltagarna.
@@ -950,8 +952,6 @@ Genom beräkning av så kallad intraklasskorrelation (ICC) undersökte vi vilken
 Consider reporting scales for outputs, inputs and predictors (e.g., range, mean, sd, median). -->
 
 <!-- s 59 hur påverkade collinearity resultaten? Inte alls eftersom varken grupp eller tid var korrelerad med utfallsmåtten -->
-
-Från prediktioner estimerade marginalmedelvärden (*estimated marginal means* eller *least square means*) samt parvisa jämförelser av dessa genomfördes med R-paketet *emmeans* [@R-emmeans]. P-värden korrigerades med Bonferroni-metoden. 
 
 <!-- För beräkning av effektstorleken i en parvisa jämförelser av medelvärden använder man medelvärdesskillnaden i täljaren och standardavvikelsen i nämnaren. Tillförlitlighetsgraden till effektstorleksmåttet hänger samman med tillförlitlighetsgraden av standardavvikelsen: Om den har beräknats med hela populationen är den helt sann, om den har beräknats i ett litet sample är den osäker. Med paketet *emmeans* används så kallade ekvivalenta frihetsgrader för specificeringen av standardavvikelsens noggrannhet. För att skydda de konfidensintervall som anges i anslutning till effektstorleken valde vi konsekvent det lägsta av värdena för residualernas frihetsgrader och frihetsgraderna för vår individ-*random*-effekt, det vill säga $205 - 1 = 204$. -->
 
