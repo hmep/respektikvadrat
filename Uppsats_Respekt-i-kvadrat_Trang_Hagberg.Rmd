@@ -996,7 +996,7 @@ Demografi.Kon.proc <- prop.table(Demografi.Kon.abs, 1)
 
 # https://blog.apastyle.org/apastyle/2011/08/the-grammar-of-mathematics-writing-about-variables.html
 
-xresult <- function(x){formatC(x,digits=2,decimal.mark=",",drop0trailing = F,format="f")}
+xresult <- function(x){formatC(x,digits=1,decimal.mark=",",drop0trailing = F,format="f")}
 
 xpr <- function(x) {
   paste("$p$",
