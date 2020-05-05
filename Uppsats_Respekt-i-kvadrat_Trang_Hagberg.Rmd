@@ -10,8 +10,12 @@ author:
 affiliation:
   - institution   : "Psykologiska institutionen, Stockholms universitet"
 abstract: |
-  `r readLines('abstract.txt', encoding = 'UTF-8')`
-bibliography      : ["r-references.bib", "library.bib"]
+  `r readLines('includes/abstract.txt', encoding = 'UTF-8')`
+authornote: |
+  `r readLines('includes/authornote.txt', encoding = 'UTF-8')`
+keywords: |
+  `r readLines('includes/keywords.txt', encoding = 'UTF-8')`
+bibliography      : ["r-references.bib", "library.bib"] 
 floatsintext      : no
 figurelist        : no
 tablelist         : no
@@ -28,7 +32,7 @@ output:
     citation_package: biblatex
     fig_caption   : yes
     includes:
-      in_header   : texincludes.tex
+      in_header   : includes/texincludes.tex
 keeptex           : true
 lang              : sv-SE
 ---
@@ -37,7 +41,7 @@ lang              : sv-SE
 
 set.seed(42) # Seed for random number generation
 
-options(contrasts=c('contr.treatment','contr.poly'))
+options(contrasts=c('contr.treatment','contr.poly')) # Treatment contrasts for factors
 
 ### Install these packages from Github (instead of CRAN)
 library("devtools")
@@ -63,24 +67,9 @@ library("effsize")
 #library("wesanderson")
 #library("pander")
 
-# authornote: |
-#   `r readLines('authornote.txt', encoding = 'UTF-8')`
-  # abstract: |
-  #  `r readLines('abstract.txt', encoding = 'UTF-8')`
-# keywords: |
-#   `r readLines('keywords.txt', encoding = 'UTF-8')`
-
-svkable = function(...) {
-  knitr::kable(..., format.args = list(decimal.mark = ',', big.mark = ' '), linesep='', format="latex", booktabs=T)
-}
-
-enkable = function(...) {
-  knitr::kable(..., format.args = list(decimal.mark = '.', big.mark = ','), linesep='', format="latex", booktabs=T)
-}
-
 ```
 
-```{r parameters, eval = T}
+```{r functions, eval = T}
 
 xiterapi = "Iterapi [@Vlaescu2016]"
 
@@ -104,6 +93,29 @@ xt3 = "efter"
 xT1 = "Före"
 xT2 = "Mitten"
 xT3 = "Efter"
+
+# https://blog.apastyle.org/apastyle/2011/08/the-grammar-of-mathematics-writing-about-variables.html
+
+xresult <- function(x){formatC(x,digits=1,decimal.mark=",",drop0trailing = F,format="f")}
+
+xpr <- function(x) {
+  paste("$p$",
+        ifelse(x < 0.001, "< 0,001", ifelse(x < 0.05, paste("=",prettyNum(x,digits=1,decimal.mark=",")), ifelse(x > 0.05, "DO NOT REPORT", "= 0,05")))
+  )
+}
+
+xps <- function(x) {
+  paste(ifelse(x < 0.001, "***", ifelse(x < 0.01, "**", ifelse(x > 0.05, "DO NOT REPORT", "*")))
+  )
+}
+
+svkable = function(...) {
+  knitr::kable(..., format.args = list(decimal.mark = ',', big.mark = ' '), linesep='', format="latex", booktabs=T)
+}
+
+enkable = function(...) {
+  knitr::kable(..., format.args = list(decimal.mark = '.', big.mark = ','), linesep='', format="latex", booktabs=T)
+}
 
 ```
 
@@ -634,7 +646,7 @@ Rekrytering ägde rum mellan 28 januari och 5 februari 2020. Studien annonserade
 
 ### Deltagare
 
-Som framgår av figur \@ref(fig:flow) så anmälde totalt 657 personer sitt intresse till studien varav 464 personer slutförde screeningsprocessen. Av dessa uteslöts 126 personer då de uppfyllde något av exklusionskriterierna. De kvarvarande 338 personerna erbjöds plats i studien. Av dessa bejakade 253 sin plats. 43 personer exkluderades från behandlingen genom randomisering så att 210 inkluderades. De deltagere som exkluderades via randomisering erbjöds tillgång till behandlingsprogrammet på samma sätt som kontrollgruppen, men med skillnaden att deras skattningssvar inte användes i beräkningarna. Vid behandlingsstart hade studien 210 deltagare. Vid en extra kontroll under behandlingens gång upptäcktes det att fem deltagare (n = 3 från gruppen `r xg1` och n = 2 från gruppen `r xg3`) hade annan pågående psykologisk behandling och därför felaktigt inkluderats i studien. Dessa deltagare har fått fullgå behandlingen på oförändrade villkor, men deras skattningar har exkluderats från alla beräkningar. Utöver detta bad en deltagare från gruppen `r xg2` under behandlingsprogrammets gång att bli exkluderad från studien. Ingen data har använts hos de fem deltagarna som hade pågående psykologisk behandling och endast förmätningen har använts från deltagaren som bad om att bli exkluderad.
+Som framgår av figur \@ref(fig:flowchart) så anmälde totalt 657 personer sitt intresse till studien varav 464 personer slutförde screeningsprocessen. Av dessa uteslöts 126 personer då de uppfyllde något av exklusionskriterierna. De kvarvarande 338 personerna erbjöds plats i studien. Av dessa bejakade 253 sin plats. 43 personer exkluderades från behandlingen genom randomisering så att 210 inkluderades. De deltagere som exkluderades via randomisering erbjöds tillgång till behandlingsprogrammet på samma sätt som kontrollgruppen, men med skillnaden att deras skattningssvar inte användes i beräkningarna. Vid behandlingsstart hade studien 210 deltagare. Vid en extra kontroll under behandlingens gång upptäcktes det att fem deltagare (n = 3 från gruppen `r xg1` och n = 2 från gruppen `r xg3`) hade annan pågående psykologisk behandling och därför felaktigt inkluderats i studien. Dessa deltagare har fått fullgå behandlingen på oförändrade villkor, men deras skattningar har exkluderats från alla beräkningar. Utöver detta bad en deltagare från gruppen `r xg2` under behandlingsprogrammets gång att bli exkluderad från studien. Ingen data har använts hos de fem deltagarna som hade pågående psykologisk behandling och endast förmätningen har använts från deltagaren som bad om att bli exkluderad.
 
 (ref:flow) Flödesschema över inklusion, exklusion (med kriterier) samt bortfall.
 
@@ -945,7 +957,7 @@ Frekvensen deltagare som i behandlingsprogrammet genomgått en reliabel föränd
 
 # Resultat
 
-```{r sociodemotest, eval = T}
+```{r sociodemotest, eval = F}
 
 Demografi.Kon.chi <- kruskal.test(Demografi.Kon ~ group, data = r2.wide.data)
 # Signifikant!
@@ -976,24 +988,7 @@ Demografi.Kon.proc <- prop.table(Demografi.Kon.abs, 1)
 # kruskal.test(Demografi.PsykoBehandling ~ group, data = r2.wide.data)
 # Inga signifikanta skillnader = inga skillnader mellan grupperna
 
-# https://blog.apastyle.org/apastyle/2011/08/the-grammar-of-mathematics-writing-about-variables.html
-
-xresult <- function(x){formatC(x,digits=1,decimal.mark=",",drop0trailing = F,format="f")}
-
-xpr <- function(x) {
-  paste("$p$",
-        ifelse(x < 0.001, "< 0,001", ifelse(x < 0.05, paste("=",prettyNum(x,digits=1,decimal.mark=",")), ifelse(x > 0.05, "DO NOT REPORT", "= 0,05")))
-  )
-}
-
-xps <- function(x) {
-  paste(ifelse(x < 0.001, "***", ifelse(x < 0.01, "**", ifelse(x > 0.05, "DO NOT REPORT", "*")))
-  )
-}
-
 ```
-
-<!-- Vid analys av sociodemografisk data fann vi en signifikant skillnad i könsfördelning mellan grupperna ($\chi^2_`r format(round(Demografi.Kon.chi[["parameter"]],2),decimal.mark=",")`$ = `r format(round(Demografi.Kon.chi$statistic,2),decimal.mark=",")`, `r xpr(Demografi.Kon.chi[["p.value"]])`). Gruppen `r xg1` hade vid parvisa uppföljningstest signifikant större andel män än både gruppen `r xg3` (`r xpr(Demografi.Kon.posthoc[["res"]][3,4])`) och gruppen `r xg2` (`r xpr(Demografi.Kon.posthoc[["res"]][1,4])`). I övrigt fann vi inte några skillnader i sociodemografiska variabler mellan grupperna. -->
 
 ```{r groupcontrols, eval = F}
 
@@ -2165,7 +2160,7 @@ Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt s
 
 Behandlingsprogrammet har varit framgångsrikt. Deltagarna i *Respekt i kvadrat* har oavsett gren efter fullgången behandling förbättrats avsevärt med avseende på graden av konstruktiv självhävdelse i jämförelse med gruppen `r xg3`. Effektstorleken var för AAA-S Adaptive påtaglig redan vid mittenmätningen för båda grupperna, för väntelista−självhjälp var den 0,81 och för väntelista−behandlarstöd var den 0,83. Vid eftermätningen var effektstorleken för väntelista−självhjälp 1,01 och för väntelista−behandlarstöd 0,93. Även effekten mellan behandlingsstart och `r xt3`mätningen var inom båda grupperna betydande, med en effektstyrka på 0,96 för gruppen behandlarstöd och med en effektstyrka på 1,02 för gruppen självhjälp (se även figur \@ref(fig:effemmplotsad)). Effektstorlekarna kan enligt Cohen's klassificering benämnas som 'stora' och ligger väl i linje med tidigare funna effektstorlekar för KBT, både för internetterapi och traditionell psykoterapi ansikte mot ansikte. Dessa resultat bekräftas av att andelen personer som vid eftermätningsstillfället uppnåt klinisk signifikans-status och dessutom har genomgått en reliabel förändring under loppet av programmet var signifikant större för både grupperna `r xg1` (18%) och `r xg2` (17%) än för väntelistan (1%). Det sekundära utfallsmåttet av konstruktiv självhävdelse, Rathus, visar på en ännu starkare förbättringstrend hos både `r xg1` (21%) och `r xg2` (33%) jämfört med väntelistan (3%).
 
-Skattningarna på AAA-S Aggressive ökade över tid på ungefär samma sätt som skattningarna för AAA-S Adaptive, om än något mindre. Utifrån konceptualiseringen av konstruktiv, aggressiv och passiv självhävdelse som studien bygger på (se figur \@ref(fig:assertiveness)) är det svårt att tolka resultatet för AAA-S Aggressive, eftersom aggressiv självhävdelse i en idiografisk fallformulering för en individ lika gärna kan vara ett underskott som ett överskott. Tolkningen kompliceras ytterligare av att många deltagare förmodlingen likställer konstruktiv självhävdelse med aggressiv självhävdelse. Att effektstyrkan för måttet AAA-S Aggressive är större i självhjälpsgruppen (0,6) än behandlarstödsgruppen (0,4) skulle kunna tyda på det i ljuset av att det för vissa av deltagarna i behandlingsgruppen var ett behandlingsmål att utveckla förmågan att diskriminera mellan aggressiv och konstruktiv självhävdelse.
+Skattningarna på AAA-S Aggressive ökade över tid på ungefär samma sätt som skattningarna för AAA-S Adaptive, om än något mindre. Utifrån konceptualiseringen av konstruktiv, aggressiv och passiv självhävdelse som studien bygger på (se figur \@ref(fig:assertiveness)) är det svårt att tolka resultatet för AAA-S Aggressive, eftersom aggressiv självhävdelse i en idiografisk fallformulering för en individ lika gärna kan vara ett underskott som ett överskott (som @Mitamura2018 konstaterar). Tolkningen kompliceras ytterligare av att många deltagare förmodlingen för sig själva likställer konstruktiv självhävdelse med aggressiv självhävdelse. Att effektstyrkan för måttet AAA-S Aggressive är större i självhjälpsgruppen (0,6) än behandlarstödsgruppen (0,4) skulle kunna tyda på det i ljuset av att det för vissa av deltagarna i behandlingsgruppen var ett behandlingsmål att utveckla förmågan att diskriminera mellan aggressiv och konstruktiv självhävdelse.
 
 Sammanblandningen av måtten kan hänga samman med det sample som sökt sig till behandlingsprogramet. Samplet för studien hade ett medelvärde på skalan för social ångest, LSAS-SR, på *M* = 49, som enligt normerna med en knapp standardavvikelse överskrider gränsen för klinisk bedömning av "trolig social fobi", *M* = 30 [@Fresco2001]. Om hypotesen stämmer att studiens deltagare själva upplever att de har underskott av både konstruktiv och aggressiv självhävdelse kan en ökning av aggressiv självhävdelse uppfattas som eftersträvansvärt för en stor del av deltagarna. I framtida studier om konstruktiv självhävdelse vore det fördelaktigt att vid screening klassificera deltagarna utifrån huvudsaklig sökorsak och målsättning. Det skulle ge möjligheten till att se hur grupper av individer med olika sorters självupplevda brister i konstruktivt självhävdande (exempelvis grupperna "alltför aggressivt självhävdande" och "alltför passivt självhävdande") tar till sig behandlingen.
 
@@ -2200,7 +2195,7 @@ I denna studie placerades en tredjedel av deltagarna på en väntelista. En risk
 
 #### Validering av skattningsskalor
 
-En potentiell brist i studien är att de nyligen översatta versionerna av självskattningsformulären AAA-S [@Thompson2011] och Rathus [@Rathus1973] varken är validerade med originalskalorna som kriterium eller har svenska normer. Översättningen är inte heller fullt ut kvalitetssäkrad, exempelvis genom fram-och-tillbaka-översättning i linje med metoder utvecklade av @Beaton2000 eller @Jones2001. Icke-klinisk normdata är hämtad från student-sample 1 från @Thompson2011 både för AAA-S och Rathus. Det är en fördel att båda skalor använder normer från samma grupp; det gör resultaten (oaktat den extra osäkerhet som översättningen har inneburit) enklare går att relatera till varandra. Data från den föreliggande uppsatsen skulle potentiellt kunna användas för att validera de svensköversatta skalorna i en uppföljande studie med ett breddat sample med större spridning med avseende på exempelvis social fobi. Ett dilemma är dock att båda översättningar på en och samma gång är icke-validerade och idealiska kriterier för varandras validering; det saknas tyvärr vedertagna skalor i litteraturen för *assertiveness* utöver Rathus och AAA-S. 
+En potentiell brist i studien är att de nyligen översatta versionerna av självskattningsformulären AAA-S [@Thompson2011] och Rathus [@Rathus1973] varken är validerade med originalskalorna som kriterium eller har svenska normer. Översättningen är inte heller fullt ut kvalitetssäkrad, exempelvis genom fram-och-tillbaka-översättning i linje med metoder utvecklade av @Beaton2000 eller @Jones2001. Icke-klinisk normdata är hämtad från student-sample 1 från @Thompson2011 både för AAA-S och Rathus. Det är en fördel att båda skalor använder normer från samma grupp; det gör resultaten enklare går att relatera till varandra (oaktat den extra osäkerhet som det enklare översättningsförfarandet har medfört). Data från föreliggande studie skulle potentiellt kunna användas för att validera de svensköversatta skalorna i en uppföljande studie med ett breddat sample med större spridning med avseende på exempelvis social fobi mätt med LSAS-SR. Ett dilemma är dock att båda översättningar på en och samma gång är icke-validerade och idealiska kriterier för varandras validering; det saknas tyvärr vedertagna skalor i litteraturen för *assertiveness* utöver Rathus och AAA-S. 
 
 <!-- som icke-kliniska normer. Fördelen med dessa normer är dels att de är relativt aktuella, dels att de är beräknade från ett och samma sample och därför ger goda möjligheter till jämförelser av resultaten på AAA-S och Rathus. Ytterligare en begränsning för en sådan validering är att det sample som undersöks i den här uppsatsen har en förmodad slagsida åt passiv självhävdelse och sannolikt inte innehåller tillräckligt med data från individer som kan antas ha överskott av aggressiv självhävdelse. Inför framtida studier vore det hur som helst önskvärt att översättningarna validerades i en mer heterogen population. -->
 
@@ -2214,7 +2209,7 @@ På grund tidsbegränsning för studiens upplägg fanns inga möjligheter till a
 
 #### Rekrytering av ett mer varierat sample
 
-Genom en a priori-beräkning av samplestorleken har vi försäkrat oss om att samplestorleken ger goda möjligheter att generalisera resultaten till populationen i stort. Dock har generaliserbarheten av resultaten kraftigt försämrats på grund av själva rekryteringsförfarandet. Med nästintill 90% kvinnor i samplet var könsfördelningen ytterst ojämn. Denna ojämna fördelning går troligen att tillskriva flera orsaker. Kvinnor rapporterar mer oro, änglsan och ångest än män [@Socialstyrelsen2004] vilket skulle kunna göra kvinnor mer benägna än män att söka hjälp. Utöver detta tenderar män överlag i lägre utsträckning söka vård än kvinnor även när män och kvinnor upplever liknande symtom [@Galdas2005]. Kvinnor tenderar också att i större grad än män delta i forskningsstudier. I metaanalysen @Rozental2017a konstateras att 62% av deltagarna i alla inkluderade studier var kvinnor. För den aktuella studien är den främsta orsaken till det snedvridna samplet rekryteringsförfarandet med annonsering i sociala medier. Vid kontroll i efterhand har det visats sig att den algoritmstyrda annonsvisningen till mer än 85% riktades till kvinnor och till ungefär 60% till personer i åldersspannat 35--54 år. Samplet är också snedvridet med avseende på utbildningsnivå: 80% har avslutade eller pågående universitetsstudier jämfört med 43% av Sveriges befolkning [@SCB2020]. Vilken påverkan den automatiserade annonsvisningen har haft på andra faktorer, exempelvis grad av social ångest, går inte att utläsa. För den aktuella studien innebär rekryteringsförfarandet att samplet med sin begränsade spridning inte har matchat den operationalisering av begreppen konstruktiv, passiv och aggressiv självhävdelse som *Respekt i kvadrat* utgår från. 
+Genom en *a priori*-beräkning av samplestorleken har vi försäkrat oss om att samplestorleken ger goda möjligheter att generalisera resultaten till populationen i stort. Dock har generaliserbarheten av resultaten kraftigt försämrats på grund av själva rekryteringsförfarandet. Med nästintill 90% kvinnor i samplet var könsfördelningen ytterst ojämn. Denna ojämna fördelning går troligen att tillskriva flera orsaker. Kvinnor rapporterar mer oro, änglsan och ångest än män [@Socialstyrelsen2004] vilket skulle kunna göra kvinnor mer benägna än män att söka hjälp. Utöver detta tenderar män överlag i lägre utsträckning söka vård än kvinnor även när män och kvinnor upplever liknande symtom [@Galdas2005]. Kvinnor tenderar också att i större grad än män delta i forskningsstudier. I metaanalysen @Rozental2017a konstateras att 62% av deltagarna i alla inkluderade studier var kvinnor. För den aktuella studien är den främsta orsaken till det snedvridna samplet rekryteringsförfarandet med annonsering i sociala medier. Vid kontroll i efterhand har det visats sig att den algoritmstyrda annonsvisningen till mer än 85% riktades till kvinnor och till ungefär 60% till personer i åldersspannat 35--54 år. Samplet är också snedvridet med avseende på utbildningsnivå: 80% har avslutade eller pågående universitetsstudier jämfört med 43% av Sveriges befolkning [@SCB2020]. Vilken påverkan den automatiserade annonsvisningen har haft på andra faktorer, exempelvis grad av social ångest, går inte att utläsa. För den aktuella studien innebär rekryteringsförfarandet att samplet med sin begränsade spridning inte har matchat den operationalisering av begreppen konstruktiv, passiv och aggressiv självhävdelse som *Respekt i kvadrat* utgår från. 
 
 <!-- Slutligen – vilket troligen är den mest påverkande faktorn till den ojämna könsfördelningen i den föreliggande studien – så sköttes studiens marknadsföring på sociala medier av en automatiserad algoritm. Algoritmen visar annonsen för de individer den tror har störst odds till att interagera med den. Data som sammanställdes efter avslutad annonsering visade på att mer än 85% av annonserna hade visats för kvinnor.  -->
 
