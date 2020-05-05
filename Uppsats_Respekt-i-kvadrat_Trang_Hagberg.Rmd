@@ -20,7 +20,7 @@ bibliography      : ["r-references.bib", "library.bib"]
 floatsintext      : no
 figurelist        : no
 tablelist         : no
-footnotelist      : no
+footnotelist      : no 
 linenumbers       : yes
 mask              : no
 draft             : no
@@ -2202,7 +2202,7 @@ En potentiell brist i studien är att de nyligen översatta versionerna av själ
 
 <!-- Som nämnt tidigare hade vårt sample höga skattningar på självskattningsformuläret LSAS-SR, som screenar för social fobi.  Vi vet också med oss att emotionellt undvikande är vanligt hos personer som upplever socialfobiska besvär [@Campbell-Sills2006; @Gross2003; @Hayes1996] och att emotionellt undvikande leder till sämre behandlingsresultat [@DeCastella2015]. Det hade troligen varit fördelaktigt för föreliggande studie att inkludera ett mätinstrument för emotionellt undvikande. Det hade gett möjligheten till att utvärdera om en individs resultat i *Respekt i kvadrat* påverkas av hens användande av emotionellt undvikande. Förslagsvis kan framtida studier undersöka sambandet mellan emotionellt undvikande och tränande i konstruktivt självhävdande.  -->
 
-#### Uppföljningsmätning
+#### Uppföljningsmätning av deltagarna.
 
 På grund tidsbegränsning för studiens upplägg fanns inga möjligheter till att göra uppföljningsmätningar. Det gör det svårare att avgöra hur behandlingsprogrammet har påverkat deltagarnas mående och konstruktiva självhävdande över tid. Forskning indikerar att framsteg gjorda under KBT-behandling tenderar att bibehållas över tid. Det är till och med vanligt att ytterligare ökande i mående och minskande av symtombild sker efter avslutad behandling [@Bandelow2018].
 
@@ -2214,11 +2214,11 @@ Genom en *a priori*-beräkning av samplestorleken har vi försäkrat oss om att 
 
 \xstartnew
 
-#### Uppföljande jämförelser med olika syndrom och etablerade behandlingar
+#### Uppföljande jämförelser för olika psykiska problem och etablerade behandlingar
 
-Det går också att vända på perspektivet och snäva av samplet helt medvetet i en uppföljningsstudie: Det vore intressant att undersöka effekten av interventionen *Respekt i kvadrat* och det transdiagnostiska konstruktet \'konstruktiv självhävdelse\' i grupper tydligt definierade med etablerade diagnosverktyg.
+Det går också att vända på perspektivet och snäva av samplet helt medvetet i en uppföljningsstudie: Det vore intressant att undersöka effekten av interventionen *Respekt i kvadrat* och det transdiagnostiska konstruktet \'konstruktiv självhävdelse\' i grupper tydligt definierade med etablerade diagnosverktyg. En sådan uppföljningsstudie skulle kunna spetsa in sig på de mestadels syndromalt inriktade utfallsmått som har använts i de här studien, men också komplettera med andra mått, exempelvis för emotionellt undvikande, stress och kvalitet i nära relationer. 
 
-Vi konstaterar att effektstyrkan för perioden förmätning--eftermätning för måtten för social ångest (LSAS-SR; ES = 0,6), generaliserat ångestsyndro (GAD-7; ES = 0,7) och allmänt välmående (Välmåendeformuläret, ES = 0,7) enligt Cohen's klassifikation kan betraktas som "stora", och effektstyrkan för måttet för depression (PHQ-9; ES = 0,4) som "måttlig" (se tabell \@ref(tab:descriptives)). Det verkar alltså som att det transdiagnostiska konstruktet *assertiveness* är relevant för flera olika psykiatriska syndrom och tillstånd. Om resurserna vore obegränsade skulle det också vara intressant att i uppföljningsstudier jämföra effekten av den transdiagnostiska interventionen med etablerade *treatment as usual*-behandlingar (exempelvis etablerad KBT-behandling vid social ångest, paniksyndrom eller depression). Det skulle ge möjlighet att säga något tydligare om eventuella för- och nackdelar med det transdiagnostiska begreppet som den här studien undersöker.
+Vi konstaterar att effektstyrkorna mellan tidpunkterna förmätning och eftermätning för måtten för social ångest (LSAS-SR; ES = 0,6 i båda behandlingsgrupper), generaliserat ångestsyndrom (GAD-7; ES = 0,5 respektive 0,7 i självhjälps- och behandlarstödsgrupp) och allmänt mående (Välmåendeformuläret, ES = 0,7 i båda grupper) enligt Cohen's klassifikation kan betraktas som "stora", och effektstyrkorna för måttet för depression (PHQ-9; ES = 0,4 i båda grupper) som "måttliga". Det verkar alltså som att det transdiagnostiska konstruktet *assertiveness* är relevant för flera olika psykiatriska syndrom och tillstånd. Om resurserna vore obegränsade skulle det också vara intressant att i uppföljningsstudier jämföra effekten av den transdiagnostiska interventionen med etablerade *treatment as usual*-behandlingar (exempelvis etablerad KBT-behandling vid social ångest, paniksyndrom, depression och stressyndrom). Det skulle ge möjlighet att tydligare säga något om eventuella för- och nackdelar med användandet av det transdiagnostiska begreppet *konstruktiv självhävdelse* som mål för behandling.
 
 \xstopnew
 
@@ -2327,7 +2327,7 @@ TH: Samtidigt är det bra att diskutera detta. Nu är din sista mening borta, me
 
 ## Sammanfattning
 
-Föreliggande studie ville undersöka effekten på konstruktivt självhävande av behandlingsprogrammet *Respekt i kvadrat*. Att ta del av behandlingsprogrammet (med eller utan behandlingsstöd) var effektivare än att betingas till en väntelista. Resultatet bekräftar även att fokus på konstruktiv självhävdelse i behandlingsprogram är ett effektivt sätt att minska symtom och lidande vid ett antal olika ångestbesvär. Mer forskning behövs för att med större säkerhet kunna generalisera resultaten till populationen i stort.
+Föreliggande studie ville undersöka effekten på konstruktivt självhävande av behandlingsprogrammet *Respekt i kvadrat*. Att ta del av behandlingsprogrammet (med eller utan behandlingsstöd) var effektivare än att betingas till en väntelista. Resultatet bekräftar även att fokus på konstrubktiv självhävdelse i behandlingsprogram är ett effektivt sätt att minska symtom och lidande vid ett antal olika ångestbesvär. Mer forskning behövs för att med större säkerhet kunna generalisera resultaten till populationen i stort.
 
 
 <!-- [Pers kommentar] Ja. Typ 2-3 meningar som sammanfattar hela arbetet. -->
