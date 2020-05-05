@@ -2197,7 +2197,7 @@ Vi konstaterar att effektstyrkorna mellan tidpunkterna förmätning och eftermä
 
 #### Resultatens ekologiska validitet
 
-En uppenbar fördel med studier av internetbaserade interventioner är att de till sin utformning mycket lite skiljer sig från rutinmässig administration i kliniska sammanhang. Om man till det lägger att det torde vara en nackdel (eller i alla fall inte en fördel) för behandlingsutfallet att behandlarna i den aktuella studien var oerfarna, måste slutsatsen bli att den ekologiska validiteten för denna *efficacy*-studie trots allt kan antas vara hög. Materialet borde med med en målgrupp som liknar det sample som använts i den här studien kunna ge snarlika effektstorlekar, oavsett om det ges i replikeringsstudier eller som en del av klinisk rutinverksamhet.
+En uppenbar fördel med studier av internetbaserade interventioner är att de till sin utformning mycket lite skiljer sig från rutinmässig administration i kliniska sammanhang. Om man till det lägger att det torde vara en nackdel för behandlingsutfallet att behandlarna i den aktuella studien var oerfarna, måste slutsatsen bli att den ekologiska validiteten för denna *efficacy*-studie trots allt kan antas vara hög. Materialet borde med med en målgrupp som liknar det sample som använts i den här studien kunna ge snarlika effektstorlekar, oavsett om det ges i replikeringsstudier eller som en integrerad del av klinisk rutinverksamhet.
 
 \xstopnew
 
@@ -2247,13 +2247,8 @@ En uppenbar fördel med studier av internetbaserade interventioner är att de ti
 <!-- 
 Diskussion om själva resultatet återstår att skriva!
 
-Borde ha klassificerat deltagare utifrån sökorsak/målsättning -- kan inkluderas i screeningförfarandet nästa gång
-
 Få personer i "utan stöd" som faktiskt fyllde i eftermätningen (endast 50%). Risken för felkälla pga mörkertal stor?
 -->
-
-<!-- varför går både adaptiv och aggressiv självhävdelse upp? det skulle kunna ha att göra med vårt sample. Om vi hade haft flera personer med positiva rathus-skattningarna (kolla rci för dem!) kanske vi skulle kunna ha sett en minskning av aggressiv självhävdelse. Men för vårt nuvarande sample, med många socialfobiker (hur många? kolla upp) så kan vi anta att ökning av aggressiv självhävdelse är något *bra*?? -->
-
 <!-- Ett förvånande utfall var att skillnaden mellan att få behandlarstöd och att inte få behandlarstöd var försumbar. Flertalet faktorer påverkade troligen detta. -->
 <!-- Då behandlingsmaterialet översatts till svenska inför den aktuella studien – och originalmaterialet användes utan inslag av behandlarstöd – fanns det ingen behandlarstödsmanual eller dylikt för studiens behandlare att använda sig av. Behandlarna hade utöver detta ingen tidigare erfarenhet av internetbaserad psykologisk behandling. Dock hade båda behandlarna tidigare erfarenhet av ansikte mot ansikte-behandling med individer med självrapporterad bristande självhävdelse. Bristen på erfarenhet av internetbaserad behandling kan ha påverkat kvalitén i det behandlarstöd som gavs. Å andra sidan har det visat sig att tidigare erfarenheter och kunskaper om I-KBT hos behandlare inte gör nämnvärd skillnad så länge de har grundläggande kunskaper inom psykologisk behandling [@Baumeister2014a]. Behandlarna hade utöver tillgodogjorda grundläggande kunskaper om psykologisk behandling även tillgång till ett dokument med generella förhållningssätt vid internetbehandling med behandlarstöd samt tillgång till vid-behov-handledning och stöd av en legitimerad psykolog med omfattande erfarenhet av I-KBT. Den generella målsättningen var att behandlarna skulle spendera cirka 15 minuter per vecka och deltagare. Detta varierade dock nämnvärt beroende på hur frekvent behandlarens deltagare hörde av sig till behandlaren med behandlingsrelaterade frågor samt hur utförligt deltagarna besvarade behandlingsprogrammets övningar. Denna variation kan ha påverkat utfallet då vissa deltagare möjligen fick behandlarstöd på bekostnad av andra. -->
 
