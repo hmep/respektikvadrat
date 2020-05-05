@@ -2207,17 +2207,17 @@ På grund tidsbegränsning för studiens upplägg fanns inga möjligheter till a
 
 <!-- Möjligen innebär det att även deltagarna i den aktuella studien kommer att fortsätta förbättras framöver. Det vore fördelaktigt om framtida studier som berör konstruktiv självhävdelse inkluderar uppföljningsmätningar. Detta skulle ge en möjlighet att se hur konstruktet påverkas över tid. -->
 
-#### Rekrytering av ett mer varierat sample
+#### Uppföljning med ett mer varierat sample
 
 Genom en *a priori*-beräkning av samplestorleken har vi försäkrat oss om att samplestorleken ger goda möjligheter att generalisera resultaten till populationen i stort. Dock har generaliserbarheten av resultaten kraftigt försämrats på grund av själva rekryteringsförfarandet. Med nästintill 90% kvinnor i samplet var könsfördelningen ytterst ojämn. Denna ojämna fördelning går troligen att tillskriva flera orsaker. Kvinnor rapporterar mer oro, änglsan och ångest än män [@Socialstyrelsen2004] vilket skulle kunna göra kvinnor mer benägna än män att söka hjälp. Utöver detta tenderar män överlag i lägre utsträckning söka vård än kvinnor även när män och kvinnor upplever liknande symtom [@Galdas2005]. Kvinnor tenderar också att i större grad än män delta i forskningsstudier. I metaanalysen @Rozental2017a konstateras att 62% av deltagarna i alla inkluderade studier var kvinnor. För den aktuella studien är den främsta orsaken till det snedvridna samplet rekryteringsförfarandet med annonsering i sociala medier. Vid kontroll i efterhand har det visats sig att den algoritmstyrda annonsvisningen till mer än 85% riktades till kvinnor och till ungefär 60% till personer i åldersspannat 35--54 år. Samplet är också snedvridet med avseende på utbildningsnivå: 80% har avslutade eller pågående universitetsstudier jämfört med 43% av Sveriges befolkning [@SCB2020]. Vilken påverkan den automatiserade annonsvisningen har haft på andra faktorer, exempelvis grad av social ångest, går inte att utläsa. För den aktuella studien innebär rekryteringsförfarandet att samplet med sin begränsade spridning inte har matchat den operationalisering av begreppen konstruktiv, passiv och aggressiv självhävdelse som *Respekt i kvadrat* utgår från.
 
 \xstartnew
 
-#### Uppföljande jämförelser med *treatment as usual* för olika syndrom
+#### Uppföljande jämförelser med olika syndrom och etablerade behandlingar
 
-Det går också att vända på perspektivet och snäva av samplet helt medvetet: Det vore intressant att undersöka effekten av interventionen *Respekt i kvadrat* och det transdiagnostiska konstruktet \'konstruktiv självhävdelse\' i grupper tydligt definierade med etablerade diagnosverktyg. Det vore också mycket intressant att i uppföljningsstudier jämföra effekten av den transdiagnostiska interventionen med etablerade *treatment as usual*-behandlingar (exempelvis etablerad KBT-behandling vid social ångest, paniksyndrom eller depression). Det skulle ge möjlighet att säga något om eventuella för- och nackdelar med transdiagnostiska behandlingsmål.
+Det går också att vända på perspektivet och snäva av samplet helt medvetet i en uppföljningsstudie: Det vore intressant att undersöka effekten av interventionen *Respekt i kvadrat* och det transdiagnostiska konstruktet \'konstruktiv självhävdelse\' i grupper tydligt definierade med etablerade diagnosverktyg.
 
-(Relatera till effektstyrkor för sekundära utfallsmått)
+Vi konstaterar att effektstyrkan för perioden förmätning--eftermätning för måtten för social ångest (LSAS-SR; ES = 0,6), generaliserat ångestsyndro (GAD-7; ES = 0,7) och allmänt välmående (Välmåendeformuläret, ES = 0,7) enligt Cohen's klassifikation kan betraktas som "stora", och effektstyrkan för måttet för depression (PHQ-9; ES = 0,4) som "måttlig" (se tabell \@ref(tab:descriptives)). Det verkar alltså som att det transdiagnostiska konstruktet *assertiveness* är relevant för flera olika psykiatriska syndrom och tillstånd. Om resurserna vore obegränsade skulle det också vara intressant att i uppföljningsstudier jämföra effekten av den transdiagnostiska interventionen med etablerade *treatment as usual*-behandlingar (exempelvis etablerad KBT-behandling vid social ångest, paniksyndrom eller depression). Det skulle ge möjlighet att säga något tydligare om eventuella för- och nackdelar med det transdiagnostiska begreppet som den här studien undersöker.
 
 \xstopnew
 
