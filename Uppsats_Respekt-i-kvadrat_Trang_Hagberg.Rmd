@@ -78,6 +78,7 @@ library("nlme")
 library("emmeans")
 library("car")
 library("ggplot2")
+library("pbkrtest")
 library("effsize")
 #library("wesanderson")
 #library("pander")
@@ -995,7 +996,7 @@ Demografi.Kon.proc <- prop.table(Demografi.Kon.abs, 1)
 
 # https://blog.apastyle.org/apastyle/2011/08/the-grammar-of-mathematics-writing-about-variables.html
 
-xresult <- function(x){prettyNum(x,digits=2,decimal.mark=",")}
+xresult <- function(x){formatC(x,digits=2,decimal.mark=",",drop0trailing = F,format="f")}
 
 xpr <- function(x) {
   paste("$p$",
@@ -2101,7 +2102,7 @@ options(OutDec= ".")
 
 #### `r xG3`--`r xg1` vid `r xt3`mätningen
 
-Vi fann en högre medelpoäng på AAA-S Adaptive för gruppen `r xg1` (estimerat marginalmedelvärde [*M*] `r xresult(tidy(aaas_ad.emm.by.time)$estimate[8])`,00 , 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[8])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[8])`]) än för gruppen `r xg3` (*M* `r xresult(tidy(aaas_ad.emm.by.time)$estimate[7])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[7])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[7])`]) vid `r xt3`mätningen,
+Vi fann en högre medelpoäng på AAA-S Adaptive för gruppen `r xg1` (estimerat marginalmedelvärde [*M*] `r xresult(tidy(aaas_ad.emm.by.time)$estimate[8])` , 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[8])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[8])`]) än för gruppen `r xg3` (*M* `r xresult(tidy(aaas_ad.emm.by.time)$estimate[7])`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[7])` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[7])`]) vid `r xt3`mätningen,
 medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.time$estimate[7] * -1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.time$df[7])`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[7])`; `r xpr(aaas_ad.emmpairs.by.time[["p.value"]][7])`; effektstorlek `r xresult(aaas_ad.eff.by.time$effect.size[7] * -1)`.
 
 #### `r xG3`--`r xg2` vid `r xt3`mätningen
