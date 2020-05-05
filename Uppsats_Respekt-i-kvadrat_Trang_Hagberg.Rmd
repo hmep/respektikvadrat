@@ -10,11 +10,11 @@ author:
 affiliation:
   - institution   : "Psykologiska institutionen, Stockholms universitet"
 abstract: |
-  `r readLines('includes/abstract8.txt', encoding = 'UTF-8')`
+  `r readLines('includes/abstract.txt', encoding = 'UTF-8')`
 authornote: |
-  `r readLines('includes/authornote8.txt', encoding = 'UTF-8')`
+  `r readLines('includes/authornote.txt', encoding = 'UTF-8')`
 keywords: |
-  `r readLines('includes/keywords8.txt', encoding = 'UTF-8')`
+  `r readLines('includes/keywords.txt', encoding = 'UTF-8')`
 wordcount         : "10492"
 bibliography      : ["r-references.bib", "library.bib"] 
 floatsintext      : no
@@ -33,7 +33,7 @@ output:
     citation_package: biblatex
     fig_caption   : yes
     includes:
-      in_header   : includes/texincludes.tex
+      in_header   : "includes/texincludes.tex"
 lang              : sv-SE
 ---
 
@@ -490,11 +490,11 @@ Upplevelsen av stress, ångest eller nedstämdhet är som regel förknippad med 
 
 Underskott av sådana beteenden som går att samla under begreppet konstruktiv självhävdelse (eller *assertiveness* på engelska) förknippas med en lång räcka psykologiska problem, både kliniska och subkliniska: stress, relationsproblem, generaliserat ångestsyndrom, social ångest, paniksyndrom,  emotionell instabilitet, depression, schizofreni med mera [@Speed2018a]. Inom psykiatrin finns en uppsjö olika diagnoser, diagnosverktyg och behandlingsmanualer för dessa specifika åkommor, men trots att intresset för diagnosöverskridande begrepp och behandlingsformer har ökat markant under de senaste årtiondena saknas evidensbaserade behandlingsprogram i självhävdelse som vänder sig till en bredare målgrupp.
 
-Renodlad träning i *assertiveness* har paradoxalt nog en lång historia. De allra första behavioristiska terapierna kring 1950-talet och framåt, bland annat de som beskrivs i @salter1949conditioned samt @Wolpe1966, var specifikt inriktad på självhävdelse som ett behaviouristiskt alternativ till psykoanalys för neurotiker. Dessa första behaviouristiska terapier byggde på principerna om klassisk betingning: Målet för *assertiveness*-träningen var att para aversiva stimuli som tidigare gav upphov till exempelvis passivitet eller aggressivitet med konstruktiv självhävdelse. Denna träning hade ofta avslappning som en integrerad del, utifrån rationalen att avslappning och ångest inte kan förekomma samtidigt. Som en del i den självhävdelsefokuserade psykoterapin föreskrevs tydligt beskrivna beteenden för klienter och patienter att träna på, till exempel att säga nej till andra.
+Renodlad träning i *assertiveness* har paradoxalt nog en lång historia. De allra första behavioristiska terapierna kring 1950-talet och framåt, bland annat de som beskrivs i @salter1949conditioned samt @Wolpe1966, var specifikt inriktad på självhävdelseträning som ett behaviouristiskt alternativ till psykoanalys för neurotiker. Dessa första behaviouristiska terapier byggde på principerna om klassisk betingning: Målet för *assertiveness*-träningen var att para aversiva stimuli som tidigare gav upphov till exempelvis passivitet eller aggressivitet med konstruktiv självhävdelse. Denna träning hade ofta avslappning som en integrerad del, utifrån rationalen att avslappning och ångest inte kan förekomma samtidigt. Som en del i den självhävdelsefokuserade psykoterapin förskrevs tydligt beskrivna beteenden för klienter och patienter att träna på, till exempel att säga nej till andra.
 
-Under 1970-talet kom träning i konstruktiv självhävdelse både att formaliseras till sofistikerade behandlingsprogram, som i @LINEHAN1979 och att populariseras. Självhjälpstitlar som *Don’t say yes when you want to say no* [@fensterheim1975don] och *When I say no, I feel guilty: how to cope–using the skills of systematic assertive therapy* [@smith1975say] gjorde de inlärningsteoretiskt väl förankrade metoderna tillgängliga för en bredare massa -- men möjligen i ett alltför hurtigt format. Självhjälpsboomen under 1970-talet sammanföll med sociala och politiska omvälvningar i samhället, där marginaliserade grupper gjorde sig allt mer hörda och maktstrukturer i samhället sattes under förändringstryck. Dessa emanciperande och normbrytande rörelser väckte motstånd – precis som behavioristiskt influerade terapier gjorde. Ett humoristiskt exempel på 1970-talskritik av träning i konstruktiv självhävdelse är @607233319760514, som frankt rekommenderade deltagare i *assertiveness*-kurser att hävda sig själva genom att vägra betala kursavgiften.
+Under 1970-talet kom träning i konstruktiv självhävdelse både att formaliseras till sofistikerade behandlingsprogram, som i @LINEHAN1979 och att populariseras. Självhjälpstitlar som *Don’t say yes when you want to say no* [@fensterheim1975don] och *When I say no, I feel guilty: how to cope–using the skills of systematic assertive therapy* [@smith1975say] gjorde de inlärningsteoretiskt väl förankrade metoderna tillgängliga för en bredare massa -- men möjligen i ett alltför hurtigt format. Självhjälpsboomen under 1970-talet sammanföll med sociala och politiska omvälvningar i samhället, där marginaliserade grupper gjorde sig allt mer hörda och maktstrukturer i samhället sattes under förändringstryck. Dessa emanciperande och normbrytande rörelser väckte motstånd – precis som behavioristiskt influerade terapier gjorde. Ett exempel på 1970-talskritik av träning i konstruktiv självhävdelse är @607233319760514, som frankt rekommenderade deltagare i *assertiveness*-kurser att hävda sig själva genom att vägra betala kursavgiften.
 
-I och med psykatrins allt tydligare inriktning mot syndromala kategoriseringar av psykisk ohälsa, kanske tydligast i form av *Diagnostic and Statistical Manual of Mental Disorders* [@american1968diagnostic] med efterföljare, kom träning i *assertiveness* så småningom att falla i glömska. Begreppet återaktualiserades sporadiskt som mål för behandling under 1990-talet, då kompletterad med metoder för kognitiv omstrukturering i enlighet med principerna i @beck1979cognitive. Rationalen för kognitiv omstrukturering är att personer med hindrande tänkande i en pressade situationer (om den egna förmågan, om andra personers avsikter, om livet i stort och så vidare) är hjälpta av att utifrån egna faktiskt erfarenheter i livet hitta stöd för mer balanserat och konstruktivt tänkande. 
+I och med psykiatrins allt tydligare inriktning mot syndromala kategoriseringar av psykisk ohälsa, kanske tydligast i form av *Diagnostic and Statistical Manual of Mental Disorders* [@american1968diagnostic] med efterföljare, kom träning i *assertiveness* så småningom att falla i glömska. Begreppet återaktualiserades sporadiskt som mål för behandling under 1990-talet, då kompletterad med metoder för kognitiv omstrukturering i enlighet med principerna i @beck1979cognitive. Rationalen för kognitiv omstrukturering är att personer med hindrande tänkande i en pressade situationer (om till exempel den egna förmågan, om andra personers avsikter eller om livet i stort) är hjälpta av att utifrån egna faktiska erfarenheter i livet hitta stöd för mer balanserat och konstruktivt tänkande. 
 
 En viktig del i kognitiv omstrukturering är så kallade beteendeexperiment. För en socialfobiker skulle ett beteendeexperiment till exempel kunna handla om att gå på en fest och att säga något om sig själv i ett samtal med andra personer utan att använda sig av så kallade säkerhetsbeteenden. Ett för konstruktiv självhävdelse relevant exempel på ett säkerhetsbeteende skulle kunna vara att titta ned i golvet, ett annat att tala tyst. Efter genomfört beteendeexperiment kan klienten få hjälp av terapeuten att utvärdera utfallet -- hur det gick att lägga säkerhetsbeteendena åt sidan, om personen klarade av att stanna i situationen även om något oönskat inträffade, vilka konsekvenser ökat engagemang ledde till och så vidare. Det övergripande syftet med dessa metoder är att hjälpa klienten att bryta undvikande. Fördelarna för klienten är dels att hen får tillfälle att träna både på att tolerera och reglera ångest, dels att hen får ökad tillgång till sådant som hen värdesätter.
 
@@ -504,7 +504,7 @@ Begreppet *assertiveness* kom under 1970-talet att omfamna en allt längre lista
 
 @alberti1974your definierar konstruktiv självhävdelse som handlande som återspeglar individens egna långsiktiga intressen. Det inbegriper förmågan att ”stå upp för sig själv” utan överdriven ångest och färdigheten att uttrycka sina känslor samt att utöva sina egna rättigheter utan att kränka andras rättigheter. Med ’utöva sina rättigheter’ menas att både i icke-verbal och verbal handling uttrycka sina tankar, känslor, behov och önskningar.
 
-Graden av konstruktiv självhävdelse för en person i en given situation kan konceptuellt inordnas som en punkt i en graf (se figur \@ref(fig:assertiveness)) med två kontinuerliga dimensioner: handlande med respekt för andras rättigheter på x-axeln och handlande med respekt för egna rättigheter på y-axeln. Konstruktiv självhävdelse är en kommunikationsstil som skiljer sig från aggressiv självhävdelse (det vill säga hävdande av egna rättigheter på bekostnad av andras). Den skiljer sig även från kommunikationsstilen passiv självhävdelse (det vill säga förnekande av egna rättigheter till förmån för andras) och från passiv-aggressiv självhävdelse (det vill säga bristande respekt för både egna och andras rättigheter). Gränsdragningarna mellan kommunikationsstilarna är förstås flytande, eftersom dimensionerna är kontinuerliga.
+Graden av konstruktiv självhävdelse för en person i en given situation kan konceptuellt inordnas som en punkt i en graf (se figur \@ref(fig:assertiveness)) med två kontinuerliga dimensioner: handlande med respekt för andras rättigheter på x-axeln och handlande med respekt för egna rättigheter på y-axeln. Konstruktiv självhävdelse är en kommunikationsstil som skiljer sig från aggressiv självhävdelse, det vill säga hävdande av egna rättigheter på bekostnad av andras. Den skiljer sig även från kommunikationsstilen passiv självhävdelse, det vill säga förnekande av egna rättigheter till förmån för andras, och från passiv-aggressiv självhävdelse, det vill säga bristande respekt för både egna och andras rättigheter. Gränsdragningarna mellan kommunikationsstilarna är förstås flytande, eftersom dimensionerna är kontinuerliga.
 
 På svenska är begreppet \'sund självhävdelse\' vanligare än \'konstruktiv självhävdelse\'. I behandlingsprogrammet *Respekt i kvadrat* (som beskrivs i kommande avsnitt) och den här studien väljer vi att tala om konstruktiv snarare än sund självhävdelse som målbeteende, eftersom det tydligare utgår från individens perspektiv om vad som ger framkomlighet.
 
@@ -524,11 +524,13 @@ knitr::include_graphics("images/canvas-konstruktiv-slinga-X.pdf")
 
 Forskning på *assertiveness* övergavs i stort sett efter 1970-talet i och med psykatrins fokus på syndromala kategoriseringar av psykisk ohälsa. *Assertiveness* föll tillsammans med andra transdiagnostiska begrepp i glömska till förmån för diagnosspecifika interventioner och insatser. 
 
-Det gör att många viktiga slutsatser av den tidigaste forskningen har hamnat i skymundan. Både @Wolpe1966 samt @Orenstein1975 byggde sina metoder på premissen att det är oförenligt att samtidigt uppleva ångest och att på ett genuint sätt hävda sina önskningar och behov på ett konstruktivt sätt. @Barrett1977 visade att *assertiveness* hos barn korrelerar med prosociala beteenden. @Buell1981 följer upp det fyndet med en metod för att träna *assertiveness* hos barn. Att utveckla sin förmåga att uttrycka sina tankar, känslor, behov och önskningar på ett konstruktivt sätt förfaller vara en tillgång i relationer. På samma tema visade forskningen att självhävdelse är förknippat med förbättrade interpersonella relationer [@Kincaid1978] och ökad förmåga att möta hinder och motgångar med adaptiva beteenden [@Tanck1979]. @Rakos1979 visade att *assertiveness* med fördel kan läras ut genom självhjälpsmaterial och @Rich1976 sammanställde och utvärderade olika metoder som hade använts för att träna *assertiveness*.
+Det gör att många viktiga slutsatser av den tidigaste forskningen har hamnat i skymundan. Både @Wolpe1966 samt @Orenstein1975 bygger sina metoder på premissen att det är oförenligt att samtidigt uppleva ångest och att på  ett genuint sätt hävda sina önskningar och behov på ett konstruktivt sätt. @Barrett1977 visar att *assertiveness* hos barn korrelerar med prosociala beteenden. @Buell1981 följer upp det fyndet med en metod för att träna *assertiveness* hos barn. På temat att det är en tillgång i relationer att på ett konstruktivt sätt  uttrycka sina tankar, känslor, behov och önskningar visar @Kincaid1978 att självhävdelse är förknippat med förbättrade interpersonella relationer. Det är korrelerar också positivt med förmågan att möta hinder och motgångar med adaptiva beteenden [@Tanck1979]. @Rakos1979 visar att *assertiveness* med fördel kan läras ut genom självhjälpsmaterial och @Rich1976 sammanställer och utvärderar olika metoder som används för att träna *assertiveness*.
 
-Under de senaste åren har intresset för självhävdelse ökat något igen. @Vagos2019 konstaterar att självupplevd grad av psykiskt lidande korrelerar negativt med grad av konstruktivt självhävdande. Det ligger i linje med den underliggande teorin om reciprok inhibition som den presenterades av @Wolpe1966: *assertiveness* inhiberar ångest och ångest inhiberar *assertiveness*. @Baker2015 visar en negativ korrelation mellan att uppleva social ångest och att hävda sig själv konstruktivt. Deras slutsats är att man kan öka oddsen för konstruktivt självhävdande beteenden för en person antingen genom att i behandling exponera för antecedenterna för social ångest eller genom att arbeta med hur personen förhåller sig till själva ångesten. Denna tolerans- och acceptansrationalen kan ses som ett alternativ (eller helt pragmatiskt som ett komplement) till den habitueringsrational som varit förhärskande inom KBT fram till sekelskiftet.
+Under de senaste åren har intresset för självhävdelse ökat något igen. @Vagos2019 konstaterar att självupplevd grad av psykiskt lidande korrelerar negativt med grad av konstruktivt självhävdande. Det ligger i linje med den underliggande teorin om reciprok inhibition som den presenterades av @Wolpe1966: *Assertiveness* inhiberar ångest och ångest inhiberar *assertiveness*. @Baker2015 visar en negativ korrelation mellan att uppleva social ångest och att hävda sig själv konstruktivt. Deras slutsats är att man kan öka oddsen för konstruktivt självhävdande beteenden för en person antingen genom att i behandling exponera för antecedenterna för social ångest eller genom att arbeta med hur personen förhåller sig till själva ångesten. Denna senare tolerans- och acceptansrational kan ses som ett alternativ (eller helt pragmatiskt som ett komplement) till den habitueringsrational var förhärskande inom KBT fram till sekelskiftet.
 
-@Speed2018a sammanställer forskningsläget kring *assertiveness*. Träning i konstruktiv självhävdelse kan förbättra måendet vid både ångestsyndrom och depression och öka självförtroende samt förbättra upplevd tillfredsställelse i parrelationer. Författarna konstaterar att träning i konstruktiv självhävdelse redan ingår i de bredare begreppen som beteendeaktivering och färdighetsträning i flertalet allt mer beforskade behandlingsmetoder -- som dialektisk beteendeterapi (DBT), *Acceptance and Commitment Therapy* (ACT) och beteendeaktivering vid depression. En stor andel av den forskning om *assertiveness* som ett transdiagnostiskt begrepp är dock till åren kommen och det finns ett stort behov att på nytt utvärdera den specifika effekten av självhävdelseträning [@Speed2018a]. Sammanfattningsvis är det moderna forskingsläget både skralt för *assertiveness* som konstrukt och omfattande för de syndrom och symtom som associeras med det.
+@Speed2018a sammanställer det aktuella forskningsläget kring *assertiveness*. Träning i konstruktiv självhävdelse kan förbättra måendet vid både ångestsyndrom och depression och öka självförtroende samt förbättra upplevd tillfredsställelse i parrelationer. Författarna konstaterar att träning i konstruktiv självhävdelse redan ingår i de bredare begreppen som beteendeaktivering och färdighetsträning i flera allt mer beforskade behandlingsmetoder -- som dialektisk beteendeterapi (DBT), *Acceptance and Commitment Therapy* (ACT) och beteendeaktivering vid depression. 
+
+En stor del av den forskning som finns om *assertiveness* som ett transdiagnostiskt begrepp är sammantaget till åren kommen och det finns ett behov av att på nytt utvärdera den specifika effekten av självhävdelseträning [@Speed2018a]. Det moderna forskningsläget är både skralt för *assertiveness* som konstrukt och omfattande för de syndrom och symtom som associeras med det.
 
 ### Evidensen för KBT vid ångest och depression
 
@@ -819,7 +821,7 @@ Interventionen *Respekt i kvadrat* är utformad med självhjälpsmaterialet *Ass
 
 I självhjälpsmaterialet får läsaren lära sig skillnaden mellan olika typer av självhävdelse (konstruktiv, aggressiv, passiv, passiv-aggressiv), och hitta egna skäl att hävda sig själv bättre och mer konstruktivt. Delar av materialet är inspirerat av och citerar självhjälpsböcker som @alberti1974your, @gambrill1975assertion, @ward2018assertiveness, @mckay2005self och @smith1975say.
 
-I originalmaterialet förskrivs konstruktiv självhävdelse, operationaliserat både som verbala och icke-verbala beteenden, utifrån de teoretiska antagandena i @wolpe1990practice om reciprok inhibition och klassisk betingning: Genom att träna på att i ord och handling uttrycka det som i relationen till en annan person väcker ångest (exempelvis undertryckt ledsenhet eller ilska) kan klienten på sikt få minskade besvär med autonoma ångestresponser. @Wolpe1952 förespråkar träning på att uppleva de ångestväckande autonoma responserna (känslorna) *in-vivo*. Att utföra de föreskrivna beteendena handlar inte om att enbart "låtsas". Det långsiktiga målet med träningen är att lära sig att inhibera ångesten genom självhävdelse. För fall då en fysisk motpart saknas, och ångesten väcks av till exempel platser, objekt eller ord, föreslår @Wolpe1952 istället avslappning som ett sätt att inhibera ångestresponsen, utifrån rationalen att det är omöjligt att känna ångest och samtidigt vara avslappnad.
+I originalmaterialet förskrivs konstruktiv självhävdelse, operationaliserat både som verbala och icke-verbala beteenden, utifrån de teoretiska antagandena i @wolpe1990practice om reciprok inhibition och klassisk betingning: Genom att träna på att i ord och handling uttrycka det som i relationen till en annan person väcker ångest (exempelvis undertryckt ledsenhet eller ilska) kan klienten på sikt få minskade besvär med autonoma ångestresponser. @Wolpe1952 förespråkar träning på att uppleva de ångestväckande autonoma responserna (känslorna) *in-vivo*. Att utföra de förskrivna beteendena handlar inte om att enbart "låtsas". Det långsiktiga målet med träningen är att lära sig att inhibera ångesten genom självhävdelse. För fall då en fysisk motpart saknas, och ångesten väcks av till exempel platser, objekt eller ord, föreslår @Wolpe1952 istället avslappning som ett sätt att inhibera ångestresponsen, utifrån rationalen att det är omöjligt att känna ångest och samtidigt vara avslappnad.
 
 Självhjälpsmaterialet ger också rationalen för kognitiv omstrukturering med metoder från @beck1979cognitive, @Clark1986, @clark1995cognitive och @powell2017mental. Kognitiv omstrukturering uppnås enligt dessa genom att pröva giltigheten av det hindrande tänkandet i verkliga livet. Genom att planera och utföra beteendeexperiment får deltagaren hjälp att pröva giltigheten av egna negativa tankar. Målet med beteendeexperiment är att uppnå större flexibilitet i responser i olika mer eller mindre pressande situationer. 
 
@@ -874,9 +876,9 @@ Innehall <- c(
 )
 
 intervention.tabell <- cbind.data.frame(
-  "Vecka"=Vecka,
-  "Rational och innehåll"=Tema,
-  "Material"=Innehall
+  "Vecka" = Vecka,
+  "Rational och innehåll" = Tema,
+  "Material" = Innehall
   )
 
 svkable(intervention.tabell, caption = "(ref:interv)", align="rll") %>%
@@ -926,14 +928,7 @@ Genom beräkning av så kallad intraklasskorrelation (ICC) undersökte vi vilken
 
 <!-- https://www.theanalysisfactor.com/the-intraclass-correlation-coefficient-in-mixed-models/ -->
 
-<!-- s 49 http://wiki.bcs.rochester.edu/HlpLab/StatsCourses?action=AttachFile&do=get&target=Groningen11.pdf
-Consider reporting scales for outputs, inputs and predictors (e.g., range, mean, sd, median). -->
-
-<!-- s 59 hur påverkade collinearity resultaten? Inte alls eftersom varken grupp eller tid var korrelerad med utfallsmåtten -->
-
-<!-- För beräkning av effektstorleken i en parvisa jämförelser av medelvärden använder man medelvärdesskillnaden i täljaren och standardavvikelsen i nämnaren. Tillförlitlighetsgraden till effektstorleksmåttet hänger samman med tillförlitlighetsgraden av standardavvikelsen: Om den har beräknats med hela populationen är den helt sann, om den har beräknats i ett litet sample är den osäker. Med paketet *emmeans* används så kallade ekvivalenta frihetsgrader för specificeringen av standardavvikelsens noggrannhet. För att skydda de konfidensintervall som anges i anslutning till effektstorleken valde vi konsekvent det lägsta av värdena för residualernas frihetsgrader och frihetsgraderna för vår individ-*random*-effekt, det vill säga $205 - 1 = 204$. -->
-
-<!-- Figurer framställdes med *sjPlot* [@R-sjPlot] och *ggplot2* [@R-ggplot2]. -->
+<!-- s 49 http://wiki.bcs.rochester.edu/HlpLab/StatsCourses?action=AttachFile&do=get&target=Groningen11.pdf -->
 
 ### Analys av reliabel förändring och klinisk signifikans
 
@@ -1050,8 +1045,6 @@ anova(kontroll_well)
 
 ```
 
-<!-- Med oberoende variansanalys konstaterade vi att det inte fanns några signifikanta skillnader i några av utfallsmåtten mellan de olika grupperna vid behandlingens start. -->
-
 ```{r modelcomparisons, eval = F}
 
 # https://hlplab.wordpress.com/2011/06/25/more-on-random-slopes/
@@ -1144,6 +1137,8 @@ test.nestedintercept <-
   )
 anova(test.intercept,test.nestedintercept)
 # The simpler model wins by a nose
+# 2do: Follow up with subject nested in therapist in order 
+# to quantify therapist contributions to variance?
 
 # REML or ML?
 # Picking REML to get unbiased estimates of the variance parameters 
@@ -1222,13 +1217,13 @@ well.lmer <-
 
 ```
 
-<!-- Vid visuell granskning av diagnostiska plottar av observerad data fann vi inga brott mot de villkor som behöver uppfyllas för flernivåanalys. -->
-
 ```{r rsquared, eval=F}
 
 # Do we report Conditional R2? No, not for now. There's no use reporting model fit since we have a model that is specified by theory.
 
 # The marginal R-squared considers only the variance of the fixed effects, while the conditional R-squared takes both the fixed and random effects into account.
+
+# library("sjPlot")
 
 # tab_model(aaas_ag.lmer,p.val = "kr", show.df = TRUE)
 # Marginal R2 / Conditional R2	0.071 / 0.757
@@ -2150,8 +2145,6 @@ Skattningarna på AAA-S Aggressive ökade över tid på ungefär samma sätt som
 
 Sammanblandningen av måtten kan hänga samman med det sample som sökt sig till behandlingsprogramet. Samplet för studien hade ett medelvärde på skalan för social ångest, LSAS-SR, på *M* = 49, som enligt normerna med en knapp standardavvikelse överskrider gränsen för klinisk bedömning av "trolig social fobi", *M* = 30 [@Fresco2001]. Om hypotesen stämmer att studiens deltagare själva upplever att de har underskott av både konstruktiv och aggressiv självhävdelse kan en ökning av aggressiv självhävdelse uppfattas som eftersträvansvärt för en stor del av deltagarna. I framtida studier om konstruktiv självhävdelse vore det fördelaktigt att vid screening klassificera deltagarna utifrån huvudsaklig sökorsak och målsättning. Det skulle ge möjligheten till att se hur grupper av individer med olika sorters självupplevda brister i konstruktivt självhävdande (exempelvis grupperna "alltför aggressivt självhävdande" och "alltför passivt självhävdande") tar till sig behandlingen.
 
-<!-- I efterhand konstaterar vi att behandlingsprogrammet hade behövt mätverktyg för att systematiskt klassificera individer utifrån självuppgivna målsättningar i relation till aggressiv självhävdelse -- det skulle kunna göra det möjligt att i resultatet sammanblanda den deltagare med humörproblem som vill minska graden av aggressiv självhävdelse med den som söker för att hen önskar bli bättre på att uttrycka ilska. Dilemmat sätter fingret på behovet (som går att generalisera till alla terapiformer) av idiografisk målformulering. -->
-
 ### Behandlarstöd och självhjälp gav samma resultat
 
 Vid deltagande i *Respekt i kvadrat* spelar det ingen roll om man arbetar på egen hand eller får guidning av en behandlare under de åtta veckor som programmet pågår. Skillnaden i förändring av grad av konstruktiv självhävdelse mellan grupperna `r xg1` och `r xg2` var statistiskt försumbar. Vi fann inte heller någon skillnad i effekt vid `r xt2`mätningen. Fyndet överensstämmer med resultaten från @Samuelsson2018 som undersökte ett KBT-självhjälpsmaterial -- med eller utan behandlarstöd -- för par med relationsproblem. I en metanalys noterar @Baumeister2014a att terapeutstödda interventioner på aggregerad nivå har bättre effekt än enbart självhjälpsmaterial, men också att skillnaden är mindre än vad som har rapporterats tidigare. Andra tidigare studier rapporterar också liknande utfall -- det vill säga att både gruppen med och gruppen utan behandlarstöd gör framsteg, men utan markant skillnad mellan grupperna [se bland annat @Berger2011; @Ivanova2016; @Rozental2015]. För framtida studier vore det intressant att undersöka vilka de verksamma effekterna av behandlarstöd är och vad som kan göras för att maximera dessa komponenters inverkan på behandlingsutfallet. 
@@ -2175,7 +2168,6 @@ I denna studie placerades en tredjedel av deltagarna på en väntelista. En risk
 <!-- Det går ändå att diskutera om användandet av väntelista som kontroll är det bästa valet i utformningen av studiens design: Användandet av väntelista höjer allt som oftast oddsen för att hitta en signifikant effekt jämfört med att tilldela kontrollgruppen mer aktiva betingelser [@Mohr2009].   -->
 
 <!-- Randomisering av kontrollgruppen till väntlistebetingelse är ett effektivt för att kontrollera för inverkan av händelser i omvärlden som kan påverka studiens deltagare och därmed studiens resultat. Ungefär mitt under behandlingen för grupperna `r xg1` och `r xg2`, kring tilldelningarna av modul 4--5, tog spridningen av viruset covid-19 fart i Sverige. Vi kan anta att effekterna av pandemin har haft olika slags effekter i dagliga rutiner och i fysiskt och psykiskt mående för studiens deltagare. Hade vår  kontrollgrupp haft en annan betingelse än väntelista hade det varit svårt att konstatera vad i deras resultat som var påverkat av betingelsen i fråga, och vad i resultatet som berodde på covid-19s spridning i Sverige. I och med att vår studies kontrollgrupp var tilldelade en väntelista kan vi vara säkra på tillförlitligheten i den behandlingseffekt mellan grupperna som vi har konstaterat.  -->
-
 
 #### Validering av skattningsskalor
 
@@ -2202,6 +2194,10 @@ Genom en *a priori*-beräkning av samplestorleken har vi försäkrat oss om att 
 Det går också att vända på perspektivet och snäva av samplet helt medvetet i en uppföljningsstudie: Det vore intressant att undersöka effekten av interventionen *Respekt i kvadrat* och det transdiagnostiska konstruktet \'konstruktiv självhävdelse\' i grupper som är tydligt definierade med etablerade diagnosverktyg. En sådan uppföljningsstudie skulle kunna spetsa in sig på de syndromalt inriktade utfallsmått som har använts i de här studien och komplettera med andra mått, exempelvis för emotionellt undvikande, stress och kvalitet i nära relationer. 
 
 Vi konstaterar att effektstyrkorna mellan tidpunkterna förmätning och eftermätning för måtten för social ångest (LSAS-SR; ES = 0,6 i båda behandlingsgrupper), generaliserat ångestsyndrom (GAD-7; ES = 0,5 respektive 0,7 i självhjälps- och behandlarstödsgrupp) och allmänt mående (Välmåendeformuläret, ES = 0,7 i båda grupper) enligt Cohen's klassifikation kan betraktas som "stora", och effektstyrkorna för måttet för depression (PHQ-9; ES = 0,4 i båda grupper) som "måttliga". Det verkar alltså som att det transdiagnostiska konstruktet *assertiveness* är relevant för flera olika psykiatriska syndrom och tillstånd. Om resurserna vore obegränsade skulle det också vara intressant att i uppföljningsstudier jämföra effekten av den transdiagnostiska interventionen med etablerade *treatment as usual*-behandlingar (exempelvis etablerad KBT-behandling vid social ångest, paniksyndrom, depression och stressyndrom). Det skulle ge möjlighet att tydligare säga något om eventuella för- och nackdelar med användandet av det transdiagnostiska begreppet *konstruktiv självhävdelse* som mål för behandling.
+
+#### Ekologisk validitet
+
+En uppenbar fördel med studier av internetbaserade interventioner är att de till sin utformning mycket lite skiljer sig från rutinmässig administration i kliniska sammanhang. Om man till det lägger att det torde vara en nackdel för behandlingsutfallet att behandlarna i den aktuella studien var oerfarna, måste slutsatsen bli att den ekologiska validiteten för denna *efficacy*-studie trots allt är hög. Materialet borde med med en målgrupp som liknar det sample som använts i den här studien kunna ge snarlika effektstorlekar, oavsett om det ges i replikeringsstudier eller som en del av klinisk rutinverksamhet.
 
 \xstopnew
 
