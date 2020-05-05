@@ -10,11 +10,11 @@ author:
 affiliation:
   - institution   : "Psykologiska institutionen, Stockholms universitet"
 abstract: |
-  `r readLines('includes/abstract.txt', encoding = 'UTF-8')`
+  `r readLines('includes/abstract8.txt', encoding = 'UTF-8')`
 authornote: |
-  `r readLines('includes/authornote.txt', encoding = 'UTF-8')`
+  `r readLines('includes/authornote8.txt', encoding = 'UTF-8')`
 keywords: |
-  `r readLines('includes/keywords.txt', encoding = 'UTF-8')`
+  `r readLines('includes/keywords8.txt', encoding = 'UTF-8')`
 wordcount         : "10492"
 bibliography      : ["r-references.bib", "library.bib"] 
 floatsintext      : no
