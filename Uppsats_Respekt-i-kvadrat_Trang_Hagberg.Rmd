@@ -2174,6 +2174,8 @@ Vid deltagande i *Respekt i kvadrat* spelar det ingen roll om man arbetar på eg
 
 Det finns många faktorer som avgör om en intervention ska ges med eller utan stöd, bland dem ekonomiska hänsyn och tillgänglighet. Huruvida avsaknaden av skillnad i effekt för de båda behandlingsgrenarna av *Respekt i kvadrat* beror på terapeuteffekter, takeffekter av materialet eller andra interventionsbundna faktorer går inte att avgöra med vägledning av den utförda analysen. Vi nöjer oss här med att konstatera att de goda utfallen för de båda behandlingsgrenarna bekräftar att programmet *Respekt i kvadrat* är verksamt för ökning av grad av konstruktiv självhävdelse och att den stora effekten i självhjälpsgruppen är ett gott tecken på att materialet kan komma till nytta som självhjälpsmaterial.
 
+\xstartnew
+
 ### Diskutera random-effekter
 
 diskussion
@@ -2183,6 +2185,8 @@ diskussion
 Relatera till effektstyrkor för sekundära utfallsmått
 
 Mera forskning: klinisk signifikans
+
+\xstopnew
 
 ### Metodologiska styrkor och förbättringsmöjligheter
 
