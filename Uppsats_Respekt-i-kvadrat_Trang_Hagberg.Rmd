@@ -2198,7 +2198,7 @@ Det finns många faktorer som avgör om en intervention ska ges med eller utan s
 
 Relatera till effektstyrkor för sekundära utfallsmått
 
-Mera forskning
+Mera forskning: klinisk signifikans
 
 ### Metodologiska styrkor och förbättringsmöjligheter
 
