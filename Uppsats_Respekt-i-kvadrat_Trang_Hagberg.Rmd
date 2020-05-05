@@ -2180,12 +2180,6 @@ Det finns många faktorer som avgör om en intervention ska ges med eller utan s
 
 diskussion
 
-### Tentativt stöd för 'konstruktiv självhävdelse' som transdiagnostiskt behandlingsmål
-
-Relatera till effektstyrkor för sekundära utfallsmått
-
-Mera forskning: klinisk signifikans
-
 \xstopnew
 
 ### Metodologiska styrkor och förbättringsmöjligheter
@@ -2221,7 +2215,9 @@ Genom en *a priori*-beräkning av samplestorleken har vi försäkrat oss om att 
 
 #### Uppföljande jämförelser med *treatment as usual* för olika syndrom
 
-Det går också att vända på perspektivet och snäva av samplet mer medvetet: Det vore intressant att undersöka effekten av interventionen *Respekt i kvadrat* och det transdiagnostiska konstruktet \'konstruktiv självhävdelse\' i grupper tydligt definierade med etablerade diagnosverktyg. Det vore också mycket intressant att i uppföljningsstudier jämföra effekten av den transdiagnostiska interventionen med etablerade *treatment as usual*-behandlingar (exempelvis etablerad KBT-behandling vid social ångest, paniksyndrom eller depression). Det skulle ge möjlighet att säga något om eventuella för- och nackdelar med transdiagnostiska behandlingsmål.
+Det går också att vända på perspektivet och snäva av samplet helt medvetet: Det vore intressant att undersöka effekten av interventionen *Respekt i kvadrat* och det transdiagnostiska konstruktet \'konstruktiv självhävdelse\' i grupper tydligt definierade med etablerade diagnosverktyg. Det vore också mycket intressant att i uppföljningsstudier jämföra effekten av den transdiagnostiska interventionen med etablerade *treatment as usual*-behandlingar (exempelvis etablerad KBT-behandling vid social ångest, paniksyndrom eller depression). Det skulle ge möjlighet att säga något om eventuella för- och nackdelar med transdiagnostiska behandlingsmål.
+
+(Relatera till effektstyrkor för sekundära utfallsmått)
 
 \xstopnew
 
