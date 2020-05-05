@@ -403,8 +403,7 @@ r2.long.data <- data.frame(
  )
 )
 
-# Subsetting keys
-
+# Subsetting keys 
 lg1 <- grepl(xg1, r2.long.data$group)
 lg2 <- grepl(xg2, r2.long.data$group)
 lg3 <- grepl(xg3, r2.long.data$group)
@@ -618,8 +617,6 @@ Många som lever med psykopatologiska besvär under en längre tid kan uppleva d
 ## Frågeställningar
 
 Det vi primärt var intresserade av att ta reda på hur effekten av behandling (deltagande i grupperna `r xg1` och `r xg2` skiljer sig från gruppen `r xg3` med avseende på både konstruktiv självhävdelse fångad med AAA-S Adaptive och aggressiv självhävdelse fångad med AAA-S Aggressive. Vi var också intresserade av om det fanns någon skillnad (i endera riktning) i effekt mellan gruppen `r xg1` och gruppen `r xg2` med avseende på konstruktiv självhävdelse, det vill säga med utfallsmåttet AAA-S Adaptive.
-
-<!-- Slutligen vill vi också undersöka vilka prediktorer/moderatorer hos deltagarna (exempelvis grad av social ångest eller grad av depression) i behandlingsalternativen `r xg1` och `r xg2` som påverkar utfallet samt vilka mediatorer inom behandlingsalternativen (exempelvis tilldelning av terapeut) som påverkar utfallet.  -->
 
 # Metod
 
@@ -2202,7 +2199,7 @@ Genom en *a priori*-beräkning av samplestorleken har vi försäkrat oss om att 
 
 #### Uppföljande jämförelser för olika psykiska problem och etablerade behandlingar
 
-Det går också att vända på perspektivet och snäva av samplet helt medvetet i en uppföljningsstudie: Det vore intressant att undersöka effekten av interventionen *Respekt i kvadrat* och det transdiagnostiska konstruktet \'konstruktiv självhävdelse\' i grupper tydligt definierade med etablerade diagnosverktyg. En sådan uppföljningsstudie skulle kunna spetsa in sig på de mestadels syndromalt inriktade utfallsmått som har använts i de här studien, men också komplettera med andra mått, exempelvis för emotionellt undvikande, stress och kvalitet i nära relationer. 
+Det går också att vända på perspektivet och snäva av samplet helt medvetet i en uppföljningsstudie: Det vore intressant att undersöka effekten av interventionen *Respekt i kvadrat* och det transdiagnostiska konstruktet \'konstruktiv självhävdelse\' i grupper som är tydligt definierade med etablerade diagnosverktyg. En sådan uppföljningsstudie skulle kunna spetsa in sig på de syndromalt inriktade utfallsmått som har använts i de här studien och komplettera med andra mått, exempelvis för emotionellt undvikande, stress och kvalitet i nära relationer. 
 
 Vi konstaterar att effektstyrkorna mellan tidpunkterna förmätning och eftermätning för måtten för social ångest (LSAS-SR; ES = 0,6 i båda behandlingsgrupper), generaliserat ångestsyndrom (GAD-7; ES = 0,5 respektive 0,7 i självhjälps- och behandlarstödsgrupp) och allmänt mående (Välmåendeformuläret, ES = 0,7 i båda grupper) enligt Cohen's klassifikation kan betraktas som "stora", och effektstyrkorna för måttet för depression (PHQ-9; ES = 0,4 i båda grupper) som "måttliga". Det verkar alltså som att det transdiagnostiska konstruktet *assertiveness* är relevant för flera olika psykiatriska syndrom och tillstånd. Om resurserna vore obegränsade skulle det också vara intressant att i uppföljningsstudier jämföra effekten av den transdiagnostiska interventionen med etablerade *treatment as usual*-behandlingar (exempelvis etablerad KBT-behandling vid social ångest, paniksyndrom, depression och stressyndrom). Det skulle ge möjlighet att tydligare säga något om eventuella för- och nackdelar med användandet av det transdiagnostiska begreppet *konstruktiv självhävdelse* som mål för behandling.
 
