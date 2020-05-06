@@ -819,7 +819,7 @@ Utöver AAA-S användes även en svensk översättning av The Rathus Assertivene
 
 ## Interventionen Respekt i kvadrat
 
-Interventionen *Respekt i kvadrat* är utformad med självhjälpsmaterialet *Assert Yourself* [@michel2008] som grund. Materialet är framtaget av Center for Clinical Interventions (CCI) i delstaten Western Australia, Australien. 
+Interventionen *Respekt i kvadrat* är utformad med självhjälpsmaterialet *Assert Yourself* [@michel2008] som grund. Materialet är framtaget av Center for Clinical Interventions (CCI) i delstaten Western Australia, Australien. Materialet är översatt till svenska med tillstånd av rättighetsinnehavarna.
 
 I självhjälpsmaterialet får läsaren lära sig skillnaden mellan olika typer av självhävdelse (konstruktiv, aggressiv, passiv, passiv-aggressiv), och hitta egna skäl att hävda sig själv bättre och mer konstruktivt. Delar av materialet är inspirerat av och citerar självhjälpsböcker som @alberti1974your, @gambrill1975assertion, @ward2018assertiveness, @mckay2005self och @smith1975say.
 

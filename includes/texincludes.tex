@@ -1,6 +1,10 @@
 % Tweak paragraph and section heading vertical spacing
 \setlength{\parskip}{.5\baselineskip plus 0pt minus 0pt}
+\let\oldsection\section
+\let\oldsubsection\subsection
 \let\oldsubsubsection\subsubsection
+\renewcommand{\section}[1]{\oldsection{#1}\par\vspace{\parskip}}
+\renewcommand{\subsection}[1]{\oldsubsection{#1}\par\vspace{\parskip}}
 \renewcommand{\subsubsection}[1]{\oldsubsubsection{#1}\par\vspace{\parskip}}
 \renewcommand{\paragraph}[1]{\oldparagraph{#1}\par\vspace{\parskip}}
 \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\par\vspace{\parskip}}
