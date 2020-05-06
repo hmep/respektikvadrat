@@ -2003,15 +2003,15 @@ options(OutDec= ".")
 #   paste("ES ",aaas_ad.eff.by.time[8,1],"-",aaas_ad.eff.by.time[8,2],": ",format(round(aaas_ad.eff.by.time[8,4],2) * -1,decimal.mark=","),sep="")
 # )
 Name = c(
-  paste("ES ",format(round(aaas_ad.eff.by.group[2,4],2) * -1,decimal.mark=","),sep=""),
-  paste("ES ",format(round(aaas_ad.eff.by.group[5,4],2) * -1,decimal.mark=","),sep=""),
-  paste("ES ",format(round(aaas_ad.eff.by.group[8,4],2) * -1,decimal.mark=","),sep=""),
+  paste("ES ",format(round(aaas_ad.eff.by.group[2,4],1) * -1,decimal.mark=","),sep=""),
+  paste("ES ",format(round(aaas_ad.eff.by.group[5,4],1) * -1,decimal.mark=","),sep=""),
+  paste("ES ",format(round(aaas_ad.eff.by.group[8,4],1) * -1,decimal.mark=","),sep=""),
   NA,
-  paste("ES ",format(round(aaas_ad.eff.by.time[4,4],2) * -1,decimal.mark=","),sep=""),
-  paste("ES ",format(round(aaas_ad.eff.by.time[5,4],2) * -1,decimal.mark=","),sep=""),
+  paste("ES ",format(round(aaas_ad.eff.by.time[4,4],1) * -1,decimal.mark=","),sep=""),
+  paste("ES ",format(round(aaas_ad.eff.by.time[5,4],1) * -1,decimal.mark=","),sep=""),
   NA,
-  paste("ES ",format(round(aaas_ad.eff.by.time[7,4],2) * -1,decimal.mark=","),sep=""),
-  paste("ES ",format(round(aaas_ad.eff.by.time[8,4],2) * -1,decimal.mark=","),sep="")
+  paste("ES ",format(round(aaas_ad.eff.by.time[7,4],1) * -1,decimal.mark=","),sep=""),
+  paste("ES ",format(round(aaas_ad.eff.by.time[8,4],1) * -1,decimal.mark=","),sep="")
 )
 
 Nudge_x = c(0.25,0.2,0.35,0,-0.17,0.1,0,-0.21,0.1) * 1.2
@@ -2053,16 +2053,16 @@ options(OutDec= ".")
 # AAA-S Ag
 
 Name = c(
-  paste("ES ",format(round(aaas_ag.eff.by.group[2,4],2) * -1,decimal.mark=","),"",sep=""),
-  paste("ES ",format(round(aaas_ag.eff.by.group[5,4],2) * -1,decimal.mark=","),"",sep=""),
-  paste("ES ",format(round(aaas_ag.eff.by.group[8,4],2) * -1,decimal.mark=","),sep=""),
+  paste("ES ",format(round(aaas_ag.eff.by.group[2,4],1) * -1,decimal.mark=","),"",sep=""),
+  paste("ES ",format(round(aaas_ag.eff.by.group[5,4],1) * -1,decimal.mark=","),"",sep=""),
+  paste("ES ",format(round(aaas_ag.eff.by.group[8,4],1) * -1,decimal.mark=","),sep=""),
   NA,
-  paste("ES ",format(round(aaas_ag.eff.by.time[4,4],2) * -1,decimal.mark=","),sep=""),
-  paste("ES ",format(round(aaas_ag.eff.by.time[5,4],2) * -1,decimal.mark=","),sep=""),
+  paste("ES ",format(round(aaas_ag.eff.by.time[4,4],1) * -1,decimal.mark=","),sep=""),
+  paste("ES ",format(round(aaas_ag.eff.by.time[5,4],1) * -1,decimal.mark=","),sep=""),
   #NA,
   NA,
-  paste("ES ",format(round(aaas_ag.eff.by.time[7,4],2) * -1,decimal.mark=","),sep=""),
-  paste("ES ",format(round(aaas_ag.eff.by.time[8,4],2) * -1,decimal.mark=","),sep="")
+  paste("ES ",format(round(aaas_ag.eff.by.time[7,4],1) * -1,decimal.mark=","),sep=""),
+  paste("ES ",format(round(aaas_ag.eff.by.time[8,4],1) * -1,decimal.mark=","),sep="")
 )
 Nudge_x = c(0.25,0.22,0.35,0,-0.17,0.075,0,-0.21,0.1) * 1.2
 Nudge_y = c(-0.2,0.65,-0.05,0,-0.9,-1.1,0,-1.3,-1.4) * 2
