@@ -1,27 +1,36 @@
+% Tweak paragraph and section heading vertical spacing
+\setlength{\parskip}{.5\baselineskip plus 0pt minus 0pt}
+\let\oldsubsubsection\subsubsection
+\renewcommand{\subsubsection}[1]{\oldsubsubsection{#1}\par\vspace{\parskip}}
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\par\vspace{\parskip}}
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\par\vspace{\parskip}}
+
+% Make fonts look uniform
 \setmainfont[BoldFont={texgyretermes-bold.otf},ItalicFont={texgyretermes-italic.otf},BoldItalicFont={texgyretermes-bolditalic.otf}]{texgyretermes-regular.otf}
 \usepackage{unicode-math}
 \setmathfont{texgyretermes-math.otf}
+
+% Tweak caption vertical spacing
 \clearcaptionsetup{figure}
 \clearcaptionsetup{table}
 \setlength{\abovecaptionskip}{.5\baselineskip}
 \setlength{\belowcaptionskip}{.5\baselineskip}
+
+% Allow tweaking of hyphenation points
 \usepackage{hyphenat}
-\hyphenation{nor-mal-spann nor-mal-span-net}
+
+% Table stuff
 \usepackage{tabu}
 \usepackage{rotating}
+
+% Tweak the formatting of citations
 \PassOptionsToPackage{style=apa,uniquename=false}{biblatex}
+
+% Sensible defaults for good-looking typography
 \widowpenalty10000
 \clubpenalty10000
 \raggedbottom
-\setlength{\parskip}{0pt plus 0pt minus 0pt}
+
+% Misc 
 \newcommand\xstartnew{\color{red}}
 \newcommand\xstopnew{\color{black}}
-
-% \usepackage{float}
-% \let\origfigure\figure
-% \let\endorigfigure\endfigure
-% \renewenvironment{figure}[1][2] {
-%     \expandafter\origfigure\expandafter[H]
-% } {
-%     \endorigfigure
-% }
