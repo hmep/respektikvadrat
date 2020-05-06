@@ -1991,19 +1991,31 @@ options(OutDec= ".")
 
 # AAA-S Ad
 
+# Name = c(
+#   paste("ES ",aaas_ad.eff.by.group[2,1],"-",aaas_ad.eff.by.group[2,2],": ",format(round(aaas_ad.eff.by.group[2,4],2) * -1,decimal.mark=","),sep=""),
+#   paste("ES ",aaas_ad.eff.by.group[5,1],"-",aaas_ad.eff.by.group[5,2],": ",format(round(aaas_ad.eff.by.group[5,4],2) * -1,decimal.mark=","),sep=""),
+#   paste("ES ",aaas_ad.eff.by.group[8,1],"-",aaas_ad.eff.by.group[8,2],": ",format(round(aaas_ad.eff.by.group[8,4],2) * -1,decimal.mark=","),sep=""),
+#   NA,
+#   paste("ES ",aaas_ad.eff.by.time[4,1],"-",aaas_ad.eff.by.time[4,2],": ",format(round(aaas_ad.eff.by.time[4,4],2) * -1,decimal.mark=","),sep=""),
+#   paste("ES ",aaas_ad.eff.by.time[5,1],"-",aaas_ad.eff.by.time[5,2],": ",format(round(aaas_ad.eff.by.time[5,4],2) * -1,decimal.mark=","),sep=""),
+#   NA,
+#   paste("ES ",aaas_ad.eff.by.time[7,1],"-",aaas_ad.eff.by.time[7,2],": ",format(round(aaas_ad.eff.by.time[7,4],2) * -1,decimal.mark=","),sep=""),
+#   paste("ES ",aaas_ad.eff.by.time[8,1],"-",aaas_ad.eff.by.time[8,2],": ",format(round(aaas_ad.eff.by.time[8,4],2) * -1,decimal.mark=","),sep="")
+# )
 Name = c(
-  paste("ES ",aaas_ad.eff.by.group[2,1],"-",aaas_ad.eff.by.group[2,2],": ",format(round(aaas_ad.eff.by.group[2,4],2) * -1,decimal.mark=","),sep=""),
-  paste("ES ",aaas_ad.eff.by.group[5,1],"-",aaas_ad.eff.by.group[5,2],": ",format(round(aaas_ad.eff.by.group[5,4],2) * -1,decimal.mark=","),sep=""),
-  paste("ES ",aaas_ad.eff.by.group[8,1],"-",aaas_ad.eff.by.group[8,2],": ",format(round(aaas_ad.eff.by.group[8,4],2) * -1,decimal.mark=","),sep=""),
+  paste("ES ",format(round(aaas_ad.eff.by.group[2,4],2) * -1,decimal.mark=","),sep=""),
+  paste("ES ",format(round(aaas_ad.eff.by.group[5,4],2) * -1,decimal.mark=","),sep=""),
+  paste("ES ",format(round(aaas_ad.eff.by.group[8,4],2) * -1,decimal.mark=","),sep=""),
   NA,
-  paste("ES ",aaas_ad.eff.by.time[4,1],"-",aaas_ad.eff.by.time[4,2],": ",format(round(aaas_ad.eff.by.time[4,4],2) * -1,decimal.mark=","),sep=""),
-  paste("ES ",aaas_ad.eff.by.time[5,1],"-",aaas_ad.eff.by.time[5,2],": ",format(round(aaas_ad.eff.by.time[5,4],2) * -1,decimal.mark=","),sep=""),
+  paste("ES ",format(round(aaas_ad.eff.by.time[4,4],2) * -1,decimal.mark=","),sep=""),
+  paste("ES ",format(round(aaas_ad.eff.by.time[5,4],2) * -1,decimal.mark=","),sep=""),
   NA,
-  paste("ES ",aaas_ad.eff.by.time[7,1],"-",aaas_ad.eff.by.time[7,2],": ",format(round(aaas_ad.eff.by.time[7,4],2) * -1,decimal.mark=","),sep=""),
-  paste("ES ",aaas_ad.eff.by.time[8,1],"-",aaas_ad.eff.by.time[8,2],": ",format(round(aaas_ad.eff.by.time[8,4],2) * -1,decimal.mark=","),sep="")
+  paste("ES ",format(round(aaas_ad.eff.by.time[7,4],2) * -1,decimal.mark=","),sep=""),
+  paste("ES ",format(round(aaas_ad.eff.by.time[8,4],2) * -1,decimal.mark=","),sep="")
 )
-Nudge_x = c(0.05,0.15,0.25,0,0,0,0,-0.1,-0.1) * 1.2
-Nudge_y = c(-0.55,-0.55,0.55,0,0.55,-0.55,0,0.55,-0.55) * 2
+
+Nudge_x = c(0.25,0.2,0.35,0,-0.17,0.1,0,-0.21,0.1) * 1.2
+Nudge_y = c(-0.13,1.75,0.3,0,-1.45,-2.4,0,-2.1,-2.6) * 2
 
 aaas_ad.emm.plot <- 
   plot(ggemmeans(aaas_ad.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = "M", colour = "Grupp:", title = element_blank()) + theme(legend.position = "bottom")
@@ -2018,7 +2030,7 @@ ad1 <- aaas_ad.emm.plot +
   geom_curve(aes(x = 1, y = aaas_ad.emm.plot$data[2]$predicted[2], xend = 3, yend = aaas_ad.emm.plot$data[2]$predicted[8]), color = "#999999", size = 0.25, linetype = "dotted", curvature = -0.4) + 
   geom_curve(aes(x = 1.1, y = aaas_ad.emm.plot$data[2]$predicted[3], xend = 3.1, yend = aaas_ad.emm.plot$data[2]$predicted[9]), color = "#999999", size = 0.25, linetype = "dotted", curvature = 0.12) + 
   geom_curve(aes(x = 0.9, y = aaas_ad.emm.plot$data[2]$predicted[1], xend = 2.9, yend = aaas_ad.emm.plot$data[2]$predicted[7]), color = "#999999", size = 0.25, linetype = "dotted", curvature = 0.16) + 
-  geom_label(aes(label=Name),color="white", fill="#999999", nudge_x = Nudge_x, nudge_y = Nudge_y,size=2.5,na.rm=TRUE)
+  geom_label(aes(label=Name),color="black", fill="white", nudge_x = Nudge_x, nudge_y = Nudge_y,size=2.5,na.rm=TRUE)
 
 ad1
 
@@ -2041,19 +2053,19 @@ options(OutDec= ".")
 # AAA-S Ag
 
 Name = c(
-  paste("ES ",aaas_ag.eff.by.group[2,1],"-",aaas_ag.eff.by.group[2,2],": ",format(round(aaas_ag.eff.by.group[2,4],2) * -1,decimal.mark=","),"",sep=""),
-  paste("ES ",aaas_ag.eff.by.group[5,1],"-",aaas_ag.eff.by.group[5,2],": ",format(round(aaas_ag.eff.by.group[5,4],2) * -1,decimal.mark=","),"",sep=""),
-  paste("ES ",aaas_ag.eff.by.group[8,1],"-",aaas_ag.eff.by.group[8,2],": ",format(round(aaas_ag.eff.by.group[8,4],2) * -1,decimal.mark=","),sep=""),
+  paste("ES ",format(round(aaas_ag.eff.by.group[2,4],2) * -1,decimal.mark=","),"",sep=""),
+  paste("ES ",format(round(aaas_ag.eff.by.group[5,4],2) * -1,decimal.mark=","),"",sep=""),
+  paste("ES ",format(round(aaas_ag.eff.by.group[8,4],2) * -1,decimal.mark=","),sep=""),
   NA,
-  paste("ES ",aaas_ag.eff.by.time[4,1],"-",aaas_ag.eff.by.time[4,2],": ",format(round(aaas_ag.eff.by.time[4,4],2) * -1,decimal.mark=","),sep=""),
-  paste("ES ",aaas_ag.eff.by.time[5,1],"-",aaas_ag.eff.by.time[5,2],": ",format(round(aaas_ag.eff.by.time[5,4],2) * -1,decimal.mark=","),sep=""),
+  paste("ES ",format(round(aaas_ag.eff.by.time[4,4],2) * -1,decimal.mark=","),sep=""),
+  paste("ES ",format(round(aaas_ag.eff.by.time[5,4],2) * -1,decimal.mark=","),sep=""),
   #NA,
   NA,
-  paste("ES ",aaas_ag.eff.by.time[7,1],"-",aaas_ag.eff.by.time[7,2],": ",format(round(aaas_ag.eff.by.time[7,4],2) * -1,decimal.mark=","),sep=""),
-  paste("ES ",aaas_ag.eff.by.time[8,1],"-",aaas_ag.eff.by.time[8,2],": ",format(round(aaas_ag.eff.by.time[8,4],2) * -1,decimal.mark=","),sep="")
+  paste("ES ",format(round(aaas_ag.eff.by.time[7,4],2) * -1,decimal.mark=","),sep=""),
+  paste("ES ",format(round(aaas_ag.eff.by.time[8,4],2) * -1,decimal.mark=","),sep="")
 )
-Nudge_x = c(0.05,0.15,0.25,0,0,0,0,-0.1,-0.1) * 1.2
-Nudge_y = c(-0.55,-0.55,0.55,0,0.55,-0.55,0,0.55,-0.55) * 1.2
+Nudge_x = c(0.25,0.22,0.35,0,-0.17,0.075,0,-0.21,0.1) * 1.2
+Nudge_y = c(-0.2,0.65,-0.05,0,-0.9,-1.1,0,-1.3,-1.4) * 2
 
 aaas_ag.emm.plot <- 
   plot(ggemmeans(aaas_ag.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = "M", colour = "Grupp:", title = element_blank()) + theme(legend.position = "bottom")
@@ -2068,7 +2080,7 @@ ag1 <- aaas_ag.emm.plot +
   geom_curve(aes(x = 1, y = aaas_ag.emm.plot$data[2]$predicted[2], xend = 3, yend = aaas_ag.emm.plot$data[2]$predicted[8]), color = "#999999", size = 0.25, linetype = "dotted", curvature = -0.25) + 
   geom_curve(aes(x = 1.1, y = aaas_ag.emm.plot$data[2]$predicted[3], xend = 3.1, yend = aaas_ag.emm.plot$data[2]$predicted[9]), color = "#999999", size = 0.25, linetype = "dotted", curvature = 0.2) + 
   geom_curve(aes(x = 0.9, y = aaas_ag.emm.plot$data[2]$predicted[1], xend = 2.9, yend = aaas_ag.emm.plot$data[2]$predicted[7]), color = "#999999", size = 0.25, linetype = "dotted", curvature = 0.18) + 
-  geom_label(aes(label=Name),color="white", fill="#999999", nudge_x = Nudge_x, nudge_y = Nudge_y,size=2.5,na.rm=TRUE)
+  geom_label(aes(label=Name),color="black", fill="white", nudge_x = Nudge_x, nudge_y = Nudge_y,size=2.5,na.rm=TRUE)
 
 ag1
 
