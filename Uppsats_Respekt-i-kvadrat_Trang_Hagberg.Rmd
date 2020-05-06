@@ -2197,7 +2197,7 @@ Vi konstaterar att effektstyrkorna mellan tidpunkterna förmätning och eftermä
 
 #### Resultatens ekologiska validitet
 
-En uppenbar fördel med studier av internetbaserade interventioner är att de till sin utformning mycket lite skiljer sig från rutinmässig administration i kliniska sammanhang. Om man till det lägger att det torde vara en nackdel för behandlingsutfallet att behandlarna i den aktuella studien var oerfarna, måste slutsatsen bli att den ekologiska validiteten för denna *efficacy*-studie trots allt kan antas vara hög. Materialet borde med med en målgrupp som liknar det sample som använts i den här studien kunna ge snarlika effektstorlekar, oavsett om det ges i replikeringsstudier eller som en integrerad del av klinisk rutinverksamhet.
+En uppenbar fördel med studier av internetbaserade interventioner är att de till sin utformning mycket lite skiljer sig från rutinmässig administration av internetterapi i kliniska sammanhang. Om man till det lägger att det torde vara en nackdel för behandlingsutfallet att behandlarna i den aktuella studien var oerfarna, måste slutsatsen bli att den ekologiska validiteten för denna *efficacy*-studie trots allt kan antas vara hög. Materialet borde med med en målgrupp som liknar det sample som använts i den här studien, och med terapeuter med liknande kompetens som i den här studien, ge snarlika effektstorlekar, både i forskningsstudier och som en integrerad del av klinisk rutinverksamhet.
 
 \xstopnew
 
