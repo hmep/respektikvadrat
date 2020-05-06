@@ -3,7 +3,7 @@
 \let\oldsection\section
 \let\oldsubsection\subsection
 \let\oldsubsubsection\subsubsection
-\renewcommand{\section}[1]{\oldsection{#1}\par\vspace{\parskip}}
+\renewcommand{\section}[1]{\par\vspace{\baselineskip}\oldsection{#1}\par\vspace{\parskip}}
 \renewcommand{\subsection}[1]{\oldsubsection{#1}\par\vspace{\parskip}}
 \renewcommand{\subsubsection}[1]{\oldsubsubsection{#1}\par\vspace{\parskip}}
 \renewcommand{\paragraph}[1]{\oldparagraph{#1}\par\vspace{\parskip}}
