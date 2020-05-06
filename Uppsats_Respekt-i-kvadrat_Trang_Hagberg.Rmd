@@ -620,7 +620,7 @@ Många som lever med psykopatologiska besvär under en längre tid kan uppleva d
 
 ## Frågeställningar
 
-Det vi primärt var intresserade av att ta reda på hur effekten av behandling (deltagande i grupperna `r xg1` och `r xg2` skiljer sig från gruppen `r xg3` med avseende på både konstruktiv självhävdelse fångad med AAA-S Adaptive och aggressiv självhävdelse fångad med AAA-S Aggressive. Vi var också intresserade av om det fanns någon skillnad (i endera riktning) i effekt mellan gruppen `r xg1` och gruppen `r xg2` med avseende på konstruktiv självhävdelse, det vill säga med utfallsmåttet AAA-S Adaptive.
+Det vi primärt var intresserade av att ta reda på hur effekten av behandling (deltagande i grupperna `r xg1` och `r xg2` skiljer sig från gruppen `r xg3` med avseende på både konstruktiv självhävdelse fångad med AAA\-S Adaptive och aggressiv självhävdelse fångad med AAA-S Aggressive. Vi var också intresserade av om det fanns någon skillnad (i endera riktning) i effekt mellan gruppen `r xg1` och gruppen `r xg2` med avseende på konstruktiv självhävdelse, det vill säga med utfallsmåttet AAA-S Adaptive.
 
 # Metod
 
