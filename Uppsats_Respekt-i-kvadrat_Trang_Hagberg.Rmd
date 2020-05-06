@@ -36,7 +36,7 @@ output:
       in_header   : "includes/texincludes.tex"
 lang              : sv-SE
 include-header    : 
-  - \hyphenation{nor-mal-spann nor-mal-span-net Tech-no-lo-gy}
+  - \hyphenation{nor-mal-spann nor-mal-span-net Tech-no-lo-gy {AAA-S}}
 ---
 
 ```{r preferences, include = F, cache = F}
