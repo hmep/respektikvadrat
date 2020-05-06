@@ -576,7 +576,7 @@ Självhjälpsmaterial förmedlat via I-KBT har dock visat sig populärt och effe
 
 ## Teoretiska utgångspunkter för behandlingsprogrammet
 
-Ambitionen med den här studien är dels att belysa forskningsläget för konstruktiv självhävdelse och att beskriva några empiriskt underbyggda förhållningssätt och behandlingsupplägg som är verksamma i klinisk psykologi i allmänhet och som också kan förmodas vara det för träning i konstruktiv självhävdelse, dels att beskriva och utvärdera I-KBT-behandlingsprogramet *Respekt i kvadrat*. Programmet bygger på en engelskpråkig förlaga [*Assert Yourself*, @michel2008] och har anpassats och utökats för administration via internet. Det här avslutande bakgrundsavsnittet går översiktligt genom teoretiska utgångspunkter som har väglett utformningen av *Respekt i kvadrat*. Innehållet i behandlingsprogrammet beskrivs i mer detalj under metoddelen.
+Ambitionen med den här studien är dels att belysa forskningsläget för konstruktiv självhävdelse och att beskriva några empiriskt underbyggda förhållningssätt och behandlingsupplägg som är verksamma i klinisk psykologi i allmänhet och som också kan förmodas vara det för träning i konstruktiv självhävdelse, dels att beskriva och utvärdera I-KBT-behandlingsprogramet *Respekt i kvadrat*. Programmet bygger på en engelskpråkig förlaga [*Assert Yourself*, @michel2008] och har anpassats och utökats för administration via internet. Det här avslutande bakgrundsavsnittet går översiktligt genom teoretiska utgångspunkter för utformningen av *Respekt i kvadrat*. Innehållet i behandlingsprogrammet beskrivs i mer detalj under metoddelen.
 
 ### Fokus på precisering av hindrande förutsägelser
 
