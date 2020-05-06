@@ -39,8 +39,6 @@ include-header    :
   - \hyphenation{nor-mal-spann nor-mal-span-net}
 ---
 
-clean: ["my-book.bbl", "R-packages.bib"]
-
 ```{r preferences, include = F, cache = F}
 
 set.seed(42) # Seed for random number generation
