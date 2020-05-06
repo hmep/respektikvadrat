@@ -2222,12 +2222,14 @@ Föreliggande studie ville undersöka effekten på konstruktivt självhävande a
 
 \newpage
 
+<!-- # Referenser -->
+
 ```{r create_r-references}
 r_refs(file = "r-references.bib")
-
 ```
 
 \begingroup
+\raggedright
 
 \setlength{\parindent}{-0.5in}
 \setlength{\leftskip}{0.5in}
