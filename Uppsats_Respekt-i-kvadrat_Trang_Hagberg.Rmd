@@ -16,7 +16,7 @@ authornote: |
 keywords: |
   `r readLines('includes/keywords.txt', encoding = 'UTF-8')`
 wordcount         : "10707"
-bibliography      : ["r-references.bib", "library.bib"] 
+bibliography      : ["inludes/r-references.bib", "library.bib"] 
 floatsintext      : no
 figurelist        : no
 tablelist         : no
@@ -2231,7 +2231,7 @@ Föreliggande studie ville undersöka effekten på konstruktivt självhävande a
 
 \newpage
 
-```{r create_r-references}
+```{r create_r-references, eval = F}
 r_refs(file = "r-references.bib")
 ```
 
