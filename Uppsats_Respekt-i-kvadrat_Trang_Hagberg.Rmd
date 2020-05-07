@@ -2024,8 +2024,8 @@ aaas_ad.emm.plot <- plot(ggemmeans(aaas_ad.lmer, terms = c("time", "group")), co
   scale_shape_manual(values = c(0,1,2)) +
   scale_color_ordinal()
 
-aaas_ad.emm.plot.X <- 
-  plot(ggemmeans(aaas_ad.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = "M", colour = "Grupp:", title = element_blank()) + theme(legend.position = "bottom")
+# aaas_ad.emm.plot.X <- 
+#   plot(ggemmeans(aaas_ad.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = "M", colour = "Grupp:", title = element_blank()) + theme(legend.position = "bottom")
 
 #,arrow = arrow(length = unit(0.05, "npc"))
 ad1 <- aaas_ad.emm.plot + 
@@ -2074,26 +2074,14 @@ Name = c(
 Nudge_x = c(0.25,0.22,0.35,0,-0.17,0.075,0,-0.21,0.1) * 1.2
 Nudge_y = c(-0.2,0.65,-0.05,0,-0.9,-1.1,0,-1.3,-1.4) * 2
 
-set_theme(
-  geom.outline.color = "antiquewhite4", 
-  geom.outline.size = 1, 
-  geom.label.size = 2,
-  geom.label.color = "grey50",
-  title.color = "red", 
-  title.size = 1.5, 
-  axis.angle.x = 45, 
-  axis.textcolor = "blue", 
-  base = theme_bw()
-)
-
 # (aaas_ag.bw <- plot(ggemmeans(aaas_ag.lmer, terms = c("time", "group")), connect.lines = TRUE, colors = "bw") + labs(x = "Tid", y = "Estimerat medelvärde", shape = "Grupp", title = element_blank()) + theme(legend.position = "bottom") + scale_linetype_manual(values = 1:3))
 
 aaas_ag.emm.plot <- plot(ggemmeans(aaas_ag.lmer, terms = c("time", "group")), connect.lines = TRUE, colors = "bw", line.size=0.4) + labs(x = "Tid", y = "Estimerat medelvärde", shape = "Grupp", title = element_blank()) + theme(legend.position = "bottom") + 
   scale_shape_manual(values = c(0,1,2)) +
   scale_color_ordinal()
 
-aaas_ag.emm.plotX <- 
-  plot(ggemmeans(aaas_ag.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = "M", colour = "Grupp:", title = element_blank()) + theme(legend.position = "bottom")
+# aaas_ag.emm.plotX <- 
+#   plot(ggemmeans(aaas_ag.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = "M", colour = "Grupp:", title = element_blank()) + theme(legend.position = "bottom")
 
 ag1 <- aaas_ag.emm.plot + 
   geom_curve(aes(x = 2.9, y = aaas_ag.emm.plot$data[2]$predicted[7], xend = 3.1, yend = aaas_ag.emm.plot$data[2]$predicted[9]), color = "#999999", size = 0.25, linetype = "dotted", curvature = 0.4) +
