@@ -6,5 +6,3 @@ Open data for "Respekt i kvadrat", a randomised controlled trial of an internet 
 This bundle contains
 - Rmd source files
 - anonymised data files
-
-Work on this project is currently in progress, with figshare tracking development on Github.
