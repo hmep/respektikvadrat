@@ -1,5 +1,5 @@
 # respektikvadrat
-Respekt i kvadrat: en randomiserad kontrollerad effektstudie av internetförmedlad kognitiv beteendeterapi på graden av konstruktiv självhävdelse
+Respekt i kvadrat: En randomiserad kontrollerad effektstudie av kognitiv beteendeterapi för konstruktiv självhävdels
 
 Open data for "Respekt i kvadrat", a randomised controlled trial of an internet delivered cognitive-behavioural therapy intervention for adaptive assertiveness by Tobias Hagberg and Patrik Trång, under supervision of Prof. Per Carlbring.
 
