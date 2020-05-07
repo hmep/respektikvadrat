@@ -2020,7 +2020,11 @@ Name = c(
 Nudge_x = c(0.25,0.2,0.35,0,-0.17,0.1,0,-0.21,0.1) * 1.2
 Nudge_y = c(-0.15,1.75,0.3,0,-1.45,-2.4,0,-2.1,-2.6) * 2
 
-aaas_ad.emm.plot <- 
+aaas_ad.emm.plot <- plot(ggemmeans(aaas_ad.lmer, terms = c("time", "group")), connect.lines = TRUE, colors = "bw", line.size=0.4) + labs(x = "Tid", y = "Estimerat medelvärde", shape = "Grupp", title = element_blank()) + theme(legend.position = "bottom") + 
+  scale_shape_manual(values = c(0,1,2)) +
+  scale_color_ordinal()
+
+aaas_ad.emm.plot.X <- 
   plot(ggemmeans(aaas_ad.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = "M", colour = "Grupp:", title = element_blank()) + theme(legend.position = "bottom")
 
 #,arrow = arrow(length = unit(0.05, "npc"))
@@ -2070,10 +2074,27 @@ Name = c(
 Nudge_x = c(0.25,0.22,0.35,0,-0.17,0.075,0,-0.21,0.1) * 1.2
 Nudge_y = c(-0.2,0.65,-0.05,0,-0.9,-1.1,0,-1.3,-1.4) * 2
 
-aaas_ag.emm.plot <- 
+set_theme(
+  geom.outline.color = "antiquewhite4", 
+  geom.outline.size = 1, 
+  geom.label.size = 2,
+  geom.label.color = "grey50",
+  title.color = "red", 
+  title.size = 1.5, 
+  axis.angle.x = 45, 
+  axis.textcolor = "blue", 
+  base = theme_bw()
+)
+
+# (aaas_ag.bw <- plot(ggemmeans(aaas_ag.lmer, terms = c("time", "group")), connect.lines = TRUE, colors = "bw") + labs(x = "Tid", y = "Estimerat medelvärde", shape = "Grupp", title = element_blank()) + theme(legend.position = "bottom") + scale_linetype_manual(values = 1:3))
+
+aaas_ag.emm.plot <- plot(ggemmeans(aaas_ag.lmer, terms = c("time", "group")), connect.lines = TRUE, colors = "bw", line.size=0.4) + labs(x = "Tid", y = "Estimerat medelvärde", shape = "Grupp", title = element_blank()) + theme(legend.position = "bottom") + 
+  scale_shape_manual(values = c(0,1,2)) +
+  scale_color_ordinal()
+
+aaas_ag.emm.plotX <- 
   plot(ggemmeans(aaas_ag.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = "M", colour = "Grupp:", title = element_blank()) + theme(legend.position = "bottom")
 
-#,arrow = arrow(length = unit(0.05, "npc"))
 ag1 <- aaas_ag.emm.plot + 
   geom_curve(aes(x = 2.9, y = aaas_ag.emm.plot$data[2]$predicted[7], xend = 3.1, yend = aaas_ag.emm.plot$data[2]$predicted[9]), color = "#999999", size = 0.25, linetype = "dotted", curvature = 0.4) +
   geom_curve(aes(x = 2.9, y = aaas_ag.emm.plot$data[2]$predicted[7], xend = 3, yend = aaas_ag.emm.plot$data[2]$predicted[8]), color = "#999999", size = 0.25, linetype = "dotted", curvature = -0.4) +
@@ -2222,17 +2243,16 @@ Föreliggande studie ville undersöka effekten på konstruktivt självhävande a
 
 \newpage
 
-<!-- # Referenser -->
-
 ```{r create_r-references}
 r_refs(file = "r-references.bib")
 ```
 
 \begingroup
-\raggedright
+\RaggedRight
 
 \setlength{\parindent}{-0.5in}
 \setlength{\leftskip}{0.5in}
 
 <div id="refs" custom-style="Bibliography"></div>
+
 \endgroup
