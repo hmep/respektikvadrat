@@ -15,7 +15,7 @@ authornote: |
   `r readLines('includes/authornote.txt', encoding = 'UTF-8')`
 keywords: | 
   `r readLines('includes/keywords.txt', encoding = 'UTF-8')`
-#wordcount         : "11036"
+#wordcount         : "11055"
 bibliography      : ["includes/r-references.bib", "includes/library.bib"] 
 floatsintext      : no
 figurelist        : no
@@ -103,7 +103,8 @@ xT3 = "Efter"
 
 # https://blog.apastyle.org/apastyle/2011/08/the-grammar-of-mathematics-writing-about-variables.html
 
-xresult <- function(x,d){formatC(x,digits=d,decimal.mark=",",drop0trailing = F,format="f")}
+xresult <- function(x,d){paste("$",formatC(x,digits=d,decimal.mark=",",drop0trailing = F,format="f"),"$",sep="")}
+xresultT <- function(x,d){formatC(x,digits=d,decimal.mark=",",drop0trailing = F,format="f")}
 
 xpr <- function(x) {
   paste("$p$",
@@ -490,6 +491,9 @@ r.Rathus = 0.87 # s 326 @Thompson2011
 sd.Rathus.norm = 23.9 # s 326 @Thompson2011
 mean.Rathus.norm = 6.2 # s 326 @Thompson2011
 ref.Rathus = "icke-kliniskt sample (student-sample 1) från @Thompson2011"
+
+### Välmåendeskalan
+r.Well = 0.93
 
 ```
 
@@ -907,7 +911,7 @@ Studien förregistrerades på https://clinicaltrials.gov/ct2/show/NCT04240249.
 
 Deltagarna blev via studiens hemsida informerade om att allt deltagande var frivilligt och att de kunde avbryta sitt deltagande när som helst. De kunde ta del av syftet med studien och studiens övergripande plan. Information fanns om att all information samlades in under sekretess och i enlighet med personuppgiftslagen samt GDPR. Deltagandet var helt anonymt och all insamlad data var kopplad till den anonyma studiekod som genererades för varje deltagare. Vid intresseanmälan till studien lämnade deltagarna informerat samtycke till sitt deltagande. Vid exkludering från studien under rekryteringsfasen informerades deltagaren om anledningen samt fick rekommendationer (t ex om vart hen kunde vända sig för att söka vård). Vid tecken på svår depression rekommenderades deltagarna att uppsöka psykiatrisk vård. Under hela studiens gång hade deltagarna möjlighet att kontakta studieansvarig per telefon samt e-post.
 
-\xstartnew R-syntax för utförda test och analyser, anonymiserad öppen data samt källkoden till manuskriptet har gjorts tillgängliga via öppen källa i enlighet med rekommendationerna för största möjliga grad av transparens och replikerbarhet i @Asendorpf2013.\xstopnew Materialet finns deponerat hos Figshare på https://doi.org/10.17045/sthlmuni.12148785 [@R2data2020] (OBS! Deponering sker EFTER inlämning av godkänd uppsats. Materialet finns också tillgängligt på https://github.com/hmep/respektikvadrat).
+\xstartnew R-syntax för utförda test och analyser, anonymiserad öppen data samt källkoden till manuskriptet har gjorts tillgängliga via öppen källa i enlighet med rekommendationerna för största möjliga grad av transparens och replikerbarhet i @Asendorpf2013. \xstopnew Materialet finns deponerat hos Figshare på https://doi.org/10.17045/sthlmuni.12148785 [@R2data2020] (OBS! Deponering sker EFTER inlämning av godkänd uppsats. Materialet finns också tillgängligt på https://github.com/hmep/respektikvadrat).
 
 ## Analyser
 
@@ -955,7 +959,7 @@ För att bedöma den interna reliabiliteten för i första hand de till svenska 
 
 Se tabell \@ref(tab:alpha) för en sammanställning av ...
 
-(ref:alp) Chronbach's $\alpha$ för de primär och sekundära utfallsmåtten, funna med det undersökta samplet.
+(ref:alp) Chronbach's $\alpha$ för de primära och sekundära utfallsmåtten, funna med det undersökta samplet.
 
 ```{r alpha, eval = T}
 
@@ -992,40 +996,46 @@ well.alpha <- cronbach.alpha(r2.item.data[,126:143], standardized = F, CI = T,
 
 alpha.table <- rbind.data.frame(
   "Rathus" = cbind(
-    xresult(rathus.alpha$alpha,2), 
-    xresult(rathus.alpha$ci[1],2), 
-    xresult(rathus.alpha$ci[2],2)
+    xresultT(r.Rathus,2),
+    xresultT(rathus.alpha$alpha,2), 
+    xresultT(rathus.alpha$ci[1],2), 
+    xresultT(rathus.alpha$ci[2],2)
   ),
   "AAA-S Adaptive" = cbind(
-    xresult(aaas_ad.alpha$alpha,2), 
-    xresult(aaas_ad.alpha$ci[1],2), 
-    xresult(aaas_ad.alpha$ci[2],2)
+    xresultT(r.AAAS_ad,2),
+    xresultT(aaas_ad.alpha$alpha,2), 
+    xresultT(aaas_ad.alpha$ci[1],2), 
+    xresultT(aaas_ad.alpha$ci[2],2)
   ),
   "AAA-S Aggressive" = cbind(
-    xresult(aaas_ag.alpha$alpha,2),
-    xresult(aaas_ag.alpha$ci[1],2),
-    xresult(aaas_ag.alpha$ci[2],2)
+    xresultT(r.AAAS_ag,2),
+    xresultT(aaas_ag.alpha$alpha,2),
+    xresultT(aaas_ag.alpha$ci[1],2),
+    xresultT(aaas_ag.alpha$ci[2],2)
   ),
   "GAD-7" = cbind(
-    xresult(gad.alpha$alpha,2),
-    xresult(gad.alpha$ci[1],2),
-    xresult(gad.alpha$ci[2],2)
+    xresultT(r.GAD7,2),
+    xresultT(gad.alpha$alpha,2),
+    xresultT(gad.alpha$ci[1],2),
+    xresultT(gad.alpha$ci[2],2)
   ),
   "PHQ-9" = cbind(
-    xresult(phq.alpha$alpha,2),
-    xresult(phq.alpha$ci[1],2),
-    xresult(phq.alpha$ci[2],2)
+    xresultT(r.PHQ9,2),
+    xresultT(phq.alpha$alpha,2),
+    xresultT(phq.alpha$ci[1],2),
+    xresultT(phq.alpha$ci[2],2)
   ),
   "Välmåendeformuläret" = cbind(
+    xresult(r.Well,2),
     xresult(well.alpha$alpha,2),
     xresult(well.alpha$ci[1],2),
     xresult(well.alpha$ci[2],2)
   )
 )
 
-colnames(alpha.table) <- c("Alpha", "lower", "upper")
+colnames(alpha.table) <- c("Norm","Sample", "lower", "upper")
 
-svkable(alpha.table, caption='(ref:alp)')
+svkable(alpha.table, caption='(ref:alp)', escape=F)
 
 ```
 
@@ -1757,7 +1767,7 @@ rathus.pre.post.sigsig.posthoc <- dunnTest(ifelse(rathus.pre.post.jt.plot$data$c
 
 ## Reliabel förändring och klinisk signifikans
 
-Vi fann signifikanta skillnader i både klinisk signifikans-status och reliabel förbättring mellan grupperna på huvudutfallsmåttet AAAS Adaptive, $\chi^2_{`r xresult(aaas_ad.pre.post.sigsig[["parameter"]],0)`}$ = `r xresult(aaas_ad.pre.post.sigsig$statistic,1)`, `r xpr(aaas_ad.pre.post.sigsig[["p.value"]])`. Med post-hoc test för parvisa jämförelser fann vi en signifikant förbättring hos behandlarstöds- och självhjälpsgruppen jämfört med väntelista (*z* = `r xresult(aaas_ad.pre.post.sigsig.posthoc$res[2,2],1)`, `r xpr(aaas_ad.pre.post.sigsig.posthoc$res[2,4])` för behandlarstödsgruppen och *z* = `r xresult(aaas_ad.pre.post.sigsig.posthoc$res[3,2],1)`, `r xpr(aaas_ad.pre.post.sigsig.posthoc$res[3,4])` för självhjälpsgruppen). Att ha tillgång till behandlingsmaterialet gav i större utsträckning kliniskt signifikant och reliabel förbättring jämfört med att vara placerad på väntelista. Se tabell \@ref(tab:jtprocent) för en sammanställning av kliniskt signifikanta och reliabla förändringarna inom de olika grupperna.
+Vi fann signifikanta skillnader i både klinisk signifikans-status och reliabel förbättring mellan grupperna på huvudutfallsmåttet AAAS Adaptive, $\chi^2_{`r xresultT(aaas_ad.pre.post.sigsig[["parameter"]],0)`}$ = `r xresult(aaas_ad.pre.post.sigsig$statistic,1)`, `r xpr(aaas_ad.pre.post.sigsig[["p.value"]])`. Med post-hoc test för parvisa jämförelser fann vi en signifikant förbättring hos behandlarstöds- och självhjälpsgruppen jämfört med väntelista (*z* = `r xresult(aaas_ad.pre.post.sigsig.posthoc$res[2,2],1)`, `r xpr(aaas_ad.pre.post.sigsig.posthoc$res[2,4])` för behandlarstödsgruppen och *z* = `r xresult(aaas_ad.pre.post.sigsig.posthoc$res[3,2],1)`, `r xpr(aaas_ad.pre.post.sigsig.posthoc$res[3,4])` för självhjälpsgruppen). Att ha tillgång till behandlingsmaterialet gav i större utsträckning kliniskt signifikant och reliabel förbättring jämfört med att vara placerad på väntelista. Se tabell \@ref(tab:jtprocent) för en sammanställning av kliniskt signifikanta och reliabla förändringarna inom de olika grupperna.
 
 (ref:jtp) Antal och andel i procent av deltagare i respektive grupp som vid behandlingens slut tillhör de olika kategorierna med överlapp mellan klinisk signifikans och reliabel förändring. Deltagare som endast har lämnat förmätningsvärden har fått dessa värden framflyttade till följande mättillfällen. Med 'tillfrisknad' menas att personen vid eftermätningstillfället befinner sig inom två standardavvikelser från medelvärdet för en icke-klinisk population. <!-- Fetstil indikerar statistisk signfikant förändring av klinisk signifikans och reliabel förändring. -->
 
@@ -1963,7 +1973,11 @@ y <- cbind(
 
 z <- t(y)
 
-colnames(z) <- c("AAA-S Ad", "AAA-S Ag", "Rathus", "LSAS-SR", "GAD-7", "PHQ-9", "Välm.")
+rownames(z) <- NULL
+
+xx <- matrix(xresult(z,1),ncol=7)
+
+colnames(xx) <- c("AAA-S Ad", "AAA-S Ag", "Rathus", "LSAS-SR", "GAD-7", "PHQ-9", "Välm.")
 
 xeff = "ES"
 
@@ -1982,7 +1996,7 @@ descriptives.col.out <- cbind.data.frame(
     rep(c("M", "SD"), times = 1),
     paste(xeff)
   ), times = 3),
-  round(z, 1)
+  xx
 )
 
 row_group_label_fonts <- list(
@@ -1990,9 +2004,7 @@ list(bold = F, italic = F),
 list(bold = F, italic = T)
 )
 
-rownames(descriptives.col.out) <- NULL
-
-svkable(descriptives.col.out, caption = "(ref:descriptives)", align="llrccccccc") %>%
+svkable(descriptives.col.out, caption = "(ref:descriptives)", align="llrccccccc", escape=F) %>%
   column_spec(1:3, width = "1em") %>%
   collapse_rows(1:3, latex_hline = "major", valign = "middle", row_group_label_position = "stack", row_group_label_fonts = row_group_label_fonts) %>%
   add_header_above(c(" " = 3, "Primära utfallsmått" = 2, "Sekundära utfallsmått" = 5))
@@ -2069,12 +2081,12 @@ Vi var huvudsakligen intresserade av hur effekten av deltagande i grupperna `r x
 #### `r xG3`--`r xg1` vid `r xt3`mätningen
 
 Vi fann en högre medelpoäng på AAA-S Adaptive för gruppen `r xg1` (estimerat marginalmedelvärde [*M*] `r xresult(tidy(aaas_ad.emm.by.time)$estimate[8],1)` , 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[8],1)` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[8],1)`]) än för gruppen `r xg3` (*M* `r xresult(tidy(aaas_ad.emm.by.time)$estimate[7],1)`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[7],1)` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[7],1)`]) vid `r xt3`mätningen,
-medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.time$estimate[7] * -1,1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.time$df[7],1)`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[7],1)`; `r xpr(aaas_ad.emmpairs.by.time[["p.value"]][7])`; effektstorlek `r xresult(aaas_ad.eff.by.time$effect.size[7] * -1,1)`.
+medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.time$estimate[7] * -1,1)`, $t$\(_{`r xresultT(aaas_ad.emmpairs.by.time$df[7],1)`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[7],1)`; `r xpr(aaas_ad.emmpairs.by.time[["p.value"]][7])`; effektstorlek `r xresult(aaas_ad.eff.by.time$effect.size[7] * -1,1)`.
 
 #### `r xG3`--`r xg2` vid `r xt3`mätningen
 
 Vi fann också en tydligt högre medelpoäng på AAA-S Adaptive vid `r xt3`mätningen för gruppen `r xg2` (*M* `r xresult(tidy(aaas_ad.emm.by.time)$estimate[9],1)`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[9],1)` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[9],1)`]) jämfört med gruppen `r xg3` (se *M* ovan),
-medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.time$estimate[8] * -1,1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.time$df[8],1)`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[8],1)`; `r xpr(aaas_ad.emmpairs.by.time[["p.value"]][8])`; effektstorlek `r xresult(aaas_ad.eff.by.time$effect.size[8] * -1,1)`.
+medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.time$estimate[8] * -1,1)`, $t$\(_{`r xresultT(aaas_ad.emmpairs.by.time$df[8],1)`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[8],1)`; `r xpr(aaas_ad.emmpairs.by.time[["p.value"]][8])`; effektstorlek `r xresult(aaas_ad.eff.by.time$effect.size[8] * -1,1)`.
 
 (ref:emmeffad) Medelvärdesestimat (M) och effektstorlekar (ES) för AAA−S Adaptive. Etiketterna i figuren anger respektive effektstorlek för med prickade linjer indikerade parvisa jämförelser.
 
@@ -2097,15 +2109,15 @@ options(OutDec= ".")
 # )
 
 Name = c(
-  paste("ES ",xresult(aaas_ad.eff.by.group[2,4]$effect.size * -1,1),sep=""),
-  paste("ES ",xresult(aaas_ad.eff.by.group[5,4]$effect.size * -1,1),sep=""),
-  paste("ES ",xresult(aaas_ad.eff.by.group[8,4]$effect.size * -1,1),sep=""),
+  paste("ES ",xresultT(aaas_ad.eff.by.group[2,4]$effect.size * -1,1),sep=""),
+  paste("ES ",xresultT(aaas_ad.eff.by.group[5,4]$effect.size * -1,1),sep=""),
+  paste("ES ",xresultT(aaas_ad.eff.by.group[8,4]$effect.size * -1,1),sep=""),
   NA,
-  paste("ES ",xresult(aaas_ad.eff.by.time[4,4]$effect.size * -1,1),sep=""),
-  paste("ES ",xresult(aaas_ad.eff.by.time[5,4]$effect.size * -1,1),sep=""),
+  paste("ES ",xresultT(aaas_ad.eff.by.time[4,4]$effect.size * -1,1),sep=""),
+  paste("ES ",xresultT(aaas_ad.eff.by.time[5,4]$effect.size * -1,1),sep=""),
   NA,
-  paste("ES ",xresult(aaas_ad.eff.by.time[7,4]$effect.size * -1,1),sep=""),
-  paste("ES ",xresult(aaas_ad.eff.by.time[8,4]$effect.size * -1,1),sep="")
+  paste("ES ",xresultT(aaas_ad.eff.by.time[7,4]$effect.size * -1,1),sep=""),
+  paste("ES ",xresultT(aaas_ad.eff.by.time[8,4]$effect.size * -1,1),sep="")
 )
 
 Nudge_x = c(0.25,0.2,0.34,0,-0.16,0.09,0,-0.2,0.105) * 1.2
@@ -2138,7 +2150,7 @@ options(OutDec= ",")
 
 #### Behandlingseffekt mellan behandlingsstart och `r xt3`mätning
 
-För både gruppen `r xg1` och gruppen `r xg2` fann vi en klar förbättring mellan behandlingsstart och `r xt3`mätning, medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.group$estimate[5] * -1,1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.group$df[5],1)`}\) = `r xresult(aaas_ad.emmpairs.by.group$statistic[5] * -1,1)`; `r xpr(aaas_ad.emmpairs.by.group[["p.value"]][5])`; effektstorlek `r xresult(aaas_ad.eff.by.group$effect.size[5] * -1,1)` respektive medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.group$estimate[8] * -1,1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.group$df[8],1)`}\) = `r xresult(aaas_ad.emmpairs.by.group$statistic[8],1)`; `r xpr(aaas_ad.emmpairs.by.group[["p.value"]][8])`; effektstorlek `r xresult(aaas_ad.eff.by.group$effect.size[8] * -1,1)`.
+För både gruppen `r xg1` och gruppen `r xg2` fann vi en klar förbättring mellan behandlingsstart och `r xt3`mätning, medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.group$estimate[5] * -1,1)`, $t$\(_{`r xresultT(aaas_ad.emmpairs.by.group$df[5],1)`}\) = `r xresult(aaas_ad.emmpairs.by.group$statistic[5] * -1,1)`; `r xpr(aaas_ad.emmpairs.by.group[["p.value"]][5])`; effektstorlek `r xresult(aaas_ad.eff.by.group$effect.size[5] * -1,1)` respektive medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.group$estimate[8] * -1,1)`, $t$\(_{`r xresultT(aaas_ad.emmpairs.by.group$df[8],1)`}\) = `r xresult(aaas_ad.emmpairs.by.group$statistic[8],1)`; `r xpr(aaas_ad.emmpairs.by.group[["p.value"]][8])`; effektstorlek `r xresult(aaas_ad.eff.by.group$effect.size[8] * -1,1)`.
 
 Deltagarna i de båda behandlingsbetingelserna hade efter fullgången behandling förbättrats avsevärt med avseende på graden av konstruktiv självhävdelse, i jämförelse med `r xg3`. Effekten var påtaglig redan vid mittenmätningen för båda grupperna. Även förbättringen mellan behandlingsstart och `r xt3`mätningen var för båda grupperna betydande. Se figur \@ref(fig:effemmplotsad) för en visualisering av resultaten. I flernivåanalysen konstaterar vi att `r xresult(performance::icc(aaas_ad.lmer)$ICC_adjusted * 100,1)`% av *random*-effekt-variansen i utfallsmåttet AAA-S Adaptive mellan mättidpunkterna förklaras av individuella faktorer, återstoden kan antas vara mät- eller slumpfel.
 
@@ -2151,16 +2163,16 @@ options(OutDec= ".")
 # AAA-S Ag
 
 Name = c(
-  paste("ES ",xresult(aaas_ag.eff.by.group[2,4]$effect.size * -1,1),sep=""),
-  paste("ES ",xresult(aaas_ag.eff.by.group[5,4]$effect.size * -1,1),sep=""),
-  paste("ES ",xresult(aaas_ag.eff.by.group[8,4]$effect.size * -1,1),sep=""),
+  paste("ES ",xresultT(aaas_ag.eff.by.group[2,4]$effect.size * -1,1),sep=""),
+  paste("ES ",xresultT(aaas_ag.eff.by.group[5,4]$effect.size * -1,1),sep=""),
+  paste("ES ",xresultT(aaas_ag.eff.by.group[8,4]$effect.size * -1,1),sep=""),
   NA,
-  paste("ES ",xresult(aaas_ag.eff.by.time[4,4]$effect.size * -1,1),sep=""),
-  paste("ES ",xresult(aaas_ag.eff.by.time[5,4]$effect.size * -1,1),sep=""),
+  paste("ES ",xresultT(aaas_ag.eff.by.time[4,4]$effect.size * -1,1),sep=""),
+  paste("ES ",xresultT(aaas_ag.eff.by.time[5,4]$effect.size * -1,1),sep=""),
   #NA,
   NA,
-  paste("ES ",xresult(aaas_ag.eff.by.time[7,4]$effect.size * -1,1),sep=""),
-  paste("ES ",xresult(aaas_ag.eff.by.time[8,4]$effect.size * -1,1),sep="")
+  paste("ES ",xresultT(aaas_ag.eff.by.time[7,4]$effect.size * -1,1),sep=""),
+  paste("ES ",xresultT(aaas_ag.eff.by.time[8,4]$effect.size * -1,1),sep="")
 )
 Nudge_x = c(0.25,0.22,0.35,0,-0.16,0.065,0,-0.2,0.1) * 1.2
 Nudge_y = c(-0.22,0.65,-0.07,0,-0.9,-1.1,0,-1.35,-1.4) * 2
@@ -2196,15 +2208,15 @@ options(OutDec= ".")
 #### `r xG3`--`r xg1` vid `r xt3`mätningen
 
 Precis som för konstruktiv självhävdelse hade gruppen `r xg1` en klart högre medelpoäng (*M* `r xresult(tidy(aaas_ag.emm.by.time)$estimate[8],1)`, 95% CI [`r xresult(tidy(aaas_ag.emm.by.time)$conf.low[8],1)` ; `r xresult(tidy(aaas_ag.emm.by.time)$conf.high[8],1)`]) på måttet för aggressiv självhävdelse, AAA-S Aggressive, än gruppen `r xg3` (*M* `r xresult(tidy(aaas_ag.emm.by.time)$estimate[7],1)`, 95% CI [`r xresult(tidy(aaas_ag.emm.by.time)$conf.low[7],1)` ; `r xresult(tidy(aaas_ag.emm.by.time)$conf.high[7],1)`]) vid `r xt3`mätningen,
-medelvärdesskillnad `r xresult(aaas_ag.emmpairs.by.time$estimate[7] * -1,1)`, $t$\(_{`r xresult(aaas_ag.emmpairs.by.time$df[7],1)`}\) = `r xresult(aaas_ag.emmpairs.by.time$statistic[7],1)`; `r xpr(aaas_ag.emmpairs.by.time$p.value[7])`; effektstorlek `r xresult(aaas_ag.eff.by.time$effect.size[7] * -1,1)`.
+medelvärdesskillnad `r xresult(aaas_ag.emmpairs.by.time$estimate[7] * -1,1)`, $t$\(_{`r xresultT(aaas_ag.emmpairs.by.time$df[7],1)`}\) = `r xresult(aaas_ag.emmpairs.by.time$statistic[7],1)`; `r xpr(aaas_ag.emmpairs.by.time$p.value[7])`; effektstorlek `r xresult(aaas_ag.eff.by.time$effect.size[7] * -1,1)`.
 
 #### `r xG3`--`r xg2` vid `r xt3`mätningen
 
-Vid `r xt3`mätningen fann vi också att medelpoängen för `r xg2`sgruppen (*M* `r xresult(tidy(aaas_ag.emm.by.time)$estimate[9],1)`, 95% CI [`r xresult(tidy(aaas_ag.emm.by.time)$conf.low[9],1)` ; `r xresult(tidy(aaas_ag.emm.by.time)$conf.high[9],1)`]) var högre i jämförelse med gruppen `r xg3` (se *M* ovan). Skillnaden var `r xresult(aaas_ag.emmpairs.by.time$estimate[8] * -1,1)`, $t$\(_{`r xresult(aaas_ag.emmpairs.by.time$df[8],1)`}\) = `r xresult(aaas_ag.emmpairs.by.time$statistic[8],1)`; `r xpr(aaas_ag.emmpairs.by.time$p.value[8])`; effektstorlek `r xresult(aaas_ag.eff.by.time$effect.size[8] * -1,1)`.
+Vid `r xt3`mätningen fann vi också att medelpoängen för `r xg2`sgruppen (*M* `r xresult(tidy(aaas_ag.emm.by.time)$estimate[9],1)`, 95% CI [`r xresult(tidy(aaas_ag.emm.by.time)$conf.low[9],1)` ; `r xresult(tidy(aaas_ag.emm.by.time)$conf.high[9],1)`]) var högre i jämförelse med gruppen `r xg3` (se *M* ovan). Skillnaden var `r xresult(aaas_ag.emmpairs.by.time$estimate[8] * -1,1)`, $t$\(_{`r xresultT(aaas_ag.emmpairs.by.time$df[8],1)`}\) = `r xresult(aaas_ag.emmpairs.by.time$statistic[8],1)`; `r xpr(aaas_ag.emmpairs.by.time$p.value[8])`; effektstorlek `r xresult(aaas_ag.eff.by.time$effect.size[8] * -1,1)`.
 
 #### Behandlingseffekt mellan behandlingsstart och `r xt3`mätning
 
-För båda grupperna `r xg1` och `r xg2` fann vi en signifikant höjning mellan tidpunkterna för behandlingsstart och `r xt3`mätning. För `r xg1`sgruppen var medelvärdesskillnaden `r xresult(aaas_ag.emmpairs.by.group$estimate[5] * -1,1)`, $t$\(_{`r xresult(aaas_ag.emmpairs.by.group$df[5],1)`}\) = `r xresult(aaas_ag.emmpairs.by.group$statistic[5],1)`; `r xpr(aaas_ag.emmpairs.by.group$p.value[5])`; effektstorlek `r xresult(aaas_ag.eff.by.group$effect.size[5] * -1,1)`, för `r xg2`sgruppen var den `r xresult(aaas_ag.emmpairs.by.group$estimate[8] * -1,1)`, $t$\(_{`r xresult(aaas_ag.emmpairs.by.group$df[8],1)`}\) = `r xresult(aaas_ag.emmpairs.by.group$statistic[8],1)`; `r xpr(aaas_ag.emmpairs.by.group$p.value[8])`; effektstorlek `r xresult(aaas_ag.eff.by.group$effect.size[8] * -1,1)`.
+För båda grupperna `r xg1` och `r xg2` fann vi en signifikant höjning mellan tidpunkterna för behandlingsstart och `r xt3`mätning. För `r xg1`sgruppen var medelvärdesskillnaden `r xresult(aaas_ag.emmpairs.by.group$estimate[5] * -1,1)`, $t$\(_{`r xresultT(aaas_ag.emmpairs.by.group$df[5],1)`}\) = `r xresult(aaas_ag.emmpairs.by.group$statistic[5],1)`; `r xpr(aaas_ag.emmpairs.by.group$p.value[5])`; effektstorlek `r xresult(aaas_ag.eff.by.group$effect.size[5] * -1,1)`, för `r xg2`sgruppen var den `r xresult(aaas_ag.emmpairs.by.group$estimate[8] * -1,1)`, $t$\(_{`r xresultT(aaas_ag.emmpairs.by.group$df[8],1)`}\) = `r xresult(aaas_ag.emmpairs.by.group$statistic[8],1)`; `r xpr(aaas_ag.emmpairs.by.group$p.value[8])`; effektstorlek `r xresult(aaas_ag.eff.by.group$effect.size[8] * -1,1)`.
 
 Det är notabelt att medelvärdet för gruppen `r xg2` var lägre än för gruppen `r xg1`, som inte fick något behandlarstöd, vid båda tidpunkterna. Skillnaden är dock ej signifikant. Båda behandlingsbetingelserna uppvisar en höjning av graden av aggressiv självhävdelse, i jämförelse med `r xg3`. Effekten var signifikant vid mittenmätningen för gruppen `r xg1` (men inte för gruppen `r xg2`). Även höjningen av aggressiv självhävdelse mellan behandlingsstart och `r xt3`mätningen var för båda grupperna signifikant. Figur \@ref(fig:effemmplotsag) ger en visualisering av resultaten. `r xresult(performance::icc(aaas_ag.lmer)$ICC_adjusted * 100,1)`% av *random*-effekt-variansen på AAA-S Aggressive kan förklaras av individuella faktorer.
 
