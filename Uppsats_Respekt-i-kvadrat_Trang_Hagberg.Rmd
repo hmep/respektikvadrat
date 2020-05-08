@@ -54,6 +54,10 @@ library("devtools")
 # devtools::install_github("markwestcott34/stargazer-booktabs",force=T)
 # devtools::install_github("ropensci/magick",force=T)
 
+#install.packages('tinytex')
+#tinytex::install_tinytex()
+
+#library("tinytex")
 library("papaja")
 library("broom.mixed")
 library("knitr")
@@ -951,7 +955,7 @@ Demografi.Kon.chi <- kruskal.test(Demografi.Kon ~ group, data = r2.wide.data)
 
 # Uppföljningstest
 library(FSA)
-Demografi.Kon.posthoc <- dunnTest(Demografi.Kon ~ group,
+Demografi.Kon.posthoc <- dunnTest(Demografi.Kon,group,
          data=r2.wide.data,
          method="bh")
 # Könsfördelningen för väntelista skiljer sig signifikant från övriga gruppers
@@ -1629,6 +1633,7 @@ aaas_ad.pre.post.sigsig = kruskal.test(
     AAAS_ad.pre.post.jt.plot$data$group)
 # Pre--post is significant
 # Follow-up
+library(FSA)
 aaas_ad.pre.post.sigsig.posthoc <- dunnTest(ifelse(AAAS_ad.pre.post.jt.plot$data$class_JTRCI == "recovered",1,0) ~ 
     AAAS_ad.pre.post.jt.plot$data$group,
          method="bh")
