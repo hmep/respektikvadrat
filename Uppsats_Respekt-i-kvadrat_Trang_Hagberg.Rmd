@@ -15,7 +15,7 @@ authornote: |
   `r readLines('includes/authornote.txt', encoding = 'UTF-8')`
 keywords: | 
   `r readLines('includes/keywords.txt', encoding = 'UTF-8')`
-wordcount         : "10780"
+#wordcount         : "10786"
 bibliography      : ["includes/r-references.bib", "includes/library.bib"] 
 floatsintext      : no
 figurelist        : no
@@ -2022,10 +2022,10 @@ Name = c(
   paste("ES ",xresult(aaas_ad.eff.by.time[8,4]$effect.size * -1,1),sep="")
 )
 
-Nudge_x = c(0.25,0.2,0.35,0,-0.17,0.1,0,-0.21,0.1) * 1.2
-Nudge_y = c(-0.15,1.75,0.3,0,-1.45,-2.4,0,-2.1,-2.6) * 2
+Nudge_x = c(0.25,0.2,0.34,0,-0.16,0.09,0,-0.2,0.105) * 1.2
+Nudge_y = c(-0.17,1.75,0.3,0,-1.45,-2.3,0,-2.1,-2.6) * 2
 
-aaas_ad.emm.plot <- plot(ggemmeans(aaas_ad.lmer, terms = c("time", "group")), connect.lines = TRUE, colors = "bw", line.size=0.4) + labs(x = "Tid", y = "Estimerat medelvärde", shape = "Grupp", title = element_blank()) + theme(legend.position = "bottom") + 
+aaas_ad.emm.plot <- plot(ggemmeans(aaas_ad.lmer, terms = c("time", "group")), connect.lines = TRUE, colors = "bw", line.size=0.4) + labs(x = "Tid", y = "M", shape = "Grupp", title = element_blank()) + theme(legend.position = "bottom") + 
   scale_shape_manual(values = c(0,1,2)) +
   scale_color_ordinal()
 
@@ -2076,10 +2076,10 @@ Name = c(
   paste("ES ",xresult(aaas_ag.eff.by.time[7,4]$effect.size * -1,1),sep=""),
   paste("ES ",xresult(aaas_ag.eff.by.time[8,4]$effect.size * -1,1),sep="")
 )
-Nudge_x = c(0.25,0.22,0.35,0,-0.17,0.075,0,-0.21,0.1) * 1.2
-Nudge_y = c(-0.2,0.65,-0.05,0,-0.9,-1.1,0,-1.3,-1.4) * 2
+Nudge_x = c(0.25,0.22,0.35,0,-0.16,0.065,0,-0.2,0.1) * 1.2
+Nudge_y = c(-0.22,0.65,-0.07,0,-0.9,-1.1,0,-1.35,-1.4) * 2
 
-# (aaas_ag.bw <- plot(ggemmeans(aaas_ag.lmer, terms = c("time", "group")), connect.lines = TRUE, colors = "bw") + labs(x = "Tid", y = "Estimerat medelvärde", shape = "Grupp", title = element_blank()) + theme(legend.position = "bottom") + scale_linetype_manual(values = 1:3))
+# (aaas_ag.bw <- plot(ggemmeans(aaas_ag.lmer, terms = c("time", "group")), connect.lines = TRUE, colors = "bw") + labs(x = "Tid", y = "M", shape = "Grupp", title = element_blank()) + theme(legend.position = "bottom") + scale_linetype_manual(values = 1:3))
 
 aaas_ag.emm.plot <- plot(ggemmeans(aaas_ag.lmer, terms = c("time", "group")), connect.lines = TRUE, colors = "bw", line.size=0.4) + labs(x = "Tid", y = "Estimerat medelvärde", shape = "Grupp", title = element_blank()) + theme(legend.position = "bottom") + 
   scale_shape_manual(values = c(0,1,2)) +
