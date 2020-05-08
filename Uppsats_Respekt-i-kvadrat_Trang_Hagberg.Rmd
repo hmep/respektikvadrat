@@ -1990,7 +1990,7 @@ medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.time$estimate[7] * -1,1)`, $
 Vi fann också en tydligt högre medelpoäng på AAA-S Adaptive vid `r xt3`mätningen för gruppen `r xg2` (*M* `r xresult(tidy(aaas_ad.emm.by.time)$estimate[9],1)`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[9],1)` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[9],1)`]) jämfört med gruppen `r xg3` (se *M* ovan),
 medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.time$estimate[8] * -1,1)`, $t$\(_{`r xresult(aaas_ad.emmpairs.by.time$df[8],1)`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[8],1)`; `r xpr(aaas_ad.emmpairs.by.time[["p.value"]][8])`; effektstorlek `r xresult(aaas_ad.eff.by.time$effect.size[8] * -1,1)`.
 
-(ref:emmeffad) Medelvärdesestimat (M) och effektstorlek (ES) för AAA−S Adaptive. Etiketterna i figuren anger respektive effektstorlek för med prickade linjer indikerade parvisa jämförelser.
+(ref:emmeffad) Medelvärdesestimat (M) och effektstorlekar (ES) för AAA−S Adaptive. Etiketterna i figuren anger respektive effektstorlek för med prickade linjer indikerade parvisa jämförelser.
 
 ```{r effemmplotsad, dpi=196, fig.align="center", fig.cap='(ref:emmeffad)', fig.height=5, fig.width=5.5, cache = F, eval = T}
 
@@ -2056,7 +2056,7 @@ För både gruppen `r xg1` och gruppen `r xg2` fann vi en klar förbättring mel
 
 Deltagarna i de båda behandlingsbetingelserna hade efter fullgången behandling förbättrats avsevärt med avseende på graden av konstruktiv självhävdelse, i jämförelse med `r xg3`. Effekten var påtaglig redan vid mittenmätningen för båda grupperna. Även förbättringen mellan behandlingsstart och `r xt3`mätningen var för båda grupperna betydande. Se figur \@ref(fig:effemmplotsad) för en visualisering av resultaten. I flernivåanalysen konstaterar vi att `r xresult(performance::icc(aaas_ad.lmer)$ICC_adjusted * 100,1)`% av variansen i utfallsmåttet AAA-S Adaptive mellan mättidpunkterna kan förklaras av individuella faktorer. 
 
-(ref:emmeffag) Medelvärdesestimat (M) och effektstorlek (ES) för AAA-S Aggressive. Etiketterna i figuren anger respektive effektstorlek för med prickade linjer indikerade parvisa jämförelser.
+(ref:emmeffag) Medelvärdesestimat (M) och effektstorlekar (ES) för AAA-S Aggressive. Etiketterna i figuren anger respektive effektstorlek för med prickade linjer indikerade parvisa jämförelser.
 
 ```{r effemmplotsag, dpi=196, fig.align="center", fig.cap='(ref:emmeffag)', fig.height=5, fig.width=5.5, cache = F, eval = T}
 
