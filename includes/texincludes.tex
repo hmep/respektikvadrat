@@ -3,6 +3,8 @@
 \let\oldsection\section
 \let\oldsubsection\subsection
 \let\oldsubsubsection\subsubsection
+\let\oldparagraph\paragraph
+\let\oldsubparagraph\subparagraph
 %\renewcommand{\section}[1]{\par\vspace{\baselineskip}\oldsection{#1}\par\vspace{\parskip}}
 \renewcommand{\subsection}[1]{\oldsubsection{#1}\par\vspace{\parskip}}
 \renewcommand{\subsubsection}[1]{\oldsubsubsection{#1}\par\vspace{\parskip}}
@@ -36,6 +38,8 @@
 \raggedbottom
 
 % Misc 
-\newcommand\xstartnew{\color{red}}
-\newcommand\xstopnew{\color{black}}
+\newcommand\xstartnew{}
+\newcommand\xstopnew{}
+%\newcommand\xstartnew{\color{red}}
+%\newcommand\xstopnew{\color{black}}
 \usepackage{ragged2e}
