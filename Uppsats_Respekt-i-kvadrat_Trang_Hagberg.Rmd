@@ -949,6 +949,14 @@ För att bedöma den interna reliabiliteten för i första hand de till svenska 
 
 \xstopnew
 
+# Resultat
+
+## Skalornas interna reliabilitet
+
+Se \@ref(tab:alpha) för en sammanställning av ...
+
+(ref:alp) Chronbach's $\alpha$ för de primär och sekundära utfallsmåtten, funna med det undersökta samplet.
+
 ```{r alpha, eval = T}
 
 r2.item.data <- read_excel("r2-items.xlsx")
@@ -973,14 +981,23 @@ phq.alpha <- cronbach.alpha(r2.item.data[,116:124], standardized = T, CI = T, # 
 well.alpha <- cronbach.alpha(r2.item.data[,126:143], standardized = T, CI = T, 
     probs = c(0.025, 0.975), B = 1000, na.rm = T)
 
+alpha.table <- cbind.data.frame(
+  "Rathus" = c(rathus.alpha$alpha, rathus.alpha$alpha),
+  "AAA-S Adaptive" = c(aaas.alpha$alpha, aaas.alpha$alpha),
+  "AAA-S Aggressive" = c(aaas.alpha$alpha, aaas.alpha$alpha),
+  "GAD-7" = c(gad.alpha$alpha, gad.alpha$alpha),
+  "PHQ-9" = c(phq.alpha$alpha, phq.alpha$alpha),
+  "Välmåendeformuläret" = c(well.alpha$alpha, well.alpha$alpha)
+)
+
+colnames(alpha.table) <- c("Chronbach's $\alpha$", "lower", "upper")
+
+svkable(alpha.table, caption='(ref:alp)')
+
 ```
 
-<!-- [Pers kommentar]
-NI kan, om ni vill ha guldstjärna, enkelt räkna ut er egen studies Cronbach alfa för var och en av formulären vid förmätningen (och komplettera med den siffran).
--->
 
 
-# Resultat
 
 ```{r sociodemotest, eval = F}
 
@@ -2224,7 +2241,7 @@ Det finns många faktorer som avgör om en intervention ska ges med eller utan s
 
 ### Individuella faktorer spelar stor roll för utfall
 
-Vi konstaterade att av *random*-variansen så bestod `r xresult(performance::icc(aaas_ad.lmer)$ICC_adjusted * 100,1)`% för utfallsmåttet AAA-S Adaptive av individuella skillnader. För utfallsmåttet AAA-S Aggressive var de individuella bidragen till skillnaderna `r xresult(performance::icc(aaas_ag.lmer)$ICC_adjusted * 100,1)`%. Det betyder att individernas svar på de upprepade mätningarna är starkt korrelerade. Av det drar vi slutsatserna att utfall i behandlingsprogrammet *Respekt i kvadrat* till mycket stor del beror på individuella förutsättningar -- vilket i och för sig inte är särskilt förvånande. Dessa *random*-effekter kan spekulativt handla om generell grad av emotionellt undvikande i samplet, systematiska skillnader i tid för medverkan eller andra variabler som inte kontrolleras i studiedesignen. Bland dem ingår också interaktionseffekter med tilldelad behandlare, exempelvis kvalitet på samarbetsalliansen kring utförandet uppgifterna i programmet.
+Vi konstaterade att av *random*-variansen så bestod `r xresult(performance::icc(aaas_ad.lmer)$ICC_adjusted * 100,1)`% för utfallsmåttet \mbox{AAA-S} Adaptive av individuella skillnader. För utfallsmåttet \mbox{AAA-S} Aggressive var de individuella bidragen till skillnaderna `r xresult(performance::icc(aaas_ag.lmer)$ICC_adjusted * 100,1)`%. Det betyder att individernas svar på de upprepade mätningarna är starkt korrelerade. Av det drar vi slutsatserna att utfall i behandlingsprogrammet *Respekt i kvadrat* till mycket stor del beror på individuella förutsättningar -- vilket i och för sig inte är särskilt förvånande. Dessa *random*-effekter kan spekulativt handla om generell grad av emotionellt undvikande i samplet, systematiska skillnader i tid för medverkan eller andra variabler som inte kontrolleras i studiedesignen. Bland dem ingår också interaktionseffekter med tilldelad behandlare, exempelvis kvalitet på samarbetsalliansen kring utförandet uppgifterna i programmet.
 
 \xstopnew
 
