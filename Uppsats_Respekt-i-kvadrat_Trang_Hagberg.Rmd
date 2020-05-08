@@ -953,7 +953,7 @@ För att bedöma den interna reliabiliteten för i första hand de till svenska 
 
 ## Skalornas interna reliabilitet
 
-Se \@ref(tab:alpha) för en sammanställning av ...
+Se tabell \@ref(tab:alpha) för en sammanställning av ...
 
 (ref:alp) Chronbach's $\alpha$ för de primär och sekundära utfallsmåtten, funna med det undersökta samplet.
 
@@ -963,41 +963,71 @@ r2.item.data <- read_excel("r2-items.xlsx")
 
 library(ltm)
 
-rathus.alpha <- cronbach.alpha(r2.item.data[,1:30], standardized = T, CI = T, 
+rathus.alpha <- cronbach.alpha(r2.item.data[,1:30], standardized = F, CI = T, 
     probs = c(0.025, 0.975), B = 1000, na.rm = T)
 
-aaas.alpha <- cronbach.alpha(r2.item.data[,31:60], standardized = T, CI = T, 
+#Adaptive = #1 + #2 + #5 + #7 + #9 + #10 + #13 + #15 + #17 + #19 + #21 + #22 + #24 + #26 + #28
+#Aggressive = #3 + #4 + #6 + #8 + #11 + #12 + #14 + #16 + #18 + #20 + #23 + #25 + #27 + #29 + #30
+
+ad_selection <- c(1,2,5,7,9,10,13,15,17,19,21,22,24,26,28) + 30
+ag_selection <- c(3,4,6,8,11,12,14,16,18,20,23,25,27,29,30) + 30
+
+aaas_ad.alpha <- cronbach.alpha(r2.item.data[,ad_selection], standardized = F, CI = T, 
     probs = c(0.025, 0.975), B = 1000, na.rm = T)
 
-lsas.alpha <- cronbach.alpha(r2.item.data[,61:108], standardized = T, CI = T, 
+aaas_ag.alpha <- cronbach.alpha(r2.item.data[,ag_selection], standardized = F, CI = T, 
     probs = c(0.025, 0.975), B = 1000, na.rm = T)
 
-gad.alpha <- cronbach.alpha(r2.item.data[,109:115], standardized = T, CI = T, 
+lsas.alpha <- cronbach.alpha(r2.item.data[,61:108], standardized = F, CI = T, 
     probs = c(0.025, 0.975), B = 1000, na.rm = T)
 
-phq.alpha <- cronbach.alpha(r2.item.data[,116:124], standardized = T, CI = T, # Don't include the last two questions
+gad.alpha <- cronbach.alpha(r2.item.data[,109:115], standardized = F, CI = T, 
     probs = c(0.025, 0.975), B = 1000, na.rm = T)
 
-well.alpha <- cronbach.alpha(r2.item.data[,126:143], standardized = T, CI = T, 
+phq.alpha <- cronbach.alpha(r2.item.data[,116:124], standardized = F, CI = T, # Don't include the last two questions
     probs = c(0.025, 0.975), B = 1000, na.rm = T)
 
-alpha.table <- cbind.data.frame(
-  "Rathus" = c(rathus.alpha$alpha, rathus.alpha$alpha),
-  "AAA-S Adaptive" = c(aaas.alpha$alpha, aaas.alpha$alpha),
-  "AAA-S Aggressive" = c(aaas.alpha$alpha, aaas.alpha$alpha),
-  "GAD-7" = c(gad.alpha$alpha, gad.alpha$alpha),
-  "PHQ-9" = c(phq.alpha$alpha, phq.alpha$alpha),
-  "Välmåendeformuläret" = c(well.alpha$alpha, well.alpha$alpha)
+well.alpha <- cronbach.alpha(r2.item.data[,126:143], standardized = F, CI = T, 
+    probs = c(0.025, 0.975), B = 1000, na.rm = T)
+
+alpha.table <- rbind.data.frame(
+  "Rathus" = cbind(
+    xresult(rathus.alpha$alpha,2), 
+    xresult(rathus.alpha$ci[1],2), 
+    xresult(rathus.alpha$ci[2],2)
+  ),
+  "AAA-S Adaptive" = cbind(
+    xresult(aaas_ad.alpha$alpha,2), 
+    xresult(aaas_ad.alpha$ci[1],2), 
+    xresult(aaas_ad.alpha$ci[2],2)
+  ),
+  "AAA-S Aggressive" = cbind(
+    xresult(aaas_ag.alpha$alpha,2),
+    xresult(aaas_ag.alpha$ci[1],2),
+    xresult(aaas_ag.alpha$ci[2],2)
+  ),
+  "GAD-7" = cbind(
+    xresult(gad.alpha$alpha,2),
+    xresult(gad.alpha$ci[1],2),
+    xresult(gad.alpha$ci[2],2)
+  ),
+  "PHQ-9" = cbind(
+    xresult(phq.alpha$alpha,2),
+    xresult(phq.alpha$ci[1],2),
+    xresult(phq.alpha$ci[2],2)
+  ),
+  "Välmåendeformuläret" = cbind(
+    xresult(well.alpha$alpha,2),
+    xresult(well.alpha$ci[1],2),
+    xresult(well.alpha$ci[2],2)
+  )
 )
 
-colnames(alpha.table) <- c("Chronbach's $\alpha$", "lower", "upper")
+colnames(alpha.table) <- c("Alpha", "lower", "upper")
 
 svkable(alpha.table, caption='(ref:alp)')
 
 ```
-
-
-
 
 ```{r sociodemotest, eval = F}
 
