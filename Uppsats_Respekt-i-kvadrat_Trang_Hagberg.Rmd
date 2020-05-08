@@ -15,7 +15,7 @@ authornote: |
   `r readLines('includes/authornote.txt', encoding = 'UTF-8')`
 keywords: | 
   `r readLines('includes/keywords.txt', encoding = 'UTF-8')`
-#wordcount         : "10786"
+#wordcount         : "11036"
 bibliography      : ["includes/r-references.bib", "includes/library.bib"] 
 floatsintext      : no
 figurelist        : no
@@ -70,6 +70,7 @@ library("car")
 library("ggplot2")
 library("pbkrtest")
 library("effsize")
+#library("dunn.test")
 #library("wesanderson")
 #library("pander")
 
@@ -791,10 +792,6 @@ Behandlarstöd bestod av veckovis skriftlig kontakt med deltagarna via den krypt
 
 ### Primärt utfallsmått
 
-<!-- [Pers kommentar]
-NI kan, om ni vill ha guldstjärna, enkelt räkna ut er egen studies Cronbach alfa för var och en av formulären vid förmätningen (och komplettera med den siffran).
--->
-
 #### Självhävdelsestil
 
 En inför den här studien gjord svensk översättning av självskattningsskalan Adaptive and Aggressive Assertiveness Scales [AAA-S; @Thompson2011] användes för att mäta vilka metoder för självhävdelse som deltagarna använde sig av. Skalorna utgörs av 30 påståenden som besvaras med en 5-gradig likertskala där 1 motsvarar ”aldrig” och 5 motsvarar ”alltid”. Svaren räknas samman till två skalor, en för aggressiv självhävdelse och en för konstruktiv (adaptiv) självhävdelse. Hög poäng på delskalan för aggressiv självhävdelse indikerar ett aggressivt självhävdande beteendeemönster och hög poäng på delskalan för konstruktiv självhävdelse indikerar ett konstruktivt självhävdande beteendemönster. (Låga poäng på båda går att tolka som passiv självhävdelse.) En fördel med AAA-S jämfört med andra skalor som mäter självhävdelse är att den gör explicit skillnad mellan konstruktiv och aggressiv självhävdelse. Adaptive- och Aggressiveness-skalorna har god intern reliabilitet ($\alpha$ = 0,93 respektive $\alpha$ = 0,88). Den svenska översättningen var inte validerad inför studiestart.
@@ -932,7 +929,7 @@ Från prediktioner estimerade marginalmedelvärden (*estimated marginal means* e
 
 \xstartnew
 
-Andelen av *random*-effekt-variansen som kan förklaras av underliggande individuella förutsättningar, exempelvis generell förändringsbenägenhet (individuella egenskaper, *traits*) eller av yttre omständigheter påverkade tillstånd (*states*) beräknades i enlighet med @Nakagawa2017 med hjälp av R-paketet[@R-sjPlot]. Intraklasskorrelationen är korrelationen mellan observationer inom klusternivån för analysen, i den här studien de enskilda deltagarna. Det ICC-tal vi rapporterar är så kallad *adjusted* ICC, som utesluter variansen från fixa effekter.
+Andelen av *random*-effekt-variansen som kan förklaras av underliggande individuella förutsättningar, exempelvis generell förändringsbenägenhet (individuella egenskaper, *traits*) eller av yttre omständigheter påverkade tillstånd (*states*) beräknades som den justerade intraklasskorrelationen i enlighet med @Nakagawa2017 med hjälp av R-paketet *sjPlot* [@R-sjPlot]. Intraklasskorrelationen (ICC) är enkelt uttryckt korrelationen mellan observationer inom klusternivån för analysen, i den här studien de enskilda deltagarna. Det ICC-tal vi rapporterar är så kallad *adjusted* ICC, som utesluter variansen från fixa effekter.
 
 \xstopnew
 
@@ -943,6 +940,45 @@ Andelen av *random*-effekt-variansen som kan förklaras av underliggande individ
 ### Analys av reliabel förändring och klinisk signifikans
 
 Frekvensen deltagare som i behandlingsprogrammet genomgått en reliabel förändring och dessutom befann sig på kliniskt signifikant nivå vid eftermätningen fastställdes i enlighet med definitionerna och rekommendationerna i @Jacobson1991. För deltagare som endast lämnat självskattningar vid förmätningstillfället fördes förmätningvärdena vidare till eftermätningstillfället i enlighet med principen om *intention to treat*. Med reliabel förändring menas att en observerad utveckling mellan två mättillfällen definieras som tillförlitlig -- och därför meningsfull -- om den är tillräckligt stor (med $\alpha$ = 0,05) i relation till populationsvariansen. Då betraktas förändringen som en verklig förändring och inte bara ett slump- eller mätfel. Med klinisk signifikans avses hur eftermätningsvärdena förhåller sig till medelvärdet för normdata för en subklinisk population [@Jacobson1991]. För sammanställningarna av överlappet mellan klinisk signifikans och reliabel förändring användes R-paketet *JTRCI*, som väljer jämförelsekriterium för klinisk signifikans konservativt [@R-JTRCI]. Skillnader mellan grupperna i antalet reliabelt förändrade deltagare som också befann sig på kliniskt signifikant nivå vid eftermätningstillfället analyserades med Kruskal-Wallis $\chi^2$-test samt Dunns post-hoc test för multipla jämförelser av flera grupper.
+
+\xstartnew
+
+### Beräkning av Chronbach's alpha för skalor för utfallsmått
+
+För att bedöma den interna reliabiliteten för i första hand de till svenska nyöversatta skalorna Rathus och AAA-S beräknades Chronbach's $\alpha$ med hjälp av paketet *ltm* [@R-ltm]. Beräkningen gjordes för samtliga utfallsmått.
+
+\xstopnew
+
+```{r alpha, eval = T}
+
+r2.item.data <- read_excel("r2-items.xlsx")
+
+library(ltm)
+
+rathus.alpha <- cronbach.alpha(r2.item.data[,1:30], standardized = T, CI = T, 
+    probs = c(0.025, 0.975), B = 1000, na.rm = T)
+
+aaas.alpha <- cronbach.alpha(r2.item.data[,31:60], standardized = T, CI = T, 
+    probs = c(0.025, 0.975), B = 1000, na.rm = T)
+
+lsas.alpha <- cronbach.alpha(r2.item.data[,61:108], standardized = T, CI = T, 
+    probs = c(0.025, 0.975), B = 1000, na.rm = T)
+
+gad.alpha <- cronbach.alpha(r2.item.data[,109:115], standardized = T, CI = T, 
+    probs = c(0.025, 0.975), B = 1000, na.rm = T)
+
+phq.alpha <- cronbach.alpha(r2.item.data[,116:124], standardized = T, CI = T, # Don't include the last two questions
+    probs = c(0.025, 0.975), B = 1000, na.rm = T)
+
+well.alpha <- cronbach.alpha(r2.item.data[,126:143], standardized = T, CI = T, 
+    probs = c(0.025, 0.975), B = 1000, na.rm = T)
+
+```
+
+<!-- [Pers kommentar]
+NI kan, om ni vill ha guldstjärna, enkelt räkna ut er egen studies Cronbach alfa för var och en av formulären vid förmätningen (och komplettera med den siffran).
+-->
+
 
 # Resultat
 
@@ -959,10 +995,9 @@ Demografi.Kon.chi <- kruskal.test(Demografi.Kon ~ group, data = r2.wide.data)
 
 # Uppföljningstest
 library(FSA)
-Demografi.Kon.posthoc <- dunnTest(Demografi.Kon,group,
-         data=r2.wide.data,
+Demografi.Kon.posthoc <- dunnTest(r2.wide.data$Demografi.Kon,r2.wide.data$group,
          method="bh")
-# Könsfördelningen för väntelista skiljer sig signifikant från övriga gruppers
+# Könsfördelningen för självhjälp skiljer sig signifikant från övriga gruppers
 
 Demografi.Kon.abs <- table(r2.wide.data$group, r2.wide.data$Demografi.Kon)
 Demografi.Kon.proc <- prop.table(Demografi.Kon.abs, 1)
@@ -2237,7 +2272,7 @@ Föreliggande studie ville undersöka effekten på konstruktivt självhävande a
 
 \newpage
 
-```{r create_r-references, eval = F}
+```{r create_r-references, eval = T}
 r_refs(file = "r-references.bib")
 ```
 
