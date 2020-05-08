@@ -2023,7 +2023,7 @@ Name = c(
 )
 
 Nudge_x = c(0.25,0.2,0.34,0,-0.16,0.09,0,-0.2,0.105) * 1.2
-Nudge_y = c(-0.17,1.75,0.3,0,-1.45,-2.3,0,-2.1,-2.6) * 2
+Nudge_y = c(-0.17,1.75,0.31,0,-1.45,-2.3,0,-2.1,-2.6) * 2
 
 aaas_ad.emm.plot <- plot(ggemmeans(aaas_ad.lmer, terms = c("time", "group")), connect.lines = TRUE, colors = "bw", line.size=0.4) + labs(x = "Tid", y = "M", shape = "Grupp", title = element_blank()) + theme(legend.position = "bottom") + 
   scale_shape_manual(values = c(0,1,2)) +
