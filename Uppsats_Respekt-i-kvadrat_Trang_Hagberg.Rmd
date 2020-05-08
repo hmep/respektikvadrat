@@ -13,10 +13,10 @@ abstract: |
   `r readLines('includes/abstract.txt', encoding = 'UTF-8')`
 authornote: |
   `r readLines('includes/authornote.txt', encoding = 'UTF-8')`
-keywords: |
+keywords: | 
   `r readLines('includes/keywords.txt', encoding = 'UTF-8')`
-wordcount         : "10707"
-bibliography      : ["inludes/r-references.bib", "library.bib"] 
+wordcount         : "10780"
+bibliography      : ["includes/r-references.bib", "library.bib"] 
 floatsintext      : no
 figurelist        : no
 tablelist         : no
@@ -307,10 +307,10 @@ r2.wide.data <- r2.wide.data[,-c(4:5)] # Drop
 saveRDS(r2.wide.data,file="r2.wide.data.RDS")
 
 # Clean up
-# file.remove(raw_excel)
-# file.remove(raw_excel_conversations)
-# file.remove(raw_excel_sociodemographics)
-# rm(list = ls())
+file.remove(raw_excel)
+file.remove(raw_excel_conversations)
+file.remove(raw_excel_sociodemographics)
+rm(list = ls())
 
 ```
 
@@ -914,7 +914,7 @@ Vi använde `r version$language`, version `r version$major`.`r version$minor` [@
 
 ### Analys av fixa effekter
 
-Fixa och slumpmässiga effekter mellan grupp och tid för de primära och sekundära utfallsmåtten undersöktes med så kallad flernivåanalys (också kallad blandad modell, hierarkisk analys, på engelska bland annat *mixed model*, *multilevel model* och *hierarchical linear model*). Flernivåanalys tillåter precis som multivariat variansanalys (MANOVA) inklusion av upprepade beroende mättillfällen i modellen, men fördelerna att metoden tillåter obalanserade grupper och att principen om *intention to treat* värnas  utan behov av imputering av saknade datapunkter. Flernivåanalyser uppskattar också inklusion av *random*-effekter, det vill säga observerad men inte kontrollerad varians på klusternivå (i detta fall enskilda individer som "innehåller" upprepade mättillfällen).
+Fixa och slumpmässiga effekter mellan grupp och tid för de primära och sekundära utfallsmåtten undersöktes med så kallad flernivåanalys (också kallad blandad modell, hierarkisk analys, på engelska bland annat *mixed model*, *multilevel model* och *hierarchical linear model*). Flernivåanalys tillåter precis som multivariat variansanalys (MANOVA) inklusion av upprepade beroende mättillfällen i modellen, men fördelerna att metoden tillåter obalanserade grupper och att principen om *intention to treat* värnas utan behov av imputering av saknade datapunkter. Flernivåanalyser uppskattar också inklusion av *random*-effekter, det vill säga observerad men inte kontrollerad varians på klusternivå. I detta fall har vi två nivåer: enskilda individer som "innehåller" data från upprepade mättillfällen.
 
 Granskning av homoscedasticitet och residualernas fördelning samt identifiering av outliers gjordes visuellt med diagnostiska plottar av de till data anpassade modellerna. All data, inklusive förekommande outliers, behölls i analyserna.
 
