@@ -1018,7 +1018,7 @@ alpha.table <- rbind.data.frame(
 
 colnames(alpha.table) <- c("Normdata","Sampledata")
 
-svkable(alpha.table, caption='(ref:alp)', escape=F, align="lcc")
+svkable(alpha.table, caption='(ref:alp)', escape=F, align="cc")
 
 ```
 
@@ -2323,7 +2323,7 @@ Föreliggande studie ville undersöka effekten på konstruktivt självhävande a
 \newpage
 
 ```{r create_r-references, eval = T}
-r_refs(file = "r-references.bib")
+r_refs(file = "includes/r-references.bib")
 ```
 
 \begingroup
