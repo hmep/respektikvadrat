@@ -933,7 +933,7 @@ Från prediktioner estimerade marginalmedelvärden (*estimated marginal means* e
 
 \xstartnew
 
-Andelen av *random*-effekt-variansen som kan förklaras av underliggande individuella förutsättningar, exempelvis generell förändringsbenägenhet (individuella egenskaper, *traits*) eller av yttre omständigheter påverkade tillstånd (*states*) beräknades som den justerade intraklasskorrelationen i enlighet med @Nakagawa2017 med hjälp av R-paketet *sjPlot* [@R-sjPlot]. Intraklasskorrelationen (ICC) är enkelt uttryckt korrelationen mellan observationer inom klusternivån för analysen, i den här studien de enskilda deltagarna. Det ICC-tal vi rapporterar är så kallad *adjusted* ICC, som utesluter variansen från fixa effekter.
+Andelen av *random*-effekt-variansen som kan förklaras av underliggande individuella förutsättningar, exempelvis generell förändringsbenägenhet (individuella egenskaper, *traits*) eller av yttre omständigheter påverkade tillstånd (*states*) beräknades som den justerade intraklasskorrelationen i enlighet med @Nakagawa2017 med hjälp av R-paketet *sjPlot* [@R-sjPlot]. Intraklasskorrelationen (ICC) är enkelt uttryckt korrelationen mellan observationer inom klusternivån för analysen, i den här studien de enskilda deltagarna. De ICC-kvoter vi rapporterar är *conditional* ICC, som inkluderar variansen av fixa effekter i nämnaren, *adjusted* ICC, som utesluter variansen från fixa effekter.
 
 \xstopnew
 
