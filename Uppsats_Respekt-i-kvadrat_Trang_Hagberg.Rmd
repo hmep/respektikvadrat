@@ -961,7 +961,7 @@ För att bedöma den interna reliabiliteten för i första hand de till svenska 
 
 Se tabell \@ref(tab:alpha) för en sammanställning av ...
 
-(ref:alp) Chronbach's $\alpha$ för de primära och sekundära utfallsmåtten, funna med det undersökta samplet.
+(ref:alp) Chronbach's $\alpha$ för de primära och sekundära utfallsmåtten, funna med det undersökta samplet. Normdata anges som jämförelse.
 
 ```{r alpha, eval = T}
 
@@ -1016,9 +1016,9 @@ alpha.table <- rbind.data.frame(
   )
 )
 
-colnames(alpha.table) <- c("Norm","Sample")
+colnames(alpha.table) <- c("Normdata","Sampledata")
 
-svkable(alpha.table, caption='(ref:alp)', escape=F)
+svkable(alpha.table, caption='(ref:alp)', escape=F, align="lcc")
 
 ```
 
