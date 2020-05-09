@@ -937,9 +937,11 @@ Andelen av *random*-effekt-variansen som kan förklaras av underliggande individ
 
 \xstopnew
 
-<!-- https://www.theanalysisfactor.com/the-intraclass-correlation-coefficient-in-mixed-models/ -->
-
-<!-- s 49 http://wiki.bcs.rochester.edu/HlpLab/StatsCourses?action=AttachFile&do=get&target=Groningen11.pdf -->
+<!-- 
+https://easystats.github.io/performance/reference/icc.html
+https://www.theanalysisfactor.com/the-intraclass-correlation-coefficient-in-mixed-models/
+s 49 http://wiki.bcs.rochester.edu/HlpLab/StatsCourses?action=AttachFile&do=get&target=Groningen11.pdf 
+-->
 
 ### Analys av reliabel förändring och klinisk signifikans
 
