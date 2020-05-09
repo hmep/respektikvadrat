@@ -2069,7 +2069,7 @@ Vi var huvudsakligen intresserade av hur effekten av deltagande i grupperna `r x
 
 #### `r xG3`--`r xg1` vid `r xt3`mätningen
 
-Vi fann en högre medelpoäng på AAA-S Adaptive för gruppen `r xg1` (estimerat marginalmedelvärde [*M*] `r xresult(tidy(aaas_ad.emm.by.time)$estimate[8],1)` , 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[8],1)` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[8],1)`]) än för gruppen `r xg3` (*M* `r xresult(tidy(aaas_ad.emm.by.time)$estimate[7],1)`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[7],1)` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[7],1)`]) vid `r xt3`mätningen,
+Vi fann en högre medelpoäng på AAA-S Adaptive för gruppen `r xg1` (estimerat marginalmedelvärde [*M*] `r xresult(tidy(aaas_ad.emm.by.time)$estimate[8],1)`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[8],1)` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[8],1)`]) än för gruppen `r xg3` (*M* `r xresult(tidy(aaas_ad.emm.by.time)$estimate[7],1)`, 95% CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[7],1)` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[7],1)`]) vid `r xt3`mätningen,
 medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.time$estimate[7] * -1,1)`, $t$\(_{`r xresultT(aaas_ad.emmpairs.by.time$df[7],1)`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[7],1)`; `r xpr(aaas_ad.emmpairs.by.time[["p.value"]][7])`; effektstorlek `r xresult(aaas_ad.eff.by.time$effect.size[7] * -1,1)`.
 
 #### `r xG3`--`r xg2` vid `r xt3`mätningen
