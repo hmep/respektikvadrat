@@ -951,7 +951,7 @@ Frekvensen deltagare som i behandlingsprogrammet genomgått en reliabel föränd
 
 ### Beräkning av Chronbach's alpha för skalor för utfallsmått
 
-För att bedöma den interna reliabiliteten för i första hand de till svenska nyöversatta skalorna Rathus och AAA-S beräknades Chronbach's $\alpha$ med hjälp av paketet *ltm* [@R-ltm]. Beräkningen gjordes för samtliga utfallsmått.
+För att bedöma den interna reliabiliteten för i första hand de till svenska nyöversatta skalorna Rathus och AAA-S beräknades Chronbach's $\alpha$ med hjälp av paketet *performance* [@R-performance].
 
 \xstopnew
 
@@ -967,10 +967,9 @@ Se tabell \@ref(tab:alpha) för en sammanställning av ...
 
 r2.item.data <- read_excel("r2-items.xlsx")
 
-library(ltm)
+library(performance)
 
-rathus.alpha <- cronbach.alpha(r2.item.data[,1:30], standardized = F, CI = T, 
-    probs = c(0.025, 0.975), B = 1000, na.rm = T)
+rathus.alpha <- performance::cronbachs_alpha(r2.item.data[,1:30])
 
 #Adaptive = #1 + #2 + #5 + #7 + #9 + #10 + #13 + #15 + #17 + #19 + #21 + #22 + #24 + #26 + #28
 #Aggressive = #3 + #4 + #6 + #8 + #11 + #12 + #14 + #16 + #18 + #20 + #23 + #25 + #27 + #29 + #30
@@ -978,64 +977,46 @@ rathus.alpha <- cronbach.alpha(r2.item.data[,1:30], standardized = F, CI = T,
 ad_selection <- c(1,2,5,7,9,10,13,15,17,19,21,22,24,26,28) + 30
 ag_selection <- c(3,4,6,8,11,12,14,16,18,20,23,25,27,29,30) + 30
 
-aaas_ad.alpha <- cronbach.alpha(r2.item.data[,ad_selection], standardized = F, CI = T, 
-    probs = c(0.025, 0.975), B = 1000, na.rm = T)
+aaas_ad.alpha <- performance::cronbachs_alpha(r2.item.data[,ad_selection])
 
-aaas_ag.alpha <- cronbach.alpha(r2.item.data[,ag_selection], standardized = F, CI = T, 
-    probs = c(0.025, 0.975), B = 1000, na.rm = T)
+aaas_ag.alpha <- performance::cronbachs_alpha(r2.item.data[,ag_selection])
 
-lsas.alpha <- cronbach.alpha(r2.item.data[,61:108], standardized = F, CI = T, 
-    probs = c(0.025, 0.975), B = 1000, na.rm = T)
+lsas.alpha <- performance::cronbachs_alpha(r2.item.data[,61:108])
 
-gad.alpha <- cronbach.alpha(r2.item.data[,109:115], standardized = F, CI = T, 
-    probs = c(0.025, 0.975), B = 1000, na.rm = T)
+gad.alpha <- performance::cronbachs_alpha(r2.item.data[,109:115])
 
-phq.alpha <- cronbach.alpha(r2.item.data[,116:124], standardized = F, CI = T, # Don't include the last two questions
-    probs = c(0.025, 0.975), B = 1000, na.rm = T)
+phq.alpha <- performance::cronbachs_alpha(r2.item.data[,116:124])
 
-well.alpha <- cronbach.alpha(r2.item.data[,126:143], standardized = F, CI = T, 
-    probs = c(0.025, 0.975), B = 1000, na.rm = T)
+well.alpha <- performance::cronbachs_alpha(r2.item.data[,126:143])
 
 alpha.table <- rbind.data.frame(
   "Rathus" = cbind(
     xresultT(r.Rathus,2),
-    xresultT(rathus.alpha$alpha,2), 
-    xresultT(rathus.alpha$ci[1],2), 
-    xresultT(rathus.alpha$ci[2],2)
+    xresultT(rathus.alpha,2)
   ),
   "AAA-S Adaptive" = cbind(
     xresultT(r.AAAS_ad,2),
-    xresultT(aaas_ad.alpha$alpha,2), 
-    xresultT(aaas_ad.alpha$ci[1],2), 
-    xresultT(aaas_ad.alpha$ci[2],2)
+    xresultT(aaas_ad.alpha,2)
   ),
   "AAA-S Aggressive" = cbind(
     xresultT(r.AAAS_ag,2),
-    xresultT(aaas_ag.alpha$alpha,2),
-    xresultT(aaas_ag.alpha$ci[1],2),
-    xresultT(aaas_ag.alpha$ci[2],2)
+    xresultT(aaas_ag.alpha,2)
   ),
   "GAD-7" = cbind(
     xresultT(r.GAD7,2),
-    xresultT(gad.alpha$alpha,2),
-    xresultT(gad.alpha$ci[1],2),
-    xresultT(gad.alpha$ci[2],2)
+    xresultT(gad.alpha,2)
   ),
   "PHQ-9" = cbind(
     xresultT(r.PHQ9,2),
-    xresultT(phq.alpha$alpha,2),
-    xresultT(phq.alpha$ci[1],2),
-    xresultT(phq.alpha$ci[2],2)
+    xresultT(phq.alpha,2)
   ),
   "Välmåendeformuläret" = cbind(
     xresult(r.Well,2),
-    xresult(well.alpha$alpha,2),
-    xresult(well.alpha$ci[1],2),
-    xresult(well.alpha$ci[2],2)
+    xresult(well.alpha,2)
   )
 )
 
-colnames(alpha.table) <- c("Norm","Sample", "lower", "upper")
+colnames(alpha.table) <- c("Norm","Sample")
 
 svkable(alpha.table, caption='(ref:alp)', escape=F)
 
