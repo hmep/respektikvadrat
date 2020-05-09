@@ -15,7 +15,7 @@ authornote: |
   `r readLines('includes/authornote.txt', encoding = 'UTF-8')`
 keywords: | 
   `r readLines('includes/keywords.txt', encoding = 'UTF-8')`
-#wordcount         : "11120"
+#wordcount         : "11169"
 bibliography      : ["includes/r-references.bib", "includes/library.bib"] 
 floatsintext      : no
 figurelist        : no
@@ -959,9 +959,9 @@ För att bedöma den interna reliabiliteten för i första hand de till svenska 
 
 ## Skalornas interna reliabilitet
 
-Se tabell \@ref(tab:alpha) för en sammanställning av ...
+<!-- Se tabell \@ref(tab:alpha) för en sammanställning av ... -->
 
-(ref:alp) Chronbach's $\alpha$ för de primära och sekundära utfallsmåtten, funna med det undersökta samplet. Normdata anges som jämförelse.
+<!-- (ref:alp) Chronbach's $\alpha$ för de primära och sekundära utfallsmåtten, funna med det undersökta samplet. Normdata anges som jämförelse. -->
 
 ```{r alpha, eval = T}
 
@@ -1016,11 +1016,17 @@ alpha.table <- rbind.data.frame(
   )
 )
 
-colnames(alpha.table) <- c("Normdata","Sampledata")
+#colnames(alpha.table) <- c("Normdata","Sampledata")
 
-svkable(alpha.table, caption='(ref:alp)', escape=F, align="cc")
+#svkable(alpha.table, caption='(ref:alp)', escape=F, align="cc")
 
 ```
+
+\xstartnew
+
+Vi kontroll av intern reliabilitet genom beräkning av Cronbach's $\alpha$ för de inför studien översatta skattningsskalorna fann vi resultat överensstämmande med normdata för AAA-S Adaptive, `r xresultT(aaas_ad.alpha,2)` jämfört med `r xresultT(r.AAAS_ad,2)` för `r ref.AAAS_ad`. Resultaten var något avvikande för AAA-S Aggressive, `r xresultT(aaas_ag.alpha,2)` jämfört med `r xresultT(r.AAAS_ag,2)` för `r ref.AAAS_ag`, dock alltjämt på acceptabel nivå. För Rathus var resultaten helt likvärdiga, `r xresultT(rathus.alpha,2)` jämfört med `r xresultT(r.Rathus,2)` för `r ref.Rathus`.
+
+\xstopnew
 
 ```{r sociodemotest, eval = F}
 
