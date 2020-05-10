@@ -615,15 +615,10 @@ Genom avslappningsträning konfronteras deltagarna tidigt i behandlingsprogramme
 
 <!-- TH: Har redigerat hit -->
 
+### Fokus på meta-färdigheter för inlärning 
 
-### Om att finna motivation till att bryta gamla vanor
-
-
+Förhållningssättet till aversiva känslor kan i terapi förändras både genom 
 I linje med att undersöka ens egen förmåga att hantera aversiva känslor är att ändra sitt förhållningssätt till dem. <!--För många kan det stora steget i att bryta undvikande vara att arbete med att acceptera och tillåta sina känslor och upplevelser [@Hayes1996]. --> Vissa har aldrig fått tillgång till den vägledning eller de verktyg som behövs för att hantera starka emotionella upplevelser. De har aldrig lärt sig att förstå sorg och ilska, eller hur de ska gå tillväga för att lugna sin ångest eller sin frustration.  Istället har de lärt sig att distrahera sig och undvika. Bedöva genom att undantrycka. Att ändra dessa förutsägelser om att vissa emotioner är oacceptabla; att tillåta sig känna dem, närma sig dem, acceptera dem, har återkommande gånger visat sig vara ett effektivt sätt att bryta undvikande [@Hayes1996; @Hayes2004a; @Luoma2007] och ett effektivt sätt att behandla många av de psykatriska besvär som individer med bristande *assertiveness* upplever [@A-Tjak2015].
-
-<!--
-Programmet refererar och använder metaforer och 
--->
 
 Många som lever med psykopatologiska besvär under en längre tid kan uppleva det som att det inte finns någonting de kan göra åt sina besvär. Som att deras symtom och deras lidande är där för att stannna. Detta brukar kallas för ett *fixed mindset*. Ett *fixed mindset* är antagandet att förmågor, färdigheter samt egenskaper är fasta och oföränderliga. Det skiljer sig från ett *growth mindset*, antagandet att förmågor, färdigheter och egenskaper kan utvecklas och förändras. Dessa *mindset*, tankesätt, är ett sorts ramverk genom vilket man tolkar och förstår sig på sina erfarenheter, vilket i sin tur påverkar vilka beteenden och emotioner man uppvisar [@Dweck1995]. Tankesätt kan beröra mer övergripande domäner, såsom personlighet och intelligens, eller mer specifika domäner, såsom hur man tänker kring ångest och emotioner. Man kan ha ett fixerat tankesätt inom en viss domän, och ett utvecklande tankesätt inom en annan [@Schroder2016]. Har man ett utvecklande tankesätt kring ångest leder det både till större motivation under en behandlings gång och till bättre odds för positivt behandlingsutfall [@Schroder2015; @DeCastella2015]. Det har även visat sig att personer med ett fixerat tankesätt i större utsträckning försöker undvika negativa emotioner samt i mindre utsträckning omvärderar sina förutsägelser i ljuset av nya erfarenheter [@Schroder2015]. Forskning konstaterar att det finns gott om anledningar att arbeta mot ett *growth mindset*.
 
@@ -1758,7 +1753,7 @@ rathus.pre.post.sigsig.posthoc <- dunnTest(ifelse(rathus.pre.post.jt.plot$data$c
 
 Vi fann signifikanta skillnader i både klinisk signifikans-status och reliabel förbättring mellan grupperna på huvudutfallsmåttet AAAS Adaptive, $\chi^2_{`r xresultT(aaas_ad.pre.post.sigsig[["parameter"]],0)`}$ = `r xresult(aaas_ad.pre.post.sigsig$statistic,1)`, `r xpr(aaas_ad.pre.post.sigsig[["p.value"]])`. Med post-hoc test för parvisa jämförelser fann vi en signifikant förbättring hos behandlarstöds- och självhjälpsgruppen jämfört med väntelista (*z* = `r xresult(aaas_ad.pre.post.sigsig.posthoc$res[2,2],1)`, `r xpr(aaas_ad.pre.post.sigsig.posthoc$res[2,4])` för behandlarstödsgruppen och *z* = `r xresult(aaas_ad.pre.post.sigsig.posthoc$res[3,2],1)`, `r xpr(aaas_ad.pre.post.sigsig.posthoc$res[3,4])` för självhjälpsgruppen). Att ha tillgång till behandlingsmaterialet gav i större utsträckning kliniskt signifikant och reliabel förbättring jämfört med att vara placerad på väntelista. Se tabell \@ref(tab:jtprocent) för en sammanställning av kliniskt signifikanta och reliabla förändringarna inom de olika grupperna.
 
-(ref:jtp) Antal och andel i procent av deltagare i respektive grupp som vid behandlingens slut tillhör de olika kategorierna med överlapp mellan klinisk signifikans och reliabel förändring. Deltagare som endast har lämnat förmätningsvärden har fått dessa värden framflyttade till följande mättillfällen. Med 'tillfrisknad' menas att personen vid eftermätningstillfället befinner sig inom två standardavvikelser från medelvärdet för en icke-klinisk population. <!-- Fetstil indikerar statistisk signfikant förändring av klinisk signifikans och reliabel förändring. -->
+(ref:jtp) Antal och andel i procent av deltagare i respektive grupp som vid behandlingens slut tillhör de olika kategorierna med överlapp mellan klinisk signifikans och reliabel förändring. Deltagare som endast har lämnat förmätningsvärden har fått dessa värden framflyttade till följande mättillfällen. Med 'tillfrisknad' menas antingen att personen vid eftermätningstillfället befinner sig minst två standardavvikelsern från medelvärdet för en klinisk population eller inom två standardavvikelser från medelvärdet för en icke-klinisk population (det mest konservativa alternativet används i dessa beräkningar). <!-- Fetstil indikerar statistisk signfikant förändring av klinisk signifikans och reliabel förändring. -->
 
 ```{r jtprocent, tab.align="center", cache=F}
 
