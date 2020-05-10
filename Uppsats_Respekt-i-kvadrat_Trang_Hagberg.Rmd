@@ -1998,7 +1998,7 @@ svkable(descriptives.col.out, caption = "(ref:descriptives)", align="llrccccccc"
 
 ## Flernivåanalysresultat
 
-Vid visuell granskning av diagnostiska plottar av observerad data fann vi inga brott mot de villkor som behöver uppfyllas för flernivåanalys. Se tabell \@ref(tab:descriptives) för en sammanställning av predicerade data från respektive utfallsmått flernivåanalys-modell, tabellen inkluderar uppskattade effektstorlekar. Estimat av intercept och regressionskoefficienter för de olika primära och sekundära utfallsmåtten sammanfattas i tabell \@ref(stargazertab). Intercept och lutningskoefficienter som anges i tabellen för respektive utfallsmått kan läggas in i regressionsformeln för modellen för att predicera utfall för alla kombinationer av grupptillhörighet och mättillfällen. 
+Vid visuell granskning av diagnostiska plottar av observerad data fann vi inga brott mot de villkor som behöver uppfyllas för flernivåanalys. Se tabell \@ref(tab:descriptives) för en sammanställning av predicerade medelvärden, standardavvikelser och effektstorlekar för flernivåanalys-modellerna för utfallsmåtten. Estimat av intercept och regressionskoefficienter för de olika primära och sekundära utfallsmåtten sammanfattas i tabell \@ref(stargazertab). Intercept och lutningskoefficienter som anges i tabellen för respektive utfallsmått kan läggas in i regressionsformeln för modellen för att predicera utfall för alla kombinationer av grupptillhörighet och mättillfällen. 
 
 Nedan följer marginalmedelvärden och parvisa jämförelser av dessa mellan grupperna och mättillfällena för de huvudsakliga utfallsmåtten i AAA-S, som de har predicerats för deltagarna i respektive flernivåmodell.
 
