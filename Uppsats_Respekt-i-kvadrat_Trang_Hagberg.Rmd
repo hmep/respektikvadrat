@@ -2000,7 +2000,7 @@ Vid visuell granskning av diagnostiska plottar av observerad data fann vi inga b
 
 Nedan följer marginalmedelvärden och parvisa jämförelser av dessa mellan grupperna och mättillfällena för de huvudsakliga utfallsmåtten i AAA-S, som de har predicerats för deltagarna i respektive flernivåmodell.
 
-```{r stargazer, results='asis', eval=T}
+```{r stargazer, results=F, eval=T}
 
 options(OutDec= ".")
 
@@ -2046,11 +2046,18 @@ stargazer::stargazer(
   column.labels = c("Primära utfallsmått","Sekundära utfallsmått"),
   column.separate = c(2,5),
   dep.var.labels = scalenames,
-  notes.label = "Signifikansnivåer:",
+  notes.label = "Signifikansnivåer",
   label = "stargazertab",
-  title = "En sammanställning av estimat av intercept och regressionskoefficienter för respektive flernivåanalys av de primära och sekundära utfallsmåtten."
+  title = "En sammanställning av estimat av intercept och regressionskoefficienter för respektive flernivåanalys av de primära och sekundära utfallsmåtten.",
+  out = "stargazer.tex"
 )
 
+# Search and replace
+system("sed -i 's/Observations/Antal observationer/g' stargazer.tex", wait = T)
+
+```
+
+```{r child = 'stargazer.tex', results='asis'}
 ```
 
 ## Skillnader i effekt på konstruktiv och aggressiv självhävdelse mellan `r xg3`--`r xg1` respektive `r xg3`--`r xg2`
