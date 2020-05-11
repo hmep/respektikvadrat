@@ -2276,7 +2276,7 @@ Vi konstaterade att av *random*-variansen så bestod `r xresult(performance::icc
 
 #### Metoder för att bättre kontrollera *random*-effekter
 
-För att bättre kunna kontrollera för individkopplade bidrag till behandlingsutfall kan uppföljande studier med fördel inkludera fler sätt att mäta individrelaterade variabler än vad den här studien har gjort, till exempel med veckovisa frågor om hur mycket tid deltagarna har haft till förfogande för deltagande. Sådana variabler kan sedan anges som kovariat i analysen. Den del av *random*-variansen som har med behandlareffekter att göra kan i framtida studier undersökas genom tillägg av en tredje *random*-nivå i flernivåanalysen (tidpunkter nästlade i individer nästlade i behandlare), förutsatt att tillräcklig power går ett erhålla. Det kan också ge mer tillförlitliga uppskattningar av behandlingsprogrammets effekt [@Wampold2000; @Baldwin2011a; @Almlv2011; @Hesser2015].
+För att bättre kunna kontrollera för individkopplade bidrag till behandlingsutfall kan uppföljande studier med fördel inkludera fler sätt att mäta individrelaterade variabler än vad den här studien har gjort, till exempel med veckovisa frågor om hur mycket tid deltagarna har haft till förfogande för deltagande. Sådana fixa variabler kan sedan anges som kovariat i analysen. Den del av *random*-variansen som har med behandlareffekter att göra kan i framtida studier undersökas genom tillägg av en tredje *random*-nivå i flernivåanalysen (tidpunkter nästlade i individer nästlade i behandlare), förutsatt att tillräcklig power går ett erhålla. Det kan också ge mer tillförlitliga uppskattningar av behandlingsprogrammets effekt [@Wampold2000; @Baldwin2011a; @Almlv2011; @Hesser2015].
 
 \xstopnew
 
