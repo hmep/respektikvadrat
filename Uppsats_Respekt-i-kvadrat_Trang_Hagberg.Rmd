@@ -814,7 +814,7 @@ Självskattningsskalan Välmåendeskalan [VS; @Braconier2015], användes för at
 
 #### Självhävdelsestil
 
-Utöver AAA-S användes även en svensk översättning av The Rathus Assertiveness Schedule [RAS; @Rathus1973] för att samla in information om deltagarnas självhävdelsestil. Självskattningsskalan består av 30 frågor som besvaras på en 6-gradig likertskala där –3 motsvarar ”stämmer inte alls” och 3 motsvarar ”stämmer helt”. Svaren på alla frågor summeras. Maximal totalpoäng på skalan är 90. En hög poäng indikerar hög grad av självhävdelse. En lång poäng (vilken i och med poängsättningen kan vara negativ) indikerar på låg grad av självhävdelse. Den svenska översättningen gjordes inför den aktuella studien och var inte validerad inför studiestart. Aktuella normer från @Thompson2011 användes i den här studien, som också rapporterar god intern reliabilitet för Rathus ($\alpha$ = 0,87).
+Utöver AAA-S användes även en svensk översättning av The Rathus Assertiveness Schedule [RAS; @Rathus1973] för att samla in information om deltagarnas självhävdelsestil. Självskattningsskalan består av 30 frågor som besvaras på en 6-gradig likertskala där –3 motsvarar ”stämmer inte alls” och 3 motsvarar ”stämmer helt”. Svaren på alla frågor summeras. Maximal totalpoäng på skalan är 90. En hög poäng indikerar hög grad av självhävdelse. En lång poäng (vilken i och med poängsättningen kan vara negativ) indikerar låg grad av självhävdelse. Den svenska översättningen gjordes inför den aktuella studien och var inte validerad inför studiestart. Aktuella normer från @Thompson2011 användes i den här studien, som också rapporterar god intern reliabilitet för Rathus ($\alpha$ = 0,87).
 
 ## Interventionen Respekt i kvadrat
 
