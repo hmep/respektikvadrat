@@ -1821,7 +1821,7 @@ aaas_ad.emm.by.time <- emmeans(aaas_ad.lmer, ~ group | time, adjust="bonferroni"
 aaas_ad.emmpairs.by.group <- tidy(pairs(emmeans(aaas_ad.lmer, ~ time | group), adjust="bonferroni"))
 aaas_ad.emmpairs.by.time <- tidy(pairs(emmeans(aaas_ad.lmer, ~ group | time), adjust="bonferroni"))
 
-aaas_ad.sd <- sqrt(6.7247^2 + 4.6582^2) # VarCorr(aaas_ag.lmer)
+aaas_ad.sd <- sqrt(6.7247^2 + 4.6582^2) # VarCorr(aaas_ad.lmer)
 aaas_ad.eff.by.group <- tidy(eff_size(aaas_ad.emm.by.group, sigma = aaas_ad.sd, edf = df.residual(aaas_ad.lmer)))
 aaas_ad.eff.by.time <- tidy(eff_size(aaas_ad.emm.by.time, sigma = aaas_ad.sd, edf = df.residual(aaas_ad.lmer)))
 
