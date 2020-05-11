@@ -15,7 +15,7 @@ authornote: |
   `r readLines('includes/authornote.txt', encoding = 'UTF-8')`
 keywords: | 
   `r readLines('includes/keywords.txt', encoding = 'UTF-8')`
-#wordcount         : "11223"
+#wordcount         : "11158"
 bibliography      : ["includes/r-references.bib", "includes/KSH.bib"] 
 floatsintext      : no
 figurelist        : no
@@ -2037,6 +2037,7 @@ stargazer::stargazer(
   header = F,
   decimal.mark = ',',
   digit.separator = ' ',
+  ci.separator = ' ; ',
   digits = 1,
   covariate.labels = c("Intercept",labradorer),
   float.env = "sidewaystable",
