@@ -947,7 +947,7 @@ Frekvensen deltagare som i behandlingsprogrammet genomgått en reliabel föränd
 
 ### Beräkning av Chronbach's alpha för skalor för utfallsmått
 
-För att bedöma den interna reliabiliteten för i första hand de till svenska nyöversatta skalorna Rathus och AAA-S beräknades Chronbach's $\alpha$ med hjälp av paketet *performance* [@R-performance].
+För att bedöma den interna reliabiliteten för i första hand de till svenska nyöversatta skalorna Rathus och AAA-S beräknades Chronbach's $\alpha$ med hjälp av R-paketet *performance* [@R-performance].
 
 \xstopnew
 
