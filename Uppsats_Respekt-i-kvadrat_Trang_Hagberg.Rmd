@@ -732,10 +732,10 @@ xdemodata <- rbind(
 xdemodatax <- as.data.frame(t(round(xdemodata[-1,],2) * 100))
 
 xdemodatax$x <- as.factor(c(
-    paste(round(mean(r2.wide.data[wg3,64]),1)," (",round(sd(r2.wide.data[wg3,64]),1),")",sep=""),
-    paste(round(mean(r2.wide.data[wg1,64]),1)," (",round(sd(r2.wide.data[wg1,64]),1),")",sep=""),
-    paste(round(mean(r2.wide.data[wg2,64]),1)," (",round(sd(r2.wide.data[wg2,64]),1),")",sep=""),
-    paste(round(mean(r2.wide.data[,64]),1)," (",round(sd(r2.wide.data[,64]),1),")",sep="")
+    paste(xresultT(mean(r2.wide.data[wg3,64]),0)," (",xresultT(sd(r2.wide.data[wg3,64]),0),")",sep=""),
+    paste(xresultT(mean(r2.wide.data[wg1,64]),0)," (",xresultT(sd(r2.wide.data[wg1,64]),0),")",sep=""),
+    paste(xresultT(mean(r2.wide.data[wg2,64]),0)," (",xresultT(sd(r2.wide.data[wg2,64]),0),")",sep=""),
+    paste(xresultT(mean(r2.wide.data[,64]),0)," (",xresultT(sd(r2.wide.data[,64]),0),")",sep="")
   ))
 
 xdemodatax <- xdemodatax[,c(24,1:23)]
@@ -755,7 +755,9 @@ options(OutDec= ".")
 
 ```
 
-De `r length(r2.wide.data$subject)` deltagare vars data används i den här studien var mellan 20 och 65 år gamla med en medelålder på 41,8 år (standardavvikelse 8,8). En betydande majoritet (87,8&nbsp;%) identifierade sig som kvinnor, samtliga övriga som män. Knappt tre fjärdedelar av deltagarna hade avslutad universitets- eller högskoleutbildning (71,6&nbsp;%) och tre fjärdedelar av deltagarna var vid behandlingens start yrkesarbetande (75,5&nbsp;%). Mer än hälften av deltagarna (61,3&nbsp;%) hade tidigare erfarenheter av psykologisk behandling. Av dessa hade majoriteten (64,8&nbsp;%) tidigare erfarenheter av KBT. Knappt en tredjedel av alla deltagare (29,0&nbsp;%) hade erfarenhet av psykofarmaka, och vid behandlingsstart stod 17,6&nbsp;% på något slags psykofarmaka. Totalt 3,4&nbsp;% av deltagarna var vid behandlingsstart sjukskrivna. Se tabell \@ref(tab:demdata) för de demografiska faktorernas fördelningar i respektive grupp.
+De `r length(r2.wide.data$subject)` deltagare vars data används i den här studien var mellan `r xresult(min(r2.wide.data[,64]),0)` och `r xresult(max(r2.wide.data[,64]),0)` år gamla med en medelålder på `r xresult(mean(r2.wide.data[,64]),0)` år (standardavvikelse `r xresult(sd(r2.wide.data[,64]),0)` år). En betydande majoritet (`r xresult(prop.table(table(r2.wide.data$Demografi.Kon))[2] * 100,0)`&nbsp;%) identifierade sig som kvinnor, samtliga övriga som män. Nästan tre fjärdedelar av deltagarna hade avslutad universitets- eller högskoleutbildning (`r xresult(prop.table(table(r2.wide.data$Demografi.Utbildning))[6] * 100,0)` %) och tre fjärdedelar av deltagarna var vid behandlingens start yrkesarbetande (`r xresult(prop.table(table(r2.wide.data$Demografi.Sysselsattning))[3] * 100,0)` %). Mer än hälften av deltagarna (`r xresult(prop.table(table(r2.wide.data$Demografi.PsykoBehandling))[2] * 100,0)` %) hade tidigare erfarenheter av psykologisk behandling. Av dessa hade majoriteten (65&nbsp;%) tidigare erfarenheter av KBT. Nästan en tredjedel av alla deltagare  (`r xresult((prop.table(table(r2.wide.data$Demografi.Psykofarmaka))[3]+prop.table(table(r2.wide.data$Demografi.Psykofarmaka))[2]) * 100,0)` %) hade erfarenhet av psykofarmaka, och vid behandlingsstart stod `r xresult(prop.table(table(r2.wide.data$Demografi.Psykofarmaka))[3] * 100,0)` % på något slags psykofarmaka. Totalt `r xresult(prop.table(table(r2.wide.data$Demografi.Sysselsattning))[7] * 100,0)` % av deltagarna var vid behandlingsstart sjukskrivna. Se tabell \@ref(tab:demdata) för de demografiska faktorernas fördelningar i respektive grupp.
+
+<!-- Av dessa hade majoriteten (64,8&nbsp;%) tidigare erfarenheter av KBT. -->
 
 (ref:dem) Vid förmätningstillfället insamlad sociodemografisk data om deltagarna.
 
