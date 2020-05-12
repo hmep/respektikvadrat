@@ -945,9 +945,9 @@ Frekvensen deltagare som i behandlingsprogrammet genomgått en reliabel föränd
 
 \xstartnew
 
-### Beräkning av Chronbach's alpha för skalor för utfallsmått
+### Beräkning av Cronbach's alpha för skalor för utfallsmått
 
-För att bedöma den interna reliabiliteten för i första hand de till svenska nyöversatta skalorna Rathus och AAA-S beräknades Chronbach's $\alpha$ med hjälp av R-paketet *performance* [@R-performance].
+För att bedöma den interna reliabiliteten för i första hand de till svenska nyöversatta skalorna Rathus och AAA-S beräknades Cronbach's $\alpha$ med hjälp av R-paketet *performance* [@R-performance].
 
 \xstopnew
 
@@ -957,7 +957,7 @@ För att bedöma den interna reliabiliteten för i första hand de till svenska 
 
 <!-- Se tabell \@ref(tab:alpha) för en sammanställning av ... -->
 
-<!-- (ref:alp) Chronbach's $\alpha$ för de primära och sekundära utfallsmåtten, funna med det undersökta samplet. Normdata anges som jämförelse. -->
+<!-- (ref:alp) Cronbach's $\alpha$ för de primära och sekundära utfallsmåtten, funna med det undersökta samplet. Normdata anges som jämförelse. -->
 
 ```{r alpha, eval = T}
 
