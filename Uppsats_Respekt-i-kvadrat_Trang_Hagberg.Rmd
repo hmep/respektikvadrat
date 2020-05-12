@@ -629,7 +629,7 @@ Det vi primärt var intresserade av att ta reda på hur effekten av behandling (
 
 ## Design
 
-Sample-storleken för varje grupp bestämdes innan rekrytering påbörjades till n = 70 med en powerberäkning. I studien planerade manipulationer, variabler, mättillfällen och insamlad data har använts i de efterföljande analyserna utan selektion i efterhand. Alla randomiseringar gjordes av oberoende tredje part vid Stockholms universitet med hjälp av internetbaserade randomiseringstjänster (www.random.org för överintagsexkluderingen och randomiseringen till respektive behandlare samt www.sealedenvelope.com för randomiseringen till de tre grupperna). Studien uppfyller kriterierna för en RCT-design (från engelskans *randomised controlled trial*) i @Chambless2001.
+Sample-storleken för varje grupp bestämdes innan rekrytering påbörjades till $n$\xspace =\xspace 70 med en powerberäkning. I studien planerade manipulationer, variabler, mättillfällen och insamlad data har använts i de efterföljande analyserna utan selektion i efterhand. Alla randomiseringar gjordes av oberoende tredje part vid Stockholms universitet med hjälp av internetbaserade randomiseringstjänster (www.random.org för överintagsexkluderingen och randomiseringen till respektive behandlare samt www.sealedenvelope.com för randomiseringen till de tre grupperna). Studien uppfyller kriterierna för en RCT-design (från engelskans *randomised controlled trial*) i @Chambless2001.
 
 ### Rekrytering
 
@@ -637,7 +637,7 @@ Rekrytering ägde rum mellan 28 januari och 5 februari 2020. Studien annonserade
 
 ### Deltagare
 
-Som framgår av figur \@ref(fig:flowchart) så anmälde totalt 657 personer sitt intresse till studien varav 464 personer slutförde screeningsprocessen. Av dessa uteslöts 126 personer då de uppfyllde något av exklusionskriterierna. De kvarvarande 338 personerna erbjöds plats i studien. Av dessa bejakade 253 sin plats. 43 personer exkluderades från behandlingen genom randomisering så att 210 inkluderades. De deltagare som exkluderades via randomisering erbjöds tillgång till behandlingsprogrammet på samma sätt som kontrollgruppen, men med skillnaden att deras skattningssvar inte användes i beräkningarna. Vid behandlingsstart hade studien 210 deltagare. Vid en extra kontroll under behandlingens gång upptäcktes det att fem deltagare (n = 3 från gruppen `r xg1` och n = 2 från gruppen `r xg3`) hade annan pågående psykologisk behandling och därför felaktigt inkluderats i studien. Dessa deltagare fick fullgå behandlingen på oförändrade villkor, men deras skattningar har exkluderats från alla beräkningar. Utöver detta bad en deltagare från gruppen `r xg2` under behandlingsprogrammets gång att bli exkluderad från studien. Ingen data har använts hos de fem deltagarna som hade pågående psykologisk behandling och endast förmätningen har använts från deltagaren som bad om att bli exkluderad.
+Som framgår av figur \@ref(fig:flowchart) så anmälde totalt 657 personer sitt intresse till studien varav 464 personer slutförde screeningsprocessen. Av dessa uteslöts 126 personer då de uppfyllde något av exklusionskriterierna. De kvarvarande 338 personerna erbjöds plats i studien. Av dessa bejakade 253 sin plats. 43 personer exkluderades från behandlingen genom randomisering så att 210 inkluderades. De deltagare som exkluderades via randomisering erbjöds tillgång till behandlingsprogrammet på samma sätt som kontrollgruppen, men med skillnaden att deras skattningssvar inte användes i beräkningarna. Vid behandlingsstart hade studien 210 deltagare. Vid en extra kontroll under behandlingens gång upptäcktes det att fem deltagare ($n$\xspace =\xspace 3 från gruppen `r xg1` och $n$\xspace =\xspace 2 från gruppen `r xg3`) hade annan pågående psykologisk behandling och därför felaktigt inkluderats i studien. Dessa deltagare fick fullgå behandlingen på oförändrade villkor, men deras skattningar har exkluderats från alla beräkningar. Utöver detta bad en deltagare från gruppen `r xg2` under behandlingsprogrammets gång att bli exkluderad från studien. Ingen data har använts hos de fem deltagarna som hade pågående psykologisk behandling och endast förmätningen har använts från deltagaren som bad om att bli exkluderad.
 
 (ref:flow) Flödesschema över inklusion, exklusion (med kriterier) samt bortfall.
 
@@ -1793,7 +1793,7 @@ jtrci.tab$"" = rep(jt_rownames,times=3)
 #jtrci.tab.df[1, 5] <- cell_spec(jtrci.tab.df[1, 5], "latex", bold = T) # Does not work, reverting :-(
 #colnames(jtrci.tab.df) = rep(c("N","%"),times=3)
 
-colnames(jtrci.tab) = rep(c("N","%"),times=3)
+colnames(jtrci.tab) = rep(c("n","%"),times=3)
 
 svkable(jtrci.tab[,c(7,1:6)], align="lcccccc", caption = '(ref:jtp)') %>%
   pack_rows("AAA-S Adaptive", 1, 5, bold = F) %>%
@@ -1874,7 +1874,7 @@ options(OutDec= ",")
 
 (ref:descriptives) Estimerade marginalmedelvärden (*M*), standardavvikelser (*SD*) samt effektstorlekar (*ES*) för utfallsmåtten i de olika grupperna och vid de olika mättillfällena.
 
-```{r descriptives, fig.align="center", cache = T, eval = T}
+```{r descriptives, fig.align="center", cache = T, eval = T, escape = F}
 
 ng1t1 <- r2.new.data$group == xg1 & r2.new.data$time == xt1
 ng1t2 <- r2.new.data$group == xg1 & r2.new.data$time == xt2
@@ -2249,7 +2249,7 @@ Vi fann ingen skillnad i utfall med AAA-S Adaptive vid `r xt3`mätningen mellan 
 
 ### Bortfallsanalys 
 
-Med oberoende variansanalys fann vi inga signifikanta skillnader på någon av förmätningspoängen för utfallsmåtten mellan de deltagare som genomförde eftermätningen (n = `r length(which(!is.na(r2.wide.data$post_rathus)))`) och de som inte gjorde det (n = `r length(which(is.na(r2.wide.data$post_rathus)))`) i de olika grupperna. Med Pearsons $\chi^2$-test och Kruskal-Wallis $\chi^2$-test fann vi inte heller några signifikanta skillnader i svaren på de sociodemografiska frågorna mellan de som hade svarat och de som inte hade svarat på eftermätningen.
+Med oberoende variansanalys fann vi inga signifikanta skillnader på någon av förmätningspoängen för utfallsmåtten mellan de deltagare som genomförde eftermätningen ($n$\xspace =\xspace `r length(which(!is.na(r2.wide.data$post_rathus)))`) och de som inte gjorde det ($n$\xspace =\xspace `r length(which(is.na(r2.wide.data$post_rathus)))`) i de olika grupperna. Med Pearsons $\chi^2$-test och Kruskal-Wallis $\chi^2$-test fann vi inte heller några signifikanta skillnader i svaren på de sociodemografiska frågorna mellan de som hade svarat och de som inte hade svarat på eftermätningen.
 
 # Diskussion
 
