@@ -577,11 +577,11 @@ Graden av interaktion mellan stödbehandlare och deltagare varierar beroende på
 
 Trots att evidensen för kognitiv och beteendeterapeutisk behandling vid ångestsyndrom och depressiva syndrom är god förblir majoriteten av personer med psykiska besvär även i länder med väl utvecklad sjukvård obehandlade [@Craske2017]. Många kan bära på ett psykiskt lidande utan att för den skull nå upp till kriterierna för någon av diagnoserna i DSM. Och för dem som ändå skulle göra det är tillgången till vård en begränsande faktor som I-KBT kan avhjälpa [@Andrews2018].
 
-### Användarupplevelsen av I-KBT
+### Användarupplevelsen av I-KBT och självhjälpsmaterial
 
 I-KBT med behandlarstöd kan erbjuda klienter fördelar som inte har någon motsvarighet i ansikte-mot-ansiktebehandling. I-KBT kan erbjuda en anonymitet som gör det lättare för vissa grupper att söka sig till vård [@Lundgren2018; @Rozental2020]. Behandlingsupplägget med I-KBT ger dessutom möjlighet till tidsmässig flexibilitet. Ytterligare en fördel som @Lundgren2018 uppmärksammar är att många upplever det enklare att uttrycka sig i skrift än i tal.
 
-En nackdel med I-KBT är att vissa deltagare hindras av besvär med tekniken vilket kan försvåra deras möjligheter till att ta del av vården. En annan är att de lösare tidsramarna erbjuder möjlighet att skjuta upp eller prioritera ned internetbaserad behandling, jämfört med fysiska besök hos en kliniker [@Burke2019]. 
+En nackdel med I-KBT är att vissa deltagare hindras av besvär med tekniken vilket kan försvåra deras möjligheter till att ta del av vården. En annan är att de lösare tidsramarna erbjuder möjligheter att skjuta upp eller prioritera ned internetbaserad behandling som är större än med fysiska besök hos en kliniker [@Burke2019]. 
 
 Självhjälpsmaterial förmedlat via I-KBT har dock visat sig populärt och effektivt. Materialet som har använts i flera olika I-KBT-studier har arbetats om och publicerats i form av självhjälpsböcker för allmän konsumption. Självhjälpsböcker är ett medium som kan nå en stor publik. Med självhjälpsböcker eller motsvarande upplägg av I-KBT utan behandlarstöd går det att effektivt sprida evidensbaserad psykologisk kunskap. Validerade självhjälpsböcker har också potential att förbättra ansikte-mot-ansikte-behandlingar, där självhjälpsböcker kan användas som stöd för både genomförande av hemuppgifter under behandlingens gång och för vidmakthållande av behandlingseffekter efter behandlingens avslut. 
 
