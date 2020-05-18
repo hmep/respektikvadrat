@@ -1874,6 +1874,72 @@ options(OutDec= ",")
 
 ```
 
+## Flernivåanalysresultat
+
+Vid visuell granskning av diagnostiska plottar av observerad data fann vi inga brott mot de villkor som behöver uppfyllas för flernivåanalys. Estimat av intercept och regressionskoefficienter för de olika primära och sekundära utfallsmåtten sammanfattas i tabell \@ref(stargazertab). Intercept och lutningskoefficienter som anges i tabellen för respektive utfallsmått kan läggas in i regressionsformeln för att predicera utfall för alla kombinationer av grupptillhörighet och mättillfälle. Se tabell \@ref(tab:descriptives) för en sammanställning av predicerade medelvärden, standardavvikelser och effektstorlekar för flernivåanalys-modellerna för utfallsmåtten. 
+
+Nedan följer marginalmedelvärden och parvisa jämförelser av dessa mellan grupperna och mättillfällena för de huvudsakliga utfallsmåtten i AAA-S, som de har predicerats för deltagarna i respektive flernivåmodell.
+
+```{r stargazer, results=F, eval=T}
+
+options(OutDec= ".")
+
+# https://cran.r-project.org/web/packages/stargazer/vignettes/stargazer.pdf
+# NB! We're using stargazer-booktabs to get prettier LaTeX table output
+
+scalenames = c("AAA-S Ad", "AAA-S Ag", "Rathus", "LSAS-SR", "GAD-7", "PHQ-9", "Välmående")
+
+labradorer <- c(
+  xG1,
+  xG2,
+  xDur,
+  xPost,
+  paste(xG1, " -- ", xt2,sep=""),
+  paste(xG2, " -- ", xt2,sep=""),
+  paste(xG1, " -- ", xt3,sep=""),
+  paste(xG2, " -- ", xt3,sep="")
+)
+
+stargazer::stargazer(
+  aaas_ad.lmer, 
+  aaas_ag.lmer, 
+  rathus.lmer,
+  lsas_sum.lmer,
+  gad_sum.lmer,
+  phq_sum.lmer,
+  well.lmer,
+  type = "latex",
+  ci = T,
+  intercept.bottom = F,
+  single.row = F,
+  model.numbers = F,
+  header = F,
+  decimal.mark = ',',
+  digit.separator = ' ',
+  ci.separator = ' ; ',
+  digits = 1,
+  covariate.labels = c("Intercept",labradorer),
+  float.env = "sidewaystable",
+  #omit.stat = c("aic","bic","ll"),
+  keep.stat= c("n"),
+  dep.var.caption = "Utfallsmått/flernivåanalys",
+  column.labels = c("Primära utfallsmått","Sekundära utfallsmått"),
+  column.separate = c(2,5),
+  dep.var.labels = scalenames,
+  notes.label = "Signifikansnivåer",
+  label = "stargazertab",
+  title = "En sammanställning av estimat av intercept och regressionskoefficienter för respektive flernivåanalys av de primära och sekundära utfallsmåtten.",
+  out = "stargazer.tex"
+)
+
+# Search and replace
+system("sed -i 's/Observations/Antal observationer/g' stargazer.tex", wait = T)
+
+```
+
+```{r child = 'stargazer.tex', results='asis'}
+```
+
 (ref:descriptives) Estimerade marginalmedelvärden (*M*), standardavvikelser (*SD*) samt effektstorlekar (*ES*) för utfallsmåtten i de olika grupperna och vid de olika mättillfällena.
 
 ```{r descriptives, fig.align="center", cache = T, eval = T, escape = F}
@@ -1996,72 +2062,6 @@ svkable(descriptives.col.out, caption = "(ref:descriptives)", align="llrccccccc"
   collapse_rows(1:3, latex_hline = "major", valign = "middle", row_group_label_position = "stack", row_group_label_fonts = row_group_label_fonts) %>%
   add_header_above(c(" " = 3, "Primära utfallsmått" = 2, "Sekundära utfallsmått" = 5))
 
-```
-
-## Flernivåanalysresultat
-
-Vid visuell granskning av diagnostiska plottar av observerad data fann vi inga brott mot de villkor som behöver uppfyllas för flernivåanalys. Se tabell \@ref(tab:descriptives) för en sammanställning av predicerade medelvärden, standardavvikelser och effektstorlekar för flernivåanalys-modellerna för utfallsmåtten. Estimat av intercept och regressionskoefficienter för de olika primära och sekundära utfallsmåtten sammanfattas i tabell \@ref(stargazertab). Intercept och lutningskoefficienter som anges i tabellen för respektive utfallsmått kan läggas in i regressionsformeln för att predicera utfall för alla kombinationer av grupptillhörighet och mättillfälle. 
-
-Nedan följer marginalmedelvärden och parvisa jämförelser av dessa mellan grupperna och mättillfällena för de huvudsakliga utfallsmåtten i AAA-S, som de har predicerats för deltagarna i respektive flernivåmodell.
-
-```{r stargazer, results=F, eval=T}
-
-options(OutDec= ".")
-
-# https://cran.r-project.org/web/packages/stargazer/vignettes/stargazer.pdf
-# NB! We're using stargazer-booktabs to get prettier LaTeX table output
-
-scalenames = c("AAA-S Ad", "AAA-S Ag", "Rathus", "LSAS-SR", "GAD-7", "PHQ-9", "Välmående")
-
-labradorer <- c(
-  xG1,
-  xG2,
-  xDur,
-  xPost,
-  paste(xG1, " -- ", xt2,sep=""),
-  paste(xG2, " -- ", xt2,sep=""),
-  paste(xG1, " -- ", xt3,sep=""),
-  paste(xG2, " -- ", xt3,sep="")
-)
-
-stargazer::stargazer(
-  aaas_ad.lmer, 
-  aaas_ag.lmer, 
-  rathus.lmer,
-  lsas_sum.lmer,
-  gad_sum.lmer,
-  phq_sum.lmer,
-  well.lmer,
-  type = "latex",
-  ci = T,
-  intercept.bottom = F,
-  single.row = F,
-  model.numbers = F,
-  header = F,
-  decimal.mark = ',',
-  digit.separator = ' ',
-  ci.separator = ' ; ',
-  digits = 1,
-  covariate.labels = c("Intercept",labradorer),
-  float.env = "sidewaystable",
-  #omit.stat = c("aic","bic","ll"),
-  keep.stat= c("n"),
-  dep.var.caption = "Utfallsmått/flernivåanalys",
-  column.labels = c("Primära utfallsmått","Sekundära utfallsmått"),
-  column.separate = c(2,5),
-  dep.var.labels = scalenames,
-  notes.label = "Signifikansnivåer",
-  label = "stargazertab",
-  title = "En sammanställning av estimat av intercept och regressionskoefficienter för respektive flernivåanalys av de primära och sekundära utfallsmåtten.",
-  out = "stargazer.tex"
-)
-
-# Search and replace
-system("sed -i 's/Observations/Antal observationer/g' stargazer.tex", wait = T)
-
-```
-
-```{r child = 'stargazer.tex', results='asis'}
 ```
 
 ## Skillnader i effekt på konstruktiv och aggressiv självhävdelse mellan `r xg3`--`r xg1` respektive `r xg3`--`r xg2`
