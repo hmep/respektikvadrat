@@ -1922,7 +1922,7 @@ stargazer::stargazer(
   float.env = "sidewaystable",
   #omit.stat = c("aic","bic","ll"),
   keep.stat= c("n"),
-  dep.var.caption = "Utfallsmått/flernivåanalys",
+  dep.var.caption = "Flernivåanalys",
   column.labels = c("Primära utfallsmått","Sekundära utfallsmått"),
   column.separate = c(2,5),
   dep.var.labels = scalenames,
