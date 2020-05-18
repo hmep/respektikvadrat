@@ -925,7 +925,7 @@ En modell specificerades för vart och ett av de beroende utfallsmåtten. Ingen 
 
 För modelleringen av de olika utfallsmåtten användes modelleringsverktyg från R-paketet *lme4* [@R-lme4]. Valet av kovariansstrukturen gjordes genom jämförelse av *Akaike Information Criteria* (AIC)-tal av modeller som anpassades till data med *Maximum Likelihood* (ML)-funktionen. Den alternativa sannolikhetsfunktionen *Restricted Maximum Likelihood* (REML), som ger väntesvärdesriktiga uppskattningar av varianserna, användes därefter för anpassningen av modellerna för utfallsmåtten till underliggande data. 
 
-Från prediktioner estimerade marginalmedelvärden (*estimated marginal means* eller *least square means*) samt parvisa jämförelser av dessa genomfördes med R-paketet *emmeans* [@R-emmeans] med Bonferroni-korrigering av *p*-värden. 
+Från prediktioner estimerade marginalmedelvärden (*estimated marginal means* eller *least square means*) samt parvisa jämförelser av dessa beräknades med R-paketet *emmeans* [@R-emmeans] med Bonferroni-korrigering av *p*-värden. 
 
 ### Analys av *random*-effekter
 
@@ -2287,7 +2287,7 @@ Vi konstaterade att av *random*-variansen så bestod `r xresult(performance::icc
 
 #### Metoder för att bättre kontrollera *random*-effekter
 
-För att bättre kunna kontrollera för individkopplade bidrag till behandlingsutfall kan uppföljande studier med fördel inkludera fler sätt att mäta individrelaterade variabler än vad den här studien har gjort, till exempel med veckovisa frågor om hur mycket tid deltagarna har haft till förfogande för deltagandet. Sådana fixa variabler kan sedan anges som kovariat i analysen. Den del av *random*-variansen som har med behandlareffekter att göra kan i framtida studier undersökas genom tillägg av en tredje *random*-nivå i flernivåanalysen (tidpunkter nästlade i individer nästlade i behandlare), förutsatt att tillräcklig power går ett erhålla. Det kan också ge mer tillförlitliga uppskattningar av behandlingsprogrammets effekt [@Wampold2000; @Baldwin2011a; @Almlv2011; @Hesser2015].
+För att bättre kunna kontrollera för individkopplade bidrag till behandlingsutfall kan uppföljande studier med fördel inkludera fler sätt att mäta individrelaterade variabler (såväl egenskaper, *traits* som tillstånd, *states*) än vad den här studien har gjort, till exempel med veckovisa frågor om hur mycket tid deltagarna har haft till förfogande för deltagandet. Sådana fixa variabler kan sedan anges som kovariat i analysen. Andelen av *random*-variansen som har med effekter av interaktionen mellan behandlare och deltagare (exempelvis kvalitet på alliansen) att göra kan i framtida studier undersökas genom tillägg av en tredje *random*-nivå i flernivåanalysen (tidpunkter nästlade i individer nästlade i behandlare), förutsatt att tillräcklig power går ett erhålla. Det kan också ge mer tillförlitliga uppskattningar av behandlingsprogrammets effekt [@Wampold2000; @Baldwin2011a; @Almlv2011; @Hesser2015].
 
 \xstopnew
 
