@@ -2291,7 +2291,11 @@ Vi konstaterade att av *random*-variansen så bestod `r xresult(performance::icc
 
 #### Metoder för att bättre kontrollera *random*-effekter
 
-För att bättre kunna kontrollera för individkopplade bidrag till behandlingsutfall kan uppföljande studier med fördel inkludera fler sätt att mäta individrelaterade variabler (såväl egenskaper, *traits* som tillstånd, *states*) än vad den här studien har gjort, till exempel med veckovisa frågor om hur mycket tid deltagarna har haft till förfogande för deltagandet. Sådana fixa variabler kan sedan anges som kovariat i analysen. Andelen av *random*-variansen som har med effekter av interaktionen mellan behandlare och deltagare (exempelvis kvalitet på alliansen) att göra kan i framtida studier undersökas genom tillägg av en tredje *random*-nivå i flernivåanalysen (tidpunkter nästlade i individer nästlade i behandlare), förutsatt att tillräcklig power går ett erhålla. Det kan också ge mer tillförlitliga uppskattningar av behandlingsprogrammets effekt [@Wampold2000; @Baldwin2011a; @Almlv2011; @Hesser2015].
+För att bättre kunna kontrollera för individkopplade bidrag till behandlingsutfall kan uppföljande studier med fördel inkludera fler sätt att mäta individrelaterade variabler (såväl egenskaper, *traits* som tillstånd, *states*) än vad den här studien har gjort, till exempel med skalor som mäter emotionellt undvikande eller veckovisa frågor om hur mycket tid deltagarna har haft till förfogande för deltagandet. Sådana fixa variabler kan sedan anges som kovariat i analysen. För att hantera det potentiella problemet med negativa behandlingseffekter kan man också överväga att i framtida studier inkludera veckovisa frågor om upplevda negativa effekter av beehandling; i sådana fall behöver dock alla behandlingsgrenar, även självhjälpsgrupp, tillsyn av behandlare.
+
+Den andel av *random*-variansen som har med effekter av interaktionen mellan behandlare och deltagare (exempelvis kvalitet på alliansen) att göra kan i framtida studier i explorativt syfte  undersökas genom tillägg av en tredje *random*-nivå i flernivåanalysen (tidpunkter nästlade i individer nästlade i behandlare), förutsatt att tillräcklig power går ett erhålla. Det kan också ge mer tillförlitliga uppskattningar av behandlingsprogrammets effekt [@Wampold2000; @Baldwin2011a; @Almlv2011; @Hesser2015].
+
+En framtida studie 
 
 \xstopnew
 
