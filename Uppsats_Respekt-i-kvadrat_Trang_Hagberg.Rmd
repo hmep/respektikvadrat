@@ -568,7 +568,7 @@ Det finns i Sverige flera exempel på KBT-interventioner som har beforskats i fo
 
 I-KBT är ett effektivt behandlingsformat för ett brett spektrum av olika besvär. I en meta-analys från 2018 som inkluderar 64 RCT-studier konstateras I-KBT vara effektivt för behandling av både depression, paniksyndrom, agorafobi, social fobi samt generaliserat ångestsyndrom [@Andrews2018]. Författarna konstaterar att medeleffektstorleken för I-KBT är *d*\xspace =\xspace 0,8 eller mer i jämförelse med kontrollbetingelse. Enligt resultaten tenderar också effekten att hålla i sig över tid. I-KBT är dessutom effektmässigt jämförbart med terapeutledd terapi. Likvärdigheten med terapeutledd terapi bekräftas i ytterligare en meta-analys från samma år [@Carlbring2018]. Dessa resultat bekräftar tidigare fynd i samma riktning [@Barak2008; @Andrews2010]. 
 
-I-KBT har även visat sig vara effektivt vid behandling av PTSD [@Sijbrandij2016], insomni [@Zachariae2016] och för att minska lidandet vid olika kroniska hälsobesvär [@Mehta2019]. I-KBT är också verksamt för symtomlindring vid en rad olika transdiagnostiska symtom såsom stress [\(\eta^2_p \)\xspace =\xspace 0,12 i @Day2013], prokrastinering [*d*\xspace =\xspace 0,29--1,09 i @Rozental2015] och perfektionism [*d*\xspace =\xspace 0,7--1,0 i @Rozental2017; *d*\xspace =\xspace 0,86 i @Wade2019].
+I-KBT har även visat sig vara effektivt vid behandling av PTSD [@Sijbrandij2016], insomni [@Zachariae2016] och för att minska lidandet vid olika kroniska hälsobesvär [@Mehta2019]. I-KBT är också verksamt för symtomlindring vid en rad olika transdiagnostiska symtom såsom stress [\(\eta^2_p \)\xspace =\xspace 0,12 i @Day2013], prokrastinering [*d*\xspace =\xspace 0,3--1,1 i @Rozental2015] och perfektionism [*d*\xspace =\xspace 0,7--1,0 i @Rozental2017; *d*\xspace =\xspace 0,9 i @Wade2019].
 
 #### I-KBT och stödbehandlare
 
@@ -906,7 +906,7 @@ Vid screening i samband med anmälan lämnade samtliga deltagare svar på förm�
 
 Den föreliggande studien godkändes av etikprövningsmyndigheten. Diarienummer för etikansökan är 2019-05165. Studien förregistrerades även på https://clinicaltrials.gov/ct2/show/NCT04240249. 
 
-Deltagarna blev via studiens hemsida informerade om att allt deltagande var frivilligt och att de kunde avbryta sitt deltagande när som helst. De kunde ta del av syftet med studien och studiens övergripande plan. Information fanns om att all information samlades in under sekretess och i enlighet med personuppgiftslagen samt GDPR. Deltagandet var helt anonymt och all insamlad data var kopplad till den anonyma studiekod som genererades för varje deltagare. Vid intresseanmälan till studien lämnade deltagarna informerat samtycke till sitt deltagande. Vid exkludering från studien under rekryteringsfasen informerades deltagaren om anledningen samt fick rekommendationer (till exempel om vart hen kunde vända sig för att söka vård). Vid tecken på svår depression rekommenderades deltagarna att uppsöka psykiatrisk vård. Under hela studiens gång hade deltagarna möjlighet att kontakta studieansvarig per telefon samt e-post.
+Deltagarna blev via studiens hemsida informerade om att allt deltagande var frivilligt och att de kunde avbryta sitt deltagande när som helst. \xstartnew Samtliga deltagare lämnade informerat samtycke till medverkan. \xstopnew De kunde ta del av syftet med studien och studiens övergripande plan. Information fanns om att all information samlades in under sekretess och i enlighet med personuppgiftslagen samt GDPR. Deltagandet var helt anonymt och all insamlad data var kopplad till den anonyma studiekod som genererades för varje deltagare. Vid intresseanmälan till studien lämnade deltagarna informerat samtycke till sitt deltagande. Vid exkludering från studien under rekryteringsfasen informerades deltagaren om anledningen samt fick rekommendationer (till exempel om vart hen kunde vända sig för att söka vård). Vid tecken på svår depression rekommenderades deltagarna att uppsöka psykiatrisk vård. Under hela studiens gång hade deltagarna möjlighet att kontakta studieansvarig per telefon samt e-post.
 
 \xstartnew
 
@@ -960,7 +960,9 @@ För att bedöma den interna reliabiliteten för i första hand de till svenska 
 
 # Resultat
 
-## Skalornas interna reliabilitet
+## Förkontroller
+
+### Analys av skalornas interna reliabilitet
 
 <!-- Se tabell \@ref(tab:alpha) för en sammanställning av ... -->
 
@@ -1757,7 +1759,45 @@ rathus.pre.post.sigsig.posthoc <- dunnTest(ifelse(rathus.pre.post.jt.plot$data$c
 
 ```
 
-## Reliabel förändring och klinisk signifikans
+```{r attrition, eval = F}
+
+# Who has taken the post survey?
+# Rathus is the first presented questionnaire in the battery
+completers <- as.factor(ifelse(!is.na(r2.wide.data$post_rathus),1,0))
+
+# Response scales
+anova(lm(r2.wide.data$pre_aaas_ad ~ completers * r2.wide.data$group))
+anova(lm(r2.wide.data$pre_aaas_ag ~ completers * r2.wide.data$group))
+anova(lm(r2.wide.data$pre_rathus ~ completers * r2.wide.data$group))
+anova(lm(r2.wide.data$pre_lsas_sum ~ completers * r2.wide.data$group))
+anova(lm(r2.wide.data$pre_gad_sum ~ completers * r2.wide.data$group))
+anova(lm(r2.wide.data$pre_phq_sum ~ completers * r2.wide.data$group))
+anova(lm(r2.wide.data$pre_well ~ completers * r2.wide.data$group))
+# All non-significant
+
+# Sociodemographics
+chisq.test(r2.wide.data$Demografi.Kon, completers)
+kruskal.test(r2.wide.data$Demografi.Alder, completers)
+kruskal.test(r2.wide.data$Demografi.Civilstand, completers)
+kruskal.test(r2.wide.data$Demografi.Utbildning, completers)
+kruskal.test(r2.wide.data$Demografi.Sysselsattning, completers)
+chisq.test(r2.wide.data$Demografi.Psykofarmaka, completers)
+kruskal.test(r2.wide.data$Demografi.PsykofarmakaVad, completers)
+chisq.test(r2.wide.data$Demografi.PsykoBehandling, completers)
+# All non-significant
+
+```
+
+### Bortfallsanalys 
+
+Med oberoende variansanalys fann vi inga signifikanta skillnader på någon av förmätningspoängen för utfallsmåtten mellan de deltagare som genomförde eftermätningen ($n$\xspace =\xspace `r length(which(!is.na(r2.wide.data$post_rathus)))`) och de som inte gjorde det ($n$\xspace =\xspace `r length(which(is.na(r2.wide.data$post_rathus)))`) i de olika grupperna. Med Pearsons $\chi^2$-test och Kruskal-Wallis $\chi^2$-test fann vi inte heller några signifikanta skillnader i svaren på de sociodemografiska frågorna mellan de som hade svarat och de som inte hade svarat på eftermätningen.
+
+
+## Primär frågeställning
+
+Vi var huvudsakligen intresserade av hur effekten av deltagande i grupperna `r xg1` och `r xg2` skilde sig från deltagande i `r xg3` med avseende på konstruktiv och aggressiv självhävdelse, fångade med utfallsmåtten AAA-S Adaptive respektive AAA-S Aggressive.
+
+### Reliabel förändring och klinisk signifikans
 
 Vi fann signifikanta skillnader i både klinisk signifikans-status och reliabel förbättring mellan grupperna på huvudutfallsmåttet AAAS Adaptive, $\chi^2_{`r xresultT(aaas_ad.pre.post.sigsig[["parameter"]],0)`}$ = `r xresult(aaas_ad.pre.post.sigsig$statistic,1)`, `r xpr(aaas_ad.pre.post.sigsig[["p.value"]])`. Med post-hoc test för parvisa jämförelser fann vi en signifikant förbättring hos behandlarstöds- och självhjälpsgruppen jämfört med väntelista (*z* = `r xresult(aaas_ad.pre.post.sigsig.posthoc$res[2,2],1)`, `r xpr(aaas_ad.pre.post.sigsig.posthoc$res[2,4])` för behandlarstödsgruppen och *z* = `r xresult(aaas_ad.pre.post.sigsig.posthoc$res[3,2],1)`, `r xpr(aaas_ad.pre.post.sigsig.posthoc$res[3,4])` för självhjälpsgruppen). Att ha tillgång till behandlingsmaterialet gav i större utsträckning kliniskt signifikant och reliabel förbättring jämfört med att vara placerad på väntelista. Se tabell \@ref(tab:jtprocent) för en sammanställning av kliniskt signifikanta och reliabla förändringarna inom de olika grupperna.
 
@@ -1879,11 +1919,11 @@ options(OutDec= ",")
 
 ```
 
-## Flernivåanalysresultat
+### Flernivåanalysresultat
 
-Vid visuell granskning av diagnostiska plottar av observerad data fann vi inga brott mot de villkor som behöver uppfyllas för flernivåanalys. Estimat av intercept och regressionskoefficienter för de olika primära och sekundära utfallsmåtten sammanfattas i tabell \@ref(stargazertab). Intercept och lutningskoefficienter som anges i tabellen för respektive utfallsmått kan läggas in i regressionsformeln för att predicera utfall för alla kombinationer av grupptillhörighet och mättillfälle. Se tabell \@ref(tab:descriptives) för en sammanställning av predicerade medelvärden, standardavvikelser och effektstorlekar för flernivåanalys-modellerna för utfallsmåtten. 
+Vid visuell granskning av diagnostiska plottar av observerad data fann vi inga brott mot de villkor som behöver uppfyllas för flernivåanalys. Estimat av intercept och regressionskoefficienter för de olika primära och sekundära utfallsmåtten sammanfattas i tabell \@ref(stargazertab) (bilaga); intercept och lutningskoefficienter som anges i tabellen för respektive utfallsmått kan läggas in i regressionsformeln för att predicera utfall för alla kombinationer av grupptillhörighet och mättillfälle. Se tabell \@ref(tab:descriptives) för en sammanställning av predicerade medelvärden, standardavvikelser och effektstorlekar för flernivåanalys-modellerna för utfallsmåtten. 
 
-Nedan följer marginalmedelvärden och parvisa jämförelser av dessa mellan grupperna och mättillfällena för de huvudsakliga utfallsmåtten i AAA-S, som de har predicerats för deltagarna i respektive flernivåmodell.
+<!-- Nedan följer marginalmedelvärden och parvisa jämförelser av dessa mellan grupperna och mättillfällena för de huvudsakliga utfallsmåtten i AAA-S, som de har predicerats för deltagarna i respektive flernivåmodell. -->
 
 (ref:descriptives) Estimerade marginalmedelvärden (*M*), standardavvikelser (*SD*) samt effektstorlekar (*ES*) för utfallsmåtten i de olika grupperna och vid de olika mättillfällena.
 
@@ -2009,20 +2049,16 @@ svkable(descriptives.col.out, caption = "(ref:descriptives)", align="llrccccccc"
 
 ```
 
-## Skillnader i effekt på konstruktiv och aggressiv självhävdelse mellan `r xg3`--`r xg1` respektive `r xg3`--`r xg2`
+<!-- #### Skillnader i effekt på konstruktiv och aggressiv självhävdelse mellan `r #xg3`--`r xg1` respektive `r #xg3`--`r xg2` -->
 
-Vi var huvudsakligen intresserade av hur effekten av deltagande i grupperna `r xg1` och `r xg2` skilde sig från deltagande i `r xg3` med avseende på konstruktiv och aggressiv självhävdelse, fångade med utfallsmåtten AAA-S Adaptive respektive AAA-S Aggressive.
+#### Konstruktiv självhävdelse
 
-\pagebreak[3]
-
-### Konstruktiv självhävdelse
-
-#### `r xG3`--`r xg1` vid `r xt3`mätningen
+##### `r xG3`--`r xg1` vid `r xt3`mätningen
 
 Vi fann en högre medelpoäng på AAA-S Adaptive för gruppen `r xg1` (estimerat marginalmedelvärde [*M*] `r xresult(tidy(aaas_ad.emm.by.time)$estimate[8],1)`, 95\xspace % CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[8],1)` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[8],1)`]) än för gruppen `r xg3` (*M* `r xresult(tidy(aaas_ad.emm.by.time)$estimate[7],1)`, 95\xspace % CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[7],1)` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[7],1)`]) vid `r xt3`mätningen,
 medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.time$estimate[7] * -1,1)`, $t$\(_{`r xresultT(aaas_ad.emmpairs.by.time$df[7],0)`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[7],1)`; `r xpr(aaas_ad.emmpairs.by.time[["p.value"]][7])`; effektstorlek `r xresult(aaas_ad.eff.by.time$effect.size[7] * -1,1)`.
 
-#### `r xG3`--`r xg2` vid `r xt3`mätningen
+##### `r xG3`--`r xg2` vid `r xt3`mätningen
 
 Vi fann också en tydligt högre medelpoäng på AAA-S Adaptive vid `r xt3`mätningen för gruppen `r xg2` (*M* `r xresult(tidy(aaas_ad.emm.by.time)$estimate[9],1)`, 95\xspace % CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[9],1)` ; `r xresult(tidy(aaas_ad.emm.by.time)$conf.high[9],1)`]) jämfört med gruppen `r xg3` (se *M* ovan),
 medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.time$estimate[8] * -1,1)`, $t$\(_{`r xresultT(aaas_ad.emmpairs.by.time$df[8],0)`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[8],1)`; `r xpr(aaas_ad.emmpairs.by.time[["p.value"]][8])`; effektstorlek `r xresult(aaas_ad.eff.by.time$effect.size[8] * -1,1)`.
@@ -2087,7 +2123,7 @@ options(OutDec= ",")
 
 ```
 
-#### Behandlingseffekt mellan behandlingsstart och `r xt3`mätning
+##### Behandlingseffekt mellan behandlingsstart och `r xt3`mätning
 
 För både gruppen `r xg1` och gruppen `r xg2` fann vi en klar förbättring mellan behandlingsstart och `r xt3`mätning, medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.group$estimate[5] * -1,1)`, $t$\(_{`r xresultT(aaas_ad.emmpairs.by.group$df[5],0)`}\) = `r xresult(aaas_ad.emmpairs.by.group$statistic[5] * -1,1)`; `r xpr(aaas_ad.emmpairs.by.group[["p.value"]][5])`; effektstorlek `r xresult(aaas_ad.eff.by.group$effect.size[5] * -1,1)` respektive medelvärdesskillnad `r xresult(aaas_ad.emmpairs.by.group$estimate[8] * -1,1)`, $t$\(_{`r xresultT(aaas_ad.emmpairs.by.group$df[8],0)`}\) = `r xresult(aaas_ad.emmpairs.by.group$statistic[8],1)`; `r xpr(aaas_ad.emmpairs.by.group[["p.value"]][8])`; effektstorlek `r xresult(aaas_ad.eff.by.group$effect.size[8] * -1,1)`.
 
@@ -2142,61 +2178,30 @@ options(OutDec= ".")
 
 ```
 
-### Aggressiv självhävdelse
+#### Aggressiv självhävdelse
 
-#### `r xG3`--`r xg1` vid `r xt3`mätningen
+##### `r xG3`--`r xg1` vid `r xt3`mätningen
 
 Precis som för konstruktiv självhävdelse hade gruppen `r xg1` en klart högre medelpoäng (*M* `r xresult(tidy(aaas_ag.emm.by.time)$estimate[8],1)`, 95\xspace % CI [`r xresult(tidy(aaas_ag.emm.by.time)$conf.low[8],1)` ; `r xresult(tidy(aaas_ag.emm.by.time)$conf.high[8],1)`]) på måttet för aggressiv självhävdelse, AAA-S Aggressive, än gruppen `r xg3` (*M* `r xresult(tidy(aaas_ag.emm.by.time)$estimate[7],1)`, 95\xspace % CI [`r xresult(tidy(aaas_ag.emm.by.time)$conf.low[7],1)` ; `r xresult(tidy(aaas_ag.emm.by.time)$conf.high[7],1)`]) vid `r xt3`mätningen,
 medelvärdesskillnad `r xresult(aaas_ag.emmpairs.by.time$estimate[7] * -1,1)`, $t$\(_{`r xresultT(aaas_ag.emmpairs.by.time$df[7],0)`}\) = `r xresult(aaas_ag.emmpairs.by.time$statistic[7],1)`; `r xpr(aaas_ag.emmpairs.by.time$p.value[7])`; effektstorlek `r xresult(aaas_ag.eff.by.time$effect.size[7] * -1,1)`.
 
-#### `r xG3`--`r xg2` vid `r xt3`mätningen
+##### `r xG3`--`r xg2` vid `r xt3`mätningen
 
 Vid `r xt3`mätningen fann vi också att medelpoängen för `r xg2`sgruppen (*M* `r xresult(tidy(aaas_ag.emm.by.time)$estimate[9],1)`, 95\xspace % CI [`r xresult(tidy(aaas_ag.emm.by.time)$conf.low[9],1)` ; `r xresult(tidy(aaas_ag.emm.by.time)$conf.high[9],1)`]) var högre i jämförelse med gruppen `r xg3` (se *M* ovan). Skillnaden var `r xresult(aaas_ag.emmpairs.by.time$estimate[8] * -1,1)`, $t$\(_{`r xresultT(aaas_ag.emmpairs.by.time$df[8],0)`}\) = `r xresult(aaas_ag.emmpairs.by.time$statistic[8],1)`; `r xpr(aaas_ag.emmpairs.by.time$p.value[8])`; effektstorlek `r xresult(aaas_ag.eff.by.time$effect.size[8] * -1,1)`.
 
-#### Behandlingseffekt mellan behandlingsstart och `r xt3`mätning
+##### Behandlingseffekt mellan behandlingsstart och `r xt3`mätning
 
 För båda grupperna `r xg1` och `r xg2` fann vi en signifikant höjning mellan tidpunkterna för behandlingsstart och `r xt3`mätning. För `r xg1`sgruppen var medelvärdesskillnaden `r xresult(aaas_ag.emmpairs.by.group$estimate[5] * -1,1)`, $t$\(_{`r xresultT(aaas_ag.emmpairs.by.group$df[5],0)`}\) = `r xresult(aaas_ag.emmpairs.by.group$statistic[5],1)`; `r xpr(aaas_ag.emmpairs.by.group$p.value[5])`; effektstorlek `r xresult(aaas_ag.eff.by.group$effect.size[5] * -1,1)`, för `r xg2`sgruppen var den `r xresult(aaas_ag.emmpairs.by.group$estimate[8] * -1,1)`, $t$\(_{`r xresultT(aaas_ag.emmpairs.by.group$df[8],0)`}\) = `r xresult(aaas_ag.emmpairs.by.group$statistic[8],1)`; `r xpr(aaas_ag.emmpairs.by.group$p.value[8])`; effektstorlek `r xresult(aaas_ag.eff.by.group$effect.size[8] * -1,1)`.
 
 Det är notabelt att medelvärdet för gruppen `r xg2` var lägre än för gruppen `r xg1`, som inte fick något behandlarstöd, vid båda tidpunkterna. Skillnaden är dock ej signifikant. Båda behandlingsbetingelserna uppvisar en höjning av graden av aggressiv självhävdelse, i jämförelse med `r xg3`. Effekten var signifikant vid mittenmätningen för gruppen `r xg1` (men inte för gruppen `r xg2`). Även höjningen av aggressiv självhävdelse mellan behandlingsstart och `r xt3`mätningen var för båda grupperna signifikant. Figur \@ref(fig:effemmplotsag) ger en visualisering av resultaten. \xstartnew `r xresult(performance::icc(aaas_ag.lmer)$ICC_adjusted * 100,0)`\xspace % av *random*-effekt-variansen på AAA-S Aggressive kan förklaras av individuella faktorer; `r xresult(performance::icc(aaas_ag.lmer)$ICC_conditional * 100,0)`\xspace % av den totala variansen kan förklaras av individuella faktorer -- drygt två tredjedelar, således.\xstopnew
 
-```{r attrition, eval = F}
-
-# Who has taken the post survey?
-# Rathus is the first presented questionnaire in the battery
-completers <- as.factor(ifelse(!is.na(r2.wide.data$post_rathus),1,0))
-
-# Response scales
-anova(lm(r2.wide.data$pre_aaas_ad ~ completers * r2.wide.data$group))
-anova(lm(r2.wide.data$pre_aaas_ag ~ completers * r2.wide.data$group))
-anova(lm(r2.wide.data$pre_rathus ~ completers * r2.wide.data$group))
-anova(lm(r2.wide.data$pre_lsas_sum ~ completers * r2.wide.data$group))
-anova(lm(r2.wide.data$pre_gad_sum ~ completers * r2.wide.data$group))
-anova(lm(r2.wide.data$pre_phq_sum ~ completers * r2.wide.data$group))
-anova(lm(r2.wide.data$pre_well ~ completers * r2.wide.data$group))
-# All non-significant
-
-# Sociodemographics
-chisq.test(r2.wide.data$Demografi.Kon, completers)
-kruskal.test(r2.wide.data$Demografi.Alder, completers)
-kruskal.test(r2.wide.data$Demografi.Civilstand, completers)
-kruskal.test(r2.wide.data$Demografi.Utbildning, completers)
-kruskal.test(r2.wide.data$Demografi.Sysselsattning, completers)
-chisq.test(r2.wide.data$Demografi.Psykofarmaka, completers)
-kruskal.test(r2.wide.data$Demografi.PsykofarmakaVad, completers)
-chisq.test(r2.wide.data$Demografi.PsykoBehandling, completers)
-# All non-significant
-
-```
-
-## Skillnad i effekt på konstruktiv självhävdelse mellan `r xg1`--`r xg2`
+## Sekundär frågeställning
 
 Vi var även intresserade av om det fanns någon skillnad (i endera riktning) i effekt mellan gruppen `r xg1` och gruppen `r xg2` med avseende på konstruktiv självhävdelse (det vill säga med utfallsmåttet AAA-S Adaptive).
 
+### Skillnad i effekt på konstruktiv självhävdelse mellan `r xg1`--`r xg2`
+
 Vi fann ingen skillnad i utfall med AAA-S Adaptive vid `r xt3`mätningen mellan gruppen `r xg1` och gruppen `r xg2`. Vi fann inte heller någon skillnad i effekt vid `r xt2`mätningen. Skillnaden i konstruktiv självhävdelse vid `r xt3`mätningen är försumbar mellan de som fått behandlarstöd och de som har fått klara sig på egen hand.
-
-### Bortfallsanalys 
-
-Med oberoende variansanalys fann vi inga signifikanta skillnader på någon av förmätningspoängen för utfallsmåtten mellan de deltagare som genomförde eftermätningen ($n$\xspace =\xspace `r length(which(!is.na(r2.wide.data$post_rathus)))`) och de som inte gjorde det ($n$\xspace =\xspace `r length(which(is.na(r2.wide.data$post_rathus)))`) i de olika grupperna. Med Pearsons $\chi^2$-test och Kruskal-Wallis $\chi^2$-test fann vi inte heller några signifikanta skillnader i svaren på de sociodemografiska frågorna mellan de som hade svarat och de som inte hade svarat på eftermätningen.
 
 # Diskussion
 
