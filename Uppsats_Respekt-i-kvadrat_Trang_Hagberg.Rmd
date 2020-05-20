@@ -26,6 +26,7 @@ mask              : no
 draft             : no 
 documentclass     : "apa6"
 classoption       : "doc,a4paper" # man, jou, doc
+appendix          : "includes/appendix.Rmd"
 output: 
   papaja::apa6_pdf:
     keep_tex      : TRUE
@@ -853,8 +854,6 @@ I linje med vikten av att acceptera och ge plats för tankar och känslor i pres
 
 I @michel2008 presenteras rationalen för och övningar i muskelavslappning översiktligt i ett kapitel. I linje med Östs [-@ost2006tillampad] rekommendation om att tillämpad avslappning bör introduceras stegvis över en längre tidsperiod presenteras deltagarna med progressiv muskelavslappning redan i modul 2. Övningen byggs gradvis på i modulerna 3--5 mot tillämpad avslappning och snabbavslappning. Under första delen av programmet uppmanas deltagarna explicit att tillämpa principerna om hög grad av variation och upprepning i färdighetsträningen av progressiv och alltmer tillämpad avslappning. Integreringen av progressiv muskelavslappning i hela första delen av behandlingsprogrammet tjänar syftena att ge deltagarna möjlighet att tillgodogöra sig färdigheter som relativt snabbt har potential att ge positiva effekter i vardagen och att ge dem egna erfarenheter av fördelarna med både variation i exponering och mängdträning.
 
-Anpassningarna och tilläggen inkluderade sammanfattningsvis nya texter och illustrationer, länkar till fördjupningsmaterial, videofilmer med konversationer och rollspel mellan PT och TH, nedladdningsbara ljudfiler med avslappningsövningar, inbäddade externa videoklipp och ljudfiler samt ett stort antal nya interaktiva övningar. Tilläggsövningarna inkluderar utvärderingsformulär av varje veckas innehåll, veckovis uppföljning av konstruktiv självhävdelse samt utökade övningar för återfallsprevention och vidmakthållande av behandlingseffekter. Se även tabell \@ref(tab:intervention) för en översiktlig genomgång av innehållet i modulerna i interventionen *Respekt i kvadrat*.
-
 (ref:interv) Översiktlig beskrivning av interventionen *Respekt i kvadrat*. Kapitelhänvisningar avser *Assert Yourself* (Michel & Fursland, 2008).
 
 ```{r intervention, fig.align="center", cache = F}
@@ -894,6 +893,8 @@ svkable(intervention.tabell, caption = "(ref:interv)", align="rll") %>%
   row_spec(c(1:6), extra_latex_after = "\\midrule") #"\\addlinespace"
 
 ```
+
+Anpassningarna och tilläggen inkluderade sammanfattningsvis nya texter och illustrationer, länkar till fördjupningsmaterial, videofilmer med konversationer och rollspel mellan PT och TH, nedladdningsbara ljudfiler med avslappningsövningar, inbäddade externa videoklipp och ljudfiler samt ett stort antal nya interaktiva övningar. Tilläggsövningarna inkluderar utvärderingsformulär av varje veckas innehåll, veckovis uppföljning av konstruktiv självhävdelse samt utökade övningar för återfallsprevention och vidmakthållande av behandlingseffekter. Se även tabell \@ref(tab:intervention) för en översiktlig genomgång av innehållet i modulerna i interventionen *Respekt i kvadrat*.
 
 ## Behandlingsplattformen
 
@@ -1884,66 +1885,6 @@ Vid visuell granskning av diagnostiska plottar av observerad data fann vi inga b
 
 Nedan följer marginalmedelvärden och parvisa jämförelser av dessa mellan grupperna och mättillfällena för de huvudsakliga utfallsmåtten i AAA-S, som de har predicerats för deltagarna i respektive flernivåmodell.
 
-```{r stargazer, results=F, eval=T}
-
-options(OutDec= ".")
-
-# https://cran.r-project.org/web/packages/stargazer/vignettes/stargazer.pdf
-# NB! We're using stargazer-booktabs to get prettier LaTeX table output
-
-scalenames = c("AAA-S Ad", "AAA-S Ag", "Rathus", "LSAS-SR", "GAD-7", "PHQ-9", "Välmående")
-
-labradorer <- c(
-  xG1,
-  xG2,
-  xDur,
-  xPost,
-  paste(xG1, " -- ", xt2,sep=""),
-  paste(xG2, " -- ", xt2,sep=""),
-  paste(xG1, " -- ", xt3,sep=""),
-  paste(xG2, " -- ", xt3,sep="")
-)
-
-stargazer::stargazer(
-  aaas_ad.lmer, 
-  aaas_ag.lmer, 
-  rathus.lmer,
-  lsas_sum.lmer,
-  gad_sum.lmer,
-  phq_sum.lmer,
-  well.lmer,
-  type = "latex",
-  ci = T,
-  intercept.bottom = F,
-  single.row = F,
-  model.numbers = F,
-  header = F,
-  decimal.mark = ',',
-  digit.separator = ' ',
-  ci.separator = ' ; ',
-  digits = 1,
-  covariate.labels = c("Intercept",labradorer),
-  float.env = "sidewaystable",
-  #omit.stat = c("aic","bic","ll"),
-  keep.stat= c("n"),
-  dep.var.caption = "Flernivåanalys",
-  column.labels = c("Primära utfallsmått","Sekundära utfallsmått"),
-  column.separate = c(2,5),
-  dep.var.labels = scalenames,
-  notes.label = "Signifikansnivåer",
-  label = "stargazertab",
-  title = "En sammanställning av estimat av intercept och regressionskoefficienter för respektive flernivåanalys av de primära och sekundära utfallsmåtten.",
-  out = "stargazer.tex"
-)
-
-# Search and replace
-system("sed -i 's/Observations/Antal observationer/g' stargazer.tex", wait = T)
-
-```
-
-```{r child = 'stargazer.tex', results='asis'}
-```
-
 (ref:descriptives) Estimerade marginalmedelvärden (*M*), standardavvikelser (*SD*) samt effektstorlekar (*ES*) för utfallsmåtten i de olika grupperna och vid de olika mättillfällena.
 
 ```{r descriptives, fig.align="center", cache = T, eval = T, escape = F}
@@ -2348,7 +2289,6 @@ r_refs(file = "includes/r-references.bib")
 ```
 
 \begingroup
-\RaggedRight
 
 \setlength{\parindent}{-0.5in}
 \setlength{\leftskip}{0.5in}
