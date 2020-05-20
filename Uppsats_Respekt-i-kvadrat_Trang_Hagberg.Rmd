@@ -907,9 +907,13 @@ Den föreliggande studien godkändes av etikprövningsmyndigheten. Diarienummer 
 
 Deltagarna blev via studiens hemsida informerade om att allt deltagande var frivilligt och att de kunde avbryta sitt deltagande när som helst. De kunde ta del av syftet med studien och studiens övergripande plan. Information fanns om att all information samlades in under sekretess och i enlighet med personuppgiftslagen samt GDPR. Deltagandet var helt anonymt och all insamlad data var kopplad till den anonyma studiekod som genererades för varje deltagare. Vid intresseanmälan till studien lämnade deltagarna informerat samtycke till sitt deltagande. Vid exkludering från studien under rekryteringsfasen informerades deltagaren om anledningen samt fick rekommendationer (till exempel om vart hen kunde vända sig för att söka vård). Vid tecken på svår depression rekommenderades deltagarna att uppsöka psykiatrisk vård. Under hela studiens gång hade deltagarna möjlighet att kontakta studieansvarig per telefon samt e-post.
 
-\xstartnew R-syntax för utförda test och analyser, anonymiserad öppen data samt källkoden till manuskriptet har gjorts tillgängliga via öppen källa i enlighet med rekommendationerna för största möjliga grad av transparens och replikerbarhet i @Asendorpf2013. \xstopnew Materialet finns deponerat hos Figshare på https://doi.org/10.17045/sthlmuni.12148785 [@R2data2020].
+\xstartnew
 
-<!-- (OBS! Deponering sker EFTER inlämning av godkänd uppsats. Materialet finns också tillgängligt på https://github.com/hmep/respektikvadrat). -->
+All psykologisk behandling är förknippade med såväl möjligheter som risker. Deltagande i *Respekt i kvadrat* medför några särskilda risker som är viktiga att förhålla sig till: Konstruktiv självhävdelse utövas ofta i relation till andra personer: ökad grad av självhävdelse i interpersonella relationer kan leda till negativa reaktioner från omgivningen. Detta gäller såväl självhjälpsgrenen av programmet där deltagarna inte har tillgång till stöd och hjälp att förhålla sig till sådana interpersonella problem som kan vara resultatet av medverkan i programmet, och behandlarstödsgrenen där behandlarna mycket väl kan uppmana deltagarna att ta på sig större utmaningar och utsätta sig för större risker. Å andra sidan kan programmet per definition sägas handla om att ta större risker för att få nya upplevelser av framkomlighet med adaptivt handlande. För att hantera de potentiellt negativa effekterna är det viktigt att ha tydliga inklusionskriterier, att vara noga med screening och inklusion, att hänvisa exkluderade deltagare med kliniskt relevanta skattningar till andra vårdgivare och att tydligt förbereda deltagarna på att negativa reaktioner från omgivningen. Eftersom negativa reaktioner kan väntas vara en del av vidmakthållandet av brister i konstruktiv självhävdelse problematiserar självhjälpsmaterialet *Respekt i kvadrat* i flera avsnitt fenomenet. Genom sin utformning med beteendeexperiment uppmanas också deltagarna att noga planera och följa upp konsekvenserna (såväl negativa som positiva) av konstruktivt handlande; att öka medvetenheten om sådana konsekvenser antas vara centralt för brytandet av faktorer som vidmakthåller bristande självhävdelse. Alla deltagare, oavsett betingelse, har under hela behandlingen möjlighet att kontakta behandingsansvarig psykolog via både telefon och genom behandlingsplattformen.
+
+\xstopnew
+
+\xstartnew R-syntax för utförda test och analyser, anonymiserad öppen data samt källkoden till manuskriptet har gjorts tillgängliga via öppen källa i enlighet med rekommendationerna för största möjliga grad av transparens och replikerbarhet i @Asendorpf2013. \xstopnew Materialet finns deponerat hos Figshare på https://doi.org/10.17045/sthlmuni.12148785 [@R2data2020].
 
 ## Analyser
 
@@ -2327,11 +2331,11 @@ En uppenbar fördel med studier av internetbaserade interventioner är att de ur
 
 \xstopnew
 
-<!-- Då det i skrivande stund varken finns data om prevalens av bristande självhävdelse i Sveriges population, eller data om vilka demografiska faktorer denna brist korrelerar med, är det ytterst svårt att säga hur representativ för Sveriges befolkning samplet i den aktuella studien är. Det vore av stor nytta att framtida studier undersöker denna behandlings effekt i andra populationer med större heterogenitet. -->
+<!-- Då det i skrivande stund varken finns data om prevalens av bristande självhävdelse i Sveriges population, eller data om vilka demografiska faktorer denna brist korrelerar med, är det ytterst svårt att säga hur representativ för Sveriges befolkning samplet i den aktuella studien är. Det vore av stor nytta att framtida studier undersöker denna behandlings effekt i andra populationer med större heterogeni  tet. -->
 
 ## Sammanfattning
 
-Föreliggande studie ville undersöka effekten på konstruktivt självhävande av behandlingsprogrammet *Respekt i kvadrat*. Att ta del av behandlingsprogrammet (med eller utan behandlingsstöd) var effektivare än att betingas till en väntelista. Resultatet bekräftar även att administration av behandlingsprogrammet effektivt kan minska symtom (och därigenom lidande) vid ett antal olika ångestbesvär. Mer forskning behövs för att med större säkerhet kunna generalisera resultaten till populationen i stort.
+Föreliggande studie ville undersöka effekten på konstruktivt självhävande av behandlingsprogrammet *Respekt i kvadrat*. Att ta del av behandlingsprogrammet (med eller utan behandlingsstöd) var effektivare än att betingas till en väntelista. Resultatet bekräftar även att administration av behandlingsprogrammet effektivt kan minska symtom och lidande vid ett antal olika ångestbesvär. Mer forskning behövs för att med större säkerhet kunna generalisera resultaten till populationen i stort.
 
 \newpage
 
