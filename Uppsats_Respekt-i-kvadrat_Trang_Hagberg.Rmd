@@ -929,20 +929,24 @@ Vid screening i samband med anmälan lämnade samtliga deltagare svar på förm�
 
 Den föreliggande studien godkändes av etikprövningsmyndigheten. Diarienummer för etikansökan är 2019-05165. Studien förregistrerades även på https://clinicaltrials.gov/ct2/show/NCT04240249. 
 
-Deltagarna blev via studiens hemsida informerade om att allt deltagande var frivilligt och att de kunde avbryta sitt deltagande när som helst. \xstartnew Samtliga deltagare lämnade informerat samtycke till medverkan. \xstopnew De kunde ta del av syftet med studien och studiens övergripande plan. Information fanns om att all information samlades in under sekretess och i enlighet med personuppgiftslagen samt GDPR. Deltagandet var helt anonymt och all insamlad data var kopplad till den anonyma studiekod som genererades för varje deltagare. Vid intresseanmälan till studien lämnade deltagarna informerat samtycke till sitt deltagande. Vid exkludering från studien under rekryteringsfasen informerades deltagaren om anledningen samt fick rekommendationer (till exempel om vart hen kunde vända sig för att söka vård). Vid tecken på svår depression rekommenderades deltagarna att uppsöka psykiatrisk vård. Under hela studiens gång hade deltagarna möjlighet att kontakta studieansvarig per telefon samt e-post.
-
 \xstartnew
 
 All psykologisk behandling är förknippad med såväl möjligheter som risker. Deltagande i *Respekt i kvadrat* medförde några särskilda risker: Konstruktiv självhävdelse utövas ofta i relation till andra personer och snabbt ökad grad av självhävdelse i interpersonella relationer kan leda till negativa motreaktioner från omgivningen. Detta gällde för *Respekt i kvadrat* såväl självhjälpsgrenen där deltagarna inte hade tillgång till stöd och behandlarstödsgrenen där deltagarna genom behandlarstödet kunde komma att utsätta sig för förhöjda risker. Behandlingsprogrammet som undersöks i den här studien kan per definition sägas handla om att ta större risker än tidigare, för att få nya erfarenheter av framkomlighet med adaptivt handlande. För att hantera de potentiellt negativa effekterna vinnlade artikelförfattarna sig om att ha tydliga inklusionskriterier, att vara noga med screening och inklusion, att inkludera personer som inte har alltför svåra problem, att vid behov hänvisa exkluderade deltagare till andra vårdgivare och att genom materialets utformning förbereda deltagarna på att negativa reaktioner från omgivningen. Eftersom negativa reaktioner kan väntas vara en del av vidmakthållandet av brister i konstruktiv självhävdelse problematiserar självhjälpsmaterialet *Respekt i kvadrat* i flera avsnitt fenomenet. Genom sin utformning med beteendeexperiment uppmanas också deltagarna att både noga identifiera negativa förutsägelser kring och följa upp konsekvenser (såväl negativa som positiva) av konstruktivt handlande; att öka medvetenheten om sådana kontextuella faktorer är centralt för brytandet av faktorer som vidmakthåller undvikande och bristande självhävdelse. Det övergripande målet med *Respekt i kvadrat* är att minska risken för interpersonella problem.
 
-\xstopnew
+\xstopnew 
 
-\xstartnew R-syntax för utförda test och analyser, anonymiserad öppen data samt källkoden till manuskriptet har gjorts tillgängliga via öppen källa i enlighet med rekommendationerna för största möjliga grad av transparens och replikerbarhet i @Asendorpf2013. \xstopnew Materialet finns deponerat hos Figshare på https://doi.org/10.17045/sthlmuni.12148785 [@R2data2020].
+Deltagarna blev via studiens hemsida informerade om att allt deltagande var frivilligt och att de kunde avbryta sitt deltagande när som helst. \xstartnew Samtliga deltagare lämnade informerat samtycke till medverkan. \xstopnew De kunde ta del av syftet med studien och studiens övergripande plan. Information fanns om att all information samlades in under sekretess och i enlighet med personuppgiftslagen samt GDPR. Deltagandet var helt anonymt och all insamlad data var kopplad till den anonyma studiekod som genererades för varje deltagare. Vid intresseanmälan till studien lämnade deltagarna informerat samtycke till sitt deltagande. Vid exkludering från studien under rekryteringsfasen informerades deltagaren om anledningen samt fick rekommendationer (till exempel om vart hen kunde vända sig för att söka vård). Vid tecken på svår depression rekommenderades deltagarna att uppsöka psykiatrisk vård. Under hela studiens gång hade deltagarna möjlighet att kontakta studieansvarig per telefon samt e-post.
+
+\xstartnew
+
+För största möjliga transparens och replikerbarhet har programvara med fri licens och öppen källkod använts för analys och manusförfattande, och såväl data som kod har gjorts öppet tillgängliga i enlighet med rekommendationerna i @Asendorpf2013.
+
+\xstopnew 
 
 ## Analyser
 
-Vi använde `r version$language`, version `r version$major`.`r version$minor` [@R-base] för samtliga analyser. Signifikansnivån $\alpha$ = 0,05 tillämpades vid alla beräkningar. 
- 
+Vi använde `r version$language`, version `r version$major`.`r version$minor` [@R-base] för samtliga analyser. R-syntax för utförda test och analyser, anonymiserad öppen data samt källkoden till manuskriptet finns deponerade hos Figshare på https://doi.org/10.17045/sthlmuni.12148785 [@R2data2020]. Signifikansnivån $\alpha$ = 0,05 tillämpades vid alla beräkningar.
+
 ### Analys av fixa effekter
 
 Fixa och slumpmässiga effekter mellan grupp och tid för de primära och sekundära utfallsmåtten undersöktes med så kallad flernivåanalys (också kallad blandad modell, hierarkisk analys, på engelska bland annat *mixed model*, *multilevel model* och *hierarchical linear model*). Flernivåanalys tillåter precis som multivariat variansanalys (MANOVA) inklusion av upprepade beroende mättillfällen i modellen, men fördelerna att metoden tillåter obalanserade grupper och att principen om *intention to treat* värnas utan behov av imputering av saknade datapunkter. Flernivåanalyser uppskattar också inklusion av *random*-effekter, det vill säga observerad men inte kontrollerad varians på klusternivå -- i detta fall två nivåer: enskilda individer som "innehåller" data från upprepade mättillfällen.
@@ -2260,11 +2264,9 @@ Vi konstaterade att av *random*-variansen så bestod `r xresult(performance::icc
 
 #### Metoder för att bättre kontrollera *random*-effekter
 
-För att bättre kunna kontrollera för individkopplade bidrag till behandlingsutfall kan uppföljande studier med fördel inkludera fler sätt att mäta individrelaterade variabler (såväl egenskaper, *traits* som tillstånd, *states*) än vad den här studien har gjort, till exempel med skalor som mäter emotionellt undvikande eller veckovisa frågor om hur mycket tid deltagarna har haft till förfogande för deltagandet. Sådana fixa variabler kan sedan anges som kovariat i analysen. För att hantera det potentiella problemet med negativa behandlingseffekter kan man också överväga att i framtida studier inkludera veckovisa frågor om upplevda negativa effekter av beehandling; i sådana fall behöver dock alla behandlingsgrenar, även självhjälpsgrupp, tillsyn av behandlare.
+För att bättre kunna kontrollera för individkopplade bidrag till behandlingsutfall kan uppföljande studier med fördel inkludera fler sätt att mäta individrelaterade variabler (såväl egenskaper, *traits* som tillstånd, *states*) än vad den här studien har gjort, till exempel med skalor som mäter emotionellt undvikande eller veckovisa frågor om hur mycket tid deltagarna har haft till förfogande för deltagandet. Sådana fixa variabler kan sedan anges som kovariat i analysen. För att hantera det potentiella problemet med negativa behandlingseffekter kan man också överväga att i framtida studier inkludera veckovisa frågor om upplevda negativa effekter av behandling; i sådana fall behöver dock alla behandlingsgrenar, även självhjälpsgrupp, tillsyn av behandlare.
 
 Den andel av *random*-variansen som har med effekter av interaktionen mellan behandlare och deltagare (exempelvis kvalitet på alliansen) att göra kan i framtida studier i explorativt syfte  undersökas genom tillägg av en tredje *random*-nivå i flernivåanalysen (tidpunkter nästlade i individer nästlade i behandlare), förutsatt att tillräcklig power går ett erhålla. Det kan också ge mer tillförlitliga uppskattningar av behandlingsprogrammets effekt [@Wampold2000; @Baldwin2011a; @Almlv2011; @Hesser2015].
-
-En framtida studie 
 
 \xstopnew
 
