@@ -15,7 +15,7 @@ authornote: |
   `r readLines('includes/authornote.txt', encoding = 'UTF-8')`
 keywords: | 
   `r readLines('includes/keywords.txt', encoding = 'UTF-8')`
-#wordcount         : "11146"
+#wordcount         : "11452"
 bibliography      : ["includes/r-references.bib", "includes/KSH.bib"] 
 floatsintext      : no
 figurelist        : no
@@ -509,8 +509,6 @@ I och med psykiatrins allt tydligare inriktning mot syndromala kategoriseringar 
 
 En viktig del i kognitivt inriktad terapi är så kallade beteendeexperiment. För en socialfobiker skulle ett beteendeexperiment kunna handla om att gå på en fest och att säga något om sig själv i ett samtal med andra personer utan att använda sig av så kallade säkerhetsbeteenden. Ett exempel på säkerhetsbeteende som hindrar konstruktiv självhävdelse skulle kunna vara att titta ned i golvet, ett annat att tala tyst. Efter genomfört beteendeexperiment kan klienten få hjälp av terapeuten att utvärdera utfallet -- hur det gick att lägga säkerhetsbeteendena åt sidan, om personen klarade av att stanna i situationen även om något oönskat inträffade, vilka konsekvenser ökat engagemang ledde till och så vidare. Det övergripande syftet med dessa metoder är att hjälpa klienten att bryta det undvikande som vidmakthåller de psykiska problemen. 
 
-<!-- Fördelarna för klienten är dels att hen får tillfälle att träna både på att tolerera och reglera ångest, dels att hen får ökad tillgång till sådant som hen värdesätter. -->
-
 ## Vad är konstruktiv självhävdelse?
 
 Begreppet *assertiveness* kom under 1970-talet att omfamna en allt längre lista med beteendemässiga operationaliseringar – så att det till slut blev svårt att skilja från begreppet ’social färdighet’ [@LINEHAN1979]. Det är därför viktigt att avgränsa begreppet.
@@ -541,7 +539,7 @@ Vad som i kontexten menas med handlande som är förenligt med egna och andras r
 
 Den här studien syfte är att undersöka effekten av ett nyutvecklat KBT-behandlingsprogram via internet för konstruktiv självhävdelse, *Respekt i kvadrat*, som till grundstruktur och till stora delar bygger på en engelskspråkig förlaga, *Assert Yourself* [@michel2008], från Centre for Clinical Interventions  (CCI), en del av delstadsregeringen för Western Australia i Australien. 
 
-I återstoden av bakgrundsdelen sätts interventionen in i ett övergripande sammanhang. Först beskrivs forskningsläget för träning i konstruktiv självhävdelse och traditionell KBT-behandling för syndrom som är relevanta för konstruktet, därefter fördelar med och litteraturstödet för internetförmedlad KBT och slutligen några empiriskt underbyggda förhållningssätt och behandlingsupplägg som har influerat artikelförfattarnas anpassning och vidareutvecklingen av ursprungsmaterialet. Interventionen utvärderas i de därpå följande delarna av studien.
+I återstoden av bakgrundsdelen sätts interventionen in i ett övergripande sammanhang. Först beskrivs forskningsläget för träning i konstruktiv självhävdelse och traditionell KBT-behandling för syndrom som är relevanta för konstruktet, därefter fördelar med och litteraturstödet för internetförmedlad KBT och slutligen några empiriskt underbyggda förhållningssätt och behandlingsupplägg som har influerat artikelförfattarnas anpassning och vidareutvecklingen av ursprungsmaterialet. Interventionen utvärderas i de därpå följande avsnitten.
 
 \xstopnew
 
@@ -630,8 +628,6 @@ Genom avslappningsträning konfronteras deltagarna tidigt i behandlingsprogramme
 \xstartnew
 
 ### Tolerans för obehag som en förutsättning för inlärning 
-
-<!-- I *Respekt i kvadrat* ägnas inte utrymme i modulerna för kognitiv *in vitro*-omstrukturering av hindrande tankar i idiografiskt identifierade situationer -- de slutsatser som personen drar är resultatet av i första hand beteendeexperiment *in vivo*. Däremot ägnas flera psykoedukativa avsnitt åt generella förhållningssätt till respondent obehag och inlärning.  -->
 
 I programmets inledande moduler uppmanas deltagarna att i olika övningar både undersöka sin förmåga att reglera ned aversiva känslor och sin förmåga att tolerera dem. Att acceptera istället för att undertrycka negativt färgade känslor och upplevelser kan vara en viktig nyckeln för brytande av undvikande som vidmakthåller psykiska besvär [@A-Tjak2015; @Hayes2004a; @Luoma2007].
 
@@ -864,15 +860,6 @@ Materialet är översatt och anpassat till svenska förhållanden av TH med till
 
 En inspirerande faktor när det engelska materialet anpassades och utvecklades till självhjälpsprogrammet *Respekt i kvadrat* var det aktuella forskningsläget kring exponering [se bland annat @Craske2008; @DeCastella2015; @Sewart2019; @Knowles2019; @Gross2003]. Artikelförfattarna bedömde det som en central komponent att deltagarna så tidigt som möjligt, och så ofta som möjligt, tog aktiva steg för att bryta vidmakthållande undvikande. Redan tidigt i behandlingsprogrammet uppmuntrades deltagarna att närma sig aversiva stimuli och utvärdera sina reaktioner. 
 
-
-<!--
-Möjligen att vi även ska kort skriva om
-VARIATION 
-MÄNGDTRÄNING, MULTIPLE EXEMPLAR TRAINING 
-Obegränsade möjligheter att genomföra beteendeexperiment.
-Dock komma ihåg att vi ska hålla det här avsnittet av metoddelen kort och koncist
--->
-
 I linje med vikten av att acceptera och ge plats för tankar och känslor i pressade situationer som har lyfts fram i litteraturen under de senaste årtiondena [@Hayes1996; @Hayes2004a; @Luoma2007] lade behandlingsprogrammet *Respekt i kvadrat* större vikt vid acceptans och tolerans av ångest än @michel2008. Det gjordes genom tillägg av nyskrivna avsnitt och övningar som fördelades mellan modulerna. Ett exempel på material som uppmanar deltagaren att aktivt stanna kvar i eller rent av uppsöka sådant respondent obehag som tidigare undvikits är psykoedukativa texter om optimering av inlärning via variation och mängdträning. I ett avsnitt introduceras även begreppen *fixed mindset* och *growth mindset*, som handlar om effekten av olika förhållningssätt till utmaningar och hur man genom att möta obehaget skapar generellt goda förutsättningar för utveckling [@Dweck1995; @Schroder2016; @Schroder2015; @DeCastella2015]. Ett annat är psykoedukativa avsnitt om vidmakthållande av ångestrelaterade besvär. Det innehåller också en övning som både handlar om att identifiera värdebaserade fördelar med handlande i situationer som tidigare har präglats av undvikande och om att identifiera kortsiktigt belönande anledningar att stå ut med respondenta rädsloreaktioner i situationer som tidigare undvikits. Likande övningar återkommer på flera ställen i programmet.
 
 I @michel2008 presenteras rationalen för och övningar i muskelavslappning översiktligt i ett kapitel. I linje med Östs [-@ost2006tillampad] rekommendation om att tillämpad avslappning bör introduceras stegvis över en längre tidsperiod presenteras deltagarna med progressiv muskelavslappning redan i modul 2. Övningen byggs gradvis på i modulerna 3--5 mot tillämpad avslappning och snabbavslappning. Under första delen av programmet uppmanas deltagarna explicit att tillämpa principerna om hög grad av variation och upprepning i färdighetsträningen av progressiv och alltmer tillämpad avslappning. Integreringen av progressiv muskelavslappning i hela första delen av behandlingsprogrammet tjänar syftena att ge deltagarna möjlighet att tillgodogöra sig färdigheter som relativt snabbt har potential att ge positiva effekter i vardagen och att ge dem egna erfarenheter av fördelarna med både variation i exponering och mängdträning.
@@ -939,7 +926,7 @@ Deltagarna blev via studiens hemsida informerade om att allt deltagande var friv
 
 \xstartnew
 
-För största möjliga transparens och replikerbarhet har programvara med fri licens och öppen källkod använts för analys och manusförfattande, och såväl data som källkod, inklusive källkodskommentarer som dokumenterar överväganden och förklarar val av metoder, har gjorts öppet tillgängliga i enlighet med rekommendationerna i @Asendorpf2013.
+För största möjliga transparens och replikerbarhet i enlighet med rekommendationerna i @Asendorpf2013 har programvara med fri licens och öppen källkod använts för analys och manusförfattande, och både anonymiserad data och källkod, inklusive kommentarer i koden som utöver texten i detta manuskript dokumenterar förkontroller och överväganden samt förklarar val av metoder, har gjorts öppet tillgängliga.
 
 \xstopnew 
 
@@ -967,12 +954,6 @@ För att kvantifiera andelen av den totala variansen som kan förklaras av under
 
 \xstopnew
 
-<!-- 
-https://easystats.github.io/performance/reference/icc.html
-https://www.theanalysisfactor.com/the-intraclass-correlation-coefficient-in-mixed-models/
-s 49 http://wiki.bcs.rochester.edu/HlpLab/StatsCourses?action=AttachFile&do=get&target=Groningen11.pdf 
--->
-
 ### Analys av reliabel förändring och klinisk signifikans
 
 Frekvensen deltagare som i behandlingsprogrammet genomgått en reliabel förändring och dessutom befann sig på kliniskt signifikant nivå vid eftermätningen fastställdes i enlighet med definitionerna och rekommendationerna i @Jacobson1991. För deltagare som endast lämnat självskattningar vid förmätningstillfället fördes förmätningvärdena vidare till eftermätningstillfället i enlighet med principen om *intention to treat*. Med reliabel förändring menas att en observerad utveckling mellan två mättillfällen definieras som tillförlitlig -- och därför meningsfull -- om den är tillräckligt stor (med $\alpha$ = 0,05) i relation till populationsvariansen. Då betraktas förändringen som en verklig förändring och inte bara ett slump- eller mätfel. Med klinisk signifikans avses hur eftermätningsvärdena förhåller sig till medelvärdet för normdata för en subklinisk population [@Jacobson1991]. För sammanställningarna av överlappet mellan klinisk signifikans och reliabel förändring användes R-paketet *JTRCI*, som väljer jämförelsekriterium för klinisk signifikans konservativt [@R-JTRCI]. Skillnader mellan grupperna i andelen reliabelt förändrade deltagare som också befann sig på kliniskt signifikant nivå vid eftermätningstillfället analyserades med Kruskal-Wallis $\chi^2$-test samt Dunns post-hoc test för multipla jämförelser av flera grupper.
@@ -990,10 +971,6 @@ För att bedöma den interna reliabiliteten för i första hand de till svenska 
 ## Förkontroller
 
 ### Analys av skalornas interna reliabilitet
-
-<!-- Se tabell \@ref(tab:alpha) för en sammanställning av ... -->
-
-<!-- (ref:alp) Cronbach's $\alpha$ för de primära och sekundära utfallsmåtten, funna med det undersökta samplet. Normdata anges som jämförelse. -->
 
 ```{r alpha, eval = T}
 
@@ -1342,7 +1319,7 @@ well.lmer <-
 
 ```{r rsquared, eval=F}
 
-# Do we report Conditional R2? No, not for now. There's no use reporting model fit since we have a model that is specified by theory.
+# Do we report Conditional R2? No, not for now. There's no use reporting model fit since we have a model that is specified by study design.
 
 # The marginal R-squared considers only the variance of the fixed effects, while the conditional R-squared takes both the fixed and random effects into account.
 
@@ -2282,15 +2259,15 @@ En potentiell brist i studien är att de nyligen översatta versionerna av själ
 
 Data från föreliggande studie skulle potentiellt kunna användas för att vidareutveckla och validera de svensköversatta skalorna i en uppföljande studie med ett stickprov med större spridning med avseende på exempelvis social fobi mätt med LSAS-SR. Ett dilemma är dock att båda översättningar på en och samma gång är icke-validerade och idealiska kriterier för varandras validering; det saknas tyvärr vedertagna skalor i litteraturen för *assertiveness* utöver Rathus och AAA-S. 
 
-<!-- Som nämnt tidigare hade vårt sample höga skattningar på självskattningsformuläret LSAS-SR, som screenar för social fobi.  Vi vet också med oss att emotionellt undvikande är vanligt hos personer som upplever socialfobiska besvär [@Campbell-Sills2006; @Gross2003; @Hayes1996] och att emotionellt undvikande leder till sämre behandlingsresultat [@DeCastella2015]. Det hade troligen varit fördelaktigt för föreliggande studie att inkludera ett mätinstrument för emotionellt undvikande. Det hade gett möjligheten till att utvärdera om en individs resultat i *Respekt i kvadrat* påverkas av hens användande av emotionellt undvikande. Förslagsvis kan framtida studier undersöka sambandet mellan emotionellt undvikande och tränande i konstruktivt självhävdande.  -->
-
 #### Uppföljningsmätning av deltagarna ger mer tillförlitliga effektestimat
 
 På grund av tidsbegränsningar fanns inga möjligheter att göra en uppföljningsmätning inom ramen för den här studien. Det gör det svårare att avgöra hur behandlingsprogrammet har påverkat deltagarnas mående och konstruktiva självhävdande över tid. Forskning indikerar att framsteg gjorda under KBT-behandling i stor utsträckning bibehålls och till och med förstärkas över tid [@Bandelow2018]. \xstartnew Skälet till att behandlingseffekten kan dröja är att inhibitorisk inlärning sker över längre tidsperioder. Minskning av ångest på kort sikt predicerar inte symtomlindring på längre sikt sikt och höga ångestnivåer under exponering predicerar inte dåliga behandlingsutfall. Det bästa indexet för framgång i terapi är inte observerad minskning av ångest i det korta tidsintervallet (under en exponering, en session eller kanske ens en behandling) utan konstaterad ångestminskning vid uppföljningsmätningstillfället, exempelvis efter 6 eller 12 månader [@Craske2008].\xstopnew
 
 #### Ett mer varierat sample ger bättre generaliseringspotential
 
-Genom en *a priori*-beräkning av samplestorleken har vi sökt att maximera möjligheten att generalisera resultaten till populationen i stort. Dock har generaliserbarheten av resultaten försämrats på grund av själva rekryteringsförfarandet. Med nästintill 90\xspace % kvinnor i stickprovet var könsfördelningen ytterst ojämn. Denna ojämna fördelning går troligen att tillskriva flera orsaker. Kvinnor rapporterar mer oro, änglsan och ångest än män [@Socialstyrelsen2004] vilket skulle kunna göra kvinnor mer benägna än män att söka hjälp. Utöver detta tenderar män överlag i lägre utsträckning söka vård än kvinnor även när män och kvinnor upplever liknande symtom [@Galdas2005]. Kvinnor tenderar också att i större grad än män delta i forskningsstudier. I metaanalysen @Rozental2017a konstateras att 62\xspace % av deltagarna i alla inkluderade studier var kvinnor. För den aktuella studien är den främsta orsaken till det snedvridna samplet rekryteringsförfarandet med annonsering i sociala medier. Vid kontroll i efterhand har det visats sig att den algoritmstyrda annonsvisningen till mer än 85\xspace % riktades till kvinnor och till ungefär 60\xspace % till personer i åldersspannet 35--54 år. Urvalet är också snedvridet med avseende på utbildningsnivå: 80\xspace % har avslutade eller pågående universitetsstudier jämfört med 43\xspace % av Sveriges befolkning [@SCB2020]. Vilken påverkan den automatiserade annonsvisningen har haft på andra faktorer, exempelvis grad av social ångest, går inte att utläsa. För den aktuella studien innebär rekryteringsförfarandet att samplet med sin begränsade spridning inte har matchat den operationalisering av begreppen konstruktiv, passiv och aggressiv självhävdelse som *Respekt i kvadrat* utgår från.
+Genom en *a priori*-beräkning av samplestorleken har vi sökt att maximera möjligheten att generalisera resultaten till populationen i stort. Dock har generaliserbarheten av resultaten försämrats på grund av själva rekryteringsförfarandet. Med nästintill 90\xspace % kvinnor i stickprovet var könsfördelningen ytterst ojämn. Denna ojämna fördelning går troligen att tillskriva flera orsaker. Kvinnor rapporterar mer oro, änglsan och ångest än män [@Socialstyrelsen2004] vilket skulle kunna göra kvinnor mer benägna än män att söka hjälp. Utöver detta tenderar män överlag i lägre utsträckning söka vård än kvinnor även när män och kvinnor upplever liknande symtom [@Galdas2005]. Kvinnor tenderar också att i större grad än män delta i forskningsstudier. I metaanalysen @Rozental2017a konstateras att 62\xspace % av deltagarna i alla inkluderade studier var kvinnor. För den aktuella studien är den främsta orsaken till det snedvridna samplet rekryteringsförfarandet med annonsering i sociala medier. Vid kontroll i efterhand har det visats sig att den algoritmstyrda annonsvisningen till mer än 85\xspace % riktades till kvinnor och till ungefär 60\xspace % till personer i åldersspannet 35--54 år. Urvalet är också snedvridet med avseende på utbildningsnivå: 80\xspace % har avslutade eller pågående universitetsstudier jämfört med 43\xspace % av Sveriges befolkning [@SCB2020]. 
+
+Vilken påverkan den automatiserade annonsvisningen har haft på andra faktorer, exempelvis grad av social ångest, går inte att utläsa. För den aktuella studien innebär rekryteringsförfarandet att samplet med sin begränsade spridning inte har matchat den operationalisering av begreppen konstruktiv, passiv och aggressiv självhävdelse som *Respekt i kvadrat* utgår från. \xstartnew Framtida forskning kan förhoppningsvis undersöka effekten av interventionen med stickprov med större heterogenitet.\xstopnew
 
 \xstartnew
 
@@ -2305,8 +2282,6 @@ Vi konstaterar att effektstyrkorna mellan tidpunkterna förmätning och eftermä
 En uppenbar fördel med studier av internetbaserade interventioner är att de ur deltagarsynpunkt skiljer sig mycket lite från rutinmässig administration av internetterapi i kliniska sammanhang. Om man till det lägger att det i alla fall inte torde vara en fördel för behandlingsutfallet att behandlarna i den aktuella studien var nyutbildade, måste slutsatsen bli att den ekologiska validiteten för denna *efficacy*-studie kan antas vara hög. Materialet borde med med en målgrupp som liknar det stickprov som använts i den här studien kunna få likartad effekt, oavsett om det ges i en förbättrad och utökad replikeringsstudie eller som en integrerad del av klinisk rutinverksamhet.
 
 \xstopnew
-
-<!-- Då det i skrivande stund varken finns data om prevalens av bristande självhävdelse i Sveriges population, eller data om vilka demografiska faktorer denna brist korrelerar med, är det ytterst svårt att säga hur representativ för Sveriges befolkning samplet i den aktuella studien är. Det vore av stor nytta att framtida studier undersöker denna behandlings effekt i andra populationer med större heterogenitet. -->
 
 ## Sammanfattning
 
