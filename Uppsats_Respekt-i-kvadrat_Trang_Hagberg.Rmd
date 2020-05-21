@@ -638,6 +638,8 @@ Deltagarna får även lära sig att diskriminera mellan och reflektera över det
 
 ## Frågeställningar
 
+\xstartnew
+
 Med syfte att utvärdera effekten av behandlingsprogrammet *Respekt i kvadrat* formulerade vi följande frågeställningar.
 
 ### Primär frågeställning
@@ -647,6 +649,8 @@ Det vi i första hand var intresserade av att ta reda på hur effekten av behand
 ### Sekundär frågeställning 
 
 Vi var också intresserade av om det fanns någon skillnad (i endera riktning) i effekt mellan gruppen `r xg1` och gruppen `r xg2` med avseende på konstruktiv självhävdelse, det vill säga med utfallsmåttet AAA-S Adaptive.
+
+\xstopnew
 
 # Metod
 
