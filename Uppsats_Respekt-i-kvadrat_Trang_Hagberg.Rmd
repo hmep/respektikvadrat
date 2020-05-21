@@ -498,7 +498,7 @@ r.Well = 0.93
 
 ```
 
-Upplevelsen av stress, ångest eller nedstämdhet är som regel förknippad med olika former av undvikande. En person med social ångest vill kanske inget hellre än att delta i olika sociala sammanhang, men väljer ändå att avstå för att slippa uppleva de fysiologiska reaktioner som medverkan riskerar att medföra. På samma sätt vill kanske den som är stressad av alltför hög arbetsbelastning inget hellre än att säga till chefen att uppgifterna är för många, men väljer ändå att ta på sig en ny uppgift när chefen frågar. Den deprimerade vill kanske inget hellre än att prata med en kompis, men låter bli att ringa för slippa riskera att bli besviken om vännen inte svarar. Ett sätt att se på dessa exempel är att de alla är förknippade med bristande självhävdelse -- det vill säga undvikande av att i relation till andra personer på ett konstruktivt sätt framföra sina tankar, känslor, behov och önskningar.
+Upplevelsen av stress, ångest eller nedstämdhet är som regel förknippad med olika former av undvikande. En person med social ångest kanske inget hellre vill än att delta i olika sociala sammanhang, men väljer ändå att avstå för undvika upplevelsen att bli granskad av andra personer. Den som är stressad av alltför hög arbetsbelastning kanske inget hellre vill än att säga till chefen att uppgifterna är för många, men väljer ändå att ta på sig en ny uppgift när chefen frågar. På samma sätt kanske den som är deprimerad inget hellre vill än att prata med en kompis, men väljer ändå att låta bli att ringa för att inte riskera att bli besviken om vännen inte svarar. Ett sätt att se på dessa exempel är att de alla är förknippade med bristande självhävdelse -- det vill säga undvikande av att i relation till andra personer på ett konstruktivt sätt framföra sina tankar, känslor, behov och önskningar.
 
 Underskott av sådana beteenden som går att samla under begreppet konstruktiv självhävdelse (eller *assertiveness* på engelska) förknippas med en lång räcka psykologiska problem, både kliniska och subkliniska: stress, relationsproblem, generaliserat ångestsyndrom, social ångest, paniksyndrom,  emotionell instabilitet, depression och schizofreni [@Speed2018a]. Inom psykiatrin finns en uppsjö olika diagnoser, diagnosverktyg och behandlingsmanualer för dessa specifika åkommor, men trots att intresset för diagnosöverskridande begrepp och behandlingsformer har ökat markant under de senaste årtiondena saknas evidensbaserade behandlingsprogram i självhävdelse som vänder sig till en bredare målgrupp.
 
@@ -2301,3 +2301,8 @@ r_refs(file = "includes/r-references.bib")
 <div id="refs" custom-style="Bibliography"></div>
 
 \endgroup
+
+```{r echo = FALSE, results = 'asis', cache = FALSE}
+papaja::render_appendix('includes/appendix.Rmd')
+```
+
