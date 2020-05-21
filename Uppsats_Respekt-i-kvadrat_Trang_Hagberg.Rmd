@@ -939,7 +939,7 @@ Deltagarna blev via studiens hemsida informerade om att allt deltagande var friv
 
 \xstartnew
 
-För största möjliga transparens och replikerbarhet har programvara med fri licens och öppen källkod använts för analys och manusförfattande, och såväl data som kod har gjorts öppet tillgängliga i enlighet med rekommendationerna i @Asendorpf2013.
+För största möjliga transparens och replikerbarhet har programvara med fri licens och öppen källkod använts för analys och manusförfattande, och såväl data som källkod, inklusive källkodskommentarer som dokumenterar överväganden och förklarar val av metoder, har gjorts öppet tillgängliga i enlighet med rekommendationerna i @Asendorpf2013.
 
 \xstopnew 
 
