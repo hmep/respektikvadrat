@@ -1814,27 +1814,27 @@ library("tibble")
 jtrci.tab <- tibble(rbind.data.frame(
   AD = cbind(
     F1 = data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)])[, 1],
-    P1 = round(prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2)[, 1] * 100,0),
+    P1 = round(prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2)[, 1] * 100,1),
     F2 = data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)])[, 2],
-    P2 = round(prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2)[, 2] * 100,0),
+    P2 = round(prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2)[, 2] * 100,1),
     F3 = data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)])[, 3],
-    P3 = round(prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2)[, 3] * 100,0)
+    P3 = round(prop.table(data.matrix(AAAS_ad.pre.post.jt.table[, c(2:4)]), 2)[, 3] * 100,1)
   ),
   AG = cbind(
     F1 = data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)])[, 1],
-    P1 = round(prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2)[, 1] * 100,0),
+    P1 = round(prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2)[, 1] * 100,1),
     F2 = data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)])[, 2],
-    P2 = round(prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2)[, 2] * 100,0),
+    P2 = round(prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2)[, 2] * 100,1),
     F3 = data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)])[, 3],
-    P3 = round(prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2)[, 3] * 100,0)
+    P3 = round(prop.table(data.matrix(AAAS_ag.pre.post.jt.table[, c(2:4)]), 2)[, 3] * 100,1)
   ),
   RAS = cbind(
     F1 = data.matrix(rathus.pre.post.jt.table[, c(2:4)])[, 1],
-    P1 = round(prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)[, 1] * 100,0),
+    P1 = round(prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)[, 1] * 100,1),
     F2 = data.matrix(rathus.pre.post.jt.table[, c(2:4)])[, 2],
-    P2 = round(prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)[, 2] * 100,0),
+    P2 = round(prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)[, 2] * 100,1),
     F3 = data.matrix(rathus.pre.post.jt.table[, c(2:4)])[, 3],
-    P3 = round(prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)[, 3] * 100,0)
+    P3 = round(prop.table(data.matrix(rathus.pre.post.jt.table[, c(2:4)]), 2)[, 3] * 100,1)
   )
 ))
 
@@ -1851,8 +1851,8 @@ svkable(jtrci.tab[,c(7,1:6)], align="lcccccc", caption = '(ref:jtp)') %>%
   pack_rows("AAA-S Aggressive", 6, 10, bold = F) %>%
   pack_rows("Rathus", 11, 15, bold = F) %>%
   row_spec(c(5,10), extra_latex_after = "\\midrule") %>%
-  column_spec(2:6, width = "4em") %>%
-  add_header_above(c(" "=1,"Väntelista"=2,"Självhjälp"=2,"Behandlarstöd"=2))
+  column_spec(2:7, width = "3em") %>%
+  add_header_above(c(" "=1,xG3=2,xG1=2,xG2=2))
 
 ```
 
@@ -2196,7 +2196,7 @@ Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt s
 
 ### Deltagande i programmet ger stor effekt på grad av konstruktiv självhävdelse
 
-Behandlingsprogrammet har varit framgångsrikt. Deltagarna i *Respekt i kvadrat* har oavsett grupptillhörighet efter fullgången behandling förbättrats avsevärt med avseende på graden av konstruktiv självhävdelse i jämförelse med gruppen `r xg3`. Effektstorleken var för AAA-S Adaptive påtaglig redan vid mittenmätningen för både `r xg3`−`r xg1` och `r xg3`--`r xg2`, *ES*\xspace =\xspace 0,8 för båda. Vid eftermätningen var effektstorleken för `r xg3`−`r xg1` *ES*\xspace =\xspace 1,0 och för `r xg3`−`r xg2` *ES*\xspace =\xspace 0,9. Även effekten mellan behandlingsstart och `r xt3`mätningen var inom båda grupperna betydande, med *ES*\xspace =\xspace 1,0 för både gruppen `r xg2` och gruppen `r xg1` (se även figur \@ref(fig:effemmplotsad)). Samtliga effektstorlekar kan enligt @cohen1992power anses vara \'stora\' och ligger väl i linje med tidigare funna effektstorlekar för KBT, både för internetterapi och traditionell psykoterapi. Dessa resultat bekräftas av att andelen personer som vid eftermätningstillfället uppnått klinisk signifikans-status och dessutom har genomgått en reliabel förändring under loppet av programmet var signifikant större för både grupperna `r xg1` (18\xspace %) och `r xg2` (17\xspace %) än för `r xg3`n (1\xspace %). Det sekundära utfallsmåttet för konstruktiv självhävdelse, Rathus, pekar entydigt i samma riktning: Både `r xg1` (21\xspace %) och `r xg2` (33\xspace %) gav signifikant större andel tillfrisknade än `r xg3` (3\xspace %).
+Behandlingsprogrammet har varit framgångsrikt. Deltagarna i *Respekt i kvadrat* har oavsett grupptillhörighet efter fullgången behandling förbättrats avsevärt med avseende på graden av konstruktiv självhävdelse i jämförelse med gruppen `r xg3`. Effektstorleken var för AAA-S Adaptive påtaglig redan vid mittenmätningen för både `r xg3`−`r xg1` och `r xg3`--`r xg2`, *ES*\xspace =\xspace 0,8 för båda. Vid eftermätningen var effektstorleken för `r xg3`−`r xg1` *ES*\xspace =\xspace 1,0 och för `r xg3`−`r xg2` *ES*\xspace =\xspace 0,9. Även effekten mellan behandlingsstart och `r xt3`mätningen var inom båda grupperna betydande, med *ES*\xspace =\xspace 1,0 för både gruppen `r xg2` och gruppen `r xg1` (se även figur \@ref(fig:effemmplotsad)). Samtliga effektstorlekar kan enligt @cohen1992power anses vara \'stora\' och ligger väl i linje med tidigare funna effektstorlekar för KBT, både för internetterapi och traditionell psykoterapi. Dessa resultat bekräftas av att andelen personer som vid eftermätningstillfället uppnått klinisk signifikans-status och dessutom har genomgått en reliabel förändring under loppet av programmet var signifikant större för både grupperna `r xg1` (18\xspace %) och `r xg2` (17\xspace %) än för `r xg3`n (1,5\xspace %). Det sekundära utfallsmåttet för konstruktiv självhävdelse, Rathus, pekar entydigt i samma riktning: Både `r xg1` (21\xspace %) och `r xg2` (33\xspace %) gav signifikant större andel tillfrisknade än `r xg3` (3\xspace %).
 
 Skattningarna på AAA-S Aggressive ökade över tid på ungefär samma sätt som skattningarna för AAA-S Adaptive, dock i mindre omfattning. Utifrån konceptualiseringen av konstruktiv, aggressiv och passiv självhävdelse som studien bygger på (se figur \@ref(fig:assertiveness)) är det svårt att tolka resultatet för AAA-S Aggressive, eftersom aggressiv självhävdelse i en idiografisk fallformulering för en individ lika gärna kan vara ett underskott som ett överskott, som @Mitamura2018 konstaterar. Tolkningen kompliceras ytterligare av att många deltagare förmodligen för sig själva likställer konstruktiv självhävdelse med aggressiv självhävdelse. Att effektstyrkan för måttet AAA-S Aggressive är större i `r xg1`sgruppen (*ES*\xspace =\xspace 0,6) än `r xg2`sgruppen (*ES*\xspace =\xspace 0,4) skulle kunna tyda på det i ljuset av att det för vissa av deltagarna i behandlingsgruppen var ett behandlingsmål att utveckla förmågan att diskriminera mellan aggressiv och konstruktiv självhävdelse.
 
