@@ -944,7 +944,7 @@ En modell specificerades för vart och ett av de beroende utfallsmåtten. Ingen 
 
 För modelleringen av de olika utfallsmåtten användes modelleringsverktyg från R-paketet *lme4* [@R-lme4]. Valet av kovariansstrukturen gjordes genom jämförelse av *Akaike Information Criteria* (AIC)-tal av modeller som anpassades till data med *Maximum Likelihood* (ML)-funktionen. Den alternativa sannolikhetsfunktionen *Restricted Maximum Likelihood* (REML), som ger väntesvärdesriktiga uppskattningar av varianserna, användes därefter för anpassningen av modellerna för utfallsmåtten till underliggande data. 
 
-Från prediktioner estimerade marginalmedelvärden (*estimated marginal means* eller *least square means*) samt parvisa jämförelser av dessa beräknades med R-paketet *emmeans* [@R-emmeans] med Bonferroni-korrigering av *p*-värden. 
+Med modellerna predicerade marginalmedelvärden (*estimated marginal means* eller *least square means*) samt parvisa jämförelser av dessa beräknades med R-paketet *emmeans* [@R-emmeans] med Bonferroni-korrigering av *p*-värden. 
 
 ### Analys av *random*-effekter
 
