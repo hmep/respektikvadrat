@@ -1932,7 +1932,7 @@ options(OutDec= ",")
 
 ### Flernivåanalysresultat
 
-Vid visuell granskning av diagnostiska plottar av observerad data fann vi inga brott mot de villkor som behöver uppfyllas för flernivåanalys. Estimat av intercept och regressionskoefficienter för de olika primära och sekundära utfallsmåtten sammanfattas i tabell \@ref(stargazertab) (bilaga); intercept och lutningskoefficienter som anges i tabellen för respektive utfallsmått kan läggas in i regressionsformeln för att predicera utfall för alla kombinationer av grupptillhörighet och mättillfälle. Se tabell \@ref(tab:descriptives) för en sammanställning av predicerade medelvärden, standardavvikelser och effektstorlekar för flernivåanalys-modellerna för utfallsmåtten. 
+Vid visuell granskning av diagnostiska plottar av observerad data fann vi inga brott mot de villkor som behöver uppfyllas för flernivåanalys. Estimat av intercept och regressionskoefficienter för de olika primära och sekundära utfallsmåtten sammanfattas i bilaga \@ref(stargazertab); intercept och lutningskoefficienter som anges i tabellen för respektive utfallsmått kan läggas in i regressionsformeln för att predicera utfall för alla kombinationer av grupptillhörighet och mättillfälle. Se tabell \@ref(tab:descriptives) för en sammanställning av predicerade medelvärden, standardavvikelser och effektstorlekar för flernivåanalys-modellerna för utfallsmåtten. 
 
 <!-- Nedan följer marginalmedelvärden och parvisa jämförelser av dessa mellan grupperna och mättillfällena för de huvudsakliga utfallsmåtten i AAA-S, som de har predicerats för deltagarna i respektive flernivåmodell. -->
 
@@ -2303,15 +2303,6 @@ Studiens syfte var att undersöka effekten på konstruktivt självhävande av be
 ```{r create_r-references, eval = T}
 r_refs(file = "includes/r-references.bib")
 ```
-
-\begingroup
-
-\setlength{\parindent}{-0.5in}
-\setlength{\leftskip}{0.5in}
-
-<div id="refs" custom-style="Bibliography"></div>
-
-\endgroup
 
 ```{r create_appendix, eval = T}
 render_appendix("includes/appendix.Rmd")
