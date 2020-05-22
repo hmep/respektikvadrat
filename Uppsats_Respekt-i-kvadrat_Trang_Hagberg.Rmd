@@ -1928,7 +1928,7 @@ options(OutDec= ",")
 
 ### Flernivåanalysresultat
 
-Vid visuell granskning av diagnostiska plottar av observerad data fann vi inga brott mot de villkor som behöver uppfyllas för flernivåanalys. Estimat av intercept och regressionskoefficienter för de olika primära och sekundära utfallsmåtten sammanfattas i bilaga \@ref(stargazertab); intercept och lutningskoefficienter som anges i tabellen för respektive utfallsmått kan läggas in i regressionsformeln för att predicera utfall för alla kombinationer av grupptillhörighet och mättillfälle. Se tabell \@ref(tab:descriptives) för en sammanställning av predicerade medelvärden, standardavvikelser och effektstorlekar för flernivåanalys-modellerna för utfallsmåtten. 
+Vid visuell granskning av diagnostiska plottar av observerad data fann vi inga brott mot de villkor som behöver uppfyllas för flernivåanalys. Estimat av intercept och regressionskoefficienter för de olika primära och sekundära utfallsmåtten sammanfattas i tabellform i bilaga \@ref(stargazertab); intercept och lutningskoefficienter som anges i tabellen för respektive utfallsmått kan läggas in i regressionsformeln för att predicera utfall för alla kombinationer av grupptillhörighet och mättillfälle. Se tabell \@ref(tab:descriptives) för en sammanställning av predicerade medelvärden, standardavvikelser och effektstorlekar för flernivåanalys-modellerna för utfallsmåtten. 
 
 (ref:descriptives) Estimerade marginalmedelvärden (*M*), standardavvikelser (*SD*) samt effektstorlekar (*ES*) för utfallsmåtten i de olika grupperna och vid de olika mättillfällena.
 
@@ -2056,6 +2056,8 @@ svkable(descriptives.col.out, caption = "(ref:descriptives)", align="llrccccccc"
 
 <!-- #### Skillnader i effekt på konstruktiv och aggressiv självhävdelse mellan `r #xg3`--`r xg1` respektive `r #xg3`--`r xg2` -->
 
+\pagebreak[4]
+
 #### Konstruktiv självhävdelse
 
 ##### `r xG3`--`r xg1` vid `r xt3`mätningen
@@ -2118,7 +2120,7 @@ För både gruppen `r xg1` och gruppen `r xg2` fann vi en klar förbättring mel
 
 Deltagarna i de båda behandlingsbetingelserna hade efter fullgången behandling förbättrats avsevärt med avseende på graden av konstruktiv självhävdelse, i jämförelse med `r xg3`. Effekten var påtaglig redan vid mittenmätningen för båda grupperna. Även förbättringen mellan behandlingsstart och `r xt3`mätningen var för båda grupperna betydande. Se figur \@ref(fig:effemmplotsad) för en visualisering av resultaten. 
 
-\xstartnew I flernivåanalysen konstaterar vi att `r xresult(performance::icc(aaas_ad.lmer)$ICC_adjusted * 100,0)`\xspace % av *random*-effekt-variansen i utfallsmåttet AAA-S Adaptive mellan mättidpunkterna förklaras av individuella faktorer, återstoden kan antas vara mät- eller slumpfel. Om även variansen av fixa effekter inkluderas är andelen `r xresult(performance::icc(aaas_ad.lmer)$ICC_conditional * 100,0)`\xspace %, det vill säga mer än hälften av den totala variansen.\xstopnew
+\xstartnew Genom flernivåanalysen konstaterade vi att `r xresult(performance::icc(aaas_ad.lmer)$ICC_adjusted * 100,0)`\xspace % av *random*-effekt-variansen i utfallsmåttet AAA-S Adaptive mellan mättidpunkterna förklaras av individuella faktorer; återstoden kan antas vara mät- eller slumpfel. Om även variansen av fixa effekter inkluderas är andelen `r xresult(performance::icc(aaas_ad.lmer)$ICC_conditional * 100,0)`\xspace %, det vill säga mer än hälften av den totala variansen.\xstopnew
 
 (ref:emmeffag) Medelvärdesestimat (*M*) och effektstorlekar (*ES*) för AAA-S Aggressive. Etiketterna i figuren anger respektive effektstorlek för med prickade linjer indikerade parvisa jämförelser.
 
