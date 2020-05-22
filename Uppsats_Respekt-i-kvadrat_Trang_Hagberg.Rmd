@@ -1852,7 +1852,7 @@ svkable(jtrci.tab[,c(7,1:6)], align="lcccccc", caption = '(ref:jtp)') %>%
   pack_rows("Rathus", 11, 15, bold = F) %>%
   row_spec(c(5,10), extra_latex_after = "\\midrule") %>%
   column_spec(2:7, width = "3em") %>%
-  add_header_above(c(" "=1,xG3=2,xG1=2,xG2=2))
+  add_header_above(c(" "=1,"Väntelista"=2,"Självhjälp"=2,"Behandlarstöd"=2))
 
 ```
 
