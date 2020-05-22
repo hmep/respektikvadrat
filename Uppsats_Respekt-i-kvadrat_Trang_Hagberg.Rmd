@@ -15,7 +15,7 @@ authornote: |
   `r readLines('includes/authornote.txt', encoding = 'UTF-8')`
 keywords: | 
   `r readLines('includes/keywords.txt', encoding = 'UTF-8')`
-#wordcount         : "11532"
+#wordcount         : "11778"
 bibliography      : ["includes/r-references.bib", "includes/KSH.bib"] 
 floatsintext      : no
 figurelist        : no
@@ -922,7 +922,7 @@ All psykologisk behandling är förknippad med såväl möjligheter som risker. 
 
 \xstopnew 
 
-Deltagarna blev via studiens hemsida informerade om att allt deltagande var frivilligt och att de kunde avbryta sitt deltagande när som helst. \xstartnew Samtliga deltagare lämnade informerat samtycke till medverkan. \xstopnew De kunde ta del av syftet med studien och studiens övergripande plan. Information fanns om att all information samlades in under sekretess och i enlighet med personuppgiftslagen samt GDPR. Deltagandet var helt anonymt och all insamlad data var kopplad till den anonyma studiekod som genererades för varje deltagare. Vid intresseanmälan till studien lämnade deltagarna informerat samtycke till sitt deltagande. Vid exkludering från studien under rekryteringsfasen informerades deltagaren om anledningen samt fick rekommendationer (till exempel om vart hen kunde vända sig för att söka vård). Vid tecken på svår depression rekommenderades deltagarna att uppsöka psykiatrisk vård. Under hela studiens gång hade deltagarna möjlighet att kontakta studieansvarig per telefon samt e-post.
+Deltagarna blev via studiens hemsida informerade om att allt deltagande var frivilligt och att de kunde avbryta sitt deltagande när som helst. De kunde ta del av syftet med studien och studiens övergripande plan. Information fanns om att all information samlades in under sekretess och i enlighet med personuppgiftslagen samt GDPR. Deltagandet var helt anonymt och all insamlad data var kopplad till den anonyma studiekod som genererades för varje deltagare. Vid intresseanmälan till studien lämnade deltagarna informerat samtycke till sitt deltagande. Vid exkludering från studien under rekryteringsfasen informerades deltagaren om anledningen samt fick rekommendationer (till exempel om vart hen kunde vända sig för att söka vård). Vid tecken på svår depression rekommenderades deltagarna att uppsöka psykiatrisk vård. Under hela studiens gång hade deltagarna möjlighet att kontakta studieansvarig per telefon samt e-post.
 
 \xstartnew
 
@@ -960,15 +960,19 @@ Frekvensen deltagare som i behandlingsprogrammet genomgått en reliabel föränd
 
 \xstartnew
 
-### Beräkning av Cronbach's alpha för skalor för utfallsmått
+### Beräkning av Cronbach's alpha för översatta utfallsmått
 
-För att bedöma den interna reliabiliteten för i första hand de till svenska nyöversatta skalorna Rathus och AAA-S beräknades Cronbach's $\alpha$ med hjälp av R-paketet *performance* [@R-performance].
+För att bedöma den interna reliabiliteten för de till svenska nyöversatta skalorna Rathus och AAA-S beräknades Cronbach's $\alpha$ med hjälp av R-paketet *performance* [@R-performance].
 
 \xstopnew
+
+\pagebreak[3]
 
 # Resultat
 
 ## Förkontroller
+
+Med randomisering av med powerberäkning fastställt antal deltagare till respektive betingelse är grupperna likvärda, vilket bekräftades med variansanalyser.
 
 ### Analys av skalornas interna reliabilitet
 
