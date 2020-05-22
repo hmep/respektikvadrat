@@ -972,7 +972,7 @@ För att bedöma den interna reliabiliteten för de till svenska nyöversatta sk
 
 ## Förkontroller
 
-Med randomisering av med powerberäkning fastställt antal deltagare till respektive betingelse är grupperna likvärda, vilket bekräftades med variansanalyser.
+Genom randomisering av med powerberäkning fastställt antal deltagare till respektive betingelse antogs grupperna vara likvärdiga vid behandlingens start.
 
 ### Analys av skalornas interna reliabilitet
 
