@@ -2170,7 +2170,7 @@ $\Delta M$\xspace =\xspace `r xresult(aaas_ag.emmpairs.by.time$estimate[7] * -1,
 
 ##### `r xG3`--`r xg2` vid `r xt3`mätningen
 
-Vid `r xt3`mätningen fann vi också att medelpoängen för `r xg2`sgruppen ($M$\xspace =\xspace `r xresult(tidy(aaas_ag.emm.by.time)$estimate[9],1)`, 95\xspace % CI [`r xresult(tidy(aaas_ag.emm.by.time)$conf.low[9],1)`\xspace ;\xspace`r xresult(tidy(aaas_ag.emm.by.time)$conf.high[9],1)`]) var högre i jämförelse med gruppen `r xg3` (se *M* ovan). Skillnaden var `r xresult(aaas_ag.emmpairs.by.time$estimate[8] * -1,1)`, $t$\(_{`r xresultT(aaas_ag.emmpairs.by.time$df[8],0)`}\) = `r xresult(aaas_ag.emmpairs.by.time$statistic[8],1)`; `r xpr(aaas_ag.emmpairs.by.time$p.value[8])`; $ES$\xspace =\xspace `r xresult(aaas_ag.eff.by.time$effect.size[8] * -1,1)`.
+Vid `r xt3`mätningen fann vi också att medelpoängen för `r xg2`sgruppen ($M$\xspace =\xspace `r xresult(tidy(aaas_ag.emm.by.time)$estimate[9],1)`, 95\xspace % CI [`r xresult(tidy(aaas_ag.emm.by.time)$conf.low[9],1)`\xspace ;\xspace`r xresult(tidy(aaas_ag.emm.by.time)$conf.high[9],1)`]) var högre i jämförelse med gruppen `r xg3` (se *M* ovan), $\Delta M$\xspace =\xspace `r xresult(aaas_ag.emmpairs.by.time$estimate[8] * -1,1)`, $t$\(_{`r xresultT(aaas_ag.emmpairs.by.time$df[8],0)`}\) = `r xresult(aaas_ag.emmpairs.by.time$statistic[8],1)`; `r xpr(aaas_ag.emmpairs.by.time$p.value[8])`; $ES$\xspace =\xspace `r xresult(aaas_ag.eff.by.time$effect.size[8] * -1,1)`.
 
 ##### Behandlingseffekt mellan behandlingsstart och `r xt3`mätning
 
