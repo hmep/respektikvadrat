@@ -15,7 +15,7 @@ authornote: |
   `r readLines('includes/authornote.txt', encoding = 'UTF-8')`
 keywords: | 
   `r readLines('includes/keywords.txt', encoding = 'UTF-8')`
-#wordcount         : "11452"
+#wordcount         : "11435"
 bibliography      : ["includes/r-references.bib", "includes/KSH.bib"] 
 floatsintext      : no
 figurelist        : no
