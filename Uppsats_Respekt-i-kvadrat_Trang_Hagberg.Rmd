@@ -24,7 +24,7 @@ footnotelist      : no
 linenumbers       : no
 mask              : no
 documentclass     : "apa6"
-classoption       : "doc,a4paper" # man, jou, doc
+classoption       : "doc,a4paper,noextraspace" # man, jou, doc
 output: 
   papaja::apa6_pdf:
     keep_tex      : TRUE

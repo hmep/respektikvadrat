@@ -1,9 +1,9 @@
 % Tweak paragraph and section heading vertical spacing
 \setlength{\parskip}{.5\baselineskip plus 0pt minus 0pt}
-\let\oldsection\section
-\let\oldsubsection\subsection
+% \let\oldsection\section
+% \let\oldsubsection\subsection
 \let\oldsubsubsection\subsubsection
-\renewcommand{\subsection}[1]{\oldsubsection{#1}\par\vspace{\parskip}}
+% \renewcommand{\subsection}[1]{\oldsubsection{#1}\par\vspace{\parskip}}
 \renewcommand{\subsubsection}[1]{\oldsubsubsection{#1}\par\vspace{\parskip}}
 \renewcommand{\paragraph}[1]{\oldparagraph{#1}\par\vspace{\parskip}}
 \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\par\vspace{\parskip}}
@@ -44,11 +44,4 @@
 %\newcommand\xstopnew{}
 \newcommand\xstartnew{\color{red}}
 \newcommand\xstopnew{\color{black}}
-\usepackage{ragged2e}
-% https://tex.stackexchange.com/questions/74353/what-commands-are-there-for-horizontal-spacing
-\newcommand\xspace{\,}
-%\usepackage[page,title,header]{appendix}
-%\PassOptionsToPackage{page,title,header}{appendix}
-\renewcommand\appendixname{}
-
-
+\newcommand\xspace{\,} % https://tex.stackexchange.com/questions/74353/what-commands-are-there-for-horizontal-spacing
