@@ -25,16 +25,15 @@ linenumbers       : yes
 mask              : no
 documentclass     : "apa6"
 classoption       : "doc,a4paper" # man, jou, doc
-#appendix          : "includes/appendix.Rmd"
 output: 
-#  papaja::apa6_word
   papaja::apa6_pdf:
     keep_tex      : TRUE
     latex_engine  : xelatex
     citation_package: biblatex
     fig_caption   : yes
     includes:
-      in_header   : "includes/texincludes.tex"
+      in_header   : ["includes/texincludes.tex"]
+      after_body  : ["includes/appendix.tex"]
 lang              : sv-SE
 include-header    : 
   - \hyphenation{nor-mal-spann nor-mal-span-net Tech-no-lo-gy {AAA-S}}
@@ -2313,3 +2312,8 @@ r_refs(file = "includes/r-references.bib")
 <div id="refs" custom-style="Bibliography"></div>
 
 \endgroup
+
+```{r create_appendix, eval = T}
+render_appendix("includes/appendix.Rmd")
+```
+
