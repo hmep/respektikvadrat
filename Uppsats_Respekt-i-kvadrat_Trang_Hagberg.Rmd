@@ -51,13 +51,9 @@ library("devtools")
 # devtools::install_github("strengejacke/strengejacke",force=T)
 # devtools::install_github("crsh/papaja@devel",force=T)
 # devtools::install_github("AWKruijt/JT-RCI",force=T)
-# devtools::install_github("markwestcott34/stargazer-booktabs",force=T)
+# devtools::install_github("markwestcott34/stargazer-booktabs",force=T) # First uninstall regular stargazer, then run this line
 # devtools::install_github("ropensci/magick",force=T)
 
-#install.packages('tinytex')
-#tinytex::install_tinytex()
-
-#library("tinytex")
 library("papaja")
 library("broom.mixed")
 library("knitr")
@@ -70,9 +66,6 @@ library("car")
 library("ggplot2")
 library("pbkrtest")
 library("effsize")
-#library("dunn.test")
-#library("wesanderson")
-#library("pander")
 
 ``` 
 
@@ -452,7 +445,7 @@ ll3 = length(r2.long.data[lg3t1,1])
 r.AAAS_ad = 0.82 # s 329 @Thompson2011
 sd.AAAS_ad.norm = 7.5 # s 329 @Thompson2011
 mean.AAAS_ad.norm = 57.6 # s 329 @Thompson2011
-ref.AAAS_ad = "icke-kliniskt sample (student-sample 1) från @Thompson2011"
+ref.AAAS_ad = "icke-kliniskt stickprov (student-sample 1) från @Thompson2011"
 
 ### AAA-S Aggressive assertiveness
 # Norms: Thompson (2011) 
@@ -463,14 +456,14 @@ ref.AAAS_ad = "icke-kliniskt sample (student-sample 1) från @Thompson2011"
 r.AAAS_ag = 0.88 # s 329 @Thompson2011
 sd.AAAS_ag.norm = 9.7 # s 329 @Thompson2011
 mean.AAAS_ag.norm = 33.2 # s 329 @Thompson2011
-ref.AAAS_ag = "icke-kliniskt sample (student-sample 1) från @Thompson2011"
+ref.AAAS_ag = "icke-kliniskt stickprov (student-sample 1) från @Thompson2011"
 
 ### PHQ9
 # Normdata: Kroenke, K., Spitzer, R. L., & Williams, J. B. (2001). The PHQ-9: validity of a brief depression severity measure. Journal of General Internal Medicine, 16(9), 606–613. Retrieved from http://www.ncbi.nlm.nih.gov/pubmed/11556941
 r.PHQ9 = 0.89 # @Kroenke2001 s 3
 sd.PHQ9.norm = 3.8 # @Kroenke2001 s 3
 mean.PHQ9.norm = 3.3 # @Kroenke2001 s 3
-ref.PHQ9 = "icke-kliniskt sample från @Kroenke2001"
+ref.PHQ9 = "icke-kliniskt stickprov från @Kroenke2001"
 
 ### GAD7
 # Normdata: Spitzer, R. L., Kroenke, K., Williams, J. B. W., & Löwe, B. (2006). A Brief Measure for Assessing Generalized Anxiety Disorder. Archives of Internal Medicine, 166(10), 1092. https://doi.org/10.1001/archinte.166.10.1092
@@ -478,7 +471,7 @@ ref.PHQ9 = "icke-kliniskt sample från @Kroenke2001"
 r.GAD7 = 0.92 # @Kroenke2006 s 3
 sd.GAD7.norm = 4.8 # @Kroenke2006 s 3
 mean.GAD7.norm = 4.9 # @Kroenke2006 s 3
-ref.PHQ9 = "icke-kliniskt sample från @Kroenke2006"
+ref.PHQ9 = "icke-kliniskt stickprov från @Kroenke2006"
 
 ### LSAS-24
 # Normdata: Fresco, D. M., Coles, M. E., Heimberg, R. G., Liebowitz, M. R., Hami, S., Stein, M. B., & Goetz, D. (2001). The Liebowitz Social Anxiety Scale: a comparison of the psychometric properties of self-report and clinician-administered formats. Psychol Med 31, 1025-1035.
@@ -486,14 +479,14 @@ ref.PHQ9 = "icke-kliniskt sample från @Kroenke2006"
 r.LSAS24 = 0.96 # @Fresco2001 s 1026
 sd.LSAS24.norm = 12.70 # @Fresco2001 s 1031
 mean.LSAS24.norm = 13.49 # @Fresco2001 s 1031
-ref.LSAS24 = "icke-kliniskt sample från @Fresco2001"
+ref.LSAS24 = "icke-kliniskt stickprov från @Fresco2001"
 
 ### Rathus
 # Normdata: Thompson (2011) 
 r.Rathus = 0.87 # s 326 @Thompson2011
 sd.Rathus.norm = 23.9 # s 326 @Thompson2011
 mean.Rathus.norm = 6.2 # s 326 @Thompson2011
-ref.Rathus = "icke-kliniskt sample (student-sample 1) från @Thompson2011"
+ref.Rathus = "icke-kliniskt stickprov (student-sample 1) från @Thompson2011"
 
 ### Välmåendeskalan
 r.Well = 0.93
@@ -2080,18 +2073,6 @@ options(OutDec= ".")
 
 # AAA-S Ad
 
-# Name = c(
-#   paste("ES ",aaas_ad.eff.by.group[2,1],"-",aaas_ad.eff.by.group[2,2],": ",format(round(aaas_ad.eff.by.group[2,4],2) * -1,decimal.mark=","),sep=""),
-#   paste("ES ",aaas_ad.eff.by.group[5,1],"-",aaas_ad.eff.by.group[5,2],": ",format(round(aaas_ad.eff.by.group[5,4],2) * -1,decimal.mark=","),sep=""),
-#   paste("ES ",aaas_ad.eff.by.group[8,1],"-",aaas_ad.eff.by.group[8,2],": ",format(round(aaas_ad.eff.by.group[8,4],2) * -1,decimal.mark=","),sep=""),
-#   NA,
-#   paste("ES ",aaas_ad.eff.by.time[4,1],"-",aaas_ad.eff.by.time[4,2],": ",format(round(aaas_ad.eff.by.time[4,4],2) * -1,decimal.mark=","),sep=""),
-#   paste("ES ",aaas_ad.eff.by.time[5,1],"-",aaas_ad.eff.by.time[5,2],": ",format(round(aaas_ad.eff.by.time[5,4],2) * -1,decimal.mark=","),sep=""),
-#   NA,
-#   paste("ES ",aaas_ad.eff.by.time[7,1],"-",aaas_ad.eff.by.time[7,2],": ",format(round(aaas_ad.eff.by.time[7,4],2) * -1,decimal.mark=","),sep=""),
-#   paste("ES ",aaas_ad.eff.by.time[8,1],"-",aaas_ad.eff.by.time[8,2],": ",format(round(aaas_ad.eff.by.time[8,4],2) * -1,decimal.mark=","),sep="")
-# )
-
 Name = c(
   paste("ES ",xresultT(aaas_ad.eff.by.group[2,4]$effect.size * -1,1),sep=""),
   paste("ES ",xresultT(aaas_ad.eff.by.group[5,4]$effect.size * -1,1),sep=""),
@@ -2111,10 +2092,6 @@ aaas_ad.emm.plot <- plot(ggemmeans(aaas_ad.lmer, terms = c("time", "group")), co
   scale_shape_manual(values = c(0,1,2)) +
   scale_color_ordinal()
 
-# aaas_ad.emm.plot.X <- 
-#   plot(ggemmeans(aaas_ad.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = "M", colour = "Grupp:", title = element_blank()) + theme(legend.position = "bottom")
-
-#,arrow = arrow(length = unit(0.05, "npc"))
 ad1 <- aaas_ad.emm.plot + 
   geom_curve(aes(x = 2.9, y = aaas_ad.emm.plot$data[2]$predicted[7], xend = 3.1, yend = aaas_ad.emm.plot$data[2]$predicted[9]), color = "#999999", size = 0.25, linetype = "dotted", curvature = 0.4) +
   geom_curve(aes(x = 2.9, y = aaas_ad.emm.plot$data[2]$predicted[7], xend = 3, yend = aaas_ad.emm.plot$data[2]$predicted[8]), color = "#999999", size = 0.25, linetype = "dotted", curvature = -0.4) +
@@ -2163,14 +2140,9 @@ Name = c(
 Nudge_x = c(0.25,0.22,0.35,0,-0.16,0.065,0,-0.2,0.1) * 1.2
 Nudge_y = c(-0.22,0.65,-0.07,0,-0.9,-1.1,0,-1.35,-1.4) * 2
 
-# (aaas_ag.bw <- plot(ggemmeans(aaas_ag.lmer, terms = c("time", "group")), connect.lines = TRUE, colors = "bw") + labs(x = "Tid", y = "M", shape = "Grupp", title = element_blank()) + theme(legend.position = "bottom") + scale_linetype_manual(values = 1:3))
-
 aaas_ag.emm.plot <- plot(ggemmeans(aaas_ag.lmer, terms = c("time", "group")), connect.lines = TRUE, colors = "bw", line.size=0.4) + labs(x = "Tid", y = "Estimerat medelvärde", shape = "Grupp", title = element_blank()) + theme(legend.position = "bottom") + 
   scale_shape_manual(values = c(0,1,2)) +
   scale_color_ordinal()
-
-# aaas_ag.emm.plotX <- 
-#   plot(ggemmeans(aaas_ag.lmer, terms = c("time", "group")), connect.lines = TRUE) + labs(x = "Tid", y = "M", colour = "Grupp:", title = element_blank()) + theme(legend.position = "bottom")
 
 ag1 <- aaas_ag.emm.plot + 
   geom_curve(aes(x = 2.9, y = aaas_ag.emm.plot$data[2]$predicted[7], xend = 3.1, yend = aaas_ag.emm.plot$data[2]$predicted[9]), color = "#999999", size = 0.25, linetype = "dotted", curvature = 0.4) +
