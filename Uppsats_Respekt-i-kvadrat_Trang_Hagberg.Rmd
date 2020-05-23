@@ -971,7 +971,7 @@ För att bedöma den interna reliabiliteten för de till svenska nyöversatta sk
 
 ## Förkontroller
 
-### Analys av skalornas interna reliabilitet
+### Analys av de översatta skalornas interna reliabilitet
 
 ```{r alpha, eval = T}
 
