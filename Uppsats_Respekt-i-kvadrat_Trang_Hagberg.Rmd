@@ -2114,7 +2114,7 @@ För både gruppen `r xg1` och gruppen `r xg2` fann vi en klar förbättring mel
 
 Deltagarna i de båda behandlingsbetingelserna hade efter fullgången behandling förbättrats avsevärt med avseende på graden av konstruktiv självhävdelse, i jämförelse med `r xg3`. Effekten var påtaglig redan vid mittenmätningen för båda grupperna. Även förbättringen mellan behandlingsstart och `r xt3`mätningen var för båda grupperna betydande. Se figur \@ref(fig:effemmplotsad) för en visualisering av resultaten. 
 
-\xstartnew I flernivåanalysen konstaterar vi att `r xresult(performance::icc(aaas_ad.lmer)$ICC_adjusted * 100,0)`\xspace % av *random*-effekt-variansen i utfallsmåttet AAA-S Adaptive mellan mättidpunkterna förklaras av individuella faktorer; återstoden kan antas vara mät- eller slumpfel. Om även variansen av fixa effekter inkluderas är andelen `r xresult(performance::icc(aaas_ad.lmer)$ICC_conditional * 100,0)`\xspace %, det vill säga mer än hälften av den totala variansen.\xstopnew
+\xstartnew Genom flernivåanalysen konstaterade vi att `r xresult(performance::icc(aaas_ad.lmer)$ICC_adjusted * 100,0)`\xspace % av *random*-effekt-variansen i utfallsmåttet AAA-S Adaptive mellan mättidpunkterna förklaras av individuella faktorer; återstoden kan antas vara mät- eller slumpfel. Om även variansen av fixa effekter inkluderas är andelen `r xresult(performance::icc(aaas_ad.lmer)$ICC_conditional * 100,0)`\xspace %, det vill säga mer än hälften av den totala variansen.\xstopnew
 
 (ref:emmeffag) Medelvärdesestimat (*M*) och effektstorlekar (*ES*) för AAA-S Aggressive. Etiketterna i figuren anger respektive effektstorlek för med prickade linjer indikerade parvisa jämförelser.
 
