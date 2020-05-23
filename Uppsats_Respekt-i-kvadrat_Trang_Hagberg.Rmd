@@ -2185,7 +2185,7 @@ Vi var även intresserade av om det fanns någon skillnad (i endera riktning) i 
 
 ### Skillnad i effekt på konstruktiv självhävdelse mellan `r xg1`--`r xg2`
 
-Vi fann ingen skillnad i utfall med AAA-S Adaptive vid `r xt3`mätningen mellan gruppen `r xg1` och gruppen `r xg2`. Vi fann inte heller någon skillnad i effekt vid `r xt2`mätningen. Skillnaden i konstruktiv självhävdelse vid `r xt3`mätningen är försumbar mellan de som fått behandlarstöd och de som har fått klara sig på egen hand.
+Vi fann ingen skillnad i utfall med AAA-S Adaptive vid `r xt3`mätningen mellan gruppen `r xg1` och gruppen `r xg2`. Vi fann inte heller någon skillnad i effekt vid `r xt2`mätningen. Skillnaden i konstruktiv självhävdelse vid `r xt3`mätningen är alltså försumbar mellan de som fått behandlarstöd och de som har fått klara sig på egen hand.
 
 # Diskussion
 
