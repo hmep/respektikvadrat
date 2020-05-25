@@ -950,7 +950,7 @@ Granskning av homoscedasticitet och residualernas fördelning samt identifiering
 
 En modell specificerades för vart och ett av de beroende utfallsmåtten. Ingen standardisering eller centrering gjordes av värdena. Som oberoende prediktorer eller fixa variabler angavs huvudeffekter och interaktioner av tid (upprepade beroende mättillfällen) och grupp (oberoende betingelse till vilka deltagarna randomiserades inför start). I modellerna tilläts skärningspunkterna (intercepten) för respektive deltagare att variera som *random*-effekt. Insamlad mängd data tillät på grund av bortfall inte inklusion av en *random* effekt för lutningen på regressionslinjen mellan mättillfällena.
 
-För modelleringen av de olika utfallsmåtten användes modelleringsverktyg från R-paketet *lme4* [@R-lme4]. Valet av kovariansstrukturen gjordes genom jämförelse av *Akaike Information Criteria* (AIC)-tal av modeller som anpassades till data med *Maximum Likelihood* (ML)-funktionen. Den alternativa sannolikhetsfunktionen *Restricted Maximum Likelihood* (REML), som ger väntesvärdesriktiga uppskattningar av varianserna, användes därefter för anpassningen av modellerna för utfallsmåtten till underliggande data. 
+För modelleringen av de olika utfallsmåtten användes modelleringsverktyg från R-paketet *lme4* [@R-lme4]. Val av kovariansstruktur gjordes genom jämförelse av *Akaike Information Criteria* (AIC)-tal av modeller som anpassades till data med *Maximum Likelihood* (ML)-funktionen. Den alternativa sannolikhetsfunktionen *Restricted Maximum Likelihood* (REML), som ger väntesvärdesriktiga uppskattningar av varianserna, användes därefter för anpassningen av modellerna för utfallsmåtten till underliggande data. 
 
 Med de till observerade data anpassade flernivåmodellerna estimerades marginalmedelvärden (*estimated marginal means* eller *least square means*) för alla kombinationer av grupp och tid. Estimerade marginalmedelvärden och parvisa jämförelser av dessa togs fram med R-paketet *emmeans* [@R-emmeans] med Bonferroni-korrigering av *p*-värden.
 
@@ -973,6 +973,8 @@ Frekvensen deltagare som i behandlingsprogrammet genomgått en reliabel föränd
 För att bedöma den interna reliabiliteten för de till svenska nyöversatta skalorna Rathus och \mbox{AAA-S} beräknades Cronbach's $\alpha$ för dem med hjälp av R-paketet *performance* [@R-performance].
 
 \xstopnew
+
+\pagebreak[4]
 
 # Resultat
 
@@ -2059,8 +2061,6 @@ svkable(descriptives.col.out, caption = "(ref:descriptives)", align="llrccccccc"
 ```
 
 <!-- #### Skillnader i effekt på konstruktiv och aggressiv självhävdelse mellan `r #xg3`--`r xg1` respektive `r #xg3`--`r xg2` -->
-
-\newpage
 
 #### Konstruktiv självhävdelse
 
