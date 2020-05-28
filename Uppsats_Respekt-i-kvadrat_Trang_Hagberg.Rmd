@@ -1937,7 +1937,7 @@ options(OutDec= ",")
 
 Vid visuell granskning av diagnostiska plottar av observerad data fann vi inga brott mot de villkor som behöver uppfyllas för flernivåanalys. Estimat av intercept och regressionskoefficienter för de olika primära och sekundära utfallsmåtten sammanfattas i bilaga \@ref(stargazertab); intercept och lutningskoefficienter som anges i tabellen för respektive utfallsmått kan läggas in i regressionsformeln för att predicera utfall för alla kombinationer av grupptillhörighet och mättillfälle. Se tabell \@ref(tab:descriptives) för en sammanställning av predicerade medelvärden, standardavvikelser och effektstorlekar för flernivåanalys-modellerna för utfallsmåtten. 
 
-(ref:descriptives) Estimerade marginalmedelvärden (*M*), standardavvikelser (*SD*) samt effektstorlekar (*ES*) för utfallsmåtten i de olika grupperna och vid de olika mättillfällena.
+(ref:descriptives) Estimerade marginalmedelvärden (*M*), standardavvikelser (*SD*) samt inomgruppseffektstorlekar (*ES*) för utfallsmåtten i de olika grupperna och vid de olika mättillfällena.
 
 ```{r descriptives, fig.align="center", cache = T, eval = T, escape = F}
 
