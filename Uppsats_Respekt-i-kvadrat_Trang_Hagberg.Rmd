@@ -15,7 +15,7 @@ authornote: |
   `r readLines('includes/authornote.txt', encoding = 'UTF-8')`
 keywords: | 
   `r readLines('includes/keywords.txt', encoding = 'UTF-8')`
-#wordcount         : "11923"
+#wordcount         : "12033"
 bibliography      : ["includes/r-references.bib", "includes/KSH.bib"] 
 floatsintext      : no
 figurelist        : no
@@ -106,6 +106,12 @@ xresultT <- function(x,d){formatC(x,digits=d,decimal.mark=",",drop0trailing = F,
 xpr <- function(x) {
   paste("$p$",
         ifelse(x < 0.001, "< 0,001", ifelse(x < 0.05, paste("=",prettyNum(x,digits=1,decimal.mark=",")), ifelse(x > 0.05, "DO NOT REPORT", "= 0,05")))
+  )
+}
+
+xpr_special <- function(x) {
+  paste("$p$",
+        ifelse(x < 0.001, "< 0,001", ifelse(x < 0.05, paste("=",prettyNum(x,digits=1,decimal.mark=",")), ifelse(x > 0.05, paste("=",prettyNum(x,digits=1,decimal.mark=",")), "= 0,05")))
   )
 }
 
@@ -2209,7 +2215,7 @@ Vi var även intresserade av om det fanns någon skillnad (i endera riktning) i 
 
 ### Skillnad i effekt på konstruktiv självhävdelse mellan `r xg1`--`r xg2`
 
-Vi fann ingen skillnad i utfall med \mbox{AAA-S} Adaptive vid `r xt3`mätningen mellan gruppen `r xg1` och gruppen `r xg2`, $\Delta M$\xspace =\xspace `r xresult(aaas_ad.emmpairs.by.time$estimate[9] * -1,1)`, $t$\(_{`r xresultT(aaas_ad.emmpairs.by.time$df[9],0)`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[9],1)`; `r xpr(aaas_ad.emmpairs.by.time[["p.value"]][9])`; $ES$\xspace =\xspace `r xresult(aaas_ad.eff.by.time$effect.size[9] * -1,1)`. Vi fann inte heller någon skillnad i effekt vid `r xt2`mätningen. Skillnaden i konstruktiv självhävdelse vid `r xt3`mätningen är alltså försumbar mellan de som fått behandlarstöd och de som har fått klara sig på egen hand.
+Vi fann ingen skillnad i utfall med \mbox{AAA-S} Adaptive vid `r xt3`mätningen mellan gruppen `r xg1` och gruppen `r xg2`, $\Delta M$\xspace =\xspace `r xresult(aaas_ad.emmpairs.by.time$estimate[9] * -1,1)`, $t$\(_{`r xresultT(aaas_ad.emmpairs.by.time$df[9],0)`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[9],1)`; `r xpr_special(aaas_ad.emmpairs.by.time[["p.value"]][9])`; $ES$\xspace =\xspace `r xresult(aaas_ad.eff.by.time$effect.size[9] * -1,1)`. Vi fann inte heller någon skillnad i effekt vid `r xt2`mätningen. Skillnaden i konstruktiv självhävdelse vid `r xt3`mätningen är alltså försumbar mellan de som fått behandlarstöd och de som har fått klara sig på egen hand.
 
 # Diskussion
 
@@ -2237,9 +2243,9 @@ Det finns många faktorer som avgör om en intervention ska ges med eller utan s
 
 Vi konstaterar att av *random*-variansen så består `r xresult(performance::icc(aaas_ad.lmer)$ICC_adjusted * 100,0)`\xspace % av utfallsmåttet \mbox{AAA-S} Adaptive av individuella skillnader. För utfallsmåttet \mbox{AAA-S} Aggressive är de individuella bidragen till *random*-variansen `r xresult(performance::icc(aaas_ag.lmer)$ICC_adjusted * 100,0)`\xspace %. Det betyder att individernas svar på de upprepade mätningarna är starkt korrelerade. Av det drar vi slutsatsen att utfall i behandlingsprogrammet *Respekt i kvadrat* till mycket stor del beror på individuella förutsättningar -- vilket i och för sig inte är särskilt förvånande. Dessa *random*-effekter kan spekulativt hänga samman med grad av emotionellt undvikande, tillgänglig tid för medverkan och andra variabler som inte kontrolleras i studiedesignen. Bland dem ingår också interaktionseffekter med tilldelad behandlare, till exempel kvalitet på samarbetsalliansen.
 
-### Psykoedukation och avslappningsövningar kan speulativt förklara snabb effekt
+### Psykoedukation, toleransrational och avslappningsövningar kan spekulativt förklara snabb effekt
 
-För båda behandlingsbetingelser förbättrades graden av genomsnittlig konstruktiv självhävdelse mätt med \mbox{AAA-S} Adaptive snabbt, med stora effektstyrkor redan vid mittenmätningen. Modulerna som deltagarna genomgick fram till mittenmätningstillfället bestod både av psykoedukativa och motiverande inslag. Särskild tonvikt läggs i de inledande modulerna vid rationalen för att i svåra situationer inte undvika eller fly från respondent obehag och ångest, samt progressiv avslappning. Det vore i framtida forskning intressant att undersöka vilka komponenter i behandlingen som ger störst bidrag till effekten; ett enkelt förslag är att för olika behandlingsbetingelser i en framtida studie administrera modulerna i delvis olika ordning. 
+För båda behandlingsbetingelserna förbättrades graden av genomsnittlig konstruktiv självhävdelse mätt med \mbox{AAA-S} Adaptive snabbt, med stora effektstyrkor redan vid mittenmätningen. Modulerna som deltagarna genomgick fram till mittenmätningstillfället bestod både av psykoedukativa och motiverande inslag. Särskild tonvikt läggs i de inledande modulerna vid rationalen för att i svåra situationer inte undvika eller fly från respondent obehag och ångest, samt progressiv avslappning. Utifrån det teoretiska resonemanget om reciprok inhibition i @Wolpe1966 skulle avslappningsövningarna kunna bidra till ökad effekt genom inhibition av ångestreponser, vilket i sin tur ger ökat utrymme för konstruktiv själhävdelse. På samma sätt kan tolerans- och acceptansrationalen i @A-Tjak2015 bidra till ökad effekt genom ökad motivation att uppleva ångest och obehag. Det vore i framtida forskning intressant att undersöka vilka komponenter i behandlingen som ger bidrar till effekten; ett enkelt förslag är att för olika behandlingsbetingelser i en framtida studie administrera modulerna i delvis olika ordning. 
 
 \xstopnew
 
