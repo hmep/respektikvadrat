@@ -2226,7 +2226,7 @@ Vi konstaterar att av *random*-variansen så består `r xresult(performance::icc
 
 ### Psykoedukation och avslappningsövningar kan speulativt förklara snabb effekt
 
-För båda behandlingsbetingelser förbättrades graden av genomsnittlig konstruktiv självhävdelse mätt med \mbox{AAA-S} Adaptive snabbt, med stora effektstyrkor redan vid mittenmätningen. Modulerna som deltagarna genomgick fram till mittenmätningstillfället bestod både av psykoedukativa och motiverande inslag, med särskild tonvikt lagd vid rationalen för att inte undvika respondent obehag i svåra situationer, samt progressiv avslappning. Det vore i framtida forskning intressant att undersöka vilka komponenter i behandlingen som ger störst bidrag till effekten; ett enkelt förslag är att för en behandlingsbetingelse i en framtida studie administrera modulerna i delvis omkastad ordning. 
+För båda behandlingsbetingelser förbättrades graden av genomsnittlig konstruktiv självhävdelse mätt med \mbox{AAA-S} Adaptive snabbt, med stora effektstyrkor redan vid mittenmätningen. Modulerna som deltagarna genomgick fram till mittenmätningstillfället bestod både av psykoedukativa och motiverande inslag. Särskild tonvikt läggs i de inledande modulerna vid rationalen för att i svåra situationer inte undvika eller fly från respondent obehag och ångest, samt progressiv avslappning. Det vore i framtida forskning intressant att undersöka vilka komponenter i behandlingen som ger störst bidrag till effekten; ett enkelt förslag är att för olika behandlingsbetingelser i en framtida studie administrera modulerna i delvis olika ordning. 
 
 \xstopnew
 
