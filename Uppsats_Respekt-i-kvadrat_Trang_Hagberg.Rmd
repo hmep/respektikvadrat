@@ -2196,7 +2196,7 @@ Vi var även intresserade av om det fanns någon skillnad (i endera riktning) i 
 
 ### Skillnad i effekt på konstruktiv självhävdelse mellan `r xg1`--`r xg2`
 
-Vi fann ingen skillnad i utfall med \mbox{AAA-S} Adaptive vid `r xt3`mätningen mellan gruppen `r xg1` och gruppen `r xg2`. Vi fann inte heller någon skillnad i effekt vid `r xt2`mätningen. Skillnaden i konstruktiv självhävdelse vid `r xt3`mätningen är alltså försumbar mellan de som fått behandlarstöd och de som har fått klara sig på egen hand.
+Vi fann ingen skillnad i utfall med \mbox{AAA-S} Adaptive vid `r xt3`mätningen mellan gruppen `r xg1` och gruppen `r xg2`, $\Delta M$\xspace =\xspace `r xresult(aaas_ad.emmpairs.by.time$estimate[9] * -1,1)`, $t$\(_{`r xresultT(aaas_ad.emmpairs.by.time$df[9],0)`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[9],1)`; `r xpr(aaas_ad.emmpairs.by.time[["p.value"]][9])`; $ES$\xspace =\xspace `r xresult(aaas_ad.eff.by.time$effect.size[9] * -1,1)`. Vi fann inte heller någon skillnad i effekt vid `r xt2`mätningen. Skillnaden i konstruktiv självhävdelse vid `r xt3`mätningen är alltså försumbar mellan de som fått behandlarstöd och de som har fått klara sig på egen hand.
 
 # Diskussion
 
