@@ -1044,7 +1044,7 @@ alpha.table <- rbind.data.frame(
 
 \xstartnew
 
-Vid kontroll av intern reliabilitet genom beräkning av Cronbach's $\alpha$ för de inför studien översatta skattningsskalorna fann vi att resultaten överensstämde med normdata för \mbox{AAA-S} Adaptive, `r xresultT(aaas_ad.alpha,2)` jämfört med `r xresultT(r.AAAS_ad,2)` för `r ref.AAAS_ad`. Resultaten var något avvikande för \mbox{AAA-S} Aggressive, `r xresultT(aaas_ag.alpha,2)` jämfört med `r xresultT(r.AAAS_ag,2)` för `r ref.AAAS_ag`, dock alltjämt på acceptabel nivå. För Rathus var resultaten likvärdiga, `r xresultT(rathus.alpha,2)` jämfört med `r xresultT(r.Rathus,2)` för `r ref.Rathus`.
+Vid kontroll av intern reliabilitet genom beräkning av Cronbach's $\alpha$ för de inför studien översatta skattningsskalorna fann vi att resultatet överensstämde med normdata för \mbox{AAA-S} Adaptive, `r xresultT(aaas_ad.alpha,2)` jämfört med `r xresultT(r.AAAS_ad,2)` för `r ref.AAAS_ad`. Resultatet var något avvikande för \mbox{AAA-S} Aggressive, `r xresultT(aaas_ag.alpha,2)` jämfört med `r xresultT(r.AAAS_ag,2)` för `r ref.AAAS_ag`, dock alltjämt på acceptabel nivå. För Rathus var resultatet likvärdigt, `r xresultT(rathus.alpha,2)` jämfört med `r xresultT(r.Rathus,2)` för `r ref.Rathus`.
 
 \xstopnew
 
