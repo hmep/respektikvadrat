@@ -15,7 +15,7 @@ authornote: |
   `r readLines('includes/authornote.txt', encoding = 'UTF-8')`
 keywords: | 
   `r readLines('includes/keywords.txt', encoding = 'UTF-8')`
-#wordcount         : "12082"
+#wordcount         : "12103"
 bibliography      : ["includes/r-references.bib", "includes/KSH.bib"] 
 floatsintext      : no
 figurelist        : no
@@ -662,7 +662,7 @@ Vi var också intresserade av om det fanns någon skillnad (i endera riktning) i
 
 ## Design
 
-\xstartnew Storleken på varje betingelse bestämdes innan rekrytering påbörjades till $n$\xspace =\xspace 70 med en powerberäkning för att kunna detektera en effektstorlek ungefär motsvarande den som litteraturen vanligtvis anger för KBT och I-KBT, $ES$\xspace =\xspace 0,8, med den valda signifikansnivån $\alpha$\xspace =\xspace 0,05.\xstopnew Alla för studien planerade manipulationer, variabler, mättillfällen och insamlade datapunkter har använts i analyserna, utan selektion i efterhand. Alla randomiseringar gjordes av oberoende tredje part vid Stockholms universitet med hjälp av internetbaserade randomiseringstjänster (www.random.org för överintagsexkluderingen och randomiseringen till respektive behandlare samt www.sealedenvelope.com för randomiseringen till de tre grupperna). Studien uppfyller kriterierna för en RCT-design (från engelskans *randomised controlled trial*) i @Chambless2001.
+\xstartnew Storleken på varje betingelse bestämdes innan rekrytering påbörjades till $n$\xspace =\xspace 70 med en powerberäkning för att kunna detektera en effektstorlek ungefär motsvarande den som litteraturen vanligtvis anger för KBT och I-KBT, $ES$\xspace =\xspace 0,8, med den valda signifikansnivån $\alpha$\xspace =\xspace 0,05. \xstopnew Alla för studien planerade manipulationer, variabler, mättillfällen och insamlade datapunkter har använts i analyserna, utan selektion i efterhand. Alla randomiseringar gjordes av oberoende tredje part vid Stockholms universitet med hjälp av internetbaserade randomiseringstjänster (www.random.org för överintagsexkluderingen och randomiseringen till respektive behandlare samt www.sealedenvelope.com för randomiseringen till de tre grupperna). Studien uppfyller kriterierna för en RCT-design (från engelskans *randomised controlled trial*) i @Chambless2001.
 
 ### Rekrytering
 
