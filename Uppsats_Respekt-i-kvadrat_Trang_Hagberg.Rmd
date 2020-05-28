@@ -2207,7 +2207,7 @@ För båda grupperna `r xg1` och `r xg2` fann vi en signifikant höjning mellan 
 
 Det är notabelt att medelvärdet för gruppen `r xg2` var lägre än för gruppen `r xg1`, som inte fick något behandlarstöd, vid båda tidpunkterna. Skillnaden är dock ej signifikant. Båda behandlingsbetingelserna uppvisar en höjning av graden av aggressiv självhävdelse, i jämförelse med `r xg3`. Effekten var signifikant vid mittenmätningen för gruppen `r xg1` (men inte för gruppen `r xg2`). Även höjningen av aggressiv självhävdelse mellan behandlingsstart och `r xt3`mätningen var för båda grupperna signifikant. Figur \@ref(fig:effemmplotsag) ger en visualisering av resultaten. 
 
-\xstartnew `r xresult(performance::icc(aaas_ag.lmer)$ICC_adjusted * 100,0)`\xspace % av *random*-effekt-variansen på \mbox{AAA-S} Aggressive kan förklaras av individuella faktorer; `r xresult(performance::icc(aaas_ag.lmer)$ICC_conditional * 100,0)`\xspace % av den totala variansen kan förklaras av individuella faktorer -- drygt två tredjedelar, således.\xstopnew
+\xstartnew För \mbox{AAA-S} Aggressive kan `r xresult(performance::icc(aaas_ag.lmer)$ICC_adjusted * 100,0)`\xspace % av *random*-effekt-variansen förklaras av individuella faktorer; `r xresult(performance::icc(aaas_ag.lmer)$ICC_conditional * 100,0)`\xspace % av den totala variansen kan förklaras av individuella faktorer -- drygt två tredjedelar, således.\xstopnew
 
 ## Sekundär frågeställning
 
