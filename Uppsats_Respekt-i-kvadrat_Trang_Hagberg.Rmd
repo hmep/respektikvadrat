@@ -2101,7 +2101,7 @@ Det är notabelt att medelvärdet för gruppen `r xg2` var lägre än för grupp
 
 (ref:descriptives) Estimerade marginalmedelvärden (*M*), standardavvikelser (*SD*) samt inomgruppseffekter (*ES*) mellan förmätning och respektive mättillfälle i de olika grupperna.
 
-```{r descriptives, fig.align="center", cache = T, eval = T}
+```{r descriptives, fig.align="center", cache = T, eval = T, escape = T}
 
 ng1t1 <- r2.new.data$group == xg1 & r2.new.data$time == xt1
 ng1t2 <- r2.new.data$group == xg1 & r2.new.data$time == xt2
@@ -2218,7 +2218,7 @@ list(bold = F, italic = F),
 list(bold = F, italic = T)
 )
 
-svkable(descriptives.col.out, caption = "(ref:descriptives)", align="llrccccccc", escape=T) %>%
+svkable(descriptives.col.out, caption = "(ref:descriptives)", align="llrccccccc", escape= F) %>%
   column_spec(1:3, width = "1em") %>%
   collapse_rows(1:3, latex_hline = "major", valign = "middle", row_group_label_position = "stack", row_group_label_fonts = row_group_label_fonts) %>%
   add_header_above(c(" " = 3, "Primära utfallsmått" = 2, "Sekundära utfallsmått" = 5)) %>%
@@ -2238,7 +2238,7 @@ Vi konstaterade att inomgruppseffektstyrkorna mellan tidpunkterna förmätning o
 
 Denna studie hade som syfte att utvärdera effekten av ett åtta veckor långt självhjälpsprogram för att förbättra individers konstruktiva självhävdelse. Programmet administrerades via en internetbaserad plattform. Studien genomfördes med en randomiserad och kontrollerad design. Interventionen byggde till stora delar på självhjälpsmaterialet *Assert Yourself* [@michel2008] och inkluderade bland annat inslag av psykoedukation, beteendeexperiment, avslappningsövningar, vidmakthållandeplanering och återfallsprevention. En tredjedel av deltagarna fick tillgång till programmet utan behandlarstöd, en tredjedel fick tillgång till programmet med behandlarstöd och en tredjedel var en väntelistebetingad kontrollgrupp. Vi konstaterar att tillgång till behandlingsmaterialet i någon av behandlingsgrupperna gav signifikant och stor effekt jämfört med att vara placerad på väntelista. Vi fann även en signifikant skillnad i andelen deltagare i respektive grupp som hade förbättrats reliabelt och till kliniskt signifikant nivå på delskalan \mbox{AAA-S} Adaptive. Vi fann däremot ingen skillnad i utfallet mellan gruppen med behandlarstöd och gruppen utan behandlarstöd vid eftermätningen. 
 
-<!-- ## Resultatdiskussion -->
+## Resultatdiskussion
 
 ### Deltagande i programmet ger stor effekt på grad av konstruktiv självhävdelse
 
@@ -2262,18 +2262,18 @@ Vi konstaterar att av *random*-variansen så består `r xresult(performance::icc
 
 ### Förbättring i konstruktiv självhävdelse samvarierar med flera andra utfallsmått
 
-De flesta effektstyrkor mellan tidpunkterna förmätning och eftermätning för måtten för social ångest, generaliserat ångestsyndrom och allmänt måendevar \'stora\', och effektstyrkorna för måttet för depression var \'måttliga\'. Det verkar alltså som att det transdiagnostiska konstruktet *assertiveness* är relevant för flera olika psykiatriska syndrom liksom allmänt välmående. 
+Effektstyrkorna mellan tidpunkterna förmätning och eftermätning för måtten för social ångest, generaliserat ångestsyndrom och allmänt mående var \'medelstora\', och effektstyrkorna för måttet för depression var \'små\'. Samtliga medelvärdesskillnader var signifikanta. Det verkar som att det transdiagnostiska konstruktet *assertiveness* är relevant för flera olika psykiatriska ångestsyndrom och allmänt välmående (och i viss mån depression). 
 
 ### Psykoedukation, toleransrational och avslappningsövningar kan spekulativt förklara snabb effekt
 
 För båda behandlingsbetingelserna förbättrades graden av genomsnittlig konstruktiv självhävdelse mätt med \mbox{AAA-S} Adaptive snabbt, med stora effektstyrkor redan vid mittenmätningen. Modulerna som deltagarna genomgick fram till mittenmätningstillfället består både av psykoedukativa och motiverande inslag. Särskild tonvikt läggs i de inledande modulerna vid rationalen för att i svåra situationer inte undvika eller fly från respondent obehag och ångest samt progressiv avslappning. Utifrån det teoretiska resonemanget om reciprok inhibition i @Wolpe1966 skulle avslappningsövningarna kunna bidra till ökad effekt genom inhibition av ångestreponser, vilket i sin tur ger ökat utrymme för konstruktiv själhävdelse. Med samma konsekvens kan tolerans- och acceptansrationalen i @A-Tjak2015 bidra till ökad effekt genom ökad motivation att uppleva ångest och obehag. Det vore i framtida forskning intressant att undersöka vilka komponenter i behandlingen som bidrar till effekten; ett enkelt förslag är att för olika behandlingsbetingelser i en framtida studie administrera modulerna i delvis olika ordning. 
 \xstopnew
 
-### Metodologiska styrkor och förbättringsmöjligheter
+## Metodologiska styrkor och förbättringsmöjligheter
 
 \xstartnew
 
-#### Metoder för att bättre kontrollera *random*-effekter
+### Metoder för att bättre kontrollera *random*-effekter
 
 För att bättre kunna kontrollera för individkopplade bidrag till behandlingsutfall kan uppföljande studier med fördel inkludera fler sätt att mäta individrelaterade variabler (såväl egenskaper, *traits* som tillstånd, *states*) än vad den här studien har gjort, till exempel med skalor som mäter emotionellt undvikande eller veckovisa frågor om hur mycket tid deltagarna har haft till förfogande för deltagandet. Sådana fixa variabler kan sedan anges som kovariat i analysen. För att hantera det potentiella problemet med negativa behandlingseffekter kan man också överväga att i framtida studier inkludera veckovisa frågor om upplevda negativa effekter av behandling; i sådana fall behöver dock alla behandlingsgrenar, även självhjälpsgrupp, tillsyn av behandlare.
 
@@ -2281,13 +2281,13 @@ Den andel av *random*-variansen som har med effekter av interaktionen mellan beh
 
 \xstopnew
 
-#### För- och nackdelar med väntelista som kontrollbetingelse
+### För- och nackdelar med väntelista som kontrollbetingelse
 
 I denna studie placerades en tredjedel av deltagarna på en väntelista. En risk med användandet av väntelista är att de deltagare som tilldelas väntelistan försämras under behandlingens gång -- något som @Cuijpers2016b listar som en av de universalknep som kan användas av den forskare som vill hitta falska positiva resultat. I en meta-analys från 2017 konstaterade @Rozental2017a att över 15\xspace % av de som tilldelas betingelsen väntelista i I-KBT-studier försämras, jämfört med cirka 6\xspace % av de som genomgick behandlingen. Detta kan även leda till att en behandlings eventuella effekt överskattas. Ur teoretisk synpunkt hade det varit bättre att tilldela kontrollgruppen en aktiv betingelse, exempelvis tillgång till ett diskussionsforum utan behandlingsinslag. I den aktuella studien försämrades dock ingen deltagare signifikant från för- till eftermätningen, varken i väntelistan eller i någon av de andra betingelserna. Hur det faktum att covid-19-smittan bröt ut i Sverige en bit in i programmet i början på mars 2020 är svårt att säga, men genom randomseringen till två behandlingsgrupper och väntelista erhölls full kontroll för händelseutvecklingen; den påverkan den har haft på deltagarna antas vara densamma i alla betingelser.
 
 \xstartnew 
 
-#### Generella effekter av covid-19-pandemin
+### Generella effekter av covid-19-pandemin
 
 Även om deltagarna i samband med eftermätningen fick ta upp sina upplevelser av den under behandlingen uppblommande covid-19-pandemin är det svårt att relatera pandemins generella inverkan på utfallet i behandlingsgrupperna och väntelistan. Det följande resonemanget bygger på en översiktlig kvalitativ bedömning av svaren från deltagarna. 
 
@@ -2295,7 +2295,7 @@ Behandlingsprogrammets upplägg bygger på att deltagarna utsätter sig utmanand
 
 \xstopnew
 
-#### Ett mer varierat stickprov möjliggör säkrare generalisering
+### Ett mer varierat stickprov möjliggör säkrare generalisering
 
 \xstartnew Genom en *a priori*-beräkning fastställde vi stickprovsstorleken så att vi kunde detektera en skillnad i effekt motsvarande en enligt litteraturen för I-KBT förväntad effektstorlek. Dock har generaliserbarheten av resultaten till populationen i stort försämrats på grund av själva rekryteringsförfarandet. \xstopnew Med näst intill 90\xspace % kvinnor i stickprovet var könsfördelningen ytterst ojämn. Denna ojämna fördelning går troligen att tillskriva flera orsaker. Kvinnor rapporterar mer oro och ångest än män [@Socialstyrelsen2004] vilket skulle kunna göra kvinnor mer benägna än män att söka hjälp. Utöver detta tenderar män överlag i lägre utsträckning söka vård än kvinnor även när män och kvinnor upplever liknande symtom [@Galdas2005]. Kvinnor tenderar också att i större grad än män delta i forskningsstudier. I metaanalysen @Rozental2017a konstateras att 62\xspace % av deltagarna i alla inkluderade studier var kvinnor. För den aktuella studien är den främsta orsaken till det snedvridna stickprovet rekryteringsförfarandet med annonsering i sociala medier. Vid kontroll i efterhand har det visats sig att den algoritmstyrda annonsvisningen till mer än 85\xspace % riktades till kvinnor och till ungefär 60\xspace % till personer i åldersspannet 35--54 år. Urvalet är också snedvridet med avseende på utbildningsnivå: 80\xspace % har avslutade eller pågående universitetsstudier jämfört med 43\xspace % av Sveriges befolkning [@SCB2020]. 
 
@@ -2303,19 +2303,19 @@ Vilken påverkan den automatiserade annonsvisningen har haft på andra faktorer,
 
 \xstartnew
 
-#### Jämförelser med etablerade behandlingar kan avgöra konstruktets samtidiga och prediktiva validitet
+### Jämförelser med etablerade behandlingar kan avgöra konstruktets samtidiga och prediktiva validitet
 
 Det går även att vända på perspektivet och snäva av stickprovet helt medvetet i en uppföljningsstudie: Det vore intressant att undersöka korrelationerna mellan det transdiagnostiska konstruktet \'konstruktiv självhävdelse\' och väldefinierade, befintliga diagnoser, liksom effekten av interventionen *Respekt i kvadrat* i grupper som definierats med befintliga diagnosverktyg. En sådan uppföljningsstudie skulle kunna spetsa in sig på något av de syndromalt inriktade utfallsmått som har använts i de här studien eller använda ett icke-syndromalt avgränsat mått, exempelvis för emotionellt undvikande, stress och kvalitet i nära relationer. 
 
-Om resurserna vore obegränsade skulle det också vara intressant att i uppföljningsstudier jämföra effekten av den transdiagnostiska interventionen med etablerade *treatment as usual*-behandlingar (exempelvis etablerad KBT-behandling vid social ångest, paniksyndrom, depression och stressyndrom). Det skulle ge möjlighet att tydligare säga något om eventuella för- och nackdelar med användandet av det transdiagnostiska begreppet *konstruktiv självhävdelse* som mål för behandling för dessa grupper.
+Vi fann att medelvärdesskillnaderna för de olika sekundära utfallsmåtten var signifikanta och effektstorlekarna medelstora. Om resurserna vore obegränsade skulle det också vara intressant att i uppföljningsstudier jämföra effekten av den transdiagnostiska interventionen med etablerade *treatment as usual*-behandlingar (exempelvis etablerad KBT-behandling vid social ångest, paniksyndrom, depression och stressyndrom). Det skulle ge möjlighet att tydligare säga något om eventuella för- och nackdelar med användandet av det transdiagnostiska begreppet *konstruktiv självhävdelse* som mål för behandling för dessa grupper.
 
-#### Begreppsvaliditeten är svåra att bestämma på gruppnivå
+### Begreppsvaliditeten är svåra att bestämma på gruppnivå
 
 @Thompson2011 konstaterar visserligen att \mbox{AAA-S} i originalutförandet erbjuder tillräcklig diskriminativ validitet för konstrukten konstruktiv och aggressiv självhävdelse, men problematiserar också att skalan inte fångar hela registret av möjliga självhävdandebeteenden -- om man i begreppen *assertiveness* eller  självhävdelse inkluderar alla slags beteenden som handlar om att tillgodose egna önskningar och behov. Exempel på indirekta beteenden som inte fångas är modellering, utpressning och passiv aggressivitet [@Thompson2011]. Den här studien ärver således dessa begränsningar i validitet för självhävdelsebegreppet, som på goda grunder kan antas utgöras av en stor mängd olika beteenden som inte alltid korrelerar med varandra. Särskilt problematiskt ur psykometrisk synpunkt kan konstruktet vara när det används funktionellt -- ett och samma topografiska beteende kan som @Mitamura2018 observerar fylla helt olika funktioner och därför också utvärderas olika av olika individer eller av en och samma individ i olika situationer. Samma problem gäller de likaledes mycket breda och ospecifika kategorierna \'adaptivt handlande\' och \'social färdighet\' (som @LINEHAN1979 påpekade). Å andra sidan kan de för varje individ förstås och användas pragmatiskt i psykoterapi (oavsett om kontexten är en internetbehandling eller sedvanlig psykoterapi), utifrån varje individs egenspecificerade målsättning. Orden \'konstruktiv\' och \'självhävdelse\' kan för de flesta antas vara motiverande, särskilt om de syftar på handlande som individen själv anger som eftersträvansvärt. Samtidigt implicerar begreppet \'konstruktiv självhävdelse\' att det kan särskiljas från andra beteenden som också kan vara kortsiktigt eftersträvansvärda för klienten men som nödvändigtvis inte är långsiktigt konstruktiva (passivitet, aggressivitet, passiv aggressivitet) -- sammantaget kan begreppet utgöra en tacksam "krok" för att hjälpa klienten till självreflektion och aktivering i behandling. Användbarheten av begreppet jämfört med andra likvärdiga begrepp bör undersökas i framtida studier. Dilemmat med begreppets otydlighet sätter också fingret på den universella nyttan med att hjälpa klienter att formulera idosynkratiska målsättningar och att utvärdera effekten av en behandling utifrån dessa. Framtida effektstudier kan med fördel inkludera idiografiskt definierade operationaliseringar av begreppet \'konstruktiv självhävdelse\'.
 
 \xstopnew
 
-#### Validerade skattningsskalor ger bättre träffsäkerhet
+### Validerade skattningsskalor ger bättre träffsäkerhet
 
 En potentiell brist i studien är att de nyligen översatta versionerna av självskattningsformulären \mbox{AAA-S} [@Thompson2011] och Rathus [@Rathus1973] varken är validerade med originalskalorna som kriterium eller har svenska normer. Översättningen är inte heller fullt ut kvalitetssäkrad, exempelvis genom fram-och-tillbaka-översättning i linje med metoder utvecklade av @Beaton2000 eller @Jones2001. Icke-klinisk normdata är hämtad från student-sample 1 från @Thompson2011 både för \mbox{AAA-S} och Rathus. Det är en fördel att båda skalor använder normer från samma grupp; det gör resultaten enklare går att relatera till varandra. \xstartnew Vid kontroll av intern reliabilitet för de översatta skalorna fann vi mycket god och med normer överensstämmande Cronbach's $\alpha$ för \mbox{AAA-S} Adaptive och Rathus och tillfredsställande men jämfört med normer något lägre Cronbach's $\alpha$ för \mbox{AAA-S} Aggressive. Det skulle till exempel kunna betyda att frågorna för skalan som mäter aggressivitet behöver ses över i den svenska översättningen av AAA-S.\xstopnew
 
@@ -2323,13 +2323,13 @@ Data från föreliggande studie skulle potentiellt kunna användas för att vida
 
 \xstartnew
 
-#### Resultaten kan antas vara ekologiskt valida för internetadministration
+### Resultaten kan antas vara ekologiskt valida för internetadministration
 
 En uppenbar fördel med studier av internetbaserade interventioner är att de ur deltagarsynpunkt skiljer sig mycket lite från rutinmässig administration av internetterapi i kliniska sammanhang. Om man till det lägger att det i alla fall inte torde vara en fördel för behandlingsutfallet att behandlarna i den aktuella studien var nyutbildade, måste slutsatsen bli att den ekologiska validiteten för denna *efficacy*-studie kan antas vara hög. Materialet borde med med en målgrupp som liknar det stickprov som använts i den här studien kunna få likartad effekt, oavsett om det ges i en förbättrad och utökad replikeringsstudie eller som en integrerad del av klinisk rutinverksamhet.
 
 \xstopnew
 
-#### Uppföljningsmätning av deltagarna ger mer tillförlitliga effektestimat
+### Uppföljningsmätning av deltagarna ger mer tillförlitliga effektestimat
 
 På grund av tidsbegränsningar fanns inga möjligheter att göra en uppföljningsmätning inom ramen för den här studien. Det gör det svårare att avgöra hur behandlingsprogrammet har påverkat deltagarnas mående och konstruktiva självhävdande över tid. Forskning indikerar att framsteg gjorda under KBT-behandling i stor utsträckning bibehålls och till och med förstärkas över tid [@Bandelow2018]. \xstartnew Skälet till att behandlingseffekten kan dröja är att inhibitorisk inlärning sker över längre tidsperioder. Minskning av ångest på kort sikt predicerar inte symtomlindring på längre sikt sikt och höga ångestnivåer under exponering predicerar inte dåliga behandlingsutfall. Det bästa indexet för framgång i terapi är inte observerad minskning av ångest i det korta tidsintervallet (under en exponering, en session eller kanske ens en behandling) utan konstaterad ångestminskning vid uppföljningsmätningstillfället, exempelvis efter 6 eller 12 månader [@Craske2008].\xstopnew
 
