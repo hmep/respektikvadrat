@@ -15,7 +15,7 @@ authornote: |
   `r readLines('includes/authornote.txt', encoding = 'UTF-8')`
 keywords: | 
   `r readLines('includes/keywords.txt', encoding = 'UTF-8')`
-#wordcount         : "12120"
+#wordcount         : "12283"
 bibliography      : ["includes/r-references.bib", "includes/KSH.bib"] 
 floatsintext      : no
 figurelist        : no
@@ -1883,8 +1883,6 @@ svkable(jtrci.tab[,c(7,1:6)], align="lcccccc", caption = '(ref:jtp)') %>%
 
 ```
 
-<!-- Se tabell \@ref(tab:descriptives) för en sammanställning av predicerade data från de olika modellerna för respektive utfallsmått, inklusive uppskattade effektstorlekar. -->
-
 ```{r emmeff, eval = T}
 
 require(emmeans)
@@ -1963,8 +1961,6 @@ options(OutDec= ",")
 ### Flernivåanalysresultat
 
 Vid visuell granskning av diagnostiska plottar av observerad data fann vi inga brott mot de villkor som behöver uppfyllas för flernivåanalys. Estimat av intercept och regressionskoefficienter för de olika primära och sekundära utfallsmåtten sammanfattas i bilaga \@ref(stargazertab); intercept och lutningskoefficienter som anges i tabellen för respektive utfallsmått kan läggas in i regressionsformeln för att predicera utfall för alla kombinationer av grupptillhörighet och mättillfälle. Se tabell \@ref(tab:descriptives) för en sammanställning av predicerade medelvärden, standardavvikelser och effektstorlekar för flernivåanalys-modellerna för utfallsmåtten. 
-
-<!-- #### Skillnader i effekt på konstruktiv och aggressiv självhävdelse mellan `r #xg3`--`r xg1` respektive `r #xg3`--`r xg2` -->
 
 \pagebreak[4]
 
@@ -2134,53 +2130,53 @@ y <- cbind(
       paste(xresult(aaas_ad.eff.by.group[1,4]$effect.size * -1,1),xps(aaas_ad.emmpairs.by.group[1,8]$p.value),sep=""),
       paste(xresult(aaas_ag.eff.by.group[1,4]$effect.size * -1,1),xps(aaas_ag.emmpairs.by.group[1,8]$p.value),sep=""),
       paste(xresult(rathus.eff.by.group[1,4]$effect.size * -1,1),xps(rathus.emmpairs.by.group[1,8]$p.value),sep=""),
-      paste(xresult(lsas_sum.eff.by.group[1,4]$effect.size * -1,1),xps(lsas_sum.emmpairs.by.group[1,8]$p.value),sep=""),
-      paste(xresult(gad_sum.eff.by.group[1,4]$effect.size * -1,1),xps(gad_sum.emmpairs.by.group[1,8]$p.value),sep=""),
-      paste(xresult(phq_sum.eff.by.group[1,4]$effect.size * -1,1),xps(phq_sum.emmpairs.by.group[1,8]$p.value),sep=""),
+      paste(xresult(lsas_sum.eff.by.group[1,4]$effect.size * 1,1),xps(lsas_sum.emmpairs.by.group[1,8]$p.value),sep=""),
+      paste(xresult(gad_sum.eff.by.group[1,4]$effect.size * 1,1),xps(gad_sum.emmpairs.by.group[1,8]$p.value),sep=""),
+      paste(xresult(phq_sum.eff.by.group[1,4]$effect.size * 1,1),xps(phq_sum.emmpairs.by.group[1,8]$p.value),sep=""),
       paste(xresult(well.eff.by.group[1,4]$effect.size * -1,1),xps(well.emmpairs.by.group[1,8]$p.value),sep="")
     )),cbind(xi,"es"=c(
       paste(xresult(aaas_ad.eff.by.group[2,4]$effect.size * -1,1),xps(aaas_ad.emmpairs.by.group[2,8]$p.value),sep=""),
       paste(xresult(aaas_ag.eff.by.group[2,4]$effect.size * -1,1),xps(aaas_ag.emmpairs.by.group[2,8]$p.value),sep=""),
       paste(xresult(rathus.eff.by.group[2,4]$effect.size * -1,1),xps(rathus.emmpairs.by.group[2,8]$p.value),sep=""),
-      paste(xresult(lsas_sum.eff.by.group[2,4]$effect.size * -1,1),xps(lsas_sum.emmpairs.by.group[2,8]$p.value),sep=""),
-      paste(xresult(gad_sum.eff.by.group[2,4]$effect.size * -1,1),xps(gad_sum.emmpairs.by.group[2,8]$p.value),sep=""),
-      paste(xresult(phq_sum.eff.by.group[2,4]$effect.size * -1,1),xps(phq_sum.emmpairs.by.group[2,8]$p.value),sep=""),
+      paste(xresult(lsas_sum.eff.by.group[2,4]$effect.size * 1,1),xps(lsas_sum.emmpairs.by.group[2,8]$p.value),sep=""),
+      paste(xresult(gad_sum.eff.by.group[2,4]$effect.size * 1,1),xps(gad_sum.emmpairs.by.group[2,8]$p.value),sep=""),
+      paste(xresult(phq_sum.eff.by.group[2,4]$effect.size * 1,1),xps(phq_sum.emmpairs.by.group[2,8]$p.value),sep=""),
       paste(xresult(well.eff.by.group[2,4]$effect.size * -1,1),xps(well.emmpairs.by.group[2,8]$p.value),sep="")
     )),
   xa,cbind(xb,"es"=c(
       paste(xresult(aaas_ad.eff.by.group[4,4]$effect.size * -1,1),xps(aaas_ad.emmpairs.by.group[4,8]$p.value),sep=""),
       paste(xresult(aaas_ag.eff.by.group[4,4]$effect.size * -1,1),xps(aaas_ag.emmpairs.by.group[4,8]$p.value),sep=""),
       paste(xresult(rathus.eff.by.group[4,4]$effect.size * -1,1),xps(rathus.emmpairs.by.group[4,8]$p.value),sep=""),
-      paste(xresult(lsas_sum.eff.by.group[4,4]$effect.size * -1,1),xps(lsas_sum.emmpairs.by.group[4,8]$p.value),sep=""),
-      paste(xresult(gad_sum.eff.by.group[4,4]$effect.size * -1,1),xps(gad_sum.emmpairs.by.group[4,8]$p.value),sep=""),
-      paste(xresult(phq_sum.eff.by.group[4,4]$effect.size * -1,1),xps(phq_sum.emmpairs.by.group[4,8]$p.value),sep=""),
+      paste(xresult(lsas_sum.eff.by.group[4,4]$effect.size * 1,1),xps(lsas_sum.emmpairs.by.group[4,8]$p.value),sep=""),
+      paste(xresult(gad_sum.eff.by.group[4,4]$effect.size * 1,1),xps(gad_sum.emmpairs.by.group[4,8]$p.value),sep=""),
+      paste(xresult(phq_sum.eff.by.group[4,4]$effect.size * 1,1),xps(phq_sum.emmpairs.by.group[4,8]$p.value),sep=""),
       paste(xresult(well.eff.by.group[4,4]$effect.size * -1,1),xps(well.emmpairs.by.group[4,8]$p.value),sep="")
     )),
     cbind(xc,"es"=c(
       paste(xresult(aaas_ad.eff.by.group[5,4]$effect.size * -1,1),xps(aaas_ad.emmpairs.by.group[5,8]$p.value),sep=""),
       paste(xresult(aaas_ag.eff.by.group[5,4]$effect.size * -1,1),xps(aaas_ag.emmpairs.by.group[5,8]$p.value),sep=""),
       paste(xresult(rathus.eff.by.group[5,4]$effect.size * -1,1),xps(rathus.emmpairs.by.group[5,8]$p.value),sep=""),
-      paste(xresult(lsas_sum.eff.by.group[5,4]$effect.size * -1,1),xps(lsas_sum.emmpairs.by.group[5,8]$p.value),sep=""),
-      paste(xresult(gad_sum.eff.by.group[5,4]$effect.size * -1,1),xps(gad_sum.emmpairs.by.group[5,8]$p.value),sep=""),
-      paste(xresult(phq_sum.eff.by.group[5,4]$effect.size * -1,1),xps(phq_sum.emmpairs.by.group[5,8]$p.value),sep=""),
+      paste(xresult(lsas_sum.eff.by.group[5,4]$effect.size * 1,1),xps(lsas_sum.emmpairs.by.group[5,8]$p.value),sep=""),
+      paste(xresult(gad_sum.eff.by.group[5,4]$effect.size * 1,1),xps(gad_sum.emmpairs.by.group[5,8]$p.value),sep=""),
+      paste(xresult(phq_sum.eff.by.group[5,4]$effect.size * 1,1),xps(phq_sum.emmpairs.by.group[5,8]$p.value),sep=""),
       paste(xresult(well.eff.by.group[5,4]$effect.size * -1,1),xps(well.emmpairs.by.group[5,8]$p.value),sep="")
     )),
   xd,cbind(xe,"es"=c(
       paste(xresult(aaas_ad.eff.by.group[7,4]$effect.size * -1,1),xps(aaas_ad.emmpairs.by.group[7,8]$p.value),sep=""),
       paste(xresult(aaas_ag.eff.by.group[7,4]$effect.size * -1,1),xps(aaas_ag.emmpairs.by.group[7,8]$p.value),sep=""),
       paste(xresult(rathus.eff.by.group[7,4]$effect.size * -1,1),xps(rathus.emmpairs.by.group[7,8]$p.value),sep=""),
-      paste(xresult(lsas_sum.eff.by.group[7,4]$effect.size * -1,1),xps(lsas_sum.emmpairs.by.group[7,8]$p.value),sep=""),
-      paste(xresult(gad_sum.eff.by.group[7,4]$effect.size * -1,1),xps(gad_sum.emmpairs.by.group[7,8]$p.value),sep=""),
-      paste(xresult(phq_sum.eff.by.group[7,4]$effect.size * -1,1),xps(phq_sum.emmpairs.by.group[7,8]$p.value),sep=""),
+      paste(xresult(lsas_sum.eff.by.group[7,4]$effect.size * 1,1),xps(lsas_sum.emmpairs.by.group[7,8]$p.value),sep=""),
+      paste(xresult(gad_sum.eff.by.group[7,4]$effect.size * 1,1),xps(gad_sum.emmpairs.by.group[7,8]$p.value),sep=""),
+      paste(xresult(phq_sum.eff.by.group[7,4]$effect.size * 1,1),xps(phq_sum.emmpairs.by.group[7,8]$p.value),sep=""),
       paste(xresult(well.eff.by.group[7,4]$effect.size * -1,1),xps(well.emmpairs.by.group[7,8]$p.value),sep="")
     )),
     cbind(xf,"es"=c(
       paste(xresult(aaas_ad.eff.by.group[8,4]$effect.size * -1,1),xps(aaas_ad.emmpairs.by.group[8,8]$p.value),sep=""),
       paste(xresult(aaas_ag.eff.by.group[8,4]$effect.size * -1,1),xps(aaas_ag.emmpairs.by.group[8,8]$p.value),sep=""),
       paste(xresult(rathus.eff.by.group[8,4]$effect.size * -1,1),xps(rathus.emmpairs.by.group[8,8]$p.value),sep=""),
-      paste(xresult(lsas_sum.eff.by.group[8,4]$effect.size * -1,1),xps(lsas_sum.emmpairs.by.group[8,8]$p.value),sep=""),
-      paste(xresult(gad_sum.eff.by.group[8,4]$effect.size * -1,1),xps(gad_sum.emmpairs.by.group[8,8]$p.value),sep=""),
-      paste(xresult(phq_sum.eff.by.group[8,4]$effect.size * -1,1),xps(phq_sum.emmpairs.by.group[8,8]$p.value),sep=""),
+      paste(xresult(lsas_sum.eff.by.group[8,4]$effect.size * 1,1),xps(lsas_sum.emmpairs.by.group[8,8]$p.value),sep=""),
+      paste(xresult(gad_sum.eff.by.group[8,4]$effect.size * 1,1),xps(gad_sum.emmpairs.by.group[8,8]$p.value),sep=""),
+      paste(xresult(phq_sum.eff.by.group[8,4]$effect.size * 1,1),xps(phq_sum.emmpairs.by.group[8,8]$p.value),sep=""),
       paste(xresult(well.eff.by.group[8,4]$effect.size * -1,1),xps(well.emmpairs.by.group[8,8]$p.value),sep="\\xspace")
     ))
   )
@@ -2232,7 +2228,7 @@ Vi var även intresserade av om det fanns någon skillnad (i endera riktning) i 
 
 ## Sekundär frågeställning
 
-Vi konstaterade att inomgruppseffektstyrkorna mellan tidpunkterna förmätning och eftermätning för måtten för social ångest (LSAS-SR) i båda grupperna (*ES*\xspace =\xspace 0,6) och allmänt mående (Välmåendeskalan) i båda grupperna (*ES*\xspace =\xspace 0,7) enligt @cohen1992power kan betraktas som \'stora\'. För generaliserat ångestsyndrom (GAD-7) var effektstyrkorna \'måttlig\' (*ES*\xspace =\xspace 0,5) i gruppen `r xg1` respektive \'stor\' (*ES*\xspace =\xspace 0,7) i gruppen `r xg2`. Effektstyrkorna för depression (PHQ-9) var i båda grupperna (*ES*\xspace =\xspace 0,4) \'måttliga\'. Se tabell \@ref(tab:descriptives) för en sammanställning.
+Vi konstaterade att inomgruppseffektstyrkorna för de signifikanta medelvärdesskillnaderna mellan tidpunkterna förmätning och eftermätning för måtten för social ångest (LSAS-SR) i båda grupperna (*ES*\xspace =\xspace 0,6) och allmänt mående (Välmåendeskalan) i båda grupperna (*ES*\xspace =\xspace 0,7) enligt @cohen1992power kan betraktas som \'medelstora\'. För generaliserat ångestsyndrom (GAD-7) var effektstyrkorna \'medelstora\' (*ES*\xspace =\xspace 0,5 respektive *ES*\xspace =\xspace 0,7). Effektstyrkan för depression (PHQ-9) var i gruppen behandlarstöd (*ES*\xspace =\xspace 0,4) \'liten\'. Se tabell \@ref(tab:descriptives) för en översikt.
 
 # Diskussion
 
@@ -2262,7 +2258,7 @@ Vi konstaterar att av *random*-variansen så består `r xresult(performance::icc
 
 ### Förbättring i konstruktiv självhävdelse samvarierar med flera andra utfallsmått
 
-Effektstyrkorna mellan tidpunkterna förmätning och eftermätning för måtten för social ångest, generaliserat ångestsyndrom och allmänt mående var \'medelstora\', och effektstyrkorna för måttet för depression var \'små\'. Samtliga medelvärdesskillnader var signifikanta. Det verkar som att det transdiagnostiska konstruktet *assertiveness* är relevant för flera olika psykiatriska ångestsyndrom och allmänt välmående (och i viss mån depression). 
+Effektstyrkorna för de signifikanta medelvärdesskillnadena mellan förmätning och eftermätning för måtten för social ångest, generaliserat ångestsyndrom och allmänt mående var \'medelstora\', och effektstyrkan för måttet för depression var \'liten\' i gruppen behandlarstöd. Det verkar som att förbättring avseende det transdiagnostiska konstruktet *assertiveness* också är relevant för förbättring av både psykiatriska ångestsymptom och allmänt välmående (och i viss mån även depression). 
 
 ### Psykoedukation, toleransrational och avslappningsövningar kan spekulativt förklara snabb effekt
 
@@ -2311,7 +2307,7 @@ Vi fann att medelvärdesskillnaderna för de olika sekundära utfallsmåtten var
 
 ### Begreppsvaliditeten är svåra att bestämma på gruppnivå
 
-@Thompson2011 konstaterar visserligen att \mbox{AAA-S} i originalutförandet erbjuder tillräcklig diskriminativ validitet för konstrukten konstruktiv och aggressiv självhävdelse, men problematiserar också att skalan inte fångar hela registret av möjliga självhävdandebeteenden -- om man i begreppen *assertiveness* eller  självhävdelse inkluderar alla slags beteenden som handlar om att tillgodose egna önskningar och behov. Exempel på indirekta beteenden som inte fångas är modellering, utpressning och passiv aggressivitet [@Thompson2011]. Den här studien ärver således dessa begränsningar i validitet för självhävdelsebegreppet, som på goda grunder kan antas utgöras av en stor mängd olika beteenden som inte alltid korrelerar med varandra. Särskilt problematiskt ur psykometrisk synpunkt kan konstruktet vara när det används funktionellt -- ett och samma topografiska beteende kan som @Mitamura2018 observerar fylla helt olika funktioner och därför också utvärderas olika av olika individer eller av en och samma individ i olika situationer. Samma problem gäller de likaledes mycket breda och ospecifika kategorierna \'adaptivt handlande\' och \'social färdighet\' (som @LINEHAN1979 påpekade). Å andra sidan kan de för varje individ förstås och användas pragmatiskt i psykoterapi (oavsett om kontexten är en internetbehandling eller sedvanlig psykoterapi), utifrån varje individs egenspecificerade målsättning. Orden \'konstruktiv\' och \'självhävdelse\' kan för de flesta antas vara motiverande, särskilt om de syftar på handlande som individen själv anger som eftersträvansvärt. Samtidigt implicerar begreppet \'konstruktiv självhävdelse\' att det kan särskiljas från andra beteenden som också kan vara kortsiktigt eftersträvansvärda för klienten men som nödvändigtvis inte är långsiktigt konstruktiva (passivitet, aggressivitet, passiv aggressivitet) -- sammantaget kan begreppet utgöra en tacksam "krok" för att hjälpa klienten till självreflektion och aktivering i behandling. Användbarheten av begreppet jämfört med andra likvärdiga begrepp bör undersökas i framtida studier. Dilemmat med begreppets otydlighet sätter också fingret på den universella nyttan med att hjälpa klienter att formulera idosynkratiska målsättningar och att utvärdera effekten av en behandling utifrån dessa. Framtida effektstudier kan med fördel inkludera idiografiskt definierade operationaliseringar av begreppet \'konstruktiv självhävdelse\'.
+@Thompson2011 konstaterar visserligen att \mbox{AAA-S} i originalutförandet erbjuder tillräcklig diskriminativ validitet för konstrukten konstruktiv och aggressiv självhävdelse, men problematiserar också att skalan inte fångar hela registret av möjliga självhävdandebeteenden -- om man i begreppen *assertiveness* eller  självhävdelse inkluderar alla slags beteenden som handlar om att tillgodose egna önskningar och behov. Exempel på indirekta beteenden som inte fångas är modellering, utpressning och passiv aggressivitet [@Thompson2011]. Den här studien ärver således dessa begränsningar i validitet för självhävdelsebegreppet, som på goda grunder kan antas utgöras av en stor mängd olika beteenden som inte alltid korrelerar med varandra. Särskilt problematiskt ur psykometrisk synpunkt kan konstruktet vara när det används funktionellt -- ett och samma topografiska beteende kan som @Mitamura2018 observerar fylla helt olika funktioner och därför också utvärderas olika av olika individer eller av en och samma individ i olika situationer. Samma problem gäller de likaledes mycket breda och ospecifika kategorierna \'adaptivt handlande\' och \'social färdighet\' (som @LINEHAN1979 påpekade). Å andra sidan kan de för varje individ förstås och användas pragmatiskt i psykoterapi (oavsett om kontexten är en internetbehandling eller sedvanlig psykoterapi), utifrån varje individs egenspecificerade målsättning. Orden \'konstruktiv\' och \'självhävdelse\' kan för de flesta antas vara motiverande, särskilt om de syftar på handlande som individen själv anger som eftersträvansvärt. Samtidigt implicerar begreppet \'konstruktiv självhävdelse\' att det kan särskiljas från andra beteenden som också kan vara kortsiktigt eftersträvansvärda för klienten men som nödvändigtvis inte är långsiktigt konstruktiva (som passivitet, aggressivitet och passiv aggressivitet) -- sammantaget kan begreppet utgöra en tacksam "krok" för att hjälpa klienten till självreflektion och aktivering i behandling. Användbarheten av begreppet jämfört med andra likvärdiga begrepp bör undersökas i framtida studier. Dilemmat med begreppets otydlighet sätter också fingret på den universella nyttan med att hjälpa klienter att formulera idosynkratiska målsättningar och att utvärdera effekten av en behandling utifrån dessa. Framtida effektstudier kan med fördel inkludera idiografiskt definierade operationaliseringar av begreppet \'konstruktiv självhävdelse\'.
 
 \xstopnew
 
