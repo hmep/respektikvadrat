@@ -2020,7 +2020,7 @@ options(OutDec= ",")
 
 ```
 
-##### Inomgruppseffekter behandlingsstart--`r xt3`mätning
+##### Inomgruppseffekter mellan behandlingsstart--`r xt3`mätning
 
 För både gruppen `r xg1` och gruppen `r xg2` fann vi en klar förbättring mellan behandlingsstart och `r xt3`mätning, $\Delta M$\xspace =\xspace `r xresult(aaas_ad.emmpairs.by.group$estimate[5] * -1,1)`, $t$\(_{`r xresultT(aaas_ad.emmpairs.by.group$df[5],0)`}\) = `r xresult(aaas_ad.emmpairs.by.group$statistic[5] * -1,1)`; `r xpr(aaas_ad.emmpairs.by.group[["p.value"]][5])`; $ES$\xspace =\xspace `r xresult(aaas_ad.eff.by.group$effect.size[5] * -1,1)` respektive $\Delta M$\xspace =\xspace `r xresult(aaas_ad.emmpairs.by.group$estimate[8] * -1,1)`, $t$\(_{`r xresultT(aaas_ad.emmpairs.by.group$df[8],0)`}\) = `r xresult(aaas_ad.emmpairs.by.group$statistic[8],1)`; `r xpr(aaas_ad.emmpairs.by.group[["p.value"]][8])`; $ES$\xspace =\xspace `r xresult(aaas_ad.eff.by.group$effect.size[8] * -1,1)`.
 
@@ -2087,7 +2087,7 @@ $\Delta M$\xspace =\xspace `r xresult(aaas_ag.emmpairs.by.time$estimate[7] * -1,
 
 Vid `r xt3`mätningen fann vi också att medelpoängen för `r xg2`sgruppen ($M$\xspace =\xspace `r xresult(tidy(aaas_ag.emm.by.time)$estimate[9],1)`, 95\xspace % CI [`r xresult(tidy(aaas_ag.emm.by.time)$conf.low[9],1)`\xspace ;\xspace`r xresult(tidy(aaas_ag.emm.by.time)$conf.high[9],1)`]) var högre i jämförelse med gruppen `r xg3` (se *M* ovan), $\Delta M$\xspace =\xspace `r xresult(aaas_ag.emmpairs.by.time$estimate[8] * -1,1)`, $t$\(_{`r xresultT(aaas_ag.emmpairs.by.time$df[8],0)`}\) = `r xresult(aaas_ag.emmpairs.by.time$statistic[8],1)`; `r xpr(aaas_ag.emmpairs.by.time$p.value[8])`; $ES$\xspace =\xspace `r xresult(aaas_ag.eff.by.time$effect.size[8] * -1,1)`.
 
-##### Inomgruppseffekter behandlingsstart--`r xt3`mätning
+##### Inomgruppseffekter mellan behandlingsstart--`r xt3`mätning
 
 För båda grupperna `r xg1` och `r xg2` fann vi en signifikant höjning mellan tidpunkterna för behandlingsstart och `r xt3`mätning. För `r xg1`sgruppen var $\Delta M$\xspace =\xspace `r xresult(aaas_ag.emmpairs.by.group$estimate[5] * -1,1)`, $t$\(_{`r xresultT(aaas_ag.emmpairs.by.group$df[5],0)`}\) = `r xresult(aaas_ag.emmpairs.by.group$statistic[5],1)`; `r xpr(aaas_ag.emmpairs.by.group$p.value[5])`; $ES$\xspace =\xspace `r xresult(aaas_ag.eff.by.group$effect.size[5] * -1,1)`, för `r xg2`sgruppen var $\Delta M$\xspace =\xspace `r xresult(aaas_ag.emmpairs.by.group$estimate[8] * -1,1)`, $t$\(_{`r xresultT(aaas_ag.emmpairs.by.group$df[8],0)`}\) = `r xresult(aaas_ag.emmpairs.by.group$statistic[8],1)`; `r xpr(aaas_ag.emmpairs.by.group$p.value[8])`; $ES$\xspace =\xspace `r xresult(aaas_ag.eff.by.group$effect.size[8] * -1,1)`.
 
