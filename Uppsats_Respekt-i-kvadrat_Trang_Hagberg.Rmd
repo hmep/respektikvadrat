@@ -947,7 +947,7 @@ För största möjliga transparens och replikerbarhet i enlighet med rekommendat
 
 ## Analyser
 
-Vi använde `r version$language`, version `r version$major`.`r version$minor` [@R-base] för samtliga analyser. R-syntax för utförda test och analyser, anonymiserad öppen data samt källkoden till manuskriptet finns deponerade hos Figshare på https://doi.org/10.17045/sthlmuni.12148785 [@R2data2020]. Signifikansnivån $\alpha$ = 0,05 tillämpades vid alla beräkningar.
+Vi använde `r version$language`, version `r version$major`.`r version$minor` [@R-base] för samtliga analyser. R-syntax för utförda test och analyser, anonymiserad öppen data samt källkoden till manuskriptet finns deponerade hos Figshare på https://doi.org/10.17045/sthlmuni.12148785 [@R2data2020]. Signifikansnivån $\alpha$ = 0,05 tillämpades vid alla analyser.
 
 ### Analys av fixa effekter
 
@@ -959,7 +959,7 @@ En modell specificerades för vart och ett av de beroende utfallsmåtten. Ingen 
 
 För modelleringen av de olika utfallsmåtten användes modelleringsverktyg från R-paketet *lme4* [@R-lme4]. Val av kovariansstruktur gjordes genom jämförelse av *Akaike Information Criteria* (AIC)-tal av modeller som anpassades till data med *Maximum Likelihood* (ML)-funktionen. Den alternativa sannolikhetsfunktionen *Restricted Maximum Likelihood* (REML), som ger väntesvärdesriktiga uppskattningar av varianserna, användes därefter för anpassningen av modellerna för utfallsmåtten till underliggande data. 
 
-Med de till observerade data anpassade flernivåmodellerna estimerades marginalmedelvärden (*estimated marginal means* eller *least square means*) för alla kombinationer av grupp och tid. Estimerade marginalmedelvärden och parvisa jämförelser av dessa togs fram med R-paketet *emmeans* [@R-emmeans] med Bonferroni-korrigering av *p*-värden.
+Med de till observerade data anpassade flernivåmodellerna estimerades marginalmedelvärden (*estimated marginal means* eller *least square means*) för alla kombinationer av grupp och tid. Estimerade marginalmedelvärden, parvisa jämförelser av dessa och estimerade effektstyrkor (*ES*; Cohen's *d*) togs fram med R-paketet *emmeans* [@R-emmeans] med Bonferroni-korrigering av *p*-värden.
 
 ### Analys av *random*-effekter
 
@@ -2177,7 +2177,7 @@ y <- cbind(
       paste(xresult(lsas_sum.eff.by.group[8,4]$effect.size * 1,1),xps(lsas_sum.emmpairs.by.group[8,8]$p.value),sep=""),
       paste(xresult(gad_sum.eff.by.group[8,4]$effect.size * 1,1),xps(gad_sum.emmpairs.by.group[8,8]$p.value),sep=""),
       paste(xresult(phq_sum.eff.by.group[8,4]$effect.size * 1,1),xps(phq_sum.emmpairs.by.group[8,8]$p.value),sep=""),
-      paste(xresult(well.eff.by.group[8,4]$effect.size * -1,1),xps(well.emmpairs.by.group[8,8]$p.value),sep="\\xspace")
+      paste(xresult(well.eff.by.group[8,4]$effect.size * -1,1),xps(well.emmpairs.by.group[8,8]$p.value),sep="")
     ))
   )
 
