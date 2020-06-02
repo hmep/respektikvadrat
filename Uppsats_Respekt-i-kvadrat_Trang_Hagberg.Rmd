@@ -548,7 +548,7 @@ I återstoden av bakgrundsdelen sätts interventionen in i ett övergripande sam
 
 ## Aktuellt forskningsläge för träning i konstruktiv självhävdelse
 
-Forskning på *assertiveness* och *asseretiveness*-träning övergavs i stort sett efter 1970-talet i och med psykatrins fokus på syndromala kategoriseringar av psykisk ohälsa. *Assertiveness* föll tillsammans med andra transdiagnostiska begrepp och interventioner i glömska till förmån för diagnosspecifika behandlingar. 
+Forskning på *assertiveness* och *assertiveness*-träning övergavs i stort sett efter 1970-talet i och med psykatrins fokus på syndromala kategoriseringar av psykisk ohälsa. *Assertiveness* föll tillsammans med andra transdiagnostiska begrepp och interventioner i glömska till förmån för diagnosspecifika behandlingar. 
 
 Det gör att många viktiga slutsatser av den tidigaste forskningen har hamnat i skymundan. Både @Wolpe1966 samt @Orenstein1975 bygger sina metoder på premissen att det är oförenligt att samtidigt uppleva ångest och att på  ett genuint sätt hävda sina önskningar och behov på ett konstruktivt sätt. @Barrett1977 visar att *assertiveness* hos barn korrelerar med prosociala beteenden. @Buell1981 följer upp det fyndet med en metod för att träna *assertiveness* hos barn. På temat att det är en tillgång i relationer att på ett konstruktivt sätt  uttrycka sina tankar, känslor, behov och önskningar visar @Kincaid1978 att självhävdelse är förknippat med förbättrade interpersonella relationer. Det är korrelerar också positivt med förmågan att möta hinder och motgångar med adaptiva beteenden [@Tanck1979]. @Rakos1979 visar att *assertiveness* med fördel kan läras ut genom självhjälpsmaterial och @Rich1976 sammanställer och utvärderar olika metoder som används för att träna *assertiveness*.
 
@@ -1976,7 +1976,7 @@ estimerad marginalmedelvärdesskillnad [$\Delta M$]\xspace =\xspace `r xresult(a
 Vi fann också en tydligt högre medelpoäng på \mbox{AAA-S} Adaptive vid `r xt3`mätningen för gruppen `r xg2` ($M$\xspace =\xspace `r xresult(tidy(aaas_ad.emm.by.time)$estimate[9],1)`, 95\xspace % CI [`r xresult(tidy(aaas_ad.emm.by.time)$conf.low[9],1)`\xspace ;\xspace`r xresult(tidy(aaas_ad.emm.by.time)$conf.high[9],1)`]) jämfört med gruppen `r xg3` (se *M* ovan),
 $\Delta M$\xspace =\xspace `r xresult(aaas_ad.emmpairs.by.time$estimate[8] * -1,1)`, $t$\(_{`r xresultT(aaas_ad.emmpairs.by.time$df[8],0)`}\) = `r xresult(aaas_ad.emmpairs.by.time$statistic[8],1)`; `r xpr(aaas_ad.emmpairs.by.time[["p.value"]][8])`; $ES$\xspace =\xspace `r xresult(aaas_ad.eff.by.time$effect.size[8] * -1,1)`.
 
-(ref:emmeffad) Medelvärdesestimat (*M*) och effektstorlekar (*ES*) för \mbox{AAA−S} Adaptive. Etiketterna i figuren anger respektive effektstorlek för med prickade linjer indikerade parvisa jämförelser.
+(ref:emmeffad) Medelvärdesestimat (*M*) och effektstorlekar (*ES*) för \mbox{AAA-S} Adaptive. Etiketterna i figuren anger respektive effektstorlek för med prickade linjer indikerade parvisa jämförelser.
 
 ```{r effemmplotsad, dpi=196, fig.align="center", fig.cap='(ref:emmeffad)', fig.height=5, fig.width=5.5, cache = F, eval = T}
 
